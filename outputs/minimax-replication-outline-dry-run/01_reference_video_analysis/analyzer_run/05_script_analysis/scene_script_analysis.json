@@ -1,6 +1,0 @@
-{
-  "schema_version": "common_reference_video_analyzer.scene_script_analysis.v1",
-  "scenes": [
-    {"id": "SC001", "time": [0.0, 15.0], "function": "information", "arc": {"from": "a city street observed through a scouting mask", "event": "the observation moves from a public shelter to a building flag to a rooftop person to a reflected close-up", "to": "an intimate reflected brand detail", "information_delta": "from environment scale down to person scale and finally to a reflected brand close-up"}, "shots": ["SC001_SH001", "SC001_SH002", "SC001_SH003", "SC001_SH004"], "confidence": "high", "evidence_refs": ["VS001"]}
-  ]
-}

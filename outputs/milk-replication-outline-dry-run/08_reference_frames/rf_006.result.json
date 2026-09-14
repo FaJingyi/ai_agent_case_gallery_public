@@ -1,9 +1,0 @@
-{
-  "provider": "sensenova",
-  "task_id": "20260913_060241_ef33d27e-96d5-449a-9536-6713f3ec5c5c",
-  "task": "text2img",
-  "output": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/milk-replication-outline-dry-run/08_reference_frames/_tmp_rf_006/rf_006.png",
-  "request": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/milk-replication-outline-dry-run/08_reference_frames/_tmp_rf_006/request.json",
-  "saved_output_path": null,
-  "seed": null
-}

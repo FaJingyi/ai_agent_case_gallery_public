@@ -1,9 +1,0 @@
-{
-  "segment_id": "VS001",
-  "input_mode": "video_url",
-  "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content",
-  "fps": 4,
-  "max_frames": 256,
-  "model": "Qwen3.8-27B",
-  "raw_response_text": "1. Global read and confidence:\n- confidence: high\n- limits: 视频分辨率清晰，光线充足，主体（水豚）动作连贯，无遮挡或模糊。唯一限制是视频结尾处（约5.5s后）画面似乎定格或动作极慢，导致最后几帧的细微动态难以分辨，但整体动作逻辑清晰。\n\n2. Shot timeline:\n- [shot1: 0.0-5.875s] single continuous shot\n\n3. Shot details:\n[shot1: 0.0-5.875s]\n- [static] 场景为室内办公或公共休息区，地面为光面木地板，画有白色圆圈标记。左侧前景有一位身穿白色上衣、白色长裤和米色高跟鞋的女性背影，仅可见下半身及部分背部。中景有三只棕色水豚，呈横向排列。背景可见灰色沙发、黄色木椅、自动售货机（带有彩色图案）、绿植盆栽以及一个穿着红披风的卡通人物立牌。光线为室内暖色调照明，地面有明显反光。\n- [dynamic] 视频开始时，三只水豚站立在白色圆圈附近。约0.5s起，三只水豚同时做出下蹲动作，前腿弯曲，身体重心降低，头部微抬。随后（约1.5s-3.0s），它们开始向前（镜头方向）小跑移动。在移动过程中，最右侧的水豚（相对于观众视角）逐渐加速并超越另外两只。约3.5s时，最右侧的水豚跳起，前爪搭在中间水豚的背上，随后身体完全骑跨在中间水豚背上。最左侧的水豚保持站立姿态，未参与骑跨。最终（约4.5s-5.875s），形成“两只水豚并排站立，第三只水豚骑在中间那只背上”的静态造型，三只水豚均面向镜头方向，动作停止。\n\n4. Adjacent-shot state relation table:\n- initial_state: 室内场景，一名女性背影在左，三只水豚在右中景站立，背景有办公设施。\n- (No adjacent shots as it is a single continuous shot)\n\n5. Cross-shot relations:\n- not_applicable_single_continuous_shot\n\n6. Special mechanism scan:\n- not_observed\n\n7. Text/logo/UI/graphics:\n- 背景自动售货机上有模糊的品牌标识和彩色图案，但具体文字不可读。\n- 背景卡通立牌上有简单的面部表情线条，无清晰文字。\n- 无字幕、水印或UI叠加层。\n\n8. Visual memory candidates:\n- not_observed (基于Q6无特殊机制)\n\n9. Uncertainty:\n- 视频最后几秒（5.5s-5.875s）水豚是否完全静止或仍有极微小的调整动作，因采样帧率限制略显模糊，但整体呈现为定格状态。\n- 女性角色的具体动作意图（如是否在指挥）不可见，仅观察到其站立姿态。"
-}

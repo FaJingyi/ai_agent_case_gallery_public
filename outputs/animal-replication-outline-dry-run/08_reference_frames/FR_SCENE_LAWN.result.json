@@ -1,9 +1,0 @@
-{
-  "provider": "sensenova",
-  "task_id": "20260913_053026_eead2be3-7dba-46ed-98b4-de044879f652",
-  "task": "text2img",
-  "output": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/animal-replication-outline-dry-run/08_reference_frames/FR_SCENE_LAWN.png",
-  "request": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/animal-replication-outline-dry-run/08_reference_frames/request.json",
-  "saved_output_path": null,
-  "seed": null
-}

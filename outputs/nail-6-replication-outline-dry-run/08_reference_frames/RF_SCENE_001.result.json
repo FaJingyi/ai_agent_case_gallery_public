@@ -1,9 +1,0 @@
-{
-  "provider": "sensenova",
-  "task_id": "20260913_064929_68e46188-8d8b-49ed-be10-df47e6ef59d5",
-  "task": "text2img",
-  "output": "/tmp/rf_gen/RF_SCENE_001/RF_SCENE_001.png",
-  "request": "/tmp/rf_gen/RF_SCENE_001/request.json",
-  "saved_output_path": null,
-  "seed": 202
-}

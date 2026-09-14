@@ -6,17 +6,15 @@
   <title>AI Agent Case Gallery</title>
   <style>
     :root {
-      --bg: #f4f6f8;
+      --bg: #f5f7fa;
       --panel: #ffffff;
-      --ink: #18202a;
-      --muted: #617083;
-      --line: #dce3eb;
-      --line-strong: #c7d1dc;
-      --soft: #eef3f7;
+      --ink: #17202c;
+      --muted: #64748b;
+      --line: #d9e2ec;
+      --soft: #edf3f8;
       --accent: #0b6bcb;
-      --accent-2: #147d64;
-      --warn: #9b5d00;
-      --shadow: 0 14px 34px rgba(29, 41, 57, 0.08);
+      --green: #13745b;
+      --shadow: 0 16px 36px rgba(20, 35, 55, 0.08);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -29,176 +27,83 @@
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    code, pre {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-    }
     .shell {
       display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
+      grid-template-columns: 248px minmax(0, 1fr);
       min-height: 100vh;
     }
     .side {
       position: sticky;
       top: 0;
-      align-self: start;
       height: 100vh;
       overflow: auto;
       border-right: 1px solid var(--line);
-      background: #fbfcfd;
+      background: #fbfcfe;
       padding: 24px 18px;
     }
-    .brand {
-      margin: 0 0 6px;
-      font-size: 17px;
-      font-weight: 760;
-      letter-spacing: 0;
-    }
-    .side-note {
-      margin: 0 0 22px;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    .brand { margin: 0 0 6px; font-size: 17px; font-weight: 800; }
+    .side-note { margin: 0 0 22px; color: var(--muted); font-size: 13px; }
     .nav-label {
       margin: 20px 0 8px;
-      color: #425466;
+      color: #405168;
       font-size: 12px;
-      font-weight: 760;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0;
     }
-    .nav-list {
-      display: grid;
-      gap: 4px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+    .nav-list { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
     .nav-list a {
       display: block;
       border-radius: 7px;
       padding: 8px 10px;
-      color: #263442;
+      color: #243244;
       font-size: 13px;
     }
-    .nav-list a:hover {
-      background: var(--soft);
-      text-decoration: none;
-    }
-    .content {
-      min-width: 0;
-    }
+    .nav-list a:hover { background: var(--soft); text-decoration: none; }
+    .content { min-width: 0; }
     .hero {
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
+      background: #ffffff;
     }
     .wrap {
-      width: min(1180px, calc(100% - 48px));
+      width: min(1440px, calc(100% - 48px));
       margin: 0 auto;
     }
-    .hero-inner {
-      padding: 46px 0 34px;
-    }
+    .hero-inner { padding: 42px 0 30px; }
     .eyebrow {
       margin: 0 0 10px;
-      color: var(--accent-2);
+      color: var(--green);
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0;
     }
     h1 {
-      max-width: 960px;
+      max-width: 980px;
       margin: 0;
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.03;
-      letter-spacing: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.04;
     }
     .intro {
-      max-width: 880px;
-      margin: 18px 0 0;
+      max-width: 900px;
+      margin: 16px 0 0;
       color: var(--muted);
-      font-size: 17px;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      border: 1px solid var(--line-strong);
-      border-radius: 7px;
-      background: #fff;
-      color: #203040;
-      padding: 8px 12px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .button.primary {
-      border-color: #0b6bcb;
-      background: #0b6bcb;
-      color: #fff;
+      font-size: 16px;
     }
     .stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 24px;
     }
     .stat {
-      min-height: 88px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--panel);
-      padding: 16px;
+      background: #fbfcfe;
+      padding: 14px 16px;
     }
-    .stat strong {
-      display: block;
-      font-size: 29px;
-      line-height: 1;
-    }
-    .stat span {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    main {
-      padding: 30px 0 56px;
-    }
-    .section-title {
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.2;
-      letter-spacing: 0;
-    }
-    .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    .mini-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      padding: 15px;
-      box-shadow: 0 8px 22px rgba(29, 41, 57, 0.04);
-    }
-    .mini-card h3 {
-      margin: 0 0 7px;
-      font-size: 15px;
-    }
-    .mini-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    .stat strong { display: block; font-size: 28px; line-height: 1; }
+    .stat span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; }
+    main { padding: 26px 0 56px; }
     .case {
-      margin-top: 22px;
+      margin-top: 24px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--panel);
@@ -208,88 +113,95 @@
     .case-head {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 20px;
+      gap: 18px;
       border-bottom: 1px solid var(--line);
       background: #fbfcfe;
       padding: 22px;
     }
-    .case-kicker {
+    .kicker {
       margin: 0 0 6px;
-      color: var(--accent-2);
+      color: var(--green);
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0;
       text-transform: uppercase;
     }
-    .case h2 {
-      margin: 0;
-      font-size: 27px;
-      line-height: 1.15;
-      letter-spacing: 0;
-    }
-    .case-summary {
-      max-width: 840px;
-      margin: 11px 0 0;
+    .case h2 { margin: 0; font-size: 26px; line-height: 1.2; }
+    .case-head p:last-child {
+      max-width: 880px;
+      margin: 10px 0 0;
       color: var(--muted);
       font-size: 14px;
     }
-    .badges {
+    .status {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
+      align-content: start;
       gap: 8px;
-      max-width: 370px;
+      max-width: 320px;
     }
-    .badge {
+    .status span {
       display: inline-flex;
-      align-items: center;
       min-height: 28px;
-      border: 1px solid var(--line);
+      align-items: center;
+      border: 1px solid #b9d9ef;
       border-radius: 999px;
-      background: #fff;
-      color: #506073;
+      background: #f1f8fd;
+      color: #28536b;
       padding: 5px 9px;
       font-size: 12px;
       white-space: nowrap;
     }
-    .badge.ok { color: #0f6b4f; border-color: #b9dfd1; background: #effaf6; }
-    .badge.warn { color: var(--warn); border-color: #ead3a0; background: #fff8e6; }
-    .case-body {
-      display: grid;
-      gap: 22px;
+    .module {
       padding: 22px;
+      border-top: 1px solid var(--line);
     }
-    .media-grid {
+    .case-head + .module { border-top: 0; }
+    .module-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .module-title span {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .module-title h3 { margin: 0; font-size: 18px; }
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
-    .panel {
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .surface {
       min-width: 0;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #fff;
       overflow: hidden;
     }
-    .panel-head {
+    .surface-head, .mini-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      min-height: 44px;
+      min-height: 42px;
       border-bottom: 1px solid var(--line);
       background: #fbfcfe;
       padding: 10px 12px;
-      color: #2b3b4b;
+      color: #2a3a4c;
       font-size: 13px;
       font-weight: 800;
     }
-    .panel-head a {
-      flex: 0 0 auto;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .video-frame {
+    .surface-head a, .mini-head a { flex: 0 0 auto; font-size: 12px; font-weight: 800; }
+    .video-box {
       display: grid;
       place-items: center;
       aspect-ratio: 9 / 16;
@@ -301,9 +213,9 @@
       height: 100%;
       object-fit: contain;
     }
-    .placeholder {
+    .empty {
       display: grid;
-      min-height: 180px;
+      min-height: 220px;
       place-items: center;
       background: var(--soft);
       color: var(--muted);
@@ -311,28 +223,22 @@
       text-align: center;
       font-size: 13px;
     }
-    .detail-grid {
+    .input-stack { display: grid; gap: 12px; padding: 12px; }
+    .image-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 14px;
-    }
-    .asset-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 12px;
       padding: 12px;
     }
-    .asset {
-      min-width: 0;
-    }
-    .asset-frame {
+    .thumb { min-width: 0; margin: 0; }
+    .thumb-media {
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 7px;
       background: #f7f9fb;
       aspect-ratio: 1 / 1;
     }
-    .caption {
+    figcaption {
       margin-top: 6px;
       overflow: hidden;
       color: var(--muted);
@@ -340,53 +246,34 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    .text-box {
-      margin: 0;
-      max-height: 330px;
-      overflow: auto;
-      border: 0;
-      background: #fbfcfe;
-      color: #243242;
-      padding: 14px;
-      font-size: 12px;
-      white-space: pre-wrap;
-    }
-    .request {
-      max-height: 160px;
-      border-top: 1px solid var(--line);
+    .text-asset {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
       background: #fff;
     }
-    .step-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-    .step-table th,
-    .step-table td {
-      border-top: 1px solid var(--line);
-      padding: 9px 10px;
-      text-align: left;
-      vertical-align: top;
-    }
-    .step-table th {
-      border-top: 0;
+    pre {
+      margin: 0;
+      max-height: 460px;
+      overflow: auto;
       background: #fbfcfe;
-      color: #425466;
-      font-size: 12px;
+      color: #243244;
+      padding: 14px;
+      font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      white-space: pre-wrap;
     }
-    .step-table code {
-      color: #243242;
-      font-size: 12px;
+    .text-surface pre { min-height: 420px; }
+    .prompt-pair {
+      display: grid;
+      gap: 14px;
     }
-    .status-completed { color: #0f6b4f; font-weight: 800; }
-    .status-skipped { color: var(--warn); font-weight: 800; }
-    .footer {
+    footer {
       border-top: 1px solid var(--line);
       padding: 22px 0 34px;
       color: var(--muted);
       font-size: 13px;
     }
-    @media (max-width: 1120px) {
+    @media (max-width: 1180px) {
       .shell { display: block; }
       .side {
         position: static;
@@ -395,16 +282,15 @@
         border-bottom: 1px solid var(--line);
       }
       .nav-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .media-grid, .detail-grid, .overview-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 720px) {
-      .wrap { width: min(100% - 28px, 1180px); }
+    @media (max-width: 860px) {
+      .wrap { width: min(100% - 28px, 1440px); }
       .hero-inner { padding-top: 30px; }
-      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stats, .video-grid, .two-col { grid-template-columns: 1fr; }
       .case-head { display: block; }
-      .badges { justify-content: flex-start; margin-top: 14px; }
+      .status { justify-content: flex-start; margin-top: 14px; }
+      .module, .case-head { padding: 16px; }
       .nav-list { grid-template-columns: 1fr; }
-      .case-body, .case-head { padding: 16px; }
     }
   </style>
 </head>
@@ -412,12 +298,7 @@
   <div class="shell">
     <aside class="side">
       <p class="brand">AI Agent Case Gallery</p>
-      <p class="side-note">Static GitHub Pages view for H3 replication dry runs.</p>
-      <p class="nav-label">Overview</p>
-      <ul class="nav-list">
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#cases">Case gallery</a></li>
-      </ul>
+      <p class="side-note">按当前公开目录重写的 H3 复刻案例展示页。</p>
       <p class="nav-label">Cases</p>
       <ul class="nav-list">
         <li><a href="#case-minimax">01 MiniMax Brand Rewrite</a></li>
@@ -433,919 +314,1134 @@
         <div class="wrap hero-inner">
           <p class="eyebrow">H3 Context IR / AI Agent Evaluation</p>
           <h1>视频复刻 Agent 案例展示</h1>
-          <p class="intro">把每个 dry-run case 的参考视频、用户输入、参考帧、H3 prompt、请求包和最终交付索引整理成一个可公开访问的 GitHub Pages 展示页，方便像文档一样快速浏览完整链路。</p>
-          <div class="actions">
-            <a class="button primary" href="#cases">查看案例</a>
-            <a class="button" href="https://github.com/FaJingyi/ai_agent_case_gallery_public" target="_blank" rel="noreferrer">GitHub Repository</a>
-            <a class="button" href="outputs/minimax-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open H3 Prompt</a>
-          </div>
-          <div class="stats" id="summary" aria-label="gallery summary">
+          <p class="intro">页面按当前文件目录组织：每个 case 固定展示视频对照、用户输入与生成图、分析结果与 H3 Prompt。暂未放入的产物保留空态，后续补文件即可继续扩展。</p>
+          <div class="stats" aria-label="gallery summary">
             <div class="stat"><strong>6</strong><span>Cases</span></div>
-            <div class="stat"><strong>65</strong><span>Pipeline steps indexed</span></div>
-            <div class="stat"><strong>20</strong><span>Generated reference frames</span></div>
-            <div class="stat"><strong>10</strong><span>User input assets</span></div>
+            <div class="stat"><strong>4</strong><span>Cases with outputs</span></div>
+            <div class="stat"><strong>9</strong><span>Generated images</span></div>
+            <div class="stat"><strong>3</strong><span>Modules per case</span></div>
           </div>
         </div>
       </header>
       <main class="wrap">
-        <h2 class="section-title">展示结构</h2>
-        <div class="overview-grid">
-          <section class="mini-card">
-            <h3>Reference to H3 package</h3>
-            <p>每个 case 都从参考视频分析开始，整理分镜、资产、复刻大纲，再输出 H3 prompt 和 request payload。</p>
-          </section>
-          <section class="mini-card">
-            <h3>Public review surface</h3>
-            <p>页面只引用仓库内相对路径，推到 GitHub Pages 后可以直接播放视频、查看图片和打开 Markdown/JSON 产物。</p>
-          </section>
-          <section class="mini-card">
-            <h3>Dry-run boundary</h3>
-            <p>当前多数 case 停在 H3 请求包生成阶段，页面会明确标注 skipped generation，而不是伪装成已有最终视频。</p>
-          </section>
-        </div>
-        <section id="cases">
-          <article class="case" id="case-minimax">
-    <div class="case-head">
+        <article class="case" id="case-minimax">
+    <header class="case-head">
       <div>
-        <p class="case-kicker">Case 01 / minimax</p>
+        <p class="kicker">Case 01 / minimax</p>
         <h2>MiniMax Brand Rewrite</h2>
-        <p class="case-summary">参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪</p>
+        <p>参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪</p>
       </div>
-      <div class="badges">
-        <span class="badge ok">completed_dry_run</span>
-        <span class="badge">15s reference</span>
-        <span class="badge">4 H3 shots</span>
-        <span class="badge ok">3 final video(s)</span>
+      <div class="status">
+        <span>3 张生成图</span>
+        <span>2/2 个结果视频</span>
       </div>
-    </div>
-    <div class="case-body">
-      <div class="media-grid">
-        <section class="panel">
-    <div class="panel-head"><span>Reference video</span><a href="test_data/minimax/minimax.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/minimax/minimax.mp4"></video></div>
-  </section>
-        <section class="panel">
-    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/minimax/minimax_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/minimax/minimax_vis.mp4"></video></div>
-  </section>
-        <section class="panel">
-    <div class="panel-head"><span>Generated result</span><a href="outputs/minimax-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/minimax-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
-  </section>
-      </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>User input assets</span><a href="test_data/minimax/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><pre class="text-box">参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪</pre><div class="caption">test_data/minimax/user_input/requirement.txt.txt</div></div></div>
-        </section>
-        <section class="panel">
-          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/minimax-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/minimax-replication-outline-dry-run/08_reference_frames/FRAME_SCENE1.png" alt="FRAME_SCENE1.png"></div><div class="caption">FRAME_SCENE1.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/minimax-replication-outline-dry-run/08_reference_frames/FRAME_SCENE2.png" alt="FRAME_SCENE2.png"></div><div class="caption">FRAME_SCENE2.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/minimax-replication-outline-dry-run/08_reference_frames/FRAME_SCENE3.png" alt="FRAME_SCENE3.png"></div><div class="caption">FRAME_SCENE3.png</div></div></div>
-        </section>
-      </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/minimax-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
-          <pre class="text-box">subject_definitions:
-&lt;Subject 1&gt; is the target cat protagonist: a ginger-and-cream domestic short-hair cat with amber eyes, a calm alert gaze, upright pointed ears with soft inner fur, fine whiskers and a small pink nose, a compact well-groomed body and a poised stay, sitting upright with the head lifted and the gaze directed to the right; in the closing close-up it wears oversized red geometric sunglasses.
-&lt;Subject 2&gt; is the ground-level street scene from &lt;Picture 1&gt;: a ground-level city street corner in front of a beige stone building, with a modern bus-stop shelter as the centered object, warm afternoon daylight, long soft ground shadows, and medium background density.
-&lt;Subject 3&gt; is the building exterior scene from &lt;Picture 2&gt;: a tall beige stone building facade seen from a low upward angle, with a large vertical white fabric banner hanging down its length, a cloudy overcast sky above, and a weathered stone surface.
-&lt;Subject 4&gt; is the open rooftop scene from &lt;Picture 3&gt;: an open rooftop terrace with a low parapet and an oversized three-dimensional lettering structure mounted on the roof, a cloudy sky beyond the parapet, warm daylight, and a clean concrete surface with a clear foreground area.
-&lt;Subject 5&gt; is the in-scene lettering &quot;MetaX&quot;: clean geometric sans-serif capitals with slight extruded depth on a warm off-white surface, appearing as shelter-panel lettering, vertical banner lettering, 3D rooftop lettering, and a mirrored lens reflection.
-&lt;Subject 6&gt; is the red geometric sunglasses: thick red geometric frames with two rounded-rectangle mirrored lenses carrying the reflected &quot;MetaX&quot; lettering.
-&lt;Video 1&gt; is the reference video; only its composition, camera language, transition mechanics, action mechanics, shot order, timing rhythm, spatial relationships, contin</pre>
-        </section>
-        <section class="panel"><div class="panel-head"><span>Final review</span><a href="outputs/minimax-replication-outline-dry-run/11_final_deliverable/final_review.md" target="_blank" rel="noreferrer">Open</a></div><pre class="text-box"># 最终交付审阅稿 (minimax-replication-outline dry run)
+    </header>
 
-- 状态: `ready_with_assumptions` | 生成范围: `single_generation_task` | 时长: 15.0s
-- 参考视频: `test_data/minimax/minimax.mp4` (前 15.0s 截断版本)
-- 用户需求: 参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪
-- timeline_unit_count: 4 | temporal_segment_count: 8 | h3_prompt_shot_count: 4
-- 说明: H3 prompt 的 `[Shot N]` 是 prompt-level shots (4 个, 对应参考级 4 个 shot); 每个 shot 内保留 8 个 temporal_segments 作为 beat 级时间范围, 未合并.
-
-## 显式替换覆盖
-- `REP001`: on-screen 'minimax' lettering / MINIMAX wordmark -&gt; **MetaX** | segments 8/8 visible | status `covered`
-- `REP002`: the model / the woman appearing in the reference video -&gt; **cat** | segments 4/4 visible | status `covered`
-- binding status: `passed`
-
-## TU001  0.0-4.0s (4.0s)  [ready_with_assumptions]
-- 参考功能: `opening_hook` | 内容类型: `text_graphic`
-- 生成画面: MetaX-branded bus-stop shelter on a warm city street
-- 生成动作/运镜: held; only the lettering shadow drifts; static locked-off camera; eye-level observational POV
-- 场景迁移: SCENE_1: ground-level urban street, beige stone building, warm daylight; structure inherited, dressing re-lettered to MetaX
-- 画内文字/logo: ['in-scene physical lettering reading MetaX on the bus-stop shelter panel']
-- 后期叠加: [('label', 'neutralize_allowed')]
-  - 节拍 `TU001_S1` 0.0-2.5s | refer=`visual_display` target=`opening_hook` | scene=SCENE_1 | ref_frame=['FRAME_SCENE1'] | status=`ready_with_assumptions`</pre></section>
+    <section class="module">
+      <div class="module-title">
+        <span>01</span>
+        <h3>视频对照</h3>
       </div>
-      <section class="panel">
-        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/minimax-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
-        <table class="step-table">
-    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><code>step_01_inputs</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>00_inputs</code></td>
-        <td>input_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_02_reference_video_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>01_reference_video_analysis</code></td>
-        <td>reference_video_analysis.json, video_segment_plan.json, upstream_run_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_03_asset_inventory</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>03_asset_inventory</code></td>
-        <td>asset_candidates.json, h3_input_asset_inventory.json</td>
-      </tr>
-<tr>
-        <td><code>step_04_target_asset_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>04_target_asset_analysis</code><br><span>no user assets provided; VLM responses intentionally empty</span></td>
-        <td>target_asset_analysis.json, target_asset_vlm_responses.json</td>
-      </tr>
-<tr>
-        <td><code>step_05_replication_readiness</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>05_replication_readiness</code></td>
-        <td>replication_readiness_check.json</td>
-      </tr>
-<tr>
-        <td><code>step_06_replication_outline</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>06_replication_outline</code></td>
-        <td>replication_outline.json, replication_outline.md</td>
-      </tr>
-<tr>
-        <td><code>step_07_reference_frame_plan</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>07_reference_frame_plan</code></td>
-        <td>reference_frame_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_08_reference_frames</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>08_reference_frames</code></td>
-        <td>FRAME_SCENE1.png, FRAME_SCENE2.png, FRAME_SCENE3.png, batch_generation_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_09_h3_package</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>09_h3_package</code></td>
-        <td>h3_packager_input.md, minimax_h3_prompt.md, reference_mapping.md, pre_generation_checklist.md ...</td>
-      </tr>
-<tr>
-        <td><code>step_10_h3_video_generation</code></td>
-        <td class="status-skipped">skipped</td>
-        <td><code>10_h3_video_output</code><br><span>dry_run_boundary: H3 request/package produced, but H3 video generation submission is intentionally not executed in this run</span></td>
-        <td>request.json</td>
-      </tr>
-<tr>
-        <td><code>step_11_final_deliverable</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>11_final_deliverable</code></td>
-        <td>final_review.md, delivery_index.md, final_deliverable.json, stage_artifact_index.json</td>
-      </tr>
-    </tbody>
-  </table>
-      </section>
-    </div>
+      <div class="video-grid">
+        <section class="surface">
+    <div class="surface-head"><span>原视频</span><a href="test_data/minimax/minimax.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/minimax/minimax.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>Depth video</span><a href="test_data/minimax/minimax_vis.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/minimax/minimax_vis.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考原视频</span><a href="outputs/minimax/v1-无音乐分析/ref-video-result.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="outputs/minimax/v1-无音乐分析/ref-video-result.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考 depth video</span><a href="outputs/minimax/v1-无音乐分析/depth-video-result.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="outputs/minimax/v1-无音乐分析/depth-video-result.mp4"></video></div>
+  </section>
+      </div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>02</span>
+        <h3>输入与生成图片</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface">
+          <div class="surface-head"><span>用户输入：文本 + 素材</span></div>
+          <div class="input-stack"><article class="text-asset">
+      <div class="mini-head"><span>requirement.txt.txt</span><a href="test_data/minimax/user_input/requirement.txt.txt" target="_blank" rel="noreferrer">打开</a></div>
+      <pre>参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪</pre>
+    </article></div>
+        </section>
+        <section class="surface">
+          <div class="surface-head"><span>生成图片</span></div>
+          <div class="image-grid"><figure class="thumb">
+      <div class="thumb-media"><img src="outputs/minimax/v1-无音乐分析/生成图片/frame_scene_001.png" alt="frame_scene_001.png"></div>
+      <figcaption>frame_scene_001.png</figcaption>
+    </figure>
+<figure class="thumb">
+      <div class="thumb-media"><img src="outputs/minimax/v1-无音乐分析/生成图片/frame_scene_002.png" alt="frame_scene_002.png"></div>
+      <figcaption>frame_scene_002.png</figcaption>
+    </figure>
+<figure class="thumb">
+      <div class="thumb-media"><img src="outputs/minimax/v1-无音乐分析/生成图片/frame_scene_003.png" alt="frame_scene_003.png"></div>
+      <figcaption>frame_scene_003.png</figcaption>
+    </figure></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>03</span>
+        <h3>分析与 H3 Prompt</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface text-surface">
+    <div class="surface-head"><span>参考视频分析结果 / replication_outline.md</span></div>
+    <div class="empty">replication_outline.md 先空着</div>
+  </section>
+        <section class="prompt-pair">
+          <section class="surface text-surface">
+    <div class="surface-head"><span>发送给 H3 的实际 Prompt</span><a href="outputs/minimax/v1-无音乐分析/minimax_h3_prompt.md" target="_blank" rel="noreferrer">打开</a></div>
+    <pre>subject_definitions:
+&lt;Video 1&gt; reference video: motion, camera, transition and timing reference only.
+&lt;Picture 1&gt; scene reference.
+&lt;Subject 1&gt; street-side pavilion: light stone columns, a warm wood slat canopy with built-in MetaX lettering, pale stone paving, a defocused facade with street trees, warm side daylight.
+&lt;Picture 2&gt; scene reference.
+&lt;Subject 2&gt; terracotta facade: a warm terracotta mid-rise with narrow vertical windows and one narrow vertical fabric banner with vertically stacked MetaX lettering and a red hem lining.
+&lt;Picture 3&gt; scene reference.
+&lt;Subject 3&gt; rooftop terrace: pale grey paving, a low glass balustrade, low green plants and a high-rise facade with large vertically stacked MetaX lettering at the right rear.
+&lt;Subject 4&gt; target subject: a small orange-and-white short-haired cat with a red collar and red-framed sunglasses, green eyes, a compact build, red-framed lenses that carry reflections.
+&lt;Subject 5&gt; in-scene brand text &quot;MetaX&quot;: sans-serif capitals on the canopy sign, the banner, the facade and the lens reflection.
+
+summary:
+[reference generation] A 15-second four-shot warm city brand film: keep the reference shot order, camera language, transitions and reveal rhythm; the on-camera subject is an orange-and-white cat in a red collar and red-framed sunglasses; all in-scene lettering reads &quot;MetaX&quot;; the action moves through a pavilion, a terracotta facade banner and a rooftop terrace inside one continuous binocular viewport.
+
+retention_analysis:
+&lt;Video 1&gt; ([Shot 1]-[Shot 12]): weak_reference - shot order, camera movement, transitions, action mechanism, timing.
+&lt;Subject 1&gt; from &lt;Picture 1&gt; (scene, [Shot 1]-[Shot 4]): fully_preserved - pavilion layout, canopy, pale stone, warm side light.
+&lt;Subject 2&gt; from &lt;Picture 2&gt; (scene, [Shot 5]-[Shot 6]): fully_preserved - terracotta facade, narrow windows, hanging banner.
+&lt;Subject 3&gt; from &lt;Picture 3&gt; (scene, [Shot 7]-[Shot 12]): fully_preserved - terrace paving, balustrade, facade lettering, warm daylight.
+&lt;Subject 4&gt; (main subject, [Shot 7]-[Shot 12]): attribute_transfer - the cat carries the reference pose, head turn and paw adjust.
+&lt;Subject 5&gt; (in-scene text, [Shot 1]-[Shot 12]): attribute_transfer - lettering becomes &quot;MetaX&quot; on canopy sign, banner, facade, lens reflection.
+
+detailed_description:
+Warm-toned photoreal city brand film in a 16:9 frame with soft side daylight and shallow to medium depth of field. Frame every shot inside a binocular viewport made of two large intersecting circles on a solid black surround, with the subject centered inside the overlap of the two circles and the black vignette filling the frame edges. Reserve a narrow vertical band on the left edge and on the right edge of the frame for red monospace field-note text, keep both bands clear of the main subject, and let that overlay text be added in post-production. Viewport and bands stay continuous across cuts. No dialogue, voiceover or specific sound effect is required.
+
+[Shot 1] Frame &lt;Subject 1&gt;, the street-side pavilion with light stone columns, a warm wood slat canopy carrying vertically stacked &lt;Subject 5&gt; lettering and pale stone paving, centered in the two-circle overlap in warm side light. Begin the shot fully out of focus and rack focus onto the main subject and its signage over about one second until the image becomes sharp. The lettering resolves to sharp and a soft &lt;Subject 5&gt; wall shadow appears; locked-off camera.
+
+[Shot 2] At 00:01.100, the frame holds as &lt;Subject 1&gt; and its &lt;Subject 5&gt; lettering stay sharp and centered while the wall shadow drifts with the side light; static camera, no cut.
+
+[Shot 3] At 00:03.100, &lt;Subject 1&gt; and its &lt;Subject 5&gt; lettering take a slightly larger share of the frame while the subject position and side bands stay fixed. Towards the end of the shot the camera pushes in with small amplitude at slow speed so the main subject slowly grows in frame.
+
+[Shot 4] At 00:04.100, the pavilion interior fills the transition frame. End this shot with a short horizontal motion blur crossed by thin red glitch lines that wipe across the frame, then hard cut to the next shot while keeping the binocular viewport and the side field bands continuous.
+
+[Shot 5] At 00:04.300, a low-angle medium shot frames &lt;Subject 2&gt;, the warm terracotta facade with narrow vertical windows and one narrow vertical fabric banner carrying vertically stacked &lt;Subject 5&gt; lettering right of center. The hanging fabric banner keeps fluttering in the wind throughout the shot, and its lower edge flips over to reveal a red lining.
+
+[Shot 6] At 00:08.100, &lt;Subject 2&gt; and its hanging banner fill the transition frame. End this shot with a short horizontal motion blur crossed by thin red glitch lines that wipe across the frame, then hard cut to the next shot while keeping the binocular viewport and the side field bands continuous.
+
+[Shot 7] At 00:08.300, &lt;Subject 3&gt;, the rooftop terrace with its glass balustrade, appears with the facade's large vertically stacked &lt;Subject 5&gt; lettering at the right rear against a defocused skyline. &lt;Subject 4&gt;, a small orange-and-white short-haired cat with a red collar and red-framed sunglasses, stands still at the balustrade at center-left in a medium seven-eighths shot; static camera, no cut.
+
+[Shot 8] At 00:11.100, the shot holds as &lt;Subject 4&gt;, the orange-and-white cat in the red collar and red-framed sunglasses, stays at the balustrade. Late in the shot the main subject slowly turns its head to one side with a small pause before settling. The red-framed sunglasses move with the head; static camera, no cut.
+
+[Shot 9] At 00:11.600, the terrace and the cat subject fill the transition frame. End this shot with a short horizontal motion blur crossed by thin red glitch lines that wipe across the frame, then hard cut to the next shot while keeping the binocular viewport and the side field bands continuous.
+
+[Shot 10] At 00:11.800, a tight facial close-up frames &lt;Subject 4&gt;, the orange-and-white cat in the red collar and red-framed sunglasses, centered right in shallow depth of field with strong specular highlights on the lenses. The lenses mirror the facade and the vertically stacked &lt;Subject 5&gt; lettering as a small reflection whose visibility shifts with the lens angle; static camera, no cut.
+
+[Shot 11] At 00:12.200, the close-up continues on &lt;Subject 4&gt;, the orange-and-white cat in the red collar and red-framed sunglasses. The main subject lifts a paw to touch the top rim of the sunglasses, nudges them once, and then lowers the paw back down. The small &lt;Subject 5&gt; reflection shifts as the frames move; static camera.
+
+[Shot 12] At 00:12.800, the close-up on &lt;Subject 4&gt;, the orange-and-white cat in the red collar and red-framed sunglasses, holds at center-right while the small &lt;Subject 5&gt; lens reflection shifts with the angle. The shot ends without an outgoing transition as the closing beat.
+
+overall_soundscape:
+N/A
+
+non_diegetic_music:
+Follow the reference video music style.</pre>
+  </section>
+          <section class="surface text-surface">
+    <div class="surface-head"><span>中文翻译版本</span></div>
+    <div class="empty">中文翻译版本先空着</div>
+  </section>
+        </section>
+      </div>
+    </section>
   </article>
 <article class="case" id="case-animal">
-    <div class="case-head">
+    <header class="case-head">
       <div>
-        <p class="case-kicker">Case 02 / animal</p>
+        <p class="kicker">Case 02 / animal</p>
         <h2>Animal Character Replacement</h2>
-        <p class="case-summary">参考视频生成一条新的视频，三只哈士奇在户外草坪上表演。</p>
+        <p>参考视频生成一条新的视频，三只哈士奇在户外草坪上表演。</p>
       </div>
-      <div class="badges">
-        <span class="badge ok">completed_to_h3_package</span>
-        <span class="badge">s reference</span>
-        <span class="badge">0 H3 shots</span>
-        <span class="badge ok">1 final video(s)</span>
+      <div class="status">
+        <span>0 张生成图</span>
+        <span>0/2 个结果视频</span>
       </div>
-    </div>
-    <div class="case-body">
-      <div class="media-grid">
-        <section class="panel">
-    <div class="panel-head"><span>Reference video</span><a href="test_data/animal/2_2_case4-H3-original.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/animal/2_2_case4-H3-original.mp4"></video></div>
+    </header>
+
+    <section class="module">
+      <div class="module-title">
+        <span>01</span>
+        <h3>视频对照</h3>
+      </div>
+      <div class="video-grid">
+        <section class="surface">
+    <div class="surface-head"><span>原视频</span><a href="test_data/animal/animal.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/animal/animal.mp4"></video></div>
   </section>
-        <section class="panel">
-    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/animal/animal_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/animal/animal_vis.mp4"></video></div>
+        <section class="surface">
+    <div class="surface-head"><span>Depth video</span><a href="test_data/animal/animal_vis.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/animal/animal_vis.mp4"></video></div>
   </section>
-        <section class="panel">
-    <div class="panel-head"><span>Generated result</span><a href="outputs/animal-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/animal-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+        <section class="surface">
+    <div class="surface-head"><span>参考原视频</span></div>
+    <div class="empty">这里先空着，等 ref-video-result 放进 outputs。</div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考 depth video</span></div>
+    <div class="empty">这里先空着，等 depth-video-result 放进 outputs。</div>
   </section>
       </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>User input assets</span><a href="test_data/animal/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/animal/user_input/dog.jpeg" alt="dog.jpeg"></div><div class="caption">dog.jpeg</div></div>
-<div class="asset"><pre class="text-box">参考视频生成一条新的视频，三只哈士奇在户外草坪上表演。</pre><div class="caption">test_data/animal/user_input/requirement.txt</div></div></div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>02</span>
+        <h3>输入与生成图片</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface">
+          <div class="surface-head"><span>用户输入：文本 + 素材</span></div>
+          <div class="input-stack"><figure class="thumb">
+        <div class="thumb-media"><img src="test_data/animal/user_input/dog.jpeg" alt="dog.jpeg"></div>
+        <figcaption>dog.jpeg</figcaption>
+      </figure>
+<article class="text-asset">
+      <div class="mini-head"><span>requirement.txt</span><a href="test_data/animal/user_input/requirement.txt" target="_blank" rel="noreferrer">打开</a></div>
+      <pre>参考视频生成一条新的视频，三只哈士奇在户外草坪上表演。</pre>
+    </article></div>
         </section>
-        <section class="panel">
-          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/animal-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/animal-replication-outline-dry-run/08_reference_frames/FR_PERSON_HUSKY.png" alt="FR_PERSON_HUSKY.png"></div><div class="caption">FR_PERSON_HUSKY.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/animal-replication-outline-dry-run/08_reference_frames/FR_SCENE_LAWN.png" alt="FR_SCENE_LAWN.png"></div><div class="caption">FR_SCENE_LAWN.png</div></div></div>
+        <section class="surface">
+          <div class="surface-head"><span>生成图片</span></div>
+          <div class="empty">生成图片先空着</div>
         </section>
       </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/animal-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
-          <pre class="text-box">subject_definitions:
-&lt;Subject 1&gt; (husky characters, defined by &lt;Picture 1&gt;, appearance supported by &lt;Picture 3&gt;): three Siberian Husky dogs of the same breed performing together, medium-large sled-dog build with long athletic legs and thick black-white-gray double coats, deep gray-black back and ear tops, white chest, belly and inner legs, white facial masks with darker eye masks, erect triangular ears, white-tipped bushy curled tails, mouths open with tongues out and lively friendly expressions; the lead individual has heterochromatic eyes (one brown, one blue) and follows &lt;Picture 3&gt;; the other two are the same breed with slightly narrower masks and the same lively posture.
-&lt;Subject 2&gt; (outdoor lawn environment, defined by &lt;Picture 2&gt;): an open park lawn in bright natural daylight, neatly mown green grass with visible blade texture and soft natural shadows, a distant low band of trees and hedges along the far edge, pale blue open sky above, green and yellow-green palette, medium-low contrast, low background density with gentle falloff toward the trees.
-&lt;Video 1&gt; is the reference video; it defines only camera language, motion mechanics, shot order, timing rhythm, spatial relationships, continuity and information-reveal structure, not the subject or the scene.
+    </section>
 
-summary:
-[reference generation] Three huskies perform a stacked-formation trick together on an outdoor lawn, reproducing the reference video's single continuous take, slow optical push-in and horizontal-to-vertical formation restructure, while the subject, species and environment are fully replaced.
-
-retention_analysis:
-Retain from &lt;Video 1&gt;: the single continuous shot with no cuts or transitions; the four-part information order (establish subjects, set up synchronized motion, reveal the stack result, hold at the</pre>
-        </section>
-        <section class="panel"><div class="panel-head"><span>Final review</span><a href="outputs/animal-replication-outline-dry-run/11_final_deliverable/final_review.md" target="_blank" rel="noreferrer">Open</a></div><pre class="text-box"># 最终交付审阅稿（dry-run：到 H3 打包为止）
-
-## 运行结论
-- 状态: `completed_to_h3_package_dry_run`
-- H3 视频生成: `skipped_dry_run`（未提交、未执行；本 dry-run 边界为 H3 request/package）
-- H3 请求包: `09_h3_package/h3_request.json`（dry-run，`submitted=false`）
-- 参考帧: 2 个（角色 FR_PERSON_HUSKY / 场景 FR_SCENE_LAWN），均已生成并进入 H3 白名单
-
-## 计数
-- `timeline_unit_count`: 1（单一参考镜头 SC001）
-- `temporal_segment_count`: 6（SEG001-SEG006）
-- `h3_prompt_shot_count`: 1（`[Shot 1]`）；另含 `h3_prompt_beat_count`: 6（Beat 1-6，同一连续镜头内部节拍，非参考级镜头拆分）
-
-## 时间轴
-| 时间 | 参考功能 | 目标功能 | 生成画面/动作 | 运镜/构图 | 参考帧 | 状态 |
-| --- | --- | --- | --- | --- | --- | --- |
-| 0.0-0.5s | visual_display | opening_hook | 三只哈士奇并排等距站立面向镜头 | 中远景平视，起幅 | 人物1/场景1 | ready_with_assumptions |
-| 0.5-1.5s | action_or_interaction | reveal | 三只同时下蹲、重心下降 | 开始推近 | 人物1/场景1 | ready_with_assumptions |
-| 1.5-3.0s | action_or_interaction | 行为推进 | 三只朝镜头小跑汇聚，右侧加速 | 缓慢推近/跟拍，中远景收紧到中景 | 人物1/场景1 | ready_with_assumptions |
-| 3.0-4.0s | action_or_interaction | proof 起始 | 右侧哈士奇上抬前爪搭背、开始承重 | 中景，推近收尾 | 人物1/场景1 | ready_with_assumptions |
-| 4.0-5.0s | action_or_interaction | proof | 横向队形重组为纵向叠站造型 | 中景，推近停止，构图横→纵 | 人物1/场景1 | ready_with_assumptions |
-| 5.0-5.8s | closing_or_prompt | closing | 叠站造型保持并面向镜头 | 静止机位 | 人物1/场景1 | ready_with_assumptions |
-
-## 场景迁移摘要
-- `preserve_scene_style`: 自然日光方向、前中后景空间深度、背景密度、真实纪实质感
-- `adapt_scene_content`: 室内公共休息区 → 户外公园草坪（绿色草地、自然日光、远景树冠与浅蓝天空）
-- 丢弃参考专属内容: 白色圆圈地板标记、灰色沙发、黄色木椅、自动售货机、绿植、红披风卡通立</pre></section>
+    <section class="module">
+      <div class="module-title">
+        <span>03</span>
+        <h3>分析与 H3 Prompt</h3>
       </div>
-      <section class="panel">
-        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/animal-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
-        <table class="step-table">
-    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><code>1</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>00_inputs</code></td>
-        <td>00_inputs/input_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>2</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>01_reference_video_analysis</code></td>
-        <td>01_reference_video_analysis/reference_video_analysis.json, 01_reference_video_analysis/video_segment_plan.json</td>
-      </tr>
-<tr>
-        <td><code>3</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>03_asset_inventory</code></td>
-        <td>03_asset_inventory/asset_candidates.json, 03_asset_inventory/h3_input_asset_inventory.json</td>
-      </tr>
-<tr>
-        <td><code>4</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>04_target_asset_analysis</code></td>
-        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
-      </tr>
-<tr>
-        <td><code>5</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>05_replication_readiness</code></td>
-        <td>05_replication_readiness/replication_readiness_check.json</td>
-      </tr>
-<tr>
-        <td><code>6</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>06_replication_outline</code></td>
-        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
-      </tr>
-<tr>
-        <td><code>7</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>07_reference_frame_plan</code></td>
-        <td>07_reference_frame_plan/reference_frame_plan.json</td>
-      </tr>
-<tr>
-        <td><code>8</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>08_reference_frames</code></td>
-        <td>08_reference_frames/FR_PERSON_HUSKY.png, 08_reference_frames/FR_PERSON_HUSKY.request.json, 08_reference_frames/FR_PERSON_HUSKY.result.json, 08_reference_frames/FR_SCENE_LAWN.png ...</td>
-      </tr>
-<tr>
-        <td><code>9</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>09_h3_package</code></td>
-        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md</td>
-      </tr>
-<tr>
-        <td><code>10</code></td>
-        <td class="">skipped_dry_run</td>
-        <td><code>10_h3_video_output</code><br><span>dry_run_boundary: H3 video generation must not be submitted or executed</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-      </section>
-    </div>
+      <div class="two-col">
+        <section class="surface text-surface">
+    <div class="surface-head"><span>参考视频分析结果 / replication_outline.md</span></div>
+    <div class="empty">replication_outline.md 先空着</div>
+  </section>
+        <section class="prompt-pair">
+          <section class="surface text-surface">
+    <div class="surface-head"><span>发送给 H3 的实际 Prompt</span></div>
+    <div class="empty">H3 Prompt 先空着</div>
+  </section>
+          <section class="surface text-surface">
+    <div class="surface-head"><span>中文翻译版本</span></div>
+    <div class="empty">中文翻译版本先空着</div>
+  </section>
+        </section>
+      </div>
+    </section>
   </article>
 <article class="case" id="case-dance">
-    <div class="case-head">
+    <header class="case-head">
       <div>
-        <p class="case-kicker">Case 03 / dance</p>
+        <p class="kicker">Case 03 / dance</p>
         <h2>Dance Motion Replication</h2>
-        <p class="case-summary">参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞</p>
+        <p>参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞</p>
       </div>
-      <div class="badges">
-        <span class="badge ok">ready_with_assumptions</span>
-        <span class="badge">s reference</span>
-        <span class="badge">0 H3 shots</span>
-        <span class="badge ok">1 final video(s)</span>
+      <div class="status">
+        <span>0 张生成图</span>
+        <span>0/2 个结果视频</span>
       </div>
-    </div>
-    <div class="case-body">
-      <div class="media-grid">
-        <section class="panel">
-    <div class="panel-head"><span>Reference video</span><a href="test_data/dance/2_2_case2-H3-original.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/dance/2_2_case2-H3-original.mp4"></video></div>
+    </header>
+
+    <section class="module">
+      <div class="module-title">
+        <span>01</span>
+        <h3>视频对照</h3>
+      </div>
+      <div class="video-grid">
+        <section class="surface">
+    <div class="surface-head"><span>原视频</span><a href="test_data/dance/dance.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/dance/dance.mp4"></video></div>
   </section>
-        <section class="panel">
-    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/dance/dance_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/dance/dance_vis.mp4"></video></div>
+        <section class="surface">
+    <div class="surface-head"><span>Depth video</span><a href="test_data/dance/dance_vis.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/dance/dance_vis.mp4"></video></div>
   </section>
-        <section class="panel">
-    <div class="panel-head"><span>Generated result</span><a href="outputs/dance-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/dance-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+        <section class="surface">
+    <div class="surface-head"><span>参考原视频</span></div>
+    <div class="empty">这里先空着，等 ref-video-result 放进 outputs。</div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考 depth video</span></div>
+    <div class="empty">这里先空着，等 depth-video-result 放进 outputs。</div>
   </section>
       </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>User input assets</span><a href="test_data/dance/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><pre class="text-box">参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞</pre><div class="caption">test_data/dance/user_input/requirement.txt</div></div></div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>02</span>
+        <h3>输入与生成图片</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface">
+          <div class="surface-head"><span>用户输入：文本 + 素材</span></div>
+          <div class="input-stack"><article class="text-asset">
+      <div class="mini-head"><span>requirement.txt</span><a href="test_data/dance/user_input/requirement.txt" target="_blank" rel="noreferrer">打开</a></div>
+      <pre>参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞</pre>
+    </article></div>
         </section>
-        <section class="panel">
-          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/dance-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/dance-replication-outline-dry-run/08_reference_frames/rf_person_001.png" alt="rf_person_001.png"></div><div class="caption">rf_person_001.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/dance-replication-outline-dry-run/08_reference_frames/rf_scene_001.png" alt="rf_scene_001.png"></div><div class="caption">rf_scene_001.png</div></div></div>
+        <section class="surface">
+          <div class="surface-head"><span>生成图片</span></div>
+          <div class="empty">生成图片先空着</div>
         </section>
       </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/dance-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
-          <pre class="text-box">subject_definitions:
-&lt;Subject 1&gt; is the target dancer from &lt;Picture 1&gt;: a Western (Caucasian) adult woman, age impression 20-30, confident athletic performer, medium-length natural hair, natural sport makeup, slim athletic build, wearing a bright coral athletic crop top, dark teal high-waisted sports shorts, and clean white sneakers; she is the only person in the target video and keeps this appearance across every shot.
-&lt;Subject 2&gt; is the outdoor basketball court from &lt;Picture 2&gt;: a daytime public court with a hard court surface, white painted court lines, a basketball hoop with backboard and metal pole in the midground, a chain-link fence and open court-side area behind, green trees and low buildings in the far background, overcast soft daylight, and cool low-saturation color.
-&lt;Subject 3&gt; is the basketball hoop / backboard detail inside &lt;Subject 2&gt;: metal pole, neutral or transparent backboard, plain rim, no brand logos; it stays as background set dressing and never interacts with &lt;Subject 1&gt;.
-&lt;Video 1&gt; is the reference video, used only for composition, camera language, single-take structure, action mechanics, shot order, timing and rhythm, spatial relationship, continuity, and information-reveal structure; the reference male dancer identity, hoodie outfit, bleacher/track location, and reference music are not transferred.
-&lt;Picture 1&gt; is the person appearance anchor. &lt;Picture 2&gt; is the scene appearance anchor.
+    </section>
 
-summary:
-[reference generation] A single continuous vertical 9:16 shot of &lt;Subject 1&gt;, a Western woman dancer, performing an evolving dance routine on &lt;Subject 2&gt;, an outdoor basketball court, inheriting only the composition, camera language, single-take structure, and action-beat timing of &lt;Video 1&gt;.
-
-retention_analysis:
-&lt;Subject 1&gt; (appears in [Shot 1], [Shot 2</pre>
-        </section>
-        <section class="panel"><div class="panel-head"><span>Final review</span><a href="outputs/dance-replication-outline-dry-run/11_final_deliverable/final_review.md" target="_blank" rel="noreferrer">Open</a></div><pre class="text-box"># 参考视频复刻最终交付审阅稿
-
-- schema: `common_replication_outline.v2`  status: **ready_with_assumptions**
-- 参考视频: `test_data/dance/2_2_case2-H3-original.mp4` (10.125s, 竖屏 9:16, 24fps)
-- 用户需求: 参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞
-- 目标主体: 欧美女性舞者（人物1）；目标场景: 户外篮球场（场景1）
-- 复刻模式: `shot_structure`；time_precision: truncate 到 0.1s
-- timeline_unit_count: **1**（单镜头连续，无剪辑）
-- temporal_segment_count: **5**（镜头内部节拍）
-- h3_prompt_shot_count: **5**（prompt-level `[Shot 1]-[Shot 5]`，对应 5 个 temporal segments，**不是**新增/拆分参考镜头）
-
-## 参考视频功能继承
-
-- 结构/时间: 单镜头连续约 10.1s；固定机位、平视、中心全身构图，无剪辑点。
-- 运镜/构图: 竖屏 9:16，主体居中，头顶与脚下留空间，中等景深。
-- 动作机制: 静止起手 → 摆臂 → 上肢节拍 → 下肢交叉步/踢腿 → 单脚支撑收束；重心左右转移与节拍停顿。
-- 场景风格: 户外开阔硬质场地 + 白色画线、自然漫射光、冷调低饱和、写实纪录质感。
-- 信息节拍: 单镜头内动作能量逐步提升后自然收束。
-
-## 分镜级审阅
-
-| segment | 时间 | 参考功能 | 目标功能 | 场景迁移 | 主体/动作迁移 | 画面内实体文字/logo | 后期叠加 | 参考帧决策 | 缺失输入 | 状态 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| SEG001 | 0.0-1.0s | visual_display | opening_pose_and_establish | 户外看台/跑道 → 户外篮球场（保开阔硬质场地+白线+漫射光，改场边陈设为篮球架/围网） | 参考男性 → 欧美女性；静止站立起手，重心居中 | 无 | 无（不生成文字层） | 使用 rf_person_001 + rf_scene_001 | 无 | ready_with_assumptions |
-| SEG002 | 1.0-2.0s | action_or_interaction | arm_extension_phrase | 同上，机位/光线/场景连续 | 双臂侧展收回，肩臂带动躯干轻微摆动 | 无 | 无 | 使用 rf_person_001 + rf_scene_001 | 无 | ready_with_assumptions |
-| SEG003 | 2.0-4.0s | action_or_interaction | punch_beat_phrase | 同上，场景无跳变 | 双拳胸前/向前往复，重心随节拍左右移动 | 无 | 无 | 使用 rf_person_001 </pre></section>
+    <section class="module">
+      <div class="module-title">
+        <span>03</span>
+        <h3>分析与 H3 Prompt</h3>
       </div>
-      <section class="panel">
-        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/dance-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
-        <table class="step-table">
-    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><code>step_1_accept_inputs</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>00_inputs</code></td>
-        <td>00_inputs/input_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_2_reference_video_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>01_reference_video_analysis</code></td>
-        <td>01_reference_video_analysis/reference_video_analysis.json, 01_reference_video_analysis/video_segment_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_3_shot_replication_rules_and_asset_inventory</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>03_asset_inventory</code></td>
-        <td>03_asset_inventory/asset_candidates.json, 03_asset_inventory/h3_input_asset_inventory.json</td>
-      </tr>
-<tr>
-        <td><code>step_4_target_asset_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>04_target_asset_analysis</code></td>
-        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
-      </tr>
-<tr>
-        <td><code>step_5_replication_readiness_check</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>05_replication_readiness</code></td>
-        <td>05_replication_readiness/replication_readiness_check.json</td>
-      </tr>
-<tr>
-        <td><code>step_6_replication_outline</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>06_replication_outline</code></td>
-        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
-      </tr>
-<tr>
-        <td><code>step_7_reference_frame_planning</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>07_reference_frame_plan</code></td>
-        <td>07_reference_frame_plan/reference_frame_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_8_reference_frame_generation</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>08_reference_frames</code></td>
-        <td>08_reference_frames/rf_person_001.png, 08_reference_frames/rf_person_001.request.json, 08_reference_frames/rf_person_001.result.json, 08_reference_frames/rf_scene_001.png ...</td>
-      </tr>
-<tr>
-        <td><code>step_9_h3_packaging</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>09_h3_package</code></td>
-        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md, 09_h3_package/assets/rf_person_001.png ...</td>
-      </tr>
-<tr>
-        <td><code>step_10_h3_video_generation</code></td>
-        <td class="">not_submitted</td>
-        <td><code>10_h3_video_output</code><br><span>dry_run_boundary_h3_request_package_only</span></td>
-        <td>10_h3_video_output/submission_status.json</td>
-      </tr>
-<tr>
-        <td><code>step_11_final_deliverable</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>11_final_deliverable</code></td>
-        <td>11_final_deliverable/final_review.md, 11_final_deliverable/final_delivery_index.json</td>
-      </tr>
-    </tbody>
-  </table>
-      </section>
-    </div>
+      <div class="two-col">
+        <section class="surface text-surface">
+    <div class="surface-head"><span>参考视频分析结果 / replication_outline.md</span></div>
+    <div class="empty">replication_outline.md 先空着</div>
+  </section>
+        <section class="prompt-pair">
+          <section class="surface text-surface">
+    <div class="surface-head"><span>发送给 H3 的实际 Prompt</span></div>
+    <div class="empty">H3 Prompt 先空着</div>
+  </section>
+          <section class="surface text-surface">
+    <div class="surface-head"><span>中文翻译版本</span></div>
+    <div class="empty">中文翻译版本先空着</div>
+  </section>
+        </section>
+      </div>
+    </section>
   </article>
 <article class="case" id="case-milk">
-    <div class="case-head">
+    <header class="case-head">
       <div>
-        <p class="case-kicker">Case 04 / milk</p>
+        <p class="kicker">Case 04 / milk</p>
         <h2>Tea Bottle Product Replacement</h2>
-        <p class="case-summary">参考视频生成一条新的视频，把牛奶换成东方树叶饮料</p>
+        <p>参考视频生成一条新的视频，把牛奶换成东方树叶饮料</p>
       </div>
-      <div class="badges">
-        <span class="badge ok">unknown</span>
-        <span class="badge">s reference</span>
-        <span class="badge">0 H3 shots</span>
-        <span class="badge ok">1 final video(s)</span>
+      <div class="status">
+        <span>0 张生成图</span>
+        <span>0/2 个结果视频</span>
       </div>
-    </div>
-    <div class="case-body">
-      <div class="media-grid">
-        <section class="panel">
-    <div class="panel-head"><span>Reference video</span><a href="test_data/milk/milk.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/milk/milk.mp4"></video></div>
-  </section>
-        <section class="panel">
-    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/milk/milk_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/milk/milk_vis.mp4"></video></div>
-  </section>
-        <section class="panel">
-    <div class="panel-head"><span>Generated result</span><a href="outputs/milk-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/milk-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
-  </section>
-      </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>User input assets</span><a href="test_data/milk/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/milk/user_input/东方树叶.jpg" alt="东方树叶.jpg"></div><div class="caption">东方树叶.jpg</div></div>
-<div class="asset"><pre class="text-box">参考视频生成一条新的视频，把牛奶换成东方树叶饮料</pre><div class="caption">test_data/milk/user_input/requirement.txt.txt</div></div></div>
-        </section>
-        <section class="panel">
-          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/milk-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_001.png" alt="rf_001.png"></div><div class="caption">rf_001.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_002.png" alt="rf_002.png"></div><div class="caption">rf_002.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_003.png" alt="rf_003.png"></div><div class="caption">rf_003.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_004.png" alt="rf_004.png"></div><div class="caption">rf_004.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_005.png" alt="rf_005.png"></div><div class="caption">rf_005.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_006.png" alt="rf_006.png"></div><div class="caption">rf_006.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_007.png" alt="rf_007.png"></div><div class="caption">rf_007.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_008.png" alt="rf_008.png"></div><div class="caption">rf_008.png</div></div></div>
-        </section>
-      </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/milk-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
-          <pre class="text-box">subject_definitions:
-&lt;Video 1&gt; is the reference video defining only composition, camera movement, transitions, action mechanics, shot order, timing, spatial relationships, continuity, and reveal structure; not identity, scene, or brand.
-&lt;Subject 1&gt; is the target product from &lt;Picture 1&gt;: the &quot;东方树叶&quot; oolong tea 500ml clear cylindrical PET bottle with a clear screw cap, amber tea liquid, a green neck label, and a white body label with a sailboat graphic; keep the silhouette, cap, tea color, and label layout faithful in every shot.
-&lt;Subject 2&gt; is the target on-screen person from &lt;Picture 2&gt;: an unidentifiable East Asian woman, 25-30, shoulder-length dark-brown wavy hair, light natural makeup, a thin necklace, low-saturation outfits (cream cardigan, dusty-blue top, light-grey activewear, beige dress); natural and energetic; not the person in &lt;Video 1&gt;.
-&lt;Subject 3&gt; is the target scene from &lt;Picture 3&gt;: a bright modern living room with a pale grey-blue sofa, light-wood coffee table, plants, and soft window daylight.
-&lt;Subject 4&gt; is the target scene from &lt;Picture 4&gt;: a clean modern fitness studio with foreground equipment, a dumbbell rack, mirrored walls, and even overhead light.
-&lt;Subject 5&gt; is the target scene from &lt;Picture 5&gt;: a warm minimalist lounge with a low table, beige arch decor, pale chairs, and soft warm light.
+    </header>
 
-summary:
-[reference generation] Generate a 15-second vertical 9:16 commercial lifestyle montage in which &lt;Subject 2&gt; presents &lt;Subject 1&gt; across several everyday scenes, following the shot order, camera language, transitions, and timing of &lt;Video 1&gt;, ending on a continuous action match into drinking.
-
-retention_analysis:
-&lt;Video 1&gt; (all shots): fully_preserved - composition, camera, transitions, action mechanics, shot order, timing, and continuity retained; sou</pre>
-        </section>
-        <section class="panel"><div class="panel-head"><span>Final review</span></div><div class="placeholder">No final_review.md found in this case.</div></section>
+    <section class="module">
+      <div class="module-title">
+        <span>01</span>
+        <h3>视频对照</h3>
       </div>
-      <section class="panel">
-        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/milk-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
-        <table class="step-table">
-    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><code>step_1_input_intake</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>00_inputs</code></td>
-        <td>input_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_2_reference_video_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>01_reference_video_analysis</code></td>
-        <td>reference_video_analysis.json, video_segment_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_3_asset_inventory</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>03_asset_inventory</code></td>
-        <td>asset_candidates.json, h3_input_asset_inventory.json</td>
-      </tr>
-<tr>
-        <td><code>step_4_target_asset_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>04_target_asset_analysis</code></td>
-        <td>target_asset_analysis.json, target_asset_vlm_responses.json</td>
-      </tr>
-<tr>
-        <td><code>step_5_replication_readiness</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>05_replication_readiness</code></td>
-        <td>replication_readiness_check.json</td>
-      </tr>
-<tr>
-        <td><code>step_6_replication_outline</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>06_replication_outline</code></td>
-        <td>replication_outline.json, replication_outline.md</td>
-      </tr>
-<tr>
-        <td><code>step_7_reference_frame_planning</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>07_reference_frame_plan</code></td>
-        <td>reference_frame_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_8_reference_frame_generation</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>08_reference_frames</code></td>
-        <td>rf_001.png, rf_002.png, rf_003.png, rf_004.png ...</td>
-      </tr>
-<tr>
-        <td><code>step_9_h3_packaging</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>09_h3_package</code></td>
-        <td>h3_packager_input.md, reference_mapping.md, pre_generation_checklist.md, minimax_h3_prompt.md ...</td>
-      </tr>
-<tr>
-        <td><code>step_10_h3_video_generation</code></td>
-        <td class="">skipped_dry_run</td>
-        <td><code></code></td>
-        <td></td>
-      </tr>
-<tr>
-        <td><code>step_11_final_deliverable</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>11_final_deliverable</code></td>
-        <td>final_deliverable_index.json, deliverable_review.md</td>
-      </tr>
-    </tbody>
-  </table>
-      </section>
-    </div>
+      <div class="video-grid">
+        <section class="surface">
+    <div class="surface-head"><span>原视频</span><a href="test_data/milk/milk.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/milk/milk.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>Depth video</span><a href="test_data/milk/milk_vis.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/milk/milk_vis.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考原视频</span></div>
+    <div class="empty">这里先空着，等 ref-video-result 放进 outputs。</div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考 depth video</span></div>
+    <div class="empty">这里先空着，等 depth-video-result 放进 outputs。</div>
+  </section>
+      </div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>02</span>
+        <h3>输入与生成图片</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface">
+          <div class="surface-head"><span>用户输入：文本 + 素材</span></div>
+          <div class="input-stack"><figure class="thumb">
+        <div class="thumb-media"><img src="test_data/milk/user_input/东方树叶.jpg" alt="东方树叶.jpg"></div>
+        <figcaption>东方树叶.jpg</figcaption>
+      </figure>
+<article class="text-asset">
+      <div class="mini-head"><span>requirement.txt.txt</span><a href="test_data/milk/user_input/requirement.txt.txt" target="_blank" rel="noreferrer">打开</a></div>
+      <pre>参考视频生成一条新的视频，把牛奶换成东方树叶饮料</pre>
+    </article></div>
+        </section>
+        <section class="surface">
+          <div class="surface-head"><span>生成图片</span></div>
+          <div class="empty">生成图片先空着</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>03</span>
+        <h3>分析与 H3 Prompt</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface text-surface">
+    <div class="surface-head"><span>参考视频分析结果 / replication_outline.md</span><a href="outputs/milk/v1-无音乐分析/replication_outline.md" target="_blank" rel="noreferrer">打开</a></div>
+    <pre># 复刻大纲审阅稿（replication_outline.md）
+
+- 状态：ready_with_assumptions
+- 生成范围：single_generation_task
+- 时间精度：one_decimal / truncate
+- timeline_unit 数：10；temporal_segment 数：17
+- 说明：下游 prompt 中的 `[Shot N]` 为 prompt-level shots（由 temporal_segments 生成），不是参考镜头的新拆分。
+
+## 目标与世界设定
+- 目标主体：东方树叶乌龙茶瓶
+- 人物实体：E_PERSON_01
+- 场景实体：E_SCENE_01, E_SCENE_02, E_SCENE_03
+
+## 场景迁移
+| 场景实体 | 参考场景 | 目标场景描述 | 可见差异 |
+| --- | --- | --- | --- |
+| E_SCENE_01 | 白色护墙板客厅 / 明亮大房间 / 室内房间 | 明亮现代客厅：浅色木地板、米白布艺沙发、圆形木质茶几、带纱帘的落地窗与绿植，暖白墙面，日间柔和自然光，画面干净通透 | 由白色护墙板+雕塑+米色扶手椅的自持宅邸客厅改为浅木+米白+绿植的现代公寓客厅 |
+| E_SCENE_02 | 咖啡馆 / 室内农场 | 阳光茶室：暖色木桌与座椅、格栅落地窗、绿植与陶制茶具，午后窗光落于桌面，暖木色与米色调，安静温润 | 由黑白地砖咖啡馆与室内动物农场改为暖木色阳光茶室 |
+| E_SCENE_03 | 户外砖路 / 健身房 / 户外广场 | 城市绿荫广场：浅灰石材铺装、行道树绿荫、长椅与步道，背景为弧形现代建筑，明亮日光，开阔清爽 | 由砖路+红色雨棚+停放汽车改为绿荫广场+浅灰铺装+弧形建筑，并替代原健身房场景 |
+
+## 记忆点迁移
+- `vm_001` (visual) 保留：鱼眼锁定机位、前景物体放大、主体位于中景的强制透视层次、边缘外弯与球面感；适配：前景物体改为东方树叶乌龙茶瓶、中景人物与场景改为目标世界
+- `vm_002` (visual) 保留：双手举起商品朝向镜头的展示手势、物品正对镜头并贴近、微笑与轻微晃动；适配：举起的目标商品改为东方树叶乌龙茶瓶
+- `vm_003` (visual) 保留：硬切快剪节奏、每个 shot 约 1 秒、跨 shot 维持同一展示手势与构图机制；适配：场景改为目标场景世界
+- `vm_004` (visual) 保留：开盖、送至唇边、仰头倾斜饮用、放下、较长停留；适配：容器与商品改为东方树叶乌龙茶瓶
+- `vm_005` (visual) 保留：平视中景、主体居中、人物持商品于胸前建立开场；适配：商品改为东方树叶乌龙茶瓶、人物外观与服装改为目标侧设定
+- `sm_001` (script) 保留：开场即人物+商品同框、平视中景亮相构图、配合口号的微笑亮相姿态；适配：人物与商品改为目标侧设定、开场文字按缺失处理或使用目标文案
+- `sm_002` (script) 保留：重复的举物向镜头展示手势、约每秒一镜的快切节奏、跨场景并列的证明结构；适配：被举物体统一改为目标商品、场景改为目标场景世界
+- `sm_003` (script) 保留：文字随镜头出现的信息节奏、中上/中下安全区位置、卖点信息递进结构；适配：文字内容改为目标侧文案；缺失时保留节拍并标记缺失
+- `sm_004` (script) 保留：完整使用动作链、结尾镜头停留较久、收束口号的出现位置与节奏；适配：容器与商品改为目标商品、结尾文字按缺失处理或使用目标文案
+- 音频：unsupported_skipped（音乐/BGM/音效/声音情绪/卡点节奏不参与复刻）
+
+## 分镜时间轴（segment 级）
+| Unit | Segment | 时间 | 参考功能 | 目标功能 | 场景迁移 | 主体/动作迁移 | 画面内文字/logo | 后期叠加 | 参考帧 | 缺失输入 | 状态 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| VS001_SH001 | VS001_SH001_S1 | 0.0-2.0s | visual_display | 建立人物与目标商品同框 | 明亮现代客厅：浅色木地板、米白布艺沙发、圆形木茶几、落地窗纱帘与绿植 | 女子在客厅把目标商品持于胸前微笑，身体轻微晃动 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_01 | 无 | ready |
+| VS001_SH001 | VS001_SH001_S2 | 2.0-2.3s | text_overlay_or_information_reveal | 开场文字出现节拍（目标文案缺失） | 明亮现代客厅：浅色木地板、米白布艺沙发、圆形木茶几、落地窗纱帘与绿植 | 女子在客厅把目标商品持于胸前微笑，身体轻微晃动 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_01 | 无 | ready |
+| VS001_SH002 | VS001_SH002_S1 | 2.3-3.3s | visual_display | 把目标商品推向镜头前展示并露出包装文字 | 同客厅空间，鱼眼镜头下画面边缘外弯 | 双臂前伸把目标商品举向镜头，瓶体贴近镜头放大 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_01 | 无 | ready |
+| VS001_SH003 | VS001_SH003_S1 | 3.3-4.3s | visual_display | 以普通茶点延续展示手势 | 阳光茶室：暖色木桌椅、格栅落地窗、绿植与陶制茶具 | 双手托茶点盘向镜头前伸，茶点贴近镜头放大，目标商品在桌面可见 | ready | 无 | frame_person_01、frame_scene_02 | 无 | ready |
+| VS001_SH004 | VS001_SH004_S1 | 4.3-4.8s | visual_display | 举瓶向镜头展示 | 同阳光茶室空间，窗光落于桌面 | 举瓶微笑，瓶体贴近镜头放大 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_02 | 无 | ready |
+| VS001_SH004 | VS001_SH004_S2 | 4.8-5.3s | text_overlay_or_information_reveal | 卖点文字出现节拍（目标文案缺失） | 同阳光茶室空间，窗光落于桌面 | 举瓶微笑，瓶体贴近镜头放大 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_02 | 无 | ready |
+| VS001_SH005 | VS001_SH005_S1 | 5.3-6.3s | visual_display | 在户外场景展示商品 | 城市绿荫广场：浅灰石材铺装、行道树绿荫、长椅与远处现代建筑 | 双手举瓶前伸，瓶体贴近镜头放大 | ready | 无 | frame_person_01、frame_scene_03 | 无 | ready |
+| VS001_SH006 | VS001_SH006_S1 | 6.3-7.3s | visual_display | 把商品置于运动情境展示 | 同城市绿荫广场，明亮日光 | 运动后双手举瓶微笑，瓶体贴近镜头放大 | ready | 无 | frame_person_01、frame_scene_03 | 无 | ready |
+| VS001_SH007 | VS001_SH007_S1 | 7.3-7.8s | visual_display | 商品与普通茶点一并展示 | 同阳光茶室空间 | 双手把目标商品与茶点一并举向镜头 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_02 | 无 | ready |
+| VS001_SH007 | VS001_SH007_S2 | 7.8-8.3s | text_overlay_or_information_reveal | 口感文字出现节拍（目标文案缺失） | 同阳光茶室空间 | 双手把目标商品与茶点一并举向镜头 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_02 | 无 | ready |
+| VS001_SH008 | VS001_SH008_S1 | 8.3-9.3s | visual_display | 运动后展示商品 | 同城市绿荫广场 | 拉伸后举瓶，瓶体贴近镜头放大 | ready | 无 | frame_person_01、frame_scene_03 | 无 | ready |
+| VS001_SH009 | VS001_SH009_S1 | 9.3-10.0s | visual_display | 建筑前展示商品 | 同城市绿荫广场，背景为弧形现代建筑 | 双手举瓶微笑，瓶体贴近镜头放大 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_03 | 无 | ready |
+| VS001_SH009 | VS001_SH009_S2 | 10.0-10.8s | text_overlay_or_information_reveal | 商品名文字出现节拍（目标文案缺失） | 同城市绿荫广场，背景为弧形现代建筑 | 双手举瓶微笑，瓶体贴近镜头放大 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_03 | 无 | ready |
+| VS001_SH010 | VS001_SH010_S1 | 10.8-11.5s | action_or_interaction | 持瓶展示 | 同明亮现代客厅，结尾镜头回到室内 | 右手持目标商品并略举展示 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_01 | 无 | ready |
+| VS001_SH010 | VS001_SH010_S2 | 11.5-12.5s | action_or_interaction | 拔盖并把瓶口送至唇边 | 同明亮现代客厅，结尾镜头回到室内 | 抬手拔开瓶盖，把瓶口缓缓送到唇边 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_01 | 无 | ready |
+| VS001_SH010 | VS001_SH010_S3 | 12.5-14.5s | action_or_interaction | 仰头倾斜饮用 | 同明亮现代客厅，结尾镜头回到室内 | 仰头倾斜瓶身饮用，瓶身保持清晰可见 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_01 | 无 | ready |
+| VS001_SH010 | VS001_SH010_S4 | 14.5-15.0s | closing_or_prompt | 放下瓶身并出现结尾文字节拍（目标文案缺失） | 同明亮现代客厅，结尾镜头回到室内 | 放低瓶身，收束动作 | ready | subtitle:missing_required_input | frame_person_01、frame_scene_01 | 无 | ready |
+
+## 参考帧计划
+- plan_required=True, person=1, scene=3, frames=4
+- 计划路径：07_reference_frame_plan/reference_frame_plan.json
+
+## 负向约束（audit）
+- 不得出现参考视频的原人物身份与服装特征
+- 不得出现参考视频原商品包装上的品牌文字与规格数字
+- 不得迁移参考视频专属道具（蛋糕、大蟹、笑脸面包、哑铃）
+- 不得生成未确认的功效、价格、活动或规格声明
+- 字幕、结尾提示与贴纸由后期叠加，H3 只生成 clean plate 并预留安全区</pre>
+  </section>
+        <section class="prompt-pair">
+          <section class="surface text-surface">
+    <div class="surface-head"><span>发送给 H3 的实际 Prompt</span></div>
+    <div class="empty">H3 Prompt 先空着</div>
+  </section>
+          <section class="surface text-surface">
+    <div class="surface-head"><span>中文翻译版本</span></div>
+    <div class="empty">中文翻译版本先空着</div>
+  </section>
+        </section>
+      </div>
+    </section>
   </article>
 <article class="case" id="case-nail-5">
-    <div class="case-head">
+    <header class="case-head">
       <div>
-        <p class="case-kicker">Case 05 / nail-5</p>
+        <p class="kicker">Case 05 / nail-5</p>
         <h2>Nail Product Scene 5</h2>
-        <p class="case-summary">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。</p>
+        <p>将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。</p>
       </div>
-      <div class="badges">
-        <span class="badge ok">unknown</span>
-        <span class="badge">s reference</span>
-        <span class="badge">0 H3 shots</span>
-        <span class="badge ok">1 final video(s)</span>
+      <div class="status">
+        <span>4 张生成图</span>
+        <span>2/2 个结果视频</span>
       </div>
-    </div>
-    <div class="case-body">
-      <div class="media-grid">
-        <section class="panel">
-    <div class="panel-head"><span>Reference video</span><a href="test_data/nail-5/nail-5.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-5/nail-5.mp4"></video></div>
+    </header>
+
+    <section class="module">
+      <div class="module-title">
+        <span>01</span>
+        <h3>视频对照</h3>
+      </div>
+      <div class="video-grid">
+        <section class="surface">
+    <div class="surface-head"><span>原视频</span><a href="test_data/nail-5/nail-5.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/nail-5/nail-5.mp4"></video></div>
   </section>
-        <section class="panel">
-    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/nail-5/nail-5_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-5/nail-5_vis.mp4"></video></div>
+        <section class="surface">
+    <div class="surface-head"><span>Depth video</span><a href="test_data/nail-5/nail-5_vis.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/nail-5/nail-5_vis.mp4"></video></div>
   </section>
-        <section class="panel">
-    <div class="panel-head"><span>Generated result</span><a href="outputs/nail-5-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/nail-5-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+        <section class="surface">
+    <div class="surface-head"><span>参考原视频</span><a href="outputs/nail-5/v1-无音乐分析/ref_video_result.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="outputs/nail-5/v1-无音乐分析/ref_video_result.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考 depth video</span><a href="outputs/nail-5/v1-无音乐分析/depth_video_result.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="outputs/nail-5/v1-无音乐分析/depth_video_result.mp4"></video></div>
   </section>
       </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>User input assets</span><a href="test_data/nail-5/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/nail-5/user_input/shangpin-3.png" alt="shangpin-3.png"></div><div class="caption">shangpin-3.png</div></div>
-<div class="asset"><pre class="text-box">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。</pre><div class="caption">test_data/nail-5/user_input/requirement.txt</div></div></div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>02</span>
+        <h3>输入与生成图片</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface">
+          <div class="surface-head"><span>用户输入：文本 + 素材</span></div>
+          <div class="input-stack"><article class="text-asset">
+      <div class="mini-head"><span>requirement.txt</span><a href="test_data/nail-5/user_input/requirement.txt" target="_blank" rel="noreferrer">打开</a></div>
+      <pre>将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。</pre>
+    </article>
+<figure class="thumb">
+        <div class="thumb-media"><img src="test_data/nail-5/user_input/shangpin-3.png" alt="shangpin-3.png"></div>
+        <figcaption>shangpin-3.png</figcaption>
+      </figure></div>
         </section>
-        <section class="panel">
-          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/nail-5-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/nail-5-replication-outline-dry-run/08_reference_frames/frame_person_001.png" alt="frame_person_001.png"></div><div class="caption">frame_person_001.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/nail-5-replication-outline-dry-run/08_reference_frames/frame_scene_001.png" alt="frame_scene_001.png"></div><div class="caption">frame_scene_001.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/nail-5-replication-outline-dry-run/08_reference_frames/frame_scene_002.png" alt="frame_scene_002.png"></div><div class="caption">frame_scene_002.png</div></div></div>
+        <section class="surface">
+          <div class="surface-head"><span>生成图片</span></div>
+          <div class="image-grid"><figure class="thumb">
+      <div class="thumb-media"><img src="outputs/nail-5/v1-无音乐分析/生成图片/RF001.png" alt="RF001.png"></div>
+      <figcaption>RF001.png</figcaption>
+    </figure>
+<figure class="thumb">
+      <div class="thumb-media"><img src="outputs/nail-5/v1-无音乐分析/生成图片/RF002.png" alt="RF002.png"></div>
+      <figcaption>RF002.png</figcaption>
+    </figure>
+<figure class="thumb">
+      <div class="thumb-media"><img src="outputs/nail-5/v1-无音乐分析/生成图片/RF003.png" alt="RF003.png"></div>
+      <figcaption>RF003.png</figcaption>
+    </figure>
+<figure class="thumb">
+      <div class="thumb-media"><img src="outputs/nail-5/v1-无音乐分析/生成图片/RF004.png" alt="RF004.png"></div>
+      <figcaption>RF004.png</figcaption>
+    </figure></div>
         </section>
       </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/nail-5-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
-          <pre class="text-box">subject_definitions:
-- &lt;Video 1&gt;: reference video excerpt (first 15s). Defines only composition, camera moves, transitions, action mechanics, shot order, timing, spatial relations, continuity and information reveal.
-- &lt;Subject 1&gt;: target nail art from &lt;Picture 1&gt;, dark gothic long stiletto press-on nails: black/dark-brown/grey-brown base, realistic eyeball patterns (black pupils, brown/yellow-green irises), white pearls, gold beads, metallic glitter, glossy resin/gel surface. It replaces the reference nail pattern on every visible nail.
-- &lt;Subject 2&gt;: non-identifiable performer from &lt;Picture 2&gt;, non-identifiable young woman, long loose wavy dark hair, dark low-saturation gothic makeup, dark top with long dark coat, silver-grey metal rings, layered dark bracelets, dark wide-brim hat. Keep the same identity and outfit across all shots.
-- &lt;Subject 3&gt;: dark gothic indoor dressing room from &lt;Picture 3&gt;: antique vanity mirror, deep velvet curtains, candle holders, dark dried flowers, low-key candlelight with cool window rim light.
-- &lt;Subject 4&gt;: moonlit gothic stone garden from &lt;Picture 4&gt;: dark stone walls, wrought-iron gate, ivy, wet stone, dark reflective pool, black roses, cold moonlight with warm lantern accents.
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>03</span>
+        <h3>分析与 H3 Prompt</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface text-surface">
+    <div class="surface-head"><span>参考视频分析结果 / replication_outline.md</span><a href="outputs/nail-5/v1-无音乐分析/replication_outline.md" target="_blank" rel="noreferrer">打开</a></div>
+    <pre># 复刻大纲审阅稿（common-video-replication-outline / shot_structure）
+
+- schema_version: `common_replication_outline.v2`
+- status: `ready_with_assumptions`
+- replication_mode: `shot_structure`
+- generation_scope: `single_generation_task`
+- 时间精度: `one_decimal` / `truncate`
+- 参考视频: 720x1280, 15.6s, 使用时间范围 0.0-15.0s
+- 目标视频时长: 15.0s, 画幅 9:16
+- timeline_unit 数（参考 shot 数）: 4
+- temporal_segment 数: 10
+- 参考帧: person=1, scene=3, planned=4, plan=07_reference_frame_plan/reference_frame_plan.json
+
+## 参考元素处理决策
+
+| element_id | element_type | decision | source_ref |
+| --- | --- | --- | --- |
+| ret_001 | time_structure | inherit | `reference_video_analysis.json.scenes[0].shots[] + script_construction_context.beats[]` |
+| ret_002 | shot_structure | inherit | `reference_video_analysis.json.video_prompt_source.shot_timeline[].static/spatial_framing` |
+| ret_003 | composition | inherit | `reference_video_analysis.json.video_prompt_source.special_mechanisms[type=picture-in-picture]` |
+| ret_004 | transition | inherit | `reference_video_analysis.json.video_prompt_source.special_mechanisms[type=foreground-wipe]` |
+| ret_005 | action_structure | inherit | `reference_video_analysis.json.memory_points.visual[memory_id=vm_003]` |
+| ret_006 | camera | inherit | `reference_video_analysis.json.scenes[0].video_generation.camera` |
+| ret_007 | subject_content | adapt | `reference_video_analysis.json.video_prompt_source.shot_timeline[].static（甲面描述）+ 04_target_asset_analysis.user_text_context_analysis.normalized.explicit_replacement_target` |
+| ret_008 | person_or_body | adapt | `reference_video_analysis.json.video_prompt_source.shot_timeline[].static（人物描述）` |
+| ret_009 | scene_content | adapt | `reference_video_analysis.json.scenes[0].video_generation.scene ＋ video_prompt_source.state_relation_summary[].observed_changes` |
+| ret_010 | prop | adapt | `reference_video_analysis.json.video_prompt_source.shot_timeline[shot_id=shot2/shot3].static` |
+| ret_011 | prop | adapt | `reference_video_analysis.json.video_prompt_source.shot_timeline[shot_id=shot4].static` |
+| ret_012 | text_or_ui | adapt | `reference_video_analysis.json.scenes[0].shots[].script_generation.text_slots ＋ script_construction_context.beats[]` |
+| ret_013 | dialogue_or_voiceover | discard | `reference_video_analysis.json.scenes[0].shots[].script_generation.event ＋ memory_points.script[]` |
+| ret_014 | unsupported_audio | discard | `05_script_analysis/asr_alignment.json.segment_alignment[].shots[].usable_as_dialogue` |
+| ret_015 | incidental_detail | discard | `reference_video_analysis.json.scenes[0].video_generation.scene.background_elements` |
+
+### 显式替换绑定
+- source_entity: 参考视频手指甲表面的美甲图案
+- target_entity: &lt;全局素材1&gt;，素材图片中的穿戴甲图案：长尖形/杏仁尖甲片，黑与深棕/灰褐为主色，白色与银色金属质感纹理，立体珍珠与金边珍珠，立体眼睛图案（棕与黄绿虹膜），滴落状黑胶，亮面凝胶高光
+- target_asset_ids: A001
+- affected_source_ids: VS001:shot1, VS001:shot2, VS001:shot3, VS001:shot4
+- segment 级覆盖数: 10, 未覆盖: 无
+- 源实体泄漏到 prompt 字段: `False`, 结论: `passed`
+
+## 全局外观实体（第二层 pass 去重结果）
+
+| entity_id | 名称 | entity_type | 素材名 | merge_status |
+| --- | --- | --- | --- | --- |
+| E001 | 目标甲面图案（穿戴甲设计） | main_subject_appearance | &lt;全局素材1&gt; | merged_single_entity |
+| E002 | 目标人物（不可识别身份的女性表演者） | person_appearance | &lt;人物1&gt; | merged_single_entity |
+| E003 | 场景1 室内暗调空间 | scene_appearance | &lt;场景1&gt; | merged_single_entity |
+| E004 | 场景2 户外暗色草地与静水 | scene_appearance | &lt;场景2&gt; | merged_single_entity |
+| E005 | 场景3 户外暗色坡地与金属格构结构 | scene_appearance | &lt;场景3&gt; | merged_single_entity |
+| E006 | 深色花材道具 | key_prop_appearance | &lt;全局素材2&gt; | merged_single_entity |
+| E007 | 画中画内的深色金属小物 | key_prop_appearance | 图内描述（不单独作为全局素材） | merged_single_entity |
+| E008 | 暗黑哥特亮面质感氛围 | style_atmosphere | 全片氛围 | merged_single_entity |
+
+## 场景迁移
+
+| transfer_id | 类型 | 目标实体 | 可见差异 |
+| --- | --- | --- | --- |
+| st_001 | preserve_scene_style | - | - |
+| st_002 | adapt_scene_content | E003 | 主色由米色/白色高亮墙面改为近黑深灰; 光照由均匀顶光改为单一侧向低照度硬光; 背景物由门框与通风口改为暗色布帘与深色金属边框 |
+| st_003 | adapt_scene_content | E004 | 天空由蓝天白云改为厚重阴云; 湖面由明亮高反射改为深色低反射静水; 草地由明亮绿改为暗绿近黑; 由清亮冷调日光改为低明度阴天散射光 |
+| st_004 | adapt_scene_content | E005 | 坡地由明亮绿地改为暗色岩土与暗草坡; 格构结构由浅色金属改为深色氧化金属; 天光由直射日光改为阴云散射光 |
+
+## 记忆点迁移
+
+| memory_id | type | 保留机制 | 绑定 |
+| --- | --- | --- | --- |
+| vm_001 | composition | 主画面与子画面同时可见的多层版式; 子画面固定在画面左上角及其相对尺寸关系; 主画面保持手部特写与浅景深背景 | VS001_seg7, VS001_shot3 |
+| vm_002 | transition | 前景手部贴近镜头遮挡画面的边界形态; 前后镜头都以手部为主体的动作承接 | VS001_seg3, VS001_shot1, VS001_shot2 |
+| vm_003 | micro_action | 抬手展示甲面的动作顺序; 手指张开与手掌朝向镜头的关键姿态; 手靠近面部/镜头的尺度变化; 夹持小物与触碰帽檐的接触点 | VS001_shot1, VS001_shot2, VS001_shot3, VS001_shot4 |
+| sm_001 | opening_hook | 开场先用第一人称文案建立情境; 把前置状态放在最前面作为对比前提 | VS001_seg1, VS001_seg2, mi_001 |
+| sm_002 | information_release_sequence | 做之前→做之后→细节→搭配的信息释放顺序; 每个阶段只增加一层新信息 | VS001_shot1, VS001_shot2, VS001_shot3, VS001_shot4 |
+| sm_003 | comparison_contrast | 用相同展示动作承接前后两种甲面状态; 在边界处完成状态切换 | VS001_seg2, VS001_seg3, VS001_seg4 |
+
+## 特殊机制迁移
+
+| mechanism_id | type | where | confidence | handoff | loss_risk | segments |
+| --- | --- | --- | --- | --- | --- | --- |
+| M001_foreground_wipe | special_transition | ['VS001_seg3'] | - | downstream_prompt | - | VS001_seg3 |
+| M002_picture_in_picture | special_composition | ['VS001_seg7'] | - | downstream_prompt | - | VS001_seg7 |
+| M003_nail_display_gesture_chain | micro_action | ['VS001_seg1', 'VS001_seg2', 'VS001_seg3', 'VS001_seg4', 'VS001_seg5', 'VS001_seg6', 'VS001_seg7', 'VS001_seg8', 'VS001_seg9', 'VS001_seg10'] | - | downstream_prompt | - | VS001_seg1, VS001_seg2, VS001_seg3, VS001_seg4, VS001_seg5, VS001_seg6, VS001_seg7, VS001_seg8, VS001_seg9, VS001_seg10 |
+
+## 时间轴
+
+### VS001_shot1  0.0-3.5s  （function: opening_hook）
+
+- 参考镜头: `VS001:shot1`
+- 生成画面: 室内中景到双手特写，先建立前置状态并把双手推向镜头，用前景遮挡触发转场
+- 必须可见: &lt;人物1&gt;; &lt;全局素材1&gt; 目标穿戴甲设计; &lt;场景1&gt;（室内暗调空间，深灰近黑哑光墙面与暗色布帘，保留一侧门框/镜框作竖向边界，单一侧向低照度硬光，低明度冷色偏移）
+- 使用素材: `reference_video_excerpt`(motion_camera_timing_reference), `A001`(nail_pattern_source_and_style_reference), `RF001`(person_reference), `RF002`(scene_reference)
+- 参考帧决策: RF001, RF002 (entity: E002, E003)
+- 后期叠加: O001
+- 缺失项: mi_001 / 生成假设: asm_002, asm_003, asm_005
+
+#### VS001_seg1  0.0-1.0s (1.0s)
+
+- 参考功能 / 目标功能: `visual_display` / `visual_display`
+- 生成画面（主体）: &lt;人物1&gt; 与双手（甲面呈基础凝胶基底状态）
+- 动作/运镜: 叉腰→放下→准备抬手的起始阶段；基本静止的手持镜头，极慢运动，轻微手持晃动
+- 构图/景别: 中景，主体居中偏下，双手位于画面下缘信息区; 平视机位，9:16 竖屏，主体与手部集中在中下区域
+- 场景迁移: [E003] &lt;场景1&gt;（室内暗调空间，深灰近黑哑光墙面与暗色布帘，保留一侧门框/镜框作竖向边界，单一侧向低照度硬光，低明度冷色偏移）
+- 甲面可见状态: 目标穿戴甲的基础凝胶基底状态（&lt;全局素材1&gt; 的黑色与深棕亮面基底，带银色金属细线纹理，不含立体珍珠与立体眼睛装饰）
+- 画面文字: 开场画面文字层占位（文案缺失），保留顶部出现位置与时间节拍
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: O001(caption, missing_required_input, 顶部居中安全区)
+- 参考帧: RF001, RF002
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: 无 / mi_001
+- status: `ready_with_assumptions`
+
+#### VS001_seg2  1.0-2.5s (1.5s)
+
+- 参考功能 / 目标功能: `action_or_interaction` / `action_or_interaction`
+- 生成画面（主体）: &lt;人物1&gt; 抬起的双手（甲面朝向镜头）
+- 动作/运镜: 抬起左手→抬起双手→手指张开→把甲面朝向镜头；基本静止的手持镜头，轻微晃动
+- 构图/景别: 中景过渡到双手特写，双手进入画面中央信息区; 平视，浅景深开始分离手部与背景
+- 场景迁移: [E003] &lt;场景1&gt;（室内暗调空间，深灰近黑哑光墙面与暗色布帘，保留一侧门框/镜框作竖向边界，单一侧向低照度硬光，低明度冷色偏移）
+- 甲面可见状态: 目标穿戴甲的基础凝胶基底状态（&lt;全局素材1&gt; 的黑色与深棕亮面基底，带银色金属细线纹理，不含立体珍珠与立体眼睛装饰）
+- 画面文字: 无画面文字变化
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: 无
+- 参考帧: RF001, RF002
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: 无 / 无
+- status: `ready_with_assumptions`
+
+#### VS001_seg3  2.5-3.5s (1.0s)
+
+- 参考功能 / 目标功能: `transition` / `transition`
+- 生成画面（主体）: 双手快速贴近镜头形成的运动模糊遮挡层
+- 动作/运镜: 双手持续靠近镜头→出现明显运动模糊→几乎填满画面→在遮挡边界处切出；镜头基本静止，主体快速向镜头推进形成运动模糊
+- 构图/景别: 双手特写逐步填满画面，主体占据画面绝大部分面积; 平视，镜头静止，靠主体靠近镜头放大
+- 场景迁移: [E003] &lt;场景1&gt;（室内暗调空间，深灰近黑哑光墙面与暗色布帘，保留一侧门框/镜框作竖向边界，单一侧向低照度硬光，低明度冷色偏移）
+- 甲面可见状态: 目标穿戴甲的基础凝胶基底状态（&lt;全局素材1&gt; 的黑色与深棕亮面基底，带银色金属细线纹理，不含立体珍珠与立体眼睛装饰）
+- 画面文字: 顶部文字层在镜头结束时淡出（文案缺失）
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: 无
+- 参考帧: RF001, RF002
+- 特殊机制: M001_foreground_wipe[special_transition]; M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: composition_conflict:nc_keep_occlusion_boundary / 无
+- status: `ready_with_assumptions`
+
+### VS001_shot2  3.5-9.0s  （function: reveal_and_proof）
+
+- 参考镜头: `VS001:shot2`
+- 生成画面: 户外中近景，揭开完整的目标甲面设计并给出名称信息，随后用靠近面部与夹持动作补充展示
+- 必须可见: &lt;人物1&gt;; &lt;全局素材1&gt; 目标穿戴甲设计; &lt;场景2&gt;（户外暗色草地与静水，前中后景层次保留，水面低反射深色静水，天空厚重阴云，冷色低明度散射光，轻微薄雾）
+- 使用素材: `reference_video_excerpt`(motion_camera_timing_reference), `A001`(nail_pattern_source_and_style_reference), `RF001`(person_reference), `RF003`(scene_reference)
+- 参考帧决策: RF001, RF003 (entity: E002, E004)
+- 后期叠加: O002
+- 缺失项: mi_001 / 生成假设: asm_002, asm_003, asm_004, asm_005
+
+#### VS001_seg4  3.5-5.5s (2.0s)
+
+- 参考功能 / 目标功能: `visual_display` / `visual_display`
+- 生成画面（主体）: &lt;人物1&gt; 在 &lt;场景2&gt; 中抬起的双手（呈现完整目标穿戴甲设计）
+- 动作/运镜: 双手抬起→多角度展示甲面→手掌转向镜头；基本静止的手持镜头，轻微晃动
+- 构图/景别: 中近景，主体居中，双手进入画面上部; 平视机位，浅景深使背景草地与水面柔和虚化
+- 场景迁移: [E004] &lt;场景2&gt;（户外暗色草地与静水，前中后景层次保留，水面低反射深色静水，天空厚重阴云，冷色低明度散射光，轻微薄雾）
+- 甲面可见状态: 完整的&lt;全局素材1&gt;：黑与深棕基底、银色金属纹理、立体珍珠与金边珍珠、立体眼睛图案（棕与黄绿虹膜）、滴落状黑胶
+- 画面文字: 无画面文字变化（名称标签自 5.5s 起出现，位于下一 segment）
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: 无
+- 参考帧: RF001, RF003
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: 无 / 无
+- status: `ready_with_assumptions`
+
+#### VS001_seg5  5.5-7.0s (1.5s)
+
+- 参考功能 / 目标功能: `text_overlay_or_information_reveal` / `text_overlay_or_information_reveal`
+- 生成画面（主体）: &lt;人物1&gt; 手部靠近面部、部分遮挡面部的手势
+- 动作/运镜: 双手抬起后靠近面部→部分遮挡面部；基本静止的手持镜头，轻微晃动
+- 构图/景别: 中近景，面部与手部同为信息区; 平视机位，浅景深
+- 场景迁移: [E004] &lt;场景2&gt;（户外暗色草地与静水，前中后景层次保留，水面低反射深色静水，天空厚重阴云，冷色低明度散射光，轻微薄雾）
+- 甲面可见状态: 完整的&lt;全局素材1&gt;：黑与深棕基底、银色金属纹理、立体珍珠与金边珍珠、立体眼睛图案（棕与黄绿虹膜）、滴落状黑胶
+- 画面文字: 顶部标签层占位（文案缺失），保留 5.5s 出现时间与顶部位置
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: O002(label, missing_required_input, 顶部居中安全区)
+- 参考帧: RF001, RF003
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: unconfirmed_text_logo:nc_no_invented_readable_text / mi_001
+- status: `ready_with_assumptions`
+
+#### VS001_seg6  7.0-9.0s (2.0s)
+
+- 参考功能 / 目标功能: `action_or_interaction` / `action_or_interaction`
+- 生成画面（主体）: &lt;人物1&gt; 口中叼深色花材、双手再次抬起展示甲面
+- 动作/运镜: 侧脸→双手再次抬起展示甲面→口部叼住深色花材；基本静止的手持镜头，轻微晃动
+- 构图/景别: 中近景，面部与手部同为信息区; 平视机位，浅景深
+- 场景迁移: [E004] &lt;场景2&gt;（户外暗色草地与静水，前中后景层次保留，水面低反射深色静水，天空厚重阴云，冷色低明度散射光，轻微薄雾）
+- 甲面可见状态: 完整的&lt;全局素材1&gt;：黑与深棕基底、银色金属纹理、立体珍珠与金边珍珠、立体眼睛图案（棕与黄绿虹膜）、滴落状黑胶
+- 画面文字: 无画面文字变化
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: 无
+- 参考帧: RF001, RF003
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: 无 / 无
+- status: `ready_with_assumptions`
+
+### VS001_shot3  9.0-10.5s  （function: detail_proof）
+
+- 参考镜头: `VS001:shot3`
+- 生成画面: 手部浅景深特写，叠加左上画中画子画面补展示甲面细节
+- 必须可见: &lt;人物1&gt;; &lt;全局素材1&gt; 目标穿戴甲设计; &lt;场景2&gt;（户外暗色草地与静水，前中后景层次保留，水面低反射深色静水，天空厚重阴云，冷色低明度散射光，轻微薄雾）
+- 使用素材: `reference_video_excerpt`(motion_camera_timing_reference), `A001`(nail_pattern_source_and_style_reference), `RF001`(person_reference), `RF003`(scene_reference)
+- 参考帧决策: RF001, RF003 (entity: E002, E004)
+- 后期叠加: O003
+- 缺失项: mi_001 / 生成假设: asm_002, asm_003, asm_004
+
+#### VS001_seg7  9.0-10.5s (1.5s)
+
+- 参考功能 / 目标功能: `visual_display` / `visual_display`
+- 生成画面（主体）: 单手浅景深特写夹持 &lt;全局素材2&gt; 深色花材，完整目标甲面清晰可见
+- 动作/运镜: 夹花静止→仅轻微移动，主画面与子画面同时保持；基本静止的手持镜头，极慢运动
+- 构图/景别: 手部浅景深特写，单手位于画面中央; 画面左上角固定一个独立子画面小窗，形成主画面＋子画面的多层版式
+- 场景迁移: [E004] &lt;场景2&gt;（户外暗色草地与静水，前中后景层次保留，水面低反射深色静水，天空厚重阴云，冷色低明度散射光，轻微薄雾）
+- 甲面可见状态: 完整的&lt;全局素材1&gt;：黑与深棕基底、银色金属纹理、立体珍珠与金边珍珠、立体眼睛图案（棕与黄绿虹膜）、滴落状黑胶
+- 画面文字: 底部说明文字层占位（文案缺失），保留底部位置与整段持续时间
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: O003(caption, missing_required_input, 底部居中安全区)
+- 参考帧: RF001, RF003
+- 特殊机制: M002_picture_in_picture[special_composition]; M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: composition_conflict:nc_keep_picture_in_picture_layout; unconfirmed_text_logo:nc_no_invented_readable_text / mi_001
+- status: `ready_with_assumptions`
+
+### VS001_shot4  10.5-15.0s  （function: closing）
+
+- 参考镜头: `VS001:shot4`
+- 生成画面: 暗色坡地与金属格构结构前的中景，换装后继续展示同一套甲面，并以正俯拍收束
+- 必须可见: &lt;人物1&gt;; &lt;全局素材1&gt; 目标穿戴甲设计; &lt;场景3&gt;（户外暗色坡地与深色金属格构结构，暗色岩土与暗草坡，远景格构框架作几何锚点，阴云散射光）
+- 使用素材: `reference_video_excerpt`(motion_camera_timing_reference), `A001`(nail_pattern_source_and_style_reference), `RF001`(person_reference), `RF004`(scene_reference)
+- 参考帧决策: RF001, RF004 (entity: E002, E005)
+- 后期叠加: 无
+- 缺失项: 无 / 生成假设: asm_002, asm_003
+
+#### VS001_seg8  10.5-12.5s (2.0s)
+
+- 参考功能 / 目标功能: `action_or_interaction` / `action_or_interaction`
+- 生成画面（主体）: &lt;人物1&gt; 在 &lt;场景3&gt; 中以炭黑色长外套与深色宽檐帽造型抬手展示完整甲面
+- 动作/运镜: 抬手展示甲面→手触碰帽檐；基本静止的手持镜头，轻微晃动
+- 构图/景别: 中景，主体居中，手部为信息区; 平视机位，背景格构结构位于远景
+- 场景迁移: [E005] &lt;场景3&gt;（户外暗色坡地与深色金属格构结构，暗色岩土与暗草坡，远景格构框架作几何锚点，阴云散射光）
+- 甲面可见状态: 完整的&lt;全局素材1&gt;：黑与深棕基底、银色金属纹理、立体珍珠与金边珍珠、立体眼睛图案（棕与黄绿虹膜）、滴落状黑胶
+- 画面文字: 无画面文字层
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: 无
+- 参考帧: RF001, RF004
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: 无 / 无
+- status: `ready_with_assumptions`
+
+#### VS001_seg9  12.5-13.5s (1.0s)
+
+- 参考功能 / 目标功能: `action_or_interaction` / `action_or_interaction`
+- 生成画面（主体）: &lt;人物1&gt; 蹲坐在 &lt;场景3&gt; 暗色坡地上、双手靠近面部
+- 动作/运镜: 蹲坐→手靠近面部→机位转为正俯拍；机位发生一次明显变化：由平视中景转为垂直向下的正俯拍
+- 构图/景别: 中景转为正俯拍，人物在画面中呈现地图式空间关系; 俯拍时人物位于画面中央，双手向镜头方向抬起
+- 场景迁移: [E005] &lt;场景3&gt;（户外暗色坡地与深色金属格构结构，暗色岩土与暗草坡，远景格构框架作几何锚点，阴云散射光）
+- 甲面可见状态: 完整的&lt;全局素材1&gt;：黑与深棕基底、银色金属纹理、立体珍珠与金边珍珠、立体眼睛图案（棕与黄绿虹膜）、滴落状黑胶
+- 画面文字: 无画面文字层
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: 无
+- 参考帧: RF001, RF004
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: 无 / 无
+- status: `ready_with_assumptions`
+
+#### VS001_seg10  13.5-15.0s (1.5s)
+
+- 参考功能 / 目标功能: `closing_or_prompt` / `closing_or_prompt`
+- 生成画面（主体）: 正俯拍下 &lt;人物1&gt; 双手抬起展示完整甲面
+- 动作/运镜: 俯拍展示→双手朝镜头抬起展示甲面→镜头结束；镜头基本静止，极慢运动，轻微手持晃动
+- 构图/景别: 正俯拍，双手占据画面中央并成为唯一信息区; 9:16 竖屏，主体居中
+- 场景迁移: [E005] &lt;场景3&gt;（户外暗色坡地与深色金属格构结构，暗色岩土与暗草坡，远景格构框架作几何锚点，阴云散射光）
+- 甲面可见状态: 完整的&lt;全局素材1&gt;：黑与深棕基底、银色金属纹理、立体珍珠与金边珍珠、立体眼睛图案（棕与黄绿虹膜）、滴落状黑胶
+- 画面文字: 无画面文字层
+- 画面内实体文字/logo: 无（未确认内容，不生成可读文字）
+- 后期叠加状态: 无
+- 参考帧: RF001, RF004
+- 特殊机制: M003_nail_display_gesture_chain[micro_action]
+- 禁止项/缺失项: 无 / 无
+- status: `ready_with_assumptions`
+
+## 脚本文案与音频
+
+- script_copy.status: `missing_inputs`
+- 画面文字槽: txt_001=missing_required_input; txt_002=missing_required_input; txt_003=missing_required_input
+- 台词/口播/旁白: 无（参考视频无口播，画面无口型）
+- unsupported_audio.status: `unsupported_skipped`
+- 交付指令: 音乐: 跟随参考视频音乐风格.
+
+## 缺失项与生成假设
+
+- missing_inputs: mi_001(on_screen_captions), mi_002(worn_state_carrier), mi_003(person_or_body), mi_004(scene_content), mi_005(supporting_props)
+- generation_assumptions: asm_001(nail_pattern_on_worn_state), asm_002(person_appearance), asm_003(scene_content), asm_004(supporting_props), asm_005(comparison_contrast_state)
+- blocking_items: 无
+
+## H3 状态
+
+- H3 packager input: `09_h3_package/h3_packager_input.md`（步骤 9 生成）
+- H3 prompt package: `09_h3_package/minimax_h3_prompt.md`（packager-minimax-h3 生成）
+- H3 request: 由本 dry-run 在 H3 提交边界前生成，未提交、未运行 H3 视频生成
+- H3 视频生成状态: `not_submitted_dry_run_boundary`
+
+## 说明
+
+- downstream prompt 若把 temporal_segments 渲染为多个 `[Shot N]`，那是 prompt 层段落标签；参考层仍是 4 个 shot。
+- 画面文字与字幕属后期叠加层，H3 只生成 clean plate 并预留顶部/底部安全区。
+- 音乐、BGM、音效与声音节奏保持 `unsupported_skipped`。</pre>
+  </section>
+        <section class="prompt-pair">
+          <section class="surface text-surface">
+    <div class="surface-head"><span>发送给 H3 的实际 Prompt</span><a href="outputs/nail-5/v1-无音乐分析/minimax_h3_prompt.md" target="_blank" rel="noreferrer">打开</a></div>
+    <pre>subject_definitions:
+&lt;Subject 1&gt; is the target nail design from &lt;Picture 1&gt;: ten long stiletto/almond tips, a black and dark-brown base, white and silver metallic lines, layered 3D pearls, small 3D eye motifs with brown and yellow-green irises and dripped black gel.
+&lt;Subject 2&gt; is the target performer from &lt;Picture 2&gt;: an unidentifiable adult East Asian woman with long centre-parted black hair, nude lips, a black matte long-sleeve top, a dark brown near-black leather lower garment and dark oxidised-metal jewellery.
+&lt;Subject 3&gt; is scene 1 from &lt;Picture 3&gt;: an indoor dark room beside a doorway and tall mirror with near-black walls, dark drapes and one low-key side light.
+&lt;Subject 4&gt; is scene 2 from &lt;Picture 4&gt;: outdoor dark grassland beside still dark water with dark foreground grass, low dark hills and a flat waterline behind, low-reflection water and heavy overcast cloud.
+&lt;Subject 5&gt; is scene 3 from &lt;Picture 5&gt;: outdoor dark sloping rock, soil and grass terrain with a tall dark oxidised-metal lattice frame behind and heavy grey cloud.
+&lt;Subject 6&gt; is the dark flower prop from the reviewed outline (no picture): a slim-stem flower with a deep purple or dark wine-red matte petal head.
+&lt;Subject 7&gt; is the small dark oxidised-metal object from the reviewed outline (no picture): a compact hand-held metal item seen only inside the inset window.
+&lt;Video 1&gt; is the reference video, a 15.0-second vertical excerpt used only as a structure reference for motion chain, camera language, transitions, shot order, timing and information release.
 
 summary:
-[reference generation] A 15s vertical 9:16 short video reproducing the reference's 8-shot montage structure, order, camera language, hard-cut rhythm, action mechanics and reveal beats, while replacing the nail pattern with &lt;Subject 1&gt; and adopting a dark gothic performer and scenes (&lt;Subject 2&gt;, &lt;Subject 3&gt;, &lt;Subject 4&gt;).
+[reference generation] A 15-second vertical 9:16 nail showcase in a low-key gothic dark palette, in which &lt;Subject 2&gt; displays &lt;Subject 1&gt; across four reference-structured shots set in &lt;Subject 3&gt;, &lt;Subject 4&gt; and &lt;Subject 5&gt;, following the motion and camera language of &lt;Video 1&gt; while every visible design, outfit and location is the target material.
 
 retention_analysis:
-- Retain from &lt;Video 1&gt;: vertical 9:16, 8-shot order, ~1.6s hard-cut montage rhythm, centered composition, tight hand close-ups, static camera with slight handheld sway, shallow depth of field, the opening hand pu</pre>
+&lt;Subject 1&gt; (all shots): fully_preserved - palette, metallic lines, 3D pearls, 3D eye motifs.
+&lt;Subject 2&gt; (all shots): fully_preserved - hair, makeup, dark metal styling.
+&lt;Subject 3&gt; (shot 1): fully_preserved - dark room, side light, vertical border.
+&lt;Subject 4&gt; (shots 2-3): fully_preserved - dark grassland, still water, overcast light.
+&lt;Subject 5&gt; (shot 4): fully_preserved - dark slope, metal lattice.
+&lt;Subject 6&gt; (shots 2-3): fully_preserved - slim stem, matte petal head.
+&lt;Subject 7&gt; (shot 3 inset): fully_preserved - inset window only.
+&lt;Video 1&gt;: attribute_transfer - motion chain, camera language, foreground wipe, picture-in-picture, shot order, timing, information release.
+
+detailed_description:
+Overall style: a 9:16 vertical nail showcase in a low-luminance, high-contrast cold-toned gothic palette, glossy gel, pearl and dark-metal highlights, light handheld drift and shallow depth of field. &lt;Video 1&gt; defines the motion chain, camera language, transitions, shot order and timing. Four reference shots are kept, with a foreground-wipe transition into shot 2 and hard cuts into shots 3 and 4; the labelled beats flow continuously inside each shot, and the top and bottom safe areas stay clean for later overlays.
+
+[Shot 1] A medium shot frames &lt;Subject 2&gt;, the unidentifiable East Asian woman with centre-parted black hair and a black matte top, in &lt;Subject 3&gt;, a dark indoor room with near-black walls, dark drapes and one low-key side light. Beat 1 (0.0-1.0s), one continuous take: she rests with hands at her waist, lowers both hands and prepares to lift them, hands at the lower frame edge, camera almost still, and the nails show only the base state of &lt;Subject 1&gt;, the black and dark-brown nails with silver metallic lines and no 3D decorations yet. Beat 2 (1.0-2.5s): Raise both hands, spread the fingers and turn the palms so the nail surfaces face the camera; the frame tightens to a two-hand close-up with shallow depth of field. Beat 3 (2.5-3.5s): Push both hands straight toward the lens so they fill the frame and blur, then cut at that occlusion; at the end of shot 1 the hands rush toward the camera until they almost fill the frame with motion blur and block the view, the cut lands exactly on that occlusion boundary, and shot 2 reopens on the hands in the new location.
+
+At 00:03.500 [Shot 2] &lt;Subject 2&gt; now wears a dark grey-black silk top in &lt;Subject 4&gt;, outdoor dark grassland beside still dark water under heavy overcast light. Beat 4 (3.5-5.5s): Raise both hands and rotate the wrists so the nail surfaces turn toward the camera from several angles; a medium close-up keeps her centred with the hands high in frame, and &lt;Subject 1&gt;, long black and dark-brown nails with silver metallic lines and brown and yellow-green 3D eye motifs, is fully visible. Beat 5 (5.5-7.0s): Bring the raised hands close to the face so the palm partly covers the face while the nails stay toward the lens, camera nearly still with shallow depth of field. Beat 6 (7.0-9.0s): Hold a small dark flower in the mouth while raising both hands again so the nails face the lens; she turns to profile holding &lt;Subject 6&gt;, a slim-stem flower with a deep purple matte head, and lifts both hands so &lt;Subject 1&gt; stays readable.
+
+At 00:09.000 [Shot 3] A shallow-depth close-up keeps one hand holding &lt;Subject 6&gt; between thumb and index finger with the nails toward the lens and only slight drift. Beat 7 (9.0-10.5s): Keep a small independent inset window fixed in the upper-left corner of the frame, showing a second hand holding &lt;Subject 7&gt;, a small dark oxidised-metal object, while the main frame stays a shallow-depth close-up of the hand holding the flower; the inset keeps a constant size and position there. &lt;Subject 1&gt;, the black and dark-brown nails with silver metallic lines and 3D pearl and eye decorations, is clearly visible in the main frame.
+
+At 00:10.500 [Shot 4] A hard cut enters a medium shot of &lt;Subject 2&gt; in a charcoal long coat and a dark wide-brim hat in &lt;Subject 5&gt;, a dark slope with a tall oxidised-metal lattice frame behind her. Beat 8 (10.5-12.5s): Raise both hands to show the nails, then bring one hand up to touch the brim of the dark wide-brim hat; the camera stays almost still and &lt;Subject 1&gt;, the black and dark-brown nails with silver metallic lines and 3D pearl and eye decorations, is fully visible. Beat 9 (12.5-13.5s): Squat down on the dark slope and bring both hands close to the face, then let the camera tilt to a strict overhead view; the framing changes inside the shot from a level medium shot to a vertical top-down view, with her hands lifting toward the lens. Beat 10 (13.5-15.0s): From the overhead view raise both hands toward the lens, spread the fingers and hold the nails open to the camera at the end; the hands occupy the centre as the only information area as the video ends.
+
+overall_soundscape:
+N/A
+
+non_diegetic_music:
+Follow the music style of the reference video.</pre>
+  </section>
+          <section class="surface text-surface">
+    <div class="surface-head"><span>中文翻译版本</span></div>
+    <div class="empty">中文翻译版本先空着</div>
+  </section>
         </section>
-        <section class="panel"><div class="panel-head"><span>Final review</span></div><div class="placeholder">No final_review.md found in this case.</div></section>
       </div>
-      <section class="panel">
-        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/nail-5-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
-        <table class="step-table">
-    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><code>step_1</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>00_inputs</code></td>
-        <td>00_inputs/input_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_2</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>01_reference_video_analysis</code></td>
-        <td>01_reference_video_analysis/reference_video_analysis.json, 01_reference_video_analysis/video_segment_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_3</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>03_asset_inventory</code></td>
-        <td>03_asset_inventory/h3_input_asset_inventory.json, 03_asset_inventory/asset_candidates.json</td>
-      </tr>
-<tr>
-        <td><code>step_4</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>04_target_asset_analysis</code></td>
-        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
-      </tr>
-<tr>
-        <td><code>step_5</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>05_replication_readiness</code></td>
-        <td>05_replication_readiness/replication_readiness_check.json</td>
-      </tr>
-<tr>
-        <td><code>step_6</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>06_replication_outline</code></td>
-        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
-      </tr>
-<tr>
-        <td><code>step_7</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>07_reference_frame_plan</code></td>
-        <td>07_reference_frame_plan/reference_frame_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_8</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>08_reference_frames</code></td>
-        <td>08_reference_frames/frame_person_001.png, 08_reference_frames/frame_scene_001.png, 08_reference_frames/frame_scene_002.png, 08_reference_frames/batch_generation_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_9</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>09_h3_package</code></td>
-        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md, 09_h3_package/minimax_h3_prompt.md</td>
-      </tr>
-<tr>
-        <td><code>step_10</code></td>
-        <td class="status-skipped">skipped</td>
-        <td><code>10_h3_video_output</code><br><span>dry_run_boundary_h3_request_package_only_no_video_generation</span></td>
-        <td>10_h3_video_output/request.json, 10_h3_video_output/submission_status.json</td>
-      </tr>
-<tr>
-        <td><code>step_11</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>11_final_deliverable</code></td>
-        <td>run_manifest.json, 11_final_deliverable/delivery_index.md, 11_final_deliverable/review.md, 11_final_deliverable/stage_artifacts.json</td>
-      </tr>
-    </tbody>
-  </table>
-      </section>
-    </div>
+    </section>
   </article>
 <article class="case" id="case-nail-6">
-    <div class="case-head">
+    <header class="case-head">
       <div>
-        <p class="case-kicker">Case 06 / nail-6</p>
+        <p class="kicker">Case 06 / nail-6</p>
         <h2>Nail Product Scene 6</h2>
-        <p class="case-summary">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮需要和美甲风格一致。</p>
+        <p>将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮需要和美甲风格一致。</p>
       </div>
-      <div class="badges">
-        <span class="badge ok">completed</span>
-        <span class="badge">s reference</span>
-        <span class="badge">0 H3 shots</span>
-        <span class="badge ok">1 final video(s)</span>
+      <div class="status">
+        <span>2 张生成图</span>
+        <span>2/2 个结果视频</span>
       </div>
-    </div>
-    <div class="case-body">
-      <div class="media-grid">
-        <section class="panel">
-    <div class="panel-head"><span>Reference video</span><a href="test_data/nail-6/nail-6.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-6/nail-6.mp4"></video></div>
-  </section>
-        <section class="panel">
-    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/nail-6/nail-6_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-6/nail-6_vis.mp4"></video></div>
-  </section>
-        <section class="panel">
-    <div class="panel-head"><span>Generated result</span><a href="outputs/nail-6-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
-    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/nail-6-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
-  </section>
-      </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>User input assets</span><a href="test_data/nail-6/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/nail-6/user_input/shangpin-3.png" alt="shangpin-3.png"></div><div class="caption">shangpin-3.png</div></div>
-<div class="asset"><pre class="text-box">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮需要和美甲风格一致。</pre><div class="caption">test_data/nail-6/user_input/requirement.txt</div></div></div>
-        </section>
-        <section class="panel">
-          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/nail-6-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
-          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/nail-6-replication-outline-dry-run/08_reference_frames/RF_PERSON_001.png" alt="RF_PERSON_001.png"></div><div class="caption">RF_PERSON_001.png</div></div>
-<div class="asset"><div class="asset-frame"><img src="outputs/nail-6-replication-outline-dry-run/08_reference_frames/RF_SCENE_001.png" alt="RF_SCENE_001.png"></div><div class="caption">RF_SCENE_001.png</div></div></div>
-        </section>
-      </div>
-      <div class="detail-grid">
-        <section class="panel">
-          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/nail-6-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
-          <pre class="text-box"># Minimax-H3 Ref2VA Prompt
+    </header>
 
-```text
-subject_definitions:
-&lt;Subject 1&gt; is the target nail-art pattern from &lt;Picture 1&gt;: long stiletto press-on nails with a black/charcoal-brown glossy gel base, 3D realistic eye cabochons with brown/green irises, pearls, small silver beads, gold metal discs and white marbled fluid pattern.
-&lt;Subject 2&gt; is the non-identifiable East Asian female performer from &lt;Picture 2&gt;: about 25-30 years old, long straight dark hair, cool-toned makeup with dark eyeliner, cool eyeshadow and matte dark lips, a black silk/leather-textured top, delicate metal earrings and a thin necklace, neutral metal and pearl rings, calm confident temperament.
-&lt;Subject 3&gt; is the dark indoor scene from &lt;Picture 3&gt;: a dim bedroom/vanity corner, dark velvet fabric or dark wood wall background with a few subtle metallic decor objects, low-key lighting with large shadow areas, a single warm practical light source and a cool rim light, velvet/wood/metal materials.
-&lt;Video 1&gt; is the reference video, used only for composition, camera language, action mechanics, shot order, timing, spatial relations, continuity and information-reveal structure.
+    <section class="module">
+      <div class="module-title">
+        <span>01</span>
+        <h3>视频对照</h3>
+      </div>
+      <div class="video-grid">
+        <section class="surface">
+    <div class="surface-head"><span>原视频</span><a href="test_data/nail-6/nail-6.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/nail-6/nail-6.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>Depth video</span><a href="test_data/nail-6/nail-6_vis.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="test_data/nail-6/nail-6_vis.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考原视频</span><a href="outputs/nail-6/v1-无音乐分析/ref_video_result.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="outputs/nail-6/v1-无音乐分析/ref_video_result.mp4"></video></div>
+  </section>
+        <section class="surface">
+    <div class="surface-head"><span>参考 depth video</span><a href="outputs/nail-6/v1-无音乐分析/depth_video_result.mp4" target="_blank" rel="noreferrer">打开</a></div>
+    <div class="video-box"><video controls preload="metadata" playsinline src="outputs/nail-6/v1-无音乐分析/depth_video_result.mp4"></video></div>
+  </section>
+      </div>
+    </section>
 
+    <section class="module">
+      <div class="module-title">
+        <span>02</span>
+        <h3>输入与生成图片</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface">
+          <div class="surface-head"><span>用户输入：文本 + 素材</span></div>
+          <div class="input-stack"><article class="text-asset">
+      <div class="mini-head"><span>requirement.txt</span><a href="test_data/nail-6/user_input/requirement.txt" target="_blank" rel="noreferrer">打开</a></div>
+      <pre>将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮需要和美甲风格一致。</pre>
+    </article>
+<figure class="thumb">
+        <div class="thumb-media"><img src="test_data/nail-6/user_input/shangpin-3.png" alt="shangpin-3.png"></div>
+        <figcaption>shangpin-3.png</figcaption>
+      </figure></div>
+        </section>
+        <section class="surface">
+          <div class="surface-head"><span>生成图片</span></div>
+          <div class="image-grid"><figure class="thumb">
+      <div class="thumb-media"><img src="outputs/nail-6/v1-无音乐分析/生成图片/RF_PERSON_001.png" alt="RF_PERSON_001.png"></div>
+      <figcaption>RF_PERSON_001.png</figcaption>
+    </figure>
+<figure class="thumb">
+      <div class="thumb-media"><img src="outputs/nail-6/v1-无音乐分析/生成图片/RF_SCENE_001.png" alt="RF_SCENE_001.png"></div>
+      <figcaption>RF_SCENE_001.png</figcaption>
+    </figure></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="module">
+      <div class="module-title">
+        <span>03</span>
+        <h3>分析与 H3 Prompt</h3>
+      </div>
+      <div class="two-col">
+        <section class="surface text-surface">
+    <div class="surface-head"><span>参考视频分析结果 / replication_outline.md</span><a href="outputs/nail-6/v1-无音乐分析/replication_outline.md" target="_blank" rel="noreferrer">打开</a></div>
+    <pre># 复刻大纲审阅稿（nail-6 · dry-run）
+
+- schema: `common_replication_outline.v2`
+- 状态：`ready_with_assumptions`
+- 生成范围：`single_generation_task`（单一连续镜头）
+- 目标时长：12.6s，竖屏 9:16
+- 时间精度：小数点后一位截断（`2.567 -&gt; 2.5`）
+- 参考视频：`test_data/nail-6/nail-6.mp4`（VS001 单镜头 0.0-12.6s）
+- 目标素材：`test_data/nail-6/user_input/shangpin-3.png`（A001 美甲成品平铺图）
+
+## 用户诉求
+
+- 将参考视频里的美甲图案替换成素材图片（A001）里的美甲图案。
+- 人物的装扮需要和美甲风格一致。
+
+## 参考元素处理摘要
+
+- `inherit`：单镜头时间结构、居中+前景遮挡紧凑特写、静止手持自拍机位、交握→旋转→张开的动作链、7.1-7.4s 镜头内遮挡揭示。
+- `adapt`：美甲图案（显式替换为 A001）、人物（非特定身份女性 + 装扮适配暗黑风格）、场景（冷调暗色车厢）、配饰（银属金属）、视觉风格（冷调暗调）、口播（仅保留节拍）。
+- `discard`：原片人物身份与外貌、原片口型文案、原片金色配饰配色、音频层面复刻。
+
+## 时间轴
+
+### TU001 0.0-12.6s｜unit_type=video_shot（单镜头）
+
+参考功能：美甲细节特写开场→遮挡揭示人物→对镜头口播收束。
+
+#### 分镜 TU001_TS001 0.0-7.1s（7.1s）
+
+- 参考功能 / 目标功能：`visual_display` / 以 A001 美甲图案前景特写开场并遮挡面部，先释放细节信息
+- 生成画面：佩戴 A001 图案美甲的双手交握于面部前方，居中大比例占据画面，面部被遮挡
+- 生成动作/运镜：交握 → 旋转/翻转 → 张开十指 → 交叠停留；机位基本固定，轻微手持晃动
+- 场景迁移摘要：车厢空间结构保留，内饰适配为冷调暗色（深灰/炭黑皮革），窗外为暗色虚化光斑
+- 使用素材：`&lt;参考视频&gt;`（运动/机位/时间）、`&lt;A001&gt;`（美甲图案/甲型/装饰）
+- 参考帧决策：`引用 RF_PERSON_001 / RF_SCENE_001`（人物/场景一致性锚点）
+- 画面内实体文字/logo 状态：无
+- 后期叠加状态：无
+- 特殊机制：SM001 前景遮挡紧凑特写（inherit）、SM002 双手展示 micro action（adapt）
+- 缺失输入：无
+- 状态：`ready_with_assumptions`
+
+#### 分镜 TU001_TS002 7.1-7.4s（0.3s）
+
+- 参考功能 / 目标功能：`transition` / 手部扫出形成遮挡后在同一镜头内揭示目标人物面部
+- 生成画面：佩戴 A001 图案美甲的双手向下扫过镜头前景并出画，面部显露
+- 生成动作/运镜：双手自上向下扫出画面，机位与空间保持连续
+- 场景迁移摘要：空间与机位连续
+- 使用素材：`&lt;参考视频&gt;`、`&lt;A001&gt;`
+- 参考帧决策：`引用 RF_PERSON_001 / RF_SCENE_001`
+- 画面内实体文字/logo 状态：无
+- 后期叠加状态：无
+- 特殊机制：SM003 镜头内前景遮挡揭示转场（inherit，非硬切）
+- 缺失输入：无
+- 状态：`ready_with_assumptions`
+
+#### 分镜 TU001_TS003 7.4-12.6s（5.2s）
+
+- 参考功能 / 目标功能：`action_or_interaction` / 人物面部揭示后微笑并对镜头说话，完成口播节拍
+- 生成画面：目标人物面部露出，中近景居中，微笑并对镜头说话
+- 生成动作/运镜：面部保持居中，轻微自然头部动作；机位固定
+- 场景迁移摘要：车厢空间与浅景深背景保留，冷调暗色内饰
+- 使用素材：`&lt;参考视频&gt;`（机位/节奏）、`&lt;RF_PERSON_001&gt;`（人物一致性）
+- 参考帧决策：`引用 RF_PERSON_001 / RF_SCENE_001`
+- 画面内实体文字/logo 状态：无
+- 后期叠加状态：无
+- 特殊机制：无
+- 缺失输入：`MI001` 目标口播文案缺失（仅保留口播节拍）
+- 状态：`ready_with_assumptions`
+
+## 记忆点迁移
+
+- `vm_001` 前景遮挡紧凑特写 → 保留构图机制，主体换成 A001 美甲双手（TS001）
+- `vm_002` 交握→旋转→张开动作链 → 保留动作顺序与停顿，图案换成 A001（TS001）
+- `vm_003` 遮挡扫出揭示面部 → 保留镜头内揭示机制（TS002）
+- `sm_001` 先细节后人物的悬念开场 → 保留信息推迟顺序（TS001）
+- `sm_002` 细节→揭示→人物→口播释放序列 → 保留顺序与节奏，文案缺失（TS003）
+
+## 全局外观库（第二层 pass）
+
+- `SUB001` 目标美甲设计（A001 图案）：尖长甲型、灰褐/黑底、银白立体熔岩纹、立体眼睛、珍珠、金属圆片
+- `P001` 目标人物（非特定身份成年女性）：近黑色中长发、冷调妆容、炭黑深色纹理上衣含银属细节、银属配饰
+- `S001` 冷调暗色车厢自拍空间：深灰/炭黑皮革座椅、冷调微光、暗色窗外虚化、浅景深
+- `PROP001` 银属配饰与前景道具：银/枪灰戒指与手链、左下方向盘局部
+- `ATM001` 暗调贴身自拍氛围：冷调低照度、真实手持自拍质感、亮面甲面高光
+
+## 参考帧决策
+
+- 触发规则：`person_reference_entity_present`、`scene_reference_entity_present`
+- 计划：`RF_PERSON_001`（P001 纯人物参考）、`RF_SCENE_001`（S001 纯场景参考）
+- 计划文件：`07_reference_frame_plan/reference_frame_plan.json`
+
+## 负向约束与 guardrail
+
+- 全局最高优先 guardrail：画面内不生成任何可读文字、logo、水印或 UI；美甲图案需保持 A001 的底色、立体纹理、立体眼睛与珍珠装饰特征。
+- 源身份/源服装/源发色/金色配饰、原口播文案均为 audit-only，不进入 H3 prompt。
+- 被替换的源侧美甲词仅保留在审计字段，不写入 H3 分镜句子。
+
+## 状态与缺口
+
+- 缺失输入：`MI001` 口播文案（不阻塞）、`MI002` 人物身份（按假设生成）、`MI003` 场景（按假设生成）
+- 阻塞项：无
+- 整体状态：`ready_with_assumptions`</pre>
+  </section>
+        <section class="prompt-pair">
+          <section class="surface text-surface">
+    <div class="surface-head"><span>发送给 H3 的实际 Prompt</span><a href="outputs/nail-6/v1-无音乐分析/minimax_h3_prompt.md" target="_blank" rel="noreferrer">打开</a></div>
+    <pre>subject_definitions:
+&lt;Video 1&gt;: the reference video (assets/reference_video_VS001.mp4), used only for composition, camera movement, transition mechanism, shot order, timing rhythm, spatial relations, continuity and information-reveal structure; it is not a source of visual content.
+&lt;Subject 1&gt;: the target woman defined by &lt;Picture 1&gt;, a non-identifiable adult woman facing the camera with near-black mid-length center-parted hair, a cool-toned natural makeup look, a charcoal dark textured top with silver hardware details, and silver/gunmetal rings and bracelets.
+&lt;Subject 2&gt;: the target car-interior space defined by &lt;Picture 2&gt;, a selfie viewpoint in a driving-seat area with a dark matte steering wheel in the lower-left foreground, dark grey/charcoal leather seats and headrests in the midground, and dark out-of-focus bokeh outside the windows in the background, under cool soft top-side light with shallow depth of field.
+&lt;Subject 3&gt;: the target nail-art design defined by &lt;Picture 3&gt;, ten long stiletto-shaped nails with taupe/black grounds, silver-white three-dimensional lava/marble flowing texture, 3D eyes with brown and yellow-green irises, small white pearls, gold-rimmed discs and 3D beads, worn on the woman's hands.
 summary:
-[reference generation] Reproduce the reference video's single continuous selfie shot, replacing the nail-art pattern with &lt;Subject 1&gt; and styling &lt;Subject 2&gt; in &lt;Subject 3&gt; to match the dark gothic nail-art aesthetic.
-
+[reference generation] Replicate the reference video's single continuous vertical selfie shot: hands wearing the target nail art show it as a foreground close-up that hides the face, then sweep down and out of frame within the same take to reveal the woman's face as she smiles and speaks to camera, inside a cool dark car interior; inherit only the reference composition, camera, transition mechanism, shot order, timing and reveal structure.
 retention_analysis:
-Retain the single continuous-shot structure, the tight centered selfie framing, the slight natural handheld shake, the front-hand occlusion that reveals the face, and the information order from local detail (nails) to the subject (face). Replace the reference nail pattern with &lt;Subject 1&gt;, neutralize the reference person's identity with &lt;Subject 2&gt;, and adapt the bright car interior to the dark indo</pre>
+Inherited from &lt;Video 1&gt;: single continuous vertical shot structure; centered foreground-occlusion tight close-up; near-static handheld selfie camera with slight shake; wide-angle selfie perspective with no zoom and no focus change; the display-then-reveal-then-speak order; the 0.0-7.1s nail showcase, the 7.1-7.4s foreground wipe reveal, and the 7.4-12.6s talking beat. Adapted/replaced: the reference video's own subject identity, clothing, hair, jewelry and scene appearance are not used; the target woman, the cool dark car interior and the nail-art pattern come from &lt;Picture 1&gt;, &lt;Picture 2&gt; and &lt;Picture 3&gt;.
+detailed_description:
+Cool-toned, dark, realistic handheld selfie look; large low-key shadow areas with soft controlled light on the subject; a charcoal, cool-grey and cold-white palette with low-reflection leather and metal, plus glossy gel highlights on &lt;Subject 3&gt;. This is a single continuous vertical selfie shot with no cuts or transitions; each beat flows directly into the next within the same take.
+[Shot 1] Inside &lt;Subject 2&gt;, the woman &lt;Subject 1&gt; raises both hands in front of her face so the hands occupy the center of frame as a tight foreground close-up that fully hides her face, compressing the environment into the mid and background. Her ten long stiletto-shaped nails, &lt;Subject 3&gt;, show taupe/black grounds with silver-white three-dimensional lava/marble flowing texture, 3D eyes with brown and yellow-green irises, small white pearls, gold-rimmed discs and 3D beads, catching a cool soft highlight. The hands first clasp together, then rotate slightly and turn over, then slowly spread the ten fingers to show the nail surfaces, with one pause and a slight secondary adjustment; her silver/gunmetal rings and bracelets stay visible during the movement. The camera is a near-static handheld selfie with slight shake, wide-angle selfie perspective, no zoom and no focus change, and &lt;Subject 1&gt; stays centered and large in frame.
+At 00:07.100, the same hands carrying &lt;Subject 3&gt; — the long stiletto nails with taupe/black grounds, silver-white three-dimensional lava/marble texture, eyes and pearls — sweep downward across the foreground and fully exit frame, revealing &lt;Subject 1&gt;'s face within the same continuous take; the camera position and the &lt;Subject 2&gt; space stay continuous and there is no hard cut, forming a brief rhythm break before the face becomes visible.
+At 00:07.400, &lt;Subject 1&gt;'s face is revealed in a centered medium close-up inside &lt;Subject 2&gt; with the background simplified, as she smiles and speaks to the camera, holding the final information-release beat; her charcoal textured top and silver/gunmetal jewelry stay consistent with the nail-art look. The camera stays fixed with shallow depth of field and no cuts, keeping the face visible. The frame contains no readable text, logo, watermark or UI.
+overall_soundscape:
+N/A
+non_diegetic_music:
+Follow the music style of &lt;Video 1&gt;.</pre>
+  </section>
+          <section class="surface text-surface">
+    <div class="surface-head"><span>中文翻译版本</span></div>
+    <div class="empty">中文翻译版本先空着</div>
+  </section>
         </section>
-        <section class="panel"><div class="panel-head"><span>Final review</span></div><div class="placeholder">No final_review.md found in this case.</div></section>
       </div>
-      <section class="panel">
-        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/nail-6-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
-        <table class="step-table">
-    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><code>step_1_input_intake</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>00_inputs</code></td>
-        <td>00_inputs/input_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_2_reference_video_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>01_reference_video_analysis</code></td>
-        <td>01_reference_video_analysis/reference_video_analysis.json</td>
-      </tr>
-<tr>
-        <td><code>step_3_asset_inventory</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>03_asset_inventory</code></td>
-        <td>03_asset_inventory/h3_input_asset_inventory.json</td>
-      </tr>
-<tr>
-        <td><code>step_4_target_asset_analysis</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>04_target_asset_analysis</code></td>
-        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
-      </tr>
-<tr>
-        <td><code>step_5_replication_readiness</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>05_replication_readiness</code></td>
-        <td>05_replication_readiness/replication_readiness_check.json</td>
-      </tr>
-<tr>
-        <td><code>step_6_replication_outline</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>06_replication_outline</code></td>
-        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
-      </tr>
-<tr>
-        <td><code>step_7_reference_frame_plan</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>07_reference_frame_plan</code></td>
-        <td>07_reference_frame_plan/reference_frame_plan.json</td>
-      </tr>
-<tr>
-        <td><code>step_8_reference_frame_generation</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>08_reference_frames</code></td>
-        <td>08_reference_frames/RF_PERSON_001.png, 08_reference_frames/RF_SCENE_001.png, 08_reference_frames/batch_generation_manifest.json</td>
-      </tr>
-<tr>
-        <td><code>step_9_h3_packaging</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>09_h3_package</code></td>
-        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md, 09_h3_package/h3_request.json ...</td>
-      </tr>
-<tr>
-        <td><code>step_10_h3_video_generation</code></td>
-        <td class="status-skipped">skipped</td>
-        <td><code>10_h3_video_output</code><br><span>dry_run_boundary: H3 request/package produced but not submitted; no H3 video generation executed</span></td>
-        <td></td>
-      </tr>
-<tr>
-        <td><code>step_11_final_deliverable</code></td>
-        <td class="status-completed">completed</td>
-        <td><code>11_final_deliverable</code></td>
-        <td>11_final_deliverable/delivery_index.json, 11_final_deliverable/final_deliverable_review.md, 11_final_deliverable/stage_artifact_inventory.json</td>
-      </tr>
-    </tbody>
-  </table>
-      </section>
-    </div>
+    </section>
   </article>
-        </section>
       </main>
-      <footer class="footer">
-        <div class="wrap">Data roots: <code>test_data/</code> and <code>outputs/</code>. Generated as a static UTF-8 page.</div>
+      <footer>
+        <div class="wrap">Static GitHub Pages gallery. Assets are loaded from relative paths under <code>test_data/</code> and <code>outputs/</code>.</div>
       </footer>
     </div>
   </div>

@@ -1,8 +1,0 @@
-{
-  "segment_id": "VS001",
-  "input_mode": "video_url",
-  "fps": 4,
-  "max_frames": 256,
-  "media_url": "http://10.42.1.1:30100/v1/assets/asset_c6c2c84b8c3c4e86b2f02626d9899757/content",
-  "response_text": "1. Global read and confidence:\n- confidence: high\n- limits: 视频为竖屏拍摄，背景细节（如看台结构）因景深和距离略显模糊；人物面部表情在快速动作中偶有轻微运动模糊；采样帧率下，极快速的脚步交替细节（如脚尖触地瞬间）可能存在微小的时间间隔盲区，但整体动作连贯性清晰。\n\n2. Shot timeline:\n- [shot1: 0.0-10.125s] single continuous shot\n\n3. Shot details:\n[shot1: 0.0-10.125s]\n- [static] 画面为竖屏构图，主体为一名年轻男性，位于画面中央。他身穿米白色连帽卫衣（帽子戴在头上，遮住部分头发），深棕色运动短裤，白色中筒袜，白色运动鞋。背景是一个空旷的户外体育场看台区域，地面为灰色混凝土，画有白色线条。远处可见红色的看台座椅、金属栏杆和立柱，天空阴沉，光线为漫射自然光，无强烈阴影。整体色调偏冷、低饱和度。\n- [dynamic] 人物进行连续的舞蹈动作。起始时（0.0s）双脚分开站立，双手自然下垂。随后（0.5s-1.5s）开始大幅度肢体摆动，双臂向两侧伸展并收回，腿部进行交叉步和踢腿动作。动作节奏较快，伴随身体重心的左右移动和上下起伏。期间（2.0s-4.0s）有类似拳击或格斗姿势的手臂动作，双拳紧握在胸前或向前伸出。后半段（5.0s-10.0s）动作转为更流畅的舞步，包括单脚支撑、另一只脚点地或抬起，手臂配合身体律动摆动。全程人物面向镜头，眼神注视前方，表情专注。摄影机保持固定机位，无推拉摇移，焦点始终锁定在人物身上。\n\n4. Adjacent-shot state relation table:\n- initial_state: 人物站立于体育场中央，穿着米白卫衣、深棕短裤、白袜白鞋，背景为阴天户外看台。\n- [shot1 -> shot2][state-relation]: not_applicable_single_continuous_shot\n\n5. Cross-shot relations:\n- not_applicable_single_continuous_shot\n\n6. Special mechanism scan:\n- not_observed\n\n7. Text/logo/UI/graphics:\n- 无可见文字、logo、水印、字幕、UI、贴纸、图形层、画中画内容、边框或叠加层。\n\n8. Visual memory candidates:\n- not_observed\n\n9. Uncertainty:\n- 人物具体身份未知。\n- 舞蹈动作的具体风格或名称无法从画面直接确认。\n- 背景中远处看台的具体结构细节因距离和景深而模糊，无法精确描述每一层看台的布局。\n- 动作起始前的准备状态（0.0s之前）不可见。"
-}

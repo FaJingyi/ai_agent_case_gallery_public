@@ -1,5 +1,0 @@
-{
-  "status": "dry_run",
-  "request_json": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/dance-replication-outline-dry-run/10_h3_video_output/request.json",
-  "endpoint": "http://10.42.1.2:30011/v2/video_generation"
-}

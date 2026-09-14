@@ -1,9 +1,0 @@
-{
-  "segment_id": "VS001",
-  "model": "Qwen3.8-27B",
-  "input_mode": "video_url",
-  "fps": 4,
-  "max_frames": 256,
-  "media_url": "http://10.42.1.1:30100/v1/assets/asset_b2b5d57bdcef45348fb28f8d59f8657a/content",
-  "response": "1. Global read and confidence:\n观察完整片段。置信度 high。\n限制：视频前段（0.0-7.5s）人物面部被双手完全遮挡，无法观察面部特征；手部动作较快，部分帧存在运动模糊；车内光线较暗，主要依赖天窗自然光，导致部分阴影区域细节（如衣物纹理）不够清晰。\n\n2. Shot timeline:\n[shot1: 0.0-12.6s] single continuous shot\n\n3. Shot details:\n[shot1]\n[static]\n主体：一名长发女性，坐在汽车驾驶座（左侧可见方向盘）。\n场景：汽车内部，黑色皮革座椅，天窗开启，背景可见绿色树木和天空。\n道具/配饰：双手佩戴多枚金色戒指（包括宽版、细版、镶钻款），手腕佩戴金色手链，颈部佩戴两条细项链（吊坠分别为圆形和圆形带钻）。指甲为长款美甲，带有蓝白渐变和立体装饰。\n构图：竖屏自拍视角，近景/特写。\n光线：自然光，从上方天窗射入，面部和手部受光均匀，车内环境较暗。\n色彩：黑色（车内、衣物）、金色（首饰）、肤色、绿色（背景树木）。\n\n[dynamic]\n0.0-3.5s：双手举至面部前方，十指交叉紧扣，展示手指上的戒指。双手轻微晃动，调整角度以展示不同戒指。\n3.5-7.5s：双手松开，手指张开并相互交错，展示长款美甲的细节。双手在镜头前缓慢移动，展示指甲的正面和侧面。\n7.5-8.0s：双手迅速放下，移出画面下方。\n8.0-12.6s：人物面部完全显露，面向镜头微笑，嘴唇微动似在说话或调整表情。头部轻微晃动，保持自拍姿态。\n\n4. Adjacent-shot state relation table:\nshot1 初始可见状态：\n- person styling: 长发披肩，面部被手遮挡。\n- makeup/hair: 妆容不可见，头发棕色/深金色，直发。\n- outfit/accessories: 黑色吊带上衣，佩戴大量金色首饰（戒指、手链、项链）。\n- subject/product usage state: 双手展示首饰和美甲。\n- scene/location: 车内驾驶座。\n- lighting/weather: 白天，天窗开启，自然光。\n- props: 汽车内饰。\n- overlays: 无。\n- composition: 竖屏，近景。\n- camera motion: 手持自拍，轻微抖动。\n- action phase: 展示手部。\n- information reveal: 手部细节。\n\n(无相邻镜头，仅单镜头)\n\n5. Cross-shot relations:\nnot_applicable_single_continuous_shot\n\n6. Special mechanism scan:\nnot_observed\n\n7. Text/logo/UI/graphics:\n无可见文字、logo、水印、字幕、UI、贴纸、图形层、画中画内容、边框或覆盖层。\n\n8. Visual memory candidates:\nnot_observed\n\n9. Uncertainty:\n- 人物具体身份不明。\n- 0.0-7.5s 期间面部表情不可见。\n- 手部动作的具体意图（如是否配合语音节奏）无法从纯视觉判断。\n- 车内具体车型不确定。"
-}

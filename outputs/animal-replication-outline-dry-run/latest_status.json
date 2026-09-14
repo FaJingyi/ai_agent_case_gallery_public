@@ -1,9 +1,0 @@
-{
-  "status": "completed_to_h3_package",
-  "stage": "09_h3_package",
-  "next_stage": "10_h3_video_output",
-  "next_stage_status": "skipped_dry_run",
-  "updated_at": "2026-09-13T05:31:43Z",
-  "h3_package_path": "09_h3_package",
-  "h3_request_path": "09_h3_package/h3_request.json"
-}

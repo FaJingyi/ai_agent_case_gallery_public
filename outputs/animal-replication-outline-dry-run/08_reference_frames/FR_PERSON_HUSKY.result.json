@@ -1,9 +1,0 @@
-{
-  "provider": "sensenova",
-  "task_id": "20260913_052957_faf59d6d-8b18-4260-a107-4ec4cabf4f3d",
-  "task": "text2img",
-  "output": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/animal-replication-outline-dry-run/08_reference_frames/FR_PERSON_HUSKY.png",
-  "request": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/animal-replication-outline-dry-run/08_reference_frames/request.json",
-  "saved_output_path": null,
-  "seed": null
-}
