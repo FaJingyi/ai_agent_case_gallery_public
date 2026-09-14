@@ -1,0 +1,63 @@
+{
+  "schema_version": "common_replication_outline.input_manifest.v1",
+  "skill_name": "common-video-replication-outline",
+  "replication_mode": "shot_structure",
+  "reference_video": {
+    "input_path": "test_data/minimax/minimax.mp4",
+    "filename": "minimax.mp4",
+    "duration_sec": 15.0,
+    "source_duration_sec": 15.0,
+    "media_type": "video",
+    "orientation": "horizontal",
+    "width": 2560,
+    "height": 1440,
+    "fps": 24.0,
+    "declared_slot": "reference_video",
+    "resolved_slot": "reference_video",
+    "selection_basis": "explicit_skill_input"
+  },
+  "user_input_dir": "test_data/minimax/user_input",
+  "user_request_file": "test_data/minimax/user_input/requirement.txt.txt",
+  "user_request": "参考视频生成一条新的视频，把视频里所有\"minimax\"字母换成\"MetaX\"，把视频中的模特换成猫咪",
+  "requirement_file": null,
+  "user_assets": [],
+  "business_context": {
+    "brand_name_inputs": [
+      "MetaX"
+    ],
+    "declared_replacement_bindings": [
+      {
+        "source_entity": "MINIMAX wordmark / on-screen 'minimax' lettering",
+        "target_entity": "MetaX"
+      },
+      {
+        "source_entity": "the model / woman appearing in the reference video",
+        "target_entity": "猫咪 (a cat)"
+      }
+    ],
+    "on_screen_text_inputs": [
+      "MetaX"
+    ],
+    "spoken_or_voiceover_text": null,
+    "target_audience": null,
+    "prohibited_expressions": null
+  },
+  "run_settings": {
+    "scene_threshold": 0.5,
+    "reference_video_h3_input_policy": {
+      "enabled": true,
+      "max_video_reference_duration_sec": 15
+    }
+  },
+  "output_dir": "outputs/minimax-replication-outline-dry-run",
+  "fresh_run_isolation": {
+    "resume_from": null,
+    "policy": "independent_run_no_reuse_of_previous_outputs"
+  },
+  "normalization_notes": [
+    "user_request sourced from test_data/minimax/user_input/requirement.txt.txt",
+    "no user_assets provided; target appearance for the replacement subject is a generation assumption",
+    "requirement_file not provided"
+  ],
+  "validation_flags": []
+}

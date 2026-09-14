@@ -1,0 +1,38 @@
+{
+  "schema_version": "common_reference_video_analyzer.video_segment_plan.v1",
+  "source_video": {
+    "path": "test_data/minimax/minimax.mp4",
+    "filename": "minimax.mp4",
+    "fps": 24.0,
+    "duration": 15.083333,
+    "total_frames": 362,
+    "width": 2560,
+    "height": 1440
+  },
+  "strategy": "truncate_first_15s",
+  "max_segment_duration_sec": 15.0,
+  "vlm_video_segments": [
+    {
+      "segment_id": "VS001",
+      "start": 0.0,
+      "end": 15.0,
+      "duration": 15.0,
+      "source_candidate_ids": [],
+      "video_path": "outputs/minimax-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_5811419d16594adfbf8cca2096cbde3c/content",
+      "notes": [
+        "truncated_to_first_15s"
+      ]
+    }
+  ],
+  "dropped_ranges": [
+    {
+      "start": 15.0,
+      "end": 15.083,
+      "duration": 0.083
+    }
+  ],
+  "warnings": [
+    "source duration exceeds 15s; only first 15s should be analyzed"
+  ]
+}

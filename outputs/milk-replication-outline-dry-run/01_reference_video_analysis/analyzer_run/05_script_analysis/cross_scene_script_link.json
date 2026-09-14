@@ -1,0 +1,175 @@
+{
+  "schema_version": "common_reference_video_analyzer.cross_scene_script.v1",
+  "relations": [
+    {
+      "id": "rel_VS001_SH001_VS001_SH002",
+      "from": "VS001_SH001",
+      "to": "VS001_SH002",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH002_VS001_SH003",
+      "from": "VS001_SH002",
+      "to": "VS001_SH003",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2",
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH003_VS001_SH004",
+      "from": "VS001_SH003",
+      "to": "VS001_SH004",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3",
+        "VS001:shot4"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH004_VS001_SH005",
+      "from": "VS001_SH004",
+      "to": "VS001_SH005",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot4",
+        "VS001:shot5"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH005_VS001_SH006",
+      "from": "VS001_SH005",
+      "to": "VS001_SH006",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot5",
+        "VS001:shot6"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH006_VS001_SH007",
+      "from": "VS001_SH006",
+      "to": "VS001_SH007",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot6",
+        "VS001:shot7"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH007_VS001_SH008",
+      "from": "VS001_SH007",
+      "to": "VS001_SH008",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot7",
+        "VS001:shot8"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH008_VS001_SH009",
+      "from": "VS001_SH008",
+      "to": "VS001_SH009",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot8",
+        "VS001:shot9"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH009_VS001_SH010",
+      "from": "VS001_SH009",
+      "to": "VS001_SH010",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot9",
+        "VS001:shot10"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH010_VS001_SH011",
+      "from": "VS001_SH010",
+      "to": "VS001_SH011",
+      "type": "progress",
+      "reason": "以连续动作从展示衔接到饮用",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot10",
+        "VS001:shot11"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "full_text": "I'mgoingtogotothenextvideo.",
+  "timeline": [
+    {
+      "index": 1,
+      "start": 12.18,
+      "end": 13.58,
+      "text": "I'm",
+      "raw_text": "I'm",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "start": 13.58,
+      "end": 14.98,
+      "text": "going",
+      "raw_text": "going",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 3,
+      "start": 14.98,
+      "end": 14.98,
+      "text": "to",
+      "raw_text": "to",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "start": 14.98,
+      "end": 14.98,
+      "text": "go",
+      "raw_text": "go",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 5,
+      "start": 14.98,
+      "end": 14.98,
+      "text": "to",
+      "raw_text": "to",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "start": 14.98,
+      "end": 14.98,
+      "text": "the",
+      "raw_text": "the",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 7,
+      "start": 14.98,
+      "end": 14.98,
+      "text": "next",
+      "raw_text": "next",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "start": 14.98,
+      "end": 14.98,
+      "text": "video.",
+      "raw_text": "video.",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "schema_version": "tool_asr.transcript.v1",
+  "status": "ok",
+  "provider": "gitee_ai",
+  "model": "whisper-large-v3-turbo",
+  "source": {
+    "media_path": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/minimax-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/05_script_analysis/VS001_asr_source.mp4",
+    "audio_path": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/minimax-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/05_script_analysis/VS001_asr_source.asr.wav",
+    "language": null
+  },
+  "raw_full_text": "I'mgoingtogotothenextvideo.",
+  "segments": [
+    {
+      "start": 12.18,
+      "end": 13.58,
+      "text": "I'm",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 13.58,
+      "end": 14.98,
+      "text": "going",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.98,
+      "end": 14.98,
+      "text": "to",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.98,
+      "end": 14.98,
+      "text": "go",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.98,
+      "end": 14.98,
+      "text": "to",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.98,
+      "end": 14.98,
+      "text": "the",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.98,
+      "end": 14.98,
+      "text": "next",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.98,
+      "end": 14.98,
+      "text": "video.",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "words": [],
+  "srt": "1\n00:00:12,180 --> 00:00:13,580\n I'm\n\n2\n00:00:13,580 --> 00:00:14,980\n going\n\n3\n00:00:14,980 --> 00:00:14,980\n to\n\n4\n00:00:14,980 --> 00:00:14,980\n go\n\n5\n00:00:14,980 --> 00:00:14,980\n to\n\n6\n00:00:14,980 --> 00:00:14,980\n the\n\n7\n00:00:14,980 --> 00:00:14,980\n next\n\n8\n00:00:14,980 --> 00:00:14,980\n video.\n",
+  "errors": []
+}

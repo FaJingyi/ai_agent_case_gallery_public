@@ -1,0 +1,790 @@
+{
+  "schema_version": "common_replication_outline.reference_frame_plan.v3",
+  "generation_scope": "single_generation_task",
+  "need_basis": "global_appearance_person_scene_entities_only",
+  "frame_requirement_level": "required_person_scene_anchors",
+  "triggered_rules": [
+    "person_reference_entity_present",
+    "scene_reference_entity_present",
+    "one_person_reference_per_person_entity",
+    "one_scene_reference_per_scene_entity",
+    "merge_repeated_entity_appearances_into_one_frame",
+    "keep_visibly_different_same_category_entities_separate"
+  ],
+  "style_atmosphere_entities": [
+    "ent_011"
+  ],
+  "draft_frames": [
+    {
+      "frame_id": "rf_001",
+      "frame_type": "person_reference",
+      "entity_id": "ent_002",
+      "entity_name": "person_非可识别成年女性",
+      "entity_type": "person_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U001",
+          "U002",
+          "U003",
+          "U004",
+          "U005",
+          "U006",
+          "U007",
+          "U008",
+          "U009",
+          "U010",
+          "U011"
+        ],
+        "segment_ids": [
+          "seg_001_1",
+          "seg_002_1",
+          "seg_003_1",
+          "seg_004_1",
+          "seg_005_1",
+          "seg_006_1",
+          "seg_007_1",
+          "seg_008_1",
+          "seg_009_1",
+          "seg_010_1",
+          "seg_011_1",
+          "seg_011_2"
+        ]
+      },
+      "purpose": "为全部镜头提供一致的目标人物外观锚点（不可识别表演者）",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_002]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯人物参考图（person_reference）：只呈现人物外形，不含产品、不含场景道具、不含任何可读文字。一位不可识别的亚洲成年女性，年龄印象：25-30岁成年女性；体型：中等身形；发型：及肩深棕微卷发；妆容：清透自然淡妆，暖调唇色；服装：多套低饱和日常服装——奶油白针织开衫、雾霾蓝长袖上衣、浅灰运动装、米色连衣裙；配饰：简约细项链，无可读logo；气质：亲切自然、有活力；身份约束：不可识别表演者，不指认或复制参考片人物身份。可见差异锚点：发型由参考片长发改为及肩深棕微卷发；服装色系由黄绿针织/亮绿羽绒/棕毛衣改为奶油白/雾霾蓝/浅灰低饱和色系。正面站姿，半身，目光看向镜头，气质亲切自然有活力，中性纯色背景。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "年龄印象：25-30岁成年女性",
+        "体型：中等身形",
+        "发型：及肩深棕微卷发",
+        "妆容：清透自然淡妆，暖调唇色",
+        "服装：多套低饱和日常服装——奶油白针织开衫、雾霾蓝长袖上衣、浅灰运动装、米色连衣裙",
+        "配饰：简约细项链，无可读logo",
+        "气质：亲切自然、有活力",
+        "身份约束：不可识别表演者，不指认或复制参考片人物身份",
+        "发型由参考片长发改为及肩深棕微卷发",
+        "服装色系由黄绿针织/亮绿羽绒/棕毛衣改为奶油白/雾霾蓝/浅灰低饱和色系"
+      ],
+      "h3_role": "person_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    },
+    {
+      "frame_id": "rf_002",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_003",
+      "entity_name": "scene_001_明亮居家客厅",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U001",
+          "U002"
+        ],
+        "segment_ids": [
+          "seg_001_1",
+          "seg_002_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_003]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代居家客厅；前景/中景/背景：前景沙发与茶几、中景人物、背景落地窗；置景：浅灰蓝色布艺沙发、原木茶几、绿植；光线：落地窗自然侧光，柔和均匀；色调：浅灰+暖木+一点绿；材质：布艺、原木、棉麻；背景密度：中低；景深：深焦，环境可读；氛围：清爽温暖。可见差异锚点：沙发改为浅灰蓝色（参考片为米色沙发）；墙面改为浅暖白+局部木格栅（参考片为纯白墙）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代居家客厅",
+        "前景/中景/背景：前景沙发与茶几、中景人物、背景落地窗",
+        "置景：浅灰蓝色布艺沙发、原木茶几、绿植",
+        "光线：落地窗自然侧光，柔和均匀",
+        "色调：浅灰+暖木+一点绿",
+        "材质：布艺、原木、棉麻",
+        "背景密度：中低",
+        "景深：深焦，环境可读",
+        "氛围：清爽温暖",
+        "沙发改为浅灰蓝色（参考片为米色沙发）",
+        "墙面改为浅暖白+局部木格栅（参考片为纯白墙）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    },
+    {
+      "frame_id": "rf_003",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_004",
+      "entity_name": "scene_002_街角现代茶饮店",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U003"
+        ],
+        "segment_ids": [
+          "seg_003_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_004]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：街角现代茶饮店；前景/中景/背景：前景操作台、中景人物、背景饮品墙；置景：浅色木纹吧台、玻璃罐、绿植、暖光吊灯；光线：室内暖光+窗外自然光；色调：奶油+浅木+绿；材质：木纹、玻璃、哑光漆；背景密度：中；景深：中；氛围：明亮清新。可见差异锚点：空间类型由复古咖啡馆改为现代茶饮店（去掉黑白花纹地砖）；主色改为奶油浅木绿（参考片为深色复古调）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：街角现代茶饮店",
+        "前景/中景/背景：前景操作台、中景人物、背景饮品墙",
+        "置景：浅色木纹吧台、玻璃罐、绿植、暖光吊灯",
+        "光线：室内暖光+窗外自然光",
+        "色调：奶油+浅木+绿",
+        "材质：木纹、玻璃、哑光漆",
+        "背景密度：中",
+        "景深：中",
+        "氛围：明亮清新",
+        "空间类型由复古咖啡馆改为现代茶饮店（去掉黑白花纹地砖）",
+        "主色改为奶油浅木绿（参考片为深色复古调）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    },
+    {
+      "frame_id": "rf_004",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_005",
+      "entity_name": "scene_003_现代商场中庭",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U004",
+          "U007"
+        ],
+        "segment_ids": [
+          "seg_004_1",
+          "seg_007_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_005]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：挑高现代商场中庭；前景/中景/背景：前景栏杆与扶梯、中景人物、背景多层商铺；置景：玻璃栏板、绿植装置、浅灰石材地面；光线：顶部天窗自然光；色调：浅灰+白+绿；材质：玻璃、浅灰石材、金属；背景密度：中高但有秩序；景深：深；氛围：通透现代。可见差异锚点：用挑高玻璃栏板与绿植装置取代微缩模型房屋；主色改为浅灰白+绿（参考片为密集褐色模型屋）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：挑高现代商场中庭",
+        "前景/中景/背景：前景栏杆与扶梯、中景人物、背景多层商铺",
+        "置景：玻璃栏板、绿植装置、浅灰石材地面",
+        "光线：顶部天窗自然光",
+        "色调：浅灰+白+绿",
+        "材质：玻璃、浅灰石材、金属",
+        "背景密度：中高但有秩序",
+        "景深：深",
+        "氛围：通透现代",
+        "用挑高玻璃栏板与绿植装置取代微缩模型房屋",
+        "主色改为浅灰白+绿（参考片为密集褐色模型屋）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    },
+    {
+      "frame_id": "rf_005",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_006",
+      "entity_name": "scene_004_城市户外绿荫步道",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U005"
+        ],
+        "segment_ids": [
+          "seg_005_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_006]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：城市户外绿荫人行步道；前景/中景/背景：前景行道树、中景人物、背景现代建筑；置景：浅灰铺装、行道树、长椅；光线：树荫下柔和自然光；色调：浅灰+绿；材质：石材铺装、树皮、金属；背景密度：中；景深：深；氛围：清新自然。可见差异锚点：铺装由红砖改为浅灰石材；加入绿荫行道树（参考片为红砖地面街景）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：城市户外绿荫人行步道",
+        "前景/中景/背景：前景行道树、中景人物、背景现代建筑",
+        "置景：浅灰铺装、行道树、长椅",
+        "光线：树荫下柔和自然光",
+        "色调：浅灰+绿",
+        "材质：石材铺装、树皮、金属",
+        "背景密度：中",
+        "景深：深",
+        "氛围：清新自然",
+        "铺装由红砖改为浅灰石材",
+        "加入绿荫行道树（参考片为红砖地面街景）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    },
+    {
+      "frame_id": "rf_006",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_007",
+      "entity_name": "scene_005_现代健身工作室",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U006",
+          "U008"
+        ],
+        "segment_ids": [
+          "seg_006_1",
+          "seg_008_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_007]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代健身工作室；前景/中景/背景：前景器械、中景人物、背景镜墙与器械墙；置景：哑铃架、瑜伽垫、镜墙；光线：均匀顶光；色调：浅灰+白+原木；材质：金属、橡胶、镜面；背景密度：中；景深：中；氛围：干净有活力。可见差异锚点：去掉黄色数字标记与粉色墙面，改为浅灰+白+原木；空间由粉色健身房改为明亮工作室。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代健身工作室",
+        "前景/中景/背景：前景器械、中景人物、背景镜墙与器械墙",
+        "置景：哑铃架、瑜伽垫、镜墙",
+        "光线：均匀顶光",
+        "色调：浅灰+白+原木",
+        "材质：金属、橡胶、镜面",
+        "背景密度：中",
+        "景深：中",
+        "氛围：干净有活力",
+        "去掉黄色数字标记与粉色墙面，改为浅灰+白+原木",
+        "空间由粉色健身房改为明亮工作室"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    },
+    {
+      "frame_id": "rf_007",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_008",
+      "entity_name": "scene_006_现代城市广场",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U009"
+        ],
+        "segment_ids": [
+          "seg_009_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_008]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代城市广场；前景/中景/背景：前景广场铺装、中景人物、背景玻璃幕墙建筑；置景：浅灰铺装、绿植花池、玻璃幕墙；光线：明亮户外自然光；色调：浅灰+蓝+绿；材质：石材、玻璃、金属；背景密度：中；景深：深；氛围：开阔都市。可见差异锚点：背景建筑由参考片现代建筑改为玻璃幕墙+绿植花池；主色倾向冷调浅灰蓝（参考片偏暖）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代城市广场",
+        "前景/中景/背景：前景广场铺装、中景人物、背景玻璃幕墙建筑",
+        "置景：浅灰铺装、绿植花池、玻璃幕墙",
+        "光线：明亮户外自然光",
+        "色调：浅灰+蓝+绿",
+        "材质：石材、玻璃、金属",
+        "背景密度：中",
+        "景深：深",
+        "氛围：开阔都市",
+        "背景建筑由参考片现代建筑改为玻璃幕墙+绿植花池",
+        "主色倾向冷调浅灰蓝（参考片偏暖）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    },
+    {
+      "frame_id": "rf_008",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_009",
+      "entity_name": "scene_007_现代简约室内",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U010",
+          "U011"
+        ],
+        "segment_ids": [
+          "seg_010_1",
+          "seg_011_1",
+          "seg_011_2"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_009]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代简约室内休息区；前景/中景/背景：前景矮几、中景人物、背景圆拱装饰与浅色家具；置景：米色圆拱装饰、浅色布艺椅、落地灯；光线：室内柔和暖光；色调：米白+浅木；材质：布艺、木、哑光漆；背景密度：低；景深：中；氛围：温暖放松。可见差异锚点：用米色圆拱装饰与浅色家具取代黄色圆形装饰与彩色椅子；主色改为米白浅木（参考片为高饱和黄/彩色）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代简约室内休息区",
+        "前景/中景/背景：前景矮几、中景人物、背景圆拱装饰与浅色家具",
+        "置景：米色圆拱装饰、浅色布艺椅、落地灯",
+        "光线：室内柔和暖光",
+        "色调：米白+浅木",
+        "材质：布艺、木、哑光漆",
+        "背景密度：低",
+        "景深：中",
+        "氛围：温暖放松",
+        "用米色圆拱装饰与浅色家具取代黄色圆形装饰与彩色椅子",
+        "主色改为米白浅木（参考片为高饱和黄/彩色）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready"
+    }
+  ],
+  "consistency_review": {
+    "status": "passed",
+    "issues": [],
+    "revisions": [],
+    "global_style_brief": "明亮高调真实商业短视频质感；竖屏 9:16；不可识别表演者；产品为东方树叶乌龙茶 500ml；场景沿用参考片风格机制但内容与主色均已目标化。",
+    "global_negative_constraints": [
+      "不复制参考片人物身份、品牌与可读文案",
+      "参考帧不含产品、不含可读文字/logo/水印/UI",
+      "人物帧为纯人物、场景帧为纯场景，不混入其他实体"
+    ]
+  },
+  "final_frames": [
+    {
+      "frame_id": "rf_001",
+      "frame_type": "person_reference",
+      "entity_id": "ent_002",
+      "entity_name": "person_非可识别成年女性",
+      "entity_type": "person_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U001",
+          "U002",
+          "U003",
+          "U004",
+          "U005",
+          "U006",
+          "U007",
+          "U008",
+          "U009",
+          "U010",
+          "U011"
+        ],
+        "segment_ids": [
+          "seg_001_1",
+          "seg_002_1",
+          "seg_003_1",
+          "seg_004_1",
+          "seg_005_1",
+          "seg_006_1",
+          "seg_007_1",
+          "seg_008_1",
+          "seg_009_1",
+          "seg_010_1",
+          "seg_011_1",
+          "seg_011_2"
+        ]
+      },
+      "purpose": "为全部镜头提供一致的目标人物外观锚点（不可识别表演者）",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_002]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯人物参考图（person_reference）：只呈现人物外形，不含产品、不含场景道具、不含任何可读文字。一位不可识别的亚洲成年女性，年龄印象：25-30岁成年女性；体型：中等身形；发型：及肩深棕微卷发；妆容：清透自然淡妆，暖调唇色；服装：多套低饱和日常服装——奶油白针织开衫、雾霾蓝长袖上衣、浅灰运动装、米色连衣裙；配饰：简约细项链，无可读logo；气质：亲切自然、有活力；身份约束：不可识别表演者，不指认或复制参考片人物身份。可见差异锚点：发型由参考片长发改为及肩深棕微卷发；服装色系由黄绿针织/亮绿羽绒/棕毛衣改为奶油白/雾霾蓝/浅灰低饱和色系。正面站姿，半身，目光看向镜头，气质亲切自然有活力，中性纯色背景。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "年龄印象：25-30岁成年女性",
+        "体型：中等身形",
+        "发型：及肩深棕微卷发",
+        "妆容：清透自然淡妆，暖调唇色",
+        "服装：多套低饱和日常服装——奶油白针织开衫、雾霾蓝长袖上衣、浅灰运动装、米色连衣裙",
+        "配饰：简约细项链，无可读logo",
+        "气质：亲切自然、有活力",
+        "身份约束：不可识别表演者，不指认或复制参考片人物身份",
+        "发型由参考片长发改为及肩深棕微卷发",
+        "服装色系由黄绿针织/亮绿羽绒/棕毛衣改为奶油白/雾霾蓝/浅灰低饱和色系"
+      ],
+      "h3_role": "person_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_001.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_7ed2dd0542e448e4a2f1f0e1e23ac59d/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_001",
+      "seed": null
+    },
+    {
+      "frame_id": "rf_002",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_003",
+      "entity_name": "scene_001_明亮居家客厅",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U001",
+          "U002"
+        ],
+        "segment_ids": [
+          "seg_001_1",
+          "seg_002_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_003]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代居家客厅；前景/中景/背景：前景沙发与茶几、中景人物、背景落地窗；置景：浅灰蓝色布艺沙发、原木茶几、绿植；光线：落地窗自然侧光，柔和均匀；色调：浅灰+暖木+一点绿；材质：布艺、原木、棉麻；背景密度：中低；景深：深焦，环境可读；氛围：清爽温暖。可见差异锚点：沙发改为浅灰蓝色（参考片为米色沙发）；墙面改为浅暖白+局部木格栅（参考片为纯白墙）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代居家客厅",
+        "前景/中景/背景：前景沙发与茶几、中景人物、背景落地窗",
+        "置景：浅灰蓝色布艺沙发、原木茶几、绿植",
+        "光线：落地窗自然侧光，柔和均匀",
+        "色调：浅灰+暖木+一点绿",
+        "材质：布艺、原木、棉麻",
+        "背景密度：中低",
+        "景深：深焦，环境可读",
+        "氛围：清爽温暖",
+        "沙发改为浅灰蓝色（参考片为米色沙发）",
+        "墙面改为浅暖白+局部木格栅（参考片为纯白墙）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_002.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_b6b2bd7011c54193bd9b5dbcbadf5e0d/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_002",
+      "seed": null
+    },
+    {
+      "frame_id": "rf_003",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_004",
+      "entity_name": "scene_002_街角现代茶饮店",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U003"
+        ],
+        "segment_ids": [
+          "seg_003_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_004]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：街角现代茶饮店；前景/中景/背景：前景操作台、中景人物、背景饮品墙；置景：浅色木纹吧台、玻璃罐、绿植、暖光吊灯；光线：室内暖光+窗外自然光；色调：奶油+浅木+绿；材质：木纹、玻璃、哑光漆；背景密度：中；景深：中；氛围：明亮清新。可见差异锚点：空间类型由复古咖啡馆改为现代茶饮店（去掉黑白花纹地砖）；主色改为奶油浅木绿（参考片为深色复古调）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：街角现代茶饮店",
+        "前景/中景/背景：前景操作台、中景人物、背景饮品墙",
+        "置景：浅色木纹吧台、玻璃罐、绿植、暖光吊灯",
+        "光线：室内暖光+窗外自然光",
+        "色调：奶油+浅木+绿",
+        "材质：木纹、玻璃、哑光漆",
+        "背景密度：中",
+        "景深：中",
+        "氛围：明亮清新",
+        "空间类型由复古咖啡馆改为现代茶饮店（去掉黑白花纹地砖）",
+        "主色改为奶油浅木绿（参考片为深色复古调）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_003.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_01fe24894adf498cb0544b274c984865/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_003",
+      "seed": null
+    },
+    {
+      "frame_id": "rf_004",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_005",
+      "entity_name": "scene_003_现代商场中庭",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U004",
+          "U007"
+        ],
+        "segment_ids": [
+          "seg_004_1",
+          "seg_007_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_005]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：挑高现代商场中庭；前景/中景/背景：前景栏杆与扶梯、中景人物、背景多层商铺；置景：玻璃栏板、绿植装置、浅灰石材地面；光线：顶部天窗自然光；色调：浅灰+白+绿；材质：玻璃、浅灰石材、金属；背景密度：中高但有秩序；景深：深；氛围：通透现代。可见差异锚点：用挑高玻璃栏板与绿植装置取代微缩模型房屋；主色改为浅灰白+绿（参考片为密集褐色模型屋）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：挑高现代商场中庭",
+        "前景/中景/背景：前景栏杆与扶梯、中景人物、背景多层商铺",
+        "置景：玻璃栏板、绿植装置、浅灰石材地面",
+        "光线：顶部天窗自然光",
+        "色调：浅灰+白+绿",
+        "材质：玻璃、浅灰石材、金属",
+        "背景密度：中高但有秩序",
+        "景深：深",
+        "氛围：通透现代",
+        "用挑高玻璃栏板与绿植装置取代微缩模型房屋",
+        "主色改为浅灰白+绿（参考片为密集褐色模型屋）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_004.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_20aaa79a8cc142cf82164606e4c90bc7/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_004",
+      "seed": null
+    },
+    {
+      "frame_id": "rf_005",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_006",
+      "entity_name": "scene_004_城市户外绿荫步道",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U005"
+        ],
+        "segment_ids": [
+          "seg_005_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_006]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：城市户外绿荫人行步道；前景/中景/背景：前景行道树、中景人物、背景现代建筑；置景：浅灰铺装、行道树、长椅；光线：树荫下柔和自然光；色调：浅灰+绿；材质：石材铺装、树皮、金属；背景密度：中；景深：深；氛围：清新自然。可见差异锚点：铺装由红砖改为浅灰石材；加入绿荫行道树（参考片为红砖地面街景）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：城市户外绿荫人行步道",
+        "前景/中景/背景：前景行道树、中景人物、背景现代建筑",
+        "置景：浅灰铺装、行道树、长椅",
+        "光线：树荫下柔和自然光",
+        "色调：浅灰+绿",
+        "材质：石材铺装、树皮、金属",
+        "背景密度：中",
+        "景深：深",
+        "氛围：清新自然",
+        "铺装由红砖改为浅灰石材",
+        "加入绿荫行道树（参考片为红砖地面街景）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_005.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_013a4b51acf9462790854802cfb36078/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_005",
+      "seed": null
+    },
+    {
+      "frame_id": "rf_006",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_007",
+      "entity_name": "scene_005_现代健身工作室",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U006",
+          "U008"
+        ],
+        "segment_ids": [
+          "seg_006_1",
+          "seg_008_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_007]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代健身工作室；前景/中景/背景：前景器械、中景人物、背景镜墙与器械墙；置景：哑铃架、瑜伽垫、镜墙；光线：均匀顶光；色调：浅灰+白+原木；材质：金属、橡胶、镜面；背景密度：中；景深：中；氛围：干净有活力。可见差异锚点：去掉黄色数字标记与粉色墙面，改为浅灰+白+原木；空间由粉色健身房改为明亮工作室。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代健身工作室",
+        "前景/中景/背景：前景器械、中景人物、背景镜墙与器械墙",
+        "置景：哑铃架、瑜伽垫、镜墙",
+        "光线：均匀顶光",
+        "色调：浅灰+白+原木",
+        "材质：金属、橡胶、镜面",
+        "背景密度：中",
+        "景深：中",
+        "氛围：干净有活力",
+        "去掉黄色数字标记与粉色墙面，改为浅灰+白+原木",
+        "空间由粉色健身房改为明亮工作室"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_006.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_7493954661a742f99ad2404b2bb31cd9/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_006",
+      "seed": null
+    },
+    {
+      "frame_id": "rf_007",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_008",
+      "entity_name": "scene_006_现代城市广场",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U009"
+        ],
+        "segment_ids": [
+          "seg_009_1"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_008]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代城市广场；前景/中景/背景：前景广场铺装、中景人物、背景玻璃幕墙建筑；置景：浅灰铺装、绿植花池、玻璃幕墙；光线：明亮户外自然光；色调：浅灰+蓝+绿；材质：石材、玻璃、金属；背景密度：中；景深：深；氛围：开阔都市。可见差异锚点：背景建筑由参考片现代建筑改为玻璃幕墙+绿植花池；主色倾向冷调浅灰蓝（参考片偏暖）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代城市广场",
+        "前景/中景/背景：前景广场铺装、中景人物、背景玻璃幕墙建筑",
+        "置景：浅灰铺装、绿植花池、玻璃幕墙",
+        "光线：明亮户外自然光",
+        "色调：浅灰+蓝+绿",
+        "材质：石材、玻璃、金属",
+        "背景密度：中",
+        "景深：深",
+        "氛围：开阔都市",
+        "背景建筑由参考片现代建筑改为玻璃幕墙+绿植花池",
+        "主色倾向冷调浅灰蓝（参考片偏暖）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_007.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_047d780ec9324afda8affae2df578599/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_007",
+      "seed": null
+    },
+    {
+      "frame_id": "rf_008",
+      "frame_type": "scene_reference",
+      "entity_id": "ent_009",
+      "entity_name": "scene_007_现代简约室内",
+      "entity_type": "scene_appearance",
+      "target_bindings": {
+        "unit_ids": [
+          "U010",
+          "U011"
+        ],
+        "segment_ids": [
+          "seg_010_1",
+          "seg_011_1",
+          "seg_011_2"
+        ]
+      },
+      "purpose": "为使用该场景的镜头提供一致的目标场景外观锚点",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[ent_009]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代简约室内休息区；前景/中景/背景：前景矮几、中景人物、背景圆拱装饰与浅色家具；置景：米色圆拱装饰、浅色布艺椅、落地灯；光线：室内柔和暖光；色调：米白+浅木；材质：布艺、木、哑光漆；背景密度：低；景深：中；氛围：温暖放松。可见差异锚点：用米色圆拱装饰与浅色家具取代黄色圆形装饰与彩色椅子；主色改为米白浅木（参考片为高饱和黄/彩色）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+      "must_include": [
+        "空间类型：现代简约室内休息区",
+        "前景/中景/背景：前景矮几、中景人物、背景圆拱装饰与浅色家具",
+        "置景：米色圆拱装饰、浅色布艺椅、落地灯",
+        "光线：室内柔和暖光",
+        "色调：米白+浅木",
+        "材质：布艺、木、哑光漆",
+        "背景密度：低",
+        "景深：中",
+        "氛围：温暖放松",
+        "用米色圆拱装饰与浅色家具取代黄色圆形装饰与彩色椅子",
+        "主色改为米白浅木（参考片为高饱和黄/彩色）"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready",
+      "output_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_008.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_3622f2888a9343ddab328b1ab06a6564/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "ref_frame_rf_008",
+      "seed": null
+    }
+  ],
+  "batch_generation_groups": [
+    {
+      "group_id": "grp_person_001",
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "统一的目标人物外观：不可识别成年女性，及肩深棕微卷发，低饱和日常服装色系。",
+      "group_negative_constraints": [
+        "不出现产品",
+        "不出现可读文字",
+        "不指认参考片人物身份"
+      ],
+      "frame_ids": [
+        "rf_001"
+      ]
+    },
+    {
+      "group_id": "grp_scene_001",
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "统一高调光真实商业短视频场景风格；各场景空间类型/主色/材质按目标化描述区分。",
+      "group_negative_constraints": [
+        "不出现人物",
+        "不出现产品",
+        "不出现可读文字"
+      ],
+      "frame_ids": [
+        "rf_002",
+        "rf_003",
+        "rf_004",
+        "rf_005",
+        "rf_006",
+        "rf_007",
+        "rf_008"
+      ]
+    }
+  ],
+  "global_missing_inputs": [],
+  "blocking_items": []
+}

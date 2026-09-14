@@ -1,0 +1,234 @@
+{
+  "schema_version": "common_reference_video_analyzer.shot_script.v1",
+  "shots": [
+    {
+      "id": "VS001_SH001",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot1",
+      "time": {
+        "start": 0.0,
+        "end": 2.0
+      },
+      "function": "focus",
+      "event": "女子正面展示产品并给出开场标语“向全世界”",
+      "information_delta": "让观众先看到目标主体与开场钩子",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "other",
+          "content": "向全世界"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1"
+      ]
+    },
+    {
+      "id": "VS001_SH002",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot2",
+      "time": {
+        "start": 2.0,
+        "end": 3.0
+      },
+      "function": "focus",
+      "event": "广角/鱼眼仰拍产品，瓶口对镜头，给出“安利好喝的金典鲜活”",
+      "information_delta": "强化产品主视觉并补出产品名称类信息",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "claim",
+          "content": "安利好喝的金典鲜活"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "VS001_SH003",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot3",
+      "time": {
+        "start": 3.0,
+        "end": 4.0
+      },
+      "function": "development",
+      "event": "切换到大号道具场景（红色蛋糕）展示产品使用氛围",
+      "information_delta": "建立多场景生活方式印象",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "VS001_SH004",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot4",
+      "time": {
+        "start": 4.0,
+        "end": 5.0
+      },
+      "function": "explanation",
+      "event": "商场微缩模型场景中展示产品，并给出功效/工艺信息“INFO.09秒超瞬时杀菌 锁住鲜甜”",
+      "information_delta": "补充产品工艺信息点",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "proof",
+          "content": "INFO.09秒超瞬时杀菌 锁住鲜甜"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot4"
+      ]
+    },
+    {
+      "id": "VS001_SH005",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot5",
+      "time": {
+        "start": 5.0,
+        "end": 6.0
+      },
+      "function": "development",
+      "event": "户外街道以大号螃蟹道具作为前景展示",
+      "information_delta": "延续多场景蒙太奇",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot5"
+      ]
+    },
+    {
+      "id": "VS001_SH006",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot6",
+      "time": {
+        "start": 6.0,
+        "end": 7.0
+      },
+      "function": "development",
+      "event": "健身房场景中展示产品",
+      "information_delta": "延续多场景蒙太奇",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot6"
+      ]
+    },
+    {
+      "id": "VS001_SH007",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot7",
+      "time": {
+        "start": 7.0,
+        "end": 8.0
+      },
+      "function": "explanation",
+      "event": "商场场景以大号草帽道具展示，并给出“口感满分 不冰也好喝”",
+      "information_delta": "补充口感类信息点",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "proof",
+          "content": "口感满分 不冰也好喝"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot7"
+      ]
+    },
+    {
+      "id": "VS001_SH008",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot8",
+      "time": {
+        "start": 8.0,
+        "end": 9.0
+      },
+      "function": "development",
+      "event": "健身房以大号哑铃道具展示产品",
+      "information_delta": "延续多场景蒙太奇",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot8"
+      ]
+    },
+    {
+      "id": "VS001_SH009",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot9",
+      "time": {
+        "start": 9.0,
+        "end": 10.0
+      },
+      "function": "focus",
+      "event": "户外广场展示产品并给出“金典鲜活纯牛奶”",
+      "information_delta": "再次强调产品名称",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "claim",
+          "content": "金典鲜活纯牛奶"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot9"
+      ]
+    },
+    {
+      "id": "VS001_SH010",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot10",
+      "time": {
+        "start": 10.0,
+        "end": 11.0
+      },
+      "function": "emotional_shift",
+      "event": "室内场景单手举起产品，给出“好喝到每一刻都想拥有”",
+      "information_delta": "从展示转向使用前的期待",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "cta",
+          "content": "好喝到每一刻都想拥有"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot10"
+      ]
+    },
+    {
+      "id": "VS001_SH011",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot11",
+      "time": {
+        "start": 11.0,
+        "end": 15.0
+      },
+      "function": "closing",
+      "event": "女子仰头饮用产品，结尾标语持续",
+      "information_delta": "以使用动作和结尾标语收束",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "cta",
+          "content": "好喝到每一刻都想拥有"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot11"
+      ]
+    }
+  ]
+}

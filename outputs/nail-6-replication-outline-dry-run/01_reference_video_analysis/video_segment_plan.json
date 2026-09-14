@@ -1,0 +1,34 @@
+{
+  "schema_version": "common_reference_video_analyzer.video_segment_plan.v1",
+  "source_video": {
+    "path": "test_data/nail-6/nail-6.mp4",
+    "filename": "nail-6.mp4",
+    "fps": 30.0,
+    "duration": 12.633333,
+    "total_frames": 379,
+    "width": 1080,
+    "height": 1920
+  },
+  "strategy": "full_video",
+  "max_segment_duration_sec": 15.0,
+  "vlm_video_segments": [
+    {
+      "segment_id": "VS001",
+      "start": 0.0,
+      "end": 12.633,
+      "duration": 12.633,
+      "source_candidate_ids": [],
+      "video_path": "outputs/nail-6-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_b2b5d57bdcef45348fb28f8d59f8657a/content",
+      "notes": [
+        "full_video_under_or_equal_15s"
+      ],
+      "source_time_range_sec": {
+        "start": 0.0,
+        "end": 12.6
+      }
+    }
+  ],
+  "dropped_ranges": [],
+  "warnings": []
+}

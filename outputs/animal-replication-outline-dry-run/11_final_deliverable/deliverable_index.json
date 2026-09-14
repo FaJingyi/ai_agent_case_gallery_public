@@ -1,0 +1,97 @@
+{
+  "schema_version": "common_replication_outline.final_deliverable_index.v1",
+  "skill_name": "common-video-replication-outline",
+  "status": "completed_to_h3_package_dry_run",
+  "artifacts": [
+    {
+      "stage": "step1",
+      "path": "00_inputs/input_manifest.json",
+      "status": "present"
+    },
+    {
+      "stage": "step2",
+      "path": "01_reference_video_analysis/reference_video_analysis.json",
+      "status": "present"
+    },
+    {
+      "stage": "step3",
+      "path": "03_asset_inventory/h3_input_asset_inventory.json",
+      "status": "present"
+    },
+    {
+      "stage": "step4",
+      "path": "04_target_asset_analysis/target_asset_analysis.json",
+      "status": "present"
+    },
+    {
+      "stage": "step4",
+      "path": "04_target_asset_analysis/target_asset_vlm_responses.json",
+      "status": "present"
+    },
+    {
+      "stage": "step5",
+      "path": "05_replication_readiness/replication_readiness_check.json",
+      "status": "present"
+    },
+    {
+      "stage": "step6",
+      "path": "06_replication_outline/replication_outline.json",
+      "status": "present"
+    },
+    {
+      "stage": "step6",
+      "path": "06_replication_outline/replication_outline.md",
+      "status": "present"
+    },
+    {
+      "stage": "step7",
+      "path": "07_reference_frame_plan/reference_frame_plan.json",
+      "status": "present"
+    },
+    {
+      "stage": "step8",
+      "path": "08_reference_frames/FR_PERSON_HUSKY.png",
+      "status": "present"
+    },
+    {
+      "stage": "step8",
+      "path": "08_reference_frames/FR_SCENE_LAWN.png",
+      "status": "present"
+    },
+    {
+      "stage": "step9",
+      "path": "09_h3_package/h3_packager_input.md",
+      "status": "present"
+    },
+    {
+      "stage": "step9",
+      "path": "09_h3_package/minimax_h3_prompt.md",
+      "status": "present"
+    },
+    {
+      "stage": "step9",
+      "path": "09_h3_package/h3_request.json",
+      "status": "present"
+    },
+    {
+      "stage": "step10",
+      "path": "10_h3_video_output/",
+      "status": "skipped_dry_run"
+    },
+    {
+      "stage": "root",
+      "path": "run_manifest.json",
+      "status": "present"
+    }
+  ],
+  "counts": {
+    "timeline_unit_count": 1,
+    "temporal_segment_count": 6,
+    "h3_prompt_shot_count": 1,
+    "h3_prompt_beat_count": 6
+  },
+  "dry_run_boundary": {
+    "request_package": "09_h3_package/h3_request.json",
+    "video_generation_submitted": false
+  }
+}

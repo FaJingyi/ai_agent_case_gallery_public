@@ -1,0 +1,66 @@
+{
+  "schema_version": "common_replication_outline.reference_frame_generation_manifest.v1",
+  "plan_path": "07_reference_frame_plan/reference_frame_plan.json",
+  "groups": [
+    {
+      "group_id": "person_references",
+      "frame_ids": [
+        "frame_person_001"
+      ],
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "同一非可识别女性表演者：深色长发、暗黑哥特妆容与装扮、银灰金属配饰；跨全部 8 个分镜保持同一身份与装扮。",
+      "group_negative_constraints": [
+        "no readable text, logo, price, watermark, corner mark or UI",
+        "no identifiable real person or reference-video person identity",
+        "no reference-video brand or source-specific props",
+        "no blue-and-white reference nail pattern (target is dark gothic eyeball nail art)"
+      ]
+    },
+    {
+      "group_id": "scene_references",
+      "frame_ids": [
+        "frame_scene_001",
+        "frame_scene_002"
+      ],
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "同属暗黑哥特美术方向：低调光、低饱和暗色高对比、写实浅景深；室内化妆间与月夜石庭为同一故事的不同空间。",
+      "group_negative_constraints": [
+        "no readable text, logo, price, watermark, corner mark or UI",
+        "no identifiable real person or reference-video person identity",
+        "no reference-video brand or source-specific props",
+        "no blue-and-white reference nail pattern (target is dark gothic eyeball nail art)"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "frame_id": "frame_person_001",
+      "status": "succeeded",
+      "task_id": "20260913_063657_4d5a9127-edec-4a4d-bfc8-0cc2ceadbeab",
+      "output": "08_reference_frames/frame_person_001.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_8e6bcab6481942dc92b975e1ef2d51cc/content",
+      "asset_id": "h3_asset_frame_person_001"
+    },
+    {
+      "frame_id": "frame_scene_001",
+      "status": "succeeded",
+      "task_id": "20260913_063717_4bb7b262-0467-495b-9004-c385fca3ec76",
+      "output": "08_reference_frames/frame_scene_001.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_9decf1b059164c70b1e7516071696b81/content",
+      "asset_id": "h3_asset_frame_scene_001"
+    },
+    {
+      "frame_id": "frame_scene_002",
+      "status": "succeeded",
+      "task_id": "20260913_063737_d71a1e63-9825-4b2e-908b-fead3cb75f40",
+      "output": "08_reference_frames/frame_scene_002.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_2772f4fe6ea04966b44fa1022d8e8be7/content",
+      "asset_id": "h3_asset_frame_scene_002"
+    }
+  ],
+  "succeeded_count": 3,
+  "failed_count": 0,
+  "skipped_count": 0,
+  "outputs_dir": "08_reference_frames/",
+  "note": "任务均在 SenseNova 侧 status=done；首次 /content 下载短暂返回 not ready，随后重试成功。"
+}

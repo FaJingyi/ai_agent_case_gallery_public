@@ -1,0 +1,302 @@
+{
+  "schema_version": "common_replication_outline.h3_input_asset_inventory.v1",
+  "policy": "reference_video_default_included_if_within_15s",
+  "h3_material_mode": "reference_video_plus_reference_images",
+  "reference_video": {
+    "path": "test_data/milk/milk.mp4",
+    "duration_sec": 15.0,
+    "media_url": "http://10.42.1.1:30100/v1/assets/asset_555aee1bcb974186839d6bf436619f3c/content"
+  },
+  "reference_video_h3_input_policy": {
+    "enabled": true,
+    "max_video_reference_duration_sec": 15.0,
+    "mode": "full_video_reference"
+  },
+  "eligible_h3_input_assets": [
+    {
+      "asset_id": "ref_video_001",
+      "input_path": "outputs/milk-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_555aee1bcb974186839d6bf436619f3c/content",
+      "media_type": "video",
+      "declared_slot": "reference_video",
+      "resolved_slot": "reference_video",
+      "packager_role": "motion_camera_timing_reference",
+      "source": "reference_video",
+      "allowed": true,
+      "duration_sec": 15.0,
+      "allowed_h3_uses": [
+        "motion_structure_reference",
+        "camera_language_reference",
+        "beat_timing_reference",
+        "single_shot_rhythm_reference"
+      ]
+    },
+    {
+      "asset_id": "user_asset_001",
+      "input_path": "test_data/milk/user_input/东方树叶.jpg",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_1d84a276bfbe4db688fb11a8aba747e7/content",
+      "media_type": "image",
+      "declared_slot": "product",
+      "resolved_slot": "product",
+      "packager_role": "target_product_reference",
+      "source": "user_assets",
+      "allowed": true,
+      "allowed_h3_uses": [
+        "subject_identity_reference",
+        "product_appearance_reference"
+      ]
+    },
+    {
+      "asset_id": "ref_frame_rf_001",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_001.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_7ed2dd0542e448e4a2f1f0e1e23ac59d/content",
+      "media_type": "image",
+      "declared_slot": "person_reference",
+      "resolved_slot": "person_reference",
+      "packager_role": "person_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "person_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_002",
+      "target_bindings": {
+        "unit_ids": [
+          "U001",
+          "U002",
+          "U003",
+          "U004",
+          "U005",
+          "U006",
+          "U007",
+          "U008",
+          "U009",
+          "U010",
+          "U011"
+        ],
+        "segment_ids": [
+          "seg_001_1",
+          "seg_002_1",
+          "seg_003_1",
+          "seg_004_1",
+          "seg_005_1",
+          "seg_006_1",
+          "seg_007_1",
+          "seg_008_1",
+          "seg_009_1",
+          "seg_010_1",
+          "seg_011_1",
+          "seg_011_2"
+        ]
+      },
+      "allowed_h3_uses": [
+        "person_appearance_reference"
+      ],
+      "upload_asset_id": "asset_7ed2dd0542e448e4a2f1f0e1e23ac59d"
+    },
+    {
+      "asset_id": "ref_frame_rf_002",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_002.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_b6b2bd7011c54193bd9b5dbcbadf5e0d/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "scene_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_003",
+      "target_bindings": {
+        "unit_ids": [
+          "U001",
+          "U002"
+        ],
+        "segment_ids": [
+          "seg_001_1",
+          "seg_002_1"
+        ]
+      },
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_style_reference"
+      ],
+      "upload_asset_id": "asset_b6b2bd7011c54193bd9b5dbcbadf5e0d"
+    },
+    {
+      "asset_id": "ref_frame_rf_003",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_003.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_01fe24894adf498cb0544b274c984865/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "scene_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_004",
+      "target_bindings": {
+        "unit_ids": [
+          "U003"
+        ],
+        "segment_ids": [
+          "seg_003_1"
+        ]
+      },
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_style_reference"
+      ],
+      "upload_asset_id": "asset_01fe24894adf498cb0544b274c984865"
+    },
+    {
+      "asset_id": "ref_frame_rf_004",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_004.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_20aaa79a8cc142cf82164606e4c90bc7/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "scene_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_005",
+      "target_bindings": {
+        "unit_ids": [
+          "U004",
+          "U007"
+        ],
+        "segment_ids": [
+          "seg_004_1",
+          "seg_007_1"
+        ]
+      },
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_style_reference"
+      ],
+      "upload_asset_id": "asset_20aaa79a8cc142cf82164606e4c90bc7"
+    },
+    {
+      "asset_id": "ref_frame_rf_005",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_005.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_013a4b51acf9462790854802cfb36078/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "scene_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_006",
+      "target_bindings": {
+        "unit_ids": [
+          "U005"
+        ],
+        "segment_ids": [
+          "seg_005_1"
+        ]
+      },
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_style_reference"
+      ],
+      "upload_asset_id": "asset_013a4b51acf9462790854802cfb36078"
+    },
+    {
+      "asset_id": "ref_frame_rf_006",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_006.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_7493954661a742f99ad2404b2bb31cd9/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "scene_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_007",
+      "target_bindings": {
+        "unit_ids": [
+          "U006",
+          "U008"
+        ],
+        "segment_ids": [
+          "seg_006_1",
+          "seg_008_1"
+        ]
+      },
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_style_reference"
+      ],
+      "upload_asset_id": "asset_7493954661a742f99ad2404b2bb31cd9"
+    },
+    {
+      "asset_id": "ref_frame_rf_007",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_007.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_047d780ec9324afda8affae2df578599/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "scene_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_008",
+      "target_bindings": {
+        "unit_ids": [
+          "U009"
+        ],
+        "segment_ids": [
+          "seg_009_1"
+        ]
+      },
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_style_reference"
+      ],
+      "upload_asset_id": "asset_047d780ec9324afda8affae2df578599"
+    },
+    {
+      "asset_id": "ref_frame_rf_008",
+      "input_path": "outputs/milk-replication-outline-dry-run/08_reference_frames/rf_008.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_3622f2888a9343ddab328b1ab06a6564/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference_frame",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "h3_role": "scene_reference",
+      "reference_frame_source": "generated_from_outline",
+      "entity_id": "ent_009",
+      "target_bindings": {
+        "unit_ids": [
+          "U010",
+          "U011"
+        ],
+        "segment_ids": [
+          "seg_010_1",
+          "seg_011_1",
+          "seg_011_2"
+        ]
+      },
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_style_reference"
+      ],
+      "upload_asset_id": "asset_3622f2888a9343ddab328b1ab06a6564"
+    }
+  ],
+  "excluded_assets": [],
+  "generated_reference_frames_policy": "append_only_after_step8_quality_check_and_usable_output",
+  "validation_flags": [
+    "reference_video_media_url_sourced_from_analyzer_upload_sidecar",
+    "user_asset_uploaded_to_asset_service",
+    "generated_reference_frames_appended_after_step8_quality_check"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "common_replication_outline.h3_dry_run_boundary.v1",
+  "step_id": "10_h3_video_generation",
+  "boundary": "H3 request/package produced; H3 video submission and generation intentionally NOT executed",
+  "status": "dry_run_not_submitted",
+  "request_json": "10_h3_video_output/request.json",
+  "submitted": false,
+  "task_id": null,
+  "response_json": null,
+  "result_json": "10_h3_video_output/result.json",
+  "endpoint": "http://10.42.1.2:30011/v2/video_generation",
+  "note": "request.json is the final payload that WOULD be submitted; no network submit call was made."
+}

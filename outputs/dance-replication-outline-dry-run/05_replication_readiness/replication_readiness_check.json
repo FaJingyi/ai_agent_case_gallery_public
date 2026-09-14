@@ -1,0 +1,237 @@
+{
+  "schema_version": "common_replication_outline.replication_readiness_check.v1",
+  "overall_status": "ready_with_assumptions",
+  "time_precision_policy": {
+    "precision": "one_decimal",
+    "method": "truncate"
+  },
+  "requirements": [
+    {
+      "requirement_id": "req_001",
+      "source_reference_ids": [
+        "VS001:shot1"
+      ],
+      "requirement_type": "usage_state",
+      "slot": "subject_dance_action",
+      "required_level": "required",
+      "target_support_status": "missing_generate_fallback",
+      "linked_asset_ids": [],
+      "linked_user_intent_ids": [
+        "user_request"
+      ],
+      "linked_assumption_ids": [
+        "ga_001",
+        "ga_002"
+      ],
+      "output_policy": "generate_with_assumption",
+      "transfer_category": "not_applicable",
+      "blocks_outline": false,
+      "blocks_reference_frames": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "requirement_id": "req_002",
+      "source_reference_ids": [
+        "VS001:shot1"
+      ],
+      "requirement_type": "other",
+      "slot": "person_body_carrier",
+      "required_level": "conditional_required",
+      "target_support_status": "ready_with_text_instruction",
+      "linked_asset_ids": [],
+      "linked_user_intent_ids": [
+        "user_request"
+      ],
+      "linked_assumption_ids": [
+        "ga_001",
+        "ga_002"
+      ],
+      "output_policy": "use_text_instruction",
+      "transfer_category": "not_applicable",
+      "blocks_outline": false,
+      "blocks_reference_frames": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "requirement_id": "req_003",
+      "source_reference_ids": [
+        "VS001:shot1"
+      ],
+      "requirement_type": "scene_transfer",
+      "slot": "scene_content",
+      "required_level": "required",
+      "target_support_status": "ready_with_text_instruction",
+      "linked_asset_ids": [],
+      "linked_user_intent_ids": [
+        "user_request"
+      ],
+      "linked_assumption_ids": [
+        "ga_003"
+      ],
+      "output_policy": "use_text_instruction",
+      "transfer_category": "not_applicable",
+      "blocks_outline": false,
+      "blocks_reference_frames": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "requirement_id": "req_004",
+      "source_reference_ids": [
+        "VS001:shot1"
+      ],
+      "requirement_type": "post_overlay",
+      "slot": "on_screen_text_or_logo",
+      "required_level": "optional",
+      "target_support_status": "missing_required_input",
+      "linked_asset_ids": [],
+      "linked_user_intent_ids": [],
+      "linked_assumption_ids": [],
+      "output_policy": "omit",
+      "transfer_category": "post_overlay",
+      "blocks_outline": false,
+      "blocks_reference_frames": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_analysis.json#text_logo_ui_observations"
+      ]
+    },
+    {
+      "requirement_id": "req_005",
+      "source_reference_ids": [
+        "VS001:shot1"
+      ],
+      "requirement_type": "other",
+      "slot": "prop_transfer",
+      "required_level": "optional",
+      "target_support_status": "missing_generate_fallback",
+      "linked_asset_ids": [],
+      "linked_user_intent_ids": [
+        "user_request"
+      ],
+      "linked_assumption_ids": [
+        "ga_003"
+      ],
+      "output_policy": "generate_with_assumption",
+      "transfer_category": "not_applicable",
+      "blocks_outline": false,
+      "blocks_reference_frames": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "requirement_id": "req_006",
+      "source_reference_ids": [
+        "05_script_analysis/asr_alignment.json"
+      ],
+      "requirement_type": "business_fact",
+      "slot": "dialogue_voiceover_text",
+      "required_level": "unsupported",
+      "target_support_status": "unsupported_skipped",
+      "linked_asset_ids": [],
+      "linked_user_intent_ids": [],
+      "linked_assumption_ids": [],
+      "output_policy": "omit",
+      "transfer_category": "not_applicable",
+      "blocks_outline": false,
+      "blocks_reference_frames": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "05_script_analysis/asr_alignment.json"
+      ]
+    }
+  ],
+  "gap_summary": [
+    {
+      "gap_id": "gap_001",
+      "slot": "subject_appearance_detail",
+      "gap_type": "missing_asset",
+      "impact": "outline_detail_loss",
+      "resolution_policy": "generate_with_confirmed_assumption",
+      "related_requirement_ids": [
+        "req_001",
+        "req_002"
+      ],
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "gap_id": "gap_002",
+      "slot": "scene_detail",
+      "gap_type": "missing_asset",
+      "impact": "outline_detail_loss",
+      "resolution_policy": "use_text_instruction",
+      "related_requirement_ids": [
+        "req_003"
+      ],
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "gap_id": "gap_003",
+      "slot": "on_screen_text_or_logo",
+      "gap_type": "missing_text_logo",
+      "impact": "omitted",
+      "resolution_policy": "omit_or_neutralize",
+      "related_requirement_ids": [
+        "req_004"
+      ],
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_analysis.json#text_logo_ui_observations"
+      ]
+    }
+  ],
+  "missing_inputs": [
+    {
+      "missing_input_id": "mi_001",
+      "slot": "actor_identity",
+      "status": "missing_generate_fallback",
+      "resolution_policy": "generate_with_confirmed_assumption",
+      "related_requirement_ids": [
+        "req_002"
+      ],
+      "blocks_reference_frame_generation": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "missing_input_id": "mi_002",
+      "slot": "post_overlay_text",
+      "status": "neutralize_allowed",
+      "resolution_policy": "omit_or_neutralize",
+      "related_requirement_ids": [
+        "req_004"
+      ],
+      "blocks_reference_frame_generation": false,
+      "blocks_h3_packaging": false,
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_analysis.json#text_logo_ui_observations"
+      ]
+    }
+  ],
+  "ready_items": [
+    "req_001",
+    "req_002",
+    "req_003",
+    "req_004",
+    "req_005"
+  ],
+  "unsupported_items": [
+    "req_006"
+  ],
+  "blocking_items": []
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": "common_reference_video_analyzer.global_script.v1",
+  "structure_type": "montage",
+  "beats": [
+    {
+      "beat_id": "B001",
+      "type": "opening_hook",
+      "scene_ids": [
+        "VS001"
+      ],
+      "information_delta": "以女子展示产品与开场标语快速抓注意力",
+      "evidence_refs": [
+        "VS001:shot1"
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "type": "reveal",
+      "scene_ids": [
+        "VS001"
+      ],
+      "information_delta": "给出产品主视觉与名称类标语",
+      "evidence_refs": [
+        "VS001:shot2",
+        "VS001:shot9"
+      ]
+    },
+    {
+      "beat_id": "B003",
+      "type": "proof",
+      "scene_ids": [
+        "VS001"
+      ],
+      "information_delta": "以多场景蒙太奇与功效/口感信息补充证明",
+      "evidence_refs": [
+        "VS001:shot3",
+        "VS001:shot8"
+      ]
+    },
+    {
+      "beat_id": "B004",
+      "type": "closing",
+      "scene_ids": [
+        "VS001"
+      ],
+      "information_delta": "以饮用动作和结尾标语收束",
+      "evidence_refs": [
+        "VS001:shot10",
+        "VS001:shot11"
+      ]
+    }
+  ],
+  "progression": {
+    "emotion": [
+      "好奇->期待->满足"
+    ],
+    "rhythm": [
+      "快切蒙太奇->结尾连续动作稳定收束"
+    ],
+    "information": [
+      "产品名称->功效->口感->使用体验"
+    ]
+  },
+  "script_memory_points": [
+    {
+      "memory_id": "sm_001",
+      "source_scope": "shot",
+      "source_ids": [
+        "VS001:shot1"
+      ],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 2.0
+      },
+      "type": "opening_hook",
+      "detail": "开场直接以人物正面、双手持产品的稳定展示加开场标语进入，先给主体和钩子。",
+      "preserve": [
+        "开场先给目标主体与钩子的结构"
+      ],
+      "adapt": [
+        "替换为目标主体与目标标语"
+      ],
+      "avoid": [
+        "原品牌、原文案"
+      ],
+      "evidence_refs": [
+        "VS001:shot1"
+      ]
+    },
+    {
+      "memory_id": "sm_002",
+      "source_scope": "global",
+      "source_ids": [
+        "VS001:shot2",
+        "VS001:shot10"
+      ],
+      "time_range_sec": {
+        "start": 2.0,
+        "end": 11.0
+      },
+      "type": "information_release_sequence",
+      "detail": "信息释放顺序为：产品主视觉与名称->功效信息->口感信息->使用动作与结尾标语。",
+      "preserve": [
+        "信息释放顺序与节拍位置"
+      ],
+      "adapt": [
+        "替换为目标产品的名称、功效与口感信息"
+      ],
+      "avoid": [
+        "原功效/工艺文案与原名称"
+      ],
+      "evidence_refs": [
+        "VS001:shot4",
+        "VS001:shot7",
+        "VS001:shot9"
+      ]
+    },
+    {
+      "memory_id": "sm_003",
+      "source_scope": "global",
+      "source_ids": [
+        "VS001:shot3",
+        "VS001:shot8"
+      ],
+      "time_range_sec": {
+        "start": 3.0,
+        "end": 9.0
+      },
+      "type": "demonstration_proof",
+      "detail": "用多场景快切蒙太奇证明产品适用于多种生活场景，并以大号道具强化记忆。",
+      "preserve": [
+        "多场景快切证明链路与大号道具强化机制"
+      ],
+      "adapt": [
+        "替换为目标适用场景与普通道具"
+      ],
+      "avoid": [
+        "原片专属场景与品牌世界"
+      ],
+      "evidence_refs": [
+        "VS001:shot3",
+        "VS001:shot8"
+      ]
+    },
+    {
+      "memory_id": "sm_004",
+      "source_scope": "global",
+      "source_ids": [
+        "VS001:shot10",
+        "VS001:shot11"
+      ],
+      "time_range_sec": {
+        "start": 10.0,
+        "end": 15.0
+      },
+      "type": "closing_cta",
+      "detail": "结尾以仰头饮用动作加结尾标语完成收束与软性行动引导。",
+      "preserve": [
+        "结尾使用动作+标语的收束位置与节奏"
+      ],
+      "adapt": [
+        "替换为目标使用动作与目标结尾标语"
+      ],
+      "avoid": [
+        "原结尾文案与品牌"
+      ],
+      "evidence_refs": [
+        "VS001:shot10",
+        "VS001:shot11"
+      ]
+    }
+  ],
+  "script_knowledge_terms": [],
+  "knowledge_queries": [],
+  "knowledge_status": "skipped_empty_directory",
+  "note": "backend/profiles/脚本/叙事结构与镜头功能/ 下无 md，脚本结构仅基于事实归纳。"
+}

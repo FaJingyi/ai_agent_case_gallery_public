@@ -1,0 +1,884 @@
+{
+  "full_text": "Noface,noface,noface,noface,noIdon'tgetsleepyoffnomelatoninMytherapistputina30daynoticeCauseIkeepontalkingaboutbeefingandbusinessAndmoneyandwomen,there'snodiagnosisTheyemptytheclip,quickSwapthatshitoutandIcamebackreloading。",
+  "timeline": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 0.34,
+      "text": "No",
+      "raw_text": "No",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "start": 0.34,
+      "end": 0.72,
+      "text": "face,",
+      "raw_text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 3,
+      "start": 0.9,
+      "end": 1.32,
+      "text": "no",
+      "raw_text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "start": 1.32,
+      "end": 1.72,
+      "text": "face,",
+      "raw_text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 5,
+      "start": 2.04,
+      "end": 2.3,
+      "text": "no",
+      "raw_text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "start": 2.3,
+      "end": 2.6,
+      "text": "face,",
+      "raw_text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 7,
+      "start": 2.6,
+      "end": 2.74,
+      "text": "no",
+      "raw_text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "start": 2.74,
+      "end": 3.02,
+      "text": "face,",
+      "raw_text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 9,
+      "start": 3.02,
+      "end": 3.22,
+      "text": "no",
+      "raw_text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "start": 3.22,
+      "end": 3.92,
+      "text": "I",
+      "raw_text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 11,
+      "start": 3.92,
+      "end": 4.54,
+      "text": "don't",
+      "raw_text": "don't",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "start": 4.54,
+      "end": 4.64,
+      "text": "get",
+      "raw_text": "get",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 13,
+      "start": 4.64,
+      "end": 4.9399999999999995,
+      "text": "sleepy",
+      "raw_text": "sleepy",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "start": 4.9399999999999995,
+      "end": 5.18,
+      "text": "off",
+      "raw_text": "off",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 15,
+      "start": 5.18,
+      "end": 5.34,
+      "text": "no",
+      "raw_text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "start": 5.34,
+      "end": 5.9399999999999995,
+      "text": "melatonin",
+      "raw_text": "melatonin",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 17,
+      "start": 5.9399999999999995,
+      "end": 6.1,
+      "text": "My",
+      "raw_text": "My",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 18,
+      "start": 6.1,
+      "end": 6.48,
+      "text": "therapist",
+      "raw_text": "therapist",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 19,
+      "start": 6.48,
+      "end": 6.78,
+      "text": "put",
+      "raw_text": "put",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 20,
+      "start": 6.78,
+      "end": 6.9399999999999995,
+      "text": "in",
+      "raw_text": "in",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 21,
+      "start": 6.9399999999999995,
+      "end": 7.06,
+      "text": "a",
+      "raw_text": "a",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 22,
+      "start": 7.06,
+      "end": 7.3,
+      "text": "30",
+      "raw_text": "30",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 23,
+      "start": 7.3,
+      "end": 7.5,
+      "text": "day",
+      "raw_text": "day",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 24,
+      "start": 7.5,
+      "end": 7.86,
+      "text": "notice",
+      "raw_text": "notice",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 25,
+      "start": 7.86,
+      "end": 8.039,
+      "text": "Cause",
+      "raw_text": "Cause",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 26,
+      "start": 8.039,
+      "end": 8.18,
+      "text": "I",
+      "raw_text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 27,
+      "start": 8.18,
+      "end": 8.36,
+      "text": "keep",
+      "raw_text": "keep",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 28,
+      "start": 8.36,
+      "end": 8.52,
+      "text": "on",
+      "raw_text": "on",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 29,
+      "start": 8.52,
+      "end": 8.74,
+      "text": "talking",
+      "raw_text": "talking",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 30,
+      "start": 8.74,
+      "end": 8.98,
+      "text": "about",
+      "raw_text": "about",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 31,
+      "start": 8.98,
+      "end": 9.36,
+      "text": "beefing",
+      "raw_text": "beefing",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 32,
+      "start": 9.36,
+      "end": 9.48,
+      "text": "and",
+      "raw_text": "and",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 33,
+      "start": 9.48,
+      "end": 9.74,
+      "text": "business",
+      "raw_text": "business",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 34,
+      "start": 9.74,
+      "end": 9.94,
+      "text": "And",
+      "raw_text": "And",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 35,
+      "start": 9.94,
+      "end": 10.18,
+      "text": "money",
+      "raw_text": "money",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 36,
+      "start": 10.18,
+      "end": 10.4,
+      "text": "and",
+      "raw_text": "and",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 37,
+      "start": 10.4,
+      "end": 10.66,
+      "text": "women,",
+      "raw_text": "women,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 38,
+      "start": 10.84,
+      "end": 10.9,
+      "text": "there's",
+      "raw_text": "there's",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 39,
+      "start": 10.9,
+      "end": 11.04,
+      "text": "no",
+      "raw_text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 40,
+      "start": 11.04,
+      "end": 11.58,
+      "text": "diagnosis",
+      "raw_text": "diagnosis",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 41,
+      "start": 11.58,
+      "end": 11.8,
+      "text": "They",
+      "raw_text": "They",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 42,
+      "start": 11.8,
+      "end": 12.1,
+      "text": "empty",
+      "raw_text": "empty",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 43,
+      "start": 12.1,
+      "end": 12.28,
+      "text": "the",
+      "raw_text": "the",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 44,
+      "start": 12.28,
+      "end": 12.56,
+      "text": "clip,",
+      "raw_text": "clip,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 45,
+      "start": 12.8,
+      "end": 13.42,
+      "text": "quick",
+      "raw_text": "quick",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 46,
+      "start": 13.42,
+      "end": 13.9,
+      "text": "Swap",
+      "raw_text": "Swap",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 47,
+      "start": 13.9,
+      "end": 14.04,
+      "text": "that",
+      "raw_text": "that",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 48,
+      "start": 14.04,
+      "end": 14.18,
+      "text": "shit",
+      "raw_text": "shit",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 49,
+      "start": 14.18,
+      "end": 14.36,
+      "text": "out",
+      "raw_text": "out",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 50,
+      "start": 14.36,
+      "end": 14.54,
+      "text": "and",
+      "raw_text": "and",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 51,
+      "start": 14.54,
+      "end": 14.64,
+      "text": "I",
+      "raw_text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 52,
+      "start": 14.64,
+      "end": 14.88,
+      "text": "came",
+      "raw_text": "came",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 53,
+      "start": 14.88,
+      "end": 15.08,
+      "text": "back",
+      "raw_text": "back",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 54,
+      "start": 15.08,
+      "end": 15.48,
+      "text": "reloading。",
+      "raw_text": "reloading",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "schema_version": "tool_asr.transcript.v1",
+  "status": "ok",
+  "provider": "gitee_ai",
+  "model": "whisper-large-v3-turbo",
+  "source": {
+    "media_path": "/home/mx/jyfa/workdir/ai_agent_platform/test_data/nail-5/nail-5.mp4",
+    "audio_path": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/nail-5-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/05_script_analysis/nail-5.asr.wav",
+    "language": null
+  },
+  "raw_full_text": "Noface,noface,noface,noface,noIdon'tgetsleepyoffnomelatoninMytherapistputina30daynoticeCauseIkeepontalkingaboutbeefingandbusinessAndmoneyandwomen,there'snodiagnosisTheyemptytheclip,quickSwapthatshitoutandIcamebackreloading",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.34,
+      "text": "No",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 0.34,
+      "end": 0.72,
+      "text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 0.9,
+      "end": 1.32,
+      "text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 1.32,
+      "end": 1.72,
+      "text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 2.04,
+      "end": 2.3,
+      "text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 2.3,
+      "end": 2.6,
+      "text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 2.6,
+      "end": 2.74,
+      "text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 2.74,
+      "end": 3.02,
+      "text": "face,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 3.02,
+      "end": 3.22,
+      "text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 3.22,
+      "end": 3.92,
+      "text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 3.92,
+      "end": 4.54,
+      "text": "don't",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 4.54,
+      "end": 4.64,
+      "text": "get",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 4.64,
+      "end": 4.9399999999999995,
+      "text": "sleepy",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 4.9399999999999995,
+      "end": 5.18,
+      "text": "off",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 5.18,
+      "end": 5.34,
+      "text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 5.34,
+      "end": 5.9399999999999995,
+      "text": "melatonin",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 5.9399999999999995,
+      "end": 6.1,
+      "text": "My",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 6.1,
+      "end": 6.48,
+      "text": "therapist",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 6.48,
+      "end": 6.78,
+      "text": "put",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 6.78,
+      "end": 6.9399999999999995,
+      "text": "in",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 6.9399999999999995,
+      "end": 7.06,
+      "text": "a",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 7.06,
+      "end": 7.3,
+      "text": "30",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 7.3,
+      "end": 7.5,
+      "text": "day",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 7.5,
+      "end": 7.86,
+      "text": "notice",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 7.86,
+      "end": 8.039,
+      "text": "Cause",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 8.039,
+      "end": 8.18,
+      "text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 8.18,
+      "end": 8.36,
+      "text": "keep",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 8.36,
+      "end": 8.52,
+      "text": "on",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 8.52,
+      "end": 8.74,
+      "text": "talking",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 8.74,
+      "end": 8.98,
+      "text": "about",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 8.98,
+      "end": 9.36,
+      "text": "beefing",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 9.36,
+      "end": 9.48,
+      "text": "and",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 9.48,
+      "end": 9.74,
+      "text": "business",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 9.74,
+      "end": 9.94,
+      "text": "And",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 9.94,
+      "end": 10.18,
+      "text": "money",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 10.18,
+      "end": 10.4,
+      "text": "and",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 10.4,
+      "end": 10.66,
+      "text": "women,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 10.84,
+      "end": 10.9,
+      "text": "there's",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 10.9,
+      "end": 11.04,
+      "text": "no",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 11.04,
+      "end": 11.58,
+      "text": "diagnosis",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 11.58,
+      "end": 11.8,
+      "text": "They",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 11.8,
+      "end": 12.1,
+      "text": "empty",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 12.1,
+      "end": 12.28,
+      "text": "the",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 12.28,
+      "end": 12.56,
+      "text": "clip,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 12.8,
+      "end": 13.42,
+      "text": "quick",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 13.42,
+      "end": 13.9,
+      "text": "Swap",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 13.9,
+      "end": 14.04,
+      "text": "that",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.04,
+      "end": 14.18,
+      "text": "shit",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.18,
+      "end": 14.36,
+      "text": "out",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.36,
+      "end": 14.54,
+      "text": "and",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.54,
+      "end": 14.64,
+      "text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.64,
+      "end": 14.88,
+      "text": "came",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 14.88,
+      "end": 15.08,
+      "text": "back",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 15.08,
+      "end": 15.48,
+      "text": "reloading",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "words": [],
+  "srt": "1\n00:00:00,000 --> 00:00:00,340\n No\n\n2\n00:00:00,340 --> 00:00:00,720\n face,\n\n3\n00:00:00,900 --> 00:00:01,320\n no\n\n4\n00:00:01,320 --> 00:00:01,720\n face,\n\n5\n00:00:02,040 --> 00:00:02,300\n no\n\n6\n00:00:02,300 --> 00:00:02,600\n face,\n\n7\n00:00:02,600 --> 00:00:02,740\n no\n\n8\n00:00:02,740 --> 00:00:03,020\n face,\n\n9\n00:00:03,020 --> 00:00:03,220\n no\n\n10\n00:00:03,220 --> 00:00:03,920\n I\n\n11\n00:00:03,920 --> 00:00:04,540\n don't\n\n12\n00:00:04,540 --> 00:00:04,640\n get\n\n13\n00:00:04,640 --> 00:00:04,940\n sleepy\n\n14\n00:00:04,940 --> 00:00:05,180\n off\n\n15\n00:00:05,180 --> 00:00:05,340\n no\n\n16\n00:00:05,340 --> 00:00:05,940\n melatonin\n\n17\n00:00:05,940 --> 00:00:06,100\n My\n\n18\n00:00:06,100 --> 00:00:06,480\n therapist\n\n19\n00:00:06,480 --> 00:00:06,780\n put\n\n20\n00:00:06,780 --> 00:00:06,940\n in\n\n21\n00:00:06,940 --> 00:00:07,060\n a\n\n22\n00:00:07,060 --> 00:00:07,300\n 30\n\n23\n00:00:07,300 --> 00:00:07,500\n day\n\n24\n00:00:07,500 --> 00:00:07,860\n notice\n\n25\n00:00:07,860 --> 00:00:08,039\n Cause\n\n26\n00:00:08,039 --> 00:00:08,180\n I\n\n27\n00:00:08,180 --> 00:00:08,360\n keep\n\n28\n00:00:08,360 --> 00:00:08,520\n on\n\n29\n00:00:08,520 --> 00:00:08,740\n talking\n\n30\n00:00:08,740 --> 00:00:08,980\n about\n\n31\n00:00:08,980 --> 00:00:09,360\n beefing\n\n32\n00:00:09,360 --> 00:00:09,480\n and\n\n33\n00:00:09,480 --> 00:00:09,740\n business\n\n34\n00:00:09,740 --> 00:00:09,940\n And\n\n35\n00:00:09,940 --> 00:00:10,180\n money\n\n36\n00:00:10,180 --> 00:00:10,400\n and\n\n37\n00:00:10,400 --> 00:00:10,660\n women,\n\n38\n00:00:10,840 --> 00:00:10,900\n there's\n\n39\n00:00:10,900 --> 00:00:11,040\n no\n\n40\n00:00:11,040 --> 00:00:11,580\n diagnosis\n\n41\n00:00:11,580 --> 00:00:11,800\n They\n\n42\n00:00:11,800 --> 00:00:12,100\n empty\n\n43\n00:00:12,100 --> 00:00:12,280\n the\n\n44\n00:00:12,280 --> 00:00:12,560\n clip,\n\n45\n00:00:12,800 --> 00:00:13,420\n quick\n\n46\n00:00:13,420 --> 00:00:13,900\n Swap\n\n47\n00:00:13,900 --> 00:00:14,040\n that\n\n48\n00:00:14,040 --> 00:00:14,180\n shit\n\n49\n00:00:14,180 --> 00:00:14,360\n out\n\n50\n00:00:14,360 --> 00:00:14,540\n and\n\n51\n00:00:14,540 --> 00:00:14,640\n I\n\n52\n00:00:14,640 --> 00:00:14,880\n came\n\n53\n00:00:14,880 --> 00:00:15,080\n back\n\n54\n00:00:15,080 --> 00:00:15,480\n reloading\n",
+  "errors": []
+}

@@ -1,0 +1,616 @@
+{
+  "shots": [
+    {
+      "id": "VS001_SH001",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot1",
+      "time": {
+        "start": 0.0,
+        "end": 2.0
+      },
+      "function": "focus",
+      "event": "女子正面展示产品并给出开场标语“向全世界”",
+      "information_delta": "让观众先看到目标主体与开场钩子",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "other",
+          "content": "向全世界"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1"
+      ]
+    },
+    {
+      "id": "VS001_SH002",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot2",
+      "time": {
+        "start": 2.0,
+        "end": 3.0
+      },
+      "function": "focus",
+      "event": "广角/鱼眼仰拍产品，瓶口对镜头，给出“安利好喝的金典鲜活”",
+      "information_delta": "强化产品主视觉并补出产品名称类信息",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "claim",
+          "content": "安利好喝的金典鲜活"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "VS001_SH003",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot3",
+      "time": {
+        "start": 3.0,
+        "end": 4.0
+      },
+      "function": "development",
+      "event": "切换到大号道具场景（红色蛋糕）展示产品使用氛围",
+      "information_delta": "建立多场景生活方式印象",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "VS001_SH004",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot4",
+      "time": {
+        "start": 4.0,
+        "end": 5.0
+      },
+      "function": "explanation",
+      "event": "商场微缩模型场景中展示产品，并给出功效/工艺信息“INFO.09秒超瞬时杀菌 锁住鲜甜”",
+      "information_delta": "补充产品工艺信息点",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "proof",
+          "content": "INFO.09秒超瞬时杀菌 锁住鲜甜"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot4"
+      ]
+    },
+    {
+      "id": "VS001_SH005",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot5",
+      "time": {
+        "start": 5.0,
+        "end": 6.0
+      },
+      "function": "development",
+      "event": "户外街道以大号螃蟹道具作为前景展示",
+      "information_delta": "延续多场景蒙太奇",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot5"
+      ]
+    },
+    {
+      "id": "VS001_SH006",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot6",
+      "time": {
+        "start": 6.0,
+        "end": 7.0
+      },
+      "function": "development",
+      "event": "健身房场景中展示产品",
+      "information_delta": "延续多场景蒙太奇",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot6"
+      ]
+    },
+    {
+      "id": "VS001_SH007",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot7",
+      "time": {
+        "start": 7.0,
+        "end": 8.0
+      },
+      "function": "explanation",
+      "event": "商场场景以大号草帽道具展示，并给出“口感满分 不冰也好喝”",
+      "information_delta": "补充口感类信息点",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "proof",
+          "content": "口感满分 不冰也好喝"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot7"
+      ]
+    },
+    {
+      "id": "VS001_SH008",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot8",
+      "time": {
+        "start": 8.0,
+        "end": 9.0
+      },
+      "function": "development",
+      "event": "健身房以大号哑铃道具展示产品",
+      "information_delta": "延续多场景蒙太奇",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot8"
+      ]
+    },
+    {
+      "id": "VS001_SH009",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot9",
+      "time": {
+        "start": 9.0,
+        "end": 10.0
+      },
+      "function": "focus",
+      "event": "户外广场展示产品并给出“金典鲜活纯牛奶”",
+      "information_delta": "再次强调产品名称",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "claim",
+          "content": "金典鲜活纯牛奶"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot9"
+      ]
+    },
+    {
+      "id": "VS001_SH010",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot10",
+      "time": {
+        "start": 10.0,
+        "end": 11.0
+      },
+      "function": "emotional_shift",
+      "event": "室内场景单手举起产品，给出“好喝到每一刻都想拥有”",
+      "information_delta": "从展示转向使用前的期待",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "cta",
+          "content": "好喝到每一刻都想拥有"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot10"
+      ]
+    },
+    {
+      "id": "VS001_SH011",
+      "scene_id": "VS001",
+      "ref_shot_id": "VS001:shot11",
+      "time": {
+        "start": 11.0,
+        "end": 15.0
+      },
+      "function": "closing",
+      "event": "女子仰头饮用产品，结尾标语持续",
+      "information_delta": "以使用动作和结尾标语收束",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "cta",
+          "content": "好喝到每一刻都想拥有"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot11"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "VS001",
+      "time": [
+        0.0,
+        15.0
+      ],
+      "function": "information",
+      "arc": {
+        "from": "产品主视觉展示",
+        "event": "以多场景蒙太奇展示产品适用场景并补充工艺/口感信息",
+        "to": "以饮用动作与结尾标语收束",
+        "information_delta": "从产品名称与外观推进到工艺、口感与使用体验信息"
+      },
+      "shots": [
+        "VS001_SH001",
+        "VS001_SH002",
+        "VS001_SH003",
+        "VS001_SH004",
+        "VS001_SH005",
+        "VS001_SH006",
+        "VS001_SH007",
+        "VS001_SH008",
+        "VS001_SH009",
+        "VS001_SH010",
+        "VS001_SH011"
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot11"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_VS001_SH001_VS001_SH002",
+      "from": "VS001_SH001",
+      "to": "VS001_SH002",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH002_VS001_SH003",
+      "from": "VS001_SH002",
+      "to": "VS001_SH003",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2",
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH003_VS001_SH004",
+      "from": "VS001_SH003",
+      "to": "VS001_SH004",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3",
+        "VS001:shot4"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH004_VS001_SH005",
+      "from": "VS001_SH004",
+      "to": "VS001_SH005",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot4",
+        "VS001:shot5"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH005_VS001_SH006",
+      "from": "VS001_SH005",
+      "to": "VS001_SH006",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot5",
+        "VS001:shot6"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH006_VS001_SH007",
+      "from": "VS001_SH006",
+      "to": "VS001_SH007",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot6",
+        "VS001:shot7"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH007_VS001_SH008",
+      "from": "VS001_SH007",
+      "to": "VS001_SH008",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot7",
+        "VS001:shot8"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH008_VS001_SH009",
+      "from": "VS001_SH008",
+      "to": "VS001_SH009",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "accelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot8",
+        "VS001:shot9"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH009_VS001_SH010",
+      "from": "VS001_SH009",
+      "to": "VS001_SH010",
+      "type": "continue",
+      "reason": "多场景硬切延续同一产品展示主题",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot9",
+        "VS001:shot10"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH010_VS001_SH011",
+      "from": "VS001_SH010",
+      "to": "VS001_SH011",
+      "type": "progress",
+      "reason": "以连续动作从展示衔接到饮用",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot10",
+        "VS001:shot11"
+      ]
+    }
+  ],
+  "global": {
+    "schema_version": "common_reference_video_analyzer.global_script.v1",
+    "structure_type": "montage",
+    "beats": [
+      {
+        "beat_id": "B001",
+        "type": "opening_hook",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "以女子展示产品与开场标语快速抓注意力",
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      },
+      {
+        "beat_id": "B002",
+        "type": "reveal",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "给出产品主视觉与名称类标语",
+        "evidence_refs": [
+          "VS001:shot2",
+          "VS001:shot9"
+        ]
+      },
+      {
+        "beat_id": "B003",
+        "type": "proof",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "以多场景蒙太奇与功效/口感信息补充证明",
+        "evidence_refs": [
+          "VS001:shot3",
+          "VS001:shot8"
+        ]
+      },
+      {
+        "beat_id": "B004",
+        "type": "closing",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "以饮用动作和结尾标语收束",
+        "evidence_refs": [
+          "VS001:shot10",
+          "VS001:shot11"
+        ]
+      }
+    ],
+    "progression": {
+      "emotion": [
+        "好奇->期待->满足"
+      ],
+      "rhythm": [
+        "快切蒙太奇->结尾连续动作稳定收束"
+      ],
+      "information": [
+        "产品名称->功效->口感->使用体验"
+      ]
+    },
+    "script_memory_points": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 2.0
+        },
+        "type": "opening_hook",
+        "detail": "开场直接以人物正面、双手持产品的稳定展示加开场标语进入，先给主体和钩子。",
+        "preserve": [
+          "开场先给目标主体与钩子的结构"
+        ],
+        "adapt": [
+          "替换为目标主体与目标标语"
+        ],
+        "avoid": [
+          "原品牌、原文案"
+        ],
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "VS001:shot2",
+          "VS001:shot10"
+        ],
+        "time_range_sec": {
+          "start": 2.0,
+          "end": 11.0
+        },
+        "type": "information_release_sequence",
+        "detail": "信息释放顺序为：产品主视觉与名称->功效信息->口感信息->使用动作与结尾标语。",
+        "preserve": [
+          "信息释放顺序与节拍位置"
+        ],
+        "adapt": [
+          "替换为目标产品的名称、功效与口感信息"
+        ],
+        "avoid": [
+          "原功效/工艺文案与原名称"
+        ],
+        "evidence_refs": [
+          "VS001:shot4",
+          "VS001:shot7",
+          "VS001:shot9"
+        ]
+      },
+      {
+        "memory_id": "sm_003",
+        "source_scope": "global",
+        "source_ids": [
+          "VS001:shot3",
+          "VS001:shot8"
+        ],
+        "time_range_sec": {
+          "start": 3.0,
+          "end": 9.0
+        },
+        "type": "demonstration_proof",
+        "detail": "用多场景快切蒙太奇证明产品适用于多种生活场景，并以大号道具强化记忆。",
+        "preserve": [
+          "多场景快切证明链路与大号道具强化机制"
+        ],
+        "adapt": [
+          "替换为目标适用场景与普通道具"
+        ],
+        "avoid": [
+          "原片专属场景与品牌世界"
+        ],
+        "evidence_refs": [
+          "VS001:shot3",
+          "VS001:shot8"
+        ]
+      },
+      {
+        "memory_id": "sm_004",
+        "source_scope": "global",
+        "source_ids": [
+          "VS001:shot10",
+          "VS001:shot11"
+        ],
+        "time_range_sec": {
+          "start": 10.0,
+          "end": 15.0
+        },
+        "type": "closing_cta",
+        "detail": "结尾以仰头饮用动作加结尾标语完成收束与软性行动引导。",
+        "preserve": [
+          "结尾使用动作+标语的收束位置与节奏"
+        ],
+        "adapt": [
+          "替换为目标使用动作与目标结尾标语"
+        ],
+        "avoid": [
+          "原结尾文案与品牌"
+        ],
+        "evidence_refs": [
+          "VS001:shot10",
+          "VS001:shot11"
+        ]
+      }
+    ],
+    "script_knowledge_terms": [],
+    "knowledge_queries": [],
+    "knowledge_status": "skipped_empty_directory",
+    "note": "backend/profiles/脚本/叙事结构与镜头功能/ 下无 md，脚本结构仅基于事实归纳。"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "provider": "sensenova",
+  "task_id": "20260913_053819_80c49ae8-7439-4d2d-82a6-07724e5c47bf",
+  "task": "text2img",
+  "status": "succeeded",
+  "output": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/dance-replication-outline-dry-run/08_reference_frames/rf_scene_001.png",
+  "request": "08_reference_frames/rf_scene_001.request.json",
+  "saved_output_path": null,
+  "seed": null
+}

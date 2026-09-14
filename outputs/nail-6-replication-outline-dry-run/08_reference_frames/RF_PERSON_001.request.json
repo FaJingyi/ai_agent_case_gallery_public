@@ -1,0 +1,20 @@
+{
+  "base_url": "http://10.42.1.1:9006",
+  "submit_url": "http://10.42.1.1:9006/v1/images",
+  "status_url": "http://10.42.1.1:9006/v1/images/{id}",
+  "download_url": "http://10.42.1.1:9006/v1/images/{id}/content",
+  "payload": {
+    "task": "text2img",
+    "conditions": [],
+    "n": 1,
+    "num_inference_steps": 50,
+    "output_mode": "decoded_files",
+    "prompt": "Pure person reference portrait of a non-identifiable East Asian woman, about 25-30 years old, long straight dark hair falling smoothly, cool-toned makeup with dark eyeliner, cool eyeshadow and matte dark lips, wearing a black silk/leather-textured top, delicate metal earrings and a thin necklace, calm confident temperament. Centered head-and-shoulders framing, front-facing, neutral dark backdrop, soft key light with gentle rim light, high realism, editorial portrait photography. Pure person reference focused on person appearance only, not a scene, no readable text or logo.",
+    "target": {
+      "short_edge": 768,
+      "aspect_ratio": "3:4"
+    },
+    "seed": 101
+  },
+  "output": "/tmp/rf_gen/RF_PERSON_001/RF_PERSON_001.png"
+}

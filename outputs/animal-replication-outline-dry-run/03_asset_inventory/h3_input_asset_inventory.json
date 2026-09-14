@@ -1,0 +1,113 @@
+{
+  "schema_version": "common_replication_outline.h3_input_asset_inventory.v1",
+  "policy": "reference_video_default_included_if_within_15s",
+  "h3_material_mode": "reference_video_plus_reference_images",
+  "reference_video": {
+    "path": "test_data/animal/2_2_case4-H3-original.mp4",
+    "duration_sec": 5.875,
+    "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content"
+  },
+  "reference_video_h3_input_policy": {
+    "enabled": true,
+    "max_video_reference_duration_sec": 15,
+    "mode": "full_video_reference"
+  },
+  "eligible_h3_input_assets": [
+    {
+      "asset_id": "REF_VIDEO_VS001",
+      "input_path": "outputs/animal-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content",
+      "media_type": "video",
+      "declared_slot": "reference_video",
+      "resolved_slot": "reference_video",
+      "packager_role": "motion_camera_timing_reference",
+      "source": "reference_video",
+      "allowed": true,
+      "duration_sec": 5.875,
+      "allowed_h3_uses": [
+        "motion_structure_reference",
+        "camera_language_reference",
+        "beat_timing_reference",
+        "single_shot_rhythm_reference"
+      ]
+    },
+    {
+      "asset_id": "A001",
+      "input_path": "test_data/animal/user_input/dog.jpeg",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_3c56183416d846178c6ce4717d3132b5/content",
+      "media_type": "image",
+      "declared_slot": "unknown",
+      "resolved_slot": "actor",
+      "packager_role": "primary_subject_reference",
+      "source": "user_assets",
+      "allowed": true,
+      "allowed_h3_uses": [
+        "primary_subject_appearance_reference",
+        "subject_reference_image"
+      ]
+    },
+    {
+      "asset_id": "GEN_FR_PERSON_HUSKY",
+      "input_path": "outputs/animal-replication-outline-dry-run/08_reference_frames/FR_PERSON_HUSKY.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_029dad159dc84ff39e7e8bb03b1594af/content",
+      "media_type": "image",
+      "declared_slot": "person_reference",
+      "resolved_slot": "person_reference",
+      "packager_role": "person_reference",
+      "source": "generated_reference_frames",
+      "allowed": true,
+      "reference_frame_source": "generated_from_outline",
+      "h3_role": "person_reference",
+      "allowed_h3_uses": [
+        "character_appearance_reference",
+        "subject_reference_image",
+        "identity_consistency_reference"
+      ],
+      "target_bindings": [
+        "SC001",
+        "SEG001",
+        "SEG002",
+        "SEG003",
+        "SEG004",
+        "SEG005",
+        "SEG006"
+      ],
+      "frame_id": "FR_PERSON_HUSKY",
+      "width": 1376,
+      "height": 768
+    },
+    {
+      "asset_id": "GEN_FR_SCENE_LAWN",
+      "input_path": "outputs/animal-replication-outline-dry-run/08_reference_frames/FR_SCENE_LAWN.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_34aa9ae92fe44a33a2ee70f116e9bad0/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "scene_reference",
+      "source": "generated_reference_frames",
+      "allowed": true,
+      "reference_frame_source": "generated_from_outline",
+      "h3_role": "scene_reference",
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "environment_reference_image",
+        "scene_consistency_reference"
+      ],
+      "target_bindings": [
+        "SC001",
+        "SEG001",
+        "SEG002",
+        "SEG003",
+        "SEG004",
+        "SEG005",
+        "SEG006"
+      ],
+      "frame_id": "FR_SCENE_LAWN",
+      "width": 1376,
+      "height": 768
+    }
+  ],
+  "excluded_assets": [],
+  "generated_reference_frames_policy": "appended_after_step8_quality_check_and_usable_output",
+  "validation_flags": []
+}

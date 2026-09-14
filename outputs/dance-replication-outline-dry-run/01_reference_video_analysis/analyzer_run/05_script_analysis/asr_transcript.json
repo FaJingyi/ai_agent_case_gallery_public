@@ -1,0 +1,276 @@
+{
+  "full_text": "Shejustwannaparty,allnight。AndIjustwannabody,girlIsthisalright?Yeah。",
+  "timeline": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 0.14,
+      "text": "She",
+      "raw_text": "She",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "start": 0.14,
+      "end": 0.34,
+      "text": "just",
+      "raw_text": "just",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 3,
+      "start": 0.34,
+      "end": 0.52,
+      "text": "wanna",
+      "raw_text": "wanna",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "start": 0.52,
+      "end": 1.16,
+      "text": "party,",
+      "raw_text": "party,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 5,
+      "start": 1.16,
+      "end": 2.68,
+      "text": "all",
+      "raw_text": "all",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "start": 2.68,
+      "end": 3.08,
+      "text": "night。",
+      "raw_text": "night",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 7,
+      "start": 4.1,
+      "end": 4.9,
+      "text": "And",
+      "raw_text": "And",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 8,
+      "start": 4.9,
+      "end": 5.06,
+      "text": "I",
+      "raw_text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 9,
+      "start": 5.06,
+      "end": 5.22,
+      "text": "just",
+      "raw_text": "just",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 10,
+      "start": 5.22,
+      "end": 5.44,
+      "text": "wanna",
+      "raw_text": "wanna",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 11,
+      "start": 5.44,
+      "end": 6.0,
+      "text": "body,",
+      "raw_text": "body,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 12,
+      "start": 6.26,
+      "end": 6.66,
+      "text": "girl",
+      "raw_text": "girl",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 13,
+      "start": 6.66,
+      "end": 7.22,
+      "text": "Is",
+      "raw_text": "Is",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 14,
+      "start": 7.22,
+      "end": 7.34,
+      "text": "this",
+      "raw_text": "this",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 15,
+      "start": 7.34,
+      "end": 7.82,
+      "text": "alright?",
+      "raw_text": "alright?",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 16,
+      "start": 8.74,
+      "end": 9.14,
+      "text": "Yeah。",
+      "raw_text": "Yeah",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "schema_version": "tool_asr.transcript.v1",
+  "status": "ok",
+  "provider": "gitee_ai",
+  "model": "whisper-large-v3-turbo",
+  "source": {
+    "media_path": "/home/mx/jyfa/workdir/ai_agent_platform/test_data/dance/2_2_case2-H3-original.mp4",
+    "audio_path": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/dance-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/05_script_analysis/2_2_case2-H3-original.asr.wav",
+    "language": null
+  },
+  "raw_full_text": "Shejustwannaparty,allnightAndIjustwannabody,girlIsthisalright?Yeah",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.14,
+      "text": "She",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 0.14,
+      "end": 0.34,
+      "text": "just",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 0.34,
+      "end": 0.52,
+      "text": "wanna",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 0.52,
+      "end": 1.16,
+      "text": "party,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 1.16,
+      "end": 2.68,
+      "text": "all",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 2.68,
+      "end": 3.08,
+      "text": "night",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 4.1,
+      "end": 4.9,
+      "text": "And",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 4.9,
+      "end": 5.06,
+      "text": "I",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 5.06,
+      "end": 5.22,
+      "text": "just",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 5.22,
+      "end": 5.44,
+      "text": "wanna",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 5.44,
+      "end": 6.0,
+      "text": "body,",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 6.26,
+      "end": 6.66,
+      "text": "girl",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 6.66,
+      "end": 7.22,
+      "text": "Is",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 7.22,
+      "end": 7.34,
+      "text": "this",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 7.34,
+      "end": 7.82,
+      "text": "alright?",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 8.74,
+      "end": 9.14,
+      "text": "Yeah",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "words": [],
+  "srt": "1\n00:00:00,000 --> 00:00:00,140\n She\n\n2\n00:00:00,140 --> 00:00:00,340\n just\n\n3\n00:00:00,340 --> 00:00:00,520\n wanna\n\n4\n00:00:00,520 --> 00:00:01,160\n party,\n\n5\n00:00:01,160 --> 00:00:02,680\n all\n\n6\n00:00:02,680 --> 00:00:03,080\n night\n\n7\n00:00:04,100 --> 00:00:04,900\n And\n\n8\n00:00:04,900 --> 00:00:05,060\n I\n\n9\n00:00:05,060 --> 00:00:05,220\n just\n\n10\n00:00:05,220 --> 00:00:05,440\n wanna\n\n11\n00:00:05,440 --> 00:00:06,000\n body,\n\n12\n00:00:06,260 --> 00:00:06,660\n girl\n\n13\n00:00:06,660 --> 00:00:07,220\n Is\n\n14\n00:00:07,220 --> 00:00:07,340\n this\n\n15\n00:00:07,340 --> 00:00:07,820\n alright?\n\n16\n00:00:08,740 --> 00:00:09,140\n Yeah\n",
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "common_reference_video_analyzer.scene_visual_vlm_responses.v1",
+  "input_mode": "video_url",
+  "fps": 4,
+  "max_frames": 256,
+  "model": "Qwen3.8-27B",
+  "responses": [
+    {
+      "segment_id": "VS001",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content",
+      "response_file": "scene_visual_vlm_responses/VS001.json"
+    }
+  ],
+  "request_count": 1,
+  "errors": []
+}

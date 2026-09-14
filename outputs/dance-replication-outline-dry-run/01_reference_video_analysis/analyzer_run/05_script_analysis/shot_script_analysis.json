@@ -1,0 +1,22 @@
+{
+  "schema_version": "common_reference_video_analyzer.shot_script_analysis.v1",
+  "shots": [
+    {
+      "id": "SC001_SH001",
+      "segment_id": "VS001",
+      "time": {
+        "start": 0.0,
+        "end": 10.125
+      },
+      "function": "舞蹈表演展示",
+      "event": "单主体在户外场地完成一段连续舞蹈",
+      "information_delta": "观众看到人物外观、场地环境与完整舞蹈动作链",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_analysis.json#shot1",
+        "05_script_analysis/asr_alignment.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "common_reference_video_analyzer.cross_scene_visual.v1",
+  "segment_id": "VS001",
+  "status": "completed",
+  "relations": [
+    {"pair_id": "VS001:shot1_to_shot2", "from": "shot1", "to": "shot2", "transition": {"transition_type": "hard cut", "transition_mechanism": "same binocular mask and red UI retained while location changes"}, "continuity": {"subject_continuity": "different subject: shelter -> flag", "action_continuity": "no continuous action", "camera_continuity": "static to static", "style_atmosphere_continuity": "same warm grade, grain, mask and red UI"}, "change": {"scene_location_change": "street ground -> low-angle building", "subject_usage_state_change": "standing object -> wind-moved fabric"}, "visible_relation_cues": {"rhythm_or_mood_relation": "even 4s holds"}, "boundary_state_relation": "scene_location, subject_usage_state and prop_overlay change; composition and lighting stay continuous", "evidence_refs": ["VS001:shot1", "VS001:shot2"]},
+    {"pair_id": "VS001:shot2_to_shot3", "from": "shot2", "to": "shot3", "transition": {"transition_type": "hard cut", "transition_mechanism": "same mask and grade retained while a person enters a rooftop scene"}, "continuity": {"subject_continuity": "different subject: flag -> woman", "action_continuity": "no continuous action", "camera_continuity": "static to static", "style_atmosphere_continuity": "same warm grade, grain, mask and red UI"}, "change": {"scene_location_change": "building exterior -> rooftop", "person_styling_change": "a woman in a beige suit appears"}, "visible_relation_cues": {"rhythm_or_mood_relation": "even 4s holds"}, "boundary_state_relation": "scene_location, person_styling, subject_usage_state and prop_overlay change; composition and lighting stay continuous", "evidence_refs": ["VS001:shot2", "VS001:shot3"]},
+    {"pair_id": "VS001:shot3_to_shot4", "from": "shot3", "to": "shot4", "transition": {"transition_type": "hard cut", "transition_mechanism": "medium shot cuts to a face close-up that emphasizes the sunglass reflection"}, "continuity": {"subject_continuity": "uncertain whether it is the same person", "action_continuity": "no continuous action", "camera_continuity": "static to static", "style_atmosphere_continuity": "same warm grade, grain, mask and red UI"}, "change": {"composition_change": "medium -> extreme close-up", "outfit_accessories_change": "beige suit -> red high-neck top and red sunglasses"}, "visible_relation_cues": {"rhythm_or_mood_relation": "final 3s hold"}, "boundary_state_relation": "person_styling, makeup_hair, outfit_accessories, subject_usage_state, prop_overlay and composition change; lighting stays continuous", "evidence_refs": ["VS001:shot3", "VS001:shot4"]}
+  ],
+  "state_relation_observations": [
+    {"shot_id": "shot1", "kind": "initial_state", "visible_state": "street scene with a MINIMAX bus-stop shelter and red scouting UI overlay", "confidence": "high"},
+    {"boundary": "shot1 -> shot2", "observed_changes": ["scene_location", "subject_usage_state", "prop_overlay"], "continuity": ["composition", "lighting_weather"], "before_after_detail": "street ground -> low-angle building; shelter -> hanging flag; UI PUBLIC SPACE -> FABRIC SIGNAL", "newly_revealed": "large fabric banner", "uncertainty": "none", "confidence": "high"},
+    {"boundary": "shot2 -> shot3", "observed_changes": ["scene_location", "person_styling", "subject_usage_state", "prop_overlay"], "continuity": ["composition", "lighting_weather"], "before_after_detail": "building exterior -> rooftop; a woman appears; UI FABRIC SIGNAL -> ROOFTOP VIEW", "newly_revealed": "person, rooftop, 3D letters", "uncertainty": "none", "confidence": "high"},
+    {"boundary": "shot3 -> shot4", "observed_changes": ["person_styling", "makeup_hair", "outfit_accessories", "subject_usage_state", "prop_overlay", "composition"], "continuity": ["lighting_weather"], "before_after_detail": "medium -> face close-up; hair appears shorter, outfit becomes red high-neck with red sunglasses; UI ROOFTOP VIEW -> REFLECTION", "newly_revealed": "lens reflection and facial detail", "uncertainty": "same person uncertain", "confidence": "medium"}
+  ],
+  "special_mechanism_observations": [
+    {"mechanism_id": "VS001_sm1", "time_range_or_boundary": "0.0-15.0s", "type": "special_composition", "evidence": "dual side-by-side circular apertures on black across the whole clip", "mechanics": "restricted observing frame", "replication_relevance": "core identity"},
+    {"mechanism_id": "VS001_sm2", "time_range_or_boundary": "0.0-15.0s", "type": "visual_effect", "evidence": "red monospace UI text overlays changing per scene", "mechanics": "scouting-device interface simulation", "replication_relevance": "memorable overlay structure"}
+  ],
+  "transition_memory_observations": [
+    {"candidate_id": "vt1", "type": "transition", "time_range": "0.0-15.0s", "detail": "three hard cuts that keep mask, grade and UI continuous", "preserve": ["hard cut rhythm", "continuous mask and UI"], "adapt": ["subject and location content"], "avoid": ["no fades or wipes were observed"]}
+  ],
+  "script_connection_cues": {
+    "visible_event_connection_hint": "successive scouting views move from ground, to facade, to rooftop, to a reflected detail",
+    "visible_information_change_hint": "the left UI label descends from public space to fabric signal to rooftop view to reflection",
+    "text_or_caption_change_hint": "left UI label changes each shot while the right FIELD NOTE label stays constant",
+    "emotion_shift_hint": "observation builds from environment to person to intimate reflection"
+  }
+}

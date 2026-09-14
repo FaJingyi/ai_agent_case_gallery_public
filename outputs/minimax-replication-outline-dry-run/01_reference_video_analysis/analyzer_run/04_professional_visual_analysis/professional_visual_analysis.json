@@ -1,0 +1,117 @@
+{
+  "schema_version": "common_reference_video_analyzer.professional_visual.v1",
+  "knowledge_status": "available",
+  "knowledge_provider": {
+    "mode": "direct_md_files",
+    "root": "backend/profiles",
+    "map": "references/knowledge-document-map.md",
+    "memory_rule": "references/visual-memory-point-evaluation.md",
+    "max_documents_per_segment_or_shot": 3,
+    "max_documents_per_pair": 2
+  },
+  "segment_or_shot_professional_visual": [
+    {
+      "source_id": "VS001:shot1",
+      "queries": [
+        {"intent": "subject position / negative space", "query_type": "composition_and_spatial", "document_paths": ["视觉/画幅构图与空间/单主体位置与画面留白/单主体与空间构图_优化示例.md"], "status": "read"},
+        {"intent": "shot size / camera angle", "query_type": "shot_size_and_angle", "document_paths": ["视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md"], "status": "read"},
+        {"intent": "foreground layer vs graphic overlay", "query_type": "depth_and_overlay", "document_paths": ["视觉/画幅构图与空间/前中后景与景深层次/前中后景与景深层次.md"], "status": "read"}
+      ],
+      "matched_terms": [
+        {"term": "中心构图（Centered Composition）", "knowledge_path": "视觉/画幅构图与空间/单主体位置与画面留白/单主体与空间构图_优化示例.md", "knowledge_basis": "主体视觉中心接近画面中心，画面稳定、直接", "vlm_evidence": "bus-stop shelter sits at the center of the two circular apertures"},
+        {"term": "中景（Medium Shot）", "knowledge_path": "视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md", "knowledge_basis": "细节与环境信息相对平衡", "vlm_evidence": "shelter and surrounding street/building are both visible"},
+        {"term": "叠加层与场景深度分离", "knowledge_path": "视觉/画幅构图与空间/前中后景与景深层次/前中后景与景深层次.md", "knowledge_basis": "字幕、HUD、水印等不属于前中后景实体空间，需单独描述", "vlm_evidence": "red monospace UI text and the black circular mask are graphic layers, not scene depth"}
+      ],
+      "candidate_terms": ["框中框（frame-within-frame）"],
+      "professional_summary": "中心构图的静止中景，城市公交站台置于双圆孔遮罩中央，暖调自然光下叠加红色侦察 UI 图形层。",
+      "uncertainties": []
+    },
+    {
+      "source_id": "VS001:shot2",
+      "queries": [
+        {"intent": "shot size / camera angle", "query_type": "shot_size_and_angle", "document_paths": ["视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md"], "status": "read"},
+        {"intent": "camera movement / stability", "query_type": "camera_motion", "document_paths": ["视觉/镜头运动与光学/摄影机位移旋转与复合运镜/摄影机位移旋转与复合运镜.md"], "status": "read"}
+      ],
+      "matched_terms": [
+        {"term": "低角度", "knowledge_path": "视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md", "knowledge_basis": "镜头从主体下方向上仰看，强化体量感", "vlm_evidence": "looking up at the tall building and its hanging flag"},
+        {"term": "静止镜头（Static）", "knowledge_path": "视觉/镜头运动与光学/摄影机位移旋转与复合运镜/摄影机位移旋转与复合运镜.md", "knowledge_basis": "无机位移动、无变焦、无焦点变化", "vlm_evidence": "camera stays locked while the flag ripples"}
+      ],
+      "candidate_terms": [],
+      "professional_summary": "低角度静止全景，仰视高楼上的竖向旗帜，风带动织物小幅摆动，保持双圆孔构图与红色 UI。",
+      "uncertainties": []
+    },
+    {
+      "source_id": "VS001:shot3",
+      "queries": [
+        {"intent": "shot size / camera angle", "query_type": "shot_size_and_angle", "document_paths": ["视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md"], "status": "read"},
+        {"intent": "subject action / gaze", "query_type": "action_and_continuity", "document_paths": ["视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md"], "status": "read"}
+      ],
+      "matched_terms": [
+        {"term": "中景（Medium Shot）", "knowledge_path": "视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md", "knowledge_basis": "人物腰部以上，细节与环境信息相对平衡", "vlm_evidence": "woman visible with the rooftop letter structure behind her"},
+        {"term": "时间顺序描述（Temporal Order）", "knowledge_path": "视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md", "knowledge_basis": "多个动作按实际发生先后书写", "vlm_evidence": "woman stands still and looks to the right; no multi-stage action"}
+      ],
+      "candidate_terms": [],
+      "professional_summary": "静止中景，人物立于画面左侧并向右侧注视，背景为带立体字母的屋顶结构，红色 UI 记录屋顶视角。",
+      "uncertainties": []
+    },
+    {
+      "source_id": "VS001:shot4",
+      "queries": [
+        {"intent": "extreme close-up framing", "query_type": "shot_size_and_angle", "document_paths": ["视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md"], "status": "read"},
+        {"intent": "micro action / small head turn", "query_type": "micro_action", "document_paths": ["视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md"], "status": "read"},
+        {"intent": "color grade / film texture", "query_type": "lighting_and_texture", "document_paths": ["视觉/光线色彩与质感/色温调色与画面质感/色温调色与画面质感.md"], "status": "read"}
+      ],
+      "matched_terms": [
+        {"term": "大特写（Extreme Close-Up）", "knowledge_path": "视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md", "knowledge_basis": "只保留眼睛、液滴、纹理等局部", "vlm_evidence": "tight face framing filled by red geometric sunglasses"},
+        {"term": "复古胶片调（vintage_film）", "knowledge_path": "视觉/光线色彩与质感/色温调色与画面质感/色温调色与画面质感.md", "knowledge_basis": "暖偏色、褪色感、对比度较低", "vlm_evidence": "warm vintage tone with visible film grain across the clip"}
+      ],
+      "candidate_terms": [],
+      "professional_summary": "大特写固定在红色几何墨镜上，人物头部轻微转动使镜片中的字母反射随之变化，保持复古胶片调与双圆孔遮罩。",
+      "uncertainties": ["same person as shot3 uncertain"]
+    }
+  ],
+  "cross_shot_professional_visual": [
+    {"pair_id": "VS001:shot1_to_shot2", "queries": [{"intent": "hard cut / continuity", "query_type": "transition_and_continuity", "document_paths": ["视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md", "视觉/主体动作与连续性/多镜头身份与风格锚定/多镜头身份与风格锚定.md"], "status": "read"}], "matched_terms": [{"term": "硬切（Hard Cut）", "knowledge_path": "视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md", "knowledge_basis": "前一画面立即结束，后一画面同帧开始", "vlm_evidence": "ground view instantly replaces with a low-angle building view"}, {"term": "风格锁（Style Lock）", "knowledge_path": "视觉/主体动作与连续性/多镜头身份与风格锚定/多镜头身份与风格锚定.md", "knowledge_basis": "多镜头重复同一套色彩、字体、光线和运动性格", "vlm_evidence": "same mask, warm grade, grain and red monospace UI continue"}], "candidate_terms": [], "professional_summary": "硬切换景，但双圆孔遮罩、暖调颗粒和红色 UI 保持一致。", "uncertainties": []},
+    {"pair_id": "VS001:shot2_to_shot3", "queries": [{"intent": "hard cut / style lock", "query_type": "transition_and_continuity", "document_paths": ["视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md", "视觉/主体动作与连续性/多镜头身份与风格锚定/多镜头身份与风格锚定.md"], "status": "read"}], "matched_terms": [{"term": "硬切（Hard Cut）", "knowledge_path": "视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md", "knowledge_basis": "前一画面立即结束，后一画面同帧开始", "vlm_evidence": "building exterior instantly cuts to rooftop"}, {"term": "风格锁（Style Lock）", "knowledge_path": "视觉/主体动作与连续性/多镜头身份与风格锚定/多镜头身份与风格锚定.md", "knowledge_basis": "所有镜头沿用相同色板、字体、光线方向", "vlm_evidence": "same UI and grade persist while a person appears"}], "candidate_terms": [], "professional_summary": "硬切引入人物，遮罩、色调和 UI 风格无缝延续。", "uncertainties": []},
+    {"pair_id": "VS001:shot3_to_shot4", "queries": [{"intent": "hard cut / composition change", "query_type": "transition_and_continuity", "document_paths": ["视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md", "视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md"], "status": "read"}], "matched_terms": [{"term": "硬切（Hard Cut）", "knowledge_path": "视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md", "knowledge_basis": "前一画面立即结束，后一画面同帧开始", "vlm_evidence": "medium shot instantly cuts to a face close-up"}, {"term": "特写（Close-Up）", "knowledge_path": "视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md", "knowledge_basis": "脸部或关键物体占据画面大部", "vlm_evidence": "final shot is an extreme face close-up of the sunglasses"}], "candidate_terms": [], "professional_summary": "硬切推进到大特写，用墨镜反射承接上一镜的主题细节。", "uncertainties": ["subject identity continuity uncertain"]}
+  ],
+  "knowledge_enhanced_summaries": [
+    {"source_id": "VS001", "dimension": "composition", "term": "中心构图 + 双圆孔遮罩", "knowledge_path": "视觉/画幅构图与空间/单主体位置与画面留白/单主体与空间构图_优化示例.md", "vlm_evidence": "content centered inside two circular apertures on black", "prompt_value": "keep the dual circular observing mask as the core frame", "do_not_compress": true},
+    {"source_id": "VS001", "dimension": "camera_motion", "term": "静止镜头", "knowledge_path": "视觉/镜头运动与光学/摄影机位移旋转与复合运镜/摄影机位移旋转与复合运镜.md", "vlm_evidence": "camera stays locked in all four shots", "prompt_value": "lock the camera; motion comes from wind, gaze and head turn only", "do_not_compress": true},
+    {"source_id": "VS001", "dimension": "transition", "term": "硬切 + 风格锁", "knowledge_path": "视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md", "vlm_evidence": "three hard cuts with continuous mask, grade and UI", "prompt_value": "hard cut between four equal holds while mask, grade and UI stay continuous", "do_not_compress": true},
+    {"source_id": "VS001", "dimension": "lighting_texture", "term": "warm natural light + vintage film grain", "knowledge_path": "视觉/光线色彩与质感/色温调色与画面质感/色温调色与画面质感.md", "vlm_evidence": "warm amber daylight with visible film grain and retro tone", "prompt_value": "use warm natural daylight with light vintage film grain", "do_not_compress": true},
+    {"source_id": "VS001", "dimension": "micro_action", "term": "头部轻转更新反射", "knowledge_path": "视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md", "vlm_evidence": "small head turn changes the MINIMAX reflection in the lenses", "prompt_value": "a slight head turn so the reflected lettering shifts inside the lenses", "do_not_compress": true},
+    {"source_id": "VS001", "dimension": "visual_effect", "term": "红色等宽侦察 UI 叠加层", "knowledge_path": "视觉/字幕图形与画面合成/文字标注与多层合成/文字标注与多层合成.md", "vlm_evidence": "red monospace UI text layered at left and right, changing per scene", "prompt_value": "red monospace scouting UI at left and right with a changing left label", "do_not_compress": true}
+  ],
+  "video_prompt_source": {
+    "global_static": "the entire clip is seen through two side-by-side circular apertures on a black field, like binoculars or a peephole, with a warm amber vintage-film grade, light grain and soft vignette; red monospace scouting UI text sits at the left and right edges",
+    "global_camera": "camera is completely locked in every shot; no push, pan, zoom, rack focus or handheld movement; all motion comes from the subject or environment",
+    "shot_timeline": [
+      {"shot_id": "shot1", "time_range_sec": {"start": 0.0, "end": 4.0}, "static": "a modern MINIMAX bus-stop shelter standing on a city street in front of a beige stone building, warm daylight and a long ground shadow", "dynamic": "no subject movement; only the shadow cast by the MINIMAX lettering on the wall shifts slightly", "knowledge_terms": ["中心构图", "中景", "静止镜头", "叠加层与场景深度分离"], "state_relations": [{"shot_id": "shot1", "kind": "initial_state", "visible_state": "street scene with a MINIMAX bus-stop shelter and red scouting UI overlay", "confidence": "high"}], "special_mechanisms": ["VS001_sm1", "VS001_sm2"], "prompt_ready_description": "Through two circular apertures, hold on a centered MINIMAX bus-stop shelter on a warm city street; the only motion is a faint shift of the lettering shadow."},
+      {"shot_id": "shot2", "time_range_sec": {"start": 4.0, "end": 8.0}, "static": "a low-angle view of a tall building carrying a large vertical white fabric banner lettered MINIMAX down its side, under a cloudy sky", "dynamic": "the banner ripples gently in the wind while the camera stays locked", "knowledge_terms": ["低角度", "静止镜头", "硬切", "风格锁"], "state_relations": [{"boundary": "shot1 -> shot2", "observed_changes": ["scene_location", "subject_usage_state", "prop_overlay"], "continuity": ["composition", "lighting_weather"], "newly_revealed": "large fabric banner", "uncertainty": "none", "confidence": "high"}], "special_mechanisms": ["VS001_sm1", "VS001_sm2"], "prompt_ready_description": "Hard cut to a low-angle view of a vertical white MINIMAX banner rippling on a tall building, mask and grade unchanged."},
+      {"shot_id": "shot3", "time_range_sec": {"start": 8.0, "end": 12.0}, "static": "a woman in a beige suit holding a black phone stands at the left of a rooftop, with large three-dimensional MINIMAX letters on the structure behind her", "dynamic": "she stands still and looks to the right; the camera does not move", "knowledge_terms": ["中景", "时间顺序描述", "硬切", "风格锁"], "state_relations": [{"boundary": "shot2 -> shot3", "observed_changes": ["scene_location", "person_styling", "subject_usage_state", "prop_overlay"], "continuity": ["composition", "lighting_weather"], "newly_revealed": "person, rooftop and 3D letters", "uncertainty": "none", "confidence": "high"}], "special_mechanisms": ["VS001_sm1", "VS001_sm2"], "prompt_ready_description": "Hard cut to a rooftop medium shot: a woman in a beige suit holds a phone and looks right, with 3D MINIMAX letters behind her."},
+      {"shot_id": "shot4", "time_range_sec": {"start": 12.0, "end": 15.0}, "static": "an extreme close-up of a face wearing red-framed geometric sunglasses that reflect the MINIMAX building lettering; a silver round earring and a red high-neck top are visible", "dynamic": "the head turns slightly so the reflected lettering shifts inside the lenses; the camera stays locked", "knowledge_terms": ["大特写", "复古胶片调", "硬切"], "state_relations": [{"boundary": "shot3 -> shot4", "observed_changes": ["person_styling", "makeup_hair", "outfit_accessories", "subject_usage_state", "prop_overlay", "composition"], "continuity": ["lighting_weather"], "newly_revealed": "lens reflection and facial detail", "uncertainty": "same person uncertain", "confidence": "medium"}], "special_mechanisms": ["VS001_sm1", "VS001_sm2"], "prompt_ready_description": "Hard cut to an extreme close-up of red geometric sunglasses reflecting the MINIMAX lettering; a slight head turn makes the reflection move."}
+    ],
+    "cross_shot_relations": [
+      {"from": "shot1", "to": "shot2", "transition_type": "hard cut", "visual_mechanism": "ground-level to low-angle building view", "boundary_state_relation": "location, subject and left UI label change; composition and lighting continue", "knowledge_terms": ["硬切", "风格锁"], "special_mechanisms": ["VS001_sm1", "VS001_sm2"], "prompt_ready_description": "Cut directly between the four scouting views while the binocular mask, warm grade and red UI stay locked."},
+      {"from": "shot2", "to": "shot3", "transition_type": "hard cut", "visual_mechanism": "building exterior to rooftop person", "boundary_state_relation": "location and person enter; tone and UI continue", "knowledge_terms": ["硬切", "风格锁"], "special_mechanisms": ["VS001_sm1", "VS001_sm2"], "prompt_ready_description": "Hard cut introduces the rooftop subject with unchanged mask and UI style."},
+      {"from": "shot3", "to": "shot4", "transition_type": "hard cut", "visual_mechanism": "medium shot to face close-up around the sunglasses", "boundary_state_relation": "composition, outfit and styling change; lighting continues", "knowledge_terms": ["硬切", "特写"], "special_mechanisms": ["VS001_sm1", "VS001_sm2"], "prompt_ready_description": "Hard cut pushes to the reflected detail in the sunglasses to close the sequence."}
+    ],
+    "special_mechanisms": [
+      {"mechanism_id": "VS001_sm1", "mechanism_type": "special_composition", "time_range_sec": {"start": 0.0, "end": 15.0}, "evidence": "dual side-by-side circular apertures on black across the whole clip", "mechanics": "restricted binocular observing frame with soft vignette at circular edges", "replication_relevance": "core identity; must be preserved", "prompt_ready_sentence": "Frame the entire video inside two side-by-side circular apertures on a black field, with soft dark vignette at the circular edges."},
+      {"mechanism_id": "VS001_sm2", "mechanism_type": "visual_effect", "time_range_sec": {"start": 0.0, "end": 15.0}, "evidence": "red monospace UI text at left and right that changes per scene", "mechanics": "simulated scouting/field-note device interface", "replication_relevance": "memorable overlay structure", "prompt_ready_sentence": "Place minimal red monospace scouting UI at the left and right edges, with the left label changing per shot and the right label staying constant."}
+    ],
+    "state_relation_summary": [
+      {"boundary": "shot1 -> shot2", "summary": "location, subject and left UI label change; composition and lighting continuous"},
+      {"boundary": "shot2 -> shot3", "summary": "location and person change; composition and lighting continuous"},
+      {"boundary": "shot3 -> shot4", "summary": "composition, styling and outfit change; lighting continuous; identity uncertain"}
+    ],
+    "priority_memory_points": ["vm_001", "vm_002", "vm_003", "vm_004"]
+  },
+  "visual_memory_points": [
+    {"memory_id": "vm_001", "source_scope": "video_segment", "source_ids": ["VS001"], "time_range_sec": {"start": 0.0, "end": 15.0}, "type": "composition", "detail": "the whole clip is confined to two side-by-side circular apertures on a black field, like binoculars or a peephole", "preserve": ["dual circular mask", "black surround", "soft vignette at circular edges"], "adapt": ["subject and scene content"], "avoid": ["full-frame composition", "MINIMAX brand identity and source wording"], "evidence_refs": ["VS001:shot1", "VS001:shot2", "VS001:shot3", "VS001:shot4"]},
+    {"memory_id": "vm_002", "source_scope": "video_segment", "source_ids": ["VS001"], "time_range_sec": {"start": 0.0, "end": 15.0}, "type": "visual_effect", "detail": "red monospace scouting UI text sits at the frame edges and changes per scene", "preserve": ["red monospace type", "left/right symmetric layout", "per-scene label change"], "adapt": ["label wording and colour"], "avoid": ["source brand word MINIMAX", "serif or ornate UI"], "evidence_refs": ["VS001:shot1", "VS001:shot2", "VS001:shot3", "VS001:shot4"]},
+    {"memory_id": "vm_003", "source_scope": "cross_segment_pair", "source_ids": ["VS001:shot1_to_shot2", "VS001:shot2_to_shot3", "VS001:shot3_to_shot4"], "time_range_sec": {"start": 0.0, "end": 15.0}, "type": "transition", "detail": "three hard cuts between four equal 4s holds while mask, warm grade, grain and red UI stay continuous", "preserve": ["hard cut rhythm", "equal hold durations", "continuous mask, grade and UI"], "adapt": ["subject and location"], "avoid": ["fades or wipes that are not in the source"], "evidence_refs": ["VS001:shot1_to_shot2", "VS001:shot2_to_shot3", "VS001:shot3_to_shot4"]},
+    {"memory_id": "vm_004", "source_scope": "shot", "source_ids": ["VS001:shot4"], "time_range_sec": {"start": 12.0, "end": 15.0}, "type": "micro_action", "detail": "a small head turn changes the reflected lettering inside the sunglasses during the final close-up", "preserve": ["slight head turn", "reflection changing with the turn", "locked camera"], "adapt": ["wearer and reflected content"], "avoid": ["source brand identity", "any invented facial identity"], "evidence_refs": ["VS001:shot4"]}
+  ]
+}

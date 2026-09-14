@@ -1,0 +1,169 @@
+{
+  "schema_version": "common_reference_video_analyzer.script_analysis.v1",
+  "shots": [
+    {
+      "id": "VS001_SH001",
+      "scene_id": "VS001",
+      "time": [
+        0.0,
+        12.6
+      ],
+      "time_precision": "exact",
+      "function": "focus",
+      "event": "人物在镜头前先用双手完成交叉-张开-展示美甲与戒指的动作链, 随后放下双手露出面部微笑并开口说话",
+      "information_delta": "先给出美甲/首饰的细节信息, 再揭示佩戴者的面部形象与情绪",
+      "text_slots": [
+        {
+          "kind": "dialogue",
+          "slot": "question",
+          "content": "Do you think I'm strange?"
+        }
+      ],
+      "confidence": "medium",
+      "evidence_refs": [
+        "VS001:shot1",
+        "asr_transcript.timeline[].index"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "VS001",
+      "time": [
+        0.0,
+        12.6
+      ],
+      "function": "detail",
+      "arc": {
+        "from": "仅手部美甲与首饰的近景特写",
+        "event": "手部动作链展示后放下双手",
+        "to": "面部揭示并开口提问",
+        "information_delta": "从产品/细节信息推进到人物形象与情绪信息"
+      },
+      "shots": [
+        "VS001_SH001"
+      ],
+      "confidence": "medium",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001_SH001"
+      ]
+    }
+  ],
+  "relations": [],
+  "global": {
+    "schema_version": "common_reference_video_analyzer.global_script_structure.v1",
+    "structure_type": "linear",
+    "beats": [
+      {
+        "beat_id": "B001",
+        "type": "opening_hook",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "以双手美甲与首饰的近景特写开场, 直接抓住视觉注意",
+        "evidence_refs": [
+          "VS001_SH001"
+        ]
+      },
+      {
+        "beat_id": "B002",
+        "type": "reveal",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "手部动作完成后放下双手, 揭示佩戴者面部形象与表情",
+        "evidence_refs": [
+          "VS001_SH001"
+        ]
+      },
+      {
+        "beat_id": "B003",
+        "type": "closing",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "人物面向镜头开口提问, 以问句收束并留下互动感",
+        "evidence_refs": [
+          "VS001_SH001",
+          "asr_transcript.timeline[].index"
+        ]
+      }
+    ],
+    "progression": {
+      "emotion": [
+        "好奇/俏皮, 由手部特写过渡到面部微笑"
+      ],
+      "rhythm": [
+        "中速; 手部展示后 7.5-8.0s 短暂过渡再揭示面部"
+      ],
+      "information": [
+        "美甲细节 -> 首饰细节 -> 佩戴者形象 -> 互动问句"
+      ]
+    },
+    "script_memory_points": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 12.6
+        },
+        "type": "information_release_sequence",
+        "detail": "先局部细节特写(美甲/首饰), 再揭示主体(佩戴者面部), 信息从细节推进到整体。",
+        "preserve": [
+          "先细节后主体的信息释放顺序",
+          "细节展示作为开场钩子"
+        ],
+        "adapt": [
+          "具体美甲图案替换为目标素材",
+          "佩戴者形象替换为与目标风格一致者",
+          "具体场景可迁移"
+        ],
+        "avoid": [
+          "原人物身份",
+          "原视频原文案与特定品牌"
+        ],
+        "evidence_refs": [
+          "B001",
+          "B002"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B003"
+        ],
+        "time_range_sec": {
+          "start": 6.4,
+          "end": 12.6
+        },
+        "type": "opening_hook",
+        "detail": "结尾以面向镜头的提问句收束, 形成互动/悬念落点。",
+        "preserve": [
+          "结尾以提问/互动收束的结构位置"
+        ],
+        "adapt": [
+          "问句文案可按目标需求改写",
+          "语言与语气可调整"
+        ],
+        "avoid": [
+          "照搬原台词原文",
+          "原视频身份与声明"
+        ],
+        "evidence_refs": [
+          "B003"
+        ]
+      }
+    ],
+    "script_knowledge_terms": [],
+    "knowledge_queries": [],
+    "knowledge_status": "skipped_empty_directory",
+    "note": "backend/profiles/脚本/叙事结构与镜头功能/ 下无 md 文档, 脚本结构仅基于 ASR 与视觉事实归纳"
+  }
+}

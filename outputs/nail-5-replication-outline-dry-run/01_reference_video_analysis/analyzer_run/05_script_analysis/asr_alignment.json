@@ -1,0 +1,86 @@
+{
+  "schema_version": "common_reference_video_analyzer.asr_alignment.v1",
+  "asr_status": "ok",
+  "speech_status": "unavailable",
+  "speech_interpretation": "suspected_singing_or_music_lyrics_unsupported_skipped",
+  "note": "ASR 输出为英文歌词片段（疑似歌曲/背景音乐），按 unsupported_skipped 处理，不作为台词/口播文本进入脚本结构。画面文字来自视觉阶段。",
+  "segment_id": "VS001",
+  "aligned_shots": [
+    {
+      "shot_id": "VS001_SH001",
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 3.5
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    },
+    {
+      "shot_id": "VS001_SH002",
+      "time_range_sec": {
+        "start": 3.5,
+        "end": 6.0
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    },
+    {
+      "shot_id": "VS001_SH003",
+      "time_range_sec": {
+        "start": 6.0,
+        "end": 7.5
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    },
+    {
+      "shot_id": "VS001_SH004",
+      "time_range_sec": {
+        "start": 7.5,
+        "end": 9.0
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    },
+    {
+      "shot_id": "VS001_SH005",
+      "time_range_sec": {
+        "start": 9.0,
+        "end": 10.5
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    },
+    {
+      "shot_id": "VS001_SH006",
+      "time_range_sec": {
+        "start": 10.5,
+        "end": 12.0
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    },
+    {
+      "shot_id": "VS001_SH007",
+      "time_range_sec": {
+        "start": 12.0,
+        "end": 13.5
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    },
+    {
+      "shot_id": "VS001_SH008",
+      "time_range_sec": {
+        "start": 13.5,
+        "end": 15.0
+      },
+      "speech_status": "unavailable",
+      "asr_segment_indices": []
+    }
+  ],
+  "asr_transcript_ref": "05_script_analysis/asr_transcript.json",
+  "evidence_refs": [
+    "asr_transcript.timeline"
+  ]
+}

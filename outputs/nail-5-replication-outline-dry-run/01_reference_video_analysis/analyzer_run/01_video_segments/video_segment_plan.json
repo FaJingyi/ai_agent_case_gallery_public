@@ -1,0 +1,38 @@
+{
+  "schema_version": "common_reference_video_analyzer.video_segment_plan.v1",
+  "source_video": {
+    "path": "test_data/nail-5/nail-5.mp4",
+    "filename": "nail-5.mp4",
+    "fps": 30.0,
+    "duration": 15.633333,
+    "total_frames": 445,
+    "width": 720,
+    "height": 1280
+  },
+  "strategy": "truncate_first_15s",
+  "max_segment_duration_sec": 15.0,
+  "vlm_video_segments": [
+    {
+      "segment_id": "VS001",
+      "start": 0.0,
+      "end": 15.0,
+      "duration": 15.0,
+      "source_candidate_ids": [],
+      "video_path": "outputs/nail-5-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_13a9ed64612548b2a0f1bd8c80e8c701/content",
+      "notes": [
+        "truncated_to_first_15s"
+      ]
+    }
+  ],
+  "dropped_ranges": [
+    {
+      "start": 15.0,
+      "end": 15.633,
+      "duration": 0.633
+    }
+  ],
+  "warnings": [
+    "source duration exceeds 15s; only first 15s should be analyzed"
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "schema_version": "common_replication_outline.target_asset_analysis.v2",
+  "asset_level_analysis": [
+    {
+      "asset_id": "ASSET_001",
+      "input_path": "test_data/nail-6/user_input/shangpin-3.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_fa659afc64254b2eb2efcfca76c59d26/content",
+      "media_type": "image",
+      "declared_slot": "product",
+      "resolved_slot": "product",
+      "compatibility_status": "ready",
+      "observable_facts": {
+        "visible_subject": "10 枚穿戴甲(假指甲)平铺展示",
+        "subject_type": "product",
+        "subject_state": "static_object",
+        "carrier_or_actor_visible": false,
+        "interaction_visible": false,
+        "usage_or_operation_visible": false,
+        "usage_or_operation_description": "",
+        "visible_text_or_logo": [],
+        "incidental_background": "深灰色颗粒感平面(毛毡/磨砂台面)",
+        "quality_limits": []
+      },
+      "identity": {
+        "caption": "穿戴甲商品图",
+        "subject_type": "product",
+        "brand_visible": false,
+        "text_visible": false,
+        "logo_visible": false,
+        "readable_text": [],
+        "confirmed_by_user": true
+      },
+      "background_role": "asset_incidental_background",
+      "reference_aligned_visual_profile": {
+        "subject": "长款尖头(Stiletto)穿戴甲, 10 枚上下两排各 5 枚; 黑/深褐/灰褐底色, 高光泽树脂凝胶质感, 带立体浮雕",
+        "scene": "",
+        "spatial_framing": "特写/微距, 垂直俯拍, 主体居中矩阵排列, 占画面约 60%",
+        "visual_style": "低饱和暗色调背景衬托高对比细节; 均匀漫射光, 表面高光; 暗黑哥特/神秘/精致氛围",
+        "action": "not_applicable(静态图)",
+        "camera": "not_applicable(静态图)",
+        "transition": "not_applicable",
+        "text_graphics": "无可见文字/logo/UI",
+        "performance": "not_applicable"
+      },
+      "generation_capability": {
+        "can_directly_represent_reference_usage": false,
+        "requires_usage_assumption": true,
+        "requires_user_instruction": false,
+        "requires_intermediate_reference_image": false,
+        "assumption_risks": [
+          "素材为平铺静态商品图, 参考视频为佩戴/展示状态, 平铺->佩戴需要生成假设"
+        ]
+      },
+      "generation_use": {
+        "packager_role": "target_nail_art_pattern_reference",
+        "usable_for_units": [
+          "VS001"
+        ],
+        "usable_for_segments": [
+          "VS001_SEG1",
+          "VS001_SEG2",
+          "VS001_SEG3"
+        ],
+        "constraints": [
+          "用于美甲图案/配色/材质/立体装饰与整体风格参考; 不迁移平铺排列方式与颗粒背景"
+        ],
+        "must_not_infer": [
+          "品牌",
+          "价格",
+          "材质成分",
+          "尺寸规格"
+        ]
+      },
+      "blocked_uses": []
+    }
+  ],
+  "user_text_context_analysis": {
+    "source": "user_request",
+    "summary": "把参考视频里的美甲图案替换为素材图中的美甲图案, 并让人物装扮与美甲风格一致",
+    "explicit_replacement": true
+  },
+  "business_context_analysis": {
+    "provided": false,
+    "claim_policy": "do_not_generate_unconfirmed_claims"
+  },
+  "user_declared_intent": {
+    "asset_usage_instructions": [
+      "素材图片中的美甲图案用于替换参考视频中的美甲图案(显式替换绑定)"
+    ],
+    "operation_or_interaction_descriptions": [
+      "参考视频人物用手展示美甲, 需要以佩戴状态呈现目标美甲"
+    ],
+    "scene_or_context_descriptions": [],
+    "text_logo_or_brand_inputs": [],
+    "confirmation_to_omit_or_neutralize": [],
+    "confirmation_to_generate_assumptions": [
+      "人物的装扮需要和美甲风格一致"
+    ]
+  },
+  "generation_assumptions": [
+    {
+      "assumption_id": "GA_001",
+      "slot": "product_worn_state",
+      "description": "把平铺的穿戴甲转换为佩戴在手指上的展示状态, 保留图案/配色/立体装饰",
+      "source": "user_confirmation",
+      "requires_reference_frame": false,
+      "risk_level": "medium",
+      "status": "user_confirmed",
+      "evidence_refs": [
+        "user_request",
+        "ASSET_001.observable_facts"
+      ]
+    },
+    {
+      "assumption_id": "GA_002",
+      "slot": "person_styling",
+      "description": "人物装扮改为与暗黑哥特美甲风格一致(深色系服装、金属/珍珠饰品呼应), 使用无特定身份的非特定表演者",
+      "source": "user_confirmation",
+      "requires_reference_frame": true,
+      "risk_level": "medium",
+      "status": "user_confirmed",
+      "evidence_refs": [
+        "user_request",
+        "ASSET_001.reference_aligned_visual_profile.visual_style"
+      ]
+    },
+    {
+      "assumption_id": "GA_003",
+      "slot": "scene",
+      "description": "将参考车内场景内容迁移为与暗黑美甲风格一致的室内低调光场景(与参考场景形成可见差异)",
+      "source": "fallback_policy",
+      "requires_reference_frame": true,
+      "risk_level": "medium",
+      "status": "proposed",
+      "evidence_refs": [
+        "reference_video_analysis.video_generation_context.scene"
+      ]
+    }
+  ],
+  "reference_dimension_alignment": {
+    "composition": "素材为俯拍商业图, 不迁移; 目标视频继承参考视频自拍近景中心构图",
+    "scene": "素材背景为偶然背景, 不作为目标场景",
+    "action": "素材为静态, 目标动作继承参考视频手部展示动作链",
+    "visual_style": "素材的暗黑/高对比/光泽质感用于目标美甲与人物装扮风格"
+  },
+  "binding_candidates": [
+    {
+      "binding_id": "BC_001",
+      "asset_id": "ASSET_001",
+      "reference_unit_id": "VS001",
+      "reference_segment_id": "VS001_SEG1",
+      "slot": "product",
+      "reference_source_path": "nail-6.mp4(美甲图案)",
+      "target_source_path": "test_data/nail-6/user_input/shangpin-3.png",
+      "packager_role": "target_nail_art_pattern_reference",
+      "compatibility_status": "ready",
+      "constraints": [
+        "显式替换: 参考美甲图案全部替换为目标美甲图案"
+      ],
+      "blocked_uses": []
+    },
+    {
+      "binding_id": "BC_002",
+      "asset_id": "ASSET_001",
+      "reference_unit_id": "VS001",
+      "reference_segment_id": "VS001_SEG2",
+      "slot": "product",
+      "reference_source_path": "nail-6.mp4(美甲图案)",
+      "target_source_path": "test_data/nail-6/user_input/shangpin-3.png",
+      "packager_role": "target_nail_art_pattern_reference",
+      "compatibility_status": "ready",
+      "constraints": [
+        "显式替换"
+      ],
+      "blocked_uses": []
+    }
+  ],
+  "h3_input_asset_inventory": {
+    "authority": "03_asset_inventory/h3_input_asset_inventory.json",
+    "h3_material_mode": "reference_video_plus_reference_images",
+    "eligible_count": 2
+  },
+  "validation_flags": [
+    "asset_is_static_flat_lay_used_as_worn_state_requires_generation_assumption"
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "schema_version": "common_replication_outline.reference_frame_plan.v3",
+  "generation_scope": "single_generation_task",
+  "need_basis": "global_appearance_person_scene_entities_only",
+  "frame_requirement_level": "required_person_scene_anchors",
+  "triggered_rules": [
+    "scene_reference_entity_present"
+  ],
+  "draft_frames": [
+    {
+      "frame_id": "FRAME_SCENE1",
+      "frame_type": "scene_reference",
+      "entity_id": "SCENE_1",
+      "entity_name": "ground-level urban street with the MetaX bus-stop shelter",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "TU001_S1",
+        "TU001_S2"
+      ],
+      "purpose": "lock the street scene space, shelter set dressing, daylight and grade for shot 1",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[SCENE_1].appearance_details",
+        "timeline_units[TU001].reference_mapping.scene_content",
+        "scene_transfer[SCENE_1].scene_description_for_generation"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph, no people and no animals. A ground-level urban street corner in front of a beige stone building, with a modern bus-stop shelter whose panel carries the three-dimensional capital lettering \"MetaX\". Warm afternoon daylight, long soft shadows on the pavement, a sidewalk with low set dressing, medium background density, warm amber color grade, light film grain, stylized retro documentary realism, horizontal 16:9 composition, shelter centered.",
+      "must_include": [
+        "ground-level city street in front of a beige stone building",
+        "modern bus-stop shelter as the centered object",
+        "MetaX lettering on the shelter panel",
+        "long soft ground shadow",
+        "warm amber grade with light grain"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions"
+    },
+    {
+      "frame_id": "FRAME_SCENE2",
+      "frame_type": "scene_reference",
+      "entity_id": "SCENE_2",
+      "entity_name": "building exterior with the vertical MetaX fabric banner",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "TU002_S1",
+        "TU002_S2"
+      ],
+      "purpose": "lock the building facade space, banner set dressing, overcast sky and grade for shot 2",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[SCENE_2].appearance_details",
+        "timeline_units[TU002].reference_mapping.scene_content",
+        "scene_transfer[SCENE_2].scene_description_for_generation"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph, no people and no animals. A tall beige stone building facade seen from a low upward angle, carrying a large vertical white fabric banner printed with the capital lettering \"MetaX\" down its length. Cloudy overcast sky above, weathered stone surface, the banner hanging straight, warm amber grade over the cool overcast light, light film grain, stylized retro documentary realism, horizontal 16:9 composition, the vertical banner centered.",
+      "must_include": [
+        "low-angle view of a tall building facade",
+        "large vertical white fabric banner with MetaX lettering",
+        "cloudy sky",
+        "beige weathered stone material",
+        "warm amber grade over overcast light"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions"
+    },
+    {
+      "frame_id": "FRAME_SCENE3",
+      "frame_type": "scene_reference",
+      "entity_id": "SCENE_3",
+      "entity_name": "open rooftop with the 3D MetaX lettering structure",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "TU003_S1",
+        "TU003_S2"
+      ],
+      "purpose": "lock the rooftop space, lettering structure, sky depth and grade for shot 3",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[SCENE_3].appearance_details",
+        "timeline_units[TU003].reference_mapping.scene_content",
+        "scene_transfer[SCENE_3].scene_description_for_generation"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph, no people and no animals. An open rooftop terrace with a low parapet and oversized three-dimensional block lettering reading \"MetaX\" mounted on the roof structure. Cloudy sky beyond the parapet, warm daylight, clean concrete rooftop surface, medium background density, warm amber color grade, light film grain, stylized retro documentary realism, horizontal 16:9 composition, the lettering behind a clear foreground area.",
+      "must_include": [
+        "open rooftop terrace with a low parapet",
+        "oversized three-dimensional MetaX lettering on the roof structure",
+        "cloudy sky beyond the parapet",
+        "warm daylight",
+        "clear foreground area in front of the lettering"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions"
+    }
+  ],
+  "consistency_review": {
+    "status": "passed",
+    "issues": [
+      "no person entity exists after the model->cat replacement, so no person_reference frame is planned",
+      "the cat is a main subject, not a person, and is out of scope for the person/scene-only reference-frame rule"
+    ],
+    "revisions": [],
+    "global_style_brief": "warm amber vintage-film grade, light film grain, medium contrast, stylized retro documentary realism, natural daylight, horizontal 16:9 framing, no people and no animals",
+    "global_negative_constraints": [
+      "no people in a scene reference",
+      "no animals in a scene reference",
+      "no MINIMAX or other source brand word or logo",
+      "no watermark, platform UI, corner badge or sticker",
+      "no readable text other than the confirmed MetaX lettering"
+    ]
+  },
+  "final_frames": [
+    {
+      "frame_id": "FRAME_SCENE1",
+      "frame_type": "scene_reference",
+      "entity_id": "SCENE_1",
+      "entity_name": "ground-level urban street with the MetaX bus-stop shelter",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "TU001_S1",
+        "TU001_S2"
+      ],
+      "purpose": "lock the street scene space, shelter set dressing, daylight and grade for shot 1",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[SCENE_1].appearance_details",
+        "timeline_units[TU001].reference_mapping.scene_content",
+        "scene_transfer[SCENE_1].scene_description_for_generation"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph, no people and no animals. A ground-level urban street corner in front of a beige stone building, with a modern bus-stop shelter whose panel carries the three-dimensional capital lettering \"MetaX\". Warm afternoon daylight, long soft shadows on the pavement, a sidewalk with low set dressing, medium background density, warm amber color grade, light film grain, stylized retro documentary realism, horizontal 16:9 composition, shelter centered.",
+      "must_include": [
+        "ground-level city street in front of a beige stone building",
+        "modern bus-stop shelter as the centered object",
+        "MetaX lettering on the shelter panel",
+        "long soft ground shadow",
+        "warm amber grade with light grain"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions",
+      "output_path": "08_reference_frames/FRAME_SCENE1.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_6adfc892670d45389061bc3aa90ddefa/content",
+      "output_dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "FRAME_SCENE1",
+      "asset_service_id": "asset_6adfc892670d45389061bc3aa90ddefa",
+      "sha256": "f398519fe025c6dc41916f962bfa264ec9387a5c97702192c4b57ec6e12212d0"
+    },
+    {
+      "frame_id": "FRAME_SCENE2",
+      "frame_type": "scene_reference",
+      "entity_id": "SCENE_2",
+      "entity_name": "building exterior with the vertical MetaX fabric banner",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "TU002_S1",
+        "TU002_S2"
+      ],
+      "purpose": "lock the building facade space, banner set dressing, overcast sky and grade for shot 2",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[SCENE_2].appearance_details",
+        "timeline_units[TU002].reference_mapping.scene_content",
+        "scene_transfer[SCENE_2].scene_description_for_generation"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph, no people and no animals. A tall beige stone building facade seen from a low upward angle, carrying a large vertical white fabric banner printed with the capital lettering \"MetaX\" down its length. Cloudy overcast sky above, weathered stone surface, the banner hanging straight, warm amber grade over the cool overcast light, light film grain, stylized retro documentary realism, horizontal 16:9 composition, the vertical banner centered.",
+      "must_include": [
+        "low-angle view of a tall building facade",
+        "large vertical white fabric banner with MetaX lettering",
+        "cloudy sky",
+        "beige weathered stone material",
+        "warm amber grade over overcast light"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions",
+      "output_path": "08_reference_frames/FRAME_SCENE2.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_ef20323a1c6047f88ba2b99917d3683a/content",
+      "output_dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "FRAME_SCENE2",
+      "asset_service_id": "asset_ef20323a1c6047f88ba2b99917d3683a",
+      "sha256": "31e2b32a250f54d8e26bfe165ec9c39328e325b4c2d2a4de8b2c06d3973ad286"
+    },
+    {
+      "frame_id": "FRAME_SCENE3",
+      "frame_type": "scene_reference",
+      "entity_id": "SCENE_3",
+      "entity_name": "open rooftop with the 3D MetaX lettering structure",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "TU003_S1",
+        "TU003_S2"
+      ],
+      "purpose": "lock the rooftop space, lettering structure, sky depth and grade for shot 3",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance[SCENE_3].appearance_details",
+        "timeline_units[TU003].reference_mapping.scene_content",
+        "scene_transfer[SCENE_3].scene_description_for_generation"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph, no people and no animals. An open rooftop terrace with a low parapet and oversized three-dimensional block lettering reading \"MetaX\" mounted on the roof structure. Cloudy sky beyond the parapet, warm daylight, clean concrete rooftop surface, medium background density, warm amber color grade, light film grain, stylized retro documentary realism, horizontal 16:9 composition, the lettering behind a clear foreground area.",
+      "must_include": [
+        "open rooftop terrace with a low parapet",
+        "oversized three-dimensional MetaX lettering on the roof structure",
+        "cloudy sky beyond the parapet",
+        "warm daylight",
+        "clear foreground area in front of the lettering"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions",
+      "output_path": "08_reference_frames/FRAME_SCENE3.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_ca3e83e13fcb4e9a9aa194c2cdf48ba0/content",
+      "output_dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "FRAME_SCENE3",
+      "asset_service_id": "asset_ca3e83e13fcb4e9a9aa194c2cdf48ba0",
+      "sha256": "76abf94db1d0cec0bec4364a01bbe3f2fc9de51153d30847f8fe9e0551e40d81"
+    }
+  ],
+  "batch_generation_groups": [
+    {
+      "group_id": "scene_references",
+      "frame_ids": [
+        "FRAME_SCENE1",
+        "FRAME_SCENE2",
+        "FRAME_SCENE3"
+      ],
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "warm amber vintage-film grade, light film grain, medium contrast, stylized retro documentary realism, natural daylight, horizontal 16:9 framing, no people and no animals",
+      "group_negative_constraints": [
+        "no people in a scene reference",
+        "no animals in a scene reference",
+        "no MINIMAX or other source brand word or logo",
+        "no watermark, platform UI, corner badge or sticker",
+        "no readable text other than the confirmed MetaX lettering"
+      ]
+    }
+  ],
+  "global_missing_inputs": [],
+  "blocking_items": []
+}

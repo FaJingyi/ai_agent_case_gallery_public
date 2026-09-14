@@ -1,0 +1,67 @@
+{
+  "schema_version": "common_reference_video_analyzer.asr_alignment.v1",
+  "asr_status": "ok",
+  "speech_status": "partial",
+  "segments": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 1.2,
+      "text": "Unlike。",
+      "aligned_shot_id": "VS001_SH001",
+      "cross_boundary_split": false
+    },
+    {
+      "index": 2,
+      "start": 6.399,
+      "end": 7.799,
+      "text": "Do",
+      "aligned_shot_id": "VS001_SH001",
+      "cross_boundary_split": false
+    },
+    {
+      "index": 3,
+      "start": 7.799,
+      "end": 9.2,
+      "text": "you",
+      "aligned_shot_id": "VS001_SH001",
+      "cross_boundary_split": false
+    },
+    {
+      "index": 4,
+      "start": 9.2,
+      "end": 9.54,
+      "text": "think",
+      "aligned_shot_id": "VS001_SH001",
+      "cross_boundary_split": false
+    },
+    {
+      "index": 5,
+      "start": 9.54,
+      "end": 9.82,
+      "text": "I'm",
+      "aligned_shot_id": "VS001_SH001",
+      "cross_boundary_split": false
+    },
+    {
+      "index": 6,
+      "start": 9.82,
+      "end": 10.22,
+      "text": "strange?",
+      "aligned_shot_id": "VS001_SH001",
+      "cross_boundary_split": false
+    }
+  ],
+  "shot_coverage": [
+    {
+      "shot_id": "VS001_SH001",
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 12.6
+      },
+      "speech_status": "partial",
+      "covered_text": "Do you think I'm strange?",
+      "note": "0.0-1.2s 片段疑似噪声/非完整语句; 6.4-10.2s 为清晰问句; 其余时段无可识别语音"
+    }
+  ]
+}

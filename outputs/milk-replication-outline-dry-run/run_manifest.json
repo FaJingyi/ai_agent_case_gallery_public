@@ -1,0 +1,237 @@
+{
+  "schema_version": "common_replication_outline.run_manifest.v1",
+  "run_id": "milk-replication-outline-dry-run",
+  "mode": "shot_structure",
+  "dry_run": true,
+  "dry_run_boundary": "h3_request_package_produced_not_submitted",
+  "output_dir": "outputs/milk-replication-outline-dry-run",
+  "inputs": {
+    "reference_video": "test_data/milk/milk.mp4",
+    "user_input_dir": "test_data/milk/user_input",
+    "user_assets": [
+      "test_data/milk/user_input/东方树叶.jpg"
+    ],
+    "requirement_file": null,
+    "user_request": "参考视频生成一条新的视频，把牛奶换成东方树叶饮料",
+    "scene_threshold": 0.5,
+    "reference_video_h3_input_policy": {
+      "enabled": true
+    }
+  },
+  "upstream_calls": [
+    {
+      "skill": "common-reference-video-analyzer",
+      "status": "completed",
+      "final_deliverable": "01_reference_video_analysis/reference_video_analysis.json"
+    }
+  ],
+  "readiness": {
+    "path": "05_replication_readiness/replication_readiness_check.json",
+    "overall_status": "ready_with_assumptions",
+    "blocking_item_ids": []
+  },
+  "reference_frames": {
+    "plan_path": "07_reference_frame_plan/reference_frame_plan.json",
+    "frame_count": 8,
+    "ready_frame_ids": [
+      "rf_001",
+      "rf_002",
+      "rf_003",
+      "rf_004",
+      "rf_005",
+      "rf_006",
+      "rf_007",
+      "rf_008"
+    ],
+    "generation_skill": "tool-sensenova-image-generation-skill",
+    "status": "completed"
+  },
+  "h3_packaging": {
+    "skill": "packager-minimax-h3",
+    "output_dir": "09_h3_package",
+    "key_files": [
+      "09_h3_package/h3_packager_input.md",
+      "09_h3_package/minimax_h3_prompt.md",
+      "09_h3_package/reference_mapping.md",
+      "09_h3_package/pre_generation_checklist.md"
+    ],
+    "submit_ready_request": "09_h3_package/h3_request.json",
+    "reference_image_count": 5,
+    "validator": {
+      "script": "packager-minimax-h3/scripts/validate_minimax_h3_package.py",
+      "issues": [],
+      "status": "passed"
+    },
+    "status": "completed"
+  },
+  "h3_video_generation": {
+    "status": "skipped_dry_run",
+    "task_id": null,
+    "final_video": null,
+    "note": "Not submitted or executed per dry-run boundary."
+  },
+  "counts": {
+    "timeline_unit_count": 11,
+    "temporal_segment_count": 12,
+    "h3_prompt_shot_count": 11
+  },
+  "count_note": "h3_prompt_shot_count counts prompt-level [Shot N] entries mapped to timeline units, not reference-level shots; temporal_segments are preserved inside units.",
+  "h3_input_asset_inventory": {
+    "path": "03_asset_inventory/h3_input_asset_inventory.json",
+    "eligible_count": 10,
+    "reference_video_mode": "full_video_reference",
+    "h3_material_mode": "reference_video_plus_reference_images"
+  },
+  "steps": [
+    {
+      "step_id": "step_1_input_intake",
+      "stage_dir": "00_inputs",
+      "status": "completed",
+      "required_outputs": [
+        "input_manifest.json"
+      ],
+      "optional_outputs": [],
+      "started_at": "2026-09-13T05:55:44Z",
+      "ended_at": "2026-09-13T05:55:44Z"
+    },
+    {
+      "step_id": "step_2_reference_video_analysis",
+      "stage_dir": "01_reference_video_analysis",
+      "status": "completed",
+      "required_outputs": [
+        "reference_video_analysis.json",
+        "video_segment_plan.json"
+      ],
+      "optional_outputs": [
+        "analyzer_run/"
+      ],
+      "started_at": "2026-09-13T05:45:29Z",
+      "ended_at": "2026-09-13T05:53:58Z"
+    },
+    {
+      "step_id": "step_3_asset_inventory",
+      "stage_dir": "03_asset_inventory",
+      "status": "completed",
+      "required_outputs": [
+        "asset_candidates.json",
+        "h3_input_asset_inventory.json"
+      ],
+      "optional_outputs": [
+        "user_asset_001_upload.json"
+      ],
+      "started_at": "2026-09-13T05:55:36Z",
+      "ended_at": "2026-09-13T05:55:36Z"
+    },
+    {
+      "step_id": "step_4_target_asset_analysis",
+      "stage_dir": "04_target_asset_analysis",
+      "status": "completed",
+      "required_outputs": [
+        "target_asset_analysis.json",
+        "target_asset_vlm_responses.json"
+      ],
+      "optional_outputs": [
+        "_vlm_prompts/"
+      ],
+      "started_at": "2026-09-13T05:55:48Z",
+      "ended_at": "2026-09-13T05:56:52Z"
+    },
+    {
+      "step_id": "step_5_replication_readiness",
+      "stage_dir": "05_replication_readiness",
+      "status": "completed",
+      "required_outputs": [
+        "replication_readiness_check.json"
+      ],
+      "optional_outputs": [],
+      "started_at": "2026-09-13T05:57:11Z",
+      "ended_at": "2026-09-13T05:57:11Z"
+    },
+    {
+      "step_id": "step_6_replication_outline",
+      "stage_dir": "06_replication_outline",
+      "status": "completed",
+      "required_outputs": [
+        "replication_outline.json",
+        "replication_outline.md"
+      ],
+      "optional_outputs": [],
+      "started_at": "2026-09-13T05:58:00Z",
+      "ended_at": "2026-09-13T06:06:16Z"
+    },
+    {
+      "step_id": "step_7_reference_frame_planning",
+      "stage_dir": "07_reference_frame_plan",
+      "status": "completed",
+      "required_outputs": [
+        "reference_frame_plan.json"
+      ],
+      "optional_outputs": [],
+      "started_at": "2026-09-13T06:03:50Z",
+      "ended_at": "2026-09-13T06:03:58Z"
+    },
+    {
+      "step_id": "step_8_reference_frame_generation",
+      "stage_dir": "08_reference_frames",
+      "status": "completed",
+      "required_outputs": [
+        "rf_001.png",
+        "rf_002.png",
+        "rf_003.png",
+        "rf_004.png",
+        "rf_005.png",
+        "rf_006.png",
+        "rf_007.png",
+        "rf_008.png"
+      ],
+      "optional_outputs": [
+        "rf_00N.request.json",
+        "rf_00N.result.json",
+        "batch_generation_manifest.json"
+      ],
+      "started_at": "2026-09-13T06:00:00Z",
+      "ended_at": "2026-09-13T06:03:58Z"
+    },
+    {
+      "step_id": "step_9_h3_packaging",
+      "stage_dir": "09_h3_package",
+      "status": "completed",
+      "required_outputs": [
+        "h3_packager_input.md",
+        "reference_mapping.md",
+        "pre_generation_checklist.md",
+        "minimax_h3_prompt.md",
+        "h3_request.json"
+      ],
+      "optional_outputs": [
+        "assets/"
+      ],
+      "started_at": "2026-09-13T06:04:41Z",
+      "ended_at": "2026-09-13T06:06:03Z"
+    },
+    {
+      "step_id": "step_10_h3_video_generation",
+      "stage_dir": null,
+      "status": "skipped_dry_run",
+      "required_outputs": [],
+      "optional_outputs": [],
+      "started_at": null,
+      "ended_at": null,
+      "error_summary": null,
+      "notes": "dry-run boundary: H3 request/package produced but not submitted; H3 video generation not invoked."
+    },
+    {
+      "step_id": "step_11_final_deliverable",
+      "stage_dir": "11_final_deliverable",
+      "status": "completed",
+      "required_outputs": [
+        "final_deliverable_index.json",
+        "deliverable_review.md"
+      ],
+      "optional_outputs": [],
+      "started_at": "2026-09-13T06:06:30Z",
+      "ended_at": "2026-09-13T06:06:40Z"
+    }
+  ],
+  "root_indexes": []
+}

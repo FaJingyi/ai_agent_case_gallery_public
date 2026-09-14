@@ -1,0 +1,13 @@
+{
+  "source_path": "test_data/milk/user_input/东方树叶.jpg",
+  "asset_api_url": "http://10.42.1.1:30100/v1/assets",
+  "asset": {
+    "id": "asset_1d84a276bfbe4db688fb11a8aba747e7",
+    "filename": "东方树叶.jpg",
+    "content_type": "image/jpeg",
+    "size_bytes": 45186,
+    "sha256": "bd6f30147e1c2ea97b3188ce1876dc92591b7706e567269665df6f381006bcfb",
+    "url": "http://10.42.1.1:30100/v1/assets/asset_1d84a276bfbe4db688fb11a8aba747e7/content"
+  },
+  "url": "http://10.42.1.1:30100/v1/assets/asset_1d84a276bfbe4db688fb11a8aba747e7/content"
+}

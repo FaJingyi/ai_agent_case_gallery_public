@@ -1,0 +1,384 @@
+{
+  "shots": [
+    {
+      "id": "SC001_SH001",
+      "scene_id": "SC001",
+      "time": [
+        0.0,
+        4.0
+      ],
+      "function": "context",
+      "event": "a MINIMAX bus-stop shelter is shown on a city street inside the observing mask",
+      "information_delta": "introduces a city-scouting observation of a public space",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "emphasis",
+          "content": "MINIMAX CITY SCOUTING PUBLIC SPACE"
+        },
+        {
+          "kind": "screen_text",
+          "slot": "other",
+          "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1"
+      ]
+    },
+    {
+      "id": "SC001_SH002",
+      "scene_id": "SC001",
+      "time": [
+        4.0,
+        8.0
+      ],
+      "function": "development",
+      "event": "a large vertical MINIMAX flag on a tall building ripples in the wind",
+      "information_delta": "moves the observation upward to a fabric signal on a building",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "emphasis",
+          "content": "MINIMAX CITY SCOUTING FABRIC SIGNAL"
+        },
+        {
+          "kind": "screen_text",
+          "slot": "other",
+          "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "SC001_SH003",
+      "scene_id": "SC001",
+      "time": [
+        8.0,
+        12.0
+      ],
+      "function": "focus",
+      "event": "a woman in a beige suit stands on a rooftop with 3D MINIMAX letters behind her",
+      "information_delta": "introduces a person at an elevated viewpoint",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "emphasis",
+          "content": "MINIMAX CITY SCOUTING ROOFTOP VIEW"
+        },
+        {
+          "kind": "screen_text",
+          "slot": "other",
+          "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "SC001_SH004",
+      "scene_id": "SC001",
+      "time": [
+        12.0,
+        15.0
+      ],
+      "function": "closing",
+      "event": "an extreme close-up shows MINIMAX reflected in red geometric sunglasses as the head turns slightly",
+      "information_delta": "closes the observation with an intimate reflected brand detail",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "emphasis",
+          "content": "MINIMAX CITY SCOUTING REFLECTION"
+        },
+        {
+          "kind": "screen_text",
+          "slot": "other",
+          "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+        },
+        {
+          "kind": "dialogue",
+          "slot": "other",
+          "content": "I'm going to go to the next video.",
+          "confidence": "low"
+        }
+      ],
+      "confidence": "medium",
+      "evidence_refs": [
+        "VS001:shot4"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "SC001",
+      "time": [
+        0.0,
+        15.0
+      ],
+      "function": "information",
+      "arc": {
+        "from": "a city street observed through a scouting mask",
+        "event": "the observation moves from a public shelter to a building flag to a rooftop person to a reflected close-up",
+        "to": "an intimate reflected brand detail",
+        "information_delta": "from environment scale down to person scale and finally to a reflected brand close-up"
+      },
+      "shots": [
+        "SC001_SH001",
+        "SC001_SH002",
+        "SC001_SH003",
+        "SC001_SH004"
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_SC001_SH001_SC001_SH002",
+      "from": "SC001_SH001",
+      "to": "SC001_SH002",
+      "type": "progress",
+      "reason": "the scouting view moves from a ground-level public space to a fabric signal high on a building",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1_to_shot2"
+      ]
+    },
+    {
+      "id": "rel_SC001_SH002_SC001_SH003",
+      "from": "SC001_SH002",
+      "to": "SC001_SH003",
+      "type": "progress",
+      "reason": "the view moves from a building exterior to a person at a rooftop viewpoint",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2_to_shot3"
+      ]
+    },
+    {
+      "id": "rel_SC001_SH003_SC001_SH004",
+      "from": "SC001_SH003",
+      "to": "SC001_SH004",
+      "type": "turn",
+      "reason": "the sequence narrows from a medium person shot to an intimate reflected close-up",
+      "dims": {
+        "info": "progress",
+        "emotion": "turn",
+        "rhythm": "continue"
+      },
+      "confidence": "medium",
+      "evidence_refs": [
+        "VS001:shot3_to_shot4"
+      ]
+    }
+  ],
+  "global": {
+    "schema_version": "common_reference_video_analyzer.global_script_structure.v1",
+    "structure_type": "linear",
+    "beats": [
+      {
+        "beat_id": "B001",
+        "type": "opening_hook",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "opens already inside a restricted scouting frame looking at a public-space bus shelter",
+        "evidence_refs": [
+          "SC001_SH001"
+        ]
+      },
+      {
+        "beat_id": "B002",
+        "type": "reveal",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "reveals a large fabric signal on a tall building above the street",
+        "evidence_refs": [
+          "SC001_SH002"
+        ]
+      },
+      {
+        "beat_id": "B003",
+        "type": "reveal",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "reveals a person at a rooftop viewpoint with oversized lettering behind her",
+        "evidence_refs": [
+          "SC001_SH003"
+        ]
+      },
+      {
+        "beat_id": "B004",
+        "type": "closing",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "closes on an intimate reflected brand detail in the sunglasses",
+        "evidence_refs": [
+          "SC001_SH004"
+        ]
+      }
+    ],
+    "progression": {
+      "emotion": [
+        "observational curiosity",
+        "rising discovery",
+        "intimate reveal"
+      ],
+      "rhythm": [
+        "four even 4s holds joined by hard cuts"
+      ],
+      "information": [
+        "public space",
+        "fabric signal",
+        "rooftop view",
+        "reflection"
+      ]
+    },
+    "script_memory_points": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 4.0
+        },
+        "type": "opening_hook",
+        "detail": "opens already inside a restricted observing frame, immediately establishing a scouting-device point of view before any context is given",
+        "preserve": [
+          "open directly on the framed observing POV",
+          "withhold the wider context"
+        ],
+        "adapt": [
+          "subject and setting"
+        ],
+        "avoid": [
+          "source brand wording and identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "B001"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002",
+          "B003",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "information_release_sequence",
+        "detail": "information is released in a descending scouting order: public space, then fabric signal, then rooftop view, then reflection, with the left UI label changing in step",
+        "preserve": [
+          "four-step descending reveal order",
+          "label change per step"
+        ],
+        "adapt": [
+          "each step's subject and wording"
+        ],
+        "avoid": [
+          "the source brand word and exact source labels"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "SC001_SH002",
+          "SC001_SH003",
+          "SC001_SH004"
+        ]
+      },
+      {
+        "memory_id": "sm_003",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "setup_payoff",
+        "detail": "the wordmark is planted on the street shelter early and paid off as a reflection in the sunglasses at the end",
+        "preserve": [
+          "plant the wordmark early",
+          "pay it off visibly in a reflective surface at the close"
+        ],
+        "adapt": [
+          "the wordmark text and the reflective object"
+        ],
+        "avoid": [
+          "source brand identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "SC001_SH004",
+          "B001",
+          "B004"
+        ]
+      },
+      {
+        "memory_id": "sm_004",
+        "source_scope": "global",
+        "source_ids": [
+          "B002",
+          "B003",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 4.0,
+          "end": 15.0
+        },
+        "type": "emotional_arc",
+        "detail": "the observation narrows from city scale to an intimate facial detail, tightening attention across the sequence",
+        "preserve": [
+          "progressively narrowing scale from environment to face"
+        ],
+        "adapt": [
+          "subject and setting"
+        ],
+        "avoid": [
+          "source brand identity and any invented identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH002",
+          "SC001_SH003",
+          "SC001_SH004"
+        ]
+      }
+    ],
+    "script_knowledge_terms": [],
+    "knowledge_queries": [],
+    "knowledge_status": "skipped_empty_directory",
+    "note": "backend/profiles/脚本/叙事结构与镜头功能/ contains no md documents, so only fact-based structure was used."
+  }
+}

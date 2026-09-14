@@ -1,0 +1,67 @@
+{
+  "schema_version": "common_replication_outline.reference_frames_batch_manifest.v1",
+  "groups": [
+    {
+      "group_id": "person_references",
+      "frame_ids": [
+        "FR_PERSON_HUSKY"
+      ],
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "角色外观锚点：哈士奇中大型犬、黑白灰三色被毛、白色面罩、竖立三角耳、蓬松卷尾、异色瞳、吐舌活泼；纯角色参考、中性背景。",
+      "group_negative_constraints": [
+        "no text/logo/watermark",
+        "no scene props or background objects",
+        "no other animals or people"
+      ]
+    },
+    {
+      "group_id": "scene_references",
+      "frame_ids": [
+        "FR_SCENE_LAWN"
+      ],
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "场景锚点：户外公园草坪、明亮自然日光、绿色草地纹理、远景树冠与浅蓝天空、中低反差真实纪实；纯场景参考。",
+      "group_negative_constraints": [
+        "no people/animals",
+        "no indoor furniture or vending machines",
+        "no text/logo/watermark"
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "frame_id": "FR_PERSON_HUSKY",
+      "frame_type": "person_reference",
+      "entity_id": "P001",
+      "generation_strategy": "text_to_image",
+      "generation_status": "succeeded",
+      "output_path": "08_reference_frames/FR_PERSON_HUSKY.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_029dad159dc84ff39e7e8bb03b1594af/content",
+      "h3_inventory_asset_id": "GEN_FR_PERSON_HUSKY",
+      "pre_submit_quality_check_status": "passed",
+      "width": 1376,
+      "height": 768,
+      "format": "png"
+    },
+    {
+      "frame_id": "FR_SCENE_LAWN",
+      "frame_type": "scene_reference",
+      "entity_id": "SCENE001",
+      "generation_strategy": "text_to_image",
+      "generation_status": "succeeded",
+      "output_path": "08_reference_frames/FR_SCENE_LAWN.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_34aa9ae92fe44a33a2ee70f116e9bad0/content",
+      "h3_inventory_asset_id": "GEN_FR_SCENE_LAWN",
+      "pre_submit_quality_check_status": "passed",
+      "width": 1376,
+      "height": 768,
+      "format": "png"
+    }
+  ],
+  "summary": {
+    "requested": 2,
+    "succeeded": 2,
+    "failed": 0,
+    "entered_h3_whitelist": 2
+  }
+}

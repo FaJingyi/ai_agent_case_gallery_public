@@ -1,0 +1,15 @@
+{
+  "provider": "sensenova",
+  "task_id": "20260913_063657_4d5a9127-edec-4a4d-bfc8-0cc2ceadbeab",
+  "task": "text2img",
+  "frame_id": "frame_person_001",
+  "status": "done",
+  "output": "08_reference_frames/frame_person_001.png",
+  "request": "08_reference_frames/frame_person_001.request.json",
+  "server_output_path": "/home/mx/shenxing/mx-services/senseNova/tasks/running/gpu0_1/20260913_063657_4d5a9127-edec-4a4d-bfc8-0cc2ceadbeab/output_image.png",
+  "width": 704,
+  "height": 1280,
+  "seed": 671263085,
+  "generation_seconds": 19.214,
+  "finished_at": "2026-09-13T06:37:17.315+00:00"
+}

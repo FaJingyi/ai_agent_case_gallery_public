@@ -1,0 +1,61 @@
+{
+  "schema_version": "common_replication_outline.asset_candidates.v1",
+  "asset_candidates": [
+    {
+      "asset_id": "A_REF",
+      "file": "test_data/animal/2_2_case4-H3-original.mp4",
+      "media_type": "video",
+      "declared_slot": "reference_video",
+      "candidate_slot": "reference_video",
+      "input_source": "reference_video",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content",
+      "duration_sec": 5.875
+    },
+    {
+      "asset_id": "A001",
+      "file": "test_data/animal/user_input/dog.jpeg",
+      "media_type": "image",
+      "declared_slot": "unknown",
+      "candidate_slot": "actor",
+      "input_source": "user_assets",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_3c56183416d846178c6ce4717d3132b5/content"
+    }
+  ],
+  "user_text_inputs": {
+    "usage_instructions": [],
+    "operation_state": [],
+    "display_state": [],
+    "scene_override": "outdoor_lawn",
+    "scene_description": "户外草坪（用户文本声明：三只哈士奇在户外草坪上表演）",
+    "logo_text_inputs": [],
+    "business_text": [],
+    "constraints": [
+      "三只哈士奇",
+      "户外草坪",
+      "表演动作"
+    ]
+  },
+  "obvious_missing_inputs": [
+    {
+      "slot": "additional_husky_subjects",
+      "required_level": "conditional_required",
+      "accepted_inputs": [
+        "image",
+        "video",
+        "text_description"
+      ],
+      "note": "用户要求三只哈士奇，仅提供单只哈士奇图片；其余两只按同一主体外观生成假设"
+    },
+    {
+      "slot": "scene_asset",
+      "required_level": "optional",
+      "accepted_inputs": [
+        "image",
+        "video",
+        "text_description"
+      ],
+      "note": "用户以文本声明户外草坪，素材背景为体育场草坪，仅作偶然背景与草坪质感线索"
+    }
+  ],
+  "unverified_claims": []
+}

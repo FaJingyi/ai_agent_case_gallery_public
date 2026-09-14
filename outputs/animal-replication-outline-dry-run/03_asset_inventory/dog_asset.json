@@ -1,0 +1,13 @@
+{
+  "source_path": "test_data/animal/user_input/dog.jpeg",
+  "asset_api_url": "http://10.42.1.1:30100/v1/assets",
+  "asset": {
+    "id": "asset_3c56183416d846178c6ce4717d3132b5",
+    "filename": "dog.jpeg",
+    "content_type": "image/jpeg",
+    "size_bytes": 197018,
+    "sha256": "6eebcf5478066ce9842b2f529125d949c0a62f2d3060988fcb4b353f5b848f2a",
+    "url": "http://10.42.1.1:30100/v1/assets/asset_3c56183416d846178c6ce4717d3132b5/content"
+  },
+  "url": "http://10.42.1.1:30100/v1/assets/asset_3c56183416d846178c6ce4717d3132b5/content"
+}

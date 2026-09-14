@@ -1,0 +1,252 @@
+{
+  "schema_version": "common_replication_outline.target_asset_analysis.v2",
+  "asset_level_analysis": [
+    {
+      "asset_id": "A001",
+      "input_path": "test_data/animal/user_input/dog.jpeg",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_3c56183416d846178c6ce4717d3132b5/content",
+      "media_type": "image",
+      "declared_slot": "unknown",
+      "resolved_slot": "actor",
+      "compatibility_status": "partial",
+      "observable_facts": {
+        "visible_subject": "一只哈士奇犬（animal subject；黑白灰花色，面部白色面具纹，异色瞳=一棕一蓝，竖立三角耳，吐舌微笑，站立姿态）",
+        "subject_type": "object",
+        "subject_state": "static_object",
+        "carrier_or_actor_visible": false,
+        "interaction_visible": false,
+        "usage_or_operation_visible": false,
+        "usage_or_operation_description": "not_applicable_static_image",
+        "visible_text_or_logo": [],
+        "incidental_background": "户外体育场草坪：前景绿色草坪、草地上一个骨头形状狗玩具，背景为虚化的黄色阶梯看台",
+        "quality_limits": [
+          "浅景深，背景明显虚化",
+          "仅单只主体，无第二/第三只犬",
+          "静态图，无动作或表演参考"
+        ]
+      },
+      "identity": {
+        "caption": "哈士奇犬（Siberian Husky 外观）",
+        "subject_type": "animal",
+        "brand_visible": false,
+        "text_visible": false,
+        "logo_visible": false,
+        "readable_text": [],
+        "confirmed_by_user": false
+      },
+      "background_role": "asset_incidental_background",
+      "reference_aligned_visual_profile": {
+        "subject": "黑白灰花色的哈士奇犬，厚实双层被毛，异色瞳，竖耳，吐舌；中等偏大犬型，四肢修长",
+        "scene": "户外草坪（用户文本声明），素材提供草地质感线索；体育场看台为偶然背景",
+        "spatial_framing": "全景、主体居中偏右、平视机位、浅景深",
+        "visual_style": "自然日光、高饱和、明亮活泼、写实摄影、毛发质感清晰",
+        "action": "not_applicable_static_image（站立、吐舌）",
+        "camera": "静态图，无法提供运镜参考",
+        "transition": "not_applicable",
+        "text_graphics": "无可见文字/logo",
+        "performance": "站立面向镜头、张嘴吐舌、轻松活泼；无表演动作"
+      },
+      "generation_capability": {
+        "can_directly_represent_reference_usage": false,
+        "requires_usage_assumption": true,
+        "requires_user_instruction": false,
+        "requires_intermediate_reference_image": false,
+        "assumption_risks": [
+          "素材仅一只犬，需生成另外两只同类主体",
+          "素材为静态图，协同表演动作属生成假设",
+          "草地背景为偶然背景，非用户声明的完整场景参考"
+        ]
+      },
+      "generation_use": {
+        "packager_role": "primary_subject_reference",
+        "usable_for_units": [
+          "SC001",
+          "SC001_SH001"
+        ],
+        "usable_for_segments": [],
+        "constraints": [
+          "仅作单只哈士奇主体外观参考",
+          "不得据此确认具体身份、血统、名字或地点"
+        ],
+        "must_not_infer": [
+          "犬只身份/血统/名字",
+          "体育场地点",
+          "拍摄时间",
+          "健康状况"
+        ]
+      },
+      "blocked_uses": [
+        "brand_reference",
+        "scene_reference_full",
+        "identity_confirmation",
+        "action_reference"
+      ]
+    }
+  ],
+  "user_text_context_analysis": {
+    "raw_user_request": "参考视频生成一条新的视频，三只哈士奇在户外草坪上表演。",
+    "declared_target_subject": "三只哈士奇",
+    "declared_scene": "户外草坪",
+    "declared_action": "表演（协同表演动作）",
+    "source": "requirement.txt / user_request"
+  },
+  "business_context_analysis": {
+    "brand": null,
+    "claims": [],
+    "text_or_logo_inputs": [],
+    "status": "not_provided"
+  },
+  "user_declared_intent": {
+    "asset_usage_instructions": [
+      "dog.jpeg 作为哈士奇主体外观参考"
+    ],
+    "operation_or_interaction_descriptions": [
+      "三只哈士奇协同表演"
+    ],
+    "scene_or_context_descriptions": [
+      "户外草坪"
+    ],
+    "text_logo_or_brand_inputs": [],
+    "confirmation_to_omit_or_neutralize": [],
+    "confirmation_to_generate_assumptions": [
+      "用户请求‘三只哈士奇在户外草坪上表演’隐含授权生成同款主体与表演动作"
+    ]
+  },
+  "generation_assumptions": [
+    {
+      "assumption_id": "GA001",
+      "slot": "additional_subjects",
+      "description": "在 A001 外观基础上生成另外两只同款哈士奇，组成三只同类主体",
+      "source": "shot_replication_policy",
+      "requires_reference_frame": false,
+      "risk_level": "low",
+      "status": "proposed",
+      "evidence_refs": [
+        "04_target_asset_analysis/target_asset_vlm_responses.json#A001"
+      ]
+    },
+    {
+      "assumption_id": "GA002",
+      "slot": "performance_action",
+      "description": "三只哈士奇复刻参考视频的协同表演动作（下蹲、汇聚、叠站造型）",
+      "source": "shot_replication_policy",
+      "requires_reference_frame": false,
+      "risk_level": "medium",
+      "status": "proposed",
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#scenes[0]"
+      ]
+    },
+    {
+      "assumption_id": "GA003",
+      "slot": "scene",
+      "description": "按用户文本将场景迁移为户外草坪，草地质感参考 A001，体育场看台不迁移",
+      "source": "user_confirmation",
+      "requires_reference_frame": true,
+      "risk_level": "low",
+      "status": "proposed",
+      "evidence_refs": [
+        "test_data/animal/user_input/requirement.txt"
+      ]
+    }
+  ],
+  "reference_dimension_alignment": {
+    "subject": {
+      "status": "ready",
+      "note": "A001 提供哈士奇外观"
+    },
+    "scene": {
+      "status": "ready_with_text_instruction",
+      "note": "用户文本声明户外草坪；无场景素材，体育场背景为偶然背景"
+    },
+    "action": {
+      "status": "ready_with_assumptions",
+      "note": "协同表演动作按参考视频结构生成"
+    },
+    "camera": {
+      "status": "reference_only",
+      "note": "随主体推近/跟拍由参考视频提供"
+    },
+    "text_graphics": {
+      "status": "not_applicable",
+      "note": "无文字/logo 需求"
+    }
+  },
+  "binding_candidates": [
+    {
+      "binding_id": "BC001",
+      "asset_id": "A001",
+      "reference_unit_id": "SC001",
+      "reference_segment_id": "SC001_SH001",
+      "slot": "actor",
+      "reference_source_path": "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.subject",
+      "target_source_path": "test_data/animal/user_input/dog.jpeg",
+      "packager_role": "primary_subject_reference",
+      "compatibility_status": "partial",
+      "constraints": [
+        "仅单只主体外观参考"
+      ],
+      "blocked_uses": [
+        "identity_confirmation",
+        "scene_reference_full"
+      ]
+    }
+  ],
+  "h3_input_asset_inventory": {
+    "schema_version": "common_replication_outline.h3_input_asset_inventory.v1",
+    "policy": "reference_video_default_included_if_within_15s",
+    "h3_material_mode": "reference_video_plus_reference_images",
+    "reference_video": {
+      "path": "test_data/animal/2_2_case4-H3-original.mp4",
+      "duration_sec": 5.875,
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content"
+    },
+    "reference_video_h3_input_policy": {
+      "enabled": true,
+      "max_video_reference_duration_sec": 15,
+      "mode": "full_video_reference"
+    },
+    "eligible_h3_input_assets": [
+      {
+        "asset_id": "REF_VIDEO_VS001",
+        "input_path": "outputs/animal-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+        "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content",
+        "media_type": "video",
+        "declared_slot": "reference_video",
+        "resolved_slot": "reference_video",
+        "packager_role": "motion_camera_timing_reference",
+        "source": "reference_video",
+        "allowed": true,
+        "duration_sec": 5.875,
+        "allowed_h3_uses": [
+          "motion_structure_reference",
+          "camera_language_reference",
+          "beat_timing_reference",
+          "single_shot_rhythm_reference"
+        ]
+      },
+      {
+        "asset_id": "A001",
+        "input_path": "test_data/animal/user_input/dog.jpeg",
+        "media_url": "http://10.42.1.1:30100/v1/assets/asset_3c56183416d846178c6ce4717d3132b5/content",
+        "media_type": "image",
+        "declared_slot": "unknown",
+        "resolved_slot": "actor",
+        "packager_role": "primary_subject_reference",
+        "source": "user_assets",
+        "allowed": true,
+        "allowed_h3_uses": [
+          "primary_subject_appearance_reference",
+          "subject_reference_image"
+        ]
+      }
+    ],
+    "excluded_assets": [],
+    "generated_reference_frames_policy": "append_only_after_step8_quality_check_and_usable_output",
+    "validation_flags": []
+  },
+  "validation_flags": [
+    "single_subject_asset_for_three_subject_request",
+    "static_asset_for_dynamic_action"
+  ]
+}

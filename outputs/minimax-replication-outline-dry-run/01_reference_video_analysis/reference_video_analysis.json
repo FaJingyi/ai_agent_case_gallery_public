@@ -1,0 +1,1290 @@
+{
+  "schema_version": "common_reference_video_analyzer.final.v1",
+  "reference_video": {
+    "path": "test_data/minimax/minimax.mp4",
+    "filename": "minimax.mp4",
+    "duration_sec": 15.083,
+    "analyzed_range_sec": {
+      "start": 0.0,
+      "end": 15.0
+    },
+    "width": 2560,
+    "height": 1440,
+    "fps": 24.0,
+    "orientation": "horizontal",
+    "truncated_for_analysis": true
+  },
+  "video_generation_context": {
+    "scene": {
+      "dominant_scene_types": [
+        "urban street",
+        "building exterior",
+        "rooftop"
+      ],
+      "common_background_elements": [
+        "beige stone facade",
+        "cloudy sky",
+        "3D letter structure"
+      ],
+      "common_props": [
+        "bus-stop shelter",
+        "fabric flag",
+        "sunglasses",
+        "phone"
+      ],
+      "spatial_depth_pattern": "subject midground, environment behind, graphic mask in foreground"
+    },
+    "spatial_framing": {
+      "common_shot_sizes": [
+        "medium wide",
+        "wide low angle",
+        "medium",
+        "extreme close-up"
+      ],
+      "common_compositions": [
+        "twin circular apertures",
+        "centered subject"
+      ],
+      "common_angles": [
+        "eye-level",
+        "low angle"
+      ],
+      "frame_usage_pattern": "all content confined to two side-by-side circular apertures on black"
+    },
+    "visual_style": {
+      "lighting": "warm natural daylight",
+      "color_palette": "warm amber, muted beige, red accents",
+      "contrast": "medium",
+      "texture": "light vintage film grain",
+      "mood": "observational and exploratory",
+      "art_direction_or_realism": "stylized retro documentary",
+      "shooting_feel": "static locked-off framing"
+    },
+    "subject": {
+      "primary_subject": "city-scouting sequence content",
+      "subject_type": "mixed",
+      "distinctive_features": [
+        "twin circular viewing mask",
+        "red monospace UI overlay",
+        "recurring wordmark"
+      ],
+      "attention_weight": "high"
+    },
+    "action": {
+      "dominant_motion_types": [
+        "static hold",
+        "gentle fabric ripple",
+        "slight head turn"
+      ],
+      "dominant_interactions": [
+        "subject-scene observation"
+      ]
+    },
+    "camera": {
+      "common_movements": [
+        "static"
+      ],
+      "common_stability": "locked",
+      "focal_length_feel": "normal to slight telephoto on the close-up"
+    },
+    "transition": {
+      "common_transition_types": [
+        "hard cut"
+      ],
+      "match_methods": [
+        "continuous mask, grade and UI across cuts"
+      ],
+      "cut_rhythm": "four even 4s holds"
+    },
+    "visual_memory_points": [
+      "vm_001",
+      "vm_002",
+      "vm_003",
+      "vm_004"
+    ]
+  },
+  "script_construction_context": {
+    "structure_type": "linear",
+    "beats": [
+      {
+        "beat_id": "B001",
+        "type": "opening_hook",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "opens already inside a restricted scouting frame looking at a public-space bus shelter",
+        "evidence_refs": [
+          "SC001_SH001"
+        ]
+      },
+      {
+        "beat_id": "B002",
+        "type": "reveal",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "reveals a large fabric signal on a tall building above the street",
+        "evidence_refs": [
+          "SC001_SH002"
+        ]
+      },
+      {
+        "beat_id": "B003",
+        "type": "reveal",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "reveals a person at a rooftop viewpoint with oversized lettering behind her",
+        "evidence_refs": [
+          "SC001_SH003"
+        ]
+      },
+      {
+        "beat_id": "B004",
+        "type": "closing",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "closes on an intimate reflected brand detail in the sunglasses",
+        "evidence_refs": [
+          "SC001_SH004"
+        ]
+      }
+    ],
+    "progression": {
+      "emotion": [
+        "observational curiosity",
+        "rising discovery",
+        "intimate reveal"
+      ],
+      "rhythm": [
+        "four even 4s holds joined by hard cuts"
+      ],
+      "information": [
+        "public space",
+        "fabric signal",
+        "rooftop view",
+        "reflection"
+      ]
+    },
+    "script_memory_points": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 4.0
+        },
+        "type": "opening_hook",
+        "detail": "opens already inside a restricted observing frame, immediately establishing a scouting-device point of view before any context is given",
+        "preserve": [
+          "open directly on the framed observing POV",
+          "withhold the wider context"
+        ],
+        "adapt": [
+          "subject and setting"
+        ],
+        "avoid": [
+          "source brand wording and identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "B001"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002",
+          "B003",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "information_release_sequence",
+        "detail": "information is released in a descending scouting order: public space, then fabric signal, then rooftop view, then reflection, with the left UI label changing in step",
+        "preserve": [
+          "four-step descending reveal order",
+          "label change per step"
+        ],
+        "adapt": [
+          "each step's subject and wording"
+        ],
+        "avoid": [
+          "the source brand word and exact source labels"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "SC001_SH002",
+          "SC001_SH003",
+          "SC001_SH004"
+        ]
+      },
+      {
+        "memory_id": "sm_003",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "setup_payoff",
+        "detail": "the wordmark is planted on the street shelter early and paid off as a reflection in the sunglasses at the end",
+        "preserve": [
+          "plant the wordmark early",
+          "pay it off visibly in a reflective surface at the close"
+        ],
+        "adapt": [
+          "the wordmark text and the reflective object"
+        ],
+        "avoid": [
+          "source brand identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "SC001_SH004",
+          "B001",
+          "B004"
+        ]
+      },
+      {
+        "memory_id": "sm_004",
+        "source_scope": "global",
+        "source_ids": [
+          "B002",
+          "B003",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 4.0,
+          "end": 15.0
+        },
+        "type": "emotional_arc",
+        "detail": "the observation narrows from city scale to an intimate facial detail, tightening attention across the sequence",
+        "preserve": [
+          "progressively narrowing scale from environment to face"
+        ],
+        "adapt": [
+          "subject and setting"
+        ],
+        "avoid": [
+          "source brand identity and any invented identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH002",
+          "SC001_SH003",
+          "SC001_SH004"
+        ]
+      }
+    ]
+  },
+  "video_prompt_source": {
+    "global_static": "the entire clip is seen through two side-by-side circular apertures on a black field, like binoculars or a peephole, with a warm amber vintage-film grade, light grain and soft vignette; red monospace scouting UI text sits at the left and right edges",
+    "global_camera": "camera is completely locked in every shot; no push, pan, zoom, rack focus or handheld movement; all motion comes from the subject or environment",
+    "shot_timeline": [
+      {
+        "shot_id": "shot1",
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 4.0
+        },
+        "static": "a modern MINIMAX bus-stop shelter standing on a city street in front of a beige stone building, warm daylight and a long ground shadow",
+        "dynamic": "no subject movement; only the shadow cast by the MINIMAX lettering on the wall shifts slightly",
+        "knowledge_terms": [
+          "中心构图",
+          "中景",
+          "静止镜头",
+          "叠加层与场景深度分离"
+        ],
+        "state_relations": [
+          {
+            "shot_id": "shot1",
+            "kind": "initial_state",
+            "visible_state": "street scene with a MINIMAX bus-stop shelter and red scouting UI overlay",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [
+          "VS001_sm1",
+          "VS001_sm2"
+        ],
+        "prompt_ready_description": "Through two circular apertures, hold on a centered MINIMAX bus-stop shelter on a warm city street; the only motion is a faint shift of the lettering shadow."
+      },
+      {
+        "shot_id": "shot2",
+        "time_range_sec": {
+          "start": 4.0,
+          "end": 8.0
+        },
+        "static": "a low-angle view of a tall building carrying a large vertical white fabric banner lettered MINIMAX down its side, under a cloudy sky",
+        "dynamic": "the banner ripples gently in the wind while the camera stays locked",
+        "knowledge_terms": [
+          "低角度",
+          "静止镜头",
+          "硬切",
+          "风格锁"
+        ],
+        "state_relations": [
+          {
+            "boundary": "shot1 -> shot2",
+            "observed_changes": [
+              "scene_location",
+              "subject_usage_state",
+              "prop_overlay"
+            ],
+            "continuity": [
+              "composition",
+              "lighting_weather"
+            ],
+            "newly_revealed": "large fabric banner",
+            "uncertainty": "none",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [
+          "VS001_sm1",
+          "VS001_sm2"
+        ],
+        "prompt_ready_description": "Hard cut to a low-angle view of a vertical white MINIMAX banner rippling on a tall building, mask and grade unchanged."
+      },
+      {
+        "shot_id": "shot3",
+        "time_range_sec": {
+          "start": 8.0,
+          "end": 12.0
+        },
+        "static": "a woman in a beige suit holding a black phone stands at the left of a rooftop, with large three-dimensional MINIMAX letters on the structure behind her",
+        "dynamic": "she stands still and looks to the right; the camera does not move",
+        "knowledge_terms": [
+          "中景",
+          "时间顺序描述",
+          "硬切",
+          "风格锁"
+        ],
+        "state_relations": [
+          {
+            "boundary": "shot2 -> shot3",
+            "observed_changes": [
+              "scene_location",
+              "person_styling",
+              "subject_usage_state",
+              "prop_overlay"
+            ],
+            "continuity": [
+              "composition",
+              "lighting_weather"
+            ],
+            "newly_revealed": "person, rooftop and 3D letters",
+            "uncertainty": "none",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [
+          "VS001_sm1",
+          "VS001_sm2"
+        ],
+        "prompt_ready_description": "Hard cut to a rooftop medium shot: a woman in a beige suit holds a phone and looks right, with 3D MINIMAX letters behind her."
+      },
+      {
+        "shot_id": "shot4",
+        "time_range_sec": {
+          "start": 12.0,
+          "end": 15.0
+        },
+        "static": "an extreme close-up of a face wearing red-framed geometric sunglasses that reflect the MINIMAX building lettering; a silver round earring and a red high-neck top are visible",
+        "dynamic": "the head turns slightly so the reflected lettering shifts inside the lenses; the camera stays locked",
+        "knowledge_terms": [
+          "大特写",
+          "复古胶片调",
+          "硬切"
+        ],
+        "state_relations": [
+          {
+            "boundary": "shot3 -> shot4",
+            "observed_changes": [
+              "person_styling",
+              "makeup_hair",
+              "outfit_accessories",
+              "subject_usage_state",
+              "prop_overlay",
+              "composition"
+            ],
+            "continuity": [
+              "lighting_weather"
+            ],
+            "newly_revealed": "lens reflection and facial detail",
+            "uncertainty": "same person uncertain",
+            "confidence": "medium"
+          }
+        ],
+        "special_mechanisms": [
+          "VS001_sm1",
+          "VS001_sm2"
+        ],
+        "prompt_ready_description": "Hard cut to an extreme close-up of red geometric sunglasses reflecting the MINIMAX lettering; a slight head turn makes the reflection move."
+      }
+    ],
+    "cross_shot_relations": [
+      {
+        "from": "shot1",
+        "to": "shot2",
+        "transition_type": "hard cut",
+        "visual_mechanism": "ground-level to low-angle building view",
+        "boundary_state_relation": "location, subject and left UI label change; composition and lighting continue",
+        "knowledge_terms": [
+          "硬切",
+          "风格锁"
+        ],
+        "special_mechanisms": [
+          "VS001_sm1",
+          "VS001_sm2"
+        ],
+        "prompt_ready_description": "Cut directly between the four scouting views while the binocular mask, warm grade and red UI stay locked."
+      },
+      {
+        "from": "shot2",
+        "to": "shot3",
+        "transition_type": "hard cut",
+        "visual_mechanism": "building exterior to rooftop person",
+        "boundary_state_relation": "location and person enter; tone and UI continue",
+        "knowledge_terms": [
+          "硬切",
+          "风格锁"
+        ],
+        "special_mechanisms": [
+          "VS001_sm1",
+          "VS001_sm2"
+        ],
+        "prompt_ready_description": "Hard cut introduces the rooftop subject with unchanged mask and UI style."
+      },
+      {
+        "from": "shot3",
+        "to": "shot4",
+        "transition_type": "hard cut",
+        "visual_mechanism": "medium shot to face close-up around the sunglasses",
+        "boundary_state_relation": "composition, outfit and styling change; lighting continues",
+        "knowledge_terms": [
+          "硬切",
+          "特写"
+        ],
+        "special_mechanisms": [
+          "VS001_sm1",
+          "VS001_sm2"
+        ],
+        "prompt_ready_description": "Hard cut pushes to the reflected detail in the sunglasses to close the sequence."
+      }
+    ],
+    "special_mechanisms": [
+      {
+        "mechanism_id": "VS001_sm1",
+        "mechanism_type": "special_composition",
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "evidence": "dual side-by-side circular apertures on black across the whole clip",
+        "mechanics": "restricted binocular observing frame with soft vignette at circular edges",
+        "replication_relevance": "core identity; must be preserved",
+        "prompt_ready_sentence": "Frame the entire video inside two side-by-side circular apertures on a black field, with soft dark vignette at the circular edges."
+      },
+      {
+        "mechanism_id": "VS001_sm2",
+        "mechanism_type": "visual_effect",
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "evidence": "red monospace UI text at left and right that changes per scene",
+        "mechanics": "simulated scouting/field-note device interface",
+        "replication_relevance": "memorable overlay structure",
+        "prompt_ready_sentence": "Place minimal red monospace scouting UI at the left and right edges, with the left label changing per shot and the right label staying constant."
+      }
+    ],
+    "state_relation_summary": [
+      {
+        "boundary": "shot1 -> shot2",
+        "summary": "location, subject and left UI label change; composition and lighting continuous"
+      },
+      {
+        "boundary": "shot2 -> shot3",
+        "summary": "location and person change; composition and lighting continuous"
+      },
+      {
+        "boundary": "shot3 -> shot4",
+        "summary": "composition, styling and outfit change; lighting continuous; identity uncertain"
+      }
+    ],
+    "priority_memory_points": [
+      "vm_001",
+      "vm_002",
+      "vm_003",
+      "vm_004"
+    ]
+  },
+  "scenes": [
+    {
+      "id": "SC001",
+      "source_scene_ids": [],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 15.0
+      },
+      "duration_sec": 15.0,
+      "video_generation": {
+        "scene": {
+          "scene_type": "modular city-scouting sequence",
+          "location_description": "a city street, a tall building facade and a rooftop observed through a binocular mask",
+          "background_elements": [
+            "beige stone facade",
+            "cloudy sky",
+            "rooftop letter structure"
+          ],
+          "foreground_elements": [
+            "black binocular-mask edges",
+            "red monospace UI overlay"
+          ],
+          "props": [
+            "bus-stop shelter",
+            "vertical fabric flag",
+            "3D letters",
+            "red geometric sunglasses",
+            "black phone"
+          ],
+          "spatial_depth": "subject in midground, environment behind, mask as graphic foreground"
+        },
+        "spatial_framing": {
+          "shot_size": "medium wide to extreme close-up",
+          "shot_size_observation": "increasing tightness across the four shots",
+          "subject_position": "centered inside twin circular apertures",
+          "camera_angle": "eye-level except shot2 low angle",
+          "foreground_midground_background": "mask foreground, subject midground, environment background",
+          "frame_usage": "content confined to two side-by-side circles on black",
+          "negative_space": "black mask around and between apertures",
+          "text_safe_area_hint": "red UI text at left and right edges"
+        },
+        "visual_style": {
+          "lighting": "warm natural daylight",
+          "color_palette": "warm amber with muted beige and red accents",
+          "contrast": "medium",
+          "texture": "light vintage film grain",
+          "mood": "observational and exploratory",
+          "art_direction_or_realism": "stylized retro documentary",
+          "shooting_feel": "static locked-off framing"
+        },
+        "subject": {
+          "primary_subject": "city-scouting subjects observed through a binocular mask",
+          "subject_type": "mixed",
+          "secondary_subjects": [
+            "bus shelter",
+            "fabric flag",
+            "woman",
+            "sunglasses"
+          ],
+          "shape_color_material": "beige stone, white fabric, red plastic sunglasses",
+          "size_relationship": "environment scale narrows to face scale",
+          "distinctive_features": [
+            "twin circular viewing mask",
+            "red monospace UI"
+          ],
+          "visibility": "clear",
+          "attention_weight": "high"
+        },
+        "action": {
+          "action": "mostly still subjects; flag ripples and a head turns slightly",
+          "motion_type": "static camera",
+          "motion_direction": "n/a",
+          "motion_speed": "slow",
+          "interaction": "subject-scene observation only",
+          "key_pose_or_moment": "sunglass reflection changing with the head turn",
+          "action_sequence": "establish -> reveal -> reveal -> reflect",
+          "contact_points": "n/a"
+        },
+        "camera": {
+          "movement_type": "static",
+          "movement_speed": "none",
+          "focal_length_feel": "normal to slight telephoto on the close-up",
+          "focus_behavior": "no focus change",
+          "stability": "locked",
+          "camera_subject_relationship": "observer looking through a scouting device"
+        },
+        "visual_memory_points": [
+          "vm_001",
+          "vm_002",
+          "vm_003",
+          "vm_004"
+        ],
+        "transition_in": {},
+        "transition_out": {}
+      },
+      "script_generation": {
+        "function": "information",
+        "event": "a scouting sequence from public space to a reflected close-up",
+        "information_delta": "from environment scale to an intimate reflected brand detail",
+        "text_slots": [
+          {
+            "kind": "screen_text",
+            "slot": "emphasis",
+            "content": "MINIMAX CITY SCOUTING PUBLIC SPACE"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "other",
+            "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "emphasis",
+            "content": "MINIMAX CITY SCOUTING FABRIC SIGNAL"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "other",
+            "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "emphasis",
+            "content": "MINIMAX CITY SCOUTING ROOFTOP VIEW"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "other",
+            "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "emphasis",
+            "content": "MINIMAX CITY SCOUTING REFLECTION"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "other",
+            "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+          },
+          {
+            "kind": "dialogue",
+            "slot": "other",
+            "content": "I'm going to go to the next video.",
+            "confidence": "low"
+          }
+        ]
+      },
+      "shots": [
+        {
+          "id": "SC001_SH001",
+          "scene_id": "SC001",
+          "time_range_sec": {
+            "start": 0.0,
+            "end": 4.0
+          },
+          "duration_sec": 4.0,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "medium wide",
+              "shot_size_observation": "medium wide",
+              "subject_position": "center of the two circular apertures",
+              "camera_angle": "eye-level"
+            },
+            "subject": {
+              "primary_subject": "MINIMAX bus stop shelter",
+              "distinctive_features": [
+                "top of shelter carries the word MINIMAX",
+                "modern minimal bus-stop form"
+              ],
+              "attention_weight": "high"
+            },
+            "action": {
+              "action": "no subject movement; shelter stays still",
+              "motion_type": "static",
+              "motion_direction": "n/a",
+              "motion_speed": "none",
+              "interaction": "n/a",
+              "action_sequence": "establish street shelter; hold while text shadow shifts",
+              "contact_points": "n/a"
+            },
+            "camera": {
+              "movement_type": "static",
+              "movement_speed": "none",
+              "stability": "locked"
+            },
+            "visual_memory_points": [
+              "vm_001",
+              "vm_002",
+              "vm_003",
+              "vm_004"
+            ],
+            "transition_to_next": {
+              "type": "hard cut"
+            }
+          },
+          "script_generation": {
+            "function": "context",
+            "event": "a MINIMAX bus-stop shelter is shown on a city street inside the observing mask",
+            "information_delta": "introduces a city-scouting observation of a public space",
+            "text_slots": [
+              {
+                "kind": "screen_text",
+                "slot": "emphasis",
+                "content": "MINIMAX CITY SCOUTING PUBLIC SPACE"
+              },
+              {
+                "kind": "screen_text",
+                "slot": "other",
+                "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot1"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "SC001_SH002",
+          "scene_id": "SC001",
+          "time_range_sec": {
+            "start": 4.0,
+            "end": 8.0
+          },
+          "duration_sec": 4.0,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "wide",
+              "shot_size_observation": "wide",
+              "subject_position": "center of circular apertures",
+              "camera_angle": "low angle looking up"
+            },
+            "subject": {
+              "primary_subject": "large white vertical flag with MINIMAX",
+              "distinctive_features": [
+                "vertical white banner",
+                "stacked vertical black MINIMAX lettering"
+              ],
+              "attention_weight": "high"
+            },
+            "action": {
+              "action": "flag ripples gently in the wind",
+              "motion_type": "static",
+              "motion_direction": "n/a",
+              "motion_speed": "none",
+              "interaction": "n/a",
+              "action_sequence": "reveal banner; hold while fabric moves",
+              "contact_points": "n/a"
+            },
+            "camera": {
+              "movement_type": "static",
+              "movement_speed": "none",
+              "stability": "locked"
+            },
+            "visual_memory_points": [
+              "vm_001",
+              "vm_002",
+              "vm_003",
+              "vm_004"
+            ],
+            "transition_to_next": {
+              "type": "hard cut"
+            }
+          },
+          "script_generation": {
+            "function": "development",
+            "event": "a large vertical MINIMAX flag on a tall building ripples in the wind",
+            "information_delta": "moves the observation upward to a fabric signal on a building",
+            "text_slots": [
+              {
+                "kind": "screen_text",
+                "slot": "emphasis",
+                "content": "MINIMAX CITY SCOUTING FABRIC SIGNAL"
+              },
+              {
+                "kind": "screen_text",
+                "slot": "other",
+                "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot2"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "SC001_SH003",
+          "scene_id": "SC001",
+          "time_range_sec": {
+            "start": 8.0,
+            "end": 12.0
+          },
+          "duration_sec": 4.0,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "medium",
+              "shot_size_observation": "medium",
+              "subject_position": "woman at left, structure behind",
+              "camera_angle": "eye-level"
+            },
+            "subject": {
+              "primary_subject": "woman in a beige suit holding a black phone",
+              "distinctive_features": [
+                "brown medium-length hair",
+                "beige suit",
+                "black phone in hand",
+                "standing at left of frame",
+                "gaze to the right"
+              ],
+              "attention_weight": "high"
+            },
+            "action": {
+              "action": "woman stands still, looking to the right",
+              "motion_type": "static",
+              "motion_direction": "n/a",
+              "motion_speed": "none",
+              "interaction": "n/a",
+              "action_sequence": "reveal woman on rooftop; hold her posture",
+              "contact_points": "n/a"
+            },
+            "camera": {
+              "movement_type": "static",
+              "movement_speed": "none",
+              "stability": "locked"
+            },
+            "visual_memory_points": [
+              "vm_001",
+              "vm_002",
+              "vm_003",
+              "vm_004"
+            ],
+            "transition_to_next": {
+              "type": "hard cut"
+            }
+          },
+          "script_generation": {
+            "function": "focus",
+            "event": "a woman in a beige suit stands on a rooftop with 3D MINIMAX letters behind her",
+            "information_delta": "introduces a person at an elevated viewpoint",
+            "text_slots": [
+              {
+                "kind": "screen_text",
+                "slot": "emphasis",
+                "content": "MINIMAX CITY SCOUTING ROOFTOP VIEW"
+              },
+              {
+                "kind": "screen_text",
+                "slot": "other",
+                "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot3"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "SC001_SH004",
+          "scene_id": "SC001",
+          "time_range_sec": {
+            "start": 12.0,
+            "end": 15.0
+          },
+          "duration_sec": 3.0,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "extreme close-up",
+              "shot_size_observation": "extreme close-up",
+              "subject_position": "face centered inside apertures",
+              "camera_angle": "eye-level"
+            },
+            "subject": {
+              "primary_subject": "close-up of a woman's face wearing red geometric sunglasses",
+              "distinctive_features": [
+                "tight face close-up",
+                "red-framed geometric sunglasses",
+                "MINIMAX reflected in the lenses",
+                "silver round earring",
+                "red high-neck top"
+              ],
+              "attention_weight": "high"
+            },
+            "action": {
+              "action": "head rotates slightly so the reflection in the lenses changes",
+              "motion_type": "static",
+              "motion_direction": "n/a",
+              "motion_speed": "none",
+              "interaction": "n/a",
+              "action_sequence": "tight face reveal; slight head turn changing the lens reflection",
+              "contact_points": "n/a"
+            },
+            "camera": {
+              "movement_type": "static",
+              "movement_speed": "none",
+              "stability": "locked"
+            },
+            "visual_memory_points": [
+              "vm_001",
+              "vm_002",
+              "vm_003",
+              "vm_004"
+            ],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "closing",
+            "event": "an extreme close-up shows MINIMAX reflected in red geometric sunglasses as the head turns slightly",
+            "information_delta": "closes the observation with an intimate reflected brand detail",
+            "text_slots": [
+              {
+                "kind": "screen_text",
+                "slot": "emphasis",
+                "content": "MINIMAX CITY SCOUTING REFLECTION"
+              },
+              {
+                "kind": "screen_text",
+                "slot": "other",
+                "content": "FIELD NOTE I ABOVE LOOK CLOSER"
+              },
+              {
+                "kind": "dialogue",
+                "slot": "other",
+                "content": "I'm going to go to the next video.",
+                "confidence": "low"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot4"
+          ],
+          "uncertainties": []
+        }
+      ],
+      "evidence_refs": [
+        "VS001"
+      ],
+      "uncertainties": [
+        "shot3/shot4 identity continuity uncertain"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_SC001_SH001_SC001_SH002",
+      "from": "SC001_SH001",
+      "to": "SC001_SH002",
+      "type": "progress",
+      "reason": "the scouting view moves from a ground-level public space to a fabric signal high on a building",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "evidence_refs": [
+        "VS001:shot1_to_shot2"
+      ]
+    },
+    {
+      "id": "rel_SC001_SH002_SC001_SH003",
+      "from": "SC001_SH002",
+      "to": "SC001_SH003",
+      "type": "progress",
+      "reason": "the view moves from a building exterior to a person at a rooftop viewpoint",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "evidence_refs": [
+        "VS001:shot2_to_shot3"
+      ]
+    },
+    {
+      "id": "rel_SC001_SH003_SC001_SH004",
+      "from": "SC001_SH003",
+      "to": "SC001_SH004",
+      "type": "turn",
+      "reason": "the sequence narrows from a medium person shot to an intimate reflected close-up",
+      "dims": {
+        "info": "progress",
+        "emotion": "turn",
+        "rhythm": "continue"
+      },
+      "evidence_refs": [
+        "VS001:shot3_to_shot4"
+      ]
+    }
+  ],
+  "memory_points": {
+    "visual": [
+      {
+        "memory_id": "vm_001",
+        "source_scope": "video_segment",
+        "source_ids": [
+          "VS001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "composition",
+        "detail": "the whole clip is confined to two side-by-side circular apertures on a black field, like binoculars or a peephole",
+        "preserve": [
+          "dual circular mask",
+          "black surround",
+          "soft vignette at circular edges"
+        ],
+        "adapt": [
+          "subject and scene content"
+        ],
+        "avoid": [
+          "full-frame composition",
+          "MINIMAX brand identity and source wording"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "VS001:shot2",
+          "VS001:shot3",
+          "VS001:shot4"
+        ]
+      },
+      {
+        "memory_id": "vm_002",
+        "source_scope": "video_segment",
+        "source_ids": [
+          "VS001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "visual_effect",
+        "detail": "red monospace scouting UI text sits at the frame edges and changes per scene",
+        "preserve": [
+          "red monospace type",
+          "left/right symmetric layout",
+          "per-scene label change"
+        ],
+        "adapt": [
+          "label wording and colour"
+        ],
+        "avoid": [
+          "source brand word MINIMAX",
+          "serif or ornate UI"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "VS001:shot2",
+          "VS001:shot3",
+          "VS001:shot4"
+        ]
+      },
+      {
+        "memory_id": "vm_003",
+        "source_scope": "cross_segment_pair",
+        "source_ids": [
+          "VS001:shot1_to_shot2",
+          "VS001:shot2_to_shot3",
+          "VS001:shot3_to_shot4"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "transition",
+        "detail": "three hard cuts between four equal 4s holds while mask, warm grade, grain and red UI stay continuous",
+        "preserve": [
+          "hard cut rhythm",
+          "equal hold durations",
+          "continuous mask, grade and UI"
+        ],
+        "adapt": [
+          "subject and location"
+        ],
+        "avoid": [
+          "fades or wipes that are not in the source"
+        ],
+        "evidence_refs": [
+          "VS001:shot1_to_shot2",
+          "VS001:shot2_to_shot3",
+          "VS001:shot3_to_shot4"
+        ]
+      },
+      {
+        "memory_id": "vm_004",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot4"
+        ],
+        "time_range_sec": {
+          "start": 12.0,
+          "end": 15.0
+        },
+        "type": "micro_action",
+        "detail": "a small head turn changes the reflected lettering inside the sunglasses during the final close-up",
+        "preserve": [
+          "slight head turn",
+          "reflection changing with the turn",
+          "locked camera"
+        ],
+        "adapt": [
+          "wearer and reflected content"
+        ],
+        "avoid": [
+          "source brand identity",
+          "any invented facial identity"
+        ],
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      }
+    ],
+    "script": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 4.0
+        },
+        "type": "opening_hook",
+        "detail": "opens already inside a restricted observing frame, immediately establishing a scouting-device point of view before any context is given",
+        "preserve": [
+          "open directly on the framed observing POV",
+          "withhold the wider context"
+        ],
+        "adapt": [
+          "subject and setting"
+        ],
+        "avoid": [
+          "source brand wording and identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "B001"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002",
+          "B003",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "information_release_sequence",
+        "detail": "information is released in a descending scouting order: public space, then fabric signal, then rooftop view, then reflection, with the left UI label changing in step",
+        "preserve": [
+          "four-step descending reveal order",
+          "label change per step"
+        ],
+        "adapt": [
+          "each step's subject and wording"
+        ],
+        "avoid": [
+          "the source brand word and exact source labels"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "SC001_SH002",
+          "SC001_SH003",
+          "SC001_SH004"
+        ]
+      },
+      {
+        "memory_id": "sm_003",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 15.0
+        },
+        "type": "setup_payoff",
+        "detail": "the wordmark is planted on the street shelter early and paid off as a reflection in the sunglasses at the end",
+        "preserve": [
+          "plant the wordmark early",
+          "pay it off visibly in a reflective surface at the close"
+        ],
+        "adapt": [
+          "the wordmark text and the reflective object"
+        ],
+        "avoid": [
+          "source brand identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH001",
+          "SC001_SH004",
+          "B001",
+          "B004"
+        ]
+      },
+      {
+        "memory_id": "sm_004",
+        "source_scope": "global",
+        "source_ids": [
+          "B002",
+          "B003",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 4.0,
+          "end": 15.0
+        },
+        "type": "emotional_arc",
+        "detail": "the observation narrows from city scale to an intimate facial detail, tightening attention across the sequence",
+        "preserve": [
+          "progressively narrowing scale from environment to face"
+        ],
+        "adapt": [
+          "subject and setting"
+        ],
+        "avoid": [
+          "source brand identity and any invented identity"
+        ],
+        "evidence_refs": [
+          "SC001_SH002",
+          "SC001_SH003",
+          "SC001_SH004"
+        ]
+      }
+    ],
+    "audio": []
+  },
+  "asr_status": "partial",
+  "audio_analysis": {
+    "status": "skipped"
+  },
+  "evidence_refs": [
+    "VS001",
+    "VS001:shot1",
+    "VS001:shot2",
+    "VS001:shot3",
+    "VS001:shot4"
+  ],
+  "uncertainties": [
+    "shot3 and shot4 may or may not be the same person because hair and outfit differ greatly",
+    "the shadow shift in shot1 may be real light change or a post effect"
+  ]
+}

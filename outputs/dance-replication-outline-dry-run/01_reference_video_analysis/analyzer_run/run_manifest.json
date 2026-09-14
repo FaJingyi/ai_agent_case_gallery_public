@@ -1,0 +1,26 @@
+{
+  "schema_version": "common_reference_video_analyzer.run_manifest.v1",
+  "reference_video": "test_data/dance/2_2_case2-H3-original.mp4",
+  "config_path": "config/model-routing.yaml",
+  "providers": {
+    "asset_upload": "asset_url",
+    "vlm": "qwen_vlm",
+    "asr": "gitee_ai",
+    "knowledge_search": "direct_md_files"
+  },
+  "visual_status": "ok",
+  "asr_status": "ok",
+  "script_status": "ok",
+  "final_deliverable_status": "ok",
+  "audio_analysis_status": "skipped",
+  "video_segment_status": "ok",
+  "counts": {
+    "vlm_video_segments": 1,
+    "shots": 1
+  },
+  "errors": [],
+  "notes": [
+    "duration<=15s：使用完整参考视频作为 VS001",
+    "ASR 人声疑似歌曲，归入 unsupported_audio"
+  ]
+}

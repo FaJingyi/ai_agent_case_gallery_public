@@ -1,0 +1,16 @@
+{
+  "schema_version": "common_reference_video_analyzer.asr_alignment.v1",
+  "speech_status": "unavailable",
+  "asr_status": "ok_no_speech",
+  "note": "ASR 返回空文本（仅标点），判定无有效语音",
+  "segments": [
+    {
+      "segment_id": "VS001",
+      "shots": [
+        "VS001:shot1"
+      ],
+      "asr_segments": [],
+      "speech_status": "unavailable"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "common_reference_video_analyzer.scene_script.v1",
+  "scenes": [
+    {
+      "id": "VS001",
+      "time": [
+        0.0,
+        15.0
+      ],
+      "function": "information",
+      "arc": {
+        "from": "产品主视觉展示",
+        "event": "以多场景蒙太奇展示产品适用场景并补充工艺/口感信息",
+        "to": "以饮用动作与结尾标语收束",
+        "information_delta": "从产品名称与外观推进到工艺、口感与使用体验信息"
+      },
+      "shots": [
+        "VS001_SH001",
+        "VS001_SH002",
+        "VS001_SH003",
+        "VS001_SH004",
+        "VS001_SH005",
+        "VS001_SH006",
+        "VS001_SH007",
+        "VS001_SH008",
+        "VS001_SH009",
+        "VS001_SH010",
+        "VS001_SH011"
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot11"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,752 @@
+{
+  "schema_version": "common_reference_video_analyzer.final.v1",
+  "reference_video": {
+    "path": "test_data/nail-6/nail-6.mp4",
+    "filename": "nail-6.mp4",
+    "fps": 30.0,
+    "duration": 12.633,
+    "duration_sec": 12.633,
+    "width": 1080,
+    "height": 1920,
+    "orientation": "vertical",
+    "media_url": "http://10.42.1.1:30100/v1/assets/asset_b2b5d57bdcef45348fb28f8d59f8657a/content"
+  },
+  "video_generation_context": {
+    "scene": {
+      "dominant_scene_types": [
+        "车内驾驶座自拍环境"
+      ],
+      "common_background_elements": [
+        "车窗外的绿色树木",
+        "天空",
+        "黑色皮革座椅",
+        "方向盘"
+      ],
+      "common_props": [
+        "方向盘",
+        "开启的天窗",
+        "金色首饰"
+      ],
+      "spatial_depth_pattern": "前景双手-中景面部上身-背景车窗"
+    },
+    "spatial_framing": {
+      "common_shot_sizes": [
+        "近景/特写(自拍距离)"
+      ],
+      "common_compositions": [
+        "中心构图",
+        "紧凑特写"
+      ],
+      "common_angles": [
+        "平视略俯(自拍持机)"
+      ],
+      "frame_usage_pattern": "竖屏 9:16, 主体居中大比例占据画面"
+    },
+    "visual_style": {
+      "lighting": "自然光自天窗上方入射, 面部与手部受光均匀, 车内较暗",
+      "color_palette": "黑色/金色/肤色/绿色背景",
+      "contrast": "中等",
+      "texture": "真实生活化质感",
+      "mood": "轻松俏皮",
+      "art_direction_or_realism": "高度写实",
+      "shooting_feel": "手机自拍纪实感"
+    },
+    "subject": {
+      "primary_subject": "一名长发女性(自拍者)",
+      "subject_type": "person",
+      "distinctive_features": [
+        "深棕色/深金色长发",
+        "双手展示长款美甲",
+        "大量金色首饰"
+      ],
+      "attention_weight": "0-7.5s 手部为主, 8.0s 后 面部为主"
+    },
+    "action": {
+      "dominant_motion_types": [
+        "手部动作链(交叉/张开/展示)",
+        "面部揭示",
+        "微笑与口型变化"
+      ],
+      "dominant_interactions": [
+        "双手与美甲/戒指的展示交互",
+        "双手遮挡与揭示面部"
+      ]
+    },
+    "camera": {
+      "common_movements": [
+        "手持自拍轻微晃动"
+      ],
+      "common_stability": "轻微手持晃动",
+      "focal_length_feel": "前置广角自拍"
+    },
+    "transition": {
+      "common_transition_types": [
+        "single continuous shot / no cut"
+      ],
+      "match_methods": [],
+      "cut_rhythm": "无剪辑, 单镜头内阶段变化"
+    },
+    "visual_memory_points": [
+      {
+        "memory_id": "vm_001",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 7.5
+        },
+        "type": "micro_action",
+        "detail": "双手在镜头前完成明确的手部动作链: 十指交叉紧扣展示戒指 -> 松开、手指张开交错 -> 缓慢移动开合展示长款美甲正反面, 有明确手指接触点与开合停顿。",
+        "preserve": [
+          "手部动作链顺序(交叉-张开-展示)",
+          "手指接触点与开合停顿节奏",
+          "展示长款美甲正反面的角度调整"
+        ],
+        "adapt": [
+          "美甲图案替换为目标素材款式",
+          "首饰可改为与目标风格一致的中性金色饰品",
+          "佩戴者可替换为无身份/手部或非特定表演者"
+        ],
+        "avoid": [
+          "原佩戴者身份",
+          "原视频特定品牌/文字"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "Q3[shot1][dynamic]"
+        ]
+      },
+      {
+        "memory_id": "vm_002",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 7.5,
+          "end": 12.6
+        },
+        "type": "spatial_reveal",
+        "detail": "双手从面部前方放下移出画面下方, 由前景遮挡揭示主体面部, 完成从局部细节到手部佩戴者的注意力转移。",
+        "preserve": [
+          "从手部遮挡到面部揭示的注意力转移机制",
+          "揭示的时序(先手后脸)"
+        ],
+        "adapt": [
+          "目标人物形象与装扮",
+          "目标场景内容"
+        ],
+        "avoid": [
+          "原人物身份",
+          "原片妆容与造型细节照搬"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "Q3[shot1][dynamic]"
+        ]
+      }
+    ]
+  },
+  "script_construction_context": {
+    "structure_type": "linear",
+    "beats": [
+      {
+        "beat_id": "B001",
+        "type": "opening_hook",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "以双手美甲与首饰的近景特写开场, 直接抓住视觉注意",
+        "evidence_refs": [
+          "VS001_SH001"
+        ]
+      },
+      {
+        "beat_id": "B002",
+        "type": "reveal",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "手部动作完成后放下双手, 揭示佩戴者面部形象与表情",
+        "evidence_refs": [
+          "VS001_SH001"
+        ]
+      },
+      {
+        "beat_id": "B003",
+        "type": "closing",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "人物面向镜头开口提问, 以问句收束并留下互动感",
+        "evidence_refs": [
+          "VS001_SH001",
+          "asr_transcript.timeline[].index"
+        ]
+      }
+    ],
+    "progression": {
+      "emotion": [
+        "好奇/俏皮, 由手部特写过渡到面部微笑"
+      ],
+      "rhythm": [
+        "中速; 手部展示后 7.5-8.0s 短暂过渡再揭示面部"
+      ],
+      "information": [
+        "美甲细节 -> 首饰细节 -> 佩戴者形象 -> 互动问句"
+      ]
+    },
+    "script_memory_points": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 12.6
+        },
+        "type": "information_release_sequence",
+        "detail": "先局部细节特写(美甲/首饰), 再揭示主体(佩戴者面部), 信息从细节推进到整体。",
+        "preserve": [
+          "先细节后主体的信息释放顺序",
+          "细节展示作为开场钩子"
+        ],
+        "adapt": [
+          "具体美甲图案替换为目标素材",
+          "佩戴者形象替换为与目标风格一致者",
+          "具体场景可迁移"
+        ],
+        "avoid": [
+          "原人物身份",
+          "原视频原文案与特定品牌"
+        ],
+        "evidence_refs": [
+          "B001",
+          "B002"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B003"
+        ],
+        "time_range_sec": {
+          "start": 6.4,
+          "end": 12.6
+        },
+        "type": "opening_hook",
+        "detail": "结尾以面向镜头的提问句收束, 形成互动/悬念落点。",
+        "preserve": [
+          "结尾以提问/互动收束的结构位置"
+        ],
+        "adapt": [
+          "问句文案可按目标需求改写",
+          "语言与语气可调整"
+        ],
+        "avoid": [
+          "照搬原台词原文",
+          "原视频身份与声明"
+        ],
+        "evidence_refs": [
+          "B003"
+        ]
+      }
+    ]
+  },
+  "video_prompt_source": {
+    "global_static": "车内驾驶座自拍近景, 竖屏 9:16; 黑色车内环境, 开启天窗, 背景为车窗外的绿色树木与天空; 自然光从天窗上方入射; 主体中心构图。",
+    "global_camera": "手持自拍近景, 无明显机位位移, 轻微手持晃动; 前景双手, 中景面部与上身, 背景车窗。",
+    "shot_timeline": [
+      {
+        "shot_id": "shot1",
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 12.6
+        },
+        "static": "一名长发女性坐在汽车驾驶座自拍, 竖屏近景; 黑色皮革座椅与方向盘可见, 天窗开启, 背景是车窗外的绿色树木与天空; 自然光自上方入射; 人物佩戴大量金色首饰。",
+        "dynamic": "0.0-3.5s 双手举至面部前方, 十指交叉紧扣展示戒指, 双手轻微晃动调整角度; 3.5-7.5s 双手松开, 手指张开相互交错, 缓慢移动展示长款美甲正反面; 7.5-8.0s 双手迅速放下移出画面下方; 8.0-12.6s 面部完全显露, 面向镜头微笑, 嘴唇微动似说话, 头部轻微晃动保持自拍姿态。",
+        "knowledge_terms": [
+          "中心构图",
+          "紧凑特写",
+          "特写",
+          "第一人称视点",
+          "手伸入画面",
+          "主体揭示"
+        ],
+        "state_relations": [
+          {
+            "boundary": "shot1_initial",
+            "observed_changes": [],
+            "continuity": [
+              "单一连续镜头, 无相邻镜头边界"
+            ],
+            "before_after_detail": "",
+            "newly_revealed": "",
+            "uncertainty": "",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "自拍近景固定机位: 人物居中, 先以双手在面部前方完成交叉-张开-展示美甲的动作链, 再放下双手露出面部微笑说话; 轻微手持晃动, 自然天窗光, 前景双手/中景面部/背景车窗三层空间。"
+      }
+    ],
+    "cross_shot_relations": [],
+    "special_mechanisms": [],
+    "state_relation_summary": [
+      {
+        "scope": "VS001:shot1",
+        "initial_state": "面部被双手遮挡, 手部展示首饰与美甲",
+        "observed_changes": [],
+        "continuity": [
+          "单镜头内连续"
+        ],
+        "newly_revealed": "7.5s 后揭示面部",
+        "uncertainty": "",
+        "confidence": "high"
+      }
+    ],
+    "priority_memory_points": [
+      "vm_001",
+      "vm_002"
+    ]
+  },
+  "scenes": [
+    {
+      "id": "VS001",
+      "source_scene_ids": [],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 12.6
+      },
+      "duration_sec": 12.6,
+      "video_generation": {
+        "scene": {
+          "scene_type": "车内(汽车驾驶座)",
+          "location_description": "汽车内部驾驶座, 左侧可见方向盘",
+          "background_elements": [
+            "绿色树木",
+            "天空",
+            "车内座椅"
+          ],
+          "foreground_elements": [
+            "双手"
+          ],
+          "props": [
+            "方向盘",
+            "黑色皮革座椅",
+            "开启的天窗"
+          ],
+          "spatial_depth": "前景双手-中景面部上身-背景车窗外树木天空"
+        },
+        "spatial_framing": {
+          "shot_size": "近景/特写(自拍距离)",
+          "shot_size_observation": "近距离自拍, 面部与手部大比例占画面",
+          "subject_position": "居中",
+          "camera_angle": "平视略俯",
+          "foreground_midground_background": "前景双手, 中景面部/上身, 背景车窗",
+          "frame_usage": "竖屏 9:16",
+          "negative_space": "少量",
+          "text_safe_area_hint": "无"
+        },
+        "visual_style": {
+          "lighting": "自然光自天窗上方入射",
+          "color_palette": "黑色/金色/肤色/绿色",
+          "contrast": "中等",
+          "texture": "真实生活化质感",
+          "mood": "轻松俏皮",
+          "art_direction_or_realism": "高度写实",
+          "shooting_feel": "手机自拍纪实感"
+        },
+        "subject": {
+          "primary_subject": "一名长发女性(自拍者)",
+          "subject_type": "person",
+          "secondary_subjects": [
+            "双手十指(长款美甲)",
+            "多枚金色戒指",
+            "金色手链",
+            "两条细项链"
+          ],
+          "shape_color_material": "肤色; 深棕色/深金色直长发",
+          "size_relationship": "面部与双手大比例占画面",
+          "distinctive_features": [
+            "长款美甲",
+            "大量金色首饰"
+          ],
+          "visibility": "partial_until_7.5s_then_clear",
+          "attention_weight": "手部->面部"
+        },
+        "action": {
+          "action": "双手展示美甲与戒指后放下, 露出面部微笑说话",
+          "motion_type": "手部开合/交叉与面部揭示",
+          "motion_direction": "手部在画面前方小幅移动, 最后向下移出",
+          "motion_speed": "中速",
+          "interaction": "双手与美甲/戒指展示",
+          "key_pose_or_moment": "7.5-8.0s 双手放下揭示面部",
+          "action_sequence": "交叉展示->张开展示->放下->面部微笑说话",
+          "contact_points": "手指相互交错与戒指接触"
+        },
+        "camera": {
+          "movement_type": "手持自拍(无明显位移)",
+          "movement_speed": "缓慢",
+          "focal_length_feel": "前置广角自拍",
+          "focus_behavior": "面部/手部自动对焦",
+          "stability": "轻微手持晃动",
+          "camera_subject_relationship": "固定自拍距离, 主体正对镜头"
+        },
+        "visual_memory_points": [
+          {
+            "memory_id": "vm_001",
+            "source_scope": "shot",
+            "source_ids": [
+              "VS001:shot1"
+            ],
+            "time_range_sec": {
+              "start": 0.0,
+              "end": 7.5
+            },
+            "type": "micro_action",
+            "detail": "双手在镜头前完成明确的手部动作链: 十指交叉紧扣展示戒指 -> 松开、手指张开交错 -> 缓慢移动开合展示长款美甲正反面, 有明确手指接触点与开合停顿。",
+            "preserve": [
+              "手部动作链顺序(交叉-张开-展示)",
+              "手指接触点与开合停顿节奏",
+              "展示长款美甲正反面的角度调整"
+            ],
+            "adapt": [
+              "美甲图案替换为目标素材款式",
+              "首饰可改为与目标风格一致的中性金色饰品",
+              "佩戴者可替换为无身份/手部或非特定表演者"
+            ],
+            "avoid": [
+              "原佩戴者身份",
+              "原视频特定品牌/文字"
+            ],
+            "evidence_refs": [
+              "VS001:shot1",
+              "Q3[shot1][dynamic]"
+            ]
+          },
+          {
+            "memory_id": "vm_002",
+            "source_scope": "shot",
+            "source_ids": [
+              "VS001:shot1"
+            ],
+            "time_range_sec": {
+              "start": 7.5,
+              "end": 12.6
+            },
+            "type": "spatial_reveal",
+            "detail": "双手从面部前方放下移出画面下方, 由前景遮挡揭示主体面部, 完成从局部细节到手部佩戴者的注意力转移。",
+            "preserve": [
+              "从手部遮挡到面部揭示的注意力转移机制",
+              "揭示的时序(先手后脸)"
+            ],
+            "adapt": [
+              "目标人物形象与装扮",
+              "目标场景内容"
+            ],
+            "avoid": [
+              "原人物身份",
+              "原片妆容与造型细节照搬"
+            ],
+            "evidence_refs": [
+              "VS001:shot1",
+              "Q3[shot1][dynamic]"
+            ]
+          }
+        ],
+        "transition_in": {},
+        "transition_out": {}
+      },
+      "script_generation": {
+        "function": "detail",
+        "event": "手部展示美甲与戒指后放下, 揭示面部并开口提问",
+        "information_delta": "从细节信息推进到人物形象与情绪",
+        "text_slots": [
+          {
+            "kind": "dialogue",
+            "slot": "question",
+            "content": "Do you think I'm strange?"
+          }
+        ]
+      },
+      "shots": [
+        {
+          "id": "VS001_SH001",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 0.0,
+            "end": 12.6
+          },
+          "duration_sec": 12.6,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "近景/特写",
+              "shot_size_observation": "自拍距离",
+              "subject_position": "居中",
+              "camera_angle": "平视略俯"
+            },
+            "subject": {
+              "primary_subject": "一名长发女性(自拍者)",
+              "distinctive_features": [
+                "长款美甲",
+                "大量金色首饰"
+              ],
+              "attention_weight": "手部->面部"
+            },
+            "action": {
+              "action": "手部动作链展示后放下双手露出面部",
+              "motion_type": "手部开合/交叉与面部揭示",
+              "motion_direction": "小幅移动后向下",
+              "motion_speed": "中速",
+              "interaction": "双手与美甲/戒指展示",
+              "action_sequence": "交叉展示->张开展示->放下->面部微笑说话",
+              "contact_points": "手指交错与戒指接触"
+            },
+            "camera": {
+              "movement_type": "手持自拍(无明显位移)",
+              "movement_speed": "缓慢",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [
+              {
+                "memory_id": "vm_001",
+                "source_scope": "shot",
+                "source_ids": [
+                  "VS001:shot1"
+                ],
+                "time_range_sec": {
+                  "start": 0.0,
+                  "end": 7.5
+                },
+                "type": "micro_action",
+                "detail": "双手在镜头前完成明确的手部动作链: 十指交叉紧扣展示戒指 -> 松开、手指张开交错 -> 缓慢移动开合展示长款美甲正反面, 有明确手指接触点与开合停顿。",
+                "preserve": [
+                  "手部动作链顺序(交叉-张开-展示)",
+                  "手指接触点与开合停顿节奏",
+                  "展示长款美甲正反面的角度调整"
+                ],
+                "adapt": [
+                  "美甲图案替换为目标素材款式",
+                  "首饰可改为与目标风格一致的中性金色饰品",
+                  "佩戴者可替换为无身份/手部或非特定表演者"
+                ],
+                "avoid": [
+                  "原佩戴者身份",
+                  "原视频特定品牌/文字"
+                ],
+                "evidence_refs": [
+                  "VS001:shot1",
+                  "Q3[shot1][dynamic]"
+                ]
+              },
+              {
+                "memory_id": "vm_002",
+                "source_scope": "shot",
+                "source_ids": [
+                  "VS001:shot1"
+                ],
+                "time_range_sec": {
+                  "start": 7.5,
+                  "end": 12.6
+                },
+                "type": "spatial_reveal",
+                "detail": "双手从面部前方放下移出画面下方, 由前景遮挡揭示主体面部, 完成从局部细节到手部佩戴者的注意力转移。",
+                "preserve": [
+                  "从手部遮挡到面部揭示的注意力转移机制",
+                  "揭示的时序(先手后脸)"
+                ],
+                "adapt": [
+                  "目标人物形象与装扮",
+                  "目标场景内容"
+                ],
+                "avoid": [
+                  "原人物身份",
+                  "原片妆容与造型细节照搬"
+                ],
+                "evidence_refs": [
+                  "VS001:shot1",
+                  "Q3[shot1][dynamic]"
+                ]
+              }
+            ],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "focus",
+            "event": "手部展示美甲与戒指后放下, 揭示面部并开口提问",
+            "information_delta": "先细节后主体",
+            "text_slots": [
+              {
+                "kind": "dialogue",
+                "slot": "question",
+                "content": "Do you think I'm strange?"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot1"
+          ],
+          "uncertainties": [
+            "面部表情细节受限/身份不明"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        "VS001:shot1"
+      ],
+      "uncertainties": [
+        "车内具体车型不确定"
+      ]
+    }
+  ],
+  "relations": [],
+  "memory_points": {
+    "visual": [
+      {
+        "memory_id": "vm_001",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 7.5
+        },
+        "type": "micro_action",
+        "detail": "双手在镜头前完成明确的手部动作链: 十指交叉紧扣展示戒指 -> 松开、手指张开交错 -> 缓慢移动开合展示长款美甲正反面, 有明确手指接触点与开合停顿。",
+        "preserve": [
+          "手部动作链顺序(交叉-张开-展示)",
+          "手指接触点与开合停顿节奏",
+          "展示长款美甲正反面的角度调整"
+        ],
+        "adapt": [
+          "美甲图案替换为目标素材款式",
+          "首饰可改为与目标风格一致的中性金色饰品",
+          "佩戴者可替换为无身份/手部或非特定表演者"
+        ],
+        "avoid": [
+          "原佩戴者身份",
+          "原视频特定品牌/文字"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "Q3[shot1][dynamic]"
+        ]
+      },
+      {
+        "memory_id": "vm_002",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 7.5,
+          "end": 12.6
+        },
+        "type": "spatial_reveal",
+        "detail": "双手从面部前方放下移出画面下方, 由前景遮挡揭示主体面部, 完成从局部细节到手部佩戴者的注意力转移。",
+        "preserve": [
+          "从手部遮挡到面部揭示的注意力转移机制",
+          "揭示的时序(先手后脸)"
+        ],
+        "adapt": [
+          "目标人物形象与装扮",
+          "目标场景内容"
+        ],
+        "avoid": [
+          "原人物身份",
+          "原片妆容与造型细节照搬"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "Q3[shot1][dynamic]"
+        ]
+      }
+    ],
+    "script": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 12.6
+        },
+        "type": "information_release_sequence",
+        "detail": "先局部细节特写(美甲/首饰), 再揭示主体(佩戴者面部), 信息从细节推进到整体。",
+        "preserve": [
+          "先细节后主体的信息释放顺序",
+          "细节展示作为开场钩子"
+        ],
+        "adapt": [
+          "具体美甲图案替换为目标素材",
+          "佩戴者形象替换为与目标风格一致者",
+          "具体场景可迁移"
+        ],
+        "avoid": [
+          "原人物身份",
+          "原视频原文案与特定品牌"
+        ],
+        "evidence_refs": [
+          "B001",
+          "B002"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B003"
+        ],
+        "time_range_sec": {
+          "start": 6.4,
+          "end": 12.6
+        },
+        "type": "opening_hook",
+        "detail": "结尾以面向镜头的提问句收束, 形成互动/悬念落点。",
+        "preserve": [
+          "结尾以提问/互动收束的结构位置"
+        ],
+        "adapt": [
+          "问句文案可按目标需求改写",
+          "语言与语气可调整"
+        ],
+        "avoid": [
+          "照搬原台词原文",
+          "原视频身份与声明"
+        ],
+        "evidence_refs": [
+          "B003"
+        ]
+      }
+    ],
+    "audio": []
+  },
+  "asr_status": "ok",
+  "audio_analysis": {
+    "status": "skipped"
+  },
+  "evidence_refs": [
+    "VS001:shot1",
+    "asr_transcript.timeline[].index",
+    "B001",
+    "B002",
+    "B003"
+  ],
+  "uncertainties": [
+    "人物具体身份不明",
+    "0.0-7.5s 面部表情不可见",
+    "车内具体车型不确定"
+  ]
+}

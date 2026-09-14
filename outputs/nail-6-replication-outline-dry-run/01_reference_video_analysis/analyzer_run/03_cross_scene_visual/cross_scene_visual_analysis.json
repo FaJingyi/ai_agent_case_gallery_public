@@ -1,0 +1,7 @@
+{
+  "schema_version": "common_reference_video_analyzer.cross_scene_visual.v1",
+  "status": "completed_no_pairs",
+  "pair_count": 0,
+  "relations": [],
+  "note": "VS001 为单一连续镜头(VLM 明确 single continuous shot), 无相邻镜头 pair"
+}

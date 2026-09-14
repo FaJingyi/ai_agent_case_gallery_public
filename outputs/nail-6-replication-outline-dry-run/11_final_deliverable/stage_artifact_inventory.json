@@ -1,0 +1,143 @@
+{
+  "schema_version": "common_replication_outline.stage_artifact_inventory.v1",
+  "output_dir": "outputs/nail-6-replication-outline-dry-run",
+  "stages": [
+    {
+      "stage_dir": "00_inputs",
+      "step_id": "step_1_input_intake",
+      "status": "completed",
+      "artifacts": [
+        "00_inputs/input_manifest.json"
+      ]
+    },
+    {
+      "stage_dir": "01_reference_video_analysis",
+      "step_id": "step_2_reference_video_analysis",
+      "status": "completed",
+      "artifacts": [
+        "01_reference_video_analysis/analyzer_run/01_video_segments/VS001_asset.json",
+        "01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+        "01_reference_video_analysis/analyzer_run/01_video_segments/video_segment_plan.json",
+        "01_reference_video_analysis/analyzer_run/02_visual_analysis/VS001_vlm_prompt.txt",
+        "01_reference_video_analysis/analyzer_run/02_visual_analysis/VS001_vlm_response.json",
+        "01_reference_video_analysis/analyzer_run/02_visual_analysis/VS001_vlm_response.md",
+        "01_reference_video_analysis/analyzer_run/02_visual_analysis/scene_visual_analysis.json",
+        "01_reference_video_analysis/analyzer_run/02_visual_analysis/scene_visual_vlm_responses.json",
+        "01_reference_video_analysis/analyzer_run/02_visual_analysis/scene_visual_vlm_responses/VS001.json",
+        "01_reference_video_analysis/analyzer_run/03_cross_scene_visual/cross_scene_visual_analysis.json",
+        "01_reference_video_analysis/analyzer_run/04_professional_visual_analysis/professional_visual_analysis.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/asr_alignment.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/asr_raw_response.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/asr_transcript.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/cross_scene_script_link.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/global_script_structure.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/nail-6.asr.wav",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/scene_script_analysis.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/script_analysis.json",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/script_timeline.md",
+        "01_reference_video_analysis/analyzer_run/05_script_analysis/shot_script_analysis.json",
+        "01_reference_video_analysis/analyzer_run/06_final_deliverable/reference_video_analysis.json",
+        "01_reference_video_analysis/analyzer_run/06_final_deliverable/reference_video_storyboard.md",
+        "01_reference_video_analysis/analyzer_run/06_final_deliverable/reference_video_summary.md",
+        "01_reference_video_analysis/analyzer_run/run_manifest.json",
+        "01_reference_video_analysis/reference_video_analysis.json",
+        "01_reference_video_analysis/upstream_run_manifest.json",
+        "01_reference_video_analysis/video_segment_plan.json"
+      ]
+    },
+    {
+      "stage_dir": "03_asset_inventory",
+      "step_id": "step_3_asset_inventory",
+      "status": "completed",
+      "artifacts": [
+        "03_asset_inventory/asset_candidates.json",
+        "03_asset_inventory/h3_input_asset_inventory.json",
+        "03_asset_inventory/shangpin-3_asset.json"
+      ]
+    },
+    {
+      "stage_dir": "04_target_asset_analysis",
+      "step_id": "step_4_target_asset_analysis",
+      "status": "completed",
+      "artifacts": [
+        "04_target_asset_analysis/_vlm_prompts/shangpin-3_prompt.txt",
+        "04_target_asset_analysis/_vlm_prompts/shangpin-3_vlm_response.json",
+        "04_target_asset_analysis/_vlm_prompts/shangpin-3_vlm_response.md",
+        "04_target_asset_analysis/target_asset_analysis.json",
+        "04_target_asset_analysis/target_asset_vlm_responses.json"
+      ]
+    },
+    {
+      "stage_dir": "05_replication_readiness",
+      "step_id": "step_5_replication_readiness",
+      "status": "completed",
+      "artifacts": [
+        "05_replication_readiness/replication_readiness_check.json"
+      ]
+    },
+    {
+      "stage_dir": "06_replication_outline",
+      "step_id": "step_6_replication_outline",
+      "status": "completed",
+      "artifacts": [
+        "06_replication_outline/replication_outline.json",
+        "06_replication_outline/replication_outline.md"
+      ]
+    },
+    {
+      "stage_dir": "07_reference_frame_plan",
+      "step_id": "step_7_reference_frame_plan",
+      "status": "completed",
+      "artifacts": [
+        "07_reference_frame_plan/reference_frame_plan.json"
+      ]
+    },
+    {
+      "stage_dir": "08_reference_frames",
+      "step_id": "step_8_reference_frame_generation",
+      "status": "completed",
+      "artifacts": [
+        "08_reference_frames/RF_PERSON_001.asset.json",
+        "08_reference_frames/RF_PERSON_001.png",
+        "08_reference_frames/RF_PERSON_001.request.json",
+        "08_reference_frames/RF_PERSON_001.result.json",
+        "08_reference_frames/RF_SCENE_001.asset.json",
+        "08_reference_frames/RF_SCENE_001.png",
+        "08_reference_frames/RF_SCENE_001.request.json",
+        "08_reference_frames/RF_SCENE_001.result.json",
+        "08_reference_frames/batch_generation_manifest.json"
+      ]
+    },
+    {
+      "stage_dir": "09_h3_package",
+      "step_id": "step_9_h3_packaging",
+      "status": "completed",
+      "artifacts": [
+        "09_h3_package/assets/ASSET_001.png",
+        "09_h3_package/assets/RF_PERSON_001.png",
+        "09_h3_package/assets/RF_SCENE_001.png",
+        "09_h3_package/h3_packager_input.md",
+        "09_h3_package/h3_request.json",
+        "09_h3_package/minimax_h3_prompt.md",
+        "09_h3_package/pre_generation_checklist.md",
+        "09_h3_package/reference_mapping.md"
+      ]
+    },
+    {
+      "stage_dir": "11_final_deliverable",
+      "step_id": "step_11_final_deliverable",
+      "status": "completed",
+      "artifacts": [
+        "11_final_deliverable/delivery_index.json",
+        "11_final_deliverable/final_deliverable_review.md",
+        "11_final_deliverable/stage_artifact_inventory.json"
+      ]
+    }
+  ],
+  "absent_by_design": [
+    {
+      "stage_dir": "10_h3_video_output",
+      "reason": "dry_run_boundary: H3 video generation not submitted/run"
+    }
+  ]
+}

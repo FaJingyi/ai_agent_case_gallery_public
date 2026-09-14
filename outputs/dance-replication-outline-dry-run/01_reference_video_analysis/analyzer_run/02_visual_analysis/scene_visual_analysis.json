@@ -1,0 +1,158 @@
+{
+  "schema_version": "common_reference_video_analyzer.scene_visual_analysis.v1",
+  "segment_id": "VS001",
+  "source_video_time_range_sec": {
+    "start": 0.0,
+    "end": 10.125
+  },
+  "orientation": "vertical",
+  "read": {
+    "can_observe": true,
+    "confidence": "high",
+    "limits": [
+      "背景看台结构因景深与距离略模糊",
+      "快速动作偶有轻微运动模糊",
+      "极快脚步触地瞬间存在采样盲区"
+    ],
+    "observed_whole_segment": true
+  },
+  "shot_timeline": [
+    {
+      "shot_id": "shot1",
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 10.125
+      },
+      "duration_sec": 10.125,
+      "single_continuous_shot": true,
+      "static_visual": {
+        "subject": {
+          "primary_subject": "一名年轻男性",
+          "subject_type": "person",
+          "visibility": "clear",
+          "distinctive_features": [
+            "米白色连帽卫衣且帽子戴在头上",
+            "深棕色运动短裤",
+            "白色中筒袜",
+            "白色运动鞋"
+          ],
+          "appearance_details": "年轻男性，米白色连帽卫衣（兜帽戴起遮住部分头发），深棕色运动短裤，白色中筒袜与白色运动鞋"
+        },
+        "scene": {
+          "scene_type": "户外空旷场地",
+          "location_description": "户外体育场看台/球场区域，灰色混凝土地面并画有白色线条，远处有红色看台座椅、金属栏杆和立柱",
+          "foreground_elements": [
+            "灰色混凝土并带白色线条的地面"
+          ],
+          "background_elements": [
+            "红色看台座椅",
+            "金属栏杆",
+            "立柱",
+            "阴沉天空"
+          ],
+          "spatial_depth": "前景为地面，主体在中景，背景为看台与栏杆，景深中等"
+        },
+        "spatial_framing": {
+          "shot_size": "全景/全身取景",
+          "subject_position": "画面中央",
+          "camera_angle": "平视，固定机位",
+          "frame_usage": "主体居中，上下留出头顶与脚下空间",
+          "foreground_midground_background": "地面—人物—看台三层",
+          "negative_space": "主体两侧与上方留有天空与地面空间"
+        },
+        "visual_style": {
+          "lighting": "阴天漫射自然光，无强烈阴影",
+          "color_palette": "偏冷、低饱和度",
+          "contrast": "低对比",
+          "texture": "真实户外质感",
+          "mood": "冷静、专注",
+          "art_direction_or_realism": "写实纪录感",
+          "shooting_feel": "固定机位、竖屏"
+        },
+        "text_graphics_static": []
+      },
+      "dynamic_visual": {
+        "subject_motion": {
+          "action": "连续舞蹈",
+          "action_sequence": "0.0s 双脚分开站立、双手自然下垂；0.5-1.5s 双臂向两侧伸展并收回、腿部交叉步与踢腿；2.0-4.0s 类似拳击/格斗的握拳前伸收拳；5.0-10.0s 单脚支撑、另一脚点地或抬起的流畅舞步，手臂随身体律动摆动",
+          "body_parts": [
+            "双臂",
+            "双手",
+            "双腿",
+            "双脚"
+          ],
+          "contact_points": [
+            "双脚与地面接触",
+            "单脚支撑时另一脚离地点地"
+          ],
+          "weight_and_support": "身体重心左右移动并上下起伏，后半段出现单脚支撑",
+          "direction": "面向镜头，动作以左右和上下为主",
+          "speed": "节奏较快",
+          "pauses": "节拍间有停顿",
+          "entering_leaving_frame": false
+        },
+        "camera": {
+          "movement_type": "固定机位",
+          "movement_speed": "静止",
+          "focus_behavior": "焦点始终锁定人物",
+          "stability": "稳定无推拉摇移"
+        },
+        "in_shot_visual_effects": [],
+        "text_graphics_dynamic": []
+      },
+      "script_observation_cues": [
+        "全程无对白与画面文字，为纯舞蹈表演展示"
+      ],
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_vlm_responses/VS001.json#Q3"
+      ],
+      "uncertainties": [
+        "人物具体身份未知",
+        "舞蹈风格名称无法确认"
+      ]
+    }
+  ],
+  "state_relation_observations": [
+    {
+      "initial_state": {
+        "shot_id": "shot1",
+        "visible_state": "人物站立于户外场地中央，穿米白卫衣、深棕短裤、白袜白鞋，背景为阴天户外看台",
+        "confidence": "high"
+      }
+    }
+  ],
+  "special_mechanism_observations": [],
+  "visual_memory_observations": [
+    {
+      "candidate_id": "vmc_001",
+      "type": "micro_action",
+      "time_range_sec": {
+        "start": 0.5,
+        "end": 10.0
+      },
+      "detail": "连续舞蹈动作链：双臂伸展收回、握拳前伸、交叉步与踢腿、单脚支撑点地，重心左右移动并上下起伏",
+      "preserve": [
+        "动作链条的连续性与节拍",
+        "重心转移与单脚支撑"
+      ],
+      "adapt": [
+        "具体舞种与舞步",
+        "人物与场景外观"
+      ],
+      "avoid": [
+        "源视频人物身份"
+      ],
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_vlm_responses/VS001.json#Q3"
+      ]
+    }
+  ],
+  "text_logo_ui_observations": [],
+  "script_observation_cues": [
+    "无对白、无画面文字，纯舞蹈展示"
+  ],
+  "uncertainties": [
+    "人物身份未知",
+    "背景看台细节模糊"
+  ]
+}

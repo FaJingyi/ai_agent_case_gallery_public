@@ -1,0 +1,13 @@
+{
+  "source_path": "outputs/dance-replication-outline-dry-run/09_h3_package/assets/rf_scene_001.png",
+  "asset_api_url": "http://10.42.1.1:30100/v1/assets",
+  "asset": {
+    "id": "asset_3e73b919e8744621b19d8086e5cdaf79",
+    "filename": "rf_scene_001.png",
+    "content_type": "image/png",
+    "size_bytes": 1272284,
+    "sha256": "4f69e2962e6f7c8b0356eaeb48a93c53604a6418e72bc0d85e2f2b1e56ec19c9",
+    "url": "http://10.42.1.1:30100/v1/assets/asset_3e73b919e8744621b19d8086e5cdaf79/content"
+  },
+  "url": "http://10.42.1.1:30100/v1/assets/asset_3e73b919e8744621b19d8086e5cdaf79/content"
+}

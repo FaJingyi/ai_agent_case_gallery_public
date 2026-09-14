@@ -1,0 +1,19 @@
+{
+  "base_url": "http://10.42.1.1:9006",
+  "submit_url": "http://10.42.1.1:9006/v1/images",
+  "status_url": "http://10.42.1.1:9006/v1/images/{id}",
+  "download_url": "http://10.42.1.1:9006/v1/images/{id}/content",
+  "payload": {
+    "task": "text2img",
+    "conditions": [],
+    "n": 1,
+    "num_inference_steps": 50,
+    "output_mode": "decoded_files",
+    "prompt": "纯场景参考图（scene_reference）：只呈现空场景环境，不含人物、不含产品、不含任何可读文字。空间类型：现代城市广场；前景/中景/背景：前景广场铺装、中景人物、背景玻璃幕墙建筑；置景：浅灰铺装、绿植花池、玻璃幕墙；光线：明亮户外自然光；色调：浅灰+蓝+绿；材质：石材、玻璃、金属；背景密度：中；景深：深；氛围：开阔都市。可见差异锚点：背景建筑由参考片现代建筑改为玻璃幕墙+绿植花池；主色倾向冷调浅灰蓝（参考片偏暖）。竖构图空镜，保持空间纵深与背景密度。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+    "target": {
+      "short_edge": 720,
+      "aspect_ratio": "9:16"
+    }
+  },
+  "output": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/milk-replication-outline-dry-run/08_reference_frames/_tmp_rf_007/rf_007.png"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "common_reference_video_analyzer.video_segment_plan.v1",
+  "source_video": {
+    "path": "test_data/animal/2_2_case4-H3-original.mp4",
+    "filename": "2_2_case4-H3-original.mp4",
+    "fps": 24.0,
+    "duration": 5.875,
+    "total_frames": 141,
+    "width": 1344,
+    "height": 768
+  },
+  "strategy": "full_video",
+  "max_segment_duration_sec": 15.0,
+  "vlm_video_segments": [
+    {
+      "segment_id": "VS001",
+      "start": 0.0,
+      "end": 5.875,
+      "duration": 5.875,
+      "source_candidate_ids": [],
+      "video_path": "outputs/animal-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_6a7143e4263944d9b66003792c363b92/content",
+      "notes": [
+        "full_video_under_or_equal_15s"
+      ]
+    }
+  ],
+  "dropped_ranges": [],
+  "warnings": []
+}

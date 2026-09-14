@@ -1,0 +1,190 @@
+{
+  "schema_version": "common_replication_outline.target_asset_analysis.v2",
+  "asset_level_analysis": [],
+  "user_text_context_analysis": {
+    "raw_user_request": "参考视频生成一条新的视频，把视频里所有\"minimax\"字母换成\"MetaX\"，把视频中的模特换成猫咪",
+    "source": "test_data/minimax/user_input/requirement.txt.txt",
+    "explicit_replacement_instructions": [
+      {
+        "source_entity": "on-screen 'minimax' lettering / MINIMAX wordmark",
+        "target_entity": "MetaX",
+        "scope": "all occurrences in the video"
+      },
+      {
+        "source_entity": "the model (the woman) appearing in the video",
+        "target_entity": "猫咪 (a cat)",
+        "scope": "every shot where the model is visible"
+      }
+    ],
+    "scene_instructions": [],
+    "style_instructions": [],
+    "constraints": [
+      "keep the reference video structure; only the wordmark and the model are replaced"
+    ]
+  },
+  "business_context_analysis": {
+    "brand_name": "MetaX",
+    "brand_name_source": "user_text",
+    "logo_asset_provided": false,
+    "declarative_or_numeric_claims": [],
+    "cta_or_price": [],
+    "policy": "brand appears as a replacement of the reference wordmark; no business claim may be invented"
+  },
+  "user_declared_intent": {
+    "asset_usage_instructions": [
+      "use the reference video as the structural and stylistic source for a new video"
+    ],
+    "operation_or_interaction_descriptions": [],
+    "scene_or_context_descriptions": [],
+    "text_logo_or_brand_inputs": [
+      "MetaX replaces every on-screen 'minimax' lettering"
+    ],
+    "confirmation_to_omit_or_neutralize": [],
+    "confirmation_to_generate_assumptions": [
+      "replace the model with a cat (no cat asset supplied; appearance must be assumed)"
+    ]
+  },
+  "generation_assumptions": [
+    {
+      "assumption_id": "GA001",
+      "slot": "primary_subject",
+      "description": "the reference model (woman) is replaced by a cat; the cat is a non-identifiable domestic short-hair with a warm ginger-and-cream coat, amber eyes, upright ears and a calm, alert posture",
+      "source": "user_confirmation",
+      "requires_reference_frame": false,
+      "risk_level": "medium",
+      "status": "user_confirmed",
+      "evidence_refs": [
+        "test_data/minimax/user_input/requirement.txt.txt",
+        "01_reference_video_analysis/reference_video_analysis.json:scenes[SC001].shots[SC001_SH003,SC001_SH004]"
+      ]
+    },
+    {
+      "assumption_id": "GA002",
+      "slot": "brand_wordmark",
+      "description": "every reference 'MINIMAX' wordmark and lettering is re-lettered as 'MetaX' in the same in-scene positions (bus-shelter panel, vertical banner, 3D rooftop letters, sunglass-lens reflection)",
+      "source": "user_confirmation",
+      "requires_reference_frame": false,
+      "risk_level": "medium",
+      "status": "user_confirmed",
+      "evidence_refs": [
+        "test_data/minimax/user_input/requirement.txt.txt",
+        "memory_points.script[sm_003]"
+      ]
+    },
+    {
+      "assumption_id": "GA003",
+      "slot": "scene_content",
+      "description": "concrete scene set-dressing is adapted to the cat-centred target world (cat-scale props, no human-scale model furniture) while the reference scene structure, depth and lighting are inherited",
+      "source": "fallback_policy",
+      "requires_reference_frame": true,
+      "risk_level": "low",
+      "status": "proposed",
+      "evidence_refs": [
+        "references/shot-replication/module_strategy.json:scene_transfer_policy"
+      ]
+    }
+  ],
+  "reference_dimension_alignment": {
+    "primary_subject_identity": {
+      "covered_by": [
+        "user_text"
+      ],
+      "status": "covered_with_assumption",
+      "note": "cat type specified in text, exact appearance assumed"
+    },
+    "product_appearance": {
+      "covered_by": [],
+      "status": "not_applicable"
+    },
+    "actor_identity": {
+      "covered_by": [
+        "user_text"
+      ],
+      "status": "neutralized_replaced_by_animal",
+      "note": "no human identity generated; the model is replaced by a cat"
+    },
+    "brand_and_visible_text": {
+      "covered_by": [
+        "user_text"
+      ],
+      "status": "covered_by_text",
+      "note": "MetaX given as text; typography is a design assumption"
+    },
+    "scene": {
+      "covered_by": [],
+      "status": "inherited_from_reference",
+      "note": "no scene asset or scene text supplied"
+    },
+    "visual_style": {
+      "covered_by": [
+        "reference_video"
+      ],
+      "status": "inherited_from_reference"
+    },
+    "camera_and_editing": {
+      "covered_by": [
+        "reference_video"
+      ],
+      "status": "inherited_from_reference"
+    },
+    "script_and_text_structure": {
+      "covered_by": [
+        "reference_video",
+        "user_text"
+      ],
+      "status": "covered"
+    },
+    "audio": {
+      "covered_by": [],
+      "status": "unsupported_skipped"
+    }
+  },
+  "binding_candidates": [
+    {
+      "binding_id": "BC001",
+      "asset_id": null,
+      "reference_unit_id": "TU001",
+      "reference_segment_id": "TU001_S1",
+      "slot": "brand_wordmark",
+      "reference_source_path": "01_reference_video_analysis/reference_video_analysis.json:video_prompt_source.shot_timeline[shot1].static",
+      "target_source_path": "user_text:MetaX replacement",
+      "packager_role": "in_scene_text_logo",
+      "compatibility_status": "ready",
+      "constraints": [
+        "in-scene physical lettering; re-letter every occurrence"
+      ],
+      "blocked_uses": [
+        "must_not_invent_additional_readable_text"
+      ]
+    },
+    {
+      "binding_id": "BC002",
+      "asset_id": null,
+      "reference_unit_id": "TU003",
+      "reference_segment_id": "TU003_S1",
+      "slot": "primary_subject",
+      "reference_source_path": "01_reference_video_analysis/reference_video_analysis.json:scenes[SC001].shots[SC001_SH003].video_generation.subject",
+      "target_source_path": "user_text:cat replacement",
+      "packager_role": "primary_subject",
+      "compatibility_status": "requires_user_confirmation",
+      "constraints": [
+        "no cat asset; appearance assumed as a generation assumption"
+      ],
+      "blocked_uses": [
+        "must_not_generate_human_identity",
+        "must_not_invent_a_named_pet_identity"
+      ]
+    }
+  ],
+  "h3_input_asset_inventory": {
+    "authoritative_path": "03_asset_inventory/h3_input_asset_inventory.json",
+    "h3_material_mode": "reference_video_plus_reference_images",
+    "eligible_asset_ids": [
+      "ref_video_excerpt_15s"
+    ]
+  },
+  "validation_flags": [
+    "no_user_assets_supplied",
+    "target_subject_appearance_is_generation_assumption"
+  ]
+}

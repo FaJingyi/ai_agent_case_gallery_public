@@ -1,0 +1,116 @@
+{
+  "schema_version": "common_replication_outline.final_deliverable_index.v1",
+  "run_id": "milk-replication-outline-dry-run",
+  "status": "ready_with_assumptions",
+  "dry_run": true,
+  "counts": {
+    "timeline_unit_count": 11,
+    "temporal_segment_count": 12,
+    "h3_prompt_shot_count": 11
+  },
+  "count_note": "h3_prompt_shot_count counts prompt-level [Shot N] entries mapped to timeline units; temporal_segments preserved inside units are reference-level beats.",
+  "artifacts": [
+    {
+      "stage": "step_1",
+      "path": "00_inputs/input_manifest.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_2",
+      "path": "01_reference_video_analysis/reference_video_analysis.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_2",
+      "path": "01_reference_video_analysis/video_segment_plan.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_3",
+      "path": "03_asset_inventory/asset_candidates.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_3",
+      "path": "03_asset_inventory/h3_input_asset_inventory.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_4",
+      "path": "04_target_asset_analysis/target_asset_analysis.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_4",
+      "path": "04_target_asset_analysis/target_asset_vlm_responses.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_5",
+      "path": "05_replication_readiness/replication_readiness_check.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_6",
+      "path": "06_replication_outline/replication_outline.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_6",
+      "path": "06_replication_outline/replication_outline.md",
+      "status": "completed"
+    },
+    {
+      "stage": "step_7",
+      "path": "07_reference_frame_plan/reference_frame_plan.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_8",
+      "path": "08_reference_frames/batch_generation_manifest.json",
+      "status": "completed"
+    },
+    {
+      "stage": "step_9",
+      "path": "09_h3_package/h3_packager_input.md",
+      "status": "completed"
+    },
+    {
+      "stage": "step_9",
+      "path": "09_h3_package/minimax_h3_prompt.md",
+      "status": "completed"
+    },
+    {
+      "stage": "step_9",
+      "path": "09_h3_package/reference_mapping.md",
+      "status": "completed"
+    },
+    {
+      "stage": "step_9",
+      "path": "09_h3_package/pre_generation_checklist.md",
+      "status": "completed"
+    },
+    {
+      "stage": "step_9",
+      "path": "09_h3_package/h3_request.json",
+      "status": "completed",
+      "note": "submit-ready request, not submitted"
+    },
+    {
+      "stage": "step_10",
+      "path": null,
+      "status": "skipped_dry_run",
+      "note": "H3 video generation not invoked"
+    },
+    {
+      "stage": "step_11",
+      "path": "run_manifest.json",
+      "status": "completed"
+    }
+  ],
+  "reference_frames": {
+    "planned": 8,
+    "ready": 8
+  },
+  "h3_video_generation_status": "skipped_dry_run"
+}

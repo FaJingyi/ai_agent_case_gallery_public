@@ -1,0 +1,13 @@
+{
+  "source_path": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/nail-6-replication-outline-dry-run/08_reference_frames/RF_SCENE_001.png",
+  "asset_api_url": "http://10.42.1.1:30100/v1/assets",
+  "asset": {
+    "id": "asset_927dd1b5c43c43f6987eeab7457b8dfb",
+    "filename": "RF_SCENE_001.png",
+    "content_type": "image/png",
+    "size_bytes": 1245737,
+    "sha256": "02ebfb9663bb125248f3ad5238b970dd6ea36c8603fc499495e7e313c421f0c2",
+    "url": "http://10.42.1.1:30100/v1/assets/asset_927dd1b5c43c43f6987eeab7457b8dfb/content"
+  },
+  "url": "http://10.42.1.1:30100/v1/assets/asset_927dd1b5c43c43f6987eeab7457b8dfb/content"
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": "common_reference_video_analyzer.script_analysis.v1",
+  "structure_type": "linear",
+  "beats": [
+    {
+      "beat_id": "B001",
+      "type": "opening_hook",
+      "scene_ids": [
+        "SC001"
+      ],
+      "information_delta": "以静止站姿与全身环境建立主体与场地",
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_analysis.json#shot1"
+      ]
+    },
+    {
+      "beat_id": "B002",
+      "type": "proof",
+      "scene_ids": [
+        "SC001"
+      ],
+      "information_delta": "连续舞蹈动作链逐步展开，呈现节奏与技巧",
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_analysis.json#shot1"
+      ]
+    },
+    {
+      "beat_id": "B003",
+      "type": "closing",
+      "scene_ids": [
+        "SC001"
+      ],
+      "information_delta": "舞蹈持续推进并在镜头结束时收束，无口播或 CTA",
+      "evidence_refs": [
+        "02_visual_analysis/scene_visual_analysis.json#shot1"
+      ]
+    }
+  ],
+  "progression": {
+    "emotion": [
+      "冷静开场→节奏推进→保持能量"
+    ],
+    "rhythm": [
+      "静态起手→持续中高速舞蹈"
+    ],
+    "information": [
+      "主体→环境→完整动作链"
+    ]
+  },
+  "script_memory_points": [
+    {
+      "memory_id": "sm_001",
+      "source_scope": "global",
+      "source_ids": [
+        "B001",
+        "B002",
+        "B003"
+      ],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 10.125
+      },
+      "type": "emotional_arc",
+      "detail": "单镜头内由静止站姿起手，逐步进入持续舞蹈并保持能量，形成从静到动、由缓入疾的节奏弧线",
+      "preserve": [
+        "静—动的节奏弧线",
+        "动作能量逐步推进",
+        "结尾自然收束"
+      ],
+      "adapt": [
+        "具体舞种与舞步",
+        "人物与场景",
+        "结尾呈现方式"
+      ],
+      "avoid": [
+        "源视频人物身份",
+        "源视频歌曲人声/音乐"
+      ],
+      "evidence_refs": [
+        "B001",
+        "B002",
+        "B003"
+      ]
+    }
+  ],
+  "dialogue_voiceover_on_screen_text": [],
+  "audio_status": "unsupported_skipped"
+}

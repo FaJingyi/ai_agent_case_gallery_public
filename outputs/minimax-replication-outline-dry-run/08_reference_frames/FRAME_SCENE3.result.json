@@ -1,0 +1,9 @@
+{
+  "provider": "sensenova",
+  "task_id": "20260913_075724_5ba3457e-9498-44fe-b6d0-71a6d967422f",
+  "task": "text2img",
+  "output": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/minimax-replication-outline-dry-run/08_reference_frames/FRAME_SCENE3.png",
+  "request": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/minimax-replication-outline-dry-run/08_reference_frames/request.json",
+  "saved_output_path": null,
+  "seed": null
+}

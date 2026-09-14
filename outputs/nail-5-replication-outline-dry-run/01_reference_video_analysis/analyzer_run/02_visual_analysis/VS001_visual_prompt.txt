@@ -1,0 +1,104 @@
+你正在对一段参考视频做客观视觉观察。你只做观察，不做复刻建议、生成策略、改写策略、价值判断或最终记忆点判断。不要输出 JSON，请按下面的编号问题用普通文本回答。
+
+输入变量：
+- segment_id: VS001
+- source_video_time_range: 0.0 到 15.0
+- segment_duration: 15.0
+- video_orientation: vertical
+- sampling: Qwen3.8 video_url, fps=4, max_frames=256
+
+观察要求：
+- 按时间顺序观察完整片段，先划分连续镜头/分镜，并标注大致时间范围，例如 [shot1: 0.0-3.0s]。
+- 每个 shot 必须同时写 [静态] 和 [动态]。
+- [静态] 描述主体、场景、道具、构图、景别、机位、前中后景、光线、色彩、材质、文字/logo/UI 等可见信息。
+- [动态] 描述主体动作、动作阶段、身体部位、接触点、运动方向、速度、力度感、停顿、进出画面、摄影机运动、焦点变化、视觉特效等。
+- 如果只有一个连续镜头，明确写 single continuous shot / no cut / no transition，并在 [动态] 中描述镜头内阶段变化。
+- 不要假设人物/产品/场景状态在整段视频中恒定不变，但也不要强制性制造变化。对 shot1 之后的每个 shot，观察它与前一个 shot 的关系：记录有视觉证据的变化、可见的连续性、新揭示的信息和不确定性。如果没有可见的明显变化，明确写出，而不要臆造差异。
+- 对任何可能有使用状态变化的可见主体，记录它是缺失、存在但未使用、正在准备、正在佩戴/使用、已经变化完成、正在演示，还是只展示了结果状态。使用通用措辞，不要发明领域专属标签。
+- 如果状态变化因模糊、裁切、采样间隔、遮挡或低分辨率而不确定，标为不确定，不要平滑成连续状态。
+- 提到人物、手、脚、动物、产品、道具、容器或工具等可数对象时，必须在句子里写清可见数量和归属关系，例如“两只手”“三只猫”。数量不确定时可以写“约”。如果数量、归属、左右关系或可见状态发生变化，描述变化前后状态。
+
+重点观察对象（只在画面中确实可见且对理解视频有帮助时记录，不要臆测）：
+- 构图与空间：特殊视角、明显主体位置、强留白/强对称/明显偏置、前景遮挡、框中框、前中后景关系、空间从局部到整体或从遮挡中揭示。
+- 镜头与焦点：推拉摇移跟、升降/环绕/滚转、手持晃动、变焦、移焦/跟焦、景深变化。
+- 转场与连续性：硬切、遮挡切、动作匹配、构图/形状/色彩/光线匹配、运镜延续、缩放/擦除/滑动/变形、明显节奏停顿。
+- 动作与视觉变化：身体部位或物体之间的接触、重心/支撑变化、停顿/二次调整/松开/回弹、闪光/眩光/粒子/烟雾/水波/模糊拖影、材质或速度变化。
+
+相邻分镜连续性/变化检查清单（通用，不是案例专属）：
+- person state: 妆造、妆容、发型、服装、配饰、姿势、身份连续性、脸/身体/手/脚可见性
+- subject/product state: 缺失/存在、未使用/使用中/使用后、佩戴/手持/放置/操作、打开/关闭、组装/拆解、干净/脏、变化前/变化后
+- scene state: 室内/室外、家庭/工作/公共/自然/影棚、光线、天气/时段、背景密度、空间布局
+- prop/overlay state: 新道具出现/消失、画中画/分屏/拼贴/贴纸/文字出现/消失、布局变化
+- information state: 观众在这个 shot 学到了哪些上一个 shot 没有看到或看不清的信息
+
+相邻分镜关系规则：
+- shot1 描述初始可见状态。
+- 之后每一对分镜输出一条明确的边界项，命名为 [shotN -> shotN+1][state-relation]。
+- 每条边界项必须包含 observed_changes[]、continuity[]、newly_revealed、uncertainty、confidence。
+- 只有当差异可见或被剪切强烈暗示时才把某个轴放入 observed_changes[]。可用轴名称：person_styling, makeup_hair, outfit_accessories, subject_usage_state, scene_location, lighting_weather, prop_overlay, composition, camera_motion, action_phase, information_reveal。
+- 如果没有可见的明显变化，写 observed_changes: [] 并描述连续性。
+- 当可见变化前/后状态时，分别写清 before-state 和 after-state；不可见时标为不确定，不要推断。
+
+编号问题（按顺序回答每个问题，编号保持不变，不要输出 JSON）：
+1. Global read and confidence: 你是否观察了完整片段？给出置信度 high/medium/low，并列出限制，例如模糊、遮挡、主体过小、低分辨率、快速动作、时间边界不确定或采样间隔。
+2. Shot timeline: 按时间顺序列出观察到的 shot，格式 [shotN: start-end]。如果只有一个连续镜头，列出一个 shot 并写 single continuous shot。
+3. Shot details: 对每个 shot 写 [static] 和 [dynamic]。static 覆盖主体、场景、道具、构图、景别、机位、前中后景、光线、色彩、材质、文字/logo/UI。dynamic 覆盖动作阶段、身体部位、接触点、方向、重心/支撑、速度、停顿、进出画、摄影机运动、焦点变化和视觉特效。
+4. Adjacent-shot state relation table: 先写 shot1 的初始可见状态，然后对每一对相邻 shot 写一条 [shotN -> shotN+1][state-relation]。不要强行制造差异。只记录有视觉证据的变化、可见连续性、新揭示信息和不确定性。覆盖 person styling、makeup/hair、outfit/accessories、subject/product usage state、scene/location、lighting/weather、props、overlays、composition、camera motion、action phase、information reveal。使用 observed_changes[]、continuity[]、newly_revealed、uncertainty、confidence；只有确实可见变化时才写 before/after 措辞。
+5. Cross-shot relations: 对每一对相邻 shot 写 [shotN -> shotN+1][cross-shot]，描述转场类型以及 Q4 状态关系如何被视觉呈现：硬切、匹配、对比、动作延续、物体/前景遮挡擦除、缩放/滑动、叠加层变化或其他机制。包含主体/动作/构图/光线/空间是连续、变化还是不确定。如果只有一个 shot，写 not_applicable_single_continuous_shot。
+6. Special mechanism scan: 主动扫描整段视频的特殊构图、特殊运镜和特殊转场。包括画中画、分屏、拼贴、连拍/照片条、框中框、屏幕中的屏幕、前景遮挡构图、匹配剪辑、对比硬切、物体擦除、甩镜转场、snap zoom、rack focus、定格、速度渐变和其他非普通机制。对每个观察到的机制写清时间范围、类型、可见证据、运作方式和为什么它影响复刻。如果没有，写 not_observed。
+7. Text/logo/UI/graphics: 记录可见文字、logo、水印、字幕、UI、贴纸、图形层、画中画内容、边框或覆盖层。只转录可读文字，不要猜不可读文字。说明是静态还是动态。
+8. Visual memory candidates: 只从 Q6 中选高价值候选项。每个候选项必须包含 type、time range、detail、要保留的机制、可改编内容和要避免迁移的内容。
+9. Uncertainty: 列出所有不确定点，尤其是时间边界、采样间隔、遮挡、模糊、接触点不清、主体身份不清、状态变化不确定或特殊机制不确定。
+
+回答格式：
+1. Global read and confidence:
+- confidence: high/medium/low
+- limits: ...
+
+2. Shot timeline:
+- [shot1: 0.0-...s] ...
+- [shot2: ...-...s] ...
+
+3. Shot details:
+[shot1: 0.0-...s]
+- [static] ...
+- [dynamic] ...
+
+4. Adjacent-shot state relation table:
+- initial_state:
+  - shot_id: shot1
+  - visible_state: ...
+  - confidence: high/medium/low
+- [shot1 -> shot2][state-relation]:
+  - observed_changes: [...]
+  - continuity: [...]
+  - before_after_detail: ...
+  - newly_revealed: ...
+  - uncertainty: ...
+  - confidence: high/medium/low
+
+5. Cross-shot relations:
+- [shot1 -> shot2][cross-shot] ...
+
+6. Special mechanism scan:
+- special_mechanism_1:
+  - time_range_or_boundary: ...
+  - type: special_composition | special_camera_motion | special_transition | visual_effect | micro_action
+  - evidence: ...
+  - mechanics: ...
+  - replication_relevance: ...
+
+7. Text/logo/UI/graphics:
+- ...
+
+8. Visual memory candidates:
+- memory_candidate_1:
+  - type: ...
+  - time_range: ...
+  - detail: ...
+  - preserve: ...
+  - adapt: ...
+  - avoid: ...
+
+9. Uncertainty:
+- ...

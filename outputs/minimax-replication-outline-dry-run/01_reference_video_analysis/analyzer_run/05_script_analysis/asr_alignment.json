@@ -1,0 +1,13 @@
+{
+  "schema_version": "common_reference_video_analyzer.asr_alignment.v1",
+  "asr_status": "partial",
+  "alignment_basis": ["01_video_segments/video_segment_plan.json.vlm_video_segments[]", "02_visual_analysis/scene_visual_analysis.json.shot_timeline[]"],
+  "segments": [
+    {"shot_id": "shot1", "time_range_sec": {"start": 0.0, "end": 4.0}, "speech_status": "unavailable", "asr_indices": [], "text": "", "cross_boundary_split": false},
+    {"shot_id": "shot2", "time_range_sec": {"start": 4.0, "end": 8.0}, "speech_status": "unavailable", "asr_indices": [], "text": "", "cross_boundary_split": false},
+    {"shot_id": "shot3", "time_range_sec": {"start": 8.0, "end": 12.0}, "speech_status": "unavailable", "asr_indices": [], "text": "", "cross_boundary_split": false},
+    {"shot_id": "shot4", "time_range_sec": {"start": 12.0, "end": 15.0}, "speech_status": "partial", "asr_indices": [1, 2, 3, 4, 5, 6, 7, 8], "text": "I'm going to go to the next video.", "cross_boundary_split": false}
+  ],
+  "unassigned_asr_indices": [],
+  "notes": ["ASR produced a single low-confidence English phrase at 12.18-15.0s; the clip appears to be music-led and the phrase may be a transcription artifact, so it is recorded as partial and not treated as confirmed spoken content", "screen text is carried by the visual layer, not ASR"]
+}

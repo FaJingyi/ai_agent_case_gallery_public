@@ -1,0 +1,116 @@
+{
+  "full_text": "Unlike。DoyouthinkI'mstrange?",
+  "timeline": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 1.2,
+      "text": "Unlike。",
+      "raw_text": "Unlike",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 2,
+      "start": 6.399,
+      "end": 7.799,
+      "text": "Do",
+      "raw_text": "Do",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 3,
+      "start": 7.799,
+      "end": 9.2,
+      "text": "you",
+      "raw_text": "you",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 4,
+      "start": 9.2,
+      "end": 9.54,
+      "text": "think",
+      "raw_text": "think",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 5,
+      "start": 9.54,
+      "end": 9.82,
+      "text": "I'm",
+      "raw_text": "I'm",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "index": 6,
+      "start": 9.82,
+      "end": 10.22,
+      "text": "strange?",
+      "raw_text": "strange?",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "schema_version": "tool_asr.transcript.v1",
+  "status": "ok",
+  "provider": "gitee_ai",
+  "model": "whisper-large-v3-turbo",
+  "source": {
+    "media_path": "/home/mx/jyfa/workdir/ai_agent_platform/test_data/nail-6/nail-6.mp4",
+    "audio_path": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/nail-6-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/05_script_analysis/nail-6.asr.wav",
+    "language": null
+  },
+  "raw_full_text": "UnlikeDoyouthinkI'mstrange?",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.2,
+      "text": "Unlike",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 6.399,
+      "end": 7.799,
+      "text": "Do",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 7.799,
+      "end": 9.2,
+      "text": "you",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 9.2,
+      "end": 9.54,
+      "text": "think",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 9.54,
+      "end": 9.82,
+      "text": "I'm",
+      "speaker": "unknown",
+      "confidence": null
+    },
+    {
+      "start": 9.82,
+      "end": 10.22,
+      "text": "strange?",
+      "speaker": "unknown",
+      "confidence": null
+    }
+  ],
+  "words": [],
+  "srt": "1\n00:00:00,000 --> 00:00:01,200\n Unlike\n\n2\n00:00:06,399 --> 00:00:07,799\n Do\n\n3\n00:00:07,799 --> 00:00:09,200\n you\n\n4\n00:00:09,200 --> 00:00:09,540\n think\n\n5\n00:00:09,540 --> 00:00:09,820\n I'm\n\n6\n00:00:09,820 --> 00:00:10,220\n strange?\n",
+  "errors": []
+}

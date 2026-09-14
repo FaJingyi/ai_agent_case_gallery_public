@@ -1,0 +1,7 @@
+{
+  "schema_version": "common_reference_video_analyzer.cross_scene_script_link.v1",
+  "relations": [],
+  "notes": [
+    "单镜头视频，无跨镜头脚本关系边"
+  ]
+}

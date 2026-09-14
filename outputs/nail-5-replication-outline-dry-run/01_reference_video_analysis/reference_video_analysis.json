@@ -1,0 +1,1622 @@
+{
+  "schema_version": "common_reference_video_analyzer.final.v1",
+  "reference_video": {
+    "path": "/home/mx/jyfa/workdir/ai_agent_platform/test_data/nail-5/nail-5.mp4",
+    "filename": "nail-5.mp4",
+    "fps": 30.0,
+    "duration": 15.633333,
+    "width": 720,
+    "height": 1280,
+    "analyzed_range_sec": {
+      "start": 0.0,
+      "end": 15.0
+    },
+    "analysis_note": "源视频超过15秒，仅分析前15秒，丢弃 15.0-15.633s"
+  },
+  "video_generation_context": {
+    "scene": {
+      "dominant_scene_types": [
+        "户外草地/湖畔",
+        "室内门框开场"
+      ],
+      "common_background_elements": [
+        "草地",
+        "蓝天白云",
+        "湖泊",
+        "绿色山坡"
+      ],
+      "common_props": [
+        "草帽",
+        "手部配饰"
+      ],
+      "spatial_depth_pattern": "前景手部 + 中景人物 + 背景自然环境"
+    },
+    "spatial_framing": {
+      "common_shot_sizes": [
+        "中景",
+        "特写",
+        "手部特写",
+        "全景"
+      ],
+      "common_compositions": [
+        "中心构图",
+        "紧凑特写"
+      ],
+      "common_angles": [
+        "正面平视"
+      ],
+      "frame_usage_pattern": "竖屏9:16，主体居中，上下留字幕安全区"
+    },
+    "visual_style": {
+      "lighting": "室内柔和散射光/户外明亮自然光",
+      "color_palette": "蓝绿色自然色调 + 米色/白色",
+      "contrast": "中低",
+      "texture": "自然写实",
+      "mood": "轻松愉悦",
+      "art_direction_or_realism": "写实生活方式",
+      "shooting_feel": "手机竖屏"
+    },
+    "subject": {
+      "primary_subject": "女性人物展示的装饰美甲",
+      "subject_type": "product_on_person",
+      "distinctive_features": [
+        "长款装饰指甲",
+        "蓝白图案"
+      ],
+      "attention_weight": "高"
+    },
+    "action": {
+      "dominant_motion_types": [
+        "手势展示",
+        "前伸",
+        "交叉手指",
+        "触帽"
+      ],
+      "dominant_interactions": [
+        "双手向镜头展示",
+        "接触帽檐"
+      ]
+    },
+    "camera": {
+      "common_movements": [
+        "静止",
+        "轻微手持"
+      ],
+      "common_stability": "轻微手持晃动",
+      "focal_length_feel": "中焦"
+    },
+    "transition": {
+      "common_transition_types": [
+        "硬切"
+      ],
+      "match_methods": [],
+      "cut_rhythm": "动作型/蒙太奇节奏，平均约1.6s"
+    },
+    "visual_memory_points": [
+      {
+        "memory_id": "vm_001",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot5"
+        ],
+        "time_range_sec": {
+          "start": 9.0,
+          "end": 10.5
+        },
+        "type": "composition",
+        "detail": "左上角画中画小窗显示另一只手拿着黄色花朵，主画面为手部装饰指甲特写，主/子画面按尺度分层。",
+        "preserve": [
+          "画中画位置（左上角）、主/子画面尺度关系、信息分工与出现时机"
+        ],
+        "adapt": [
+          "画中画内的具体道具、花朵与手部内容"
+        ],
+        "avoid": [
+          "源片专属文字、人物身份与品牌"
+        ],
+        "evidence_refs": [
+          "VS001:shot5",
+          "sm_obs_001"
+        ]
+      },
+      {
+        "memory_id": "vm_002",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 3.0,
+          "end": 3.5
+        },
+        "type": "micro_action",
+        "detail": "双手从展示姿态向前伸出、指尖逐渐接近镜头，形成从整体展示到局部逼近的动作链。",
+        "preserve": [
+          "双手前伸方向、指尖接近镜头的终点与缓慢速度"
+        ],
+        "adapt": [
+          "展示的具体装饰图案与手部配饰"
+        ],
+        "avoid": [
+          "源片专属文字与身份"
+        ],
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      }
+    ]
+  },
+  "script_construction_context": {
+    "structure_type": "linear",
+    "beats": [
+      {
+        "beat_id": "B001",
+        "type": "opening_hook",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "POV字幕前置，把观众代入第一次做美甲的主观视角",
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      },
+      {
+        "beat_id": "B002",
+        "type": "reveal",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "户外场景中展示蓝色与白色图案的长装饰指甲",
+        "evidence_refs": [
+          "VS001:shot2"
+        ]
+      },
+      {
+        "beat_id": "B003",
+        "type": "proof",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "用手部特写与画中画强化指甲细节与场景氛围搭配",
+        "evidence_refs": [
+          "VS001:shot5"
+        ]
+      },
+      {
+        "beat_id": "B004",
+        "type": "closing",
+        "scene_ids": [
+          "VS001"
+        ],
+        "information_delta": "以蹲姿整体造型与环境收束展示",
+        "evidence_refs": [
+          "VS001:shot8"
+        ]
+      }
+    ],
+    "progression": {
+      "emotion": [
+        "好奇/第一次代入",
+        "欣喜展示",
+        "轻松满足"
+      ],
+      "rhythm": [
+        "中景展示",
+        "特写细节",
+        "整体收束"
+      ],
+      "information": [
+        "POV引入",
+        "指甲图案展示",
+        "细节强化",
+        "造型与环境收束"
+      ]
+    },
+    "script_memory_points": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 3.5
+        },
+        "type": "opening_hook",
+        "detail": "用 POV 字幕“当你第一次做美甲”做情境前置，快速把观众代入第一次做美甲的主观视角。",
+        "preserve": [
+          "开场用POV/情境前置字幕制造代入感",
+          "开场先给主观视角手部展示"
+        ],
+        "adapt": [
+          "字幕具体文案改为目标素材/目标主题"
+        ],
+        "avoid": [
+          "照搬原片文案与“新疆”等源片专属信息"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "B001"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B002",
+          "B003"
+        ],
+        "time_range_sec": {
+          "start": 3.5,
+          "end": 12.0
+        },
+        "type": "information_release_sequence",
+        "detail": "信息按“室内主观展示→户外场景展示→情绪反应→手部特写/画中画细节→换装继续展示”的顺序逐步释放。",
+        "preserve": [
+          "先给整体造型与手部展示，再用特写/细节镜头强化主体细节，最后换装延伸展示"
+        ],
+        "adapt": [
+          "把展示主体替换为目标美的甲图案，场景与装扮按目标素材改写"
+        ],
+        "avoid": [
+          "迁移源片品牌、身份或声明"
+        ],
+        "evidence_refs": [
+          "VS001:shot2",
+          "VS001:shot4",
+          "VS001:shot5",
+          "VS001:shot6",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "memory_id": "sm_003",
+        "source_scope": "global",
+        "source_ids": [
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 13.5,
+          "end": 15.0
+        },
+        "type": "emotional_arc",
+        "detail": "情绪从好奇/第一次的代入，推进到欣喜展示，最后落到与自然环境氛围相契合的轻松满足感。",
+        "preserve": [
+          "轻松愉悦的展示情绪与逐步升华的氛围感",
+          "结尾用整体造型+环境收束"
+        ],
+        "adapt": [
+          "情绪与氛围围绕目标美的甲风格重构"
+        ],
+        "avoid": [
+          "源片专属文案与身份"
+        ],
+        "evidence_refs": [
+          "VS001:shot8",
+          "B004"
+        ]
+      }
+    ]
+  },
+  "video_prompt_source": {
+    "global_static": "竖屏 9:16 户外为主的生活方式展示视频；主体为同一女性人物的装饰美甲，配以不同服装、草帽与手部配饰；场景以草地、蓝天白云、湖泊、绿色山坡为主，室内仅有开场门框。",
+    "global_camera": "镜头基本静止，带轻微手持晃动；以景别切换（中景/特写/手部特写）完成信息推进，均为硬切。",
+    "shot_timeline": [
+      {
+        "shot_id": "shot1",
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 3.5
+        },
+        "static": "室内，门框与墙壁背景；人物黑色半透明衬衫、黑色皮裤，双手佩戴多枚银色戒指，长款装饰指甲；中心构图、紧凑手部展示，室内柔和散射光，低饱和冷暖中性色调。",
+        "dynamic": "双手从身体两侧抬起、手掌朝向镜头展示指甲，动作缓慢，随后双手向前伸出、指尖接近镜头；镜头基本静止带轻微手持感。",
+        "knowledge_terms": [
+          "中心构图",
+          "紧凑特写",
+          "手持轻晃"
+        ],
+        "state_relations": [],
+        "special_mechanisms": [],
+        "prompt_ready_description": "室内门框前，一位女性双手抬起向镜头展示装饰美甲，中心构图紧凑手部特写，室内柔和散射光，双手缓慢前伸使指尖接近镜头。"
+      },
+      {
+        "shot_id": "shot2",
+        "time_range_sec": {
+          "start": 3.5,
+          "end": 6.0
+        },
+        "static": "户外草地，蓝天白云与远处湖泊；人物白色露肩上衣，佩戴银色手镯和戒指，长款装饰指甲带蓝色和白色图案；中景、主体居中，明亮自然光，蓝绿高明度色调。",
+        "dynamic": "双手举过面部、手指张开，展示蓝白图案的长指甲；头发随风轻摆；轻微手持晃动。",
+        "knowledge_terms": [
+          "中景",
+          "自然光",
+          "高调光"
+        ],
+        "state_relations": [
+          {
+            "relation_ref": "VS001:shot1_to_shot2",
+            "observed_changes": [
+              "scene_location",
+              "outfit_accessories",
+              "lighting_weather",
+              "prop_overlay"
+            ],
+            "continuity": [
+              "person_styling",
+              "subject_usage_state"
+            ],
+            "newly_revealed": "户外环境、新的服装与配饰",
+            "uncertainty": "无",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切到户外草地湖泊，人物换白色露肩上衣，双手举过面部、手指张开，展示蓝色与白色图案的长装饰指甲，明亮自然光，头发随风轻摆。"
+      },
+      {
+        "shot_id": "shot3",
+        "time_range_sec": {
+          "start": 6.0,
+          "end": 7.5
+        },
+        "static": "户外草地与蓝天背景；人物面部特写，白色上衣；自然光，蓝绿色调。",
+        "dynamic": "双手捂住嘴巴后放下，头部微侧，发丝被风吹起；轻微手持晃动。",
+        "knowledge_terms": [
+          "特写",
+          "自然光"
+        ],
+        "state_relations": [
+          {
+            "relation_ref": "VS001:shot2_to_shot3",
+            "observed_changes": [
+              "composition",
+              "action_phase"
+            ],
+            "continuity": [
+              "scene_location",
+              "outfit_accessories",
+              "lighting_weather"
+            ],
+            "newly_revealed": "面部表情与发丝细节",
+            "uncertainty": "无",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切到面部特写，人物双手捂住嘴巴随后放下，头部微侧，发丝被风吹起，蓝天与草地虚化背景。"
+      },
+      {
+        "shot_id": "shot4",
+        "time_range_sec": {
+          "start": 7.5,
+          "end": 9.0
+        },
+        "static": "户外草地、湖泊与蓝天背景；人物白色上衣中景，双手为前景；明亮自然光，蓝绿色调。",
+        "dynamic": "双手举起、手指交叉展示指甲，随后双手分开、指尖指向镜头；轻微手持晃动。",
+        "knowledge_terms": [
+          "中景",
+          "浅景深"
+        ],
+        "state_relations": [
+          {
+            "relation_ref": "VS001:shot3_to_shot4",
+            "observed_changes": [
+              "composition",
+              "action_phase"
+            ],
+            "continuity": [
+              "scene_location",
+              "outfit_accessories",
+              "lighting_weather"
+            ],
+            "newly_revealed": "手部动作变化，手指交叉与分开",
+            "uncertainty": "无",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "景别拉回半身中景，人物双手举起、手指交叉展示指甲，随后双手分开、指尖指向镜头，背景为草地、湖泊与蓝天。"
+      },
+      {
+        "shot_id": "shot5",
+        "time_range_sec": {
+          "start": 9.0,
+          "end": 10.5
+        },
+        "static": "户外草地与湖泊虚化背景；手部特写展示装饰指甲，左上角叠加画中画小窗（另一只手拿黄色花朵），底部为字幕；浅景深，蓝绿色调，黄色花朵点缀。",
+        "dynamic": "前景手部保持静止展示指甲细节，画中画中的手部轻微移动；前景清晰、背景虚化，镜头基本静止。",
+        "knowledge_terms": [
+          "画中画",
+          "浅景深",
+          "静止镜头",
+          "留白边距"
+        ],
+        "state_relations": [
+          {
+            "relation_ref": "VS001:shot4_to_shot5",
+            "observed_changes": [
+              "composition",
+              "prop_overlay"
+            ],
+            "continuity": [
+              "scene_location",
+              "outfit_accessories",
+              "lighting_weather"
+            ],
+            "newly_revealed": "指甲细节，画中画内的手与黄色花朵",
+            "uncertainty": "无",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [
+          {
+            "mechanism_id": "sm_obs_001",
+            "type": "special_composition",
+            "evidence": "左上角出现画中画小窗口，显示另一只手拿着黄色花朵"
+          }
+        ],
+        "prompt_ready_description": "硬切到手部特写，前景手部静止展示指甲细节，背景草地湖泊虚化；左上角叠加画中画小窗，窗内一只手拿着黄色花朵轻微移动；底部预留字幕安全区。"
+      },
+      {
+        "shot_id": "shot6",
+        "time_range_sec": {
+          "start": 10.5,
+          "end": 12.0
+        },
+        "static": "户外绿色山坡与金属塔架背景；人物米色风衣内搭白色衬衫，中景；明亮自然光，绿色与米色为主。",
+        "dynamic": "双手举起、手指张开展示指甲，随后双手放下并整理衣领；轻微手持晃动。",
+        "knowledge_terms": [
+          "中景",
+          "自然光"
+        ],
+        "state_relations": [
+          {
+            "relation_ref": "VS001:shot5_to_shot6",
+            "observed_changes": [
+              "outfit_accessories",
+              "composition",
+              "prop_overlay"
+            ],
+            "continuity": [
+              "scene_location",
+              "lighting_weather"
+            ],
+            "newly_revealed": "新的服装、金属塔架背景",
+            "uncertainty": "无",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切到半身中景，人物换米色风衣、背景为绿色山坡和金属塔架，双手举起展示指甲后放下整理衣领；画中画与底部文字消失。"
+      },
+      {
+        "shot_id": "shot7",
+        "time_range_sec": {
+          "start": 12.0,
+          "end": 13.5
+        },
+        "static": "户外绿色草地背景；人物头戴草编帽、身穿米色风衣，面部特写，双手为前景；明亮自然光，绿色与米色为主。",
+        "dynamic": "双手抬起、手指轻触帽檐展示指甲，随后双手放下、头部微低；轻微手持晃动。",
+        "knowledge_terms": [
+          "特写",
+          "自然光"
+        ],
+        "state_relations": [
+          {
+            "relation_ref": "VS001:shot6_to_shot7",
+            "observed_changes": [
+              "outfit_accessories",
+              "composition"
+            ],
+            "continuity": [
+              "scene_location",
+              "lighting_weather",
+              "subject_usage_state"
+            ],
+            "newly_revealed": "草帽细节",
+            "uncertainty": "无",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切到面部特写，人物新增草帽，双手抬起、手指轻触帽檐展示指甲，随后双手放下、头部微低。"
+      },
+      {
+        "shot_id": "shot8",
+        "time_range_sec": {
+          "start": 13.5,
+          "end": 15.0
+        },
+        "static": "户外绿色草地；人物蹲姿中全景，米色风衣与白色裤子，头戴草编帽；明亮自然光，绿色与米色为主。",
+        "dynamic": "双手举起、手指张开展示指甲，随后双手放下并保持蹲姿；轻微手持晃动。",
+        "knowledge_terms": [
+          "全景",
+          "自然光"
+        ],
+        "state_relations": [
+          {
+            "relation_ref": "VS001:shot7_to_shot8",
+            "observed_changes": [
+              "composition",
+              "action_phase",
+              "outfit_accessories"
+            ],
+            "continuity": [
+              "scene_location",
+              "outfit_accessories",
+              "lighting_weather"
+            ],
+            "newly_revealed": "蹲姿与白色裤子",
+            "uncertainty": "无",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切到中全景，人物蹲在草地上，米色风衣与白色裤子、头戴草编帽，双手举起展示指甲后放下并保持蹲姿，作为收尾。"
+      }
+    ],
+    "cross_shot_relations": [
+      {
+        "from": "shot1",
+        "to": "shot2",
+        "transition_type": "硬切",
+        "visual_mechanism": "场景/服装/光线整体变化",
+        "boundary_state_relation": "室内→户外草地，服装与光线变化明显",
+        "knowledge_terms": [
+          "硬切"
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "在动作或语义明确处直接切换，形成从室内到户外的强烈场景对比。"
+      },
+      {
+        "from": "shot2",
+        "to": "shot3",
+        "transition_type": "硬切",
+        "visual_mechanism": "景别由中景收紧到面部特写",
+        "boundary_state_relation": "展示手部→捂嘴",
+        "knowledge_terms": [
+          "硬切",
+          "特写"
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切收紧景别，把注意力从手部转到位移的人物情绪。"
+      },
+      {
+        "from": "shot3",
+        "to": "shot4",
+        "transition_type": "硬切",
+        "visual_mechanism": "景别由面部特写拉回半身",
+        "boundary_state_relation": "捂嘴→展示手部",
+        "knowledge_terms": [
+          "硬切"
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切拉回半身景别，回到手部展示。"
+      },
+      {
+        "from": "shot4",
+        "to": "shot5",
+        "transition_type": "硬切",
+        "visual_mechanism": "景别收拢到手部特写并叠加画中画图形层",
+        "boundary_state_relation": "半身→手部特写，新增画中画与底部文字",
+        "knowledge_terms": [
+          "硬切",
+          "画中画"
+        ],
+        "special_mechanisms": [
+          {
+            "mechanism_id": "sm_obs_001",
+            "type": "special_composition"
+          }
+        ],
+        "prompt_ready_description": "硬切后保留原主体的手部特写，并在左上角引入画中画层。"
+      },
+      {
+        "from": "shot5",
+        "to": "shot6",
+        "transition_type": "硬切",
+        "visual_mechanism": "服装切换，图形层消失",
+        "boundary_state_relation": "手部特写→半身中景，画中画消失",
+        "knowledge_terms": [
+          "硬切"
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切移除画中画，回到半身中景与新服装。"
+      },
+      {
+        "from": "shot6",
+        "to": "shot7",
+        "transition_type": "硬切",
+        "visual_mechanism": "新增草帽，景别收紧到面部特写",
+        "boundary_state_relation": "半身→面部特写，新增草帽",
+        "knowledge_terms": [
+          "硬切"
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切收紧到面部特写并展示草帽。"
+      },
+      {
+        "from": "shot7",
+        "to": "shot8",
+        "transition_type": "硬切",
+        "visual_mechanism": "景别拉开到蹲姿中全景",
+        "boundary_state_relation": "面部特写→蹲姿中全景",
+        "knowledge_terms": [
+          "硬切",
+          "全景"
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "硬切拉宽到蹲姿中全景，作为收尾揭示整体造型与环境。"
+      }
+    ],
+    "special_mechanisms": [
+      {
+        "mechanism_id": "sm_obs_001",
+        "type": "special_composition",
+        "time_range_sec": {
+          "start": 9.0,
+          "end": 10.5
+        },
+        "evidence": "左上角画中画小窗展示另一只手和黄色花朵",
+        "mechanics": "画中画叠加在主画面左上角，主画面为指甲特写",
+        "replication_relevance": "可用于同时展示产品细节与不同视角"
+      }
+    ],
+    "state_relation_summary": [
+      "VS001:shot1_to_shot2",
+      "VS001:shot2_to_shot3",
+      "VS001:shot3_to_shot4",
+      "VS001:shot4_to_shot5",
+      "VS001:shot5_to_shot6",
+      "VS001:shot6_to_shot7",
+      "VS001:shot7_to_shot8"
+    ],
+    "priority_memory_points": [
+      "vm_001",
+      "vm_002"
+    ]
+  },
+  "scenes": [
+    {
+      "id": "VS001",
+      "source_scene_ids": [],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 15.0
+      },
+      "duration_sec": 15.0,
+      "video_generation": {
+        "scene": {
+          "scene_type": "室内开场 + 户外草地/湖畔/山坡",
+          "location_description": "开场室内门框，其后为户外草地、湖泊、蓝天白云与绿色山坡",
+          "background_elements": [
+            "门框",
+            "草地",
+            "湖泊",
+            "蓝天白云",
+            "绿色山坡",
+            "金属塔架"
+          ],
+          "foreground_elements": [
+            "手部"
+          ],
+          "props": [
+            "草帽",
+            "黄色花朵"
+          ],
+          "spatial_depth": "前景手部、中景人物、背景自然环境"
+        },
+        "spatial_framing": {
+          "shot_size": "中景/特写/手部特写/全景交替",
+          "shot_size_observation": "竖向画幅，主体居中，手部为前景",
+          "subject_position": "居中",
+          "camera_angle": "正面平视",
+          "foreground_midground_background": "前景手部、中景人物、背景自然环境",
+          "frame_usage": "主体居中占据主要画区",
+          "negative_space": "顶部/底部留有字幕安全区",
+          "text_safe_area_hint": "竖屏上下留白"
+        },
+        "visual_style": {
+          "lighting": "室内柔和散射光与户外明亮自然光",
+          "color_palette": "蓝绿色自然色调 + 米色/白色服装",
+          "contrast": "中低反差",
+          "texture": "自然真实质感",
+          "mood": "轻松愉悦、自然",
+          "art_direction_or_realism": "写实生活方式",
+          "shooting_feel": "手机竖屏拍摄质感"
+        },
+        "subject": {
+          "primary_subject": "女性人物展示的装饰美甲",
+          "subject_type": "product_on_person",
+          "secondary_subjects": [
+            "人物造型",
+            "草帽",
+            "手部配饰"
+          ],
+          "shape_color_material": "长款装饰指甲，蓝色与白色图案",
+          "size_relationship": "手部在特写中占据主要画面",
+          "distinctive_features": [
+            "长款装饰指甲",
+            "蓝白图案"
+          ],
+          "visibility": "clear",
+          "attention_weight": "高"
+        },
+        "action": {
+          "action": "反复向镜头展示装饰美甲，间以捂嘴、交叉手指、触帽等手势",
+          "motion_type": "手势展示",
+          "motion_direction": "向镜头/向上",
+          "motion_speed": "缓慢到中等",
+          "interaction": "双手自身展示",
+          "key_pose_or_moment": "指尖接近镜头",
+          "action_sequence": "抬起双手→展示→前伸/交叉→放下",
+          "contact_points": "无外部接触/触帽"
+        },
+        "camera": {
+          "movement_type": "静止带轻微手持",
+          "movement_speed": "无",
+          "focal_length_feel": "中焦",
+          "focus_behavior": "浅景深",
+          "stability": "轻微手持晃动",
+          "camera_subject_relationship": "正面近距离展示"
+        },
+        "visual_memory_points": [
+          {
+            "memory_id": "vm_001",
+            "source_scope": "shot",
+            "source_ids": [
+              "VS001:shot5"
+            ],
+            "time_range_sec": {
+              "start": 9.0,
+              "end": 10.5
+            },
+            "type": "composition",
+            "detail": "左上角画中画小窗显示另一只手拿着黄色花朵，主画面为手部装饰指甲特写，主/子画面按尺度分层。",
+            "preserve": [
+              "画中画位置（左上角）、主/子画面尺度关系、信息分工与出现时机"
+            ],
+            "adapt": [
+              "画中画内的具体道具、花朵与手部内容"
+            ],
+            "avoid": [
+              "源片专属文字、人物身份与品牌"
+            ],
+            "evidence_refs": [
+              "VS001:shot5",
+              "sm_obs_001"
+            ]
+          },
+          {
+            "memory_id": "vm_002",
+            "source_scope": "shot",
+            "source_ids": [
+              "VS001:shot1"
+            ],
+            "time_range_sec": {
+              "start": 3.0,
+              "end": 3.5
+            },
+            "type": "micro_action",
+            "detail": "双手从展示姿态向前伸出、指尖逐渐接近镜头，形成从整体展示到局部逼近的动作链。",
+            "preserve": [
+              "双手前伸方向、指尖接近镜头的终点与缓慢速度"
+            ],
+            "adapt": [
+              "展示的具体装饰图案与手部配饰"
+            ],
+            "avoid": [
+              "源片专属文字与身份"
+            ],
+            "evidence_refs": [
+              "VS001:shot1"
+            ]
+          }
+        ],
+        "transition_in": {},
+        "transition_out": {}
+      },
+      "script_generation": {
+        "function": "action",
+        "event": "在多种装扮与场景中连续展示装饰美甲",
+        "information_delta": "从第一次做美甲的POV引入，推进到指甲图案与自然环境氛围搭配",
+        "text_slots": [
+          {
+            "kind": "screen_text",
+            "slot": "other",
+            "content": "POV：当你第一次做美甲..."
+          },
+          {
+            "kind": "screen_text",
+            "slot": "emphasis",
+            "content": "做了个✨新疆指甲！"
+          },
+          {
+            "kind": "screen_text",
+            "slot": "emphasis",
+            "content": "和蓝天白云草地好搭！"
+          }
+        ]
+      },
+      "shots": [
+        {
+          "id": "VS001_SH001",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 0.0,
+            "end": 3.5
+          },
+          "duration_sec": 3.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "中心构图",
+              "shot_size_observation": "室内，门框与墙壁背景；人物黑色半透明衬衫、黑色皮裤，双手佩戴多枚银色戒指，长款装饰指甲；中心构图、紧凑手部展示，室内柔和散射光，低饱和冷暖中性色调。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "双手从身体两侧抬起、手掌朝向镜头展示指甲，动作缓慢，随后双手向前伸出、指尖接近镜头；镜头基本静止带轻微手持感。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "双手从身体两侧抬起、手掌朝向镜头展示指甲，动作缓慢，随后双手向前伸出、指尖接近镜头；镜头基本静止带轻微手持感。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [
+              {
+                "memory_id": "vm_002",
+                "source_scope": "shot",
+                "source_ids": [
+                  "VS001:shot1"
+                ],
+                "time_range_sec": {
+                  "start": 3.0,
+                  "end": 3.5
+                },
+                "type": "micro_action",
+                "detail": "双手从展示姿态向前伸出、指尖逐渐接近镜头，形成从整体展示到局部逼近的动作链。",
+                "preserve": [
+                  "双手前伸方向、指尖接近镜头的终点与缓慢速度"
+                ],
+                "adapt": [
+                  "展示的具体装饰图案与手部配饰"
+                ],
+                "avoid": [
+                  "源片专属文字与身份"
+                ],
+                "evidence_refs": [
+                  "VS001:shot1"
+                ]
+              }
+            ],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "context",
+            "event": "人物在室内向镜头展示手部装饰指甲",
+            "information_delta": "引入POV视角并首次展示指甲",
+            "text_slots": [
+              {
+                "kind": "screen_text",
+                "slot": "other",
+                "content": "POV：当你第一次做美甲..."
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot1"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "VS001_SH002",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 3.5,
+            "end": 6.0
+          },
+          "duration_sec": 2.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "中景",
+              "shot_size_observation": "户外草地，蓝天白云与远处湖泊；人物白色露肩上衣，佩戴银色手镯和戒指，长款装饰指甲带蓝色和白色图案；中景、主体居中，明亮自然光，蓝绿高明度色调。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "双手举过面部、手指张开，展示蓝白图案的长指甲；头发随风轻摆；轻微手持晃动。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "双手举过面部、手指张开，展示蓝白图案的长指甲；头发随风轻摆；轻微手持晃动。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "focus",
+            "event": "人物在户外展示蓝白图案的长指甲",
+            "information_delta": "展示指甲图案与户外造型",
+            "text_slots": [
+              {
+                "kind": "screen_text",
+                "slot": "emphasis",
+                "content": "做了个✨新疆指甲！"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot2"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "VS001_SH003",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 6.0,
+            "end": 7.5
+          },
+          "duration_sec": 1.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "特写",
+              "shot_size_observation": "户外草地与蓝天背景；人物面部特写，白色上衣；自然光，蓝绿色调。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "双手捂住嘴巴后放下，头部微侧，发丝被风吹起；轻微手持晃动。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "双手捂住嘴巴后放下，头部微侧，发丝被风吹起；轻微手持晃动。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "emotional_shift",
+            "event": "人物双手捂嘴、头部微侧",
+            "information_delta": "表达惊喜/开心情绪",
+            "text_slots": []
+          },
+          "evidence_refs": [
+            "VS001:shot3"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "VS001_SH004",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 7.5,
+            "end": 9.0
+          },
+          "duration_sec": 1.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "中景",
+              "shot_size_observation": "户外草地、湖泊与蓝天背景；人物白色上衣中景，双手为前景；明亮自然光，蓝绿色调。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "双手举起、手指交叉展示指甲，随后双手分开、指尖指向镜头；轻微手持晃动。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "双手举起、手指交叉展示指甲，随后双手分开、指尖指向镜头；轻微手持晃动。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "action",
+            "event": "人物手指交叉后分开、指尖指向镜头",
+            "information_delta": "展示指甲不同角度",
+            "text_slots": []
+          },
+          "evidence_refs": [
+            "VS001:shot4"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "VS001_SH005",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 9.0,
+            "end": 10.5
+          },
+          "duration_sec": 1.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "画中画",
+              "shot_size_observation": "户外草地与湖泊虚化背景；手部特写展示装饰指甲，左上角叠加画中画小窗（另一只手拿黄色花朵），底部为字幕；浅景深，蓝绿色调，黄色花朵点缀。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "前景手部保持静止展示指甲细节，画中画中的手部轻微移动；前景清晰、背景虚化，镜头基本静止。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "前景手部保持静止展示指甲细节，画中画中的手部轻微移动；前景清晰、背景虚化，镜头基本静止。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [
+              {
+                "memory_id": "vm_001",
+                "source_scope": "shot",
+                "source_ids": [
+                  "VS001:shot5"
+                ],
+                "time_range_sec": {
+                  "start": 9.0,
+                  "end": 10.5
+                },
+                "type": "composition",
+                "detail": "左上角画中画小窗显示另一只手拿着黄色花朵，主画面为手部装饰指甲特写，主/子画面按尺度分层。",
+                "preserve": [
+                  "画中画位置（左上角）、主/子画面尺度关系、信息分工与出现时机"
+                ],
+                "adapt": [
+                  "画中画内的具体道具、花朵与手部内容"
+                ],
+                "avoid": [
+                  "源片专属文字、人物身份与品牌"
+                ],
+                "evidence_refs": [
+                  "VS001:shot5",
+                  "sm_obs_001"
+                ]
+              }
+            ],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "proof",
+            "event": "手部特写展示指甲细节，画中画展示手与花朵",
+            "information_delta": "以特写和画中画强化指甲细节",
+            "text_slots": [
+              {
+                "kind": "screen_text",
+                "slot": "emphasis",
+                "content": "和蓝天白云草地好搭！"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "VS001:shot5"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "VS001_SH006",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 10.5,
+            "end": 12.0
+          },
+          "duration_sec": 1.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "中景",
+              "shot_size_observation": "户外绿色山坡与金属塔架背景；人物米色风衣内搭白色衬衫，中景；明亮自然光，绿色与米色为主。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "双手举起、手指张开展示指甲，随后双手放下并整理衣领；轻微手持晃动。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "双手举起、手指张开展示指甲，随后双手放下并整理衣领；轻微手持晃动。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "development",
+            "event": "人物换装后继续展示指甲并整理衣领",
+            "information_delta": "展示造型与指甲搭配",
+            "text_slots": []
+          },
+          "evidence_refs": [
+            "VS001:shot6"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "VS001_SH007",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 12.0,
+            "end": 13.5
+          },
+          "duration_sec": 1.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "特写",
+              "shot_size_observation": "户外绿色草地背景；人物头戴草编帽、身穿米色风衣，面部特写，双手为前景；明亮自然光，绿色与米色为主。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "双手抬起、手指轻触帽檐展示指甲，随后双手放下、头部微低；轻微手持晃动。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "双手抬起、手指轻触帽檐展示指甲，随后双手放下、头部微低；轻微手持晃动。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "focus",
+            "event": "人物戴草帽、轻触帽檐展示指甲",
+            "information_delta": "展示配饰与指甲搭配",
+            "text_slots": []
+          },
+          "evidence_refs": [
+            "VS001:shot7"
+          ],
+          "uncertainties": []
+        },
+        {
+          "id": "VS001_SH008",
+          "scene_id": "VS001",
+          "time_range_sec": {
+            "start": 13.5,
+            "end": 15.0
+          },
+          "duration_sec": 1.5,
+          "time_precision": "exact",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "全景",
+              "shot_size_observation": "户外绿色草地；人物蹲姿中全景，米色风衣与白色裤子，头戴草编帽；明亮自然光，绿色与米色为主。",
+              "subject_position": "主体居中",
+              "camera_angle": "正面平视"
+            },
+            "subject": {
+              "primary_subject": "女性人物的装饰美甲",
+              "distinctive_features": [
+                "长款装饰指甲",
+                "蓝白图案"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "双手举起、手指张开展示指甲，随后双手放下并保持蹲姿；轻微手持晃动。",
+              "motion_type": "手势展示",
+              "motion_direction": "向镜头/向上",
+              "motion_speed": "缓慢到中等",
+              "interaction": "双手自身展示/接触帽檐",
+              "action_sequence": "双手举起、手指张开展示指甲，随后双手放下并保持蹲姿；轻微手持晃动。",
+              "contact_points": "无外部接触"
+            },
+            "camera": {
+              "movement_type": "静止带轻微手持",
+              "movement_speed": "无",
+              "stability": "轻微手持晃动"
+            },
+            "visual_memory_points": [],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "closing",
+            "event": "人物蹲姿展示指甲收尾",
+            "information_delta": "收束整体造型与环境",
+            "text_slots": []
+          },
+          "evidence_refs": [
+            "VS001:shot8"
+          ],
+          "uncertainties": []
+        }
+      ],
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot8"
+      ],
+      "uncertainties": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_VS001_SH001_SH002",
+      "from": "VS001_SH001",
+      "to": "VS001_SH002",
+      "type": "progress",
+      "reason": "从室内POV引入推进到户外展示",
+      "dims": {
+        "info": "progress",
+        "emotion": "progress",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH002_SH003",
+      "from": "VS001_SH002",
+      "to": "VS001_SH003",
+      "type": "progress",
+      "reason": "从展示指甲推进到人物情绪反应",
+      "dims": {
+        "info": "supplement",
+        "emotion": "turn",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2",
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH003_SH004",
+      "from": "VS001_SH003",
+      "to": "VS001_SH004",
+      "type": "continue",
+      "reason": "情绪反应后回到手部展示",
+      "dims": {
+        "info": "continue",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3",
+        "VS001:shot4"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH004_SH005",
+      "from": "VS001_SH004",
+      "to": "VS001_SH005",
+      "type": "progress",
+      "reason": "从整体展示推进到手部特写与画中画细节",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot4",
+        "VS001:shot5"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH005_SH006",
+      "from": "VS001_SH005",
+      "to": "VS001_SH006",
+      "type": "continue",
+      "reason": "细节展示后进入换装展示",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot5",
+        "VS001:shot6"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH006_SH007",
+      "from": "VS001_SH006",
+      "to": "VS001_SH007",
+      "type": "progress",
+      "reason": "换装后加入草帽配饰继续展示",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot6",
+        "VS001:shot7"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH007_SH008",
+      "from": "VS001_SH007",
+      "to": "VS001_SH008",
+      "type": "continue",
+      "reason": "从配饰特写拓展到蹲姿收尾",
+      "dims": {
+        "info": "continue",
+        "emotion": "continue",
+        "rhythm": "decelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot7",
+        "VS001:shot8"
+      ]
+    }
+  ],
+  "memory_points": {
+    "visual": [
+      {
+        "memory_id": "vm_001",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot5"
+        ],
+        "time_range_sec": {
+          "start": 9.0,
+          "end": 10.5
+        },
+        "type": "composition",
+        "detail": "左上角画中画小窗显示另一只手拿着黄色花朵，主画面为手部装饰指甲特写，主/子画面按尺度分层。",
+        "preserve": [
+          "画中画位置（左上角）、主/子画面尺度关系、信息分工与出现时机"
+        ],
+        "adapt": [
+          "画中画内的具体道具、花朵与手部内容"
+        ],
+        "avoid": [
+          "源片专属文字、人物身份与品牌"
+        ],
+        "evidence_refs": [
+          "VS001:shot5",
+          "sm_obs_001"
+        ]
+      },
+      {
+        "memory_id": "vm_002",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 3.0,
+          "end": 3.5
+        },
+        "type": "micro_action",
+        "detail": "双手从展示姿态向前伸出、指尖逐渐接近镜头，形成从整体展示到局部逼近的动作链。",
+        "preserve": [
+          "双手前伸方向、指尖接近镜头的终点与缓慢速度"
+        ],
+        "adapt": [
+          "展示的具体装饰图案与手部配饰"
+        ],
+        "avoid": [
+          "源片专属文字与身份"
+        ],
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      }
+    ],
+    "script": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 3.5
+        },
+        "type": "opening_hook",
+        "detail": "用 POV 字幕“当你第一次做美甲”做情境前置，快速把观众代入第一次做美甲的主观视角。",
+        "preserve": [
+          "开场用POV/情境前置字幕制造代入感",
+          "开场先给主观视角手部展示"
+        ],
+        "adapt": [
+          "字幕具体文案改为目标素材/目标主题"
+        ],
+        "avoid": [
+          "照搬原片文案与“新疆”等源片专属信息"
+        ],
+        "evidence_refs": [
+          "VS001:shot1",
+          "B001"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_scope": "global",
+        "source_ids": [
+          "B002",
+          "B003"
+        ],
+        "time_range_sec": {
+          "start": 3.5,
+          "end": 12.0
+        },
+        "type": "information_release_sequence",
+        "detail": "信息按“室内主观展示→户外场景展示→情绪反应→手部特写/画中画细节→换装继续展示”的顺序逐步释放。",
+        "preserve": [
+          "先给整体造型与手部展示，再用特写/细节镜头强化主体细节，最后换装延伸展示"
+        ],
+        "adapt": [
+          "把展示主体替换为目标美的甲图案，场景与装扮按目标素材改写"
+        ],
+        "avoid": [
+          "迁移源片品牌、身份或声明"
+        ],
+        "evidence_refs": [
+          "VS001:shot2",
+          "VS001:shot4",
+          "VS001:shot5",
+          "VS001:shot6",
+          "B002",
+          "B003"
+        ]
+      },
+      {
+        "memory_id": "sm_003",
+        "source_scope": "global",
+        "source_ids": [
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 13.5,
+          "end": 15.0
+        },
+        "type": "emotional_arc",
+        "detail": "情绪从好奇/第一次的代入，推进到欣喜展示，最后落到与自然环境氛围相契合的轻松满足感。",
+        "preserve": [
+          "轻松愉悦的展示情绪与逐步升华的氛围感",
+          "结尾用整体造型+环境收束"
+        ],
+        "adapt": [
+          "情绪与氛围围绕目标美的甲风格重构"
+        ],
+        "avoid": [
+          "源片专属文案与身份"
+        ],
+        "evidence_refs": [
+          "VS001:shot8",
+          "B004"
+        ]
+      }
+    ],
+    "audio": []
+  },
+  "asr_status": "ok",
+  "audio_analysis": {
+    "status": "skipped"
+  },
+  "evidence_refs": [
+    "VS001:shot1",
+    "VS001:shot2",
+    "VS001:shot3",
+    "VS001:shot4",
+    "VS001:shot5",
+    "VS001:shot6",
+    "VS001:shot7",
+    "VS001:shot8",
+    "sm_obs_001"
+  ],
+  "uncertainties": [
+    "ASR 输出为英文歌词，疑似背景音乐/唱歌，按 unsupported_skipped 处理。",
+    "部分镜头仅约1-1.5s，指甲微小图案在快速运动或远景中可能不够清晰。"
+  ]
+}

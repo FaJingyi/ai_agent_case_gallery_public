@@ -1,0 +1,70 @@
+{
+  "schema_version": "common_reference_video_analyzer.run_manifest.v1",
+  "reference_video": "test_data/nail-6/nail-6.mp4",
+  "config_path": "backend/skills/common-reference-video-analyzer/config/model-routing.yaml",
+  "visual_status": "ok",
+  "asr_status": "ok",
+  "script_status": "ok",
+  "final_deliverable_status": "ok",
+  "audio_analysis_status": "skipped",
+  "video_segment_status": "ok",
+  "providers": {
+    "asset_url": "tool-asset-url-skill",
+    "vlm": "tool-qwen-vlm-skill(Qwen3.8-27B)",
+    "asr": "tool-asr-skill(whisper-large-v3-turbo)",
+    "knowledge_search": "direct_md_files"
+  },
+  "steps": [
+    {
+      "step": "step1_video_segment_planning",
+      "status": "ok",
+      "artifact": "01_video_segments/video_segment_plan.json"
+    },
+    {
+      "step": "step2_video_visual_analysis",
+      "status": "ok",
+      "artifact": "02_visual_analysis/scene_visual_analysis.json"
+    },
+    {
+      "step": "step3_cross_shot_visual_relation",
+      "status": "ok",
+      "artifact": "03_cross_scene_visual/cross_scene_visual_analysis.json"
+    },
+    {
+      "step": "step4_professional_visual_synthesis",
+      "status": "ok",
+      "artifact": "04_professional_visual_analysis/professional_visual_analysis.json"
+    },
+    {
+      "step": "step5_asr_and_alignment",
+      "status": "ok",
+      "artifact": "05_script_analysis/asr_alignment.json"
+    },
+    {
+      "step": "step6_shot_scene_script_analysis",
+      "status": "ok",
+      "artifact": "05_script_analysis/shot_script_analysis.json"
+    },
+    {
+      "step": "step7_cross_scene_script_link",
+      "status": "completed_no_pairs",
+      "artifact": "05_script_analysis/cross_scene_script_link.json"
+    },
+    {
+      "step": "step8_global_script_structure",
+      "status": "ok",
+      "artifact": "05_script_analysis/global_script_structure.json"
+    },
+    {
+      "step": "step9_final_deliverable",
+      "status": "ok",
+      "artifact": "06_final_deliverable/reference_video_analysis.json"
+    }
+  ],
+  "errors": [],
+  "uncertainties": [
+    "人物具体身份不明",
+    "0.0-7.5s 面部不可见",
+    "车内车型不确定"
+  ]
+}

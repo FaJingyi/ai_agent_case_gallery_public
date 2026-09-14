@@ -1,0 +1,8 @@
+{
+  "schema_version": "common_reference_video_analyzer.cross_scene_script_link.v1",
+  "relations": [
+    {"id": "rel_SC001_SH001_SC001_SH002", "from": "SC001_SH001", "to": "SC001_SH002", "type": "progress", "reason": "the scouting view moves from a ground-level public space to a fabric signal high on a building", "dims": {"info": "progress", "emotion": "continue", "rhythm": "continue"}, "confidence": "high", "evidence_refs": ["VS001:shot1_to_shot2"]},
+    {"id": "rel_SC001_SH002_SC001_SH003", "from": "SC001_SH002", "to": "SC001_SH003", "type": "progress", "reason": "the view moves from a building exterior to a person at a rooftop viewpoint", "dims": {"info": "progress", "emotion": "continue", "rhythm": "continue"}, "confidence": "high", "evidence_refs": ["VS001:shot2_to_shot3"]},
+    {"id": "rel_SC001_SH003_SC001_SH004", "from": "SC001_SH003", "to": "SC001_SH004", "type": "turn", "reason": "the sequence narrows from a medium person shot to an intimate reflected close-up", "dims": {"info": "progress", "emotion": "turn", "rhythm": "continue"}, "confidence": "medium", "evidence_refs": ["VS001:shot3_to_shot4"]}
+  ]
+}

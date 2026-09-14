@@ -1,0 +1,201 @@
+{
+  "schema_version": "common_replication_outline.target_asset_analysis.v2",
+  "asset_level_analysis": [
+    {
+      "asset_id": "user_asset_001",
+      "input_path": "test_data/milk/user_input/东方树叶.jpg",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_1d84a276bfbe4db688fb11a8aba747e7/content",
+      "media_type": "image",
+      "declared_slot": "product",
+      "resolved_slot": "product",
+      "compatibility_status": "ready",
+      "observable_facts": {
+        "visible_subject": "东方树叶 乌龙茶 原味茶饮料 500ml 瓶装饮料",
+        "subject_type": "product",
+        "subject_state": "static_object",
+        "carrier_or_actor_visible": false,
+        "interaction_visible": false,
+        "usage_or_operation_visible": false,
+        "usage_or_operation_description": "not_visible",
+        "visible_text_or_logo": [
+          "东方树叶",
+          "原味茶饮料",
+          "净含量500ml",
+          "乌龙茶",
+          "0卡路里",
+          "0脂肪",
+          "世纪中国乌龙茶发展史",
+          "演化为上流社会优雅奢华下午茶"
+        ],
+        "incidental_background": "纯白影棚背景",
+        "quality_limits": []
+      },
+      "identity": {
+        "caption": "东方树叶乌龙茶原味茶饮料500ml单瓶商品图",
+        "subject_type": "product",
+        "brand_visible": true,
+        "text_visible": true,
+        "logo_visible": true,
+        "readable_text": [
+          "东方树叶",
+          "原味茶饮料",
+          "净含量500ml",
+          "乌龙茶",
+          "0卡路里",
+          "0脂肪"
+        ],
+        "confirmed_by_user": false
+      },
+      "background_role": "asset_incidental_background",
+      "reference_aligned_visual_profile": {
+        "subject": "细长圆柱形透明塑料瓶，透明螺旋盖，金黄色/琥珀色茶汤，绿色瓶颈标签+白色瓶身标签（帆船图案），单瓶居中展示",
+        "scene": "not_visible（纯白背景，不作为目标场景）",
+        "spatial_framing": "产品全身居中，平视正面，充足留白",
+        "visual_style": "高调均匀明亮，白/绿/金黄暖调，商业产品摄影质感",
+        "action": "not_applicable（静态）",
+        "camera": "影棚产品图，全清晰",
+        "transition": "not_applicable",
+        "text_graphics": "包装附着的可读文字东方树叶/乌龙茶/500ml（未确认为目标文案）",
+        "performance": "not_applicable"
+      },
+      "generation_capability": {
+        "can_directly_represent_reference_usage": false,
+        "requires_usage_assumption": true,
+        "requires_user_instruction": false,
+        "requires_intermediate_reference_image": false,
+        "assumption_risks": [
+          "静态商品图需扩展为手持/举起/仰头饮用状态"
+        ]
+      },
+      "generation_use": {
+        "packager_role": "target_product_reference",
+        "usable_for_units": [
+          "VS001"
+        ],
+        "usable_for_segments": [
+          "all"
+        ],
+        "constraints": [
+          "保持瓶型/瓶盖/液体颜色/标签版式一致",
+          "纯白背景不进入目标场景",
+          "不发明不可读文字或功效声明"
+        ],
+        "must_not_infer": [
+          "品牌是否为目标视频允许展示",
+          "口味描述",
+          "价格/活动",
+          "功效或工艺声明"
+        ]
+      },
+      "blocked_uses": []
+    }
+  ],
+  "user_text_context_analysis": {
+    "user_request": "参考视频生成一条新的视频，把牛奶换成东方树叶饮料",
+    "declared_usage": "把参考视频主体产品牛奶替换为东方树叶饮料",
+    "declared_scene": "none",
+    "declared_operation_state": "none",
+    "declared_text_logo": "none",
+    "language": "zh"
+  },
+  "business_context_analysis": {
+    "provided": false,
+    "brand_name": null,
+    "copy_text": null,
+    "constraints": []
+  },
+  "user_declared_intent": {
+    "asset_usage_instructions": [
+      "把参考视频中的牛奶替换为东方树叶饮料",
+      "东方树叶.jpg 作为替换后的目标产品素材"
+    ],
+    "operation_or_interaction_descriptions": [],
+    "scene_or_context_descriptions": [],
+    "text_logo_or_brand_inputs": [],
+    "confirmation_to_omit_or_neutralize": [],
+    "confirmation_to_generate_assumptions": []
+  },
+  "generation_assumptions": [
+    {
+      "assumption_id": "ga_001",
+      "slot": "product_usage_state",
+      "description": "用户素材为静态商品图；目标视频按参考视频机制将其生成为被人物双手托举展示、最后单手举起仰头饮用的产品状态",
+      "source": "shot_replication_policy",
+      "requires_reference_frame": false,
+      "risk_level": "medium",
+      "status": "proposed",
+      "evidence_refs": [
+        "reference_video_analysis.json#scenes[0].shots[*].video_generation.action",
+        "reference_video_analysis.json#video_prompt_source.shot_timeline"
+      ]
+    }
+  ],
+  "reference_dimension_alignment": {
+    "subject": {
+      "status": "covered",
+      "source": "user_asset_001 observable_facts"
+    },
+    "scene": {
+      "status": "fallback_generation",
+      "source": "reference_scene_structure + user_intent",
+      "notes": "无场景素材，按目标主体派生场景"
+    },
+    "spatial_framing": {
+      "status": "inherited",
+      "source": "reference_video_analysis.video_generation_context.spatial_framing"
+    },
+    "visual_style": {
+      "status": "inherited",
+      "source": "reference_video_analysis.video_generation_context.visual_style"
+    },
+    "action": {
+      "status": "assumption_required",
+      "source": "ga_001"
+    },
+    "camera": {
+      "status": "inherited",
+      "source": "reference_video_analysis.video_generation_context.camera"
+    },
+    "transition": {
+      "status": "inherited",
+      "source": "reference_video_analysis.video_prompt_source.cross_shot_relations"
+    },
+    "text_graphics": {
+      "status": "partial",
+      "source": "user_asset_001.visible_text_or_logo",
+      "notes": "包装可见文字未确认为目标文案，默认保留为画面内实体文字但不新造"
+    },
+    "performance": {
+      "status": "fallback_generation",
+      "source": "reference_scene_structure"
+    }
+  },
+  "binding_candidates": [
+    {
+      "binding_id": "bind_001",
+      "asset_id": "user_asset_001",
+      "reference_unit_id": "VS001",
+      "reference_segment_id": "all",
+      "slot": "product",
+      "reference_source_path": "reference_video_analysis.json#scenes[0].shots[*].video_generation.subject",
+      "target_source_path": "test_data/milk/user_input/东方树叶.jpg",
+      "packager_role": "target_product_reference",
+      "compatibility_status": "ready",
+      "constraints": [
+        "每个受影响分镜需可见东方树叶产品"
+      ],
+      "blocked_uses": []
+    }
+  ],
+  "h3_input_asset_inventory": {
+    "schema_version": "common_replication_outline.h3_input_asset_inventory.v1",
+    "authoritative_path": "03_asset_inventory/h3_input_asset_inventory.json",
+    "h3_material_mode": "reference_video_plus_reference_images",
+    "eligible_count": 2
+  },
+  "validation_flags": [
+    "user_asset_brand_text_not_user_confirmed",
+    "target_usage_state_generation_assumption_proposed",
+    "requirement_file_content_used_as_user_request"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "common_reference_video_analyzer.shot_script_analysis.v1",
+  "shots": [
+    {
+      "id": "SC001_SH001",
+      "scene_id": "SC001",
+      "source_ref": "VS001:shot1",
+      "time": [
+        0.0,
+        5.875
+      ],
+      "time_precision": "exact",
+      "function": "focus",
+      "event": "三只水豚从并排站位出发，朝镜头汇聚并完成叠站造型后保持",
+      "information_delta": "让观众知道三只水豚可以协同完成从横向排列到纵向叠站的造型动作",
+      "text_slots": [],
+      "speech_status": "unavailable",
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1"
+      ]
+    }
+  ]
+}

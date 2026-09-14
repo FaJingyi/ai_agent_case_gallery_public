@@ -1,0 +1,16 @@
+{
+  "text": "Thankyou.",
+  "segments": [
+    {
+      "start": 1.52,
+      "end": 1.56,
+      "text": "Thank"
+    },
+    {
+      "start": 1.56,
+      "end": 1.58,
+      "text": "you."
+    }
+  ],
+  "srt": "1\n00:00:01,520 --> 00:00:01,560\n Thank\n\n2\n00:00:01,560 --> 00:00:01,580\n you.\n"
+}

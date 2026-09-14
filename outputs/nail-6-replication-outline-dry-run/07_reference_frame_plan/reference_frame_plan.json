@@ -1,0 +1,216 @@
+{
+  "schema_version": "common_replication_outline.reference_frame_plan.v3",
+  "generation_scope": "single_generation_task",
+  "need_basis": "global_appearance_person_scene_entities_only",
+  "frame_requirement_level": "required_person_scene_anchors",
+  "triggered_rules": [
+    "person_reference_entity_present",
+    "scene_reference_entity_present"
+  ],
+  "draft_frames": [
+    {
+      "frame_id": "RF_PERSON_001",
+      "frame_type": "person_reference",
+      "entity_id": "ENT_PERSON_001",
+      "entity_name": "非特定身份表演者",
+      "entity_type": "person_appearance",
+      "target_bindings": [
+        "VS001_SEG3",
+        "VS001_SEG4"
+      ],
+      "purpose": "为全局人物实体 ENT_PERSON_001 提供纯人物外观锚点, 保证 SEG3-SEG4 人物形象一致",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance",
+        "timeline_units[].temporal_segments[]",
+        "scene_transfer[]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure person reference portrait of a non-identifiable East Asian woman, about 25-30 years old, long straight dark hair falling smoothly, cool-toned makeup with dark eyeliner, cool eyeshadow and matte dark lips, wearing a black silk/leather-textured top, delicate metal earrings and a thin necklace, calm confident temperament. Centered head-and-shoulders framing, front-facing, neutral dark backdrop, soft key light with gentle rim light, high realism, editorial portrait photography. Pure person reference focused on person appearance only, not a scene, no readable text or logo.",
+      "must_include": [
+        "非特定身份亚洲女性, 约 25-30 岁, 无可识别身份特征",
+        "深色长直发, 顺滑垂落",
+        "冷调妆容: 深色眼线、冷调眼影、哑光深色唇",
+        "深色系服装: 黑色丝质/皮革质感上衣",
+        "金属耳饰与细项链; 中性金属/珍珠戒指",
+        "与暗黑美甲风格一致的冷静气质"
+      ],
+      "h3_role": "person_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions"
+    },
+    {
+      "frame_id": "RF_SCENE_001",
+      "frame_type": "scene_reference",
+      "entity_id": "ENT_SCENE_001",
+      "entity_name": "暗调室内场景",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "VS001_SEG1",
+        "VS001_SEG2",
+        "VS001_SEG3",
+        "VS001_SEG4"
+      ],
+      "purpose": "为全局场景实体 ENT_SCENE_001 提供纯场景外观锚点, 保证全片暗调室内场景一致",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance",
+        "timeline_units[].temporal_segments[]",
+        "scene_transfer[]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph of a dim indoor dark room (a dark bedroom or vanity corner), no people and no hands. Deep charcoal and muted warm palette, background of dark velvet fabric or dark wood wall panels with a few subtle metallic decor objects, low-key lighting with large shadow areas, a single warm practical light source creating local highlights, cool rim light, shallow depth of field, velvet / dark wood / metal reflective materials, cinematic realism, moody refined dark styling. Vertical 9:16, centered composition. Pure scene reference focused on space and atmosphere only, no readable text or logo.",
+      "must_include": [
+        "室内暗调空间(暗色卧室/化妆台一隅), 非车内",
+        "前景为展示区, 中景留人物位置, 背景深色绒面织物或深色木质墙面",
+        "少量金属摆件",
+        "低调光: 暗部面积大, 单一暖色实用光源局部高光, 背侧轮廓光",
+        "材质: 绒面、深色木、金属反光",
+        "呼应暗黑美甲风格的精致神秘氛围"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions"
+    }
+  ],
+  "consistency_review": {
+    "status": "passed",
+    "issues": [],
+    "revisions": [],
+    "global_style_brief": "统一的暗调、低调光、写实摄影质感, 呼应黑色哥特美甲美学; 竖屏 9:16 自拍近景; 人物与场景均不带可识别身份、品牌或可读文字。",
+    "global_negative_constraints": [
+      "no blue-and-white gradient nail pattern from the reference video",
+      "do not recreate the reference person's identity",
+      "no readable text, logo, brand, price or claim",
+      "no car-interior or green-trees background"
+    ],
+    "checks": {
+      "frame_type_whitelist_only": true,
+      "one_frame_per_person_entity": true,
+      "one_frame_per_scene_entity": true,
+      "repeated_appearances_merged_by_entity": true,
+      "visibly_different_entities_kept_separate": "not_applicable(single person, single scene)",
+      "prompts_from_global_element_appearance_details": true
+    }
+  },
+  "final_frames": [
+    {
+      "frame_id": "RF_PERSON_001",
+      "frame_type": "person_reference",
+      "entity_id": "ENT_PERSON_001",
+      "entity_name": "非特定身份表演者",
+      "entity_type": "person_appearance",
+      "target_bindings": [
+        "VS001_SEG3",
+        "VS001_SEG4"
+      ],
+      "purpose": "为全局人物实体 ENT_PERSON_001 提供纯人物外观锚点, 保证 SEG3-SEG4 人物形象一致",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance",
+        "timeline_units[].temporal_segments[]",
+        "scene_transfer[]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure person reference portrait of a non-identifiable East Asian woman, about 25-30 years old, long straight dark hair falling smoothly, cool-toned makeup with dark eyeliner, cool eyeshadow and matte dark lips, wearing a black silk/leather-textured top, delicate metal earrings and a thin necklace, calm confident temperament. Centered head-and-shoulders framing, front-facing, neutral dark backdrop, soft key light with gentle rim light, high realism, editorial portrait photography. Pure person reference focused on person appearance only, not a scene, no readable text or logo.",
+      "must_include": [
+        "非特定身份亚洲女性, 约 25-30 岁, 无可识别身份特征",
+        "深色长直发, 顺滑垂落",
+        "冷调妆容: 深色眼线、冷调眼影、哑光深色唇",
+        "深色系服装: 黑色丝质/皮革质感上衣",
+        "金属耳饰与细项链; 中性金属/珍珠戒指",
+        "与暗黑美甲风格一致的冷静气质"
+      ],
+      "h3_role": "person_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions",
+      "output_path": "08_reference_frames/RF_PERSON_001.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_845e824cdd8d4f55863a03bb04b71903/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "RF_PERSON_001",
+      "output_dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "sensenova_task_id": "20260913_064907_7f37cf63-80e6-4c42-8110-2623bf375c91"
+    },
+    {
+      "frame_id": "RF_SCENE_001",
+      "frame_type": "scene_reference",
+      "entity_id": "ENT_SCENE_001",
+      "entity_name": "暗调室内场景",
+      "entity_type": "scene_appearance",
+      "target_bindings": [
+        "VS001_SEG1",
+        "VS001_SEG2",
+        "VS001_SEG3",
+        "VS001_SEG4"
+      ],
+      "purpose": "为全局场景实体 ENT_SCENE_001 提供纯场景外观锚点, 保证全片暗调室内场景一致",
+      "source_outline_fields": [
+        "global_appearance_dedup_pass.global_appearance",
+        "timeline_units[].temporal_segments[]",
+        "scene_transfer[]"
+      ],
+      "generation_strategy": "text_to_image",
+      "reference_frame_source": "generated_from_outline",
+      "prompt": "Pure scene reference photograph of a dim indoor dark room (a dark bedroom or vanity corner), no people and no hands. Deep charcoal and muted warm palette, background of dark velvet fabric or dark wood wall panels with a few subtle metallic decor objects, low-key lighting with large shadow areas, a single warm practical light source creating local highlights, cool rim light, shallow depth of field, velvet / dark wood / metal reflective materials, cinematic realism, moody refined dark styling. Vertical 9:16, centered composition. Pure scene reference focused on space and atmosphere only, no readable text or logo.",
+      "must_include": [
+        "室内暗调空间(暗色卧室/化妆台一隅), 非车内",
+        "前景为展示区, 中景留人物位置, 背景深色绒面织物或深色木质墙面",
+        "少量金属摆件",
+        "低调光: 暗部面积大, 单一暖色实用光源局部高光, 背侧轮廓光",
+        "材质: 绒面、深色木、金属反光",
+        "呼应暗黑美甲风格的精致神秘氛围"
+      ],
+      "h3_role": "scene_reference",
+      "decision_basis": "global_appearance_entity",
+      "status": "ready_with_assumptions",
+      "output_path": "08_reference_frames/RF_SCENE_001.png",
+      "output_media_url": "http://10.42.1.1:30100/v1/assets/asset_927dd1b5c43c43f6987eeab7457b8dfb/content",
+      "pre_submit_quality_check_status": "passed",
+      "pre_submit_quality_check_issues": [],
+      "generation_status": "succeeded",
+      "h3_inventory_asset_id": "RF_SCENE_001",
+      "output_dimensions": {
+        "width": 768,
+        "height": 1376
+      },
+      "sensenova_task_id": "20260913_064929_68e46188-8d8b-49ed-be10-df47e6ef59d5"
+    }
+  ],
+  "batch_generation_groups": [
+    {
+      "group_id": "person_references",
+      "frame_ids": [
+        "RF_PERSON_001"
+      ],
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "纯人物参考: 同一非特定身份表演者外观, 冷调妆容/深色长发/深色服装, 与暗黑美甲风格一致。",
+      "group_negative_constraints": [
+        "no blue-and-white gradient nail pattern from the reference video",
+        "do not recreate the reference person's identity",
+        "no readable text, logo, brand, price or claim",
+        "no car-interior or green-trees background"
+      ]
+    },
+    {
+      "group_id": "scene_references",
+      "frame_ids": [
+        "RF_SCENE_001"
+      ],
+      "group_generation_strategy": "text_to_image",
+      "group_consistency_brief": "纯场景参考: 暗调室内低调光空间, 深色绒面/木质背景, 暖色实用光源 + 冷调轮廓光。",
+      "group_negative_constraints": [
+        "no blue-and-white gradient nail pattern from the reference video",
+        "do not recreate the reference person's identity",
+        "no readable text, logo, brand, price or claim",
+        "no car-interior or green-trees background"
+      ]
+    }
+  ],
+  "global_missing_inputs": [],
+  "blocking_items": []
+}

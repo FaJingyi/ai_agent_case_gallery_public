@@ -1,0 +1,640 @@
+{
+  "schema_version": "common_reference_video_analyzer.scene_visual.v1",
+  "segment_id": "VS001",
+  "source_video_time_range_sec": {
+    "start": 0.0,
+    "end": 15.0
+  },
+  "input_mode": "video_url",
+  "sampling": {
+    "fps": 4,
+    "max_frames": 256
+  },
+  "shot_count": 8,
+  "single_continuous_shot": false,
+  "shot_timeline": [
+    {
+      "shot_id": "shot1",
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 3.5
+      },
+      "static": {
+        "subject": "一位年轻女性人物作为主体，身穿黑色半透明衬衫、黑色皮裤，双手佩戴多枚银色戒指，指甲为长款装饰指甲；可见双手。",
+        "scene": "室内环境，门框与墙壁作为背景，空间较浅。",
+        "props": [
+          "门框",
+          "墙壁"
+        ],
+        "composition": "竖向画幅，人物位于画面中下部，双手向镜头抬起，背景简洁。",
+        "shot_size": "中近景到手部特写",
+        "camera_angle": "正面平视",
+        "foreground_midground_background": "前景为抬起的手部，中景为人物躯干，背景为门框和墙壁。",
+        "lighting": "室内柔和散射光",
+        "color": "低饱和冷暖中性色调",
+        "material": "半透明衬衫、皮革、金属戒指、光面装饰指甲",
+        "text_logo_ui": "顶部白色文字字幕"
+      },
+      "dynamic": {
+        "action": "人物双手从身体两侧抬起，手掌朝向镜头展示指甲；动作缓慢，随后双手向前伸出，指尖接近镜头。",
+        "action_phases": [
+          "抬起双手",
+          "手掌朝向镜头静止展示",
+          "双手向前伸出接近镜头"
+        ],
+        "body_parts": [
+          "双手",
+          "十指"
+        ],
+        "contact_points": "双手自身展示，无外部接触",
+        "direction": "向镜头方向伸出",
+        "speed": "缓慢",
+        "pause": "手掌朝镜头时有停顿",
+        "enter_leave_frame": "双手始终在画面内",
+        "camera_motion": "镜头基本静止，轻微手持感",
+        "focus_change": "无明显移焦",
+        "visual_effect": "无"
+      },
+      "confidence": "high"
+    },
+    {
+      "shot_id": "shot2",
+      "time_range_sec": {
+        "start": 3.5,
+        "end": 6.0
+      },
+      "static": {
+        "subject": "同一位女性人物，身穿白色露肩上衣，佩戴银色手镯和戒指，长款装饰指甲带蓝色和白色图案；可见双手。",
+        "scene": "户外草地，蓝天白云，远处有湖泊。",
+        "props": [
+          "草地",
+          "湖泊",
+          "白云"
+        ],
+        "composition": "竖向画幅，人物位于画面中部，双手举起高于面部，背景为天空与草地。",
+        "shot_size": "中景",
+        "camera_angle": "正面略仰视",
+        "foreground_midground_background": "前景为举起的手部，中景为人物上半身，背景为天空、草地和湖泊。",
+        "lighting": "明亮自然光，日光为主光",
+        "color": "高明度蓝色与绿色为主，白色高光",
+        "material": "轻盈布料、金属手镯、带色装饰指甲",
+        "text_logo_ui": "右上角白色文字字幕"
+      },
+      "dynamic": {
+        "action": "人物双手举起，手指张开展示带蓝色和白色图案的长指甲；头发随风飘动。",
+        "action_phases": [
+          "双手举起",
+          "手指张开展示"
+        ],
+        "body_parts": [
+          "双手",
+          "十指",
+          "头发"
+        ],
+        "contact_points": "无",
+        "direction": "向上举起",
+        "speed": "中等",
+        "pause": "无明显停顿",
+        "enter_leave_frame": "双手在画面内",
+        "camera_motion": "轻微手持晃动",
+        "focus_change": "无明显移焦",
+        "visual_effect": "自然风导致发丝运动"
+      },
+      "confidence": "high"
+    },
+    {
+      "shot_id": "shot3",
+      "time_range_sec": {
+        "start": 6.0,
+        "end": 7.5
+      },
+      "static": {
+        "subject": "同一位女性人物面部特写，白色上衣；可见面部与双手。",
+        "scene": "户外草地，背景为蓝天和草地。",
+        "props": [
+          "草地",
+          "蓝天"
+        ],
+        "composition": "竖向画幅，面部居中偏上，双手出现在下半部。",
+        "shot_size": "面部特写",
+        "camera_angle": "正面平视",
+        "foreground_midground_background": "前景为手部，中景为面部，背景为蓝天和草地。",
+        "lighting": "明亮自然光",
+        "color": "蓝绿色调",
+        "material": "皮肤、布料",
+        "text_logo_ui": "无"
+      },
+      "dynamic": {
+        "action": "人物双手捂住嘴巴，随后放下，头部微侧；头发被风吹起。",
+        "action_phases": [
+          "双手捂住嘴巴",
+          "双手放下",
+          "头部微侧"
+        ],
+        "body_parts": [
+          "双手",
+          "头部",
+          "头发"
+        ],
+        "contact_points": "双手接触面部/嘴部",
+        "direction": "向内捂住后向下放下",
+        "speed": "中等",
+        "pause": "捂嘴姿态有短暂停留",
+        "enter_leave_frame": "双手在画面内",
+        "camera_motion": "轻微手持晃动",
+        "focus_change": "无明显移焦",
+        "visual_effect": "发丝被风吹动"
+      },
+      "confidence": "high"
+    },
+    {
+      "shot_id": "shot4",
+      "time_range_sec": {
+        "start": 7.5,
+        "end": 9.0
+      },
+      "static": {
+        "subject": "同一位女性人物，白色上衣，长款装饰指甲；可见双手。",
+        "scene": "户外，蓝天、草地和湖泊。",
+        "props": [
+          "草地",
+          "湖泊",
+          "蓝天"
+        ],
+        "composition": "竖向画幅，人物半身位于中部，双手位于画面前景。",
+        "shot_size": "半身中景",
+        "camera_angle": "正面平视",
+        "foreground_midground_background": "前景为双手，中景为人物上半身，背景为草地、湖泊和天空。",
+        "lighting": "明亮自然光",
+        "color": "蓝绿色调",
+        "material": "布料、装饰指甲",
+        "text_logo_ui": "无"
+      },
+      "dynamic": {
+        "action": "人物双手举起，手指交叉展示指甲；随后双手分开，指尖指向镜头。",
+        "action_phases": [
+          "双手举起",
+          "手指交叉",
+          "双手分开，指尖指向镜头"
+        ],
+        "body_parts": [
+          "双手",
+          "十指"
+        ],
+        "contact_points": "双手手指相互接触（交叉）",
+        "direction": "向内交叉后向外分开、指向镜头",
+        "speed": "中等",
+        "pause": "交叉姿态有停顿",
+        "enter_leave_frame": "双手在画面内",
+        "camera_motion": "轻微手持晃动",
+        "focus_change": "无明显移焦",
+        "visual_effect": "无"
+      },
+      "confidence": "high"
+    },
+    {
+      "shot_id": "shot5",
+      "time_range_sec": {
+        "start": 9.0,
+        "end": 10.5
+      },
+      "static": {
+        "subject": "前景为手部特写展示指甲；左上角画中画小窗内显示另一只手拿着黄色花朵。",
+        "scene": "户外，背景为模糊的草地和湖泊。",
+        "props": [
+          "草地",
+          "湖泊",
+          "黄色花朵"
+        ],
+        "composition": "竖向画幅，手部占据画面主体；左上角叠加画中画小窗；底部为文字字幕。",
+        "shot_size": "手部特写",
+        "camera_angle": "俯视/平视手部",
+        "foreground_midground_background": "前景为展示的手部，背景为虚化的草地与湖泊；左上角画中画层显示另一只手与花朵。",
+        "lighting": "明亮自然光",
+        "color": "蓝绿色调，黄色花朵为点缀色",
+        "material": "装饰指甲、花朵、画中画边框",
+        "text_logo_ui": "底部白色文字字幕；左上角画中画图形层"
+      },
+      "dynamic": {
+        "action": "前景手部静止，展示指甲细节；画中画中的手部轻微移动。",
+        "action_phases": [
+          "前景手部静止展示",
+          "画中画手部轻微移动"
+        ],
+        "body_parts": [
+          "展示的手部",
+          "画中画内的手部"
+        ],
+        "contact_points": "画中画内手指接触黄色花朵",
+        "direction": "静止为主",
+        "speed": "缓慢",
+        "pause": "前景手部保持静止",
+        "enter_leave_frame": "画中画层在画面左上角出现",
+        "camera_motion": "镜头基本静止",
+        "focus_change": "前景清晰，背景虚化",
+        "visual_effect": "画中画叠加"
+      },
+      "confidence": "high"
+    },
+    {
+      "shot_id": "shot6",
+      "time_range_sec": {
+        "start": 10.5,
+        "end": 12.0
+      },
+      "static": {
+        "subject": "同一位女性人物，身穿米色风衣，内搭白色衬衫，戴装饰指甲；可见双手。",
+        "scene": "户外，绿色山坡和金属塔架背景。",
+        "props": [
+          "绿色山坡",
+          "金属塔架"
+        ],
+        "composition": "竖向画幅，人物半身位于中部，双手位于画面前景。",
+        "shot_size": "中景",
+        "camera_angle": "正面平视",
+        "foreground_midground_background": "前景为双手，中景为人物躯干，背景为山坡与金属塔架。",
+        "lighting": "明亮自然光",
+        "color": "绿色与米色为主",
+        "material": "风衣布料、金属结构、装饰指甲",
+        "text_logo_ui": "无"
+      },
+      "dynamic": {
+        "action": "人物双手举起，手指张开展示指甲；随后双手放下，整理衣领。",
+        "action_phases": [
+          "双手举起展示指甲",
+          "双手放下",
+          "整理衣领"
+        ],
+        "body_parts": [
+          "双手",
+          "十指",
+          "衣领"
+        ],
+        "contact_points": "双手接触衣领",
+        "direction": "向上举起后向下放下",
+        "speed": "中等",
+        "pause": "展示时有短暂停顿",
+        "enter_leave_frame": "双手在画面内",
+        "camera_motion": "轻微手持晃动",
+        "focus_change": "无明显移焦",
+        "visual_effect": "无"
+      },
+      "confidence": "high"
+    },
+    {
+      "shot_id": "shot7",
+      "time_range_sec": {
+        "start": 12.0,
+        "end": 13.5
+      },
+      "static": {
+        "subject": "同一位女性人物，头戴草帽，身穿米色风衣，展示指甲；可见双手与面部。",
+        "scene": "户外，绿色草地背景。",
+        "props": [
+          "草帽",
+          "草地"
+        ],
+        "composition": "竖向画幅，面部与草帽居中偏上，双手位于画面前景。",
+        "shot_size": "面部特写",
+        "camera_angle": "正面平视",
+        "foreground_midground_background": "前景为手部，中景为面部与草帽，背景为草地。",
+        "lighting": "明亮自然光",
+        "color": "绿色与米色为主",
+        "material": "草编帽、风衣布料、装饰指甲",
+        "text_logo_ui": "无"
+      },
+      "dynamic": {
+        "action": "人物双手抬起，手指轻触帽檐展示指甲；随后双手放下，头部微低。",
+        "action_phases": [
+          "双手抬起",
+          "手指轻触帽檐",
+          "双手放下",
+          "头部微低"
+        ],
+        "body_parts": [
+          "双手",
+          "十指",
+          "帽檐",
+          "头部"
+        ],
+        "contact_points": "手指接触帽檐",
+        "direction": "向上抬起后向下放下",
+        "speed": "缓慢",
+        "pause": "触帽时停顿展示",
+        "enter_leave_frame": "双手在画面内",
+        "camera_motion": "轻微手持晃动",
+        "focus_change": "无明显移焦",
+        "visual_effect": "无"
+      },
+      "confidence": "high"
+    },
+    {
+      "shot_id": "shot8",
+      "time_range_sec": {
+        "start": 13.5,
+        "end": 15.0
+      },
+      "static": {
+        "subject": "同一位女性人物蹲在草地上，身穿米色风衣和白色裤子，头戴草帽，展示指甲；可见双手。",
+        "scene": "户外，绿色草地。",
+        "props": [
+          "草地",
+          "草帽"
+        ],
+        "composition": "竖向画幅，人物位于画面中下部，双手位于画面前景。",
+        "shot_size": "中全景",
+        "camera_angle": "正面平视略俯视",
+        "foreground_midground_background": "前景为双手，中景为蹲姿人物，背景为草地。",
+        "lighting": "明亮自然光",
+        "color": "绿色与米色为主",
+        "material": "风衣布料、草编帽、装饰指甲",
+        "text_logo_ui": "无"
+      },
+      "dynamic": {
+        "action": "人物双手举起，手指张开展示指甲；随后双手放下，身体保持蹲姿。",
+        "action_phases": [
+          "双手举起展示指甲",
+          "双手放下",
+          "保持蹲姿"
+        ],
+        "body_parts": [
+          "双手",
+          "十指"
+        ],
+        "contact_points": "无",
+        "direction": "向上举起后向下放下",
+        "speed": "中等",
+        "pause": "展示时短暂停顿",
+        "enter_leave_frame": "双手在画面内",
+        "camera_motion": "轻微手持晃动",
+        "focus_change": "无明显移焦",
+        "visual_effect": "无"
+      },
+      "confidence": "high"
+    }
+  ],
+  "state_relation_observations": [
+    {
+      "pair_id": "VS001:shot1_to_shot2",
+      "from": "shot1",
+      "to": "shot2",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "lighting_weather",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "person_styling",
+        "subject_usage_state"
+      ],
+      "before_after_detail": "场景由室内门框前变为户外草地湖泊；服装由黑色半透明衬衫/皮裤变为白色露肩上衣；光线由室内光变为明亮自然光；新增右上角白色字幕。",
+      "newly_revealed": "户外环境、新的服装与配饰。",
+      "uncertainty": "无",
+      "confidence": "high",
+      "source_axes": {
+        "scene_location": "室内→户外草地",
+        "outfit_accessories": "黑色半透明衬衫/皮裤→白色露肩上衣",
+        "lighting_weather": "室内光→明亮自然光",
+        "prop_overlay": "新增右上角字幕"
+      }
+    },
+    {
+      "pair_id": "VS001:shot2_to_shot3",
+      "from": "shot2",
+      "to": "shot3",
+      "observed_changes": [
+        "composition",
+        "action_phase"
+      ],
+      "continuity": [
+        "scene_location",
+        "outfit_accessories",
+        "lighting_weather"
+      ],
+      "before_after_detail": "构图由半身/中景变为面部特写；动作由举起双手展示指甲变为双手捂嘴。",
+      "newly_revealed": "面部表情与发丝细节。",
+      "uncertainty": "无",
+      "confidence": "high",
+      "source_axes": {
+        "composition": "中景→面部特写",
+        "action_phase": "展示手部→捂嘴"
+      }
+    },
+    {
+      "pair_id": "VS001:shot3_to_shot4",
+      "from": "shot3",
+      "to": "shot4",
+      "observed_changes": [
+        "composition",
+        "action_phase"
+      ],
+      "continuity": [
+        "scene_location",
+        "outfit_accessories",
+        "lighting_weather"
+      ],
+      "before_after_detail": "构图由面部特写变回半身中景；动作由捂嘴变为举起双手展示指甲。",
+      "newly_revealed": "手部动作变化，手指交叉与分开。",
+      "uncertainty": "无",
+      "confidence": "high",
+      "source_axes": {
+        "composition": "面部特写→半身中景",
+        "action_phase": "捂嘴→展示手部"
+      }
+    },
+    {
+      "pair_id": "VS001:shot4_to_shot5",
+      "from": "shot4",
+      "to": "shot5",
+      "observed_changes": [
+        "composition",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "scene_location",
+        "outfit_accessories",
+        "lighting_weather"
+      ],
+      "before_after_detail": "构图由半身变为手部特写；画面新增左上角画中画与底部字幕。",
+      "newly_revealed": "指甲细节，画中画内的手与黄色花朵。",
+      "uncertainty": "无",
+      "confidence": "high",
+      "source_axes": {
+        "composition": "半身→手部特写",
+        "prop_overlay": "新增画中画与底部字幕"
+      }
+    },
+    {
+      "pair_id": "VS001:shot5_to_shot6",
+      "from": "shot5",
+      "to": "shot6",
+      "observed_changes": [
+        "outfit_accessories",
+        "composition",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "scene_location",
+        "lighting_weather"
+      ],
+      "before_after_detail": "服装由白色上衣变为米色风衣；构图由手部特写变为半身中景；画中画和底部文字消失。",
+      "newly_revealed": "新的服装、金属塔架背景。",
+      "uncertainty": "无",
+      "confidence": "high",
+      "source_axes": {
+        "outfit_accessories": "白色上衣→米色风衣",
+        "composition": "手部特写→半身中景",
+        "prop_overlay": "画中画与字幕消失"
+      }
+    },
+    {
+      "pair_id": "VS001:shot6_to_shot7",
+      "from": "shot6",
+      "to": "shot7",
+      "observed_changes": [
+        "outfit_accessories",
+        "composition"
+      ],
+      "continuity": [
+        "scene_location",
+        "lighting_weather",
+        "subject_usage_state"
+      ],
+      "before_after_detail": "新增草帽；构图由半身中景变为面部特写。",
+      "newly_revealed": "草帽细节。",
+      "uncertainty": "无",
+      "confidence": "high",
+      "source_axes": {
+        "outfit_accessories": "新增草帽",
+        "composition": "半身中景→面部特写"
+      }
+    },
+    {
+      "pair_id": "VS001:shot7_to_shot8",
+      "from": "shot7",
+      "to": "shot8",
+      "observed_changes": [
+        "composition",
+        "action_phase",
+        "outfit_accessories"
+      ],
+      "continuity": [
+        "scene_location",
+        "outfit_accessories",
+        "lighting_weather"
+      ],
+      "before_after_detail": "构图由面部特写变为中全景蹲姿；动作由触帽变为举起双手展示指甲；可见白色裤子。",
+      "newly_revealed": "蹲姿与白色裤子。",
+      "uncertainty": "无",
+      "confidence": "high",
+      "source_axes": {
+        "composition": "面部特写→中全景蹲姿",
+        "action_phase": "触帽→展示手部",
+        "outfit_accessories": "新增可见白色裤子"
+      }
+    }
+  ],
+  "special_mechanism_observations": [
+    {
+      "mechanism_id": "sm_obs_001",
+      "time_range_or_boundary": "9.0-10.5s",
+      "type": "special_composition",
+      "evidence": "左上角出现画中画小窗口，显示另一只手拿着黄色花朵。",
+      "mechanics": "画中画叠加在主画面上，展示不同角度的细节。",
+      "replication_relevance": "画中画机制可用于展示产品细节或不同视角，增强视觉丰富度。"
+    }
+  ],
+  "visual_memory_observations": [
+    {
+      "candidate_id": "vmc_001",
+      "source": "special_mechanism_observations",
+      "type": "composition",
+      "time_range_sec": {
+        "start": 9.0,
+        "end": 10.5
+      },
+      "detail": "左上角画中画小窗展示另一只手拿黄色花朵，主画面为手部指甲特写。",
+      "preserve": [
+        "画中画位置、尺度关系与主画面-子画面信息分工"
+      ],
+      "adapt": [
+        "画中画具体内容"
+      ],
+      "avoid": [
+        "源片专属文字与身份"
+      ]
+    }
+  ],
+  "transition_memory_observations": [],
+  "text_graphics_observations": [
+    {
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 3.5
+      },
+      "type": "subtitle",
+      "text": "POV：当你第一次做美甲...",
+      "readable": true,
+      "static_or_dynamic": "dynamic",
+      "placement": "顶部"
+    },
+    {
+      "time_range_sec": {
+        "start": 3.5,
+        "end": 6.0
+      },
+      "type": "subtitle",
+      "text": "做了个✨新疆指甲！",
+      "readable": true,
+      "static_or_dynamic": "dynamic",
+      "placement": "右上角"
+    },
+    {
+      "time_range_sec": {
+        "start": 9.0,
+        "end": 10.5
+      },
+      "type": "subtitle",
+      "text": "和蓝天白云草地好搭！",
+      "readable": true,
+      "static_or_dynamic": "dynamic",
+      "placement": "底部"
+    },
+    {
+      "time_range_sec": {
+        "start": 9.0,
+        "end": 10.5
+      },
+      "type": "graphic_overlay",
+      "text": "画中画窗口（手与黄色花朵）",
+      "readable": false,
+      "static_or_dynamic": "dynamic",
+      "placement": "左上角"
+    }
+  ],
+  "script_observation_cues": {
+    "visible_event_summary": "人物在不同装扮和户外/室内场景中反复向镜头展示装饰美甲，最后以蹲姿展示收尾。",
+    "attention_focus": "手部装饰美甲与整体造型氛围",
+    "visible_information_summary": "展示长款蓝色/白色图案装饰美甲以及与场景氛围的搭配。",
+    "screen_text_information": [
+      "POV：当你第一次做美甲...",
+      "做了个✨新疆指甲！",
+      "和蓝天白云草地好搭！"
+    ],
+    "speech_or_mouth_movement_hint": "shot3 有双手捂嘴动作，但无清晰口型证据"
+  },
+  "uncertainties": [
+    "部分镜头持续时间很短（约1-1.5s），指甲上的微小图案细节在快速运动或远景中可能不够清晰。"
+  ],
+  "evidence_refs": [
+    "VS001:shot1",
+    "VS001:shot2",
+    "VS001:shot3",
+    "VS001:shot4",
+    "VS001:shot5",
+    "VS001:shot6",
+    "VS001:shot7",
+    "VS001:shot8"
+  ]
+}

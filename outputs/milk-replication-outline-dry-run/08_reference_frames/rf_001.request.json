@@ -1,0 +1,19 @@
+{
+  "base_url": "http://10.42.1.1:9006",
+  "submit_url": "http://10.42.1.1:9006/v1/images",
+  "status_url": "http://10.42.1.1:9006/v1/images/{id}",
+  "download_url": "http://10.42.1.1:9006/v1/images/{id}/content",
+  "payload": {
+    "task": "text2img",
+    "conditions": [],
+    "n": 1,
+    "num_inference_steps": 50,
+    "output_mode": "decoded_files",
+    "prompt": "纯人物参考图（person_reference）：只呈现人物外形，不含产品、不含场景道具、不含任何可读文字。一位不可识别的亚洲成年女性，年龄印象：25-30岁成年女性；体型：中等身形；发型：及肩深棕微卷发；妆容：清透自然淡妆，暖调唇色；服装：多套低饱和日常服装——奶油白针织开衫、雾霾蓝长袖上衣、浅灰运动装、米色连衣裙；配饰：简约细项链，无可读logo；气质：亲切自然、有活力；身份约束：不可识别表演者，不指认或复制参考片人物身份。可见差异锚点：发型由参考片长发改为及肩深棕微卷发；服装色系由黄绿针织/亮绿羽绒/棕毛衣改为奶油白/雾霾蓝/浅灰低饱和色系。正面站姿，半身，目光看向镜头，气质亲切自然有活力，中性纯色背景。真实商业短视频平面参考图，明亮高调均匀布光，干净通透，浅景深适中，竖构图，写实摄影质感，无文字水印、无品牌logo、无浮层UI。",
+    "target": {
+      "short_edge": 720,
+      "aspect_ratio": "9:16"
+    }
+  },
+  "output": "/home/mx/jyfa/workdir/ai_agent_platform/outputs/milk-replication-outline-dry-run/08_reference_frames/_tmp_rf_001/rf_001.png"
+}

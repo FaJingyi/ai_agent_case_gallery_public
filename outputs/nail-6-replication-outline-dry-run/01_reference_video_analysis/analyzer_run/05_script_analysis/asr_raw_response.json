@@ -1,0 +1,36 @@
+{
+  "text": "UnlikeDoyouthinkI'mstrange?",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.2,
+      "text": "Unlike"
+    },
+    {
+      "start": 6.399,
+      "end": 7.799,
+      "text": "Do"
+    },
+    {
+      "start": 7.799,
+      "end": 9.2,
+      "text": "you"
+    },
+    {
+      "start": 9.2,
+      "end": 9.54,
+      "text": "think"
+    },
+    {
+      "start": 9.54,
+      "end": 9.82,
+      "text": "I'm"
+    },
+    {
+      "start": 9.82,
+      "end": 10.22,
+      "text": "strange?"
+    }
+  ],
+  "srt": "1\n00:00:00,000 --> 00:00:01,200\n Unlike\n\n2\n00:00:06,399 --> 00:00:07,799\n Do\n\n3\n00:00:07,799 --> 00:00:09,200\n you\n\n4\n00:00:09,200 --> 00:00:09,540\n think\n\n5\n00:00:09,540 --> 00:00:09,820\n I'm\n\n6\n00:00:09,820 --> 00:00:10,220\n strange?\n"
+}

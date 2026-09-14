@@ -1,0 +1,40 @@
+{
+  "schema_version": "common_replication_outline.asset_candidates.v1",
+  "asset_candidates": [
+    {
+      "asset_id": "asset_reference_video",
+      "file": "test_data/nail-5/nail-5.mp4",
+      "media_type": "video",
+      "declared_slot": "reference_video",
+      "candidate_slot": "reference_video",
+      "input_source": "reference_video"
+    },
+    {
+      "asset_id": "asset_user_001",
+      "file": "test_data/nail-5/user_input/shangpin-3.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_e19e3a65f9d442428c4cc224e5799858/content",
+      "media_type": "image",
+      "declared_slot": "unknown",
+      "candidate_slot": "product_or_reference_style",
+      "input_source": "user_assets"
+    }
+  ],
+  "user_text_inputs": {
+    "usage_instructions": [
+      "将参考视频里的美甲的图案替换成素材图片里的美甲图案"
+    ],
+    "operation_state": [],
+    "display_state": [],
+    "scene_override": [],
+    "scene_description": [
+      "人物的装扮和场景和美甲风格一致"
+    ],
+    "logo_text_inputs": [],
+    "business_text": [],
+    "constraints": [
+      "场景与人物装扮需与美甲风格一致"
+    ]
+  },
+  "obvious_missing_inputs": [],
+  "unverified_claims": []
+}

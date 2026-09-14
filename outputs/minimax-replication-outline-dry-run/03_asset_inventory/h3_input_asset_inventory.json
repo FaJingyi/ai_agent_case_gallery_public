@@ -1,0 +1,196 @@
+{
+  "schema_version": "common_replication_outline.h3_input_asset_inventory.v1",
+  "policy": "reference_video_default_included_if_within_15s",
+  "h3_material_mode": "reference_video_plus_reference_images",
+  "reference_video": {
+    "input_path": "test_data/minimax/minimax.mp4",
+    "duration_sec": 15.0,
+    "source_duration_sec": 15.1,
+    "media_url": "http://10.42.1.1:30100/v1/assets/asset_5811419d16594adfbf8cca2096cbde3c/content"
+  },
+  "reference_video_h3_input_policy": {
+    "enabled": true,
+    "max_video_reference_duration_sec": 15,
+    "mode": "first_15s_excerpt",
+    "source_time_range_sec": {
+      "start": 0.0,
+      "end": 15.0
+    }
+  },
+  "eligible_h3_input_assets": [
+    {
+      "asset_id": "ref_video_excerpt_15s",
+      "input_path": "01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_5811419d16594adfbf8cca2096cbde3c/content",
+      "media_type": "video",
+      "declared_slot": "reference_video",
+      "resolved_slot": "reference_video",
+      "packager_role": "motion_camera_timing_reference",
+      "source": "reference_video_excerpt",
+      "allowed": true,
+      "duration_sec": 15.0,
+      "source_time_range_sec": {
+        "start": 0.0,
+        "end": 15.0
+      },
+      "allowed_h3_uses": [
+        "motion_structure_reference",
+        "camera_language_reference",
+        "beat_timing_reference",
+        "single_shot_rhythm_reference"
+      ]
+    },
+    {
+      "asset_id": "FRAME_SCENE1",
+      "input_path": "08_reference_frames/FRAME_SCENE1.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_6adfc892670d45389061bc3aa90ddefa/content",
+      "media_type": "image",
+      "source": "generated_reference_frames",
+      "reference_frame_source": "generated_reference_frames",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "SCENE_1",
+      "h3_role": "scene_reference",
+      "packager_role": "scene_reference",
+      "allowed": true,
+      "dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "asset_service_id": "asset_6adfc892670d45389061bc3aa90ddefa",
+      "sha256": "f398519fe025c6dc41916f962bfa264ec9387a5c97702192c4b57ec6e12212d0",
+      "target_bindings": [
+        "SCENE_1",
+        "TU001_S1",
+        "TU001_S2"
+      ],
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_consistency_anchor"
+      ],
+      "pre_submit_quality_check_status": "passed"
+    },
+    {
+      "asset_id": "FRAME_SCENE2",
+      "input_path": "08_reference_frames/FRAME_SCENE2.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_ef20323a1c6047f88ba2b99917d3683a/content",
+      "media_type": "image",
+      "source": "generated_reference_frames",
+      "reference_frame_source": "generated_reference_frames",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "SCENE_2",
+      "h3_role": "scene_reference",
+      "packager_role": "scene_reference",
+      "allowed": true,
+      "dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "asset_service_id": "asset_ef20323a1c6047f88ba2b99917d3683a",
+      "sha256": "31e2b32a250f54d8e26bfe165ec9c39328e325b4c2d2a4de8b2c06d3973ad286",
+      "target_bindings": [
+        "SCENE_2",
+        "TU002_S1",
+        "TU002_S2"
+      ],
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_consistency_anchor"
+      ],
+      "pre_submit_quality_check_status": "passed"
+    },
+    {
+      "asset_id": "FRAME_SCENE3",
+      "input_path": "08_reference_frames/FRAME_SCENE3.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_ca3e83e13fcb4e9a9aa194c2cdf48ba0/content",
+      "media_type": "image",
+      "source": "generated_reference_frames",
+      "reference_frame_source": "generated_reference_frames",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "SCENE_3",
+      "h3_role": "scene_reference",
+      "packager_role": "scene_reference",
+      "allowed": true,
+      "dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "asset_service_id": "asset_ca3e83e13fcb4e9a9aa194c2cdf48ba0",
+      "sha256": "76abf94db1d0cec0bec4364a01bbe3f2fc9de51153d30847f8fe9e0551e40d81",
+      "target_bindings": [
+        "SCENE_3",
+        "TU003_S1",
+        "TU003_S2"
+      ],
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "scene_consistency_anchor"
+      ],
+      "pre_submit_quality_check_status": "passed"
+    }
+  ],
+  "excluded_assets": [],
+  "generated_reference_frames_policy": "append_only_after_step8_quality_check_and_usable_output",
+  "user_text_inputs": {
+    "usage_instructions": [
+      "参考参考视频生成一条新的视频"
+    ],
+    "operation_state": [],
+    "display_state": [],
+    "scene_override": [],
+    "scene_description": [],
+    "logo_text_inputs": [
+      "MetaX (replacement for the on-screen 'minimax' lettering and wordmark)"
+    ],
+    "business_text": [],
+    "constraints": [
+      "replace every 'minimax' lettering occurrence with 'MetaX'",
+      "replace the model (the woman) in the video with a cat"
+    ]
+  },
+  "obvious_missing_inputs": [
+    {
+      "slot": "primary_subject_reference_image",
+      "required_level": "conditional_required",
+      "accepted_inputs": [
+        "image",
+        "video"
+      ],
+      "note": "no cat image provided; target subject appearance is a generation assumption driven by user text"
+    },
+    {
+      "slot": "brand_logo_asset",
+      "required_level": "recommended",
+      "accepted_inputs": [
+        "image",
+        "logo"
+      ],
+      "note": "MetaX supplied as text only; no logo asset"
+    },
+    {
+      "slot": "scene_asset",
+      "required_level": "optional",
+      "accepted_inputs": [
+        "image",
+        "video",
+        "text_description"
+      ],
+      "note": "no scene override; reference scene structure is inherited"
+    }
+  ],
+  "unverified_claims": [
+    {
+      "item": "MetaX readable wordmark rendering",
+      "reason": "brand supplied as text input only; no logo asset to verify typography or mark",
+      "status": "use_text_instruction"
+    },
+    {
+      "item": "FIELD NOTE / CITY SCOUTING edge UI wording",
+      "reason": "source-specific trailing UI text not confirmed by user",
+      "status": "neutralize_or_adapt"
+    }
+  ],
+  "validation_flags": [
+    "reference_video_excerpting_applied_due_to_source_exceeding_15s",
+    "no_user_assets_provided"
+  ]
+}

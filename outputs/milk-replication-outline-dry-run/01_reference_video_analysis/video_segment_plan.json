@@ -1,0 +1,30 @@
+{
+  "schema_version": "common_reference_video_analyzer.video_segment_plan.v1",
+  "source_video": {
+    "path": "test_data/milk/milk.mp4",
+    "filename": "milk.mp4",
+    "fps": 30.0,
+    "duration": 15.0,
+    "total_frames": 450,
+    "width": 1080,
+    "height": 1936
+  },
+  "strategy": "full_video",
+  "max_segment_duration_sec": 15.0,
+  "vlm_video_segments": [
+    {
+      "segment_id": "VS001",
+      "start": 0.0,
+      "end": 15.0,
+      "duration": 15.0,
+      "source_candidate_ids": [],
+      "video_path": "outputs/milk-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "",
+      "notes": [
+        "full_video_under_or_equal_15s"
+      ]
+    }
+  ],
+  "dropped_ranges": [],
+  "warnings": []
+}

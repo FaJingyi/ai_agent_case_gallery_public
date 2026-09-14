@@ -1,0 +1,21 @@
+{
+  "schema_version": "common_replication_outline.h3_submission_status.v1",
+  "status": "not_submitted",
+  "submitted": false,
+  "submission_attempted": false,
+  "reason": "dry_run_boundary_h3_request_package_only",
+  "endpoint": "http://10.42.1.2:30011/v2/video_generation",
+  "query_endpoint": "http://10.42.1.2:30011/v2/query/video_generation",
+  "request_source": "09_h3_package/h3_request.json",
+  "tool_request_record": "10_h3_video_output/request.json",
+  "tool_result_record": "10_h3_video_output/result.json",
+  "task_id": null,
+  "response_path": null,
+  "query_response_path": null,
+  "final_video_path": null,
+  "video_url": null,
+  "notes": [
+    "本次为 H3 视频提交边界 dry-run：已产出可提交 H3 request 与 prompt package，未调用 H3 创建任务接口。",
+    "10_h3_video_output/request.json 与 result.json 由 tool-minimax-h3-video-generation-skill --dry-run 生成。"
+  ]
+}

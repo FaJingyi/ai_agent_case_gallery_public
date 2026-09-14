@@ -1,0 +1,99 @@
+{
+  "schema_version": "common_replication_outline.target_asset_analysis.v2",
+  "asset_level_analysis": [],
+  "user_text_context_analysis": {
+    "raw_user_request": "参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞",
+    "requirement_file": "test_data/dance/user_input/requirement.txt",
+    "provided_modalities": [
+      "text"
+    ],
+    "notes": [
+      "用户未提供任何目标图片/视频素材",
+      "目标主体与场景均由用户文本指定"
+    ]
+  },
+  "business_context_analysis": {
+    "business_context_provided": false,
+    "brand_or_claim_inputs": []
+  },
+  "user_declared_intent": {
+    "asset_usage_instructions": [],
+    "operation_or_interaction_descriptions": [
+      "在户外篮球场上跳舞"
+    ],
+    "scene_or_context_descriptions": [
+      "户外篮球场"
+    ],
+    "text_logo_or_brand_inputs": [],
+    "confirmation_to_omit_or_neutralize": [],
+    "confirmation_to_generate_assumptions": []
+  },
+  "generation_assumptions": [
+    {
+      "assumption_id": "ga_001",
+      "slot": "actor_appearance",
+      "description": "目标主体为一位欧美成年女性舞者；具体年龄、发型、妆容与服装由生成侧合理补全",
+      "source": "fallback_policy",
+      "requires_reference_frame": true,
+      "risk_level": "medium",
+      "status": "proposed",
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    },
+    {
+      "assumption_id": "ga_002",
+      "slot": "actor_identity",
+      "description": "用户未要求可识别身份，使用不可识别的表演者承接舞蹈动作",
+      "source": "shot_replication_policy",
+      "requires_reference_frame": false,
+      "risk_level": "low",
+      "status": "proposed",
+      "evidence_refs": [
+        "references/shot-replication/module_strategy.json#actor_policy"
+      ]
+    },
+    {
+      "assumption_id": "ga_003",
+      "slot": "scene_content",
+      "description": "场景按用户文本落地为户外篮球场：球场地面画线、篮架/篮筐、围栏或看台背景；与参考视频看台场地在空间类型与配色上形成可见差异",
+      "source": "fallback_policy",
+      "requires_reference_frame": true,
+      "risk_level": "medium",
+      "status": "proposed",
+      "evidence_refs": [
+        "00_inputs/input_manifest.json#user_request"
+      ]
+    }
+  ],
+  "reference_dimension_alignment": {
+    "reference_dimensions_needed": [
+      "time_structure",
+      "shot_structure",
+      "composition",
+      "camera",
+      "action_structure",
+      "visual_style",
+      "scene_style"
+    ],
+    "target_supply": {
+      "time_structure": "reference_inherited",
+      "shot_structure": "reference_inherited",
+      "composition": "reference_inherited",
+      "camera": "reference_inherited",
+      "action_structure": "reference_inherited_text_supported",
+      "visual_style": "reference_inherited",
+      "scene_style": "user_text_scene_override"
+    }
+  },
+  "binding_candidates": [],
+  "h3_input_asset_inventory": {
+    "path": "03_asset_inventory/h3_input_asset_inventory.json",
+    "h3_material_mode": "reference_video_plus_reference_images",
+    "eligible_count": 1
+  },
+  "validation_flags": [
+    "no_target_assets_vlm_not_called",
+    "subject_and_scene_from_user_text"
+  ]
+}

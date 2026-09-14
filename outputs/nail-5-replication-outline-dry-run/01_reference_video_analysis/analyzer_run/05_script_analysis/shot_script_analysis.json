@@ -1,0 +1,160 @@
+{
+  "schema_version": "common_reference_video_analyzer.shot_script.v1",
+  "shots": [
+    {
+      "id": "VS001_SH001",
+      "scene_id": "VS001",
+      "time": [
+        0.0,
+        3.5
+      ],
+      "time_precision": "exact",
+      "function": "context",
+      "event": "人物在室内向镜头展示手部装饰指甲",
+      "information_delta": "引入POV视角并首次展示指甲",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "other",
+          "content": "POV：当你第一次做美甲..."
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1"
+      ]
+    },
+    {
+      "id": "VS001_SH002",
+      "scene_id": "VS001",
+      "time": [
+        3.5,
+        6.0
+      ],
+      "time_precision": "exact",
+      "function": "focus",
+      "event": "人物在户外展示蓝白图案的长指甲",
+      "information_delta": "展示指甲图案与户外造型",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "emphasis",
+          "content": "做了个✨新疆指甲！"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "VS001_SH003",
+      "scene_id": "VS001",
+      "time": [
+        6.0,
+        7.5
+      ],
+      "time_precision": "exact",
+      "function": "emotional_shift",
+      "event": "人物双手捂嘴、头部微侧",
+      "information_delta": "表达惊喜/开心情绪",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "VS001_SH004",
+      "scene_id": "VS001",
+      "time": [
+        7.5,
+        9.0
+      ],
+      "time_precision": "exact",
+      "function": "action",
+      "event": "人物手指交叉后分开、指尖指向镜头",
+      "information_delta": "展示指甲不同角度",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot4"
+      ]
+    },
+    {
+      "id": "VS001_SH005",
+      "scene_id": "VS001",
+      "time": [
+        9.0,
+        10.5
+      ],
+      "time_precision": "exact",
+      "function": "proof",
+      "event": "手部特写展示指甲细节，画中画展示手与花朵",
+      "information_delta": "以特写和画中画强化指甲细节",
+      "text_slots": [
+        {
+          "kind": "screen_text",
+          "slot": "emphasis",
+          "content": "和蓝天白云草地好搭！"
+        }
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot5"
+      ]
+    },
+    {
+      "id": "VS001_SH006",
+      "scene_id": "VS001",
+      "time": [
+        10.5,
+        12.0
+      ],
+      "time_precision": "exact",
+      "function": "development",
+      "event": "人物换装后继续展示指甲并整理衣领",
+      "information_delta": "展示造型与指甲搭配",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot6"
+      ]
+    },
+    {
+      "id": "VS001_SH007",
+      "scene_id": "VS001",
+      "time": [
+        12.0,
+        13.5
+      ],
+      "time_precision": "exact",
+      "function": "focus",
+      "event": "人物戴草帽、轻触帽檐展示指甲",
+      "information_delta": "展示配饰与指甲搭配",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot7"
+      ]
+    },
+    {
+      "id": "VS001_SH008",
+      "scene_id": "VS001",
+      "time": [
+        13.5,
+        15.0
+      ],
+      "time_precision": "exact",
+      "function": "closing",
+      "event": "人物蹲姿展示指甲收尾",
+      "information_delta": "收束整体造型与环境",
+      "text_slots": [],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot8"
+      ]
+    }
+  ],
+  "speech_status": "unavailable"
+}

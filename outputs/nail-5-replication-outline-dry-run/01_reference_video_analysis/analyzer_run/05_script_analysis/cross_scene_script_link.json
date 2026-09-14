@@ -1,0 +1,124 @@
+{
+  "schema_version": "common_reference_video_analyzer.cross_scene_script_link.v1",
+  "relations": [
+    {
+      "id": "rel_VS001_SH001_SH002",
+      "from": "VS001_SH001",
+      "to": "VS001_SH002",
+      "type": "progress",
+      "reason": "从室内POV引入推进到户外展示",
+      "dims": {
+        "info": "progress",
+        "emotion": "progress",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot2"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH002_SH003",
+      "from": "VS001_SH002",
+      "to": "VS001_SH003",
+      "type": "progress",
+      "reason": "从展示指甲推进到人物情绪反应",
+      "dims": {
+        "info": "supplement",
+        "emotion": "turn",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot2",
+        "VS001:shot3"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH003_SH004",
+      "from": "VS001_SH003",
+      "to": "VS001_SH004",
+      "type": "continue",
+      "reason": "情绪反应后回到手部展示",
+      "dims": {
+        "info": "continue",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot3",
+        "VS001:shot4"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH004_SH005",
+      "from": "VS001_SH004",
+      "to": "VS001_SH005",
+      "type": "progress",
+      "reason": "从整体展示推进到手部特写与画中画细节",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot4",
+        "VS001:shot5"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH005_SH006",
+      "from": "VS001_SH005",
+      "to": "VS001_SH006",
+      "type": "continue",
+      "reason": "细节展示后进入换装展示",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot5",
+        "VS001:shot6"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH006_SH007",
+      "from": "VS001_SH006",
+      "to": "VS001_SH007",
+      "type": "progress",
+      "reason": "换装后加入草帽配饰继续展示",
+      "dims": {
+        "info": "progress",
+        "emotion": "continue",
+        "rhythm": "continue"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot6",
+        "VS001:shot7"
+      ]
+    },
+    {
+      "id": "rel_VS001_SH007_SH008",
+      "from": "VS001_SH007",
+      "to": "VS001_SH008",
+      "type": "continue",
+      "reason": "从配饰特写拓展到蹲姿收尾",
+      "dims": {
+        "info": "continue",
+        "emotion": "continue",
+        "rhythm": "decelerate"
+      },
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot7",
+        "VS001:shot8"
+      ]
+    }
+  ]
+}

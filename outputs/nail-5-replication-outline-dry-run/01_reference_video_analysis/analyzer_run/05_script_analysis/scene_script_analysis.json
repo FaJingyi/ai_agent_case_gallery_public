@@ -1,0 +1,34 @@
+{
+  "schema_version": "common_reference_video_analyzer.scene_script.v1",
+  "scenes": [
+    {
+      "id": "VS001",
+      "time": [
+        0.0,
+        15.0
+      ],
+      "function": "action",
+      "arc": {
+        "from": "室内POV引入，人物首次展示美甲",
+        "event": "在多种户外场景与装扮中连续展示同一套装饰美甲",
+        "to": "以蹲姿收尾，收束整体造型与自然环境氛围",
+        "information_delta": "从首次做美甲的POV引入，推进到指甲图案与自然场景氛围搭配的展示"
+      },
+      "shots": [
+        "VS001_SH001",
+        "VS001_SH002",
+        "VS001_SH003",
+        "VS001_SH004",
+        "VS001_SH005",
+        "VS001_SH006",
+        "VS001_SH007",
+        "VS001_SH008"
+      ],
+      "confidence": "high",
+      "evidence_refs": [
+        "VS001:shot1",
+        "VS001:shot8"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "common_replication_outline.input_manifest.v1",
+  "replication_mode": "shot_structure",
+  "reference_video": {
+    "path": "test_data/milk/milk.mp4",
+    "duration_sec": 15.0,
+    "fps": 30.0,
+    "width": 1080,
+    "height": 1936,
+    "has_audio": true,
+    "media_url": "http://10.42.1.1:30100/v1/assets/asset_555aee1bcb974186839d6bf436619f3c/content",
+    "analyzed_segment_id": "VS001"
+  },
+  "user_assets": [
+    {
+      "asset_id": "user_asset_001",
+      "input_path": "test_data/milk/user_input/东方树叶.jpg",
+      "media_type": "image",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_1d84a276bfbe4db688fb11a8aba747e7/content",
+      "declared_slot": "product"
+    }
+  ],
+  "user_request": "参考视频生成一条新的视频，把牛奶换成东方树叶饮料",
+  "requirement_file": {
+    "declared_by_caller": "none",
+    "detected_path": "test_data/milk/user_input/requirement.txt.txt",
+    "content_read_as_user_request": true
+  },
+  "business_context": null,
+  "output_dir": "outputs/milk-replication-outline-dry-run",
+  "scene_threshold": 0.5,
+  "reference_video_h3_input_policy": {
+    "enabled": true,
+    "max_video_reference_duration_sec": 15.0
+  },
+  "notes": [
+    "caller 声明 requirement_file=none，但 user_input 目录内存在 requirement.txt.txt，已作为 user_request 读取"
+  ]
+}

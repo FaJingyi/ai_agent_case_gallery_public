@@ -1,0 +1,9 @@
+{
+  "provider": "sensenova",
+  "task_id": "20260913_064907_7f37cf63-80e6-4c42-8110-2623bf375c91",
+  "task": "text2img",
+  "output": "/tmp/rf_gen/RF_PERSON_001/RF_PERSON_001.png",
+  "request": "/tmp/rf_gen/RF_PERSON_001/request.json",
+  "saved_output_path": null,
+  "seed": 101
+}

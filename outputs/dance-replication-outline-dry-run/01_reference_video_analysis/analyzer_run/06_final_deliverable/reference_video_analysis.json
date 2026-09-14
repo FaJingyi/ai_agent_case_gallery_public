@@ -1,0 +1,489 @@
+{
+  "schema_version": "common_reference_video_analyzer.final.v1",
+  "reference_video": {
+    "path": "test_data/dance/2_2_case2-H3-original.mp4",
+    "duration_sec": 10.125,
+    "fps": 24.0,
+    "width": 768,
+    "height": 1344,
+    "media_url": "http://10.42.1.1:30100/v1/assets/asset_c6c2c84b8c3c4e86b2f02626d9899757/content",
+    "orientation": "vertical"
+  },
+  "video_generation_context": {
+    "scene": {
+      "dominant_scene_types": [
+        "户外开阔场地"
+      ],
+      "common_background_elements": [
+        "混凝土画线地面",
+        "看台栏杆",
+        "阴沉天空"
+      ],
+      "common_props": [],
+      "spatial_depth_pattern": "地面—人物—背景三层"
+    },
+    "spatial_framing": {
+      "common_shot_sizes": [
+        "全景/全身"
+      ],
+      "common_compositions": [
+        "中心构图"
+      ],
+      "common_angles": [
+        "平视固定机位"
+      ],
+      "frame_usage_pattern": "主体居中，保留上下空间"
+    },
+    "visual_style": {
+      "lighting": "阴天漫射自然光，无强烈阴影",
+      "color_palette": "偏冷、低饱和度",
+      "contrast": "低对比",
+      "texture": "真实户外质感",
+      "mood": "冷静、专注",
+      "art_direction_or_realism": "写实纪录感",
+      "shooting_feel": "固定机位、竖屏"
+    },
+    "subject": {
+      "primary_subject": "一名年轻男性",
+      "subject_type": "person",
+      "distinctive_features": [
+        "米白色连帽卫衣且帽子戴起",
+        "深棕色短裤",
+        "白色袜鞋"
+      ],
+      "attention_weight": "高"
+    },
+    "action": {
+      "dominant_motion_types": [
+        "连续舞蹈肢体动作"
+      ],
+      "dominant_interactions": [
+        "双脚与地面接触",
+        "单脚支撑"
+      ]
+    },
+    "camera": {
+      "common_movements": [
+        "固定机位"
+      ],
+      "common_stability": "稳定",
+      "focal_length_feel": "中焦"
+    },
+    "transition": {
+      "common_transition_types": [],
+      "match_methods": [],
+      "cut_rhythm": "single continuous shot"
+    },
+    "visual_memory_points": [
+      {
+        "memory_id": "vm_001",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 0.5,
+          "end": 10.0
+        },
+        "type": "micro_action",
+        "detail": "连续舞蹈动作链：双臂伸展收回、握拳前伸、交叉步与踢腿、单脚支撑点地，重心左右移动并上下起伏，节拍间有停顿，人物始终面向镜头",
+        "preserve": [
+          "动作链的时间顺序",
+          "重心左右转移与上下起伏",
+          "单脚支撑与点地的接触关系",
+          "节拍停顿"
+        ],
+        "adapt": [
+          "具体舞种与舞步组合",
+          "人物与场景外观",
+          "服装与配色"
+        ],
+        "avoid": [
+          "源视频人物身份"
+        ],
+        "evidence_refs": [
+          "02_visual_analysis/scene_visual_vlm_responses/VS001.json#Q3",
+          "04_professional_visual_analysis/professional_visual_analysis.json"
+        ]
+      }
+    ]
+  },
+  "script_construction_context": {
+    "structure_type": "linear",
+    "beats": [
+      {
+        "beat_id": "B001",
+        "type": "opening_hook",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "以静止站姿与全身环境建立主体与场地",
+        "evidence_refs": [
+          "02_visual_analysis/scene_visual_analysis.json#shot1"
+        ]
+      },
+      {
+        "beat_id": "B002",
+        "type": "proof",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "连续舞蹈动作链逐步展开，呈现节奏与技巧",
+        "evidence_refs": [
+          "02_visual_analysis/scene_visual_analysis.json#shot1"
+        ]
+      },
+      {
+        "beat_id": "B003",
+        "type": "closing",
+        "scene_ids": [
+          "SC001"
+        ],
+        "information_delta": "舞蹈持续推进并在镜头结束时收束，无口播或 CTA",
+        "evidence_refs": [
+          "02_visual_analysis/scene_visual_analysis.json#shot1"
+        ]
+      }
+    ],
+    "progression": {
+      "emotion": [
+        "冷静开场→节奏推进→保持能量"
+      ],
+      "rhythm": [
+        "静态起手→持续中高速舞蹈"
+      ],
+      "information": [
+        "主体→环境→完整动作链"
+      ]
+    },
+    "script_memory_points": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002",
+          "B003"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 10.125
+        },
+        "type": "emotional_arc",
+        "detail": "单镜头内由静止站姿起手，逐步进入持续舞蹈并保持能量，形成从静到动、由缓入疾的节奏弧线",
+        "preserve": [
+          "静—动的节奏弧线",
+          "动作能量逐步推进",
+          "结尾自然收束"
+        ],
+        "adapt": [
+          "具体舞种与舞步",
+          "人物与场景",
+          "结尾呈现方式"
+        ],
+        "avoid": [
+          "源视频人物身份",
+          "源视频歌曲人声/音乐"
+        ],
+        "evidence_refs": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ]
+  },
+  "video_prompt_source": {
+    "global_static": "竖屏户外场地，灰色混凝土地面并带白色画线，背景为看台/栏杆/立柱与阴沉天空；阴天漫射光，整体偏冷、低饱和度，写实纪录质感。",
+    "global_camera": "固定机位，平视全身取景，主体居中，焦点全程锁定人物，无推拉摇移。",
+    "shot_timeline": [
+      {
+        "shot_id": "shot1",
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 10.125
+        },
+        "static": "年轻男性主体，位于户外空旷场地中央；背景为看台、金属栏杆与立柱；全景全身取景、中心构图、平视固定机位；阴天冷调漫射光；画面无文字/logo/UI。",
+        "dynamic": "连续舞蹈：起始双脚分开站立、双手自然下垂；随后双臂向两侧伸展并收回、腿部交叉步与踢腿；中段出现类似握拳前伸收拳的节拍动作；后半段为单脚支撑、另一脚点地或抬起的流畅舞步，手臂随身体律动摆动；身体重心左右移动并上下起伏，节拍间有停顿；人物始终面向镜头。",
+        "knowledge_terms": [
+          "中心构图",
+          "全景/全身取景",
+          "时间顺序描述",
+          "冷色温"
+        ],
+        "state_relations": [
+          {
+            "boundary": "shot1_initial",
+            "observed_changes": [],
+            "continuity": [
+              "单一连续镜头内人物、服装、场景与光线保持不变"
+            ],
+            "before_after_detail": "无跨镜头变化；镜头内由静止站姿发展到连续舞步",
+            "newly_revealed": "舞蹈动作链与节拍由静止逐渐展开",
+            "uncertainty": "镜头内阶段边界为估计值",
+            "confidence": "high"
+          }
+        ],
+        "special_mechanisms": [],
+        "prompt_ready_description": "竖屏固定机位全身中全景，一位主体居中站立在户外混凝土场地，背景为看台栏杆与阴沉天空；画面以连续舞蹈动作从静止站姿展开到摆臂、握拳前伸、交叉步踢腿与单脚支撑点地，重心左右转移并上下起伏，节拍间有短停顿；阴天冷调漫射光，写实纪录质感，全程无剪切。"
+      }
+    ],
+    "cross_shot_relations": [],
+    "special_mechanisms": [],
+    "state_relation_summary": [
+      {
+        "scope": "VS001",
+        "summary": "单镜头内状态连续无跳变，仅动作阶段由静止推进到持续舞蹈",
+        "observed_changes": [],
+        "confidence": "high"
+      }
+    ],
+    "priority_memory_points": [
+      "vm_001"
+    ]
+  },
+  "scenes": [
+    {
+      "id": "SC001",
+      "source_scene_ids": [],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 10.125
+      },
+      "duration_sec": 10.125,
+      "video_generation": {
+        "scene": {
+          "scene_type": "户外空旷场地",
+          "location_description": "户外体育场看台/球场区域，灰色混凝土地面并画有白色线条",
+          "background_elements": [
+            "红色看台座椅",
+            "金属栏杆",
+            "立柱",
+            "阴沉天空"
+          ],
+          "foreground_elements": [
+            "灰色混凝土地面与白色画线"
+          ],
+          "props": [],
+          "spatial_depth": "前景地面—中景人物—背景看台"
+        },
+        "spatial_framing": {
+          "shot_size": "全景/全身取景",
+          "shot_size_observation": "竖屏中人物全身可见",
+          "subject_position": "画面中央",
+          "camera_angle": "平视固定机位",
+          "foreground_midground_background": "地面—人物—看台三层",
+          "frame_usage": "主体居中",
+          "negative_space": "主体两侧与上方留有天空与地面空间",
+          "text_safe_area_hint": "无文字叠加"
+        },
+        "visual_style": {
+          "lighting": "阴天漫射自然光，无强烈阴影",
+          "color_palette": "偏冷、低饱和度",
+          "contrast": "低对比",
+          "texture": "真实户外质感",
+          "mood": "冷静、专注",
+          "art_direction_or_realism": "写实纪录感",
+          "shooting_feel": "固定机位、竖屏"
+        },
+        "subject": {
+          "primary_subject": "一名年轻男性",
+          "subject_type": "person",
+          "secondary_subjects": [],
+          "shape_color_material": "米白色卫衣+深棕色短裤+白色袜鞋",
+          "size_relationship": "全身入画，占画面主体高度",
+          "distinctive_features": [
+            "米白色连帽卫衣且帽子戴起",
+            "深棕色运动短裤",
+            "白色中筒袜",
+            "白色运动鞋"
+          ],
+          "visibility": "clear",
+          "attention_weight": "高"
+        },
+        "action": {
+          "action": "连续舞蹈",
+          "motion_type": "肢体舞蹈",
+          "motion_direction": "左右+上下",
+          "motion_speed": "较快",
+          "interaction": "无对象交互",
+          "key_pose_or_moment": "单脚支撑、另一脚抬起/点地",
+          "action_sequence": "站立→摆臂伸展收回→握拳前伸→交叉步踢腿→单脚支撑点地",
+          "contact_points": "双脚/单脚与地面接触"
+        },
+        "camera": {
+          "movement_type": "固定机位",
+          "movement_speed": "静止",
+          "focal_length_feel": "中焦",
+          "focus_behavior": "焦点锁定人物",
+          "stability": "稳定",
+          "camera_subject_relationship": "正面平视全身"
+        },
+        "visual_memory_points": [
+          "vm_001"
+        ],
+        "transition_in": {},
+        "transition_out": {}
+      },
+      "script_generation": {
+        "function": "单一场景舞蹈表演",
+        "event": "单主体完成一段连续舞蹈",
+        "information_delta": "呈现主体/环境/完整动作链",
+        "text_slots": []
+      },
+      "shots": [
+        {
+          "id": "SC001_SH001",
+          "scene_id": "SC001",
+          "time_range_sec": {
+            "start": 0.0,
+            "end": 10.125
+          },
+          "duration_sec": 10.125,
+          "time_precision": "estimated",
+          "video_generation": {
+            "spatial_framing": {
+              "shot_size": "全景/全身取景",
+              "shot_size_observation": "竖屏全身",
+              "subject_position": "画面中央",
+              "camera_angle": "平视固定机位"
+            },
+            "subject": {
+              "primary_subject": "一名年轻男性",
+              "distinctive_features": [
+                "米白色连帽卫衣且帽子戴起",
+                "深棕色运动短裤",
+                "白色袜鞋"
+              ],
+              "attention_weight": "高"
+            },
+            "action": {
+              "action": "连续舞蹈",
+              "motion_type": "肢体舞蹈",
+              "motion_direction": "左右+上下",
+              "motion_speed": "较快",
+              "interaction": "无对象交互",
+              "action_sequence": "站立→摆臂→握拳前伸→交叉步踢腿→单脚支撑点地",
+              "contact_points": "双脚/单脚与地面接触"
+            },
+            "camera": {
+              "movement_type": "固定机位",
+              "movement_speed": "静止",
+              "stability": "稳定"
+            },
+            "visual_memory_points": [
+              "vm_001"
+            ],
+            "transition_to_next": {}
+          },
+          "script_generation": {
+            "function": "舞蹈表演展示",
+            "event": "单主体在户外场地完成一段连续舞蹈",
+            "information_delta": "观众看到人物外观、场地环境与完整舞蹈动作链",
+            "text_slots": []
+          },
+          "evidence_refs": [
+            "02_visual_analysis/scene_visual_analysis.json#shot1"
+          ],
+          "uncertainties": [
+            "镜头内阶段边界为估计值"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        "01_video_segments/video_segment_plan.json#VS001"
+      ],
+      "uncertainties": []
+    }
+  ],
+  "relations": [],
+  "memory_points": {
+    "visual": [
+      {
+        "memory_id": "vm_001",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 0.5,
+          "end": 10.0
+        },
+        "type": "micro_action",
+        "detail": "连续舞蹈动作链：双臂伸展收回、握拳前伸、交叉步与踢腿、单脚支撑点地，重心左右移动并上下起伏，节拍间有停顿，人物始终面向镜头",
+        "preserve": [
+          "动作链的时间顺序",
+          "重心左右转移与上下起伏",
+          "单脚支撑与点地的接触关系",
+          "节拍停顿"
+        ],
+        "adapt": [
+          "具体舞种与舞步组合",
+          "人物与场景外观",
+          "服装与配色"
+        ],
+        "avoid": [
+          "源视频人物身份"
+        ],
+        "evidence_refs": [
+          "02_visual_analysis/scene_visual_vlm_responses/VS001.json#Q3",
+          "04_professional_visual_analysis/professional_visual_analysis.json"
+        ]
+      }
+    ],
+    "script": [
+      {
+        "memory_id": "sm_001",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002",
+          "B003"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 10.125
+        },
+        "type": "emotional_arc",
+        "detail": "单镜头内由静止站姿起手，逐步进入持续舞蹈并保持能量，形成从静到动、由缓入疾的节奏弧线",
+        "preserve": [
+          "静—动的节奏弧线",
+          "动作能量逐步推进",
+          "结尾自然收束"
+        ],
+        "adapt": [
+          "具体舞种与舞步",
+          "人物与场景",
+          "结尾呈现方式"
+        ],
+        "avoid": [
+          "源视频人物身份",
+          "源视频歌曲人声/音乐"
+        ],
+        "evidence_refs": [
+          "B001",
+          "B002",
+          "B003"
+        ]
+      }
+    ],
+    "audio": []
+  },
+  "asr_status": "ok",
+  "audio_analysis": {
+    "status": "skipped",
+    "classification": "suspected_singing_or_music_vocals"
+  },
+  "evidence_refs": [
+    "01_video_segments/video_segment_plan.json",
+    "02_visual_analysis/scene_visual_analysis.json",
+    "03_cross_scene_visual/cross_scene_visual_analysis.json",
+    "04_professional_visual_analysis/professional_visual_analysis.json",
+    "05_script_analysis/global_script_structure.json"
+  ],
+  "uncertainties": [
+    "人物身份未知",
+    "舞种名称未知",
+    "背景看台细节受距离限制"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "common_replication_outline.target_asset_vlm_responses.v1",
+  "responses": [],
+  "notes": [
+    "无图片/视频目标素材，未调用 VLM"
+  ]
+}

@@ -1,0 +1,793 @@
+{
+  "schema_version": "common_reference_video_analyzer.scene_visual.v1",
+  "segment_id": "VS001",
+  "video_read_status": {
+    "observed_whole_segment": true,
+    "overall_confidence": "high",
+    "limits": [
+      "极快硬切，部分镜头仅0.5-1s，单帧采样下手部细节可能不清",
+      "部分场景背景较杂，焦点集中在前景人物与产品"
+    ]
+  },
+  "shot_timeline": [
+    {
+      "shot_id": "VS001:shot1",
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 2.0
+      },
+      "static_visual": {
+        "subject": "长发女子，黄绿色针织开衫+白色内搭+白裤，明亮室内，白墙/木地板/米色沙发，前景一瓶牛奶，画面下方白色中文字幕“向全世界”。平视中景，主体居中，环境信息清晰。",
+        "shot_size": "中景",
+        "camera_angle": "平视正面"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子正面站立，双手在腹部位置握住牛奶瓶，身体轻微晃动，微笑看向镜头，镜头静止。"
+      },
+      "state_relations": [
+        {
+          "position": "initial_state",
+          "source_ids": [
+            "VS001:shot1"
+          ],
+          "time_range_sec": {
+            "start": 0.0,
+            "end": 2.0
+          },
+          "visible_state": "女子黄绿毛衣、手持未开封牛奶、室内居家环境。",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot2",
+      "time_range_sec": {
+        "start": 2.0,
+        "end": 3.0
+      },
+      "static_visual": {
+        "subject": "切换为广角/鱼眼视角的室内，地板纹理夸张；女子同shot1黄绿开衫；前景巨大牛奶瓶占据画面上半部；字幕“安利好喝的金典鲜活”。",
+        "shot_size": "广角仰视特写",
+        "camera_angle": "低角度仰视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手将牛奶瓶高高举起，瓶口朝向镜头形成强透视畸变，女子在背景中显得较小，保持微笑。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot1 -> shot2",
+          "time_range_sec": {
+            "start": 3.0,
+            "end": 3.0
+          },
+          "observed_changes": [
+            "composition",
+            "camera_motion",
+            "prop_overlay"
+          ],
+          "continuity": [
+            "person_styling",
+            "subject_usage_state"
+          ],
+          "before_after_detail": "镜头从平视中景变为广角/鱼眼仰视特写；牛奶瓶从腹部变为高举；字幕变化。",
+          "newly_revealed": "广角镜头下的空间畸变效果。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot3",
+      "time_range_sec": {
+        "start": 3.0,
+        "end": 4.0
+      },
+      "static_visual": {
+        "subject": "复古咖啡馆/店铺，黑白花纹地砖；女子灰色长款开衫+白T+深色裤；前景巨大多层红丝绒蛋糕。",
+        "shot_size": "前景特写",
+        "camera_angle": "低角度"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手托举蛋糕展示在镜头前，低角度/广角使蛋糕显得巨大。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot2 -> shot3",
+          "time_range_sec": {
+            "start": 4.0,
+            "end": 4.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state",
+            "prop_overlay"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景居家->店铺；服装黄绿毛衣->灰色开衫；手持物牛奶->蛋糕。",
+          "newly_revealed": "新场景与新服装。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot4",
+      "time_range_sec": {
+        "start": 4.0,
+        "end": 5.0
+      },
+      "static_visual": {
+        "subject": "布满微缩模型房屋的室内（商场中庭）；女子亮绿色羽绒服；前景牛奶瓶；字幕“INFO.09秒超瞬时杀菌 锁住鲜甜”。",
+        "shot_size": "中近景",
+        "camera_angle": "平视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手托举牛奶瓶，瓶身正对镜头，背景密集模型房屋。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot3 -> shot4",
+          "time_range_sec": {
+            "start": 5.0,
+            "end": 5.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state",
+            "prop_overlay"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景店铺->模型屋商场；服装灰开衫->绿羽绒服；手持物蛋糕->牛奶。",
+          "newly_revealed": "新场景与新服装。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot5",
+      "time_range_sec": {
+        "start": 5.0,
+        "end": 6.0
+      },
+      "static_visual": {
+        "subject": "户外街道，红砖地面；女子灰色开衫（同shot3）；前景一只巨大红色螃蟹模型，带白色花纹，几乎遮挡画面上半部；背景可见停放车辆。",
+        "shot_size": "前景遮挡大特写",
+        "camera_angle": "平视偏仰"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手托举巨大红色螃蟹，螃蟹占据画面大部分，人物在后方。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot4 -> shot5",
+          "time_range_sec": {
+            "start": 6.0,
+            "end": 6.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景室内->户外街道；服装绿羽绒服->灰开衫；手持物牛奶->红色螃蟹。",
+          "newly_revealed": "户外场景。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot6",
+      "time_range_sec": {
+        "start": 6.0,
+        "end": 7.0
+      },
+      "static_visual": {
+        "subject": "室内健身房，地面黄色数字标记(1-9)；女子黑色运动背心+灰短裤，扎马尾；前景牛奶瓶；背景健身器材与粉色墙面。",
+        "shot_size": "中近景",
+        "camera_angle": "平视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手托举牛奶瓶，瓶身正对镜头。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot5 -> shot6",
+          "time_range_sec": {
+            "start": 7.0,
+            "end": 7.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景户外->健身房；服装灰开衫->运动装；手持物螃蟹->牛奶。",
+          "newly_revealed": "健身房场景。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot7",
+      "time_range_sec": {
+        "start": 7.0,
+        "end": 8.0
+      },
+      "static_visual": {
+        "subject": "回到微缩模型房屋空间；女子绿色羽绒服；前景带笑脸图案的草帽；字幕“口感满分 不冰也好喝”。",
+        "shot_size": "前景遮挡特写",
+        "camera_angle": "平视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手托举草帽，草帽正对镜头并遮挡部分面部。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot6 -> shot7",
+          "time_range_sec": {
+            "start": 8.0,
+            "end": 8.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state",
+            "prop_overlay"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景健身房->模型屋商场；服装运动装->绿羽绒服；手持物牛奶->草帽。",
+          "newly_revealed": "草帽道具。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot8",
+      "time_range_sec": {
+        "start": 8.0,
+        "end": 9.0
+      },
+      "static_visual": {
+        "subject": "回到健身房；女子运动装；前景一对绿色哑铃。",
+        "shot_size": "前景特写",
+        "camera_angle": "平视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手握住绿色哑铃举在胸前/头部高度，哑铃正对镜头。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot7 -> shot8",
+          "time_range_sec": {
+            "start": 9.0,
+            "end": 9.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景模型屋商场->健身房；服装绿羽绒服->运动装；手持物草帽->哑铃。",
+          "newly_revealed": "哑铃道具。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot9",
+      "time_range_sec": {
+        "start": 9.0,
+        "end": 10.0
+      },
+      "static_visual": {
+        "subject": "户外广场，背景大型现代建筑；女子灰色开衫；前景牛奶瓶；字幕“金典鲜活纯牛奶”。",
+        "shot_size": "中近景",
+        "camera_angle": "平视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子双手托举牛奶瓶，瓶身正对镜头。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot8 -> shot9",
+          "time_range_sec": {
+            "start": 10.0,
+            "end": 10.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state",
+            "prop_overlay"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景健身房->户外广场；服装运动装->灰开衫；手持物哑铃->牛奶。",
+          "newly_revealed": "户外广场背景。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot10",
+      "time_range_sec": {
+        "start": 10.0,
+        "end": 11.0
+      },
+      "static_visual": {
+        "subject": "室内，黄色圆形装饰与彩色椅子；女子棕色毛衣；前景牛奶瓶；字幕“好喝到每一刻都想拥有”。",
+        "shot_size": "中景",
+        "camera_angle": "平视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子右手单手举起牛奶瓶，左手自然下垂或放在身侧。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot9 -> shot10",
+          "time_range_sec": {
+            "start": 11.0,
+            "end": 11.0
+          },
+          "observed_changes": [
+            "scene_location",
+            "outfit_accessories",
+            "subject_usage_state",
+            "prop_overlay"
+          ],
+          "continuity": [
+            "makeup_hair"
+          ],
+          "before_after_detail": "场景户外->室内；服装灰开衫->棕毛衣；手持物保持牛奶但动作变为单手举起。",
+          "newly_revealed": "新室内场景。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "shot_id": "VS001:shot11",
+      "time_range_sec": {
+        "start": 11.0,
+        "end": 15.0
+      },
+      "static_visual": {
+        "subject": "同shot10室内场景；女子棕色毛衣；牛奶瓶已打开。",
+        "shot_size": "中近景",
+        "camera_angle": "平视"
+      },
+      "dynamic_visual": {
+        "subject_motion": "女子将牛奶瓶举到嘴边仰头饮用，动作连贯，从举起瓶子到喝下牛奶。"
+      },
+      "state_relations": [
+        {
+          "position": "boundary_out",
+          "boundary": "shot10 -> shot11",
+          "time_range_sec": {
+            "start": 15.0,
+            "end": 15.0
+          },
+          "observed_changes": [
+            "subject_usage_state"
+          ],
+          "continuity": [
+            "scene_location",
+            "outfit_accessories",
+            "person_styling"
+          ],
+          "before_after_detail": "牛奶瓶从举起展示状态变为正在饮用状态（瓶口接触嘴唇）。",
+          "newly_revealed": "饮用动作。",
+          "uncertainty": "none",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "state_relation_observations": [
+    {
+      "position": "initial_state",
+      "shot_id": "VS001:shot1",
+      "visible_state": "女子黄绿毛衣、手持未开封牛奶、室内居家环境。",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot1 -> shot2",
+      "observed_changes": [
+        "composition",
+        "camera_motion",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "person_styling",
+        "subject_usage_state"
+      ],
+      "before_after_detail": "镜头从平视中景变为广角/鱼眼仰视特写；牛奶瓶从腹部变为高举；字幕变化。",
+      "newly_revealed": "广角镜头下的空间畸变效果。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot2 -> shot3",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景居家->店铺；服装黄绿毛衣->灰色开衫；手持物牛奶->蛋糕。",
+      "newly_revealed": "新场景与新服装。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot3 -> shot4",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景店铺->模型屋商场；服装灰开衫->绿羽绒服；手持物蛋糕->牛奶。",
+      "newly_revealed": "新场景与新服装。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot4 -> shot5",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景室内->户外街道；服装绿羽绒服->灰开衫；手持物牛奶->红色螃蟹。",
+      "newly_revealed": "户外场景。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot5 -> shot6",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景户外->健身房；服装灰开衫->运动装；手持物螃蟹->牛奶。",
+      "newly_revealed": "健身房场景。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot6 -> shot7",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景健身房->模型屋商场；服装运动装->绿羽绒服；手持物牛奶->草帽。",
+      "newly_revealed": "草帽道具。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot7 -> shot8",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景模型屋商场->健身房；服装绿羽绒服->运动装；手持物草帽->哑铃。",
+      "newly_revealed": "哑铃道具。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot8 -> shot9",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景健身房->户外广场；服装运动装->灰开衫；手持物哑铃->牛奶。",
+      "newly_revealed": "户外广场背景。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot9 -> shot10",
+      "observed_changes": [
+        "scene_location",
+        "outfit_accessories",
+        "subject_usage_state",
+        "prop_overlay"
+      ],
+      "continuity": [
+        "makeup_hair"
+      ],
+      "before_after_detail": "场景户外->室内；服装灰开衫->棕毛衣；手持物保持牛奶但动作变为单手举起。",
+      "newly_revealed": "新室内场景。",
+      "uncertainty": "none",
+      "confidence": "high"
+    },
+    {
+      "position": "boundary",
+      "boundary": "shot10 -> shot11",
+      "observed_changes": [
+        "subject_usage_state"
+      ],
+      "continuity": [
+        "scene_location",
+        "outfit_accessories",
+        "person_styling"
+      ],
+      "before_after_detail": "牛奶瓶从举起展示状态变为正在饮用状态（瓶口接触嘴唇）。",
+      "newly_revealed": "饮用动作。",
+      "uncertainty": "none",
+      "confidence": "high"
+    }
+  ],
+  "special_mechanism_observations": [
+    {
+      "mechanism_id": "VS001-SM1",
+      "time_range_or_boundary": "2.0-3.0s",
+      "type": "special_camera_motion",
+      "taxonomy": "wide_angle_fisheye_lens",
+      "evidence": "画面边缘明显弯曲，牛奶瓶因靠近镜头而显得巨大，背景人物显得较小",
+      "mechanics": "广角/鱼眼镜头近距离拍摄前景产品，制造夸张透视",
+      "replication_relevance": "突出前景产品，增加视觉冲击"
+    },
+    {
+      "mechanism_id": "VS001-SM2",
+      "time_range_or_boundary": "3.0-9.0s",
+      "type": "special_transition",
+      "taxonomy": "rapid_hard_cut_montage",
+      "evidence": "咖啡馆/商场/街道/健身房多场景快速硬切，单镜持续约1s",
+      "mechanics": "快速硬切不同场景与道具，营造多场景使用氛围",
+      "replication_relevance": "短镜头蒙太奇展示多场景适用性"
+    },
+    {
+      "mechanism_id": "VS001-SM3",
+      "time_range_or_boundary": "5.0-6.0s,7.0-8.0s,8.0-9.0s",
+      "type": "special_composition",
+      "taxonomy": "foreground_object_framing",
+      "evidence": "巨大螃蟹、草帽、哑铃占据画面大部分，人物在背景中",
+      "mechanics": "大尺寸道具作为前景框架，人物在后方形成趣味构图",
+      "replication_relevance": "增加趣味性和记忆点"
+    },
+    {
+      "mechanism_id": "VS001-SM4",
+      "time_range_or_boundary": "10.0-11.0s",
+      "type": "special_transition",
+      "taxonomy": "action_match_continuity",
+      "evidence": "从单手举起牛奶瓶到仰头饮用的连贯动作，场景与服装一致",
+      "mechanics": "动作匹配/连续动作衔接，跨镜头保持同一动作链",
+      "replication_relevance": "以连续动作完成展示到使用的过渡"
+    }
+  ],
+  "text_logo_ui_graphic_observations": [
+    {
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 2.0
+      },
+      "type": "post_overlay_subtitle",
+      "text": "向全世界",
+      "placement": "底部居中",
+      "dynamic": true
+    },
+    {
+      "time_range_sec": {
+        "start": 2.0,
+        "end": 3.0
+      },
+      "type": "post_overlay_subtitle",
+      "text": "安利好喝的金典鲜活",
+      "placement": "底部居中",
+      "dynamic": true
+    },
+    {
+      "time_range_sec": {
+        "start": 4.0,
+        "end": 5.0
+      },
+      "type": "post_overlay_subtitle",
+      "text": "INFO.09秒超瞬时杀菌 锁住鲜甜",
+      "placement": "底部居中",
+      "dynamic": true
+    },
+    {
+      "time_range_sec": {
+        "start": 7.0,
+        "end": 8.0
+      },
+      "type": "post_overlay_subtitle",
+      "text": "口感满分 不冰也好喝",
+      "placement": "底部居中",
+      "dynamic": true
+    },
+    {
+      "time_range_sec": {
+        "start": 9.0,
+        "end": 10.0
+      },
+      "type": "post_overlay_subtitle",
+      "text": "金典鲜活纯牛奶",
+      "placement": "底部居中",
+      "dynamic": true
+    },
+    {
+      "time_range_sec": {
+        "start": 10.0,
+        "end": 15.0
+      },
+      "type": "post_overlay_subtitle",
+      "text": "好喝到每一刻都想拥有",
+      "placement": "底部居中",
+      "dynamic": true
+    },
+    {
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 15.0
+      },
+      "type": "in_scene_package_text",
+      "text": "金典 / 金典鲜活 / 纯牛奶 / 0.09s",
+      "placement": "产品包装表面",
+      "dynamic": true
+    }
+  ],
+  "visual_memory_observations": [
+    {
+      "candidate_id": "vmc_1",
+      "type": "camera_motion",
+      "time_range_sec": {
+        "start": 2.0,
+        "end": 3.0
+      },
+      "detail": "广角/鱼眼镜头下牛奶瓶巨大、人物在背景中",
+      "preserve": [
+        "广角透视和近大远小关系，突出前景产品"
+      ],
+      "adapt": [
+        "随目标产品尺寸调整镜头距离"
+      ],
+      "avoid": [
+        "过度畸变导致产品不可辨认"
+      ]
+    },
+    {
+      "candidate_id": "vmc_2",
+      "type": "transition",
+      "time_range_sec": {
+        "start": 3.0,
+        "end": 9.0
+      },
+      "detail": "多场景快速硬切蒙太奇",
+      "preserve": [
+        "1-3秒短镜头快速串联多场景与道具的节奏"
+      ],
+      "adapt": [
+        "随目标主题替换具体场景与道具"
+      ],
+      "avoid": [
+        "切换过快导致主体不可辨"
+      ]
+    },
+    {
+      "candidate_id": "vmc_3",
+      "type": "composition",
+      "time_range_sec": {
+        "start": 5.0,
+        "end": 9.0
+      },
+      "detail": "巨大道具作为前景遮挡，人物在后方",
+      "preserve": [
+        "大道具前景框架与主体后置的空间关系"
+      ],
+      "adapt": [
+        "按目标主题选择普通大道具"
+      ],
+      "avoid": [
+        "道具遮挡过多使主体不可见"
+      ]
+    }
+  ],
+  "transition_memory_observations": [
+    {
+      "candidate_id": "tmc_1",
+      "time_range_or_boundary": "shot10 -> shot11",
+      "detail": "举瓶到饮用的动作连续衔接",
+      "preserve": [
+        "动作匹配/连续动作转场"
+      ],
+      "adapt": [
+        "替换为目标的展示到使用动作"
+      ],
+      "avoid": [
+        "照搬原产品包装与品牌"
+      ]
+    }
+  ],
+  "script_observation_cues": {
+    "visible_event_summary": "女子先展示产品，再以快速蒙太奇在多场景中用巨型道具展示产品，最后饮用并给出结尾标语。",
+    "attention_focus": "每镜以被托举的产品/道具为视觉焦点。",
+    "visible_information_summary": "先给产品名称与标语，随后给功效信息，最后收束到饮用体验与结尾标语。",
+    "screen_text_information": [
+      "向全世界",
+      "安利好喝的金典鲜活",
+      "INFO.09秒超瞬时杀菌 锁住鲜甜",
+      "口感满分 不冰也好喝",
+      "金典鲜活纯牛奶",
+      "好喝到每一刻都想拥有"
+    ],
+    "speech_or_mouth_movement_hint": "结尾有仰头饮用动作，未见明确口播；ASR 仅识别到极短噪声文本。"
+  },
+  "uncertainties": [
+    "部分镜头仅0.5-1s，手部抓握细节不清",
+    "背景人群/杂物细节不清"
+  ]
+}

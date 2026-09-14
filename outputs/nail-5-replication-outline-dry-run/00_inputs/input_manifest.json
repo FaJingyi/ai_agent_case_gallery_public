@@ -1,0 +1,41 @@
+{
+  "schema_version": "common_replication_outline.input_manifest.v1",
+  "skill_name": "common-video-replication-outline",
+  "replication_mode": "shot_structure",
+  "dry_run_boundary": "h3_request_package_only_no_video_generation",
+  "inputs": {
+    "reference_video": "/home/mx/jyfa/workdir/ai_agent_platform/test_data/nail-5/nail-5.mp4",
+    "user_input_dir": "/home/mx/jyfa/workdir/ai_agent_platform/test_data/nail-5/user_input",
+    "requirement_file": "/home/mx/jyfa/workdir/ai_agent_platform/test_data/nail-5/user_input/requirement.txt",
+    "user_assets": [
+      "/home/mx/jyfa/workdir/ai_agent_platform/test_data/nail-5/user_input/shangpin-3.png"
+    ],
+    "user_request": "将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。"
+  },
+  "config": {
+    "scene_threshold": 0.5,
+    "reference_video_h3_input_policy": {
+      "enabled": true,
+      "max_video_reference_duration_sec": 15
+    }
+  },
+  "reference_video_metadata": {
+    "width": 720,
+    "height": 1280,
+    "orientation": "vertical",
+    "fps": 30.0,
+    "duration_sec": 15.633333,
+    "total_frames": 445
+  },
+  "run_isolation": {
+    "resume_from": null,
+    "independent_run": true,
+    "historical_outputs_used": false
+  },
+  "normalized_input_summary": {
+    "reference_video_source": "user_provided",
+    "reference_video_role": "reference_video",
+    "user_asset_count": 1,
+    "business_context_provided": false
+  }
+}

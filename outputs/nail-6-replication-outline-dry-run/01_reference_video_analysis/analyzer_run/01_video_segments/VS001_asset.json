@@ -1,0 +1,13 @@
+{
+  "source_path": "test_data/nail-6/nail-6.mp4",
+  "asset_api_url": "http://10.42.1.1:30100/v1/assets",
+  "asset": {
+    "id": "asset_b2b5d57bdcef45348fb28f8d59f8657a",
+    "filename": "nail-6.mp4",
+    "content_type": "video/mp4",
+    "size_bytes": 2076501,
+    "sha256": "0f5c1856666c939b702430255b6a4b6364e911f2c34864d888fa52b4bf6b011b",
+    "url": "http://10.42.1.1:30100/v1/assets/asset_b2b5d57bdcef45348fb28f8d59f8657a/content"
+  },
+  "url": "http://10.42.1.1:30100/v1/assets/asset_b2b5d57bdcef45348fb28f8d59f8657a/content"
+}

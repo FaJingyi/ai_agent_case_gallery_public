@@ -1,0 +1,25 @@
+{
+  "schema_version": "common_reference_video_analyzer.run_manifest.v1",
+  "reference_video": "test_data/milk/milk.mp4",
+  "config_path": "backend/skills/common-reference-video-analyzer/config/model-routing.yaml",
+  "visual_status": "ok",
+  "asr_status": "partial",
+  "script_status": "ok",
+  "final_deliverable_status": "ok",
+  "audio_analysis_status": "skipped",
+  "video_segment_status": "ok",
+  "providers": {
+    "asset_upload": "asset_url",
+    "vlm": "qwen_vlm",
+    "asr": "gitee_ai",
+    "knowledge_search": "direct_md_files"
+  },
+  "errors": [
+    {
+      "step": "step5_asr",
+      "provider": "asr",
+      "message": "ASR returned only short noise text; speech_status=partial",
+      "artifact_path": "05_script_analysis/asr_transcript.json"
+    }
+  ]
+}

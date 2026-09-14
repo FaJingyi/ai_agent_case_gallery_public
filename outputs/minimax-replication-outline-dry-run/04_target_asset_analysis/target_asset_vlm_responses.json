@@ -1,0 +1,10 @@
+{
+  "schema_version": "common_replication_outline.target_asset_vlm_responses.v1",
+  "responses": [],
+  "notes": [
+    "no user image/video target assets were supplied; no VLM target-asset observation was required"
+  ],
+  "validation_flags": [
+    "no_user_assets_supplied"
+  ]
+}

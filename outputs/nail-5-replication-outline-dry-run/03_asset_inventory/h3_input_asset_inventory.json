@@ -1,0 +1,172 @@
+{
+  "schema_version": "common_replication_outline.h3_input_asset_inventory.v1",
+  "policy": "reference_video_default_included_if_within_15s",
+  "h3_material_mode": "reference_video_plus_reference_images",
+  "reference_video": {
+    "path": "test_data/nail-5/nail-5.mp4",
+    "media_url": "http://10.42.1.1:30100/v1/assets/asset_13a9ed64612548b2a0f1bd8c80e8c701/content",
+    "duration_sec": 15.633333,
+    "analyzed_duration_sec": 15.0
+  },
+  "reference_video_h3_input_policy": {
+    "enabled": true,
+    "max_video_reference_duration_sec": 15,
+    "mode": "first_15s_excerpt",
+    "source_time_range_sec": {
+      "start": 0.0,
+      "end": 15.0
+    }
+  },
+  "eligible_h3_input_assets": [
+    {
+      "asset_id": "h3_asset_reference_video_excerpt",
+      "input_path": "outputs/nail-5-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_13a9ed64612548b2a0f1bd8c80e8c701/content",
+      "media_type": "video",
+      "declared_slot": "reference_video",
+      "resolved_slot": "reference_video",
+      "packager_role": "motion_camera_timing_reference",
+      "source": "reference_video_excerpt",
+      "allowed": true,
+      "duration_sec": 15.0,
+      "source_time_range_sec": {
+        "start": 0.0,
+        "end": 15.0
+      },
+      "allowed_h3_uses": [
+        "motion_structure_reference",
+        "camera_language_reference",
+        "beat_timing_reference",
+        "single_shot_rhythm_reference"
+      ]
+    },
+    {
+      "asset_id": "h3_asset_user_001",
+      "input_path": "test_data/nail-5/user_input/shangpin-3.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_e19e3a65f9d442428c4cc224e5799858/content",
+      "media_type": "image",
+      "declared_slot": "unknown",
+      "resolved_slot": "product",
+      "packager_role": "target_nail_art_pattern_reference",
+      "source": "user_assets",
+      "allowed": true,
+      "allowed_h3_uses": [
+        "target_subject_appearance_reference",
+        "nail_pattern_replacement_reference"
+      ],
+      "packaged_media_url": "http://10.42.1.1:30100/v1/assets/asset_c312d5e2650f41258b8483c0c3aeeb48/content",
+      "packaged_input_path": "09_h3_package/assets/global_material_1.png"
+    },
+    {
+      "asset_id": "h3_asset_frame_person_001",
+      "input_path": "08_reference_frames/frame_person_001.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_8e6bcab6481942dc92b975e1ef2d51cc/content",
+      "media_type": "image",
+      "declared_slot": "person_reference",
+      "resolved_slot": "person_reference",
+      "packager_role": "consistency_reference",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "reference_frame_source": "generated_from_outline",
+      "h3_role": "person_reference",
+      "target_bindings": [
+        "ge_person_001",
+        "tu_001",
+        "tu_002",
+        "tu_003",
+        "tu_004",
+        "tu_005",
+        "tu_006",
+        "tu_007",
+        "tu_008",
+        "seg_001_01",
+        "seg_001_02",
+        "seg_002_01",
+        "seg_002_02",
+        "seg_003_01",
+        "seg_004_01",
+        "seg_004_02",
+        "seg_005_01",
+        "seg_005_02",
+        "seg_006_01",
+        "seg_006_02",
+        "seg_007_01",
+        "seg_007_02",
+        "seg_008_01",
+        "seg_008_02"
+      ],
+      "allowed_h3_uses": [
+        "person_appearance_reference",
+        "identity_and_outfit_consistency_reference"
+      ]
+    },
+    {
+      "asset_id": "h3_asset_frame_scene_001",
+      "input_path": "08_reference_frames/frame_scene_001.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_9decf1b059164c70b1e7516071696b81/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "consistency_reference",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "reference_frame_source": "generated_from_outline",
+      "h3_role": "scene_reference",
+      "target_bindings": [
+        "ge_scene_001",
+        "tu_001",
+        "seg_001_01",
+        "seg_001_02"
+      ],
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "space_and_lighting_consistency_reference"
+      ]
+    },
+    {
+      "asset_id": "h3_asset_frame_scene_002",
+      "input_path": "08_reference_frames/frame_scene_002.png",
+      "media_url": "http://10.42.1.1:30100/v1/assets/asset_2772f4fe6ea04966b44fa1022d8e8be7/content",
+      "media_type": "image",
+      "declared_slot": "scene_reference",
+      "resolved_slot": "scene_reference",
+      "packager_role": "consistency_reference",
+      "source": "generated_reference_frame",
+      "allowed": true,
+      "reference_frame_source": "generated_from_outline",
+      "h3_role": "scene_reference",
+      "target_bindings": [
+        "ge_scene_002",
+        "tu_002",
+        "tu_003",
+        "tu_004",
+        "tu_005",
+        "tu_006",
+        "tu_007",
+        "tu_008",
+        "seg_002_01",
+        "seg_002_02",
+        "seg_003_01",
+        "seg_004_01",
+        "seg_004_02",
+        "seg_005_01",
+        "seg_005_02",
+        "seg_006_01",
+        "seg_006_02",
+        "seg_007_01",
+        "seg_007_02",
+        "seg_008_01",
+        "seg_008_02"
+      ],
+      "allowed_h3_uses": [
+        "scene_appearance_reference",
+        "space_and_lighting_consistency_reference"
+      ]
+    }
+  ],
+  "excluded_assets": [],
+  "generated_reference_frames_policy": "append_only_after_step8_quality_check_and_usable_output",
+  "validation_flags": [
+    "source_video_truncated_to_first_15s"
+  ]
+}

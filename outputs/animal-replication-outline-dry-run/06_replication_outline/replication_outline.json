@@ -1,0 +1,2644 @@
+{
+  "schema_version": "common_replication_outline.v2",
+  "status": "ready_with_assumptions",
+  "time_precision_policy": {
+    "precision": "one_decimal",
+    "method": "truncate"
+  },
+  "generation_scope": "single_generation_task",
+  "source_reference_analysis": {
+    "path": "01_reference_video_analysis/reference_video_analysis.json",
+    "schema_version": "common_reference_video_analyzer.final.v1",
+    "duration_sec": 5.875,
+    "shot_count": 1,
+    "scene_count": 1,
+    "structure_type": "linear",
+    "asr_status": "ok_no_speech"
+  },
+  "target_video": {
+    "target_video_id": "TV001",
+    "duration_sec": 5.8,
+    "duration_source": "reference_video_duration_truncated",
+    "audio_mode": "unsupported_skipped",
+    "global_visual_brief": "户外草坪明亮自然日光下，三只黑白灰花色的哈士奇并排站立，随后同时下蹲、朝镜头小跑汇聚，镜头缓慢推近，最右侧哈士奇上抬前爪搭上同伴背部，最终组成纵向叠站造型并保持面向镜头。",
+    "global_script_brief": "以三只哈士奇整齐站位建立对象，同步动作铺垫，纵向叠站结果揭示，静态保持收束。",
+    "target_world_note": "场景与主体按用户文本与用户素材重建；不复用参考视频的室内空间、家具、售货机、卡通立牌与女性背影。"
+  },
+  "reference_element_treatment_plan": [
+    {
+      "element_id": "EE001",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.shot_timeline[0].time_range_sec",
+      "element_type": "time_structure",
+      "observed_reference_element": "单一连续镜头，总时长 5.875s，含开场/铺垫/结果/收束四段内部节拍。",
+      "decision": "inherit",
+      "preserve": [
+        "总时长与内部节拍顺序",
+        "单一连续镜头结构"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "TV001",
+        "SC001"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#script_construction_context.beats"
+      ]
+    },
+    {
+      "element_id": "EE002",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.spatial_framing",
+      "element_type": "shot_structure",
+      "observed_reference_element": "中远景到中景的单一镜头，平视机位，主体位于画面中部。",
+      "decision": "inherit",
+      "preserve": [
+        "景别由中远景收紧到中景",
+        "平视机位",
+        "主体位于画面中部"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "SC001"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.spatial_framing"
+      ]
+    },
+    {
+      "element_id": "EE003",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[1]",
+      "element_type": "composition",
+      "observed_reference_element": "三主体由水平并排队形重组为下方承载、上方站立的纵向叠站构图。",
+      "decision": "inherit",
+      "preserve": [
+        "横向排列到纵向叠站的队形重组关系",
+        "结尾构图稳定保持"
+      ],
+      "adapt_with": [
+        "主体替换为三只哈士奇"
+      ],
+      "discard": [],
+      "target_binding": [
+        "SEG005",
+        "SEG006"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[0]",
+        "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[1]"
+      ]
+    },
+    {
+      "element_id": "EE004",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[0]",
+      "element_type": "camera",
+      "observed_reference_element": "主体前移时摄影机沿光轴缓慢推近/跟拍，景别由中远景收紧到中景。",
+      "decision": "inherit",
+      "preserve": [
+        "沿光轴缓慢推近/跟拍",
+        "景别随主体前移收紧的对应关系"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "SEG003",
+        "SEG004"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[1]",
+        "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[0]"
+      ]
+    },
+    {
+      "element_id": "EE005",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.action",
+      "element_type": "action_structure",
+      "observed_reference_element": "并排站立 → 同时下蹲 → 朝镜头汇聚 → 上抬搭背 → 完成叠站 → 保持造型的动作阶段顺序。",
+      "decision": "inherit",
+      "preserve": [
+        "动作阶段顺序",
+        "运动方向与速度变化（铺垫-加速-停顿）"
+      ],
+      "adapt_with": [
+        "水豚动作改写为哈士奇动作"
+      ],
+      "discard": [],
+      "target_binding": [
+        "SC001",
+        "SEG001",
+        "SEG002",
+        "SEG003",
+        "SEG004",
+        "SEG005",
+        "SEG006"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.action.action_sequence"
+      ]
+    },
+    {
+      "element_id": "EE006",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.action.interaction",
+      "element_type": "interaction_relation",
+      "observed_reference_element": "个体踩站到同伴背部形成承重支撑关系。",
+      "decision": "inherit",
+      "preserve": [
+        "下方承重、上方站立的支撑关系",
+        "接触点与重心转移"
+      ],
+      "adapt_with": [
+        "水豚踩踏改写为哈士奇前爪搭背/踩踏"
+      ],
+      "discard": [],
+      "target_binding": [
+        "SEG004",
+        "SEG005",
+        "SEG006"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[2]"
+      ]
+    },
+    {
+      "element_id": "EE007",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#video_generation_context.visual_style",
+      "element_type": "visual_style",
+      "observed_reference_element": "室内暖色调均匀照明、中低反差、木地板高反光、真实纪实。",
+      "decision": "adapt",
+      "preserve": [
+        "真实纪实方向",
+        "中低反差",
+        "自然稳定的拍摄质感"
+      ],
+      "adapt_with": [
+        "改为户外明亮自然日光与柔和草地阴影；绿色为主、黄绿高光的色调"
+      ],
+      "discard": [
+        "室内暖色均匀照明",
+        "高反光木地板质感"
+      ],
+      "target_binding": [
+        "SCENE001"
+      ],
+      "evidence_refs": [
+        "test_data/animal/user_input/requirement.txt",
+        "04_target_asset_analysis/target_asset_analysis.json#user_declared_intent.scene_or_context_descriptions"
+      ]
+    },
+    {
+      "element_id": "EE008",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.scene",
+      "element_type": "scene_content",
+      "observed_reference_element": "室内公共休息/办公空间：光滑木地板、白色圆圈标记、灰色沙发、黄色木椅、自动售货机、绿植、红披风卡通立牌。",
+      "decision": "adapt",
+      "preserve": [
+        "空间深度关系（前中后景）",
+        "背景密度与虚化程度",
+        "主体活动区位于中景"
+      ],
+      "adapt_with": [
+        "按用户文本改为户外草坪：绿色草地、自然日光、远景树冠与天空"
+      ],
+      "discard": [
+        "白色圆圈地板标记",
+        "灰色沙发",
+        "黄色木椅",
+        "带彩色图案的自动售货机",
+        "绿植盆栽",
+        "红披风卡通人物立牌"
+      ],
+      "target_binding": [
+        "SCENE001"
+      ],
+      "evidence_refs": [
+        "test_data/animal/user_input/requirement.txt",
+        "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.scene"
+      ]
+    },
+    {
+      "element_id": "EE009",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.subject",
+      "element_type": "subject_content",
+      "observed_reference_element": "三只棕色水豚，体型敦实、棕色短毛、圆钝吻部、小耳。",
+      "decision": "adapt",
+      "preserve": [
+        "三主体同屏、等大并列的数量与位置关系",
+        "主体位于画面中部"
+      ],
+      "adapt_with": [
+        "dog.jpeg 提供单只哈士奇外观；其余两只按同品种生成"
+      ],
+      "discard": [
+        "水豚物种外观",
+        "棕色短毛"
+      ],
+      "visible_difference_anchor": [
+        "犬类哈士奇：黑白灰三色双层被毛、白色面罩、竖立三角耳、蓬松卷尾",
+        "吐舌活泼神态与修长四肢",
+        "物种/毛色/面部结构与参考水豚明显不同"
+      ],
+      "target_binding": [
+        "P001"
+      ],
+      "evidence_refs": [
+        "test_data/animal/user_input/dog.jpeg",
+        "04_target_asset_analysis/target_asset_analysis.json#asset_level_analysis[0].observable_facts"
+      ]
+    },
+    {
+      "element_id": "EE010",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.subject.secondary_subjects",
+      "element_type": "person_or_body",
+      "observed_reference_element": "左侧前景一位身穿白衣白裤的女性背影。",
+      "decision": "discard",
+      "preserve": [],
+      "adapt_with": [],
+      "discard": [
+        "女性背影（局部）"
+      ],
+      "target_binding": [
+        "SCENE001"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#video_generation_context.scene.spatial_depth_pattern"
+      ]
+    },
+    {
+      "element_id": "EE011",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#video_generation_context.transition",
+      "element_type": "transition",
+      "observed_reference_element": "单一连续镜头，无镜头切换。",
+      "decision": "inherit",
+      "preserve": [
+        "无剪切的单一连续镜头"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "SC001"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#video_generation_context.transition"
+      ]
+    },
+    {
+      "element_id": "EE012",
+      "source_ref": "01_reference_video_analysis/reference_video_analysis.json#memory_points.audio",
+      "element_type": "unsupported_audio",
+      "observed_reference_element": "ASR 无有效语音；音乐/BGM/音效/声音情绪未分析。",
+      "decision": "discard",
+      "preserve": [],
+      "adapt_with": [],
+      "discard": [
+        "音乐/BGM",
+        "音效",
+        "疑似唱歌",
+        "声音情绪",
+        "卡点节奏"
+      ],
+      "target_binding": [
+        "TV001"
+      ],
+      "evidence_refs": [
+        "01_reference_video_analysis/reference_video_analysis.json#audio_analysis",
+        "01_reference_video_analysis/reference_video_analysis.json#asr_status"
+      ]
+    }
+  ],
+  "explicit_replacement_coverage": {
+    "has_explicit_replacement": true,
+    "source_entity": "三只棕色水豚（室内）",
+    "target_entity": "三只哈士奇（户外草坪）",
+    "affected_source_ids": [
+      "SC001",
+      "SC001_SH001"
+    ],
+    "affected_segment_ids": [
+      "SEG001",
+      "SEG002",
+      "SEG003",
+      "SEG004",
+      "SEG005",
+      "SEG006"
+    ],
+    "missing_segment_ids": [],
+    "visibility_requirement": "三只哈士奇在 SEG001-SEG002 以并排可见主体出现，在 SEG003-SEG006 全程作为可见主体承担动作与叠站造型",
+    "target_asset_ids": [
+      "A001"
+    ],
+    "status": "passed"
+  },
+  "reference_mapping_and_self_check_pass": {
+    "mapped_units": [
+      {
+        "unit_id": "SC001",
+        "segment_ids": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "source_refs": [
+          "SC001",
+          "SC001_SH001",
+          "VS001:shot1"
+        ],
+        "decision_refs": [
+          "EE001",
+          "EE002",
+          "EE003",
+          "EE004",
+          "EE005",
+          "EE006",
+          "EE007",
+          "EE008",
+          "EE009",
+          "EE010",
+          "EE011",
+          "EE012"
+        ],
+        "content_subject_type": "mixed",
+        "target_content": "三只哈士奇在户外草坪上完成从并排站立到纵向叠站的协同表演。",
+        "shooting_inheritance": [
+          "单一连续镜头",
+          "缓慢推近/跟拍",
+          "横向到纵向构图重组",
+          "前景/中景/背景空间层次",
+          "铺垫-加速-停顿节奏"
+        ],
+        "target_bindings": [
+          {
+            "binding_id": "TB001",
+            "target": "target_video",
+            "asset_id": "A001",
+            "role": "primary_subject_reference"
+          },
+          {
+            "binding_id": "TB002",
+            "target": "SC001",
+            "asset_id": "REF_VIDEO_VS001",
+            "role": "motion_camera_timing_reference"
+          }
+        ],
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source",
+          "04_target_asset_analysis/target_asset_analysis.json#binding_candidates"
+        ]
+      }
+    ],
+    "mapping_self_check": {
+      "memory_point_check": {
+        "status": "passed",
+        "checked_memory_ids": [
+          "vm_001",
+          "vm_002",
+          "vm_003"
+        ],
+        "special_mechanism_coverage": [
+          "SMO_CAM_001",
+          "SMO_COMP_001",
+          "SMO_COMP_001_HOLD"
+        ],
+        "notes": [
+          "特殊构图（横向→纵向叠站）与特殊运镜（推近/跟拍）均已在对应 segment 输出 prompt_sentence"
+        ]
+      },
+      "dynamic_detail_check": {
+        "status": "passed",
+        "checked_segments": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "notes": [
+          "动作起点/过程/终点、运动路径、姿势变化与承重关系均已记录；未补写静态外观"
+        ],
+        "state_relation_check": {
+          "status": "passed",
+          "notes": [
+            "连续性、新揭示（叠站造型）与不确定性（结尾静止时长）已映射"
+          ]
+        }
+      }
+    },
+    "replacement_binding_check": {
+      "status": "passed",
+      "target_entity": "三只哈士奇",
+      "affected_segment_ids": [
+        "SEG001",
+        "SEG002",
+        "SEG003",
+        "SEG004",
+        "SEG005",
+        "SEG006"
+      ],
+      "segments_with_target_entity_visible": [
+        "SEG001",
+        "SEG002",
+        "SEG003",
+        "SEG004",
+        "SEG005",
+        "SEG006"
+      ],
+      "exceptions": []
+    },
+    "conflict_resolutions": []
+  },
+  "global_appearance_dedup_pass": {
+    "global_appearance": [
+      {
+        "entity_id": "P001",
+        "entity_name": "哈士奇主体",
+        "entity_type": "person_appearance",
+        "appearance_details": [
+          "犬类（哈士奇/Siberian Husky 外观）：中大型雪橇犬体型，四肢修长，厚实双层被毛，蓬松卷尾",
+          "黑白灰三色被毛：背脊与耳背深灰黑，胸腹与四肢内侧白色",
+          "面部：白色面罩纹，额头与眼周深色眼罩纹，竖立三角耳，尾尖白",
+          "眼睛：异色瞳（一棕一蓝），由 dog.jpeg 确认",
+          "神态：张嘴吐舌、轻松活泼，正面朝向镜头",
+          "三只个体差异：个体A（dog.jpeg 锚定，白面罩较宽、异色瞳）；个体B（同品种，面罩略窄、双眼棕色）；个体C（同品种，脸型偏瘦、双眼蓝色）"
+        ],
+        "visible_difference_anchor": [
+          "犬类哈士奇形态：黑白灰三色被毛、白色面罩与深色眼罩、竖立三角耳、蓬松卷尾",
+          "修长四肢与吐舌活泼神态",
+          "与参考视频棕色水豚明显不同：物种（犬 vs 啮齿类）、毛色（黑白灰 vs 棕色）、面部结构与耳朵形态"
+        ],
+        "source_unit_ids": [
+          "SC001"
+        ],
+        "source_segment_ids": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "referenced_by": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "merge_status": "merged_same_entity_group",
+        "character_reference_role": "actor"
+      },
+      {
+        "entity_id": "SCENE001",
+        "entity_name": "户外草坪",
+        "entity_type": "scene_appearance",
+        "appearance_details": [
+          "空间类型：开阔户外公园草坪",
+          "前景/中景/背景：前景为修剪整齐的绿色草地，中景为三只哈士奇活动区，背景为远处成排乔木与低矮绿篱、上方开阔天空",
+          "布景：平整修剪草地、草叶纹理与少量落叶草屑、远景树冠层次",
+          "光线：明亮自然日光，偏高位侧光，草地上形成柔和阴影",
+          "色调：绿色为主、黄绿高光，天空浅蓝，中低反差",
+          "材质：草地纹理清晰、草叶细节可见；无高反光硬质地面",
+          "背景密度：中低，背景适度虚化以突出主体",
+          "景深：中景主体清晰，背景柔化",
+          "氛围：明亮、开阔、轻松、真实纪实"
+        ],
+        "visible_difference_anchor": [
+          "户外草坪：绿色草地、自然日光、开阔天空与远景树冠",
+          "与参考视频明显不同：空间类型（户外草坪 vs 室内公共休息区）、主色调（绿色 vs 暖棕米白）、材质（草地 vs 高反光木地板）、背景结构（树冠天空 vs 售货机/沙发/黄色木椅/卡通立牌）"
+        ],
+        "source_unit_ids": [
+          "SC001"
+        ],
+        "source_segment_ids": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "referenced_by": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "merge_status": "merged_same_entity"
+      },
+      {
+        "entity_id": "ATM001",
+        "entity_name": "明亮自然日光真实质感",
+        "entity_type": "style_atmosphere",
+        "appearance_details": [
+          "光线氛围：户外明亮自然日光，中低反差，阴影柔和",
+          "色彩倾向：绿色—黄绿—浅蓝的户外自然色",
+          "真实感：真实纪实摄影，非风格化",
+          "质感：草地与犬类毛发纹理清晰",
+          "镜头感：标准镜头、稳定机位，轻微现场感",
+          "美术方向：干净自然的户外运动氛围"
+        ],
+        "visible_difference_anchor": [],
+        "source_unit_ids": [
+          "SC001"
+        ],
+        "source_segment_ids": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "referenced_by": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "merge_status": "merged_same_entity"
+      }
+    ],
+    "appearance_source_policy": [
+      {
+        "entity_id": "P001",
+        "source": "target_asset_analysis_for_user_specified_part",
+        "detail": "个体A外观来自 dog.jpeg；个体B/C为同品种生成假设(GA001)"
+      },
+      {
+        "entity_id": "SCENE001",
+        "source": "user_explicit_instruction",
+        "detail": "用户文本声明户外草坪；草地质感线索参考 dog.jpeg 偶然背景，体育场看台不迁移"
+      },
+      {
+        "entity_id": "ATM001",
+        "source": "reference_video_light_adaptation",
+        "detail": "继承参考视频真实纪实与中低反差，改为户外自然日光"
+      }
+    ],
+    "deduped_static_details": [
+      {
+        "detail": "哈士奇黑白灰三色被毛、白色面罩、异色瞳、竖立三角耳、蓬松卷尾",
+        "entity_id": "P001",
+        "source_unit_ids": [
+          "SC001"
+        ],
+        "source_segment_ids": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ]
+      },
+      {
+        "detail": "户外草坪绿色草地、自然日光、开阔天空与远景树冠",
+        "entity_id": "SCENE001",
+        "source_unit_ids": [
+          "SC001"
+        ],
+        "source_segment_ids": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ]
+      },
+      {
+        "detail": "真实纪实、中低反差、标准镜头的整体质感",
+        "entity_id": "ATM001",
+        "source_unit_ids": [
+          "SC001"
+        ],
+        "source_segment_ids": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ]
+      }
+    ],
+    "structured_segments": [
+      {
+        "segment_id": "SEG001",
+        "dynamic_event": "三只哈士奇横向并排静止站立",
+        "camera_change": "无明显变化（起幅）",
+        "composition_change": "建立横向三体等距排列",
+        "transition_relation": "单一连续镜头的起幅，无转场",
+        "time_order": "0.0-0.5s",
+        "generation_focus": [
+          "三主体数量与等距排列",
+          "正面朝向镜头"
+        ],
+        "global_reference_usage": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG002",
+        "dynamic_event": "三只哈士奇同时下蹲、重心降低",
+        "camera_change": "推近起势",
+        "composition_change": "队形保持，主体在画面中略增大",
+        "transition_relation": "同一镜头内连续动作，无转场",
+        "time_order": "0.5-1.5s",
+        "generation_focus": [
+          "三只同步性",
+          "屈肢与重心下降"
+        ],
+        "global_reference_usage": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG003",
+        "dynamic_event": "三只哈士奇朝镜头小跑汇聚，最右侧个体加速",
+        "camera_change": "沿光轴缓慢推近/跟拍，景别由中远景收紧到中景",
+        "composition_change": "横向队形收拢，主体在画面中放大",
+        "transition_relation": "同一镜头内连续，无转场",
+        "time_order": "1.5-3.0s",
+        "generation_focus": [
+          "汇聚运动路径",
+          "推近幅度与速度",
+          "最右侧个体加速"
+        ],
+        "global_reference_usage": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG004",
+        "dynamic_event": "最右侧哈士奇上抬前肢并搭上相邻个体背部",
+        "camera_change": "推近收尾，幅度减小",
+        "composition_change": "横向队形开始在垂直方向叠加",
+        "transition_relation": "同一镜头内连续动作，无转场",
+        "time_order": "3.0-4.0s",
+        "generation_focus": [
+          "上抬动作",
+          "前爪搭背的接触点",
+          "承重关系建立"
+        ],
+        "global_reference_usage": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG005",
+        "dynamic_event": "横向三只队形重组为纵向叠站造型",
+        "camera_change": "推近停止，转为稳定机位",
+        "composition_change": "水平横向队列重组为垂直堆叠构图",
+        "transition_relation": "同一镜头内构图重组，无转场",
+        "time_order": "4.0-5.0s",
+        "generation_focus": [
+          "横向到纵向的构图重组",
+          "承重/站立关系",
+          "重心转移"
+        ],
+        "global_reference_usage": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG006",
+        "dynamic_event": "叠站造型稳定保持并面向镜头静止",
+        "camera_change": "完全静止，无位移、无变焦",
+        "composition_change": "纵向叠站构图保持稳定",
+        "transition_relation": "整段收束，无转场（连续镜头结束）",
+        "time_order": "5.0-5.8s",
+        "generation_focus": [
+          "叠站造型保持",
+          "面向镜头",
+          "画面稳定"
+        ],
+        "global_reference_usage": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      }
+    ],
+    "global_reference_usage": [
+      {
+        "segment_id": "SEG001",
+        "entities": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG002",
+        "entities": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG003",
+        "entities": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG004",
+        "entities": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG005",
+        "entities": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      },
+      {
+        "segment_id": "SEG006",
+        "entities": [
+          "哈士奇主体",
+          "户外草坪"
+        ]
+      }
+    ],
+    "generation_focus": [
+      "优先保证三只哈士奇主体外观与数量一致，个体A对齐 dog.jpeg 外观",
+      "优先保证横向并排 → 纵向叠站的构图重组机制",
+      "优先保证缓慢推近/跟拍与结尾静止的镜头语言",
+      "保持户外草坪自然日光与中低反差真实质感",
+      "保持单一连续镜头、无剪切"
+    ]
+  },
+  "memory_transfer_plan": {
+    "source_memory_points": {
+      "visual_count": 3,
+      "script_count": 2,
+      "audio_count": 0
+    },
+    "visual": [
+      {
+        "memory_id": "vm_001",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 4.0,
+          "end": 5.8
+        },
+        "preserve_mechanism": [
+          "横向并排队形重组为纵向叠站构图",
+          "结尾造型稳定保持"
+        ],
+        "adaptation_plan": [
+          "主体由三只水豚替换为三只哈士奇",
+          "场景由室内替换为户外草坪"
+        ],
+        "negative_constraints": [
+          {
+            "constraint_id": "NC_VM001",
+            "category": "composition_conflict",
+            "severity": "medium",
+            "scope": "temporal_segment",
+            "prompt_visibility": "compact_guardrail",
+            "dedupe_key": "stack_formation_shape"
+          }
+        ],
+        "target_bindings": [
+          "SEG005",
+          "SEG006"
+        ],
+        "status": "ready",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[0]"
+        ]
+      },
+      {
+        "memory_id": "vm_002",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 1.5,
+          "end": 5.0
+        },
+        "preserve_mechanism": [
+          "沿光轴缓慢推近的连续收束节奏",
+          "景别随主体尺度变化的对应关系"
+        ],
+        "adaptation_plan": [
+          "保持推近幅度与主体前移速度匹配"
+        ],
+        "negative_constraints": [
+          {
+            "constraint_id": "NC_VM002",
+            "category": "composition_conflict",
+            "severity": "low",
+            "scope": "temporal_segment",
+            "prompt_visibility": "audit_only",
+            "dedupe_key": "camera_push_match"
+          }
+        ],
+        "target_bindings": [
+          "SEG003",
+          "SEG004"
+        ],
+        "status": "ready",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[1]"
+        ]
+      },
+      {
+        "memory_id": "vm_003",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "VS001:shot1"
+        ],
+        "time_range_sec": {
+          "start": 3.0,
+          "end": 5.0
+        },
+        "preserve_mechanism": [
+          "上抬-搭背-叠站-保持的动作阶段顺序",
+          "下方承重与上方重心转移"
+        ],
+        "adaptation_plan": [
+          "水豚踩踏改写为哈士奇前爪搭背与踩踏"
+        ],
+        "negative_constraints": [
+          {
+            "constraint_id": "NC_VM003",
+            "category": "unsafe_or_physical_risk",
+            "severity": "high",
+            "scope": "temporal_segment",
+            "prompt_visibility": "compact_guardrail",
+            "dedupe_key": "animal_weight_bearing"
+          }
+        ],
+        "target_bindings": [
+          "SEG004",
+          "SEG005"
+        ],
+        "status": "ready",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[2]"
+        ]
+      }
+    ],
+    "script": [
+      {
+        "memory_id": "sm_001",
+        "source_type": "script",
+        "source_scope": "global",
+        "source_ids": [
+          "B001",
+          "B002",
+          "B003",
+          "B004"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 5.8
+        },
+        "preserve_mechanism": [
+          "提出对象到动作结果可见的证明顺序",
+          "结尾造型静态保持"
+        ],
+        "adaptation_plan": [
+          "主体、场景与个体外观替换为目标侧"
+        ],
+        "negative_constraints": [
+          {
+            "constraint_id": "NC_SM001",
+            "category": "source_identity_leak",
+            "severity": "medium",
+            "scope": "global",
+            "prompt_visibility": "audit_only",
+            "dedupe_key": "no_source_identity"
+          }
+        ],
+        "target_bindings": [
+          "TV001"
+        ],
+        "status": "ready",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#memory_points.script[0]"
+        ]
+      },
+      {
+        "memory_id": "sm_002",
+        "source_type": "script",
+        "source_scope": "shot",
+        "source_ids": [
+          "SC001_SH001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 5.8
+        },
+        "preserve_mechanism": [
+          "信息由主体→动作→结果逐级释放的顺序"
+        ],
+        "adaptation_plan": [
+          "信息载体替换为三只哈士奇的协同表演"
+        ],
+        "negative_constraints": [
+          {
+            "constraint_id": "NC_SM002",
+            "category": "audit_note",
+            "severity": "low",
+            "scope": "global",
+            "prompt_visibility": "audit_only",
+            "dedupe_key": "info_release_order"
+          }
+        ],
+        "target_bindings": [
+          "SEG001",
+          "SEG002",
+          "SEG003",
+          "SEG004",
+          "SEG005",
+          "SEG006"
+        ],
+        "status": "ready",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#memory_points.script[1]"
+        ]
+      }
+    ],
+    "audio": []
+  },
+  "professional_prompt_context": {
+    "status": "partial",
+    "profile_root": "backend/profiles",
+    "loaded_profiles": [
+      {
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md",
+        "doc_id": "VK-COMP-003",
+        "used_for": "composition"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/前中后景与景深层次/前中后景与景深层次.md",
+        "doc_id": "VK-COMP-004",
+        "used_for": "composition"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/镜头运动与光学/摄影机位移旋转与复合运镜/摄影机位移旋转与复合运镜.md",
+        "doc_id": "VK-CAM-001",
+        "used_for": "camera_motion"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md",
+        "doc_id": "VK-ACT-001",
+        "used_for": "action_continuity"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/剪辑转场与时间/镜头时长与剪辑节奏/镜头时长与剪辑节奏.md",
+        "doc_id": "VK-EDIT-003",
+        "used_for": "editing"
+      }
+    ],
+    "knowledge_terms": [
+      {
+        "term": "推近（Dolly In）",
+        "category": "camera_motion",
+        "profile_doc_id": "VK-CAM-001",
+        "profile_path": "backend/profiles/视觉/镜头运动与光学/摄影机位移旋转与复合运镜/摄影机位移旋转与复合运镜.md",
+        "applied_to": [
+          "SEG003",
+          "SEG004"
+        ],
+        "generation_phrase": "摄影机缓慢向主体推进，主体在画面中逐渐增大",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[0]"
+        ]
+      },
+      {
+        "term": "跟拍（Tracking / Follow）",
+        "category": "camera_motion",
+        "profile_doc_id": "VK-CAM-001",
+        "profile_path": "backend/profiles/视觉/镜头运动与光学/摄影机位移旋转与复合运镜/摄影机位移旋转与复合运镜.md",
+        "applied_to": [
+          "SEG003"
+        ],
+        "generation_phrase": "摄影机沿主体运动方向平滑跟随，主体始终保持清晰",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[1]"
+        ]
+      },
+      {
+        "term": "中景（Medium Shot）",
+        "category": "composition",
+        "profile_doc_id": "VK-COMP-003",
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md",
+        "applied_to": [
+          "SEG005",
+          "SEG006"
+        ],
+        "generation_phrase": "腰部以上中景，保留肢体动作与部分环境",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.spatial_framing"
+        ]
+      },
+      {
+        "term": "前景/中景/背景（Foreground / Midground / Background）",
+        "category": "composition",
+        "profile_doc_id": "VK-COMP-004",
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/前中后景与景深层次/前中后景与景深层次.md",
+        "applied_to": [
+          "SCENE001"
+        ],
+        "generation_phrase": "前景草地、中景主体活动区、背景树冠与天空形成三层空间",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.spatial_framing"
+        ]
+      },
+      {
+        "term": "时间顺序描述（Temporal Order）",
+        "category": "action_continuity",
+        "profile_doc_id": "VK-ACT-001",
+        "profile_path": "backend/profiles/视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md",
+        "applied_to": [
+          "SC001"
+        ],
+        "generation_phrase": "按动作实际发生顺序描述：先并排站立，再下蹲，最后完成叠站并保持",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.action.action_sequence"
+        ]
+      },
+      {
+        "term": "揭示后保持",
+        "category": "editing",
+        "profile_doc_id": "VK-EDIT-003",
+        "profile_path": "backend/profiles/视觉/剪辑转场与时间/镜头时长与剪辑节奏/镜头时长与剪辑节奏.md",
+        "applied_to": [
+          "SEG006"
+        ],
+        "generation_phrase": "在结果揭示后保持稳定画面，让观众完成识别",
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#script_construction_context.beats[3]"
+        ]
+      }
+    ],
+    "generation_brief": "户外草坪明亮自然日光下的单一连续镜头：三只黑白灰花色的哈士奇横向等距站立，随后同步下蹲、朝镜头小跑汇聚，摄影机沿光轴缓慢推近把景别由中远景收紧到中景；最右侧个体上抬前爪搭上同伴背部，三只重组为中心偏右的纵向叠站造型并面向镜头稳定保持。真实纪实、中低反差、标准镜头、稳定机位；不使用任何参考片品牌、文字、logo 与室内专属道具。",
+    "negative_prompt_constraints": [
+      {
+        "constraint_id": "GNC001",
+        "category": "source_identity_leak",
+        "severity": "medium",
+        "scope": "global",
+        "prompt_visibility": "compact_guardrail",
+        "dedupe_key": "no_reference_brand_world",
+        "text": "不要生成参考视频的室内空间、售货机、沙发、黄色木椅、红披风卡通立牌与白色圆圈地板标记"
+      },
+      {
+        "constraint_id": "GNC002",
+        "category": "unconfirmed_text_logo",
+        "severity": "medium",
+        "scope": "global",
+        "prompt_visibility": "audit_only",
+        "dedupe_key": "no_readable_text",
+        "text": "不要生成任何可读文字、字幕、标题、水印、角标或 logo"
+      },
+      {
+        "constraint_id": "GNC003",
+        "category": "source_identity_leak",
+        "severity": "low",
+        "scope": "global",
+        "prompt_visibility": "audit_only",
+        "dedupe_key": "no_human_actor",
+        "text": "不要生成参考视频中的女性背影或其他可识别人物"
+      },
+      {
+        "constraint_id": "GNC004",
+        "category": "unsupported_claim",
+        "severity": "low",
+        "scope": "global",
+        "prompt_visibility": "audit_only",
+        "dedupe_key": "no_business_claim",
+        "text": "不要生成品牌、价格、活动或功效声明"
+      },
+      {
+        "constraint_id": "GNC005",
+        "category": "post_overlay_only",
+        "severity": "low",
+        "scope": "global",
+        "prompt_visibility": "audit_only",
+        "dedupe_key": "no_post_overlay",
+        "text": "后期叠加内容由 ffmpeg/opencv 处理，生成模型输出 clean frame"
+      }
+    ],
+    "compact_guardrails": [
+      "Keep the outdoor lawn as the only environment and keep the three huskies as the only subjects.",
+      "No readable text, logo, watermark, human performer, or indoor reference set dressing."
+    ],
+    "validation_flags": [
+      "profile_not_loaded_for_script_function"
+    ]
+  },
+  "readiness_check": {
+    "path": "05_replication_readiness/replication_readiness_check.json",
+    "overall_status": "ready_with_assumptions",
+    "blocking_item_ids": [],
+    "missing_input_ids": [
+      "MI001",
+      "MI002",
+      "MI003",
+      "MI004"
+    ]
+  },
+  "text_logo_policy": {
+    "post_overlay_default": true,
+    "in_scene_allowed_when_physically_attached": true,
+    "render_post_overlay_in_video_model": false,
+    "post_overlay_render_method": "ffmpeg_or_opencv",
+    "do_not_generate_unconfirmed_readable_text": true
+  },
+  "negative_constraint_policy": {
+    "prompt_weight": "low",
+    "default_prompt_visibility": "audit_only",
+    "allowed_prompt_visibility": [
+      "audit_only",
+      "compact_guardrail",
+      "include"
+    ],
+    "max_prompt_guardrail_sentences": 2,
+    "dedupe_scope": [
+      "global",
+      "timeline_unit",
+      "temporal_segment"
+    ],
+    "categories": [
+      "source_identity_leak",
+      "unconfirmed_text_logo",
+      "unsupported_claim",
+      "unsafe_or_physical_risk",
+      "asset_fidelity_risk",
+      "composition_conflict",
+      "post_overlay_only",
+      "audit_note"
+    ]
+  },
+  "scene_transfer": [
+    {
+      "scene_id": "SCENE001",
+      "reference_scene_id": "SC001",
+      "preserve_scene_style": [
+        "自然日光方向与中低反差",
+        "前中后景三层空间深度",
+        "背景密度中低并适度虚化",
+        "真实纪实的拍摄质感",
+        "主体位于中景的构图关系"
+      ],
+      "adapt_scene_content": [
+        "室内公共休息区改为户外公园草坪",
+        "高反光木地板改为草地材质",
+        "暖棕米白色调改为绿色—黄绿—浅蓝自然色调",
+        "去掉售货机/沙发/黄色木椅/绿植/卡通立牌/白色圆圈地板标记/女性背影"
+      ],
+      "scene_description_for_generation": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+      "target_asset_background_policy": "incidental_not_scene_reference",
+      "reference_frame_summary": "scene_reference planned from SCENE001 (see 07_reference_frame_plan/reference_frame_plan.json)"
+    }
+  ],
+  "timeline_units": [
+    {
+      "unit_id": "SC001",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001",
+        "SC001_SH001",
+        "VS001:shot1"
+      ],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 5.8
+      },
+      "duration_sec": 5.8,
+      "reference_mapping": {
+        "content_subject_type": "mixed",
+        "story_function": "demonstration",
+        "content_summary": "单一连续镜头：三只哈士奇在户外草坪并排站立，随后同时下蹲、朝镜头小跑汇聚，镜头缓慢推近，最右侧个体上抬前爪搭上同伴背部，最终组成纵向叠站造型并保持面向镜头。",
+        "primary_visual_subject": "哈士奇主体（三只哈士奇）",
+        "secondary_visual_elements": [
+          "户外草坪（前景草地/远景树冠与天空）"
+        ],
+        "interaction_or_relation": "三只主体由并列关系转为承重/支撑的叠站关系，最终静态保持",
+        "action_progression": "并排站立 -> 同时下蹲 -> 朝镜头汇聚（推近） -> 上抬搭背 -> 完成纵向叠站 -> 保持造型",
+        "scene_content": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+        "script_story_content": "以三只哈士奇整齐站位建立对象 → 同步动作铺垫 → 纵向叠站结果揭示 → 静态保持收束。",
+        "camera_and_composition": [
+          "中远景起幅、随推进收紧到中景",
+          "三主体横向排列重组为纵向堆叠",
+          "平视机位"
+        ],
+        "viewpoint": "平视机位，eye_level，主体位于画面中部",
+        "camera_motion": "沿光轴缓慢推近/跟拍，幅度小、速度缓慢到中速，结尾静止",
+        "focus_and_depth": "中景主体清晰，背景草坪柔化",
+        "editing_and_transition": "单一连续镜头，无剪切、无转场",
+        "pace_and_duration": "铺垫 → 加速 → 停顿，总时长约 5.8s",
+        "must_be_visible": [
+          "三只哈士奇主体",
+          "户外草坪环境",
+          "横向→纵向队形重组",
+          "缓慢推近",
+          "叠站造型与保持"
+        ],
+        "target_bindings": [
+          {
+            "binding_id": "TB001",
+            "target": "target_video",
+            "asset_id": "A001",
+            "role": "primary_subject_reference"
+          },
+          {
+            "binding_id": "TB002",
+            "target": "SC001",
+            "asset_id": "REF_VIDEO_VS001",
+            "role": "motion_camera_timing_reference"
+          }
+        ],
+        "state_relation_transfer": {
+          "source_relation_refs": [
+            "VS001:shot1#state_relations[0]"
+          ],
+          "observed_changes": [],
+          "continuity": [
+            "同一空间、同一主体连续运动，无镜头切换"
+          ],
+          "newly_revealed": "结尾揭示三只哈士奇可完成纵向叠站造型",
+          "uncertainty": "结尾静止时长",
+          "target_adaptation": "保留单一连续镜头的同空间同主体连续性；结尾新揭示叠站造型；结尾静止时长不确定"
+        },
+        "evidence_refs": [
+          "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.shot_timeline[0]",
+          "01_reference_video_analysis/reference_video_analysis.json#scenes[0]"
+        ],
+        "negative_constraints": []
+      },
+      "mapping_self_check": {
+        "memory_point_check": {
+          "status": "passed",
+          "checked_memory_ids": [
+            "vm_001",
+            "vm_002",
+            "vm_003"
+          ],
+          "notes": [
+            "特殊构图与特殊运镜均已迁移"
+          ]
+        },
+        "dynamic_detail_check": {
+          "status": "passed",
+          "notes": [
+            "单一镜头内部动作阶段与动态关系清楚"
+          ]
+        }
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "哈士奇主体",
+          "户外草坪",
+          "明亮自然日光真实质感"
+        ],
+        "dynamic_event": "三只哈士奇从并排站立到纵向叠站造型的连续协同表演",
+        "motion_path": "朝镜头方向汇聚后转为垂直向上叠站",
+        "pose_or_state_change": "站立 → 下蹲 → 小跑 → 上抬搭背 → 叠站 → 保持",
+        "camera_change": "沿光轴缓慢推近后停止",
+        "composition_change": "横向等距排列重组为纵向叠站构图",
+        "transition_relation": "单一连续镜头，无转场",
+        "time_order": "0.0-5.8s",
+        "script_or_text_beat": "B001 → B002 → B003 → B004",
+        "generation_focus": [
+          "主体数量与外观一致",
+          "队形重组机制",
+          "推近运镜",
+          "结尾静止保持"
+        ],
+        "state_relation": "同空间同主体连续；结尾新揭示叠站造型；结尾静止时长不确定"
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SEG001",
+          "time_range_sec": {
+            "start": 0.0,
+            "end": 0.5
+          },
+          "duration_sec": 0.5,
+          "reference_function": "visual_display",
+          "target_function": "opening_hook：以三只哈士奇横向并排的整齐站位建立表演对象",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "opening_hook",
+            "content_summary": "三只哈士奇在草坪上横向并排、等距站立，正面朝向镜头，建立稳定的陈列式开场。",
+            "primary_visual_subject": "哈士奇主体（三只哈士奇）",
+            "secondary_visual_elements": [
+              "户外草坪（前景草地/远景树冠与天空）"
+            ],
+            "interaction_or_relation": "三只主体彼此平行、无接触，形成整齐队列关系",
+            "action_progression": "静止并排站立 -> 保持站位",
+            "scene_content": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+            "script_story_content": "提出对象：让观众先看清三只主体的数量与整齐站位。",
+            "camera_and_composition": [
+              "中远景起幅，三主体横向平分画面中景带宽",
+              "平视机位，主体位于画面中部偏右"
+            ],
+            "viewpoint": "平视机位，eye_level，主体位于画面中部",
+            "camera_motion": "镜头基本静止，仅保留轻微推进起势",
+            "focus_and_depth": "中景主体清晰，背景草坪柔化",
+            "editing_and_transition": "单一连续镜头，无剪切、无转场",
+            "pace_and_duration": "铺垫，节奏平稳",
+            "must_be_visible": [
+              "哈士奇主体三只并排",
+              "三只处于同一草地平面",
+              "主体正面朝向镜头"
+            ],
+            "target_bindings": [
+              {
+                "binding_id": "TB001",
+                "target": "target_video",
+                "asset_id": "A001",
+                "role": "primary_subject_reference"
+              },
+              {
+                "binding_id": "TB002",
+                "target": "SC001",
+                "asset_id": "REF_VIDEO_VS001",
+                "role": "motion_camera_timing_reference"
+              }
+            ],
+            "state_relation_transfer": {
+              "source_relation_refs": [
+                "VS001:shot1#state_relations[0]"
+              ],
+              "observed_changes": [],
+              "continuity": [
+                "同一空间、同一主体连续运动，无镜头切换"
+              ],
+              "newly_revealed": "结尾揭示三只哈士奇可完成纵向叠站造型",
+              "uncertainty": "结尾静止时长",
+              "target_adaptation": "保留开场静止站位作为整段连续运动的起点"
+            },
+            "evidence_refs": [
+              "01_reference_video_analysis/reference_video_analysis.json#script_construction_context.beats[0]",
+              "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.action.action_sequence"
+            ],
+            "negative_constraints": []
+          },
+          "mapping_self_check": {
+            "memory_point_check": {
+              "status": "passed",
+              "checked_memory_ids": [],
+              "notes": []
+            },
+            "dynamic_detail_check": {
+              "status": "passed",
+              "notes": [
+                "动作起点（并排站立）清楚，无新增静态外观补写"
+              ]
+            }
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "哈士奇主体",
+              "户外草坪"
+            ],
+            "dynamic_event": "三只哈士奇横向并排静止站立",
+            "motion_path": "无位移，仅保持站位",
+            "pose_or_state_change": "静止站立，重心平稳",
+            "camera_change": "无明显变化（起幅）",
+            "composition_change": "建立横向三体等距排列",
+            "transition_relation": "单一连续镜头的起幅，无转场",
+            "time_order": "0.0-0.5s",
+            "script_or_text_beat": "B001 opening_hook：提出主体",
+            "generation_focus": [
+              "三主体数量与等距排列",
+              "正面朝向镜头"
+            ],
+            "state_relation": "连续镜头起点，保持同空间同主体"
+          },
+          "scene_transfer": {
+            "preserve_scene_style": [
+              "自然日光方向",
+              "前景草地/中景主体/背景树冠的空间层次"
+            ],
+            "adapt_scene_content": [
+              "室内木地板改为户外草坪",
+              "去掉室内家具与售货机"
+            ],
+            "scene_description_for_generation": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。"
+          },
+          "subject_transfer": {
+            "preserve_mechanism": [
+              "三主体横向等距排列"
+            ],
+            "adaptation": [
+              "棕色水豚 -> 三只哈士奇（黑白灰花色）"
+            ],
+            "visible_difference_anchor": [
+              "犬类形态与黑白灰被毛",
+              "竖立三角耳与蓬松卷尾"
+            ]
+          },
+          "prop_transfer": {
+            "preserve_mechanism": [],
+            "adaptation": [],
+            "discard": [
+              "白色圆圈地板标记",
+              "室内售货机/沙发/黄色木椅/红披风立牌"
+            ]
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "中远景平视，三主体横向等距平分中景带宽"
+            ],
+            "lighting_and_texture": [
+              "明亮自然日光，草地绿色为主、黄绿高光，草叶纹理清晰"
+            ],
+            "motion_and_action": [
+              "三只哈士奇并排静止站立，胸腹朝向镜头"
+            ],
+            "editing_and_transition": [
+              "单一连续镜头起幅，无剪切"
+            ],
+            "state_relation_and_continuity": [
+              "同空间同主体，连续运动起点"
+            ],
+            "scene_and_subject": [
+              "<哈士奇主体> 三只位于 <户外草坪> 中景，背景开阔虚化"
+            ],
+            "text_logo_and_overlay": [],
+            "negative_constraints": [],
+            "compact_guardrails": [],
+            "source_terms": [
+              "VK-COMP-003 中景（Medium Shot）",
+              "VK-COMP-004 前景/中景/背景"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "reference_frame_usage": {
+            "used_reference_frame_ids": [
+              "FR_PERSON_HUSKY",
+              "FR_SCENE_LAWN"
+            ],
+            "used_entity_ids": [
+              "P001",
+              "SCENE001"
+            ],
+            "usage_role": "person_reference",
+            "notes": [
+              "主体与场景全局锚点"
+            ]
+          },
+          "negative_constraints": [],
+          "compact_guardrails": [],
+          "missing_inputs": [],
+          "generation_assumptions": [
+            "GA001"
+          ],
+          "status": "ready_with_assumptions",
+          "source_trace": [
+            "SC001_SH001",
+            "B001"
+          ]
+        },
+        {
+          "segment_id": "SEG002",
+          "time_range_sec": {
+            "start": 0.5,
+            "end": 1.5
+          },
+          "duration_sec": 1.0,
+          "reference_function": "action_or_interaction",
+          "target_function": "reveal：三只同时下蹲、重心降低，动作进入铺垫",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "reveal",
+            "content_summary": "三只哈士奇同时下蹲、屈肢降低重心，保持横向队形，为向镜头汇聚做准备。",
+            "primary_visual_subject": "哈士奇主体（三只哈士奇）",
+            "secondary_visual_elements": [
+              "户外草坪（前景草地/远景树冠与天空）"
+            ],
+            "interaction_or_relation": "三只同步且相互独立，无身体接触",
+            "action_progression": "并排站立 -> 同时下蹲屈肢 -> 保持低重心",
+            "scene_content": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+            "script_story_content": "动作铺垫：同步动作提示三只具备协同性。",
+            "camera_and_composition": [
+              "中远景，主体仍在画面中部横向排列"
+            ],
+            "viewpoint": "平视机位，eye_level，主体位于画面中部",
+            "camera_motion": "镜头开始缓慢沿光轴推近",
+            "focus_and_depth": "中景主体清晰，背景草坪柔化",
+            "editing_and_transition": "单一连续镜头，无剪切、无转场",
+            "pace_and_duration": "推进，节奏由平稳转向蓄势",
+            "must_be_visible": [
+              "哈士奇主体三只同时下蹲",
+              "屈肢与重心下降",
+              "三只仍保持横向队形"
+            ],
+            "target_bindings": [
+              {
+                "binding_id": "TB001",
+                "target": "target_video",
+                "asset_id": "A001",
+                "role": "primary_subject_reference"
+              },
+              {
+                "binding_id": "TB002",
+                "target": "SC001",
+                "asset_id": "REF_VIDEO_VS001",
+                "role": "motion_camera_timing_reference"
+              }
+            ],
+            "state_relation_transfer": {
+              "source_relation_refs": [
+                "VS001:shot1#state_relations[0]"
+              ],
+              "observed_changes": [],
+              "continuity": [
+                "同一空间、同一主体连续运动，无镜头切换"
+              ],
+              "newly_revealed": "结尾揭示三只哈士奇可完成纵向叠站造型",
+              "uncertainty": "结尾静止时长",
+              "target_adaptation": "保留‘静止站位 -> 同步下蹲’的连续动作衔接"
+            },
+            "evidence_refs": [
+              "01_reference_video_analysis/reference_video_analysis.json#script_construction_context.beats[1]",
+              "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.action.action_sequence"
+            ],
+            "negative_constraints": []
+          },
+          "mapping_self_check": {
+            "memory_point_check": {
+              "status": "passed",
+              "checked_memory_ids": [],
+              "notes": []
+            },
+            "dynamic_detail_check": {
+              "status": "passed",
+              "notes": [
+                "下蹲动作的起点/过程清楚，属动态细节，未补写外观"
+              ]
+            }
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "哈士奇主体",
+              "户外草坪"
+            ],
+            "dynamic_event": "三只哈士奇同时下蹲、重心降低",
+            "motion_path": "原地屈肢下蹲，无水平位移",
+            "pose_or_state_change": "由站立转为低重心蹲伏",
+            "camera_change": "推近起势",
+            "composition_change": "队形保持，主体在画面中略增大",
+            "transition_relation": "同一镜头内连续动作，无转场",
+            "time_order": "0.5-1.5s",
+            "script_or_text_beat": "B002 reveal：同步动作铺垫",
+            "generation_focus": [
+              "三只同步性",
+              "屈肢与重心下降"
+            ],
+            "state_relation": "连续动作，无切换"
+          },
+          "scene_transfer": {
+            "preserve_scene_style": [
+              "自然日光方向",
+              "空间层次"
+            ],
+            "adapt_scene_content": [
+              "户外草坪"
+            ],
+            "scene_description_for_generation": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。"
+          },
+          "subject_transfer": {
+            "preserve_mechanism": [
+              "同步下蹲动作阶段"
+            ],
+            "adaptation": [
+              "水豚下蹲 -> 哈士奇屈肢下蹲"
+            ],
+            "visible_difference_anchor": [
+              "犬类四肢屈伸形态"
+            ]
+          },
+          "prop_transfer": {
+            "preserve_mechanism": [],
+            "adaptation": [],
+            "discard": []
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "中景，主体横向排列并开始增大"
+            ],
+            "lighting_and_texture": [
+              "自然日光，草地阴影随下蹲加深"
+            ],
+            "motion_and_action": [
+              "三只哈士奇同步屈肢下蹲，重心下降，动作整齐"
+            ],
+            "editing_and_transition": [
+              "同一连续镜头内动作推进"
+            ],
+            "state_relation_and_continuity": [
+              "由站立连续过渡到下蹲，无跳变"
+            ],
+            "scene_and_subject": [
+              "<哈士奇主体> 三只在 <户外草坪> 上同步下蹲"
+            ],
+            "text_logo_and_overlay": [],
+            "negative_constraints": [],
+            "compact_guardrails": [],
+            "source_terms": [
+              "VK-ACT-001 时间顺序描述（Temporal Order）"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "reference_frame_usage": {
+            "used_reference_frame_ids": [
+              "FR_PERSON_HUSKY",
+              "FR_SCENE_LAWN"
+            ],
+            "used_entity_ids": [
+              "P001",
+              "SCENE001"
+            ],
+            "usage_role": "person_reference",
+            "notes": []
+          },
+          "negative_constraints": [],
+          "compact_guardrails": [],
+          "missing_inputs": [],
+          "generation_assumptions": [
+            "GA002"
+          ],
+          "status": "ready_with_assumptions",
+          "source_trace": [
+            "SC001_SH001",
+            "B002"
+          ]
+        },
+        {
+          "segment_id": "SEG003",
+          "time_range_sec": {
+            "start": 1.5,
+            "end": 3.0
+          },
+          "duration_sec": 1.5,
+          "reference_function": "action_or_interaction",
+          "target_function": "行为推进：三只朝镜头小跑汇聚，镜头同步推近收紧景别",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "reveal",
+            "content_summary": "三只哈士奇朝镜头方向小跑汇聚，最右侧个体加速，镜头沿光轴缓慢推近，景别由中远景收紧到中景。",
+            "primary_visual_subject": "哈士奇主体（三只哈士奇）",
+            "secondary_visual_elements": [
+              "户外草坪（前景草地/远景树冠与天空）"
+            ],
+            "interaction_or_relation": "三只向同一目标点靠拢，队形收拢但仍无接触",
+            "action_progression": "保持低重心 -> 朝镜头小跑汇聚 -> 队形收拢、最右侧个体加速",
+            "scene_content": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+            "script_story_content": "动作推进：汇聚与景别收束把注意力集中到即将出现的造型结果。",
+            "camera_and_composition": [
+              "中远景收紧到中景",
+              "主体随前移在画面中放大，占据中景带宽"
+            ],
+            "viewpoint": "平视机位，eye_level，主体位于画面中部",
+            "camera_motion": "摄影机沿光轴缓慢推近/跟拍，幅度小、速度缓慢到中速",
+            "focus_and_depth": "中景主体清晰，背景草坪柔化",
+            "editing_and_transition": "单一连续镜头，无剪切、无转场",
+            "pace_and_duration": "加速，节奏推进明显",
+            "must_be_visible": [
+              "哈士奇主体三只朝镜头方向运动",
+              "队形由横向收拢",
+              "最右侧个体加速",
+              "景别随主体前移收紧"
+            ],
+            "target_bindings": [
+              {
+                "binding_id": "TB001",
+                "target": "target_video",
+                "asset_id": "A001",
+                "role": "primary_subject_reference"
+              },
+              {
+                "binding_id": "TB002",
+                "target": "SC001",
+                "asset_id": "REF_VIDEO_VS001",
+                "role": "motion_camera_timing_reference"
+              }
+            ],
+            "state_relation_transfer": {
+              "source_relation_refs": [
+                "VS001:shot1#state_relations[0]"
+              ],
+              "observed_changes": [],
+              "continuity": [
+                "同一空间、同一主体连续运动，无镜头切换"
+              ],
+              "newly_revealed": "结尾揭示三只哈士奇可完成纵向叠站造型",
+              "uncertainty": "结尾静止时长",
+              "target_adaptation": "保留‘主体前移与景别收紧’的对应关系；运动过程连续"
+            },
+            "evidence_refs": [
+              "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[0]",
+              "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[1]"
+            ],
+            "negative_constraints": []
+          },
+          "mapping_self_check": {
+            "memory_point_check": {
+              "status": "passed",
+              "checked_memory_ids": [
+                "vm_002"
+              ],
+              "notes": [
+                "特殊运镜（推近/跟拍）已迁移为目标侧可执行句子"
+              ]
+            },
+            "dynamic_detail_check": {
+              "status": "passed",
+              "notes": [
+                "运动路径、速度变化、最右侧个体加速等动态细节清楚"
+              ]
+            }
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "哈士奇主体",
+              "户外草坪"
+            ],
+            "dynamic_event": "三只哈士奇朝镜头小跑汇聚，最右侧个体加速",
+            "motion_path": "由中景远处朝镜头方向沿地面向画面中心汇聚",
+            "pose_or_state_change": "起跑-加速-收拢，保持低重心",
+            "camera_change": "沿光轴缓慢推近/跟拍，景别由中远景收紧到中景",
+            "composition_change": "横向队形收拢，主体在画面中放大",
+            "transition_relation": "同一镜头内连续，无转场",
+            "time_order": "1.5-3.0s",
+            "script_or_text_beat": "B002 reveal 的推进段",
+            "generation_focus": [
+              "汇聚运动路径",
+              "推近幅度与速度",
+              "最右侧个体加速"
+            ],
+            "state_relation": "主体前移与景别收紧一一对应"
+          },
+          "scene_transfer": {
+            "preserve_scene_style": [
+              "自然日光方向",
+              "随推近背景密度变化"
+            ],
+            "adapt_scene_content": [
+              "户外草坪"
+            ],
+            "scene_description_for_generation": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。"
+          },
+          "subject_transfer": {
+            "preserve_mechanism": [
+              "三主体朝镜头汇聚",
+              "右侧个体加速"
+            ],
+            "adaptation": [
+              "水豚小跑 -> 哈士奇小跑"
+            ],
+            "visible_difference_anchor": [
+              "犬类奔跑步态与尾巴摆动"
+            ]
+          },
+          "prop_transfer": {
+            "preserve_mechanism": [],
+            "adaptation": [],
+            "discard": []
+          },
+          "special_mechanism_transfer": [
+            {
+              "mechanism_id": "SMO_CAM_001",
+              "mechanism_type": "special_camera_motion",
+              "source_ref": "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[0]",
+              "time_range_sec": {
+                "start": 1.5,
+                "end": 5.0
+              },
+              "evidence_summary": "主体前移时景别由中远景收紧到中景，摄影机沿光轴缓慢推近/跟拍。",
+              "inherit_or_adapt": "inherit",
+              "target_execution": "摄影机与三只哈士奇朝镜头汇聚的运动同步缓慢推近，主体尺度随前移增大、背景逐渐减少。",
+              "prompt_sentence": "The camera pushes in slowly along the optical axis in small amplitude, tracking the three huskies as they trot toward the lens, tightening the framing from a medium-wide to a medium shot so the background lawn falls away and the dogs grow larger in frame.",
+              "must_be_visible": [
+                "缓慢推近的运动感",
+                "景别由中远景收紧到中景",
+                "主体尺度随前移增大"
+              ],
+              "handoff_level": "downstream_prompt",
+              "loss_risk": "medium"
+            }
+          ],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "沿光轴缓慢推近/跟拍，小幅度，速度缓慢到中速，景别由中远景收紧到中景"
+            ],
+            "lighting_and_texture": [
+              "自然日光，主体前移时草地高光与阴影随之变化"
+            ],
+            "motion_and_action": [
+              "三只哈士奇朝镜头方向小跑汇聚，保持低重心，最右侧个体加速"
+            ],
+            "editing_and_transition": [
+              "单一连续镜头，无剪切"
+            ],
+            "state_relation_and_continuity": [
+              "主体前移与景别收紧同步；运动连续无跳变"
+            ],
+            "scene_and_subject": [
+              "<哈士奇主体> 在 <户外草坪> 上向镜头汇聚"
+            ],
+            "text_logo_and_overlay": [],
+            "negative_constraints": [],
+            "compact_guardrails": [],
+            "source_terms": [
+              "VK-CAM-001 推近（Dolly In）",
+              "VK-CAM-001 跟拍（Tracking / Follow）",
+              "VK-CAM-001 跟拍 + 缓慢推近"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "reference_frame_usage": {
+            "used_reference_frame_ids": [
+              "FR_PERSON_HUSKY",
+              "FR_SCENE_LAWN"
+            ],
+            "used_entity_ids": [
+              "P001",
+              "SCENE001"
+            ],
+            "usage_role": "person_reference",
+            "notes": []
+          },
+          "negative_constraints": [],
+          "compact_guardrails": [],
+          "missing_inputs": [],
+          "generation_assumptions": [
+            "GA002"
+          ],
+          "status": "ready_with_assumptions",
+          "source_trace": [
+            "SC001_SH001",
+            "vm_002",
+            "smo_cam_001"
+          ]
+        },
+        {
+          "segment_id": "SEG004",
+          "time_range_sec": {
+            "start": 3.0,
+            "end": 4.0
+          },
+          "duration_sec": 1.0,
+          "reference_function": "action_or_interaction",
+          "target_function": "proof 的起始：最右侧哈士奇上抬、前爪搭上相邻个体背部",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "proof",
+            "content_summary": "最右侧哈士奇减速并上抬前肢，将前爪搭到相邻哈士奇背部，开始建立支撑接触关系。",
+            "primary_visual_subject": "哈士奇主体（三只哈士奇）",
+            "secondary_visual_elements": [
+              "户外草坪（前景草地/远景树冠与天空）"
+            ],
+            "interaction_or_relation": "上方个体前爪接触下方个体背部，形成承重支撑关系",
+            "action_progression": "汇聚减速 -> 右侧个体上抬前肢 -> 前爪搭背、开始承重",
+            "scene_content": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+            "script_story_content": "结果预告：接触关系的建立提示即将出现叠站造型。",
+            "camera_and_composition": [
+              "中景，主体在画面中部偏右",
+              "接触点位于画面视觉重心附近"
+            ],
+            "viewpoint": "平视机位，eye_level，主体位于画面中部",
+            "camera_motion": "推近接近结束，运动趋缓",
+            "focus_and_depth": "中景主体清晰，背景草坪柔化",
+            "editing_and_transition": "单一连续镜头，无剪切、无转场",
+            "pace_and_duration": "由加速转入停顿前的缓冲",
+            "must_be_visible": [
+              "哈士奇主体右侧个体上抬前肢",
+              "前爪接触相邻个体背部",
+              "支撑/承重接触点",
+              "主体减速"
+            ],
+            "target_bindings": [
+              {
+                "binding_id": "TB001",
+                "target": "target_video",
+                "asset_id": "A001",
+                "role": "primary_subject_reference"
+              },
+              {
+                "binding_id": "TB002",
+                "target": "SC001",
+                "asset_id": "REF_VIDEO_VS001",
+                "role": "motion_camera_timing_reference"
+              }
+            ],
+            "state_relation_transfer": {
+              "source_relation_refs": [
+                "VS001:shot1#state_relations[0]"
+              ],
+              "observed_changes": [],
+              "continuity": [
+                "同一空间、同一主体连续运动，无镜头切换"
+              ],
+              "newly_revealed": "结尾揭示三只哈士奇可完成纵向叠站造型",
+              "uncertainty": "结尾静止时长",
+              "target_adaptation": "保留‘汇聚 -> 接触’的连续衔接，接触点不跳变"
+            },
+            "evidence_refs": [
+              "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[2]",
+              "01_reference_video_analysis/reference_video_analysis.json#scenes[0].video_generation.action"
+            ],
+            "negative_constraints": []
+          },
+          "mapping_self_check": {
+            "memory_point_check": {
+              "status": "passed",
+              "checked_memory_ids": [],
+              "notes": []
+            },
+            "dynamic_detail_check": {
+              "status": "passed",
+              "notes": [
+                "上抬-搭背的接触点与重心转移动态清楚"
+              ]
+            }
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "哈士奇主体",
+              "户外草坪"
+            ],
+            "dynamic_event": "最右侧哈士奇上抬前肢并搭上相邻个体背部",
+            "motion_path": "前肢由地面抬起到相邻个体背部上方并落下",
+            "pose_or_state_change": "由奔跑转为前肢抬起、躯干上倾",
+            "camera_change": "推近收尾，幅度减小",
+            "composition_change": "横向队形开始在垂直方向叠加",
+            "transition_relation": "同一镜头内连续动作，无转场",
+            "time_order": "3.0-4.0s",
+            "script_or_text_beat": "B003 proof 起始",
+            "generation_focus": [
+              "上抬动作",
+              "前爪搭背的接触点",
+              "承重关系建立"
+            ],
+            "state_relation": "接触关系首次出现，属新揭示信息"
+          },
+          "scene_transfer": {
+            "preserve_scene_style": [
+              "自然日光",
+              "中景景别"
+            ],
+            "adapt_scene_content": [
+              "户外草坪"
+            ],
+            "scene_description_for_generation": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。"
+          },
+          "subject_transfer": {
+            "preserve_mechanism": [
+              "个体上抬搭背",
+              "承重支撑关系"
+            ],
+            "adaptation": [
+              "水豚搭背 -> 哈士奇前爪搭背"
+            ],
+            "visible_difference_anchor": [
+              "犬类前肢结构与踩踏形态"
+            ]
+          },
+          "prop_transfer": {
+            "preserve_mechanism": [],
+            "adaptation": [],
+            "discard": []
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "中景，接触点位于画面视觉重心，推近态势收尾"
+            ],
+            "lighting_and_texture": [
+              "自然日光，接触处在下方个体背部形成轻微阴影"
+            ],
+            "motion_and_action": [
+              "右侧哈士奇减速、上抬前肢，前爪搭到相邻个体背部并开始承重"
+            ],
+            "editing_and_transition": [
+              "连续动作，无剪切"
+            ],
+            "state_relation_and_continuity": [
+              "由汇聚连续过渡到接触，无跳变"
+            ],
+            "scene_and_subject": [
+              "<哈士奇主体> 在 <户外草坪> 中建立承重接触"
+            ],
+            "text_logo_and_overlay": [],
+            "negative_constraints": [],
+            "compact_guardrails": [],
+            "source_terms": [
+              "VK-ACT-001 主体切换（Subject Switching）"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "reference_frame_usage": {
+            "used_reference_frame_ids": [
+              "FR_PERSON_HUSKY",
+              "FR_SCENE_LAWN"
+            ],
+            "used_entity_ids": [
+              "P001",
+              "SCENE001"
+            ],
+            "usage_role": "person_reference",
+            "notes": []
+          },
+          "negative_constraints": [],
+          "compact_guardrails": [],
+          "missing_inputs": [],
+          "generation_assumptions": [
+            "GA002"
+          ],
+          "status": "ready_with_assumptions",
+          "source_trace": [
+            "SC001_SH001",
+            "vm_003"
+          ]
+        },
+        {
+          "segment_id": "SEG005",
+          "time_range_sec": {
+            "start": 4.0,
+            "end": 5.0
+          },
+          "duration_sec": 1.0,
+          "reference_function": "action_or_interaction",
+          "target_function": "proof：完成横向到纵向的叠站构图重组",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "proof",
+            "content_summary": "三只哈士奇的横向队形重组为下方的两只承重、上方一只站立的纵向叠站造型。",
+            "primary_visual_subject": "哈士奇主体（三只哈士奇）",
+            "secondary_visual_elements": [
+              "户外草坪（前景草地/远景树冠与天空）"
+            ],
+            "interaction_or_relation": "下方个体承担支撑，上方个体重心转移并稳定站立",
+            "action_progression": "前爪搭背 -> 上方个体踩上背部 -> 重心转移 -> 形成纵向叠站造型",
+            "scene_content": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+            "script_story_content": "结果揭示：完成叠站造型，证明三只可以协同造型。",
+            "camera_and_composition": [
+              "中景，构图由横向排列重组为纵向堆叠",
+              "叠站主体位于画面中心偏右"
+            ],
+            "viewpoint": "平视机位，eye_level，主体位于画面中部",
+            "camera_motion": "推近基本停止，镜头稳定",
+            "focus_and_depth": "中景主体清晰，背景草坪柔化",
+            "editing_and_transition": "单一连续镜头，无剪切、无转场",
+            "pace_and_duration": "减速至停顿",
+            "must_be_visible": [
+              "横向排列重组为纵向叠站",
+              "下方承重与上方站立关系",
+              "上方个体重心转移并稳定",
+              "叠站造型完整"
+            ],
+            "target_bindings": [
+              {
+                "binding_id": "TB001",
+                "target": "target_video",
+                "asset_id": "A001",
+                "role": "primary_subject_reference"
+              },
+              {
+                "binding_id": "TB002",
+                "target": "SC001",
+                "asset_id": "REF_VIDEO_VS001",
+                "role": "motion_camera_timing_reference"
+              }
+            ],
+            "state_relation_transfer": {
+              "source_relation_refs": [
+                "VS001:shot1#state_relations[0]"
+              ],
+              "observed_changes": [],
+              "continuity": [
+                "同一空间、同一主体连续运动，无镜头切换"
+              ],
+              "newly_revealed": "结尾揭示三只哈士奇可完成纵向叠站造型",
+              "uncertainty": "结尾静止时长",
+              "target_adaptation": "保留队形由横向到纵向的重组关系，属新揭示信息"
+            },
+            "evidence_refs": [
+              "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[1]",
+              "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[0]"
+            ],
+            "negative_constraints": []
+          },
+          "mapping_self_check": {
+            "memory_point_check": {
+              "status": "passed",
+              "checked_memory_ids": [
+                "vm_001",
+                "vm_003"
+              ],
+              "notes": [
+                "特殊构图（横向到纵向叠站重组）已迁移为目标侧可执行句子"
+              ]
+            },
+            "dynamic_detail_check": {
+              "status": "passed",
+              "notes": [
+                "重心转移、承重与站立过程清楚"
+              ]
+            }
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "哈士奇主体",
+              "户外草坪"
+            ],
+            "dynamic_event": "横向三只队形重组为纵向叠站造型",
+            "motion_path": "上方个体由地面经前爪支撑上升到下方个体背部并稳定",
+            "pose_or_state_change": "由横向并列转为纵向堆叠，上方个体重心上移后稳定",
+            "camera_change": "推近停止，转为稳定机位",
+            "composition_change": "水平横向队列重组为垂直堆叠构图",
+            "transition_relation": "同一镜头内构图重组，无转场",
+            "time_order": "4.0-5.0s",
+            "script_or_text_beat": "B003 proof：造型结果",
+            "generation_focus": [
+              "横向到纵向的构图重组",
+              "承重/站立关系",
+              "重心转移"
+            ],
+            "state_relation": "队形重组是新揭示的造型结果"
+          },
+          "scene_transfer": {
+            "preserve_scene_style": [
+              "自然日光",
+              "中景空间深度"
+            ],
+            "adapt_scene_content": [
+              "户外草坪"
+            ],
+            "scene_description_for_generation": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。"
+          },
+          "subject_transfer": {
+            "preserve_mechanism": [
+              "横向三体队形重组为纵向叠站造型"
+            ],
+            "adaptation": [
+              "水豚叠站 -> 哈士奇叠站"
+            ],
+            "visible_difference_anchor": [
+              "犬类体型比例与踩踏支撑形态"
+            ]
+          },
+          "prop_transfer": {
+            "preserve_mechanism": [],
+            "adaptation": [],
+            "discard": []
+          },
+          "special_mechanism_transfer": [
+            {
+              "mechanism_id": "SMO_COMP_001",
+              "mechanism_type": "special_composition",
+              "source_ref": "01_reference_video_analysis/reference_video_analysis.json#video_prompt_source.special_mechanisms[1]",
+              "time_range_sec": {
+                "start": 4.0,
+                "end": 5.8
+              },
+              "evidence_summary": "水平并排的三体队形重组为下方承载、上方站立的纵向叠站构图。",
+              "inherit_or_adapt": "inherit",
+              "target_execution": "三只哈士奇由横向等距排列重组为中心偏右的纵向叠站：两只在下方承重，一只站立其上，垂直堆叠占据画面中心。",
+              "prompt_sentence": "The three huskies restructure from a horizontal side-by-side row into a vertical stacked formation at center-right: two dogs bear the weight below while the third stands on top of them, the composition turning from horizontal to vertical and holding with the stack facing the camera.",
+              "must_be_visible": [
+                "横向排列重组为纵向堆叠",
+                "下方承重/上方站立关系",
+                "堆叠构图位于画面中心偏右"
+              ],
+              "handoff_level": "downstream_prompt",
+              "loss_risk": "high"
+            }
+          ],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "中景，构图由横向等距排列重组为中心偏右的纵向叠站，推近停止、机位稳定"
+            ],
+            "lighting_and_texture": [
+              "自然日光，堆叠主体在草地上投下连续阴影"
+            ],
+            "motion_and_action": [
+              "上方哈士奇踩上下方同伴背部，重心上移并稳定站立，形成纵向叠站造型"
+            ],
+            "editing_and_transition": [
+              "同一连续镜头内的构图重组，无剪切"
+            ],
+            "state_relation_and_continuity": [
+              "队形重组连续完成，属新揭示的造型结果"
+            ],
+            "scene_and_subject": [
+              "<哈士奇主体> 三只在 <户外草坪> 上组成纵向叠站造型"
+            ],
+            "text_logo_and_overlay": [],
+            "negative_constraints": [],
+            "compact_guardrails": [],
+            "source_terms": [
+              "VK-COMP-004 中景（Midground）",
+              "VK-ACT-001 主体揭示（Subject Revealing）"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "reference_frame_usage": {
+            "used_reference_frame_ids": [
+              "FR_PERSON_HUSKY",
+              "FR_SCENE_LAWN"
+            ],
+            "used_entity_ids": [
+              "P001",
+              "SCENE001"
+            ],
+            "usage_role": "person_reference",
+            "notes": []
+          },
+          "negative_constraints": [],
+          "compact_guardrails": [],
+          "missing_inputs": [],
+          "generation_assumptions": [
+            "GA002"
+          ],
+          "status": "ready_with_assumptions",
+          "source_trace": [
+            "SC001_SH001",
+            "vm_001",
+            "smo_comp_001"
+          ]
+        },
+        {
+          "segment_id": "SEG006",
+          "time_range_sec": {
+            "start": 5.0,
+            "end": 5.8
+          },
+          "duration_sec": 0.8,
+          "reference_function": "closing_or_prompt",
+          "target_function": "closing：叠站造型稳定保持并面向镜头收束",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "closing",
+            "content_summary": "三只哈士奇保持纵向叠站造型，面向镜头稳定静止，完成收束。",
+            "primary_visual_subject": "哈士奇主体（三只哈士奇）",
+            "secondary_visual_elements": [
+              "户外草坪（前景草地/远景树冠与天空）"
+            ],
+            "interaction_or_relation": "堆叠造型保持承重与支撑关系不变",
+            "action_progression": "造型完成 -> 稳定保持 -> 面向镜头静止",
+            "scene_content": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。",
+            "script_story_content": "收尾：以稳定造型保持完成信息落点。",
+            "camera_and_composition": [
+              "中景，叠站造型位于画面中心偏右并保持稳定"
+            ],
+            "viewpoint": "平视机位，eye_level，主体位于画面中部",
+            "camera_motion": "镜头静止，无位移与变焦",
+            "focus_and_depth": "中景主体清晰，背景草坪柔化",
+            "editing_and_transition": "单一连续镜头，无剪切、无转场",
+            "pace_and_duration": "停顿，稳定收束",
+            "must_be_visible": [
+              "叠站造型完整保持",
+              "三只面向镜头",
+              "画面稳定静止"
+            ],
+            "target_bindings": [
+              {
+                "binding_id": "TB001",
+                "target": "target_video",
+                "asset_id": "A001",
+                "role": "primary_subject_reference"
+              },
+              {
+                "binding_id": "TB002",
+                "target": "SC001",
+                "asset_id": "REF_VIDEO_VS001",
+                "role": "motion_camera_timing_reference"
+              }
+            ],
+            "state_relation_transfer": {
+              "source_relation_refs": [
+                "VS001:shot1#state_relations[0]"
+              ],
+              "observed_changes": [],
+              "continuity": [
+                "同一空间、同一主体连续运动，无镜头切换"
+              ],
+              "newly_revealed": "结尾揭示三只哈士奇可完成纵向叠站造型",
+              "uncertainty": "结尾静止时长",
+              "target_adaptation": "保留结尾造型静态保持；结尾静止时长存在不确定性"
+            },
+            "evidence_refs": [
+              "01_reference_video_analysis/reference_video_analysis.json#script_construction_context.beats[3]",
+              "01_reference_video_analysis/reference_video_analysis.json#memory_points.script[0]"
+            ],
+            "negative_constraints": []
+          },
+          "mapping_self_check": {
+            "memory_point_check": {
+              "status": "passed",
+              "checked_memory_ids": [
+                "vm_001"
+              ],
+              "notes": [
+                "叠站构图在结尾保持，特殊构图覆盖完整"
+              ]
+            },
+            "dynamic_detail_check": {
+              "status": "passed",
+              "notes": [
+                "由运动转为静止的终点清楚；结尾静止时长标记为不确定"
+              ]
+            }
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "哈士奇主体",
+              "户外草坪"
+            ],
+            "dynamic_event": "叠站造型稳定保持并面向镜头静止",
+            "motion_path": "无明显位移，仅姿态稳定保持",
+            "pose_or_state_change": "由完成动作转为静止保持",
+            "camera_change": "完全静止，无位移、无变焦",
+            "composition_change": "纵向叠站构图保持稳定",
+            "transition_relation": "整段收束，无转场（连续镜头结束）",
+            "time_order": "5.0-5.8s",
+            "script_or_text_beat": "B004 closing：造型保持收束",
+            "generation_focus": [
+              "叠站造型保持",
+              "面向镜头",
+              "画面稳定"
+            ],
+            "state_relation": "结尾静态保持；静止时长不确定"
+          },
+          "scene_transfer": {
+            "preserve_scene_style": [
+              "自然日光",
+              "中景景别与空间深度"
+            ],
+            "adapt_scene_content": [
+              "户外草坪"
+            ],
+            "scene_description_for_generation": "户外草坪：前景为修剪整齐的绿色草地并带柔和草地阴影，中景为三只哈士奇的协同表演活动区，背景为开阔天空与远处成排乔木/低矮绿篱，背景密度中低并适度虚化。"
+          },
+          "subject_transfer": {
+            "preserve_mechanism": [
+              "结尾造型稳定保持并面向镜头"
+            ],
+            "adaptation": [
+              "水豚叠站保持 -> 哈士奇叠站保持"
+            ],
+            "visible_difference_anchor": [
+              "犬类面部与吐舌神态"
+            ]
+          },
+          "prop_transfer": {
+            "preserve_mechanism": [],
+            "adaptation": [],
+            "discard": []
+          },
+          "special_mechanism_transfer": [
+            {
+              "mechanism_id": "SMO_COMP_001_HOLD",
+              "mechanism_type": "special_composition",
+              "source_ref": "01_reference_video_analysis/reference_video_analysis.json#memory_points.visual[0]",
+              "time_range_sec": {
+                "start": 5.0,
+                "end": 5.8
+              },
+              "evidence_summary": "叠站造型在结尾稳定保持，纵向堆叠构图持续可见。",
+              "inherit_or_adapt": "inherit",
+              "target_execution": "保持纵向叠站构图不变，三只哈士奇面向镜头静止，画面稳定无位移。",
+              "prompt_sentence": "The vertical stacked formation holds still and faces the camera, the two supporting huskies and the one standing on top remaining in place with no camera movement or change in composition.",
+              "must_be_visible": [
+                "纵向叠站构图持续保持",
+                "三只面向镜头",
+                "画面稳定静止"
+              ],
+              "handoff_level": "downstream_prompt",
+              "loss_risk": "medium"
+            }
+          ],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "中景静止机位，纵向叠站构图保持稳定"
+            ],
+            "lighting_and_texture": [
+              "自然日光稳定，草地阴影保持不变"
+            ],
+            "motion_and_action": [
+              "三只哈士奇保持叠站造型面向镜头静止"
+            ],
+            "editing_and_transition": [
+              "连续镜头收束，无剪切"
+            ],
+            "state_relation_and_continuity": [
+              "结尾造型静态保持，静止时长存在不确定性"
+            ],
+            "scene_and_subject": [
+              "<哈士奇主体> 三只在 <户外草坪> 上保持叠站造型"
+            ],
+            "text_logo_and_overlay": [],
+            "negative_constraints": [],
+            "compact_guardrails": [],
+            "source_terms": [
+              "VK-EDIT-003 揭示后保持"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "reference_frame_usage": {
+            "used_reference_frame_ids": [
+              "FR_PERSON_HUSKY",
+              "FR_SCENE_LAWN"
+            ],
+            "used_entity_ids": [
+              "P001",
+              "SCENE001"
+            ],
+            "usage_role": "person_reference",
+            "notes": []
+          },
+          "negative_constraints": [],
+          "compact_guardrails": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready_with_assumptions",
+          "source_trace": [
+            "SC001_SH001",
+            "B004",
+            "vm_001"
+          ]
+        }
+      ],
+      "asset_bindings": [
+        {
+          "asset_id": "A001",
+          "slot": "primary_subject_reference",
+          "usage": "三只哈士奇主体外观参考（个体A锚定）",
+          "source": "user_assets"
+        },
+        {
+          "asset_id": "REF_VIDEO_VS001",
+          "slot": "motion_camera_timing_reference",
+          "usage": "构图/运镜/动作机制/镜头顺序/时间节奏参考",
+          "source": "reference_video"
+        }
+      ],
+      "negative_constraints": [],
+      "missing_inputs": [
+        "MI001",
+        "MI002"
+      ],
+      "generation_assumptions": [
+        "GA001",
+        "GA002",
+        "GA003"
+      ],
+      "status": "ready_with_assumptions",
+      "source_trace": [
+        "SC001",
+        "SC001_SH001",
+        "VS001:shot1"
+      ]
+    }
+  ],
+  "reference_frame_summary": {
+    "frame_requirement_level": "required_person_scene_anchors",
+    "plan_required": true,
+    "person_entity_count": 1,
+    "scene_entity_count": 1,
+    "planned_frame_count": 2,
+    "plan_path": "07_reference_frame_plan/reference_frame_plan.json",
+    "ready_frame_ids": [
+      "FR_PERSON_HUSKY",
+      "FR_SCENE_LAWN"
+    ],
+    "summary_status": "ready",
+    "triggered_rules": [
+      "person_reference_entity_present",
+      "scene_reference_entity_present"
+    ],
+    "notes": [
+      "人物锚点：三只哈士奇主体外观（P001）；场景锚点：户外草坪（SCENE001）"
+    ]
+  },
+  "script_copy": {
+    "dialogue_voiceover_on_screen_text_enabled": true,
+    "status": "no_effective_speech",
+    "source_asr_status": "ok_no_speech",
+    "items": [],
+    "policy": "preserve_information_structure_and_narrative_function_not_source_wording",
+    "notes": [
+      "参考视频无有效台词/口播/旁白与画面文字；目标视频不新增文案，仅保留信息节奏"
+    ]
+  },
+  "unsupported_audio": {
+    "enabled": false,
+    "status": "unsupported_skipped",
+    "unsupported_items": [
+      "bgm_structure",
+      "music_detection",
+      "beat_alignment",
+      "sfx_events",
+      "singing_or_suspected_singing_detection",
+      "voice_timing_as_audio",
+      "audio_mood_curve"
+    ]
+  },
+  "missing_inputs": [
+    {
+      "missing_input_id": "MI001",
+      "slot": "additional_subjects",
+      "status": "missing_generate_fallback",
+      "resolution_policy": "generate_with_confirmed_assumption",
+      "blocks_h3_packaging": false
+    },
+    {
+      "missing_input_id": "MI002",
+      "slot": "scene_asset",
+      "status": "ready_with_text_instruction",
+      "resolution_policy": "use_text_instruction",
+      "blocks_h3_packaging": false
+    },
+    {
+      "missing_input_id": "MI003",
+      "slot": "post_overlay_content",
+      "status": "neutralize_allowed",
+      "resolution_policy": "omit_or_neutralize",
+      "blocks_h3_packaging": false
+    },
+    {
+      "missing_input_id": "MI004",
+      "slot": "performance_action_reference",
+      "status": "missing_generate_fallback",
+      "resolution_policy": "generate_with_confirmed_assumption",
+      "blocks_h3_packaging": false
+    }
+  ],
+  "generation_assumptions": [
+    {
+      "assumption_id": "GA001",
+      "slot": "additional_subjects",
+      "description": "在 A001 外观基础上生成另外两只同款哈士奇，组成三只同类主体",
+      "status": "accepted_with_assumption",
+      "risk_level": "low"
+    },
+    {
+      "assumption_id": "GA002",
+      "slot": "performance_action",
+      "description": "三只哈士奇复刻参考视频的协同表演动作（下蹲、汇聚、叠站造型）",
+      "status": "accepted_with_assumption",
+      "risk_level": "medium"
+    },
+    {
+      "assumption_id": "GA003",
+      "slot": "scene",
+      "description": "按用户文本将场景迁移为户外草坪；草地质感参考 A001，体育场看台不迁移",
+      "status": "accepted_with_assumption",
+      "risk_level": "low"
+    }
+  ],
+  "packaging_notes": [
+    "单一连续镜头：timeline_units 仅 1 个 unit（SC001），内部保留 6 个 temporal_segments，不得当作 6 个参考镜头或新增剪切",
+    "H3 prompt 中如按 temporal_segments 呈现多个 [Shot N]/Beat，仅属 prompt_shots_from_temporal_segments，不是参考级镜头拆分",
+    "special_mechanism_transfer 的 prompt_sentence 必须进入对应分镜句子",
+    "post_overlay_plan 为空：无后期叠加内容，H3 输出 clean frame，不渲染文字/logo"
+  ],
+  "validation_flags": [
+    "single_subject_asset_for_three_subject_request",
+    "static_asset_for_dynamic_action",
+    "scene_generated_from_user_text_only",
+    "profile_not_loaded_for_script_function",
+    "post_overlay_content_absent_non_blocking"
+  ]
+}
