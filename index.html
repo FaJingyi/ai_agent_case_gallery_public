@@ -3,233 +3,336 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Agent Platform Case Gallery</title>
+  <title>AI Agent Case Gallery</title>
   <style>
     :root {
-      --bg: #f6f7fb;
+      --bg: #f4f6f8;
       --panel: #ffffff;
-      --ink: #171923;
-      --muted: #5f6877;
-      --line: #dfe4ed;
-      --soft: #eef2f7;
-      --accent: #1f6feb;
-      --accent-2: #0f766e;
-      --warn: #a16207;
-      --shadow: 0 16px 40px rgba(23, 25, 35, 0.08);
+      --ink: #18202a;
+      --muted: #617083;
+      --line: #dce3eb;
+      --line-strong: #c7d1dc;
+      --soft: #eef3f7;
+      --accent: #0b6bcb;
+      --accent-2: #147d64;
+      --warn: #9b5d00;
+      --shadow: 0 14px 34px rgba(29, 41, 57, 0.08);
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
+      line-height: 1.55;
     }
-
-    header {
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    .shell {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+    .side {
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow: auto;
+      border-right: 1px solid var(--line);
+      background: #fbfcfd;
+      padding: 24px 18px;
+    }
+    .brand {
+      margin: 0 0 6px;
+      font-size: 17px;
+      font-weight: 760;
+      letter-spacing: 0;
+    }
+    .side-note {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .nav-label {
+      margin: 20px 0 8px;
+      color: #425466;
+      font-size: 12px;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+    .nav-list {
+      display: grid;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-list a {
+      display: block;
+      border-radius: 7px;
+      padding: 8px 10px;
+      color: #263442;
+      font-size: 13px;
+    }
+    .nav-list a:hover {
+      background: var(--soft);
+      text-decoration: none;
+    }
+    .content {
+      min-width: 0;
+    }
+    .hero {
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
     }
-
     .wrap {
-      width: min(1440px, calc(100% - 48px));
+      width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
     }
-
-    .hero {
-      padding: 40px 0 30px;
+    .hero-inner {
+      padding: 46px 0 34px;
     }
-
     .eyebrow {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: var(--accent-2);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0;
-      text-transform: uppercase;
     }
-
     h1 {
-      max-width: 980px;
+      max-width: 960px;
       margin: 0;
-      font-size: clamp(34px, 5vw, 64px);
-      line-height: 1.02;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.03;
       letter-spacing: 0;
     }
-
     .intro {
-      max-width: 920px;
+      max-width: 880px;
       margin: 18px 0 0;
       color: var(--muted);
       font-size: 17px;
     }
-
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      border: 1px solid var(--line-strong);
+      border-radius: 7px;
+      background: #fff;
+      color: #203040;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .button.primary {
+      border-color: #0b6bcb;
+      background: #0b6bcb;
+      color: #fff;
+    }
     .stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
       margin-top: 28px;
     }
-
     .stat {
-      min-height: 86px;
-      padding: 16px;
+      min-height: 88px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--panel);
+      padding: 16px;
     }
-
     .stat strong {
       display: block;
-      font-size: 28px;
+      font-size: 29px;
       line-height: 1;
     }
-
     .stat span {
       display: block;
       margin-top: 8px;
       color: var(--muted);
       font-size: 13px;
     }
-
     main {
-      padding: 28px 0 54px;
+      padding: 30px 0 56px;
     }
-
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 15px;
+      box-shadow: 0 8px 22px rgba(29, 41, 57, 0.04);
+    }
+    .mini-card h3 {
+      margin: 0 0 7px;
+      font-size: 15px;
+    }
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
     .case {
       margin-top: 22px;
-      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--panel);
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
-
-    .case:first-child {
-      margin-top: 0;
-    }
-
     .case-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: 20px;
-      padding: 20px 22px;
       border-bottom: 1px solid var(--line);
       background: #fbfcfe;
+      padding: 22px;
     }
-
-    .case-title {
+    .case-kicker {
+      margin: 0 0 6px;
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    .case h2 {
       margin: 0;
-      font-size: 22px;
-      line-height: 1.2;
+      font-size: 27px;
+      line-height: 1.15;
       letter-spacing: 0;
     }
-
-    .case-path {
-      margin-top: 7px;
+    .case-summary {
+      max-width: 840px;
+      margin: 11px 0 0;
       color: var(--muted);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px;
-      word-break: break-all;
+      font-size: 14px;
     }
-
     .badges {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
       gap: 8px;
-      min-width: 260px;
+      max-width: 370px;
     }
-
     .badge {
       display: inline-flex;
       align-items: center;
       min-height: 28px;
-      padding: 5px 9px;
       border: 1px solid var(--line);
       border-radius: 999px;
       background: #fff;
-      color: var(--muted);
+      color: #506073;
+      padding: 5px 9px;
       font-size: 12px;
       white-space: nowrap;
     }
-
-    .matrix {
+    .badge.ok { color: #0f6b4f; border-color: #b9dfd1; background: #effaf6; }
+    .badge.warn { color: var(--warn); border-color: #ead3a0; background: #fff8e6; }
+    .case-body {
       display: grid;
-      grid-template-columns: minmax(260px, 1.05fr) minmax(280px, 1fr) minmax(280px, 1fr);
-      gap: 0;
+      gap: 22px;
+      padding: 22px;
     }
-
-    .cell {
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .panel {
       min-width: 0;
-      padding: 18px;
-      border-right: 1px solid var(--line);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
     }
-
-    .cell:last-child {
-      border-right: 0;
-    }
-
-    .cell + .cell {
-      background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
-    }
-
-    .cell-title {
+    .panel-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 12px;
-      color: #2b3340;
+      min-height: 44px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfe;
+      padding: 10px 12px;
+      color: #2b3b4b;
       font-size: 13px;
+      font-weight: 800;
+    }
+    .panel-head a {
+      flex: 0 0 auto;
+      font-size: 12px;
       font-weight: 700;
     }
-
-    .cell-title a {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .media-frame {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #111827;
+    .video-frame {
+      display: grid;
+      place-items: center;
       aspect-ratio: 9 / 16;
+      background: #111827;
     }
-
-    video,
-    img {
+    video, img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
-
+    .placeholder {
+      display: grid;
+      min-height: 180px;
+      place-items: center;
+      background: var(--soft);
+      color: var(--muted);
+      padding: 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 14px;
+    }
     .asset-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
       gap: 12px;
+      padding: 12px;
     }
-
     .asset {
       min-width: 0;
     }
-
-    .asset .media-frame {
-      background: #f8fafc;
+    .asset-frame {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #f7f9fb;
       aspect-ratio: 1 / 1;
     }
-
-    .filename {
+    .caption {
       margin-top: 6px;
       overflow: hidden;
       color: var(--muted);
@@ -237,286 +340,1014 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-
-    .text-view {
-      width: 100%;
-      height: 210px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+    .text-box {
+      margin: 0;
+      max-height: 330px;
+      overflow: auto;
+      border: 0;
       background: #fbfcfe;
-    }
-
-    .text-view object {
-      width: 100%;
-      height: 100%;
-      color: var(--ink);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 13px;
+      color: #243242;
+      padding: 14px;
+      font-size: 12px;
       white-space: pre-wrap;
     }
-
-    .text-stack {
-      display: grid;
-      gap: 14px;
+    .request {
+      max-height: 160px;
+      border-top: 1px solid var(--line);
+      background: #fff;
     }
-
-    .placeholder {
-      display: grid;
-      min-height: 160px;
-      place-items: center;
-      border: 1px dashed #cbd5e1;
-      border-radius: 8px;
-      background: var(--soft);
-      color: var(--muted);
-      padding: 18px;
-      text-align: center;
-      font-size: 14px;
+    .step-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
     }
-
-    .pending {
-      color: var(--warn);
+    .step-table th,
+    .step-table td {
+      border-top: 1px solid var(--line);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
     }
-
-    footer {
-      padding: 22px 0 36px;
+    .step-table th {
+      border-top: 0;
+      background: #fbfcfe;
+      color: #425466;
+      font-size: 12px;
+    }
+    .step-table code {
+      color: #243242;
+      font-size: 12px;
+    }
+    .status-completed { color: #0f6b4f; font-weight: 800; }
+    .status-skipped { color: var(--warn); font-weight: 800; }
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 34px;
       color: var(--muted);
       font-size: 13px;
     }
-
-    @media (max-width: 1100px) {
-      .matrix {
-        grid-template-columns: 1fr;
-      }
-
-      .cell {
+    @media (max-width: 1120px) {
+      .shell { display: block; }
+      .side {
+        position: static;
+        height: auto;
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
-
-      .cell:last-child {
-        border-bottom: 0;
-      }
+      .nav-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .media-grid, .detail-grid, .overview-grid { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 760px) {
-      .wrap {
-        width: min(100% - 28px, 1440px);
-      }
-
-      .hero {
-        padding-top: 28px;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .case-head {
-        display: block;
-      }
-
-      .badges {
-        justify-content: flex-start;
-        min-width: 0;
-        margin-top: 14px;
-      }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      .hero-inner { padding-top: 30px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .case-head { display: block; }
+      .badges { justify-content: flex-start; margin-top: 14px; }
+      .nav-list { grid-template-columns: 1fr; }
+      .case-body, .case-head { padding: 16px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap hero">
-      <p class="eyebrow">AI Agent Platform Evaluation</p>
-      <h1>Test Data Case Gallery</h1>
-      <p class="intro">按 case 汇总展示原始参考视频、user_input 图片素材与文本、生成结果视频和 prompt。输出文件请放在每个 case 的 <code>output/output.mp4</code> 与 <code>output/prompt.txt</code>。</p>
-      <div class="stats" aria-label="case summary">
-        <div class="stat"><strong id="caseCount">0</strong><span>Cases</span></div>
-        <div class="stat"><strong id="videoCount">0</strong><span>Original videos</span></div>
-        <div class="stat"><strong id="imageCount">0</strong><span>User input images</span></div>
-        <div class="stat"><strong id="textCount">0</strong><span>User input text files</span></div>
+  <div class="shell">
+    <aside class="side">
+      <p class="brand">AI Agent Case Gallery</p>
+      <p class="side-note">Static GitHub Pages view for H3 replication dry runs.</p>
+      <p class="nav-label">Overview</p>
+      <ul class="nav-list">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#cases">Case gallery</a></li>
+      </ul>
+      <p class="nav-label">Cases</p>
+      <ul class="nav-list">
+        <li><a href="#case-minimax">01 MiniMax Brand Rewrite</a></li>
+        <li><a href="#case-animal">02 Animal Character Replacement</a></li>
+        <li><a href="#case-dance">03 Dance Motion Replication</a></li>
+        <li><a href="#case-milk">04 Tea Bottle Product Replacement</a></li>
+        <li><a href="#case-nail-5">05 Nail Product Scene 5</a></li>
+        <li><a href="#case-nail-6">06 Nail Product Scene 6</a></li>
+      </ul>
+    </aside>
+    <div class="content">
+      <header class="hero">
+        <div class="wrap hero-inner">
+          <p class="eyebrow">H3 Context IR / AI Agent Evaluation</p>
+          <h1>视频复刻 Agent 案例展示</h1>
+          <p class="intro">把每个 dry-run case 的参考视频、用户输入、参考帧、H3 prompt、请求包和最终交付索引整理成一个可公开访问的 GitHub Pages 展示页，方便像文档一样快速浏览完整链路。</p>
+          <div class="actions">
+            <a class="button primary" href="#cases">查看案例</a>
+            <a class="button" href="https://github.com/FaJingyi/ai_agent_case_gallery_public" target="_blank" rel="noreferrer">GitHub Repository</a>
+            <a class="button" href="outputs/minimax-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open H3 Prompt</a>
+          </div>
+          <div class="stats" id="summary" aria-label="gallery summary">
+            <div class="stat"><strong>6</strong><span>Cases</span></div>
+            <div class="stat"><strong>65</strong><span>Pipeline steps indexed</span></div>
+            <div class="stat"><strong>20</strong><span>Generated reference frames</span></div>
+            <div class="stat"><strong>10</strong><span>User input assets</span></div>
+          </div>
+        </div>
+      </header>
+      <main class="wrap">
+        <h2 class="section-title">展示结构</h2>
+        <div class="overview-grid">
+          <section class="mini-card">
+            <h3>Reference to H3 package</h3>
+            <p>每个 case 都从参考视频分析开始，整理分镜、资产、复刻大纲，再输出 H3 prompt 和 request payload。</p>
+          </section>
+          <section class="mini-card">
+            <h3>Public review surface</h3>
+            <p>页面只引用仓库内相对路径，推到 GitHub Pages 后可以直接播放视频、查看图片和打开 Markdown/JSON 产物。</p>
+          </section>
+          <section class="mini-card">
+            <h3>Dry-run boundary</h3>
+            <p>当前多数 case 停在 H3 请求包生成阶段，页面会明确标注 skipped generation，而不是伪装成已有最终视频。</p>
+          </section>
+        </div>
+        <section id="cases">
+          <article class="case" id="case-minimax">
+    <div class="case-head">
+      <div>
+        <p class="case-kicker">Case 01 / minimax</p>
+        <h2>MiniMax Brand Rewrite</h2>
+        <p class="case-summary">参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪</p>
+      </div>
+      <div class="badges">
+        <span class="badge ok">completed_dry_run</span>
+        <span class="badge">15s reference</span>
+        <span class="badge">4 H3 shots</span>
+        <span class="badge ok">3 final video(s)</span>
       </div>
     </div>
-  </header>
+    <div class="case-body">
+      <div class="media-grid">
+        <section class="panel">
+    <div class="panel-head"><span>Reference video</span><a href="test_data/minimax/minimax.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/minimax/minimax.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/minimax/minimax_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/minimax/minimax_vis.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Generated result</span><a href="outputs/minimax-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/minimax-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+  </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>User input assets</span><a href="test_data/minimax/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><pre class="text-box">参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪</pre><div class="caption">test_data/minimax/user_input/requirement.txt.txt</div></div></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/minimax-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/minimax-replication-outline-dry-run/08_reference_frames/FRAME_SCENE1.png" alt="FRAME_SCENE1.png"></div><div class="caption">FRAME_SCENE1.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/minimax-replication-outline-dry-run/08_reference_frames/FRAME_SCENE2.png" alt="FRAME_SCENE2.png"></div><div class="caption">FRAME_SCENE2.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/minimax-replication-outline-dry-run/08_reference_frames/FRAME_SCENE3.png" alt="FRAME_SCENE3.png"></div><div class="caption">FRAME_SCENE3.png</div></div></div>
+        </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/minimax-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
+          <pre class="text-box">subject_definitions:
+&lt;Subject 1&gt; is the target cat protagonist: a ginger-and-cream domestic short-hair cat with amber eyes, a calm alert gaze, upright pointed ears with soft inner fur, fine whiskers and a small pink nose, a compact well-groomed body and a poised stay, sitting upright with the head lifted and the gaze directed to the right; in the closing close-up it wears oversized red geometric sunglasses.
+&lt;Subject 2&gt; is the ground-level street scene from &lt;Picture 1&gt;: a ground-level city street corner in front of a beige stone building, with a modern bus-stop shelter as the centered object, warm afternoon daylight, long soft ground shadows, and medium background density.
+&lt;Subject 3&gt; is the building exterior scene from &lt;Picture 2&gt;: a tall beige stone building facade seen from a low upward angle, with a large vertical white fabric banner hanging down its length, a cloudy overcast sky above, and a weathered stone surface.
+&lt;Subject 4&gt; is the open rooftop scene from &lt;Picture 3&gt;: an open rooftop terrace with a low parapet and an oversized three-dimensional lettering structure mounted on the roof, a cloudy sky beyond the parapet, warm daylight, and a clean concrete surface with a clear foreground area.
+&lt;Subject 5&gt; is the in-scene lettering &quot;MetaX&quot;: clean geometric sans-serif capitals with slight extruded depth on a warm off-white surface, appearing as shelter-panel lettering, vertical banner lettering, 3D rooftop lettering, and a mirrored lens reflection.
+&lt;Subject 6&gt; is the red geometric sunglasses: thick red geometric frames with two rounded-rectangle mirrored lenses carrying the reflected &quot;MetaX&quot; lettering.
+&lt;Video 1&gt; is the reference video; only its composition, camera language, transition mechanics, action mechanics, shot order, timing rhythm, spatial relationships, contin</pre>
+        </section>
+        <section class="panel"><div class="panel-head"><span>Final review</span><a href="outputs/minimax-replication-outline-dry-run/11_final_deliverable/final_review.md" target="_blank" rel="noreferrer">Open</a></div><pre class="text-box"># 最终交付审阅稿 (minimax-replication-outline dry run)
 
-  <main class="wrap" id="cases"></main>
+- 状态: `ready_with_assumptions` | 生成范围: `single_generation_task` | 时长: 15.0s
+- 参考视频: `test_data/minimax/minimax.mp4` (前 15.0s 截断版本)
+- 用户需求: 参考视频生成一条新的视频，把视频里所有&quot;minimax&quot;字母换成&quot;MetaX&quot;，把视频中的模特换成猫咪
+- timeline_unit_count: 4 | temporal_segment_count: 8 | h3_prompt_shot_count: 4
+- 说明: H3 prompt 的 `[Shot N]` 是 prompt-level shots (4 个, 对应参考级 4 个 shot); 每个 shot 内保留 8 个 temporal_segments 作为 beat 级时间范围, 未合并.
 
-  <footer class="wrap">
-    Relative data root: <code>../test_data</code>
-  </footer>
+## 显式替换覆盖
+- `REP001`: on-screen 'minimax' lettering / MINIMAX wordmark -&gt; **MetaX** | segments 8/8 visible | status `covered`
+- `REP002`: the model / the woman appearing in the reference video -&gt; **cat** | segments 4/4 visible | status `covered`
+- binding status: `passed`
 
-  <script>
-    const cases = [
-      {
-        name: "animal",
-        root: "../test_data/animal",
-        originalVideo: "2_2_case4-H3-original.mp4",
-        inputImages: [],
-        inputTexts: []
-      },
-      {
-        name: "dance",
-        root: "../test_data/dance",
-        originalVideo: "2_2_case2-H3-original.mp4",
-        inputImages: [],
-        inputTexts: []
-      },
-      {
-        name: "nail-5",
-        root: "../test_data/nail-5",
-        originalVideo: "nail-5.mp4",
-        inputImages: ["user_input/shangpin-3.png"],
-        inputTexts: ["user_input/requirement.txt"]
-      },
-      {
-        name: "nail-6",
-        root: "../test_data/nail-6",
-        originalVideo: "nail-6.mp4",
-        inputImages: ["user_input/shangpin-3.png"],
-        inputTexts: ["user_input/requirement.txt"]
-      },
-      {
-        name: "保鲜盒",
-        root: "../test_data/保鲜盒",
-        originalVideo: "竖屏-保鲜收纳-实拍-无台词_14s.mp4",
-        inputImages: [],
-        inputTexts: []
-      },
-      {
-        name: "特仑苏",
-        root: "../test_data/特仑苏",
-        originalVideo: "竖版-特仑苏-实拍-无台词_15s.mp4",
-        inputImages: ["user_input/东方树叶.jpg"],
-        inputTexts: []
-      }
-    ];
+## TU001  0.0-4.0s (4.0s)  [ready_with_assumptions]
+- 参考功能: `opening_hook` | 内容类型: `text_graphic`
+- 生成画面: MetaX-branded bus-stop shelter on a warm city street
+- 生成动作/运镜: held; only the lettering shadow drifts; static locked-off camera; eye-level observational POV
+- 场景迁移: SCENE_1: ground-level urban street, beige stone building, warm daylight; structure inherited, dressing re-lettered to MetaX
+- 画内文字/logo: ['in-scene physical lettering reading MetaX on the bus-stop shelter panel']
+- 后期叠加: [('label', 'neutralize_allowed')]
+  - 节拍 `TU001_S1` 0.0-2.5s | refer=`visual_display` target=`opening_hook` | scene=SCENE_1 | ref_frame=['FRAME_SCENE1'] | status=`ready_with_assumptions`</pre></section>
+      </div>
+      <section class="panel">
+        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/minimax-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
+        <table class="step-table">
+    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>step_01_inputs</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>00_inputs</code></td>
+        <td>input_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_02_reference_video_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>01_reference_video_analysis</code></td>
+        <td>reference_video_analysis.json, video_segment_plan.json, upstream_run_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_03_asset_inventory</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>03_asset_inventory</code></td>
+        <td>asset_candidates.json, h3_input_asset_inventory.json</td>
+      </tr>
+<tr>
+        <td><code>step_04_target_asset_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>04_target_asset_analysis</code><br><span>no user assets provided; VLM responses intentionally empty</span></td>
+        <td>target_asset_analysis.json, target_asset_vlm_responses.json</td>
+      </tr>
+<tr>
+        <td><code>step_05_replication_readiness</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>05_replication_readiness</code></td>
+        <td>replication_readiness_check.json</td>
+      </tr>
+<tr>
+        <td><code>step_06_replication_outline</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>06_replication_outline</code></td>
+        <td>replication_outline.json, replication_outline.md</td>
+      </tr>
+<tr>
+        <td><code>step_07_reference_frame_plan</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>07_reference_frame_plan</code></td>
+        <td>reference_frame_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_08_reference_frames</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>08_reference_frames</code></td>
+        <td>FRAME_SCENE1.png, FRAME_SCENE2.png, FRAME_SCENE3.png, batch_generation_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_09_h3_package</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>09_h3_package</code></td>
+        <td>h3_packager_input.md, minimax_h3_prompt.md, reference_mapping.md, pre_generation_checklist.md ...</td>
+      </tr>
+<tr>
+        <td><code>step_10_h3_video_generation</code></td>
+        <td class="status-skipped">skipped</td>
+        <td><code>10_h3_video_output</code><br><span>dry_run_boundary: H3 request/package produced, but H3 video generation submission is intentionally not executed in this run</span></td>
+        <td>request.json</td>
+      </tr>
+<tr>
+        <td><code>step_11_final_deliverable</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>11_final_deliverable</code></td>
+        <td>final_review.md, delivery_index.md, final_deliverable.json, stage_artifact_index.json</td>
+      </tr>
+    </tbody>
+  </table>
+      </section>
+    </div>
+  </article>
+<article class="case" id="case-animal">
+    <div class="case-head">
+      <div>
+        <p class="case-kicker">Case 02 / animal</p>
+        <h2>Animal Character Replacement</h2>
+        <p class="case-summary">参考视频生成一条新的视频，三只哈士奇在户外草坪上表演。</p>
+      </div>
+      <div class="badges">
+        <span class="badge ok">completed_to_h3_package</span>
+        <span class="badge">s reference</span>
+        <span class="badge">0 H3 shots</span>
+        <span class="badge ok">1 final video(s)</span>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="media-grid">
+        <section class="panel">
+    <div class="panel-head"><span>Reference video</span><a href="test_data/animal/2_2_case4-H3-original.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/animal/2_2_case4-H3-original.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/animal/animal_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/animal/animal_vis.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Generated result</span><a href="outputs/animal-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/animal-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+  </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>User input assets</span><a href="test_data/animal/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/animal/user_input/dog.jpeg" alt="dog.jpeg"></div><div class="caption">dog.jpeg</div></div>
+<div class="asset"><pre class="text-box">参考视频生成一条新的视频，三只哈士奇在户外草坪上表演。</pre><div class="caption">test_data/animal/user_input/requirement.txt</div></div></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/animal-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/animal-replication-outline-dry-run/08_reference_frames/FR_PERSON_HUSKY.png" alt="FR_PERSON_HUSKY.png"></div><div class="caption">FR_PERSON_HUSKY.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/animal-replication-outline-dry-run/08_reference_frames/FR_SCENE_LAWN.png" alt="FR_SCENE_LAWN.png"></div><div class="caption">FR_SCENE_LAWN.png</div></div></div>
+        </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/animal-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
+          <pre class="text-box">subject_definitions:
+&lt;Subject 1&gt; (husky characters, defined by &lt;Picture 1&gt;, appearance supported by &lt;Picture 3&gt;): three Siberian Husky dogs of the same breed performing together, medium-large sled-dog build with long athletic legs and thick black-white-gray double coats, deep gray-black back and ear tops, white chest, belly and inner legs, white facial masks with darker eye masks, erect triangular ears, white-tipped bushy curled tails, mouths open with tongues out and lively friendly expressions; the lead individual has heterochromatic eyes (one brown, one blue) and follows &lt;Picture 3&gt;; the other two are the same breed with slightly narrower masks and the same lively posture.
+&lt;Subject 2&gt; (outdoor lawn environment, defined by &lt;Picture 2&gt;): an open park lawn in bright natural daylight, neatly mown green grass with visible blade texture and soft natural shadows, a distant low band of trees and hedges along the far edge, pale blue open sky above, green and yellow-green palette, medium-low contrast, low background density with gentle falloff toward the trees.
+&lt;Video 1&gt; is the reference video; it defines only camera language, motion mechanics, shot order, timing rhythm, spatial relationships, continuity and information-reveal structure, not the subject or the scene.
 
-    const fileName = path => path.split("/").pop();
-    const mediaPath = (item, path) => `${item.root}/${path}`;
+summary:
+[reference generation] Three huskies perform a stacked-formation trick together on an outdoor lawn, reproducing the reference video's single continuous take, slow optical push-in and horizontal-to-vertical formation restructure, while the subject, species and environment are fully replaced.
 
-    function el(tag, className, text) {
-      const node = document.createElement(tag);
-      if (className) node.className = className;
-      if (text !== undefined) node.textContent = text;
-      return node;
-    }
+retention_analysis:
+Retain from &lt;Video 1&gt;: the single continuous shot with no cuts or transitions; the four-part information order (establish subjects, set up synchronized motion, reveal the stack result, hold at the</pre>
+        </section>
+        <section class="panel"><div class="panel-head"><span>Final review</span><a href="outputs/animal-replication-outline-dry-run/11_final_deliverable/final_review.md" target="_blank" rel="noreferrer">Open</a></div><pre class="text-box"># 最终交付审阅稿（dry-run：到 H3 打包为止）
 
-    function videoBlock(src, label, pending = false) {
-      const frame = el("div", "media-frame");
-      const video = document.createElement("video");
-      video.controls = true;
-      video.preload = "metadata";
-      video.src = src;
-      video.setAttribute("playsinline", "");
-      const fallback = el("div", "placeholder" + (pending ? " pending" : ""), pending ? "待添加 output.mp4" : "视频无法加载");
-      fallback.hidden = true;
-      video.addEventListener("error", () => {
-        video.hidden = true;
-        fallback.hidden = false;
-      });
-      frame.append(video, fallback);
-      if (!label) return frame;
-      const box = el("div", "asset");
-      box.append(frame, el("div", "filename", label));
-      return box;
-    }
+## 运行结论
+- 状态: `completed_to_h3_package_dry_run`
+- H3 视频生成: `skipped_dry_run`（未提交、未执行；本 dry-run 边界为 H3 request/package）
+- H3 请求包: `09_h3_package/h3_request.json`（dry-run，`submitted=false`）
+- 参考帧: 2 个（角色 FR_PERSON_HUSKY / 场景 FR_SCENE_LAWN），均已生成并进入 H3 白名单
 
-    function imageBlock(src, label) {
-      const box = el("div", "asset");
-      const frame = el("div", "media-frame");
-      const image = document.createElement("img");
-      image.src = src;
-      image.alt = label;
-      const fallback = el("div", "placeholder", "图片无法加载");
-      fallback.hidden = true;
-      image.addEventListener("error", () => {
-        image.hidden = true;
-        fallback.hidden = false;
-      });
-      frame.append(image, fallback);
-      box.append(frame, el("div", "filename", label));
-      return box;
-    }
+## 计数
+- `timeline_unit_count`: 1（单一参考镜头 SC001）
+- `temporal_segment_count`: 6（SEG001-SEG006）
+- `h3_prompt_shot_count`: 1（`[Shot 1]`）；另含 `h3_prompt_beat_count`: 6（Beat 1-6，同一连续镜头内部节拍，非参考级镜头拆分）
 
-    function textBlock(src, label, pending = false) {
-      const stack = el("div", "text-stack");
-      const title = el("div", "filename", label);
-      const frame = el("div", "text-view");
-      const object = document.createElement("object");
-      object.type = "text/plain";
-      object.data = src;
-      object.append(el("div", "placeholder" + (pending ? " pending" : ""), pending ? "待添加 prompt.txt" : "文本无法加载"));
-      frame.append(object);
-      stack.append(title, frame);
-      return stack;
-    }
+## 时间轴
+| 时间 | 参考功能 | 目标功能 | 生成画面/动作 | 运镜/构图 | 参考帧 | 状态 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0.0-0.5s | visual_display | opening_hook | 三只哈士奇并排等距站立面向镜头 | 中远景平视，起幅 | 人物1/场景1 | ready_with_assumptions |
+| 0.5-1.5s | action_or_interaction | reveal | 三只同时下蹲、重心下降 | 开始推近 | 人物1/场景1 | ready_with_assumptions |
+| 1.5-3.0s | action_or_interaction | 行为推进 | 三只朝镜头小跑汇聚，右侧加速 | 缓慢推近/跟拍，中远景收紧到中景 | 人物1/场景1 | ready_with_assumptions |
+| 3.0-4.0s | action_or_interaction | proof 起始 | 右侧哈士奇上抬前爪搭背、开始承重 | 中景，推近收尾 | 人物1/场景1 | ready_with_assumptions |
+| 4.0-5.0s | action_or_interaction | proof | 横向队形重组为纵向叠站造型 | 中景，推近停止，构图横→纵 | 人物1/场景1 | ready_with_assumptions |
+| 5.0-5.8s | closing_or_prompt | closing | 叠站造型保持并面向镜头 | 静止机位 | 人物1/场景1 | ready_with_assumptions |
 
-    function titledCell(title, href) {
-      const cell = el("section", "cell");
-      const heading = el("div", "cell-title");
-      heading.append(el("span", "", title));
-      if (href) {
-        const link = document.createElement("a");
-        link.href = href;
-        link.textContent = "Open";
-        link.target = "_blank";
-        link.rel = "noreferrer";
-        heading.append(link);
-      }
-      cell.append(heading);
-      return cell;
-    }
+## 场景迁移摘要
+- `preserve_scene_style`: 自然日光方向、前中后景空间深度、背景密度、真实纪实质感
+- `adapt_scene_content`: 室内公共休息区 → 户外公园草坪（绿色草地、自然日光、远景树冠与浅蓝天空）
+- 丢弃参考专属内容: 白色圆圈地板标记、灰色沙发、黄色木椅、自动售货机、绿植、红披风卡通立</pre></section>
+      </div>
+      <section class="panel">
+        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/animal-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
+        <table class="step-table">
+    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>1</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>00_inputs</code></td>
+        <td>00_inputs/input_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>2</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>01_reference_video_analysis</code></td>
+        <td>01_reference_video_analysis/reference_video_analysis.json, 01_reference_video_analysis/video_segment_plan.json</td>
+      </tr>
+<tr>
+        <td><code>3</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>03_asset_inventory</code></td>
+        <td>03_asset_inventory/asset_candidates.json, 03_asset_inventory/h3_input_asset_inventory.json</td>
+      </tr>
+<tr>
+        <td><code>4</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>04_target_asset_analysis</code></td>
+        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
+      </tr>
+<tr>
+        <td><code>5</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>05_replication_readiness</code></td>
+        <td>05_replication_readiness/replication_readiness_check.json</td>
+      </tr>
+<tr>
+        <td><code>6</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>06_replication_outline</code></td>
+        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
+      </tr>
+<tr>
+        <td><code>7</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>07_reference_frame_plan</code></td>
+        <td>07_reference_frame_plan/reference_frame_plan.json</td>
+      </tr>
+<tr>
+        <td><code>8</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>08_reference_frames</code></td>
+        <td>08_reference_frames/FR_PERSON_HUSKY.png, 08_reference_frames/FR_PERSON_HUSKY.request.json, 08_reference_frames/FR_PERSON_HUSKY.result.json, 08_reference_frames/FR_SCENE_LAWN.png ...</td>
+      </tr>
+<tr>
+        <td><code>9</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>09_h3_package</code></td>
+        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md</td>
+      </tr>
+<tr>
+        <td><code>10</code></td>
+        <td class="">skipped_dry_run</td>
+        <td><code>10_h3_video_output</code><br><span>dry_run_boundary: H3 video generation must not be submitted or executed</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+      </section>
+    </div>
+  </article>
+<article class="case" id="case-dance">
+    <div class="case-head">
+      <div>
+        <p class="case-kicker">Case 03 / dance</p>
+        <h2>Dance Motion Replication</h2>
+        <p class="case-summary">参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞</p>
+      </div>
+      <div class="badges">
+        <span class="badge ok">ready_with_assumptions</span>
+        <span class="badge">s reference</span>
+        <span class="badge">0 H3 shots</span>
+        <span class="badge ok">1 final video(s)</span>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="media-grid">
+        <section class="panel">
+    <div class="panel-head"><span>Reference video</span><a href="test_data/dance/2_2_case2-H3-original.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/dance/2_2_case2-H3-original.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/dance/dance_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/dance/dance_vis.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Generated result</span><a href="outputs/dance-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/dance-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+  </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>User input assets</span><a href="test_data/dance/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><pre class="text-box">参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞</pre><div class="caption">test_data/dance/user_input/requirement.txt</div></div></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/dance-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/dance-replication-outline-dry-run/08_reference_frames/rf_person_001.png" alt="rf_person_001.png"></div><div class="caption">rf_person_001.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/dance-replication-outline-dry-run/08_reference_frames/rf_scene_001.png" alt="rf_scene_001.png"></div><div class="caption">rf_scene_001.png</div></div></div>
+        </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/dance-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
+          <pre class="text-box">subject_definitions:
+&lt;Subject 1&gt; is the target dancer from &lt;Picture 1&gt;: a Western (Caucasian) adult woman, age impression 20-30, confident athletic performer, medium-length natural hair, natural sport makeup, slim athletic build, wearing a bright coral athletic crop top, dark teal high-waisted sports shorts, and clean white sneakers; she is the only person in the target video and keeps this appearance across every shot.
+&lt;Subject 2&gt; is the outdoor basketball court from &lt;Picture 2&gt;: a daytime public court with a hard court surface, white painted court lines, a basketball hoop with backboard and metal pole in the midground, a chain-link fence and open court-side area behind, green trees and low buildings in the far background, overcast soft daylight, and cool low-saturation color.
+&lt;Subject 3&gt; is the basketball hoop / backboard detail inside &lt;Subject 2&gt;: metal pole, neutral or transparent backboard, plain rim, no brand logos; it stays as background set dressing and never interacts with &lt;Subject 1&gt;.
+&lt;Video 1&gt; is the reference video, used only for composition, camera language, single-take structure, action mechanics, shot order, timing and rhythm, spatial relationship, continuity, and information-reveal structure; the reference male dancer identity, hoodie outfit, bleacher/track location, and reference music are not transferred.
+&lt;Picture 1&gt; is the person appearance anchor. &lt;Picture 2&gt; is the scene appearance anchor.
 
-    function renderCase(item, index) {
-      const section = el("article", "case");
-      const head = el("div", "case-head");
-      const titleBox = el("div");
-      titleBox.append(el("h2", "case-title", `${String(index + 1).padStart(2, "0")} · ${item.name}`));
-      titleBox.append(el("div", "case-path", item.root));
-      const badges = el("div", "badges");
-      badges.append(el("span", "badge", "Original video"));
-      badges.append(el("span", "badge", `${item.inputImages.length} input image(s)`));
-      badges.append(el("span", "badge", `${item.inputTexts.length} input text(s)`));
-      badges.append(el("span", "badge pending", "Output pending-aware"));
-      head.append(titleBox, badges);
+summary:
+[reference generation] A single continuous vertical 9:16 shot of &lt;Subject 1&gt;, a Western woman dancer, performing an evolving dance routine on &lt;Subject 2&gt;, an outdoor basketball court, inheriting only the composition, camera language, single-take structure, and action-beat timing of &lt;Video 1&gt;.
 
-      const matrix = el("div", "matrix");
-      const originalPath = mediaPath(item, item.originalVideo);
-      const original = titledCell("Original video", originalPath);
-      original.append(videoBlock(originalPath, item.originalVideo));
+retention_analysis:
+&lt;Subject 1&gt; (appears in [Shot 1], [Shot 2</pre>
+        </section>
+        <section class="panel"><div class="panel-head"><span>Final review</span><a href="outputs/dance-replication-outline-dry-run/11_final_deliverable/final_review.md" target="_blank" rel="noreferrer">Open</a></div><pre class="text-box"># 参考视频复刻最终交付审阅稿
 
-      const inputs = titledCell("User input assets", `${item.root}/user_input/`);
-      if (!item.inputImages.length && !item.inputTexts.length) {
-        inputs.append(el("div", "placeholder", "当前 case 未发现 user_input 图片或文本"));
-      } else {
-        if (item.inputImages.length) {
-          const grid = el("div", "asset-grid");
-          item.inputImages.forEach(path => grid.append(imageBlock(mediaPath(item, path), fileName(path))));
-          inputs.append(grid);
-        }
-        if (item.inputTexts.length) {
-          const texts = el("div", "text-stack");
-          item.inputTexts.forEach(path => texts.append(textBlock(mediaPath(item, path), path)));
-          inputs.append(texts);
-        }
-      }
+- schema: `common_replication_outline.v2`  status: **ready_with_assumptions**
+- 参考视频: `test_data/dance/2_2_case2-H3-original.mp4` (10.125s, 竖屏 9:16, 24fps)
+- 用户需求: 参考视频生成一条新视频，一位欧美女性在户外篮球场上跳舞
+- 目标主体: 欧美女性舞者（人物1）；目标场景: 户外篮球场（场景1）
+- 复刻模式: `shot_structure`；time_precision: truncate 到 0.1s
+- timeline_unit_count: **1**（单镜头连续，无剪辑）
+- temporal_segment_count: **5**（镜头内部节拍）
+- h3_prompt_shot_count: **5**（prompt-level `[Shot 1]-[Shot 5]`，对应 5 个 temporal segments，**不是**新增/拆分参考镜头）
 
-      const output = titledCell("Output video and prompt", `${item.root}/output/`);
-      output.append(videoBlock(mediaPath(item, "output/output.mp4"), "output/output.mp4", true));
-      output.append(textBlock(mediaPath(item, "output/prompt.txt"), "output/prompt.txt", true));
+## 参考视频功能继承
 
-      matrix.append(original, inputs, output);
-      section.append(head, matrix);
-      return section;
-    }
+- 结构/时间: 单镜头连续约 10.1s；固定机位、平视、中心全身构图，无剪辑点。
+- 运镜/构图: 竖屏 9:16，主体居中，头顶与脚下留空间，中等景深。
+- 动作机制: 静止起手 → 摆臂 → 上肢节拍 → 下肢交叉步/踢腿 → 单脚支撑收束；重心左右转移与节拍停顿。
+- 场景风格: 户外开阔硬质场地 + 白色画线、自然漫射光、冷调低饱和、写实纪录质感。
+- 信息节拍: 单镜头内动作能量逐步提升后自然收束。
 
-    document.getElementById("caseCount").textContent = cases.length;
-    document.getElementById("videoCount").textContent = cases.filter(item => item.originalVideo).length;
-    document.getElementById("imageCount").textContent = cases.reduce((sum, item) => sum + item.inputImages.length, 0);
-    document.getElementById("textCount").textContent = cases.reduce((sum, item) => sum + item.inputTexts.length, 0);
+## 分镜级审阅
 
-    const root = document.getElementById("cases");
-    cases.forEach((item, index) => root.append(renderCase(item, index)));
-  </script>
+| segment | 时间 | 参考功能 | 目标功能 | 场景迁移 | 主体/动作迁移 | 画面内实体文字/logo | 后期叠加 | 参考帧决策 | 缺失输入 | 状态 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| SEG001 | 0.0-1.0s | visual_display | opening_pose_and_establish | 户外看台/跑道 → 户外篮球场（保开阔硬质场地+白线+漫射光，改场边陈设为篮球架/围网） | 参考男性 → 欧美女性；静止站立起手，重心居中 | 无 | 无（不生成文字层） | 使用 rf_person_001 + rf_scene_001 | 无 | ready_with_assumptions |
+| SEG002 | 1.0-2.0s | action_or_interaction | arm_extension_phrase | 同上，机位/光线/场景连续 | 双臂侧展收回，肩臂带动躯干轻微摆动 | 无 | 无 | 使用 rf_person_001 + rf_scene_001 | 无 | ready_with_assumptions |
+| SEG003 | 2.0-4.0s | action_or_interaction | punch_beat_phrase | 同上，场景无跳变 | 双拳胸前/向前往复，重心随节拍左右移动 | 无 | 无 | 使用 rf_person_001 </pre></section>
+      </div>
+      <section class="panel">
+        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/dance-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
+        <table class="step-table">
+    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>step_1_accept_inputs</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>00_inputs</code></td>
+        <td>00_inputs/input_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_2_reference_video_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>01_reference_video_analysis</code></td>
+        <td>01_reference_video_analysis/reference_video_analysis.json, 01_reference_video_analysis/video_segment_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_3_shot_replication_rules_and_asset_inventory</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>03_asset_inventory</code></td>
+        <td>03_asset_inventory/asset_candidates.json, 03_asset_inventory/h3_input_asset_inventory.json</td>
+      </tr>
+<tr>
+        <td><code>step_4_target_asset_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>04_target_asset_analysis</code></td>
+        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
+      </tr>
+<tr>
+        <td><code>step_5_replication_readiness_check</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>05_replication_readiness</code></td>
+        <td>05_replication_readiness/replication_readiness_check.json</td>
+      </tr>
+<tr>
+        <td><code>step_6_replication_outline</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>06_replication_outline</code></td>
+        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
+      </tr>
+<tr>
+        <td><code>step_7_reference_frame_planning</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>07_reference_frame_plan</code></td>
+        <td>07_reference_frame_plan/reference_frame_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_8_reference_frame_generation</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>08_reference_frames</code></td>
+        <td>08_reference_frames/rf_person_001.png, 08_reference_frames/rf_person_001.request.json, 08_reference_frames/rf_person_001.result.json, 08_reference_frames/rf_scene_001.png ...</td>
+      </tr>
+<tr>
+        <td><code>step_9_h3_packaging</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>09_h3_package</code></td>
+        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md, 09_h3_package/assets/rf_person_001.png ...</td>
+      </tr>
+<tr>
+        <td><code>step_10_h3_video_generation</code></td>
+        <td class="">not_submitted</td>
+        <td><code>10_h3_video_output</code><br><span>dry_run_boundary_h3_request_package_only</span></td>
+        <td>10_h3_video_output/submission_status.json</td>
+      </tr>
+<tr>
+        <td><code>step_11_final_deliverable</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>11_final_deliverable</code></td>
+        <td>11_final_deliverable/final_review.md, 11_final_deliverable/final_delivery_index.json</td>
+      </tr>
+    </tbody>
+  </table>
+      </section>
+    </div>
+  </article>
+<article class="case" id="case-milk">
+    <div class="case-head">
+      <div>
+        <p class="case-kicker">Case 04 / milk</p>
+        <h2>Tea Bottle Product Replacement</h2>
+        <p class="case-summary">参考视频生成一条新的视频，把牛奶换成东方树叶饮料</p>
+      </div>
+      <div class="badges">
+        <span class="badge ok">unknown</span>
+        <span class="badge">s reference</span>
+        <span class="badge">0 H3 shots</span>
+        <span class="badge ok">1 final video(s)</span>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="media-grid">
+        <section class="panel">
+    <div class="panel-head"><span>Reference video</span><a href="test_data/milk/milk.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/milk/milk.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/milk/milk_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/milk/milk_vis.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Generated result</span><a href="outputs/milk-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/milk-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+  </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>User input assets</span><a href="test_data/milk/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/milk/user_input/东方树叶.jpg" alt="东方树叶.jpg"></div><div class="caption">东方树叶.jpg</div></div>
+<div class="asset"><pre class="text-box">参考视频生成一条新的视频，把牛奶换成东方树叶饮料</pre><div class="caption">test_data/milk/user_input/requirement.txt.txt</div></div></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/milk-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_001.png" alt="rf_001.png"></div><div class="caption">rf_001.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_002.png" alt="rf_002.png"></div><div class="caption">rf_002.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_003.png" alt="rf_003.png"></div><div class="caption">rf_003.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_004.png" alt="rf_004.png"></div><div class="caption">rf_004.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_005.png" alt="rf_005.png"></div><div class="caption">rf_005.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_006.png" alt="rf_006.png"></div><div class="caption">rf_006.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_007.png" alt="rf_007.png"></div><div class="caption">rf_007.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/milk-replication-outline-dry-run/08_reference_frames/rf_008.png" alt="rf_008.png"></div><div class="caption">rf_008.png</div></div></div>
+        </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/milk-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
+          <pre class="text-box">subject_definitions:
+&lt;Video 1&gt; is the reference video defining only composition, camera movement, transitions, action mechanics, shot order, timing, spatial relationships, continuity, and reveal structure; not identity, scene, or brand.
+&lt;Subject 1&gt; is the target product from &lt;Picture 1&gt;: the &quot;东方树叶&quot; oolong tea 500ml clear cylindrical PET bottle with a clear screw cap, amber tea liquid, a green neck label, and a white body label with a sailboat graphic; keep the silhouette, cap, tea color, and label layout faithful in every shot.
+&lt;Subject 2&gt; is the target on-screen person from &lt;Picture 2&gt;: an unidentifiable East Asian woman, 25-30, shoulder-length dark-brown wavy hair, light natural makeup, a thin necklace, low-saturation outfits (cream cardigan, dusty-blue top, light-grey activewear, beige dress); natural and energetic; not the person in &lt;Video 1&gt;.
+&lt;Subject 3&gt; is the target scene from &lt;Picture 3&gt;: a bright modern living room with a pale grey-blue sofa, light-wood coffee table, plants, and soft window daylight.
+&lt;Subject 4&gt; is the target scene from &lt;Picture 4&gt;: a clean modern fitness studio with foreground equipment, a dumbbell rack, mirrored walls, and even overhead light.
+&lt;Subject 5&gt; is the target scene from &lt;Picture 5&gt;: a warm minimalist lounge with a low table, beige arch decor, pale chairs, and soft warm light.
+
+summary:
+[reference generation] Generate a 15-second vertical 9:16 commercial lifestyle montage in which &lt;Subject 2&gt; presents &lt;Subject 1&gt; across several everyday scenes, following the shot order, camera language, transitions, and timing of &lt;Video 1&gt;, ending on a continuous action match into drinking.
+
+retention_analysis:
+&lt;Video 1&gt; (all shots): fully_preserved - composition, camera, transitions, action mechanics, shot order, timing, and continuity retained; sou</pre>
+        </section>
+        <section class="panel"><div class="panel-head"><span>Final review</span></div><div class="placeholder">No final_review.md found in this case.</div></section>
+      </div>
+      <section class="panel">
+        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/milk-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
+        <table class="step-table">
+    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>step_1_input_intake</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>00_inputs</code></td>
+        <td>input_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_2_reference_video_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>01_reference_video_analysis</code></td>
+        <td>reference_video_analysis.json, video_segment_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_3_asset_inventory</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>03_asset_inventory</code></td>
+        <td>asset_candidates.json, h3_input_asset_inventory.json</td>
+      </tr>
+<tr>
+        <td><code>step_4_target_asset_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>04_target_asset_analysis</code></td>
+        <td>target_asset_analysis.json, target_asset_vlm_responses.json</td>
+      </tr>
+<tr>
+        <td><code>step_5_replication_readiness</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>05_replication_readiness</code></td>
+        <td>replication_readiness_check.json</td>
+      </tr>
+<tr>
+        <td><code>step_6_replication_outline</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>06_replication_outline</code></td>
+        <td>replication_outline.json, replication_outline.md</td>
+      </tr>
+<tr>
+        <td><code>step_7_reference_frame_planning</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>07_reference_frame_plan</code></td>
+        <td>reference_frame_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_8_reference_frame_generation</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>08_reference_frames</code></td>
+        <td>rf_001.png, rf_002.png, rf_003.png, rf_004.png ...</td>
+      </tr>
+<tr>
+        <td><code>step_9_h3_packaging</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>09_h3_package</code></td>
+        <td>h3_packager_input.md, reference_mapping.md, pre_generation_checklist.md, minimax_h3_prompt.md ...</td>
+      </tr>
+<tr>
+        <td><code>step_10_h3_video_generation</code></td>
+        <td class="">skipped_dry_run</td>
+        <td><code></code></td>
+        <td></td>
+      </tr>
+<tr>
+        <td><code>step_11_final_deliverable</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>11_final_deliverable</code></td>
+        <td>final_deliverable_index.json, deliverable_review.md</td>
+      </tr>
+    </tbody>
+  </table>
+      </section>
+    </div>
+  </article>
+<article class="case" id="case-nail-5">
+    <div class="case-head">
+      <div>
+        <p class="case-kicker">Case 05 / nail-5</p>
+        <h2>Nail Product Scene 5</h2>
+        <p class="case-summary">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。</p>
+      </div>
+      <div class="badges">
+        <span class="badge ok">unknown</span>
+        <span class="badge">s reference</span>
+        <span class="badge">0 H3 shots</span>
+        <span class="badge ok">1 final video(s)</span>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="media-grid">
+        <section class="panel">
+    <div class="panel-head"><span>Reference video</span><a href="test_data/nail-5/nail-5.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-5/nail-5.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/nail-5/nail-5_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-5/nail-5_vis.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Generated result</span><a href="outputs/nail-5-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/nail-5-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+  </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>User input assets</span><a href="test_data/nail-5/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/nail-5/user_input/shangpin-3.png" alt="shangpin-3.png"></div><div class="caption">shangpin-3.png</div></div>
+<div class="asset"><pre class="text-box">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。</pre><div class="caption">test_data/nail-5/user_input/requirement.txt</div></div></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/nail-5-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/nail-5-replication-outline-dry-run/08_reference_frames/frame_person_001.png" alt="frame_person_001.png"></div><div class="caption">frame_person_001.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/nail-5-replication-outline-dry-run/08_reference_frames/frame_scene_001.png" alt="frame_scene_001.png"></div><div class="caption">frame_scene_001.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/nail-5-replication-outline-dry-run/08_reference_frames/frame_scene_002.png" alt="frame_scene_002.png"></div><div class="caption">frame_scene_002.png</div></div></div>
+        </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/nail-5-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
+          <pre class="text-box">subject_definitions:
+- &lt;Video 1&gt;: reference video excerpt (first 15s). Defines only composition, camera moves, transitions, action mechanics, shot order, timing, spatial relations, continuity and information reveal.
+- &lt;Subject 1&gt;: target nail art from &lt;Picture 1&gt;, dark gothic long stiletto press-on nails: black/dark-brown/grey-brown base, realistic eyeball patterns (black pupils, brown/yellow-green irises), white pearls, gold beads, metallic glitter, glossy resin/gel surface. It replaces the reference nail pattern on every visible nail.
+- &lt;Subject 2&gt;: non-identifiable performer from &lt;Picture 2&gt;, non-identifiable young woman, long loose wavy dark hair, dark low-saturation gothic makeup, dark top with long dark coat, silver-grey metal rings, layered dark bracelets, dark wide-brim hat. Keep the same identity and outfit across all shots.
+- &lt;Subject 3&gt;: dark gothic indoor dressing room from &lt;Picture 3&gt;: antique vanity mirror, deep velvet curtains, candle holders, dark dried flowers, low-key candlelight with cool window rim light.
+- &lt;Subject 4&gt;: moonlit gothic stone garden from &lt;Picture 4&gt;: dark stone walls, wrought-iron gate, ivy, wet stone, dark reflective pool, black roses, cold moonlight with warm lantern accents.
+
+summary:
+[reference generation] A 15s vertical 9:16 short video reproducing the reference's 8-shot montage structure, order, camera language, hard-cut rhythm, action mechanics and reveal beats, while replacing the nail pattern with &lt;Subject 1&gt; and adopting a dark gothic performer and scenes (&lt;Subject 2&gt;, &lt;Subject 3&gt;, &lt;Subject 4&gt;).
+
+retention_analysis:
+- Retain from &lt;Video 1&gt;: vertical 9:16, 8-shot order, ~1.6s hard-cut montage rhythm, centered composition, tight hand close-ups, static camera with slight handheld sway, shallow depth of field, the opening hand pu</pre>
+        </section>
+        <section class="panel"><div class="panel-head"><span>Final review</span></div><div class="placeholder">No final_review.md found in this case.</div></section>
+      </div>
+      <section class="panel">
+        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/nail-5-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
+        <table class="step-table">
+    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>step_1</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>00_inputs</code></td>
+        <td>00_inputs/input_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_2</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>01_reference_video_analysis</code></td>
+        <td>01_reference_video_analysis/reference_video_analysis.json, 01_reference_video_analysis/video_segment_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_3</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>03_asset_inventory</code></td>
+        <td>03_asset_inventory/h3_input_asset_inventory.json, 03_asset_inventory/asset_candidates.json</td>
+      </tr>
+<tr>
+        <td><code>step_4</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>04_target_asset_analysis</code></td>
+        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
+      </tr>
+<tr>
+        <td><code>step_5</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>05_replication_readiness</code></td>
+        <td>05_replication_readiness/replication_readiness_check.json</td>
+      </tr>
+<tr>
+        <td><code>step_6</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>06_replication_outline</code></td>
+        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
+      </tr>
+<tr>
+        <td><code>step_7</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>07_reference_frame_plan</code></td>
+        <td>07_reference_frame_plan/reference_frame_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_8</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>08_reference_frames</code></td>
+        <td>08_reference_frames/frame_person_001.png, 08_reference_frames/frame_scene_001.png, 08_reference_frames/frame_scene_002.png, 08_reference_frames/batch_generation_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_9</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>09_h3_package</code></td>
+        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md, 09_h3_package/minimax_h3_prompt.md</td>
+      </tr>
+<tr>
+        <td><code>step_10</code></td>
+        <td class="status-skipped">skipped</td>
+        <td><code>10_h3_video_output</code><br><span>dry_run_boundary_h3_request_package_only_no_video_generation</span></td>
+        <td>10_h3_video_output/request.json, 10_h3_video_output/submission_status.json</td>
+      </tr>
+<tr>
+        <td><code>step_11</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>11_final_deliverable</code></td>
+        <td>run_manifest.json, 11_final_deliverable/delivery_index.md, 11_final_deliverable/review.md, 11_final_deliverable/stage_artifacts.json</td>
+      </tr>
+    </tbody>
+  </table>
+      </section>
+    </div>
+  </article>
+<article class="case" id="case-nail-6">
+    <div class="case-head">
+      <div>
+        <p class="case-kicker">Case 06 / nail-6</p>
+        <h2>Nail Product Scene 6</h2>
+        <p class="case-summary">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮需要和美甲风格一致。</p>
+      </div>
+      <div class="badges">
+        <span class="badge ok">completed</span>
+        <span class="badge">s reference</span>
+        <span class="badge">0 H3 shots</span>
+        <span class="badge ok">1 final video(s)</span>
+      </div>
+    </div>
+    <div class="case-body">
+      <div class="media-grid">
+        <section class="panel">
+    <div class="panel-head"><span>Reference video</span><a href="test_data/nail-6/nail-6.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-6/nail-6.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Analyzer visualization</span><a href="test_data/nail-6/nail-6_vis.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="test_data/nail-6/nail-6_vis.mp4"></video></div>
+  </section>
+        <section class="panel">
+    <div class="panel-head"><span>Generated result</span><a href="outputs/nail-6-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4" target="_blank" rel="noreferrer">Open</a></div>
+    <div class="video-frame"><video controls preload="metadata" playsinline src="outputs/nail-6-replication-outline-dry-run/01_reference_video_analysis/analyzer_run/01_video_segments/segments/VS001.mp4"></video></div>
+  </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>User input assets</span><a href="test_data/nail-6/user_input/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="test_data/nail-6/user_input/shangpin-3.png" alt="shangpin-3.png"></div><div class="caption">shangpin-3.png</div></div>
+<div class="asset"><pre class="text-box">将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮需要和美甲风格一致。</pre><div class="caption">test_data/nail-6/user_input/requirement.txt</div></div></div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><span>Generated reference frames</span><a href="outputs/nail-6-replication-outline-dry-run/08_reference_frames/" target="_blank" rel="noreferrer">Open folder</a></div>
+          <div class="asset-grid"><div class="asset"><div class="asset-frame"><img src="outputs/nail-6-replication-outline-dry-run/08_reference_frames/RF_PERSON_001.png" alt="RF_PERSON_001.png"></div><div class="caption">RF_PERSON_001.png</div></div>
+<div class="asset"><div class="asset-frame"><img src="outputs/nail-6-replication-outline-dry-run/08_reference_frames/RF_SCENE_001.png" alt="RF_SCENE_001.png"></div><div class="caption">RF_SCENE_001.png</div></div></div>
+        </section>
+      </div>
+      <div class="detail-grid">
+        <section class="panel">
+          <div class="panel-head"><span>H3 prompt preview</span><a href="outputs/nail-6-replication-outline-dry-run/09_h3_package/minimax_h3_prompt.md" target="_blank" rel="noreferrer">Open</a></div>
+          <pre class="text-box"># Minimax-H3 Ref2VA Prompt
+
+```text
+subject_definitions:
+&lt;Subject 1&gt; is the target nail-art pattern from &lt;Picture 1&gt;: long stiletto press-on nails with a black/charcoal-brown glossy gel base, 3D realistic eye cabochons with brown/green irises, pearls, small silver beads, gold metal discs and white marbled fluid pattern.
+&lt;Subject 2&gt; is the non-identifiable East Asian female performer from &lt;Picture 2&gt;: about 25-30 years old, long straight dark hair, cool-toned makeup with dark eyeliner, cool eyeshadow and matte dark lips, a black silk/leather-textured top, delicate metal earrings and a thin necklace, neutral metal and pearl rings, calm confident temperament.
+&lt;Subject 3&gt; is the dark indoor scene from &lt;Picture 3&gt;: a dim bedroom/vanity corner, dark velvet fabric or dark wood wall background with a few subtle metallic decor objects, low-key lighting with large shadow areas, a single warm practical light source and a cool rim light, velvet/wood/metal materials.
+&lt;Video 1&gt; is the reference video, used only for composition, camera language, action mechanics, shot order, timing, spatial relations, continuity and information-reveal structure.
+
+summary:
+[reference generation] Reproduce the reference video's single continuous selfie shot, replacing the nail-art pattern with &lt;Subject 1&gt; and styling &lt;Subject 2&gt; in &lt;Subject 3&gt; to match the dark gothic nail-art aesthetic.
+
+retention_analysis:
+Retain the single continuous-shot structure, the tight centered selfie framing, the slight natural handheld shake, the front-hand occlusion that reveals the face, and the information order from local detail (nails) to the subject (face). Replace the reference nail pattern with &lt;Subject 1&gt;, neutralize the reference person's identity with &lt;Subject 2&gt;, and adapt the bright car interior to the dark indo</pre>
+        </section>
+        <section class="panel"><div class="panel-head"><span>Final review</span></div><div class="placeholder">No final_review.md found in this case.</div></section>
+      </div>
+      <section class="panel">
+        <div class="panel-head"><span>Pipeline artifact index</span><a href="outputs/nail-6-replication-outline-dry-run/run_manifest.json" target="_blank" rel="noreferrer">run_manifest.json</a></div>
+        <table class="step-table">
+    <thead><tr><th>Step</th><th>Status</th><th>Stage directory</th><th>Key outputs</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>step_1_input_intake</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>00_inputs</code></td>
+        <td>00_inputs/input_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_2_reference_video_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>01_reference_video_analysis</code></td>
+        <td>01_reference_video_analysis/reference_video_analysis.json</td>
+      </tr>
+<tr>
+        <td><code>step_3_asset_inventory</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>03_asset_inventory</code></td>
+        <td>03_asset_inventory/h3_input_asset_inventory.json</td>
+      </tr>
+<tr>
+        <td><code>step_4_target_asset_analysis</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>04_target_asset_analysis</code></td>
+        <td>04_target_asset_analysis/target_asset_analysis.json, 04_target_asset_analysis/target_asset_vlm_responses.json</td>
+      </tr>
+<tr>
+        <td><code>step_5_replication_readiness</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>05_replication_readiness</code></td>
+        <td>05_replication_readiness/replication_readiness_check.json</td>
+      </tr>
+<tr>
+        <td><code>step_6_replication_outline</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>06_replication_outline</code></td>
+        <td>06_replication_outline/replication_outline.json, 06_replication_outline/replication_outline.md</td>
+      </tr>
+<tr>
+        <td><code>step_7_reference_frame_plan</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>07_reference_frame_plan</code></td>
+        <td>07_reference_frame_plan/reference_frame_plan.json</td>
+      </tr>
+<tr>
+        <td><code>step_8_reference_frame_generation</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>08_reference_frames</code></td>
+        <td>08_reference_frames/RF_PERSON_001.png, 08_reference_frames/RF_SCENE_001.png, 08_reference_frames/batch_generation_manifest.json</td>
+      </tr>
+<tr>
+        <td><code>step_9_h3_packaging</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>09_h3_package</code></td>
+        <td>09_h3_package/h3_packager_input.md, 09_h3_package/reference_mapping.md, 09_h3_package/pre_generation_checklist.md, 09_h3_package/h3_request.json ...</td>
+      </tr>
+<tr>
+        <td><code>step_10_h3_video_generation</code></td>
+        <td class="status-skipped">skipped</td>
+        <td><code>10_h3_video_output</code><br><span>dry_run_boundary: H3 request/package produced but not submitted; no H3 video generation executed</span></td>
+        <td></td>
+      </tr>
+<tr>
+        <td><code>step_11_final_deliverable</code></td>
+        <td class="status-completed">completed</td>
+        <td><code>11_final_deliverable</code></td>
+        <td>11_final_deliverable/delivery_index.json, 11_final_deliverable/final_deliverable_review.md, 11_final_deliverable/stage_artifact_inventory.json</td>
+      </tr>
+    </tbody>
+  </table>
+      </section>
+    </div>
+  </article>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="wrap">Data roots: <code>test_data/</code> and <code>outputs/</code>. Generated as a static UTF-8 page.</div>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
