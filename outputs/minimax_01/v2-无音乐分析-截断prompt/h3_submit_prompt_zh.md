@@ -1,19 +1,14 @@
-Here is the rewritten prompt following your formatting rules:
+detailed_description:
+[Shot 1] 0-4秒，使用 <video_1> 作为整支影片的动作、节奏、镜头和剪辑参考。整个画面位于黑色外框中的心形双圆视窗内，所有影像都保持在这个视窗之中。来自 <picture_2> 的浅砂岩交通亭填满画面：宽大的砂岩檐面上有凸起的深色字母 "MetaX"，同样字母的投影落在后墙上，檐面下方有一张普通长椅，浅暖侧光形成浅景深。来自 <picture_1> 的家养短毛橘色虎斑猫有暖色条纹毛、琥珀色眼睛、瘦长体型和长尾巴，它低低趴在长椅上，尾巴卷起，头抬起，耳朵朝前。镜头为视线高度的宽阔建立构图，主体居中在视窗内。画面开头失焦，并在第一秒内落到清晰；随后镜头进行一次缓慢连续推近，始终保持檐面文字和猫居中，焦点保持较深。镜头末尾画面变成带红色故障线的水平运动模糊并切走。视窗左下和右下角保持视觉干净，便于后续文字。
 
----
+At 00:04.500，直接硬切到 Shot 2：同一心形双圆视窗内的低角度广角画面。来自 <picture_3> 的高大红陶砖墙立在深蓝天空下，窄窄的浅色石质边沿横在墙上；来自 <picture_4> 的青绿色织物旗帜挂在深色横杆上，哑光编织布料上印有竖排黑色字母 "MetaX"，并在风中起伏。来自 <picture_1> 的同一只橘色虎斑猫端正坐在旗帜旁的边沿上，四只爪子可见，尾巴垂过边缘，目光朝向旗帜。镜头几乎静止，只带轻微漂移，深景深，日光干净。后半段旗帜摆动更明显，猫保持位置，随后画面以同样带红色故障线的水平运动模糊退出并切走。左下和右下角保持视觉干净，便于后续文字。
 
-**detailed_description:**
+At 00:08.500，直接硬切到 Shot 3：同一心形双圆视窗内的中景。来自 <picture_5> 的日照屋顶花园填满画面：低矮混凝土女儿墙横贯前景，花箱里有低矮绿植，背后哑光灰色喷漆钢板上平贴大号深色字母 "MetaX"，女儿墙之外是暖日光下的远处城市楼群。来自 <picture_1> 的同一只橘色虎斑猫侧身站在女儿墙上，位于文字前方，尾巴抬起，头转向城市，背后的钢板保持清晰。镜头轻微漂移，深景深，暖光不变。后半段猫调整站姿并转头，标识钢板保持固定，随后镜头以带红色故障线的水平运动模糊退出并切走。左下和右下角保持视觉干净，便于后续文字。
 
-[Shot 1] At 00:00.000, use <video_1> as the motion, timing, camera and edit reference for the whole film. The entire frame is a heart-shaped double-circle viewport on a black surround, and all imagery stays inside that viewport. The pale sandstone transit pavilion from <picture_2> fills the frame: its wide sandstone fascia carries raised dark lettering "MetaX", the cast shadow of the same lettering falls across the rear wall, and a plain bench sits below the fascia in shallow warm side light. The domestic short-haired ginger tabby cat from <picture_1> — warm striped coat, amber eyes, lean build and long tail — rests low on the bench with its tail curled and its head lifted, ears forward, held at eye level in a wide establishing composition centred inside the viewport. The image opens defocused and lands in sharp focus within the first second, then the camera performs one slow continuous push in, keeping the fascia lettering and the cat centred while focus stays deep. At the end of the shot the frame smears into a horizontal motion blur edged with red glitch lines and cuts away. The lower-left and lower-right corners of the viewport stay visually calm for later text.
+At 00:12.000，直接硬切到 Shot 4：同一心形双圆视窗内的极近特写，保持到影片结束。来自 <picture_1> 的同一只橘色虎斑猫现在戴着来自 <picture_6> 的大号棱角银色镜面太阳镜，细深色镜框端正架在眼睛上，猫脸占满画面。猫的前爪搭在太阳镜左侧镜框上并轻轻调整，柔和日光在镜面上形成明亮高光；建筑边缘和 "MetaX" 字样只作为镜面反射出现在镜片内，天空和身后建筑边缘柔和失焦。At 00:13.500，猫略微转头，使反射中的字母在镜片上移动，镜头保持这个反射揭示直到15秒。左下和右下角保持视觉干净，便于后续文字。
 
-At 00:04.500, direct hard cut to Shot 2: a low-angle wide view centred inside the same heart-shaped double-circle viewport. The tall terracotta brick wall with a narrow pale stone ledge from <picture_3> stands under a deep blue sky, and the teal fabric banner from <picture_4> — matte woven fabric printed with black vertical lettering "MetaX" down its length — hangs from a dark bar and ripples in the air. The same ginger tabby cat from <picture_1> sits perched upright on the ledge beside the banner, all four paws visible and tail draped over the edge, gaze angled toward the banner. The camera holds almost static with a slight drift, deep focus, clean daylight. In the second half the fabric ripples harder while the cat holds its position, then the frame exits into the same horizontal motion blur with red glitch lines and cuts away. The lower-left and lower-right corners stay visually calm for later text.
-
-At 00:08.500, direct hard cut to Shot 3: a medium shot centred inside the same heart-shaped double-circle viewport. The sunlit rooftop garden from <picture_5> fills the frame: a low concrete parapet runs across the foreground with planter boxes of low green shrubs, and behind it a matte grey painted steel panel carries large dark lettering "MetaX" mounted flat, with distant city blocks beyond the parapet in warm daylight. The same ginger tabby cat from <picture_1> stands on the parapet in profile in front of the lettering, tail raised and head turned toward the city, with the steel panel held sharp behind it. The camera drifts slightly, deep focus, warm light unchanged. In the second half the cat shifts its stance and turns its head while the sign panel stays fixed, then the shot exits into a horizontal motion blur with red glitch lines and cuts away. The lower-left and lower-right corners stay visually calm for later text.
-
-At 00:12.000, direct hard cut to Shot 4: an extreme close-up centred inside the same heart-shaped double-circle viewport, held to the end of the film. The same ginger tabby cat from <picture_1> now wears the large angular mirrored silver sunglasses from <picture_6>, the thin dark frame sitting squarely over its eyes, and the cat's face fills the frame. The cat's front paw rests on the left frame of the sunglasses and adjusts it slightly, and soft daylight catches a bright specular highlight across the mirrored lens; the building edge and its "MetaX" lettering appear only as a reflection inside the mirrored lens, while the sky and the building edge behind stay softly out of focus. At 00:13.500 the cat turns its head slightly so the reflected lettering shifts across the lens, and the shot holds that reflective reveal to 15s. The lower-left and lower-right corners stay visually calm for later text.
-
-**overall_soundscape:**
+overall_soundscape:
 N/A
 
-**non_diegetic_music:**
-Follow the reference video's music style.
+non_diegetic_music:
+遵循参考视频的音乐风格。

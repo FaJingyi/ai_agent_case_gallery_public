@@ -1,25 +1,20 @@
-Here is the rewritten prompt with the required structure and formatting applied:
+detailed_description:
+[Shot 1] 0-1秒，使用 <video_1> 作为动作、节奏和镜头语言参考。整段是一个连续单镜头，开头机位锁定，没有切换、摇摄或变焦。画面是来自 <picture_4> 的开阔户外草坪运动场，修剪整齐的绿色草地有清晰草叶细节，中景平坦且没有标线，远处低密度户外背景、树木和建筑轮廓柔和虚化。自然日光明亮，低角度暖阳作为主光，天空方向带来稍冷的环境光。引入 <picture_1>：一只灰黑白相间的哈士奇，白色面罩，异色瞳，一只琥珀棕眼、一只蓝眼，耳朵直立，黑色鼻头，蓬松尾巴卷在背上，四肢像白色短袜。引入 <picture_2>：同品种哈士奇，体型略瘦，腿略长，深色面罩更深更宽，两只眼睛都是琥珀棕色。引入 <picture_3>：体型更大的同品种哈士奇，胸部更宽，银灰色毛色更浅，背部深色鞍状毛区更小更淡，一只蓝眼，另一只浅棕眼。三只哈士奇全身站在草地上排成一行，面向镜头，机位与它们视线齐平，右侧哈士奇略微靠前，整体位于画面中央，画面左三分之一保留为空草地。三只哈士奇保持清晰，背景柔和虚化，焦点不变化，这是同一个连续镜头的开场节拍。
 
----
+[Shot 2] 1-2秒，在同一镜头、同一机位、同一构图和同一光线下，三只哈士奇一起降低身体：每只都弯下前腿并同时趴到草地上，胸部贴近地面，最后来自 <picture_1>、<picture_2> 和 <picture_3> 的三只哈士奇都平趴在修剪整齐的草地上，仍然排成一行面对镜头。狗群保持居中，焦点、曝光和色温保持一致。
 
-**detailed_description:**
+[Shot 3] 2-2.5秒，三只哈士奇在同一片草地、同一镜头内保持趴卧姿势；只有头部和耳朵出现轻微动作，身体始终贴近地面。镜头完全静止，狗群在柔和虚化的背景前保持清晰。
 
-[Shot 1] At 00:00.000, use `<video_1>` as the motion, timing and camera-language reference for one single continuous take that keeps one locked camera at the start with no cut, no pan and no zoom. Wide establishing shot of an open outdoor lawn sports field taken from `<picture_4>`, whose tidy trimmed green grass with visible blade detail, flat unmarked midground and softly blurred low-density outdoor background with distant tree and building silhouettes are clearly visible under bright natural daylight, with a warm low-angle sun as the key light and a slightly cooler ambient light coming from the sky direction. Introduce `<picture_1>` as a standing grey-black and white husky with a white facial mask, heterochromia with one amber-brown eye and one blue eye, erect ears, a black nose, a bushy tail curled over the back and white sock-like legs. Introduce `<picture_2>` as a same-breed husky with a slightly leaner build, slightly longer legs and a deeper wider dark facial mask with both eyes amber-brown. Introduce `<picture_3>` as a larger same-breed husky with a wider chest, a lighter silver-grey coat with a smaller and paler dark saddle, and one blue eye with the other eye light brown. All three huskies stand full body on the grass in one row facing the camera at eye level, the right-hand husky slightly forward, the group centred in frame while the left third of the frame stays as open grass. The three huskies stay sharp while the background stays softly blurred, with no focus change; this is the opening beat of the same continuous shot.
+[Shot 4] 2.5-3秒，三只哈士奇用自己的四肢撑起身体，同步而从容地重新站起，回到草地上一字排开的全身站姿；场景、机位、光线和焦点都延续，没有切换。
 
-[Shot 2] At 00:01.000, in the same shot at the same camera position, the same framing and the same lighting, the same three huskies lower their bodies together: each husky folds its own front legs and settles down onto the grass at the same moment, chests moving close to the ground, so that the husky from `<picture_1>`, the husky from `<picture_2>` and the husky from `<picture_3>` finish this beat lying flat on the trimmed grass in one row, still facing the camera. The group stays centred, the focus stays unchanged and the exposure and colour temperature stay identical.
+[Shot 5] 3-4秒，三只哈士奇开始在同一片草坪上向镜头走来；约从第3秒开始，同一镜头进行连续渐进式推近，构图从宽阔环境视角收紧到更近的狗群视角，行走动作不中断。透视逐渐变化，狗群始终居中且清晰，背景虚化加深，阳光和色温保持一致。
 
-[Shot 3] At 00:02.000, the same three huskies hold the lying posture on the same grass inside the same shot; only small head and ear movements occur while all three bodies stay pressed to the ground. The camera stays fully static and the group remains sharp against the softly blurred background.
+[Shot 6] 4-4.3秒，来自 <picture_1> 的左侧哈士奇和来自 <picture_3> 的右侧哈士奇并排停下并稳住身体承重，来自 <picture_2> 的中间哈士奇抬起前腿，踩到下方两只哈士奇背上。中间哈士奇前爪落在下方两只哈士奇背部的接触点要清晰可见。推近以同样稳定速度继续，没有停顿，也没有回拉，此时狗群占据画面大部分。
 
-[Shot 4] At 00:02.500, the same three huskies push up on their own legs and rise back to a standing pose together, unhurried and synchronised, returning to the same full body standing row on the grass; the scene, the camera position, the lighting and the focus carry over with no cut.
+[Shot 7] 4.3-5.8秒，完成后的叠罗汉姿势保持到视频结束：来自 <picture_1> 和 <picture_3> 的两只下方哈士奇并排站在草地上承重，来自 <picture_2> 的中间哈士奇站在它们背上面向镜头，两只下方哈士奇只做轻微平衡调整。镜头停止移动，构图稳定为紧凑的狗群中景，叠起的狗群成为唯一视觉中心；同样的修剪草地、明亮日光和色温持续，最后姿势保持约1.5秒。
 
-[Shot 5] At 00:03.000, the same three huskies begin walking forward toward the camera on the same lawn; from about the 3rd second the same shot starts one continuous progressive push-in that tightens the framing from the wide environmental view to a closer group view of the three huskies, and the walking never stops while the framing tightens. The perspective changes gradually, the huskies stay centred and sharp, the background blur deepens, and the sunlight and colour temperature stay the same.
-
-[Shot 6] At 00:04.000, the left husky from `<picture_1>` and the right husky from `<picture_3>` stop side by side and brace as they take the weight, while the centre husky from `<picture_2>` lifts its own front legs and steps up onto the backs of the two huskies below it. The contact points where the centre husky's front paws rest on the backs of the two huskies below stay clearly readable. The push-in continues at the same steady speed with no pause and no pull back, and the group now fills most of the frame.
-
-[Shot 7] At 00:04.300, the finished stacked pose holds to the end of the video: the two lower huskies from `<picture_1>` and `<picture_3>` stand side by side on the grass taking the weight, the centre husky from `<picture_2>` stands on their backs facing the camera, and the two lower huskies make only small balance adjustments. The camera stops moving and the framing settles as a compact group mid shot with the stacked group as the single centre of attention; the same trimmed grass, the same bright daylight and the same colour temperature continue, and this final pose is held for about the last 1.5 seconds.
-
-**overall_soundscape:**
+overall_soundscape:
 N/A
 
-**non_diegetic_music:**
-Follow the reference video's music style.
+non_diegetic_music:
+遵循参考视频的音乐风格。

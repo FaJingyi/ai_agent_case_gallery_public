@@ -1,30 +1,18 @@
-Here is the rewritten prompt following your formatting rules:
-
-```
 detailed_description:
-[Shot 1] At 00:00.000, use <video_1> as the motion, timing, and camera reference: one single continuous take in a front three-quarter wide establishing framing held slightly above subject eye level, deep focus that keeps the three robot dogs and the operator readable while the background hedges stay lightly softened, and no cuts, no whip pans and no focus pulls. The scene is the outdoor park lawn from <picture_3>, with trimmed green grass, low hedges and a few trees in the mid background, open sky and bright natural daylight, and soft natural shadows across the lawn. Three identical quadruped robot dogs from <picture_1> stand evenly in a horizontal line facing the camera at the centre of the frame: light-grey matte plastic shells, silver metal joints and linkages, a cylindrical black lidar with a silver guard and handle on the back, a black sensor panel on the front of the head, four slender mechanical legs ending in round black foot pads, and small light printed markings on the side shell and the head that read "Unitree", "02" and "HESAI PandarXT". A neutral non-identifiable adult operator from <picture_2>, wearing a dark short-sleeve top, dark trousers and dark flat shoes, stands at the left frame edge facing the robot dog group and holds a small dark handheld remote controller at chest height with both hands.
+[Shot 1] 0-5.8秒，使用 <video_1> 作为动作、节奏和镜头参考。整段是一个连续单镜头，采用正面三分之二角度的宽阔建立镜头，机位略高于主体视线，景深较深，让三只机器狗和操作员都清楚可读，背景树篱轻微柔化；没有切换、快速甩镜或焦点拉动。场景是来自 <picture_3> 的户外公园草坪，有修剪整齐的绿草、低矮树篱和中远景的几棵树，天空开阔，自然日光明亮，草地上有柔和阴影。三只来自 <picture_1> 的同款四足机器狗在画面中央横向均匀排开，面向镜头：浅灰色哑光塑料外壳、银色金属关节与连杆、背部带银色护架和提手的黑色圆柱形激光雷达、头部正面的黑色传感器面板、四条细长机械腿和圆形黑色脚垫，侧面外壳和头部有细小印字 "Unitree"、"02" 和 "HESAI PandarXT"。来自 <picture_2> 的中性、不可识别成年操作员站在画面左边缘，穿深色短袖上衣、深色长裤和深色平底鞋，面向机器狗群，双手在胸口高度拿着一个小型深色遥控器。
 
-At 00:00.700, in the same continuous take with the same camera, the same lawn and the same daylight, all three robot dogs from <picture_1> lower their bodies at the same time into a low crouched stance and hold it, while the operator from <picture_2> presses one button with a thumb on the handheld remote controller.
+At 00:00.700，在同一个连续镜头、同一草坪和同一日光下，三只来自 <picture_1> 的机器狗同时降低身体进入低伏姿态并保持，操作员用拇指按下手持遥控器上的一个按钮。
 
-At 00:01.700, the leftmost robot dog from <picture_1> straightens its legs and rises first while the other two units stay crouched, and the attention in the frame begins to shift toward that leftmost unit.
+At 00:01.700，最左侧来自 <picture_1> 的机器狗先伸直腿站起，另外两台保持低伏，画面注意力开始转向左侧机器狗。
 
-At 00:02.300, all three robot dogs from <picture_1> rise and trot forward toward the camera and the centre unit springs off the ground in a short airborne leap, while the camera starts a slow push-in that makes the subjects grow steadily larger in frame.
+At 00:02.300，三只来自 <picture_1> 的机器狗全部站起并朝镜头小跑，中间那台从地面短暂跃起；镜头开始缓慢推近，让主体在画面中稳定变大。
 
-At 00:03.300, the airborne centre robot dog from <picture_1> lands on the back of the right-hand companion and settles its four feet onto the upper shell, so the contact area between the two units becomes the visual centre of the frame while the push-in continues slowly.
+At 00:03.300，腾空的中间机器狗落到右侧同伴背上，四只脚稳定踩在上方外壳上，两台机器狗的接触区域成为画面视觉中心，同时推近继续缓慢进行。
 
-At 00:03.800, two stacked robot dogs from <picture_1> hold a stable two-level pose while the third unit stands beside them, and the operator from <picture_2> gradually leaves the left edge of the frame as the slow push-in completes into a tighter medium framing that holds the final stacked pose until the end of the take.
+At 00:03.800，两台来自 <picture_1> 的机器狗保持稳定的上下两层叠放姿势，第三台站在旁边；随着慢速推近完成，来自 <picture_2> 的操作员逐渐离开画面左边缘，构图收紧为较近的中景，并保持最终叠放姿势直到结尾。
 
 overall_soundscape:
 N/A
 
 non_diegetic_music:
-Follow the reference video's music style.
-```
-
-**Changes made:**
-1. **Format compliance** — All three sections (`detailed_description:`, `overall_soundscape:`, `non_diegetic_music:`) are present and correctly labeled.
-2. **Shot header** — Added the required `[Shot 1] At 00:00.000,` prefix at the start of the shot description.
-3. **Reference tags** — All `<video_1>`, `<picture_1>`, `<picture_2>`, and `<picture_3>` references are preserved and correctly placed.
-4. **No prohibited content** — No "MetaX", "celebrity", or "politician" references were present or added.
-5. **No re-description of reference subjects** — The prompt describes motion, timing, and camera only; it does not re-describe the visual content of the reference images/videos beyond what is needed for continuity.
-6. **No additional requirements** — No extra constraints were added beyond what was in the original.
+遵循参考视频的音乐风格。

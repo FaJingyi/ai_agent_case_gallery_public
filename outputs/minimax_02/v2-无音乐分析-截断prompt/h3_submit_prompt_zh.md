@@ -1,33 +1,28 @@
-Here is the rewritten prompt with all the required changes applied:
+detailed_description:
+[Shot 1] 0-4.5秒，使用 <video_1> 作为整支影片的动作、节奏、镜头和剪辑参考。整个画面位于一个静止的心形双圆取景框内，由两个重叠的圆形开口构成，外侧是干净的近黑色包围区域，内侧左右边缘各有一条狭窄竖条作为注释安全区，并保持完全静止。来自 <picture_1> 的粉彩小镇街道填满开口：石板铺地和浅色灰缝、桃色、奶油白和浅蓝色两层灰泥房屋、陶土瓦坡屋顶、木质百叶窗、窗台花箱、门口盆栽和路灯上的悬挂花篮，在左前方明亮晨间侧光下呈现，灰泥墙面上有长而柔和的阴影。来自 <picture_2> 的浅木色花摊位于街道中心中景：木推车带奶油色和陶土色条纹遮阳棚，三个镀锌桶里分别插着白色雏菊、粉色花朵和黄色菊花，柜台上放着一束用牛皮纸和麻绳包扎的花束。镜头开头完全柔焦，并在第一秒内对焦到花摊，构图保持锁定，机位静止，背景房屋因浅景深轻微柔化。
 
----
+At 00:01.000，来自 <picture_2> 的同一花摊完全清晰，它的遮阳棚和推车轮廓在身后粉彩墙面上形成更大的柔和阴影；花桶、纸包花束和悬挂花篮在微风中轻轻摇动，镜头几乎不可察觉地漂移，焦点保持在花摊和墙面上。
 
-**detailed_description:**
+At 00:03.500，镜头开始对来自 <picture_2> 的花摊进行一次缓慢连续推近，花摊在开口内稳定变大，远处房屋进一步柔化，两侧注释竖条逐渐被挤出画面。推近在 00:04.500 结束于一帧强烈运动模糊，并承接切入 Shot 2。
 
-[Shot 1] At 00:00.000, use <video_1> as the motion, timing, camera and edit reference for the whole film. The entire image sits inside a stationary heart-shaped double-circle viewfinder formed by two overlapping circular openings, with a clean near-black surround outside it and two narrow vertical strips along the inner left and right edges as annotation safe areas held completely still. The pastel town street from <picture_1> fills the opening: stone slab paving with pale mortar joints, two-storey plastered houses in peach, cream white and pale blue with terracotta tiled pitched roofs, wooden louvred shutters, window flower boxes, potted plants at the doorways and hanging flower baskets on the lamp posts, all in bright morning side light from the front left with long soft shadows across the plaster. The pale timber flower stall from <picture_2> — a wooden cart with a cream and terracotta striped awning and three galvanised buckets holding white daisies, pink blooms and yellow chrysanthemums, with a kraft-paper bouquet tied with twine on the counter — stands at the centre of the street in the middle distance. The shot opens soft and completely out of focus, pulls into sharp focus on the stall within the first second while the framing stays locked and the camera holds still, and the background houses stay gently softened by shallow depth of field.
+At 00:04.500，运动模糊直接硬切到 Shot 2，仍在同一静止心形双圆取景框内。来自 <picture_3> 的空旷小镇广场填满开口：浅米灰色石质钟楼位于左侧中远景，有圆形白色钟面和陶土瓦顶，侧面垂下一条素色布幡；一串小三角旗在石板铺地上方摇动，阳光明亮清澈，天空淡蓝并有柔软圆云。镜头在视线高度略微仰角中几乎静止，只带轻微漂移，钟楼和布幡清晰，远处屋顶因空气感柔化。
 
-At 00:01.000 the same stall from <picture_2> is fully sharp, and its awning-and-cart silhouette now falls as a larger soft shadow on the pastel wall directly behind it while the buckets, the paper bouquet and the hanging baskets sway slightly in a light breeze; the camera drifts almost imperceptibly and focus stays deep on the stall and the wall.
+At 00:05.600，来自 <picture_3> 的同一素色布幡继续被微风掀起，陶土色正面与米白色背面在阳光中交替露出，两面都能看到编织布料质感；三角旗在同一阵风中轻轻摇动，钟楼和广场位置保持不变。镜头在 00:08.500 以一帧强烈运动模糊退出并承接切入 Shot 3。
 
-At 00:03.500 the camera begins one slow continuous push in on the flower stall from <picture_2>, so the stall grows steadily inside the opening while the distant houses soften further and the two annotation strips are gradually squeezed out of frame. The push-in ends at 00:04.500 on a single frame of heavy motion blur that carries the cut into Shot 2.
+At 00:08.500，直接硬切到 Shot 3，仍在同一静止心形双圆取景框内。来自 <picture_4> 的日照屋顶露台填满开口：浅色石板地面带陶土瓦边，低矮前景女儿墙上摆着大陶土盆，里面有红色天竺葵和白色雏菊；远处连续的陶土瓦屋顶和小烟囱延伸到远方钟楼，天空淡蓝。来自 <picture_5> 的卖花女孩站在露台中心中景中，她是风格化3D动漫角色，栗色辫子搭在左肩，左耳上方有一朵小白花，琥珀色眼睛，浅雀斑，穿奶油白衬衫、鼠尾草绿色帆布围裙裙和棕色短靴。她面向镜头，身体略微侧转，左前臂挎着编织草篮，右手自然垂下拿着一束花。镜头在暖午后侧光中几乎静止，只轻微漂移，女孩清晰，前景花盆略柔，远处屋顶因空气感柔化，只有衣服和碎发轻微移动。
 
-[Shot 2] At 00:04.500, a direct hard cut carries that motion blur into Shot 2 inside the same stationary heart-shaped double-circle viewfinder. The empty town square from <picture_3> fills the opening: a pale beige-grey stone clock tower with a round white clock face and a terracotta tiled cap in the left middle distance, a long plain fabric banner hanging from its side, a string of small triangular bunting swaying above the stone paving, bright clear sunlight with transparent air and a pale blue sky with soft rounded clouds. The camera holds almost still with a slight drift in an eye-level view with a very slight upward tilt, sharp on the tower and the banner while distant roofs stay softened by air.
+At 00:10.000，她的头略微转向右侧，视线随之移动，篮子和花束保持原位；镜头开始一次缓慢连续推近，构图从中景收紧到中近景，身后屋顶随着画面对她脸部和双手的收紧而进一步柔化。
 
-At 00:05.600 the same plain banner from <picture_3> keeps lifting in the breeze so its terracotta front and its off-white reverse alternate in the sunlight, the woven fabric texture visible on both faces, and the triangular bunting sways gently in the same wind while the tower and the square hold their positions. The shot exits at 00:08.500 on a single frame of heavy motion blur that carries the cut into Shot 3.
+At 00:11.500，推近结束于一帧强烈运动模糊，并承接切入 Shot 4。
 
-[Shot 3] At 00:08.500, a direct hard cut lands Shot 3 inside the same stationary heart-shaped double-circle viewfinder. The sunlit rooftop terrace from <picture_4> fills the opening: a pale stone slab floor with terracotta tile trim, a low foreground parapet carrying large terracotta pots of red geraniums and white daisies, and a continuous field of terracotta tiled roofs with small chimneys receding to a distant clock tower under a pale blue sky. The florist girl from <picture_5> — a stylised 3D anime character with a chestnut braid over her left shoulder, a small white flower above her left ear, amber eyes, light freckles, a cream white shirt, a sage green canvas apron dress and brown ankle boots — stands at the centre of the terrace in a medium shot, facing the camera with her body angled slightly to one side, a woven straw basket resting on her left forearm and a bouquet held in her right hand hanging naturally at her side. The camera holds almost still with a slight drift in warm afternoon side light, sharp on the girl, with the foreground pots slightly softened and the distant roofs softened by air, and only her clothes and loose hair move slightly.
+At 00:11.500，直接硬切到 Shot 4，同一静止心形双圆取景框内呈现来自 <picture_5> 的同一卖花女孩极近特写：她的栗色辫子、左耳上方小白花、琥珀色眼睛和浅雀斑都极清晰；身后的来自 <picture_6> 的粉彩花店墙面明显失焦，墙面有竖向木条、小型悬挂白色和浅黄色花篮，以及一扇木框窗户，窗玻璃上有街道和天空的柔和反射。她的脸保持静止，自然眨眼，镜头几乎不可察觉地漂移。
 
-At 00:10.000 she turns her head slightly toward her right and her gaze follows while the basket and the bouquet stay exactly where they are, and the camera begins one slow continuous push in that tightens the framing from a medium shot toward a medium close-up, the rooftops behind her softening further as the framing closes on her face and hands.
+At 00:12.000，她的右手从画面右边缘抬入，指尖触碰右侧太阳穴附近的头发，并把散发别到耳后；同一连续特写、同一构图、同一背景和同一柔光持续保持。At 00:13.000，她的手离开画面，头部只是轻轻转回镜头方向。
 
-At 00:11.500 the push-in ends on a single frame of heavy motion blur that carries the cut into Shot 4.
+At 00:14.000，特写稳定为安静凝视她脸部的画面，只有非常轻微的头部转动和自然眨眼，取景框与两条注释竖条保持完全静止，直到 00:15.000 画面结束。
 
-[Shot 4] At 00:11.500, a direct hard cut lands Shot 4 inside the same stationary heart-shaped double-circle viewfinder on an extreme close-up of the same florist girl from <picture_5>: her chestnut braid, the small white flower above her left ear, her amber eyes and her light freckles held razor sharp, with the pastel flower shop wall from <picture_6> behind her — plaster with vertical wooden battens, small hanging baskets of white and pale yellow flowers and a wooden-framed window whose glass carries a soft reflection of street and sky — thrown well out of focus. Her face stays still and she blinks naturally while the camera drifts almost imperceptibly.
-
-At 00:12.000 her right hand rises into frame from the right edge, her fingertips touch the hair at her right temple and tuck the loose strands behind her ear, and the same continuous close-up, the same framing, the same background and the same soft light hold throughout. At 00:13.000 her hand leaves the frame and her head turns only slightly back toward the camera.
-
-At 00:14.000 the close-up settles into a still, quiet hold on her face with only a very slight head turn and a natural blink, and the viewfinder and the two annotation strips stay perfectly still until the image ends at 00:15.000.
-
-**overall_soundscape:**
+overall_soundscape:
 N/A
 
-**non_diegetic_music:**
-Follow the reference video's music style.
+non_diegetic_music:
+遵循参考视频的音乐风格。

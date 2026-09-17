@@ -1,31 +1,26 @@
-Here is the rewritten prompt following your formatting rules:
+detailed_description:
+[Shot 1] 0-3秒，使用 <video_1> 作为动作、节奏和镜头参考。引入 <picture_1>：一位匿名亚洲年轻女性，约二十多岁，肩长微卷深棕发，穿浅水洗牛仔短夹克、白色罗纹背心、米色直筒长裤和白色低帮运动鞋。她站在来自 <picture_2> 的开阔石质广场中央，埃菲尔铁塔沿画面中轴线在她身后升起，天空均匀阴天，中景有修剪整齐的树篱和砾石小路。她正面对镜头站在中景中，双手抬到肩高，掌心朝向镜头，带着轻微微笑保持姿势。前半秒构图从中景收紧到中近景，镜头保持视线高度锁定，铁塔在她身后保持可读。画面下方保持干净。
 
----
+At 00:03.000，同一女性仍位于来自 <picture_2> 的同一广场，双臂举过头顶并朝镜头展开，宽画幅中她的手在极近前景变大，铁塔桁架在画面边缘轻微弯曲。她略微前倾并保持展开姿势；镜头固定在三脚架上，切点落在居中的举手姿势上。
 
-**detailed_description:**
+At 00:04.000，来自 <picture_1> 的女性站到来自 <picture_3> 的石砌城墙上，带垛口的矮墙斜向延伸进雾蒙蒙的山脊，暖色低角度午后阳光照亮场景。她一只手叉腰，另一只手举到脸旁轻轻挥手，身体保持正面对镜头，同样的超广角变形构图和固定机位贯穿这一镜头。
 
-[Shot 1] At 00:00.000, use <video_1> as the motion, timing, and camera reference. Introduce <picture_1>, an anonymous Asian young woman in her mid twenties with shoulder-length softly wavy dark brown hair, a light washed denim cropped jacket over a white ribbed tank top, cream straight-leg trousers and white low-cut sneakers. She stands centered in the open stone plaza of <picture_2>, where the Eiffel Tower rises on the central vertical axis behind her under an even overcast sky with clipped hedges and a gravel path in the midground. She faces the camera front-on in a medium shot and raises both hands to shoulder height with open palms turned toward the lens, holding the pose with a light smile. During the first half second the framing tightens from a medium shot to a medium close-up while the camera stays locked off at eye level and the tower stays readable behind her. Clean lower third.
+At 00:05.000，在 <picture_4> 场景中，她站在浅色海滨步道上，白色悉尼歌剧院壳体位于一侧，海港大桥钢拱位于另一侧，港湾水面在晴朗蓝天下闪光。她双臂举过头顶形成宽大的 V 字，肩膀打开，双手在同样居中的超广角画面前景被放大，锁定机位让桥拱和水线在身后保持稳定。
 
-At 00:03.000, the same woman stays on the same plaza from <picture_2> and raises both arms overhead, opening them toward the lens in a wide frame so her hands grow large in the extreme foreground while the tower lattice bends slightly along the frame edges. She leans forward a little and holds the opened pose; the camera remains fixed on its tripod and the cut lands on a matching centered raised-hand pose.
+At 00:06.000，在 <picture_5> 前方，绿色自由女神像立在水面后的基座上，更远处是晴朗日光下的曼哈顿下城天际线。她双手在脸前比出一个矩形取景框，像摄影师构图一样；双手占据画面中心，雕像和天际线在同一固定广角视图中保持清晰。
 
-At 00:04.000, the woman from <picture_1> now stands on the stone rampart of <picture_3>, where a crenellated parapet runs diagonally into hazy mountain ridges under warm low afternoon sun. She plants one hand on her hip and lifts the other hand beside her face in a small wave, keeping her body square to the lens in the same ultra-wide distorted framing, and the same fixed camera holds through the shot.
+At 00:07.000，在 <picture_6> 场景中，泰姬陵白色穹顶和宣礼塔在暖金色薄雾中居中位于倒影池后方。她把右手抬到肩高做一个短促挥手。这是一个短而快的插入镜头，同样居中的超广角构图和深景深让穹顶保持可读，按节拍切入切出。
 
-At 00:05.000, at <picture_4> she stands on the pale promenade with the white Opera House shells on one side and the steel arch of the Harbour Bridge on the other, harbour water sparkling in the midground under a bright blue sky. She lifts both arms overhead into a wide open V, shoulders back, hands enlarged in the foreground of the same centered ultra-wide composition, and the locked-off camera keeps the bridge arch and the water line steady behind her.
+At 00:07.500，回到 <picture_4>，歌剧院壳体和海港大桥在她身后。她将一只手放到脸颊旁，向镜头送出一个小飞吻，头微微倾斜，然后保持这个动作，固定机位让港湾和大桥保持原位。
 
-At 00:06.000, in front of <picture_5>, with the green Statue of Liberty on its pedestal behind the water and the Lower Manhattan skyline further back in clear daylight, she raises both hands to frame a rectangle in front of her face like a photographer composing a picture. Her hands dominate the center of the frame while the statue and the skyline stay sharp behind her in the same fixed wide view.
+At 00:08.500，回到 <picture_6>，泰姬陵在暖光中的倒影池后方居中。她双臂举过头顶，手指交叉做头顶伸展，躯干挺直，双手在同一超广角画面顶部附近被放大，穹顶和宣礼塔在身后稳定居中。
 
-At 00:07.000, at <picture_6>, with the white dome and minarets of the Taj Mahal centered behind the reflecting pool under warm golden-hour haze, she lifts her right hand to shoulder height in a quick brief wave. This is a short fast insert in the same centered ultra-wide framing with the deep focus keeping the dome readable, cut in and out on the beat.
+At 00:09.500，在 <picture_7> 场景中，斗兽场弧形拱廊环绕背景，暖色石灰华铺地位于前景，晚金色光线照亮场景。她双臂向两侧展开，做出开阔展示姿势，掌心向外，然后抬眼看向镜头并保持。固定超广角机位让弧形建筑在她身后横向展开。
 
-At 00:07.500, back at <picture_4> with the Opera House shells and the harbour bridge behind her, the same woman brings one hand to her cheek and sends a small kiss gesture outward toward the lens, tipping her head slightly, then holds the gesture steady as the same fixed camera keeps the harbour and the bridge in place.
+At 00:11.000，在 <picture_8> 场景中，雪顶富士山位于红色宝塔和樱花枝后方正中央，天空清澈深蓝。结尾镜头在一个连续镜头中分三段：她先把双手抬到胸前，向镜头比出矩形取景框；从 00:12.000 开始，她把双手合成胸前小爱心并停顿；从 00:13.000 开始，她双臂大幅举起做最后挥手，带着温暖微笑看向镜头并保持到结束。镜头始终锁定在三脚架上，山体在身后居中且清晰。画面底部保持干净。
 
-At 00:08.500, back at <picture_6> with the Taj Mahal centered behind the reflecting pool in warm light, she raises both arms overhead and laces her fingers in an overhead stretch, torso upright, hands enlarged near the top of the same ultra-wide frame while the dome and minarets stay centered and steady behind her.
-
-At 00:09.500, at <picture_7>, with the curved tiers of the Colosseum arches wrapping around the background and warm travertine paving in the foreground under late golden light, she spreads both arms out to the sides in a wide open presentation, palms turned outward, and then holds the pose while she lifts her eyes to the lens; the fixed ultra-wide camera keeps the curved architecture stretching across the frame behind her.
-
-At 00:11.000, at <picture_8>, with snow-capped Mount Fuji centered far behind the red pagoda and cherry branches under a crisp deep blue sky, the closing shot runs in three stages in one continuous take. She first lifts both hands to chest height to frame a rectangle toward the lens; from 00:12.000 she draws both hands together into a small heart shape at her chest and pauses; from 00:13.000 she throws both arms up into a big final wave and holds that open pose with a warm smile toward the lens until the end. The camera stays locked off on its tripod throughout and the mountain stays centered and sharp behind her. Clean frame at the bottom of the picture.
-
-**overall_soundscape:**
+overall_soundscape:
 N/A
 
-**non_diegetic_music:**
-Follow the reference video's music style.
+non_diegetic_music:
+遵循参考视频的音乐风格。
