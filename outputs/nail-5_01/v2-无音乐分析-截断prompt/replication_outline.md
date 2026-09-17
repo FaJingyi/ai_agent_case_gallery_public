@@ -1,173 +1,211 @@
-# 复刻大纲审阅稿（nail-5）
+# 复刻大纲审阅稿 (replication_outline.md)
 
-- `schema_version`: `common_replication_outline.v2`
-- `status`: `ready_with_assumptions`
-- `replication_mode`: `shot_structure`
-- `generation_scope`: `single_generation_task`
-- 目标时长/画幅: `15.0s` / `9:16`（`resolution_target=720x1280`）
-- 时间精度: 截断到小数点后一位（`precision=one_decimal`, `method=truncate`）
-- 参考视频事实来源: `01_reference_video_analysis/reference_video_analysis.json`
-- 用户目标素材: `test_data/nail-5/user_input/shangpin-3.png`（A001）
-- 用户需求: 将参考视频里的美甲的图案替换成素材图片里的美甲图案，人物的装扮和场景和美甲风格一致。
+- schema_version: `common_replication_outline.v2`
+- status: `ready_with_assumptions`
+- replication_mode: `shot_structure`
+- generation_scope: `single_generation_task`
+- timeline_unit_count: 6
+- temporal_segment_count: 11
+- 时间精度: 截断到 1 位小数 (truncate)
+- 参考视频: 720x1280 / 9:16 / 15.6s / 6 shots / structure_type=before_after
+- 目标素材: `asset_1` (`<picture_1>`) — long stiletto-shaped nails in black, taupe and silver metallic foil with 3D eye motifs, pearls and rhinestones
+- 参考视频输入: `<video_1>` = VS001 前 15 秒截断版本
+- 文字/logo: 目标侧无任何可读文字，参考视频三条中文字幕仅作源侧审计
+- 音频: `unsupported_skipped`
 
-## 1. 复刻目标
+## 参考元素处理总览
 
-保留参考视频的 5 个 shot 结构、镜头顺序、景别推进（中景 → 手部大特写 → 极近特写）、前景遮挡转场、画中画版式、俯拍机位与硬切节奏；把源侧的明亮户外世界、原人物造型、原甲面图案与原画面文案全部替换为目标侧内容。
-
-目标侧世界为素材美甲 A001 的**暗黑哥特金属**风格：目标人物改为暗色皮革/缎面/金属造型，场景改为暗色室内化妆间、夜间暗色露台庭院、暗色石造工业回廊，注意力中心始终是佩戴在人物手指上的目标甲面。
-
-## 2. 时间结构总览
-
-| unit | 参考 shot | 时间(s) | 主体类型 | 参考功能 | 目标功能 | segment |
-| --- | --- | --- | --- | --- | --- | --- |
-| U001 | shot1 | 0.0-3.5 | human | opening_hook | 建立目标空间与人物，并以手部前景遮挡转场 | S001, S002 |
-| U002 | shot2 | 3.5-8.5 | human | visual_display | 在目标暗色露台完整展示目标甲面并保留文字节拍 | S003, S004, S005 |
-| U003 | shot3 | 8.5-10.0 | mixed | information_reveal | 手部大特写 + 画中画 + 底部文字安全区强化细节 | S006, S007 |
-| U004 | shot4 | 10.0-14.5 | human | visual_display | 第三造型展示 + 佩戴头饰 + 俯拍展示 | S008, S009, S010 |
-| U005 | shot5 | 14.5-15.0 | environment | closing | 暗色地面极近特写收尾 | S011 |
-
-`timeline_units[]` 保持 shot 级（5 个），`temporal_segments[]` 共 11 个。H3 prompt 中的 `[Shot N]` 由 `temporal_segments` 渲染，标记为 `prompt_shots_from_temporal_segments`，不新增、拆分或重排参考镜头。
-
-## 3. 全局外观库
-
-| entity_id | 类型 | 名称 | 关键外观 |
+| element_id | type | decision | 处理摘要 |
 | --- | --- | --- | --- |
-| MS001 | main_subject_appearance | 目标美甲款式 | 10 片尖形长尖杏仁甲；黑亮面 / 深灰褐哑光 / 灰褐拼黑；立体写实眼睛（棕与黄绿虹膜、黑瞳、白眼白）、白珍珠与金边珍珠、银色金属浮雕与滴落线条、白色细线、金色小圆点与水钻；暗黑哥特华丽金属风 |
-| PE001 | person_appearance | 目标人物 | 成年亚洲女性，深色长发自然垂落，深色烟熏眼妆与深色唇；三套造型状态；暗色金属与银色戒指、暗色金属细手链；暗黑冷峻金属气质 |
-| SCN001_T | scene_appearance | 场景1 暗色室内化妆间 | 深色台面与暗色金属托盘、天鹅绒软包座椅、深灰石纹墙面与金属边框化妆镜；低照度侧光与镜面高光；冷调深灰黑 |
-| SCN002_T | scene_appearance | 场景2 夜间暗色露台庭院 | 暗色阔叶植物、黑色铁艺栏杆、深色石板地面、暗色金属雕塑、深色夜空与远处建筑轮廓；冷色月光与冷白补光；深灰蓝黑 |
-| SCN003_T | scene_appearance | 场景3 暗色石造工业回廊 | 深色石板地面、暗色金属栏杆、石材立柱、黑色金属格构梁架；冷白顶光与结构高光；黑灰冷调 |
-| KP001 | key_prop_appearance | 暗色金属小道具 | 指间捏持的小型花形/球状物，暗色金属与黑曜石质感，黑色深灰带银色高光 |
-| KP002 | key_prop_appearance | 暗色金属头饰 | 细金属环与暗色宝石拼接头饰，深灰黑金属哑光与高光交错 |
-| KP003 | key_prop_appearance | 手部配饰 | 暗色金属与银色戒指、暗色金属细手链 |
-| SA001 | style_atmosphere | 暗黑哥特金属质感 | 低照度侧光与冷白补光、金属高光与镜面反射；黑/深灰/深灰蓝/银点缀；写实竖屏浅景深 |
+| `ret_001` | `time_structure` | `inherit` | 15s single-generation duration |
+| `ret_002` | `shot_structure` | `inherit` | six-shot order scene content inside each shot is rebuilt for the target dark gothic world |
+| `ret_003` | `camera` | `inherit` | handheld static framing with slight drift |
+| `ret_004` | `composition` | `inherit` | centered subject placement |
+| `ret_005` | `action_structure` | `inherit` | spread-finger palm turn the presented surface becomes the target nail art from <picture_1> the original performer's hand shape and rings as identity evidence |
+| `ret_006` | `transition` | `inherit` | hand-to-lens foreground wipe as the before/after boundary the scene revealed after the wipe is the target dark gothic hall |
+| `ret_007` | `composition` | `inherit` | upper-left rectangular inset position inset content shows the target nail art from <picture_1> |
+| `ret_008` | `transition` | `inherit` | direct hard cut on the same location |
+| `ret_009` | `camera` | `inherit` | macro hand detail framing |
+| `ret_010` | `subject_content` | `adapt` | the nail surface is the hero detail of the after state replace the nail art pattern with the user asset nail art from <picture_1> (long stiletto-shaped nails in black, taupe and silver metallic foil with 3D eye motifs, pearls and rhinestones) original blue/white/black motif set |
+| `ret_011` | `person_or_body` | `adapt` | same body part ownership across shots a non-identifiable young adult woman with long straight black hair, neutral confident expression presented as a non-identifiable performer; wardrobe rebuilt as dark gothic garments that match the nail art palette original identifiable person |
+| `ret_012` | `scene_content` | `adapt` | enclosed starting space a compact dark gothic anteroom: black velvet curtain, tall antique mirror, brass wall sconce, dark plaster wall, low-key warm practical light for the opening shots and a deep dark gothic atelier hall: tall blackened metal lattice window frames, deep green-black velvet drapes, dark stone floor, candle-like practical lights, cool blue night light through the lattice from the reveal onward; scene direction comes from the user style requirement white indoor doorway wall |
+| `ret_013` | `visual_style` | `adapt` | consistent single light setup across all shots low-key moody dark interior lighting with cool blue window light and warm brass practicals; controlled highlights on the metallic nail surface bright high-key daylight |
+| `ret_014` | `prop` | `adapt` | a small handheld botanical prop is pinched between two fingers in the macro detail shot a small dark botanical prop (deep plum-black dried flower sprig with silver-grey leaves) that matches the dark gothic palette bright yellow wildflower |
+| `ret_015` | `text_or_ui` | `discard` | the opening POV subtitle text |
+| `ret_016` | `watermark_or_platform_ui` | `discard` | any platform UI, account watermark or corner badge would be excluded if present |
+| `ret_017` | `unsupported_audio` | `discard` | background music |
+| `ret_018` | `incidental_detail` | `discard` | silver rings |
 
-PE001 绑定最早出现的初始状态 `PE001_ST1`（深黑缎面与皮革拼接上衣 + 深灰长裤，生效于 S001-S002）；`PE001_ST2`（黑色金属光泽上衣 + 银色金属装饰片，生效于 S003-S007）；`PE001_ST3`（深灰黑长外套 + 黑色高领 + 暗色金属头饰，生效于 S008-S011）。参考图只锚定 ST1 初始状态，后续造型状态由分镜描述控制。
+## 时间轴
 
-## 4. 逐段分镜
+### TU001 — 参考 VS001:shot1（0.0 - 3.0 s，3.0 s）
 
-### 分镜 S001（0.0-2.0s，U001）
+- 参考功能: `opening_hook` / 目标功能: establish the plain before state and start the hand presentation chain
+- content_subject_type: `mixed`
+- 使用素材: <video_1>(ref_video_excerpt_VS001)
+- 生成画面: a non-identifiable woman stands in a dark anteroom with her hands on her hips, then lifts and presents her plain nails and pushes both hands toward the lens
+- 动作/运镜: standing with hands on hips; lifting both hands; turning the palms to the lens; pushing forward toward the lens / mostly static with a slight handheld drift
+- 场景迁移: a compact dark gothic anteroom: black velvet curtain, tall antique mirror, brass wall sconce, dark plaster wall, low-key warm practical light
+- 台词/口播/画面文字: no spoken line; the shot only shows the before state and a calm confident look toward the lens
+- 画内实体文字/logo 状态: 无（目标侧未提供任何文字或 logo）
+- 后期叠加状态: 无（参考字幕按源侧审计丢弃，H3 输出 clean plate）
+- 参考帧决策: role=person_reference / status=needed
 
-- 画面: PE001 目标人物立于 SCN001_T 暗色室内化妆间，竖屏中景、正面平视、主体居中、浅景深。
-- 动作: 人物双手先扶腰侧，随后抬起一只手转向镜头展示手部与目标甲面。
-- 光线/质感: 低照度侧光与镜面反射高光，冷调深灰。
-- 素材/参考帧: FR_PE001（人物1）、FR_SCN001_T（场景1）、MS001 目标甲面。
-- 文字: 顶部画面文字为后期叠加，目标侧文本未提供，仅保留顶部安全区（`missing_required_input`）。
-- 承接: 片段开场，段内连续。
-
-### 分镜 S002（2.0-3.5s，U001）
-
-- 画面: 中景转手部近景，正面机位，主体迅速放大。
-- 动作: 人物双手抬至胸前、十指张开向镜头前伸并贴近镜头，手部占满画面形成遮挡。
-- 特殊机制: `SMT001 foreground_wipe`（medium）→ “人物双手十指张开向镜头前伸并贴近镜头形成前景遮挡，遮挡结束时画面已切换到目标暗色空间。”
-- 承接: 以手部前景遮挡转场衔接 U002。
-
-### 分镜 S003（3.5-5.0s，U002）
-
-- 画面: PE001 在 SCN002_T 夜间暗色露台，竖屏中景、正面平视、主体居中、浅景深。
-- 动作: 双手上举至胸前、十指张开正对镜头缓慢展示，随后轻微翻转手掌。
-- 光线/质感: 冷色月光与冷白补光，金属质感高光。
-- 承接: 承接前景遮挡转场。
-
-### 分镜 S004（5.0-7.0s，U002）
-
-- 画面: 竖屏中近景、正面平视、主体居右、画面顶部留出文字安全区。
-- 动作: 双手由胸前移向脸侧，掌面朝镜头保持甲面可见，头部轻微侧转。
-- 文字: 顶部画面文字为后期叠加，目标侧文本未提供，仅保留安全区与节拍（`missing_required_input`）。
-- 记忆点: 保留画面文字出现时机与信息强调节奏，不迁移源文案。
-
-### 分镜 S005（7.0-8.5s，U002）
-
-- 画面: 手部近景，浅景深虚化暗色背景。
-- 动作: 人物侧身，手部上抬至面部一侧，拇指与食指捏住 KP001 暗色金属小道具并轻微转动。
-- 承接: 硬切到 U003。
-
-### 分镜 S006（8.5-9.2s，U003）
-
-- 画面: 手部大特写、浅景深，左上角画中画约占画面四分之一，底部保留文字安全区。
-- 动作: 手部特写定格，暗色金属小道具位于指间。
-- 特殊机制: `SMT002 picture_in_picture`（high）→ “在手指捏持暗色金属小道具的手部大特写画面左上角，叠加一张同为手部与小道具、暗色空间背景的小图，小图约占画面四分之一并保持与主图一致的冷色调。”
-- 文字: 底部画面文字为后期叠加，目标侧文本未提供（`missing_required_input`）。
-- 承接: 硬切自 U002，段内定格。
-
-### 分镜 S007（9.2-10.0s，U003）
-
-- 画面: 手部大特写、浅景深、主体居中偏下。
-- 动作: 手指轻轻转动暗色金属小道具，甲面反光随角度变化。
-- 承接: 硬切到 U004。
-
-### 分镜 S008（10.0-11.5s，U004）
-
-- 画面: PE001 在 SCN003_T 暗色石造工业回廊，竖屏中景、正面平视、主体居中、冷调浅景深；造型为 PE001_ST3。
-- 动作: 双手举起至胸前展示甲面并缓慢翻转手掌。
-- 承接: 硬切自 U003。
-
-### 分镜 S009（11.5-13.0s，U004）
-
-- 画面: 竖屏中近景、正面平视、主体居中。
-- 动作: 人物双手抬起将 KP002 暗色金属头饰戴到头上并扶正，随后手部靠近面部保持甲面可见。
-- 记忆点: 保留造型变化节拍。
-
-### 分镜 S010（13.0-14.5s，U004）
-
-- 画面: 俯拍机位，主体居中，手部靠近画面上方。
-- 动作: 人物坐于暗色石板地面上，双手向镜头上方举起展示甲面，随后手部缓缓放下接近地面。
-- 特殊机制: `SMT003 overhead_or_bird_eye_shot`（medium）→ “机位转为俯拍，人物坐于暗色石板地面，双手向镜头上方举起展示目标甲面，随后手部缓缓放下。”
-- 承接: 硬切到 U005。
-
-### 分镜 S011（14.5-15.0s，U005）
-
-- 画面: 极近特写、浅景深，手部位于画面中下部。
-- 动作: 手部落在暗色石板地面上并轻微移动，甲面仅部分可见。
-- 收尾: 片段收尾，回落情绪。
-
-## 5. 场景迁移
-
-| scene_id | 参考场景 | 目标时间(s) | preserve_scene_style | adapt_scene_content | visible_difference_anchor |
-| --- | --- | --- | --- | --- | --- |
-| SCN001_T | SCN001 | 0.0-3.5 | 竖屏中景构图、主体居中、浅景深、写实质感 | 室内化妆间、冷调深灰黑、金属镜框与石纹墙面、暗色软包与托盘 | 由明亮户外草地改为室内化妆间；高饱和蓝天绿草改为深灰黑 |
-| SCN002_T | SCN002 | 3.5-10.0 | 构图关系与空间深度、浅景深虚化、写实质感 | 夜间露台庭院、深灰蓝黑、铁艺栏杆与暗色植物、移除湖泊雪山 | 由日间湖畔草地改为夜间露台庭院 |
-| SCN003_T | SCN003 | 10.0-15.0 | 构图关系与空间深度、主体居中、浅景深、俯拍机位 | 室内石造工业回廊、黑灰冷调、石材立柱与金属格构梁架 | 由日间铁塔草坡改为室内石造工业回廊 |
-
-目标素材 A001 的背景按 `asset_incidental_background_not_used` 处理，只作为审计线索，不作为目标场景。
-
-## 6. 文字与 logo 策略
-
-- `post_overlay_default=true`，`render_post_overlay_in_video_model=false`，`post_overlay_render_method=ffmpeg_or_opencv`。
-- 参考视频存在顶部/中部/底部画面文案节拍，目标侧文本未提供（`target_text_status=missing_required_input`），因此目标视频不生成任何可读文字，只在 S001 / S004 / S006 保留安全区与节拍，H3 生成 clean plate。
-- `do_not_generate_unconfirmed_readable_text=true`；无画内实体 logo / 包装文字需求。
-
-## 7. 记忆点迁移
-
-| memory_id | 类型 | 保留机制 | 目标绑定 | 状态 |
+| segment | 时间 | 参考功能 | 目标功能 | 参考帧 entity/state |
 | --- | --- | --- | --- | --- |
-| vm_001 | visual | 手部前景遮挡转场与遮挡前后强对比 | S002, S003 | ready |
-| vm_002 | visual | 画中画位置、面积占比与主次关系 | S006 | ready |
-| vm_003 | visual | 俯拍机位与双手上举展示关系 | S010 | ready |
-| vm_004 | visual | 手部动作阶段与向镜头前伸的接近感 | S002 | ready |
-| vm_005 | visual | 硬切节奏与手部展示统一线索 | S003-S011 | ready |
-| sm_001/sm_003/sm_004 | script | 开场钩子、信息强调时机、环境特写收尾的信息结构 | 全片 / S004 / S011 | 目标文案缺失，仅保留结构 |
-| am_* | audio | 仅 `unsupported_skipped` 审计，不迁移 | - | skipped |
+| `SEG001a` | 0.0-1.5 s | `visual_display` | establish the before state | person_1,nail_art_design,scene_dark_atelier / person_state_initial,nail_state_base,scene_state_anteroom |
+| `SEG001b` | 1.5-3.0 s | `action_or_interaction` | run the hand presentation chain and launch the wipe | person_1,nail_art_design / person_state_initial,nail_state_base |
 
-## 8. 参考帧摘要
+- 审计项: ncon_global_001; ncon_global_002; ncon_global_003; ncon_global_004; ncon_global_005; ncon_global_006
+- 缺失项: 无
 
-- `frame_requirement_level=required_person_scene_anchors`，`plan_required=true`，`plan_path=07_reference_frame_plan/reference_frame_plan.json`
-- 人物实体 1 个（PE001 绑定初始状态 PE001_ST1）→ 1 张纯人物参考图 `FR_PE001`
-- 场景实体 3 个（SCN001_T / SCN002_T / SCN003_T 差异明显，保留独立）→ 3 张纯场景参考图 `FR_SCN001_T` / `FR_SCN002_T` / `FR_SCN003_T`
-- 加上用户素材 A001，进入 H3 的图片总数为 5，未超过 5 张上限
-- `ready_frame_ids` 在步骤 8 生成成功后回填
+### TU002 — 参考 VS001:shot2（3.0 - 4.0 s，1.0 s）
 
-## 9. 审计与降级
+- 参考功能: `transition` / 目标功能: carry the before/after boundary with a hand foreground wipe
+- content_subject_type: `abstract_motion`
+- 使用素材: <video_1>(ref_video_excerpt_VS001)
+- 生成画面: both hands rush into the lens and wipe the anteroom away, revealing the dark hall
+- 动作/运镜: hands enter the lens; frame is filled; new space is revealed / static; the subject's hands create the motion
+- 场景迁移: a compact dark gothic anteroom: black velvet curtain, tall antique mirror, brass wall sconce, dark plaster wall, low-key warm practical light wiped away into a deep dark gothic atelier hall: tall blackened metal lattice window frames, deep green-black velvet drapes, dark stone floor, candle-like practical lights, cool blue night light through the lattice
+- 台词/口播/画面文字: no spoken line; the wipe carries the before/after information change
+- 画内实体文字/logo 状态: 无（目标侧未提供任何文字或 logo）
+- 后期叠加状态: 无（参考字幕按源侧审计丢弃，H3 输出 clean plate）
+- 参考帧决策: role=person_reference / status=needed
 
-- 缺失输入: MI001 `nail_worn_state`（把平铺穿戴甲转写为佩戴状态，`generate_with_confirmed_assumption`）；MI002 `actor_identity`（非特定身份，生成假设）；MI003 `on_screen_text`（`omit_or_neutralize`）。
-- 生成假设: GA001 甲面佩戴状态；GA002 人物装扮按素材风格重设（用户确认）；GA003 场景按素材风格重设（用户确认）；GA004 人物外观细节；GA005 场景陈设细节。
-- 源侧审计约束（`prompt_visibility=audit_only`）: `src_bright_outdoor_world`（medium）、`src_on_screen_caption_text`（high）、`src_claim_objects`（low）、`caption_layers_are_post_overlay`（low）等；不进入提交 prompt。
-- 上游降级: VLM 响应在 `max_tokens=8000` 被截断；视频按约 24 帧稀疏采样，shot 边界为近似值；`backend/profiles` 的脚本/叙事结构与音乐目录为空（`skipped_empty_directory`）。
-- 音频: ASR 返回疑似英文歌词，归类为音乐/疑似唱歌，`unsupported_skipped`，不迁移。
-- 校验标记: `shot_boundaries_are_approximate_due_to_sparse_video_sampling`、`nail_worn_state_is_generation_assumption`、`source_on_screen_text_omitted_target_text_missing`、`scripts_knowledge_directory_empty_no_script_profile_used`、`reference_frame_count_including_user_asset_equals_h3_limit_5`。
+| segment | 时间 | 参考功能 | 目标功能 | 参考帧 entity/state |
+| --- | --- | --- | --- | --- |
+| `SEG002a` | 3.0-4.0 s | `transition` | execute the before/after wipe boundary | person_1,scene_dark_atelier / person_state_final,scene_state_hall |
 
-## 10. 状态
+- 审计项: ncon_global_001; ncon_global_002; ncon_global_003; ncon_global_004; ncon_global_005; ncon_global_006
+- 缺失项: 无
 
-- 准备度检查: `ready_with_assumptions`，16 条要求，0 个阻塞项。
-- 大纲状态: `ready_with_assumptions`；参考帧计划与 H3 打包可继续。
-- 下一步: 步骤 7 参考帧计划 → 步骤 8 参考帧生成 → 步骤 9 H3 打包输入整理（本 dry run 在 H3 请求产出后停止，不提交视频生成）。
+### TU003 — 参考 VS001:shot3（4.0 - 9.0 s，5.0 s）
+
+- 参考功能: `reveal` / 目标功能: reveal the finished target nail art in the dark gothic hall
+- content_subject_type: `mixed`
+- 使用素材: <video_1>(ref_video_excerpt_VS001), <picture_1>(asset_1)
+- 生成画面: the same performer, now in the dark gothic lace outfit, raises both hands to her face and presents the finished dark gothic nails in the hall
+- 动作/运镜: hands raised in front of the face; palms and fingertips turned to the lens; hands moved beside cheek and chin; head tilt; one hand lowered / handheld medium close-up with a slight drift
+- 场景迁移: a deep dark gothic atelier hall: tall blackened metal lattice window frames, deep green-black velvet drapes, dark stone floor, candle-like practical lights, cool blue night light through the lattice
+- 台词/口播/画面文字: no spoken line; the shot only holds a pleased look toward the lens
+- 画内实体文字/logo 状态: 无（目标侧未提供任何文字或 logo）
+- 后期叠加状态: 无（参考字幕按源侧审计丢弃，H3 输出 clean plate）
+- 参考帧决策: role=person_reference / status=needed
+
+| segment | 时间 | 参考功能 | 目标功能 | 参考帧 entity/state |
+| --- | --- | --- | --- | --- |
+| `SEG003a` | 4.0-6.0 s | `visual_display` | reveal the finished nail art | person_1,nail_art_design,scene_dark_atelier / person_state_final,nail_state_art,scene_state_hall |
+| `SEG003b` | 6.0-7.0 s | `text_overlay_or_information_reveal` | hold the presentation pose at the information peak | person_1,nail_art_design / person_state_final,nail_state_art |
+| `SEG003c` | 7.0-9.0 s | `action_or_interaction` | close the reveal and prepare the cut | person_1,nail_art_design / person_state_final,nail_state_art |
+
+- 审计项: ncon_global_001; ncon_global_002; ncon_global_003; ncon_global_004; ncon_global_005; ncon_global_006
+- 缺失项: 无
+
+### TU004 — 参考 VS001:shot4（9.0 - 11.0 s，2.0 s）
+
+- 参考功能: `proof` / 目标功能: prove nail surface detail with a macro shot and a picture-in-picture inset
+- content_subject_type: `mixed`
+- 使用素材: <video_1>(ref_video_excerpt_VS001), <picture_1>(asset_1)
+- 生成画面: a macro shot of one hand holding a small dark botanical prop, with an upper-left picture-in-picture inset showing a second view of the same nails
+- 动作/运镜: cut to macro; fingers curl around the prop; hand rotates toward the lens; inset stays mounted / nearly static, hand-led rotation
+- 场景迁移: a deep dark gothic atelier hall: tall blackened metal lattice window frames, deep green-black velvet drapes, dark stone floor, candle-like practical lights, cool blue night light through the lattice
+- 台词/口播/画面文字: no spoken line; the shot is a silent detail proof
+- 画内实体文字/logo 状态: 无（目标侧未提供任何文字或 logo）
+- 后期叠加状态: 无（参考字幕按源侧审计丢弃，H3 输出 clean plate）
+- 参考帧决策: role=subject_reference / status=needed
+
+| segment | 时间 | 参考功能 | 目标功能 | 参考帧 entity/state |
+| --- | --- | --- | --- | --- |
+| `SEG004a` | 9.0-9.5 s | `transition` | cut into macro and start the prop hold | nail_art_design,botanical_prop / nail_state_art,prop_state_single |
+| `SEG004b` | 9.5-11.0 s | `visual_display` | hold the macro detail with the inset composition | nail_art_design,botanical_prop,scene_dark_atelier / nail_state_art,prop_state_single,scene_state_hall |
+
+- 审计项: ncon_global_001; ncon_global_002; ncon_global_003; ncon_global_004; ncon_global_005; ncon_global_006
+- 缺失项: 无
+
+### TU005 — 参考 VS001:shot5（11.0 - 12.5 s，1.5 s）
+
+- 参考功能: `proof` / 目标功能: re-present the nails against the metal lattice structure
+- content_subject_type: `human`
+- 使用素材: <video_1>(ref_video_excerpt_VS001), <picture_1>(asset_1)
+- 生成画面: the performer raises both hands again with the black metal lattice window frames behind her
+- 动作/运镜: hands raised with fingers spread; one hand moves toward the cheek; the other hand stays raised / steady handheld, slight drift
+- 场景迁移: a deep dark gothic atelier hall: tall blackened metal lattice window frames, deep green-black velvet drapes, dark stone floor, candle-like practical lights, cool blue night light through the lattice with the lattice window frames prominent
+- 台词/口播/画面文字: no spoken line; a calm satisfied look toward the lens
+- 画内实体文字/logo 状态: 无（目标侧未提供任何文字或 logo）
+- 后期叠加状态: 无（参考字幕按源侧审计丢弃，H3 输出 clean plate）
+- 参考帧决策: role=person_reference / status=needed
+
+| segment | 时间 | 参考功能 | 目标功能 | 参考帧 entity/state |
+| --- | --- | --- | --- | --- |
+| `SEG005a` | 11.0-12.5 s | `visual_display` | re-present the nails with the lattice background | person_1,nail_art_design,scene_dark_atelier / person_state_final,nail_state_art,scene_state_hall |
+
+- 审计项: ncon_global_001; ncon_global_002; ncon_global_003; ncon_global_004; ncon_global_005; ncon_global_006
+- 缺失项: 无
+
+### TU006 — 参考 VS001:shot6（12.5 - 15.0 s，2.5 s）
+
+- 参考功能: `closing_or_prompt` / 目标功能: close on the same nails in a heavier dark wardrobe
+- content_subject_type: `human`
+- 使用素材: <video_1>(ref_video_excerpt_VS001), <picture_1>(asset_1)
+- 生成画面: the performer wears the long black velvet coat and wide-brim hat, presents both hands, crouches down and rises again with the hands still shown
+- 动作/运镜: hands raised toward the lens; one hand to the cheek; crouch down while the hands stay near the face; rise again with the hands presented / handheld, follows the crouch and rise
+- 场景迁移: a deep dark gothic atelier hall: tall blackened metal lattice window frames, deep green-black velvet drapes, dark stone floor, candle-like practical lights, cool blue night light through the lattice
+- 台词/口播/画面文字: no spoken line; a calm closing look toward the lens
+- 画内实体文字/logo 状态: 无（目标侧未提供任何文字或 logo）
+- 后期叠加状态: 无（参考字幕按源侧审计丢弃，H3 输出 clean plate）
+- 参考帧决策: role=person_reference / status=needed
+
+| segment | 时间 | 参考功能 | 目标功能 | 参考帧 entity/state |
+| --- | --- | --- | --- | --- |
+| `SEG006a` | 12.5-13.5 s | `action_or_interaction` | open the closing beat with the wardrobe change | person_1,nail_art_design / person_state_wardrobe,nail_state_art |
+| `SEG006b` | 13.5-15.0 s | `closing_or_prompt` | close the clip with a continuous crouch and rise | person_1,nail_art_design,scene_dark_atelier / person_state_wardrobe,nail_state_art,scene_state_hall |
+
+- 审计项: ncon_global_001; ncon_global_002; ncon_global_003; ncon_global_004; ncon_global_005; ncon_global_006
+- 缺失项: 无
+
+## 记忆点迁移
+
+| memory_id | 保留机制 | 目标改写 | 绑定 |
+| --- | --- | --- | --- |
+| `vm_001` | hand-to-lens foreground wipe as the before/after boundary; front-ward hand motion with increasing speed | the wipe still separates the before state from the after state, but both spaces are rebuilt as the dark anteroom and the dark hall; the hands keep the front-ward accelerating path | SEG001b, SEG002a |
+| `vm_002` | picture-in-picture inset position and layered composition; main close-up plus secondary nail view | the inset keeps its upper-left rectangular position and stays mounted for the whole beat, but its content shows the target nail art instead of the reference nails | SEG004b |
+| `vm_003` | spread-finger palm turn; lift-to-face presentation pause; front-ward hand push at the end | the presentation chain keeps its pose sequence and short pauses but is performed by the non-identifiable target performer in the dark gothic wardrobe inside the dark hall | SEG001b, SEG003a, SEG003b, SEG005a, SEG006a, SEG006b |
+| `vm_004` | macro hand detail framing; slow rotation to keep surface detail toward the lens | the macro framing and slow rotation are kept, but the bright yellow wildflower becomes a small dark botanical prop that matches the nail palette | SEG004a, SEG004b |
+| `sm_001` | open with a stance/situation hook; the hook is immediately followed by the initial-state hand display | the target keeps the hook-then-initial-state ordering, but the hook is carried visually by the plain-nail presentation instead of any subtitle copy | SEG001a, SEG001b |
+| `sm_002` | before/after contrast on the same subject and the same body part; occlusion transition as the before/after boundary | the same-hands before/after contrast is kept: the plain nail base is replaced by the user asset nail art across the wipe, and the anteroom is replaced by the hall | SEG002a, SEG003a |
+| `sm_003` | premise -> initial -> transition -> result -> detail -> re-presentation release order; every presentation points the hands at the lens | the release order is preserved across the six target shots; the presentation chain points the hands at the lens in every after-state shot | target_video, TU001, TU003, TU004, TU005, TU006 |
+| `sm_004` | premise setup and payoff across shots; the payoff beat follows the result picture immediately | the setup/payoff pairing is kept as the wipe reveal followed by the macro detail proof, with no subtitle copy on the target side | SEG003a, SEG004a |
+
+## 参考帧摘要
+
+```json
+{
+  "frame_requirement_level": "required_visual_anchors",
+  "plan_required": true,
+  "plan_path": "07_reference_frame_plan/reference_frame_plan.json",
+  "person_entity_count": 1,
+  "subject_entity_count": 1,
+  "scene_entity_count": 1,
+  "state_frame_count": 5,
+  "planned_frame_count": 0,
+  "selected_h3_image_count": 0,
+  "merged_frame_count": 0,
+  "h3_image_budget": 8,
+  "ready_frame_ids": [],
+  "summary_status": "ready",
+  "triggered_rules": [
+    "person_reference_entity_present",
+    "subject_reference_entity_present",
+    "scene_reference_entity_present",
+    "appearance_state_change_present"
+  ],
+  "notes": [
+    "planned_frame_count is finalized in Step 7"
+  ]
+}
+```
+
+## H3 package 状态
+
+- Step 9 H3 prompt/request: 由 `09_h3_package/` 产出，详见 `h3_prompt_lint_report.json`
+- Step 10 H3 视频生成: dry-run 边界内未提交
