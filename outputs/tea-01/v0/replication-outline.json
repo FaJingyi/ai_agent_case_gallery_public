@@ -1,0 +1,4324 @@
+{
+  "schema_version": "common_replication_outline.v2",
+  "status": "ready_with_assumptions",
+  "time_precision_policy": {
+    "precision": "one_decimal",
+    "method": "truncate"
+  },
+  "generation_scope": "single_generation_task",
+  "source_reference_analysis": {
+    "path": "01_reference_video_analysis/reference_video_analysis.json",
+    "segment_plan_path": "01_reference_video_analysis/video_segment_plan.json",
+    "reuse_mode": "archived_reference_analysis_rerun",
+    "reference_video": {
+      "duration_sec": 14.9,
+      "width": 1080,
+      "height": 1928,
+      "orientation": "vertical"
+    },
+    "asr_status": "no_confirmed_speech"
+  },
+  "target_video": {
+    "duration_sec": 14.9,
+    "width": 1080,
+    "height": 1928,
+    "orientation": "vertical",
+    "global_visual_brief": "秋天古装剧庭院中，一位穿红色薄纱古装的女子用古式瓷/陶茶具完成取茶、注水冲泡与出汤分茶，画面保持参考视频的镜头顺序、景别层级与稳定运镜。",
+    "global_script_brief": "无台词/旁白/画面文字；以煮茶流程的事件顺序承担信息推进。"
+  },
+  "reference_inheritance_plan": {
+    "strong_inheritance_items": [
+      {
+        "item_id": "si_time_structure",
+        "type": "time_structure",
+        "source_refs": [
+          "reference_video_analysis.reference_video.duration_sec",
+          "scenes[0].shots[].time_range_sec"
+        ],
+        "brief": "14.9 秒、7 个 shot 的时间结构与时长比例",
+        "target_treatment": "保持 7 个 shot 与 0.0-1.9/2.0-3.9/4.0-4.9/5.0-6.9/7.0-9.9/10.0-13.9/14.0-14.9 秒的结构"
+      },
+      {
+        "item_id": "si_shot_order",
+        "type": "shot_structure",
+        "source_refs": [
+          "scenes[0].shots[]"
+        ],
+        "brief": "建立→庭院另一角度→果实特写→取茶→注水→出汤→俯拍收尾的镜头顺序",
+        "target_treatment": "目标侧保持同一镜头顺序与功能"
+      },
+      {
+        "item_id": "si_camera_language",
+        "type": "camera",
+        "source_refs": [
+          "video_generation_context.spatial_framing",
+          "shots[].video_generation.camera"
+        ],
+        "brief": "稳定机位、以静制动、靠景别切换推进；视角/构图/运镜/焦点",
+        "target_treatment": "逐镜头继承 viewpoint/composition/camera_motion/focus"
+      },
+      {
+        "item_id": "si_shot_size_layering",
+        "type": "composition",
+        "source_refs": [
+          "video_generation_context.spatial_framing"
+        ],
+        "brief": "建立镜头→特写→中近景动作→俯拍收尾的景别层级",
+        "target_treatment": "目标侧保持同一景别层级"
+      },
+      {
+        "item_id": "si_hard_cut",
+        "type": "transition",
+        "source_refs": [
+          "cross_shot_relations[]"
+        ],
+        "brief": "全部相邻镜头之间为硬切",
+        "target_treatment": "目标侧使用直接硬切"
+      },
+      {
+        "item_id": "si_foreground_framing",
+        "type": "composition",
+        "source_refs": [
+          "special_mechanisms[foreground-framing@shot3]"
+        ],
+        "brief": "shot3 前景遮挡框架（前景枝叶+中景主体+浅景深）",
+        "target_treatment": "在 shot3 保留可见前景遮挡框架",
+        "must_be_visible": true,
+        "delivery_priority": "high",
+        "layout_placement_rules": [
+          "前景枝叶压住画面下缘",
+          "主体果篮居中清晰"
+        ],
+        "h3_prompt_rule": "A foreground autumn branch crosses the lower frame edge and surrounds the midground basket."
+      },
+      {
+        "item_id": "si_bird_eye",
+        "type": "composition",
+        "source_refs": [
+          "special_mechanisms[bird_eye_top_down@shot7]"
+        ],
+        "brief": "shot7 严格俯拍（鸟瞰）桌面收尾",
+        "target_treatment": "在 shot7 保留严格垂直俯拍与地图式桌面构图",
+        "must_be_visible": true,
+        "delivery_priority": "high",
+        "layout_placement_rules": [
+          "机位严格垂直向下",
+          "茶盏居中，道具环绕"
+        ],
+        "h3_prompt_rule": "A strict bird's-eye top-down view places the cup at the center of the table."
+      },
+      {
+        "item_id": "si_strong_negative_space",
+        "type": "composition",
+        "source_refs": [
+          "shots[1].special_mechanisms[strong-negative-space]"
+        ],
+        "brief": "shot2 强留白环境构图",
+        "target_treatment": "在 shot2 保留强留白构图（confidence=low，可保留机制）",
+        "must_be_visible": true,
+        "delivery_priority": "high",
+        "layout_placement_rules": [
+          "白墙与树冠占据画面大部",
+          "木长凳与小几位于画面下部"
+        ],
+        "h3_prompt_rule": "Large negative space of white wall and golden foliage fills the frame."
+      }
+    ],
+    "reference_inheritance_items": [
+      {
+        "item_id": "ri_person",
+        "type": "person",
+        "source_refs": [
+          "global_subject_identity_tracks[person_track_1]"
+        ],
+        "brief": "参考视频中的女性（仅手部）",
+        "target_treatment": "改写为用户素材中的红纱古装女子"
+      },
+      {
+        "item_id": "ri_hand_action",
+        "type": "action",
+        "source_refs": [
+          "memory_points.visual.vm_002/vm_003/vm_004"
+        ],
+        "brief": "取茶、注水、出汤的手部动作语汇",
+        "target_treatment": "按目标动作改写，动作类型一致处 close_motion_reference"
+      },
+      {
+        "item_id": "ri_tea_props",
+        "type": "prop",
+        "source_refs": [
+          "video_generation_context.scene.common_props"
+        ],
+        "brief": "茶叶盒、白瓷壶、盖碗、玻璃公道杯、小杯、荔枝、橙子",
+        "target_treatment": "全部替换为古式瓷/陶茶具与秋日果实"
+      },
+      {
+        "item_id": "ri_scene_content",
+        "type": "scene_content",
+        "source_refs": [
+          "scenes[0].video_generation.scene"
+        ],
+        "brief": "庭院凉亭/白墙/竹篱笆/灯笼与绿树",
+        "target_treatment": "改写为秋天古装剧庭院（木构格窗、金色枫树、石板落叶）"
+      },
+      {
+        "item_id": "ri_watermark_text",
+        "type": "text_or_ui",
+        "source_refs": [
+          "shots[].script_generation.text_slots[watermark:湘之韵]",
+          "shots[3] package_text:高山云雾"
+        ],
+        "brief": "源片水印与包装文字",
+        "target_treatment": "排除/中性化，不进入目标画面"
+      },
+      {
+        "item_id": "ri_low_angle_light",
+        "type": "visual_style",
+        "source_refs": [
+          "video_generation_context.visual_style"
+        ],
+        "brief": "自然暖光、逆光发丝光、阳光光斑、真实感实拍",
+        "target_treatment": "继承实拍真实感与暖色自然光，转换为秋日暖阳与光斑"
+      }
+    ],
+    "downgraded_items": []
+  },
+  "subject_motion_transfer_policy": {
+    "camera_motion_mechanism": "strong_inherit",
+    "action_beat_structure": "inherit_as_abstract_timing",
+    "subject_motion_pattern": "adapt_by_target_action",
+    "interaction_mechanism": "adapt_by_target_action"
+  },
+  "reference_element_treatment_plan": [
+    {
+      "element_id": "el_time_structure",
+      "source_ref": "reference_video_analysis.reference_video.duration_sec",
+      "element_type": "time_structure",
+      "inheritance_layer": "strong_inheritance",
+      "observed_reference_element": "14.9 秒 7 shot 线性结构",
+      "decision": "inherit",
+      "preserve": [
+        "总时长与 shot 时长比例",
+        "内部信息节拍"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "U001-U007"
+      ],
+      "evidence_refs": [
+        "reference_video_analysis.reference_video",
+        "scenes[0].shots[].time_range_sec"
+      ]
+    },
+    {
+      "element_id": "el_shot_order",
+      "source_ref": "reference_video_analysis.scenes[0].shots[]",
+      "element_type": "shot_structure",
+      "inheritance_layer": "strong_inheritance",
+      "observed_reference_element": "建立-庭院-果实-取茶-注水-出汤-俯拍",
+      "decision": "inherit",
+      "preserve": [
+        "镜头顺序",
+        "镜头功能"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "U001-U007"
+      ],
+      "evidence_refs": [
+        "cross_shot_relations[]"
+      ]
+    },
+    {
+      "element_id": "el_camera_language",
+      "source_ref": "reference_video_analysis.video_prompt_source.shot_timeline[].prompt_ready_description",
+      "element_type": "camera",
+      "inheritance_layer": "strong_inheritance",
+      "observed_reference_element": "稳定机位、景别切换推进、浅景深",
+      "decision": "inherit",
+      "preserve": [
+        "viewpoint",
+        "shot_size",
+        "camera_motion",
+        "focus/depth"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "U001-U007"
+      ],
+      "evidence_refs": [
+        "video_generation_context.spatial_framing"
+      ]
+    },
+    {
+      "element_id": "el_foreground_framing",
+      "source_ref": "reference_video_analysis.video_prompt_source.special_mechanisms[0]",
+      "element_type": "composition",
+      "inheritance_layer": "strong_inheritance",
+      "observed_reference_element": "shot3 前景荔枝枝遮挡果篮",
+      "decision": "inherit",
+      "preserve": [
+        "前景遮挡框架",
+        "中景主体",
+        "浅景深三层空间"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "U003/SS003"
+      ],
+      "evidence_refs": [
+        "memory_points.visual.vm_001"
+      ]
+    },
+    {
+      "element_id": "el_bird_eye",
+      "source_ref": "reference_video_analysis.video_prompt_source.special_mechanisms[4]",
+      "element_type": "composition",
+      "inheritance_layer": "strong_inheritance",
+      "observed_reference_element": "shot7 严格俯拍成品茶汤",
+      "decision": "inherit",
+      "preserve": [
+        "鸟瞰俯拍",
+        "地图式桌面构图",
+        "揭示后保持"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "U007/SS009"
+      ],
+      "evidence_refs": [
+        "memory_points.visual.vm_005"
+      ]
+    },
+    {
+      "element_id": "el_hard_cut",
+      "source_ref": "reference_video_analysis.video_prompt_source.cross_shot_relations[]",
+      "element_type": "transition",
+      "inheritance_layer": "strong_inheritance",
+      "observed_reference_element": "相邻镜头全部硬切",
+      "decision": "inherit",
+      "preserve": [
+        "直接硬切"
+      ],
+      "adapt_with": [],
+      "discard": [],
+      "target_binding": [
+        "U001-U007"
+      ],
+      "evidence_refs": [
+        "cross_shot_relations[]"
+      ]
+    },
+    {
+      "element_id": "el_person_hands",
+      "source_ref": "reference_video_analysis.global_subject_identity_tracks[0]",
+      "element_type": "person_or_body",
+      "inheritance_layer": "reference_inheritance",
+      "observed_reference_element": "白色蕾丝长袖、紫玉镯的女性手部",
+      "decision": "adapt",
+      "preserve": [
+        "手部操作角色",
+        "动作接触点"
+      ],
+      "adapt_with": [
+        "用户素材中的红纱古装女子及其双手"
+      ],
+      "discard": [
+        "白色蕾丝上衣",
+        "紫色玉镯",
+        "未露脸手部识别方式"
+      ],
+      "target_binding": [
+        "asset_user_hanfu_woman",
+        "U004-U006"
+      ],
+      "evidence_refs": [
+        "04_target_asset_analysis.asset_level_analysis.asset_user_hanfu_woman"
+      ]
+    },
+    {
+      "element_id": "el_take_tea_action",
+      "source_ref": "reference_video_analysis.memory_points.visual.vm_002",
+      "element_type": "subject_motion_pattern",
+      "inheritance_layer": "reference_inheritance",
+      "observed_reference_element": "双手打开黑色茶叶盒取出茶包",
+      "decision": "adapt",
+      "preserve": [
+        "手伸入画面",
+        "开合动作链",
+        "接触点清楚"
+      ],
+      "adapt_with": [
+        "无字瓷茶罐与茶则取散茶"
+      ],
+      "discard": [
+        "黑色包装盒",
+        "包装品牌文字与人物图案",
+        "茶包形态"
+      ],
+      "target_binding": [
+        "U004/SS004"
+      ],
+      "evidence_refs": [
+        "memory_points.visual.vm_002"
+      ]
+    },
+    {
+      "element_id": "el_pour_water_action",
+      "source_ref": "reference_video_analysis.memory_points.visual.vm_003",
+      "element_type": "subject_motion_pattern",
+      "inheritance_layer": "reference_inheritance",
+      "observed_reference_element": "单手执白瓷壶向盖碗注水，蒸汽上升",
+      "decision": "adapt",
+      "preserve": [
+        "注水动作链",
+        "蒸汽上升",
+        "手与器皿接触关系"
+      ],
+      "adapt_with": [
+        "古式陶/瓷注水壶与瓷盖碗"
+      ],
+      "discard": [
+        "现代白瓷壶造型"
+      ],
+      "target_binding": [
+        "U005/SS005-SS006"
+      ],
+      "evidence_refs": [
+        "memory_points.visual.vm_003"
+      ]
+    },
+    {
+      "element_id": "el_pour_tea_action",
+      "source_ref": "reference_video_analysis.memory_points.visual.vm_004",
+      "element_type": "subject_motion_pattern",
+      "inheritance_layer": "reference_inheritance",
+      "observed_reference_element": "单手执玻璃公道杯向小杯倒琥珀色茶汤",
+      "decision": "adapt",
+      "preserve": [
+        "出汤/分茶动作链",
+        "液体颜色与流量",
+        "接触关系"
+      ],
+      "adapt_with": [
+        "古式瓷质分茶执壶与瓷茶盏"
+      ],
+      "discard": [
+        "透明玻璃公道杯"
+      ],
+      "target_binding": [
+        "U006/SS007-SS008"
+      ],
+      "evidence_refs": [
+        "memory_points.visual.vm_004"
+      ]
+    },
+    {
+      "element_id": "el_scene_content",
+      "source_ref": "reference_video_analysis.video_generation_context.scene",
+      "element_type": "scene_content",
+      "inheritance_layer": "reference_inheritance",
+      "observed_reference_element": "庭院凉亭/瓦顶/绿树/竹篱笆/白墙/灯笼，绿植木色暖调",
+      "decision": "adapt",
+      "preserve": [
+        "空间深度结构",
+        "自然暖光",
+        "真实感实拍质感",
+        "前后景层次"
+      ],
+      "adapt_with": [
+        "秋天古装剧庭院：木构格窗厅堂、金色枫树、石板落叶、柿子/石榴、秋菊"
+      ],
+      "discard": [
+        "竹篱笆",
+        "夏季绿植主导色",
+        "凉亭瓦顶的具体形式"
+      ],
+      "target_binding": [
+        "U001-U003",
+        "U007"
+      ],
+      "evidence_refs": [
+        "user_request:requirement.txt"
+      ]
+    },
+    {
+      "element_id": "el_source_props",
+      "source_ref": "reference_video_analysis.video_generation_context.scene.common_props",
+      "element_type": "prop",
+      "inheritance_layer": "reference_inheritance",
+      "observed_reference_element": "深色陶瓷壶/白瓷壶/白瓷盖碗/白小杯/玻璃公道杯/黑色茶叶盒/荔枝/橙子",
+      "decision": "adapt",
+      "preserve": [
+        "茶具功能关系与桌面陈列"
+      ],
+      "adapt_with": [
+        "无字瓷茶罐/古式陶制注水壶/瓷盖碗/瓷茶盏/瓷质分茶执壶/柿子/石榴/秋菊"
+      ],
+      "discard": [
+        "现代包装盒",
+        "玻璃公道杯",
+        "现代白瓷壶",
+        "荔枝与橙子"
+      ],
+      "target_binding": [
+        "U001-U007"
+      ],
+      "evidence_refs": [
+        "user_request:requirement.txt"
+      ]
+    },
+    {
+      "element_id": "el_watermark",
+      "source_ref": "reference_video_analysis.video_generation_context.visual_memory_points[].avoid",
+      "element_type": "watermark_or_platform_ui",
+      "inheritance_layer": "discard_only",
+      "observed_reference_element": "源片水印「湘之韵」",
+      "decision": "discard",
+      "preserve": [],
+      "adapt_with": [],
+      "discard": [
+        "水印文字与位置"
+      ],
+      "target_binding": [
+        "post_overlay_plan"
+      ],
+      "evidence_refs": [
+        "shots[].script_generation.text_slots"
+      ]
+    },
+    {
+      "element_id": "el_package_text",
+      "source_ref": "reference_video_analysis.scenes[0].shots[3].script_generation.text_slots",
+      "element_type": "text_or_ui",
+      "inheritance_layer": "reference_inheritance",
+      "observed_reference_element": "茶叶包装文字「高山云雾」与红衣人物图案",
+      "decision": "discard",
+      "preserve": [],
+      "adapt_with": [],
+      "discard": [
+        "可读包装文字",
+        "人物图案",
+        "品牌信息"
+      ],
+      "target_binding": [
+        "in_scene_text_logo_plan"
+      ],
+      "evidence_refs": [
+        "shots[3].script_generation.text_slots"
+      ]
+    },
+    {
+      "element_id": "el_unsupported_audio",
+      "source_ref": "reference_video_analysis.audio_analysis",
+      "element_type": "unsupported_audio",
+      "inheritance_layer": "discard_only",
+      "observed_reference_element": "audio_analysis.status=skipped",
+      "decision": "discard",
+      "preserve": [],
+      "adapt_with": [],
+      "discard": [
+        "音乐/BGM/音效/声音情绪/卡点"
+      ],
+      "target_binding": [
+        "unsupported_audio"
+      ],
+      "evidence_refs": [
+        "audio_analysis"
+      ]
+    }
+  ],
+  "speech_text_transfer_plan": {
+    "speech_status": "no_confirmed_speech",
+    "source_text_slots": [
+      {
+        "kind": "screen_text",
+        "content": "湘之韵",
+        "speech_source": "not_applicable",
+        "speaker_visibility": "not_applicable",
+        "mouth_movement_evidence": "not_observed",
+        "text_origin": "reference_visible_text",
+        "text_role": "watermark",
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 1.9
+        },
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      },
+      {
+        "kind": "screen_text",
+        "content": "湘之韵",
+        "speech_source": "not_applicable",
+        "speaker_visibility": "not_applicable",
+        "mouth_movement_evidence": "not_observed",
+        "text_origin": "reference_visible_text",
+        "text_role": "watermark",
+        "time_range_sec": {
+          "start": 5.0,
+          "end": 6.9
+        },
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      },
+      {
+        "kind": "screen_text",
+        "content": "高山云雾",
+        "speech_source": "not_applicable",
+        "speaker_visibility": "not_applicable",
+        "mouth_movement_evidence": "not_observed",
+        "text_origin": "reference_visible_text",
+        "text_role": "package_text",
+        "time_range_sec": {
+          "start": 5.0,
+          "end": 6.9
+        },
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      },
+      {
+        "kind": "screen_text",
+        "content": "湘之韵",
+        "speech_source": "not_applicable",
+        "speaker_visibility": "not_applicable",
+        "mouth_movement_evidence": "not_observed",
+        "text_origin": "reference_visible_text",
+        "text_role": "watermark",
+        "time_range_sec": {
+          "start": 7.0,
+          "end": 9.9
+        },
+        "evidence_refs": [
+          "VS001:shot5"
+        ]
+      },
+      {
+        "kind": "screen_text",
+        "content": "湘之韵",
+        "speech_source": "not_applicable",
+        "speaker_visibility": "not_applicable",
+        "mouth_movement_evidence": "not_observed",
+        "text_origin": "reference_visible_text",
+        "text_role": "watermark",
+        "time_range_sec": {
+          "start": 14.0,
+          "end": 14.9
+        },
+        "evidence_refs": [
+          "VS001:shot7"
+        ]
+      }
+    ],
+    "target_text_items": [],
+    "blocked_or_removed_items": [
+      {
+        "item_id": "rm_watermark",
+        "kind": "screen_text",
+        "source_content": "湘之韵",
+        "removal_reason": "reference_watermark_excluded",
+        "affected_segments": [
+          "SS001",
+          "SS004",
+          "SS005",
+          "SS009"
+        ]
+      },
+      {
+        "item_id": "rm_package_text",
+        "kind": "screen_text",
+        "source_content": "高山云雾",
+        "removal_reason": "source_brand_text_no_target_confirmation_and_modern_packaging_excluded",
+        "affected_segments": [
+          "SS004"
+        ]
+      }
+    ],
+    "rules_applied": [
+      "asr_status=no_confirmed_speech → no dialogue/voiceover",
+      "no user-provided target text → no screen_text items",
+      "source watermark/brand text excluded"
+    ]
+  },
+  "memory_transfer_plan": {
+    "source_memory_points": {
+      "visual_count": 6,
+      "script_count": 0,
+      "audio_count": 0,
+      "audio_status": "unsupported_skipped"
+    },
+    "visual": [
+      {
+        "memory_id": "vm_001",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "shot3"
+        ],
+        "time_range_sec": {
+          "start": 4.0,
+          "end": 4.9
+        },
+        "preserve_mechanism": [
+          "前景遮挡框架",
+          "浅景深主体分离",
+          "特写取景"
+        ],
+        "adaptation_plan": [
+          "源食材荔枝替换为柿子与石榴",
+          "前景枝条替换为秋日枫枝"
+        ],
+        "negative_constraints": [
+          "不迁移源片水印"
+        ],
+        "target_bindings": [
+          "U003/SS003",
+          "sm_foreground_framing_shot3"
+        ],
+        "status": "transferred",
+        "evidence_refs": [
+          "VS001:shot3"
+        ]
+      },
+      {
+        "memory_id": "vm_002",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "shot4"
+        ],
+        "time_range_sec": {
+          "start": 5.0,
+          "end": 6.9
+        },
+        "preserve_mechanism": [
+          "手伸入画面",
+          "开合动作链",
+          "接触点清楚"
+        ],
+        "adaptation_plan": [
+          "黑色包装盒替换为无字瓷茶罐",
+          "手部主体替换为红纱古装女子",
+          "茶包替换为散茶与茶则"
+        ],
+        "negative_constraints": [
+          "不迁移包装品牌文字「高山云雾」与人物图案"
+        ],
+        "target_bindings": [
+          "U004/SS004"
+        ],
+        "status": "transferred",
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      },
+      {
+        "memory_id": "vm_003",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "shot5"
+        ],
+        "time_range_sec": {
+          "start": 7.0,
+          "end": 9.9
+        },
+        "preserve_mechanism": [
+          "注水动作链",
+          "蒸汽上升",
+          "手与器皿接触关系"
+        ],
+        "adaptation_plan": [
+          "现代白瓷壶替换为古式陶/瓷注水壶",
+          "盖碗替换为古式瓷盖碗"
+        ],
+        "negative_constraints": [
+          "不迁移现代器具造型"
+        ],
+        "target_bindings": [
+          "U005/SS005-SS006"
+        ],
+        "status": "transferred",
+        "evidence_refs": [
+          "VS001:shot5"
+        ]
+      },
+      {
+        "memory_id": "vm_004",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "shot6"
+        ],
+        "time_range_sec": {
+          "start": 10.0,
+          "end": 13.9
+        },
+        "preserve_mechanism": [
+          "出汤/分茶动作链",
+          "液体颜色与流量",
+          "手与器皿接触关系"
+        ],
+        "adaptation_plan": [
+          "玻璃公道杯替换为古式瓷质分茶执壶",
+          "小杯替换为古式瓷茶盏"
+        ],
+        "negative_constraints": [
+          "不迁移透明玻璃现代器形"
+        ],
+        "target_bindings": [
+          "U006/SS007-SS008"
+        ],
+        "status": "transferred",
+        "evidence_refs": [
+          "VS001:shot6"
+        ]
+      },
+      {
+        "memory_id": "vm_005",
+        "source_type": "visual",
+        "source_scope": "shot",
+        "source_ids": [
+          "shot7"
+        ],
+        "time_range_sec": {
+          "start": 14.0,
+          "end": 14.9
+        },
+        "preserve_mechanism": [
+          "鸟瞰俯拍",
+          "阳光光斑",
+          "揭示后保持的收尾停留"
+        ],
+        "adaptation_plan": [
+          "茶杯与桌面替换为古装剧茶席元素"
+        ],
+        "negative_constraints": [
+          "不迁移源片水印"
+        ],
+        "target_bindings": [
+          "U007/SS009",
+          "sm_bird_eye_top_down_shot7"
+        ],
+        "status": "transferred",
+        "evidence_refs": [
+          "VS001:shot7"
+        ]
+      },
+      {
+        "memory_id": "vm_006",
+        "source_type": "visual",
+        "source_scope": "video_segment",
+        "source_ids": [
+          "VS001"
+        ],
+        "time_range_sec": {
+          "start": 0.0,
+          "end": 14.9
+        },
+        "preserve_mechanism": [
+          "稳定机位",
+          "景别层级切换",
+          "标准电影节奏"
+        ],
+        "adaptation_plan": [
+          "具体景别内容按目标秋天庭院改写"
+        ],
+        "negative_constraints": [],
+        "target_bindings": [
+          "U001-U007"
+        ],
+        "status": "transferred",
+        "evidence_refs": [
+          "VS001:shot1",
+          "VS001:shot7"
+        ]
+      }
+    ],
+    "script": [],
+    "audio": []
+  },
+  "professional_prompt_context": {
+    "status": "ready",
+    "profile_root": "backend/profiles",
+    "loaded_profiles": [
+      {
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md",
+        "doc_id": "VK-COMP-003",
+        "used_for": "composition"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/前中后景与景深层次/前中后景与景深层次.md",
+        "doc_id": "VK-COMP-004",
+        "used_for": "composition"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md",
+        "doc_id": "VK-EDIT-001",
+        "used_for": "editing"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/剪辑转场与时间/镜头时长与剪辑节奏/镜头时长与剪辑节奏.md",
+        "doc_id": "VK-EDIT-003",
+        "used_for": "editing"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md",
+        "doc_id": "VK-ACT-001",
+        "used_for": "action_continuity"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/主体动作与连续性/多镜头身份与风格锚定/多镜头身份与风格锚定.md",
+        "doc_id": "VK-ACT-002",
+        "used_for": "action_continuity"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/光线色彩与质感/光位光质与明暗反差/光位光质与明暗反差.md",
+        "doc_id": "VK-LIGHT-001",
+        "used_for": "lighting"
+      },
+      {
+        "profile_path": "backend/profiles/视觉/镜头运动与光学/焦点转移与镜头光学/焦点转移与镜头光学.md",
+        "doc_id": "VK-CAM-002",
+        "used_for": "camera_motion"
+      }
+    ],
+    "knowledge_terms": [
+      {
+        "term": "建立镜头",
+        "category": "composition",
+        "profile_doc_id": "VK-COMP-003",
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md",
+        "applied_to": [
+          "U001/SS001"
+        ],
+        "generation_phrase": "以中景建立镜头展示秋天古装剧庭院的时间、地点与空间尺度",
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      },
+      {
+        "term": "中近景(Medium Close-Up)",
+        "category": "composition",
+        "profile_doc_id": "VK-COMP-003",
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md",
+        "applied_to": [
+          "U004/SS004"
+        ],
+        "generation_phrase": "使用略高俯视中近景，让手部操作与器具接触点成为画面信息重心",
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      },
+      {
+        "term": "鸟瞰(Bird's-Eye)",
+        "category": "composition",
+        "profile_doc_id": "VK-COMP-003",
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/景别与机位视点/景别与机位视点.md",
+        "applied_to": [
+          "U007/SS009"
+        ],
+        "generation_phrase": "严格正俯拍茶盏与桌面，形成地图式空间关系",
+        "evidence_refs": [
+          "VS001:shot7"
+        ]
+      },
+      {
+        "term": "前景遮挡 + 中景主体 + 浅景深",
+        "category": "composition",
+        "profile_doc_id": "VK-COMP-004",
+        "profile_path": "backend/profiles/视觉/画幅构图与空间/前中后景与景深层次/前中后景与景深层次.md",
+        "applied_to": [
+          "U003/SS003"
+        ],
+        "generation_phrase": "前景保留轻微失焦的秋枝遮挡，中景果篮清晰，背景柔化但仍能辨认庭院",
+        "evidence_refs": [
+          "VS001:shot3"
+        ]
+      },
+      {
+        "term": "硬切(Hard Cut)",
+        "category": "editing",
+        "profile_doc_id": "VK-EDIT-001",
+        "profile_path": "backend/profiles/视觉/剪辑转场与时间/硬切淡化与音画先后切/硬切淡化与音画先后切.md",
+        "applied_to": [
+          "U001-U007"
+        ],
+        "generation_phrase": "在动作或语义明确处直接切到下一镜头，不添加过渡特效",
+        "evidence_refs": [
+          "cross_shot_relations[]"
+        ]
+      },
+      {
+        "term": "揭示后保持",
+        "category": "editing",
+        "profile_doc_id": "VK-EDIT-003",
+        "profile_path": "backend/profiles/视觉/剪辑转场与时间/镜头时长与剪辑节奏/镜头时长与剪辑节奏.md",
+        "applied_to": [
+          "U007/SS009"
+        ],
+        "generation_phrase": "在揭示成品茶汤后保持稳定画面约一秒，让观众完成识别",
+        "evidence_refs": [
+          "VS001:shot7"
+        ]
+      },
+      {
+        "term": "手伸入画面(Hand Reaches Into Frame)",
+        "category": "action_continuity",
+        "profile_doc_id": "VK-ACT-001",
+        "profile_path": "backend/profiles/视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md",
+        "applied_to": [
+          "U004/SS004"
+        ],
+        "generation_phrase": "女子的双手从画面上方伸入，打开无字瓷茶罐并用茶则取茶",
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      },
+      {
+        "term": "蒸汽上升",
+        "category": "action_continuity",
+        "profile_doc_id": "VK-ACT-001",
+        "profile_path": "backend/profiles/视觉/主体动作与连续性/主体动作、物体交互与出入画/主体动作物体交互与出入画.md",
+        "applied_to": [
+          "U005/SS006"
+        ],
+        "generation_phrase": "瓷盖碗中的蒸汽轻柔上升并随空气微微扩散",
+        "evidence_refs": [
+          "VS001:shot5"
+        ]
+      },
+      {
+        "term": "身份锚定(Identity Anchoring)",
+        "category": "action_continuity",
+        "profile_doc_id": "VK-ACT-002",
+        "profile_path": "backend/profiles/视觉/主体动作与连续性/多镜头身份与风格锚定/多镜头身份与风格锚定.md",
+        "applied_to": [
+          "U001-U007"
+        ],
+        "generation_phrase": "每个镜头重复同一女子的红色薄纱古装、黑色长发、金色发饰等关键外观属性",
+        "evidence_refs": [
+          "04_target_asset_analysis.asset_level_analysis.asset_user_hanfu_woman"
+        ]
+      },
+      {
+        "term": "自然光(Natural Light)",
+        "category": "lighting",
+        "profile_doc_id": "VK-LIGHT-001",
+        "profile_path": "backend/profiles/视觉/光线色彩与质感/光位光质与明暗反差/光位光质与明暗反差.md",
+        "applied_to": [
+          "U001-U007"
+        ],
+        "generation_phrase": "使用柔和自然光，秋日暖阳形成斑驳光斑，阴影不过硬",
+        "evidence_refs": [
+          "VS001:scene"
+        ]
+      },
+      {
+        "term": "长焦镜头(85mm+)",
+        "category": "camera_motion",
+        "profile_doc_id": "VK-CAM-002",
+        "profile_path": "backend/profiles/视觉/镜头运动与光学/焦点转移与镜头光学/焦点转移与镜头光学.md",
+        "applied_to": [
+          "U003-U007"
+        ],
+        "generation_phrase": "使用长焦压缩背景，突出茶具与手部主体并形成浅景深",
+        "evidence_refs": [
+          "video_generation_context.camera.focal_length_feel"
+        ]
+      }
+    ],
+    "generation_brief": "目标为 15 秒内竖屏单任务视频，继承参考视频 7 个镜头的顺序、时长比例、稳定机位与景别层级（建立镜头→果实特写→取茶→注水→出汤→俯拍收尾），硬切衔接。目标内容为秋天古装剧庭院中穿红色薄纱古装女子用古式瓷/陶茶具煮茶；shot3 保留前景遮挡框架，shot7 保留严格俯拍与揭示后保持。画面不含任何可读文字、品牌、水印或现代器具。",
+    "validation_flags": []
+  },
+  "readiness_check": {
+    "path": "05_replication_readiness/replication_readiness_check.json",
+    "overall_status": "ready_with_assumptions",
+    "blocking_item_ids": [],
+    "missing_input_ids": [
+      "missing_scene_asset",
+      "missing_teaware_asset",
+      "missing_target_readable_text"
+    ]
+  },
+  "text_logo_policy": {
+    "post_overlay_default": true,
+    "in_scene_allowed_when_physically_attached": true,
+    "render_post_overlay_in_video_model": false,
+    "post_overlay_render_method": "ffmpeg_or_opencv",
+    "do_not_generate_unconfirmed_readable_text": true,
+    "target_readable_text_status": "none_confirmed"
+  },
+  "negative_constraint_policy": {
+    "prompt_weight": "low",
+    "default_prompt_visibility": "audit_only",
+    "allowed_prompt_visibility": [
+      "audit_only"
+    ],
+    "max_prompt_guardrail_sentences": 0,
+    "dedupe_scope": [
+      "global",
+      "timeline_unit",
+      "temporal_segment"
+    ],
+    "categories": [
+      "source_identity_leak",
+      "unconfirmed_text_logo",
+      "unsupported_claim",
+      "unsafe_or_physical_risk",
+      "asset_fidelity_risk",
+      "composition_conflict",
+      "post_overlay_only",
+      "audit_note"
+    ],
+    "prompt_inclusion_rule": "final H3 prompt consumes only positive target descriptions"
+  },
+  "timeline_units": [
+    {
+      "unit_id": "U001",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001_SH001",
+        "shot1"
+      ],
+      "time_range_sec": {
+        "start": 0.0,
+        "end": 1.9
+      },
+      "duration_sec": 1.9,
+      "reference_mapping": {
+        "content_subject_type": "mixed",
+        "story_function": "environment_establish",
+        "content_summary": "秋天古装剧庭院建立镜头：木构厅堂与格窗、金色枫树与落叶、石板地；前景低矮木桌茶席；目标女子穿红色古装坐于桌侧。",
+        "primary_visual_subject": "秋天庭院茶席与穿红纱古装的女子",
+        "secondary_visual_elements": [
+          "瓷茶盘",
+          "瓷盖碗",
+          "陶制茶壶",
+          "柿子与石榴篮",
+          "秋菊插花",
+          "白布"
+        ],
+        "interaction_or_relation": "女子静坐桌侧，尚未开始操作",
+        "action_progression": "无人物动作，仅花木轻摇与环境光变化",
+        "scene_content": "秋天古装剧庭院：木构厅堂、格窗、白墙、金色枫树、石板地、悬挂灯笼",
+        "script_story_content": "开场建立庭院茶席环境",
+        "viewpoint": "平视，中景环境建立镜头",
+        "camera_and_composition": [
+          "中景，水平机位",
+          "前景低矮木桌茶席位于画面下三分之一，女子在中景偏右，木构厅堂与金色枫树在后景",
+          "偏深景深，环境信息与主体同时可读"
+        ],
+        "camera_motion": "机位基本静止，仅有轻微手持呼吸感与自然光变化",
+        "focus_and_depth": "偏深焦，前景桌面与中景人物均清晰，背景轻微柔化",
+        "editing_and_transition": "开场镜，直接硬切到下一镜",
+        "pace_and_duration": "1.9 秒建立镜头",
+        "must_be_visible": [
+          "秋天古装剧庭院结构",
+          "前景木桌茶席",
+          "穿红色古装的女子"
+        ],
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      },
+      "mapping_self_check": {
+        "memory_point_check": "继承参考开场建立镜头的景别层级与稳定机位；特殊构图机制不适用。",
+        "subject_motion_transfer_check": "参考镜头无主体动作；目标侧为静坐引入，transfer_mode=target_action_override。",
+        "dynamic_detail_check": "目标侧动态仅花木轻摇与自然光变化，无动作起点/终点需交付。"
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "秋天古装剧庭院",
+          "瓷质茶席器具",
+          "穿红纱古装的女子"
+        ],
+        "dynamic_event": "花木轻摇、自然光缓慢变化",
+        "motion_path": "not_applicable",
+        "pose_or_state_change": "女子静坐桌侧，状态不变",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，构图稳定",
+        "transition_relation": "开场，硬切入下一镜",
+        "time_order": "0.0-1.9s 环境建立",
+        "script_or_text_beat": "无画面文字",
+        "generation_focus": [
+          "秋天古装剧庭院置景",
+          "前景瓷质茶席",
+          "红纱古装女子入镜"
+        ],
+        "state_relation": {
+          "source_ref": "VS001:shot1->shot2",
+          "continuity": "同一庭院空间与暖光延续",
+          "newly_revealed": "庭院另一角度",
+          "target_rewrite": "保持同一秋天庭院与同一暖光"
+        }
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SS001",
+          "time_range_sec": {
+            "start": 0.0,
+            "end": 1.9
+          },
+          "duration_sec": 1.9,
+          "reference_function": "visual_display",
+          "target_function": "建立秋天古装剧庭院茶席空间并引入目标女子",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "environment_establish",
+            "content_summary": "秋天古装剧庭院建立镜头：木构厅堂与格窗、金色枫树与落叶、石板地；前景低矮木桌茶席；目标女子穿红色古装坐于桌侧。",
+            "primary_visual_subject": "秋天庭院茶席与穿红纱古装的女子",
+            "secondary_visual_elements": [
+              "瓷茶盘",
+              "瓷盖碗",
+              "陶制茶壶",
+              "柿子与石榴篮",
+              "秋菊插花",
+              "白布"
+            ],
+            "interaction_or_relation": "女子静坐桌侧，尚未开始操作",
+            "action_progression": "无人物动作，仅花木轻摇与环境光变化",
+            "scene_content": "秋天古装剧庭院：木构厅堂、格窗、白墙、金色枫树、石板地、悬挂灯笼",
+            "script_story_content": "开场建立庭院茶席环境",
+            "viewpoint": "平视，中景环境建立镜头",
+            "camera_and_composition": [
+              "中景，水平机位",
+              "前景低矮木桌茶席位于画面下三分之一，女子在中景偏右，木构厅堂与金色枫树在后景",
+              "偏深景深，环境信息与主体同时可读"
+            ],
+            "camera_motion": "机位基本静止，仅有轻微手持呼吸感与自然光变化",
+            "focus_and_depth": "偏深焦，前景桌面与中景人物均清晰，背景轻微柔化",
+            "editing_and_transition": "开场镜，直接硬切到下一镜",
+            "pace_and_duration": "1.9 秒建立镜头",
+            "must_be_visible": [
+              "秋天古装剧庭院结构",
+              "前景木桌茶席",
+              "穿红色古装的女子"
+            ],
+            "target_bindings": [
+              "asset_user_hanfu_woman"
+            ],
+            "evidence_refs": [
+              "VS001:shot1"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "继承参考开场建立镜头的景别层级与稳定机位；特殊构图机制不适用。",
+            "subject_motion_transfer_check": "参考镜头无主体动作；目标侧为静坐引入，transfer_mode=target_action_override。",
+            "dynamic_detail_check": "目标侧动态仅花木轻摇与自然光变化，无动作起点/终点需交付。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "秋天古装剧庭院",
+              "瓷质茶席器具",
+              "穿红纱古装的女子"
+            ],
+            "dynamic_event": "花木轻摇、自然光缓慢变化",
+            "motion_path": "not_applicable",
+            "pose_or_state_change": "女子静坐桌侧，状态不变",
+            "camera_change": "无，机位静止",
+            "composition_change": "无，构图稳定",
+            "transition_relation": "开场，硬切入下一镜",
+            "time_order": "0.0-1.9s 环境建立",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "秋天古装剧庭院置景",
+              "前景瓷质茶席",
+              "红纱古装女子入镜"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot1->shot2",
+              "continuity": "同一庭院空间与暖光延续",
+              "newly_revealed": "庭院另一角度",
+              "target_rewrite": "保持同一秋天庭院与同一暖光"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "庭院茶席空间、暖色自然光、前景桌面/中景环境层次",
+            "target_scene": "秋天古装剧庭院：木构厅堂与格窗、金色枫树与落叶、石板地、悬挂灯笼",
+            "visible_difference_anchor": [
+              "季节改为秋天，主色由绿植转为金黄与暖橙",
+              "建筑改为木构格窗厅堂",
+              "地面改为石板与落叶"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "无人物（环境镜）",
+            "target_subject": "穿红纱古装的女子（来自 <picture_1>）",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "target_props": [
+              "瓷茶盘",
+              "瓷盖碗",
+              "陶制茶壶",
+              "柿子与石榴篮",
+              "秋菊插花",
+              "白布"
+            ],
+            "policy": "replace_modern_with_antique_porcelain"
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "平视中景建立镜头",
+              "前景桌/中景人/后景建筑与枫树三层空间",
+              "偏深景深"
+            ],
+            "motion_and_action": [
+              "环境轻微晃动，主体静止"
+            ],
+            "editing_and_transition": [
+              "开场镜，硬切出"
+            ],
+            "state_relation_and_continuity": [
+              "同一庭院空间与暖光在后续镜头延续"
+            ],
+            "scene_and_subject": [
+              "秋天古装剧庭院",
+              "红纱古装女子静坐茶席侧"
+            ],
+            "text_logo_and_overlay": [
+              "生成无字 clean plate，底部保留安全区"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "high",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "画面不得出现现代包装与器具"
+              }
+            ],
+            "source_terms": [
+              "建立镜头",
+              "中景",
+              "深焦",
+              "自然光"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [
+            {
+              "overlay_id": "ov_watermark_ref_u1",
+              "source_segment_id": "SS001",
+              "type": "watermark",
+              "time_range_sec": {
+                "start": 0.0,
+                "end": 1.9
+              },
+              "content_status": "omitted",
+              "content_text": null,
+              "asset_id": null,
+              "placement": "none",
+              "scale_relation": "none",
+              "style": "none",
+              "animation": "none",
+              "render_method": "postprocess_ffmpeg_opencv",
+              "source_ref": "reference_visible_text:湘之韵",
+              "note": "源片水印不进入目标视频"
+            }
+          ],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "person_hanfu_woman",
+              "scene_autumn_courtyard"
+            ],
+            "needed_state_ids": [
+              "state_person_default",
+              "state_scene_autumn"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS001"
+          ]
+        }
+      ],
+      "subject_motion_transfer": {
+        "reference_action_type": "none",
+        "target_action_type": "idle_seated_introduction",
+        "semantic_match": "no_reference_motion",
+        "transfer_mode": "target_action_override",
+        "inheritable_beat_structure": [],
+        "target_action_rewrite": "女子静坐茶席侧，动作留到后续镜头",
+        "excluded_source_action_vocabulary": []
+      },
+      "asset_bindings": [
+        {
+          "asset_id": "asset_user_hanfu_woman",
+          "asset_ref": "picture_1",
+          "h3_role": "person_reference",
+          "used_in_segments": [
+            "SS001"
+          ],
+          "usage": "person_identity_and_costume_reference"
+        }
+      ],
+      "negative_constraints": [
+        {
+          "category": "modern_object",
+          "severity": "high",
+          "scope": "timeline_unit",
+          "prompt_visibility": "audit_only",
+          "dedupe_key": "no_modern_objects",
+          "note": "不得出现现代包装与器具"
+        }
+      ],
+      "missing_inputs": [],
+      "generation_assumptions": [
+        "assumption_scene_autumn_courtyard"
+      ],
+      "status": "ready",
+      "source_trace": [
+        "reference_video_analysis:SC001_SH001"
+      ]
+    },
+    {
+      "unit_id": "U002",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001_SH002",
+        "shot2"
+      ],
+      "time_range_sec": {
+        "start": 2.0,
+        "end": 3.9
+      },
+      "duration_sec": 2.0,
+      "reference_mapping": {
+        "content_subject_type": "environment",
+        "story_function": "environment_establish",
+        "content_summary": "秋天庭院另一角度：金色枫树与落叶、木长凳与小几、白墙、左缘悬挂灯笼；强留白环境镜。",
+        "primary_visual_subject": "秋天庭院空间与金色枫树",
+        "secondary_visual_elements": [
+          "木长凳",
+          "小几",
+          "白墙",
+          "灯笼",
+          "落叶"
+        ],
+        "interaction_or_relation": "not_applicable",
+        "action_progression": "枝叶随风轻微摆动",
+        "scene_content": "秋天古装剧庭院另一角度，白墙与木构元素",
+        "script_story_content": "继续交代庭院环境与秋意",
+        "viewpoint": "平视偏侧，中景环境镜",
+        "camera_and_composition": [
+          "中景，平视偏侧机位",
+          "金色枫树与白墙占画面大部，木长凳与小几位于画面下部一侧，左缘悬挂灯笼",
+          "强负空间/强留白构图"
+        ],
+        "camera_motion": "机位静止",
+        "focus_and_depth": "中景对焦，背景白墙轻微柔化",
+        "editing_and_transition": "硬切入，硬切出",
+        "pace_and_duration": "2.0 秒环境镜",
+        "must_be_visible": [
+          "金色枫树",
+          "白墙",
+          "木长凳与小几",
+          "强留白"
+        ],
+        "target_bindings": [],
+        "evidence_refs": [
+          "VS001:shot2"
+        ]
+      },
+      "mapping_self_check": {
+        "memory_point_check": "继承参考镜头强留白构图机制；无特殊版式容器。",
+        "subject_motion_transfer_check": "参考镜头无主体动作；目标侧仅枝叶摆动。",
+        "dynamic_detail_check": "动态仅枝叶随风轻摆，无动作链。"
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "秋天古装剧庭院",
+          "金色枫树",
+          "木长凳与小几",
+          "悬挂灯笼"
+        ],
+        "dynamic_event": "枝叶随风轻微摆动，落叶缓落",
+        "motion_path": "not_applicable",
+        "pose_or_state_change": "not_applicable",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，强留白构图保持稳定",
+        "transition_relation": "承接上一镜的同一庭院空间，硬切入硬切出",
+        "time_order": "2.0-3.9s 环境延续",
+        "script_or_text_beat": "无画面文字",
+        "generation_focus": [
+          "秋天庭院留白环境",
+          "金色枫树与落叶"
+        ],
+        "state_relation": {
+          "source_ref": "VS001:shot2->shot3",
+          "continuity": "暖色调与自然光延续，同属茶席语境",
+          "newly_revealed": "茶席食材细节",
+          "target_rewrite": "保持同一秋天庭院暖调与自然光"
+        }
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SS002",
+          "time_range_sec": {
+            "start": 2.0,
+            "end": 3.9
+          },
+          "duration_sec": 2.0,
+          "reference_function": "visual_display",
+          "target_function": "秋天庭院另一角度与留白环境",
+          "reference_mapping": {
+            "content_subject_type": "environment",
+            "story_function": "environment_establish",
+            "content_summary": "秋天庭院另一角度：金色枫树与落叶、木长凳与小几、白墙、左缘悬挂灯笼；强留白环境镜。",
+            "primary_visual_subject": "秋天庭院空间与金色枫树",
+            "secondary_visual_elements": [
+              "木长凳",
+              "小几",
+              "白墙",
+              "灯笼",
+              "落叶"
+            ],
+            "interaction_or_relation": "not_applicable",
+            "action_progression": "枝叶随风轻微摆动",
+            "scene_content": "秋天古装剧庭院另一角度，白墙与木构元素",
+            "script_story_content": "继续交代庭院环境与秋意",
+            "viewpoint": "平视偏侧，中景环境镜",
+            "camera_and_composition": [
+              "中景，平视偏侧机位",
+              "金色枫树与白墙占画面大部，木长凳与小几位于画面下部一侧，左缘悬挂灯笼",
+              "强负空间/强留白构图"
+            ],
+            "camera_motion": "机位静止",
+            "focus_and_depth": "中景对焦，背景白墙轻微柔化",
+            "editing_and_transition": "硬切入，硬切出",
+            "pace_and_duration": "2.0 秒环境镜",
+            "must_be_visible": [
+              "金色枫树",
+              "白墙",
+              "木长凳与小几",
+              "强留白"
+            ],
+            "target_bindings": [],
+            "evidence_refs": [
+              "VS001:shot2"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "继承参考镜头强留白构图机制；无特殊版式容器。",
+            "subject_motion_transfer_check": "参考镜头无主体动作；目标侧仅枝叶摆动。",
+            "dynamic_detail_check": "动态仅枝叶随风轻摆，无动作链。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "秋天古装剧庭院",
+              "金色枫树",
+              "木长凳与小几",
+              "悬挂灯笼"
+            ],
+            "dynamic_event": "枝叶随风轻微摆动，落叶缓落",
+            "motion_path": "not_applicable",
+            "pose_or_state_change": "not_applicable",
+            "camera_change": "无，机位静止",
+            "composition_change": "无，强留白构图保持稳定",
+            "transition_relation": "承接上一镜的同一庭院空间，硬切入硬切出",
+            "time_order": "2.0-3.9s 环境延续",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "秋天庭院留白环境",
+              "金色枫树与落叶"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot2->shot3",
+              "continuity": "暖色调与自然光延续，同属茶席语境",
+              "newly_revealed": "茶席食材细节",
+              "target_rewrite": "保持同一秋天庭院暖调与自然光"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "庭院另一角度、白墙背景、强留白、暖色自然光",
+            "target_scene": "秋天庭院另一角度，金色枫树、落叶、木长凳与小几、白墙、灯笼",
+            "visible_difference_anchor": [
+              "季节改为秋天，枫叶金黄",
+              "落叶铺地"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "无人物",
+            "target_subject": "无人物（环境镜）",
+            "policy": "keep_environment_only"
+          },
+          "prop_transfer": {},
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "平视偏侧中景",
+              "强留白，主体元素位于画面下部一侧",
+              "背景白墙压平空间"
+            ],
+            "motion_and_action": [
+              "枝叶随风轻微摆动"
+            ],
+            "editing_and_transition": [
+              "硬切进硬切出，标准电影节奏"
+            ],
+            "state_relation_and_continuity": [
+              "与前后镜头同属同一秋天庭院与暖光"
+            ],
+            "scene_and_subject": [
+              "秋天庭院另一角度",
+              "无人物"
+            ],
+            "text_logo_and_overlay": [
+              "clean plate，无叠加"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "high",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现现代器具与包装"
+              }
+            ],
+            "source_terms": [
+              "建立镜头",
+              "中景",
+              "平视偏侧",
+              "强负空间"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "scene_autumn_courtyard"
+            ],
+            "needed_state_ids": [
+              "state_scene_autumn"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS002"
+          ]
+        }
+      ],
+      "subject_motion_transfer": {
+        "reference_action_type": "none",
+        "target_action_type": "none",
+        "semantic_match": "no_reference_motion",
+        "transfer_mode": "target_action_override",
+        "inheritable_beat_structure": [],
+        "target_action_rewrite": "not_applicable",
+        "excluded_source_action_vocabulary": []
+      },
+      "asset_bindings": [],
+      "negative_constraints": [],
+      "missing_inputs": [],
+      "generation_assumptions": [
+        "assumption_scene_autumn_courtyard"
+      ],
+      "status": "ready",
+      "source_trace": [
+        "reference_video_analysis:SC001_SH002"
+      ]
+    },
+    {
+      "unit_id": "U003",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001_SH003",
+        "shot3"
+      ],
+      "time_range_sec": {
+        "start": 4.0,
+        "end": 4.9
+      },
+      "duration_sec": 1.0,
+      "reference_mapping": {
+        "content_subject_type": "object",
+        "story_function": "detail_reveal",
+        "content_summary": "俯侧特写：木托盘上的柿子与石榴篮，前景带叶秋枝遮挡下缘并环绕果篮；浅景深背景虚化。",
+        "primary_visual_subject": "木托盘上的柿子与石榴篮",
+        "secondary_visual_elements": [
+          "前景带叶秋枝",
+          "木托盘",
+          "浅景深背景"
+        ],
+        "interaction_or_relation": "not_applicable",
+        "action_progression": "前景枝叶轻微晃动",
+        "scene_content": "秋天庭院茶席桌面局部",
+        "script_story_content": "展示茶席秋日果实细节",
+        "viewpoint": "略高俯视，特写",
+        "camera_and_composition": [
+          "特写，略高俯视机位",
+          "前景枝叶遮挡下缘并包围果篮，果篮居中于中景清晰区，背景虚化",
+          "三层空间：前景遮挡-中景主体-背景虚化"
+        ],
+        "camera_motion": "机位基本静止",
+        "focus_and_depth": "浅景深，果篮清晰，前景枝叶与背景均柔化",
+        "editing_and_transition": "硬切入，硬切出",
+        "pace_and_duration": "1.0 秒特写",
+        "must_be_visible": [
+          "前景遮挡框架",
+          "柿子与石榴篮",
+          "浅景深三层空间"
+        ],
+        "target_bindings": [],
+        "evidence_refs": [
+          "VS001:shot3"
+        ]
+      },
+      "mapping_self_check": {
+        "memory_point_check": "vm_001 前景遮挡+中景主体+浅景深机制按强继承保留；源素材荔枝替换为柿子/石榴。",
+        "subject_motion_transfer_check": "无主体动作，仅前景枝叶晃动；transfer_mode=target_action_override。",
+        "dynamic_detail_check": "动态仅前景枝叶轻微晃动，无动作链。"
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "柿子与石榴篮",
+          "木托盘",
+          "秋天庭院背景"
+        ],
+        "dynamic_event": "前景枝叶轻微晃动",
+        "motion_path": "not_applicable",
+        "pose_or_state_change": "not_applicable",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，前景遮挡框架保持",
+        "transition_relation": "承接茶席语境，硬切入硬切出",
+        "time_order": "4.0-4.9s 果实细节展示",
+        "script_or_text_beat": "无画面文字",
+        "generation_focus": [
+          "前景枝叶遮挡框架",
+          "中景清晰果篮",
+          "浅景深三层空间"
+        ],
+        "state_relation": {
+          "source_ref": "VS001:shot3->shot4",
+          "continuity": "木色桌面与暖光延续，同属同一茶席",
+          "newly_revealed": "人物双手与取茶动作",
+          "target_rewrite": "保持同一木桌与暖光"
+        }
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SS003",
+          "time_range_sec": {
+            "start": 4.0,
+            "end": 4.9
+          },
+          "duration_sec": 1.0,
+          "reference_function": "visual_display",
+          "target_function": "秋天果实特写与前景遮挡框架",
+          "reference_mapping": {
+            "content_subject_type": "object",
+            "story_function": "detail_reveal",
+            "content_summary": "俯侧特写：木托盘上的柿子与石榴篮，前景带叶秋枝遮挡下缘并环绕果篮；浅景深背景虚化。",
+            "primary_visual_subject": "木托盘上的柿子与石榴篮",
+            "secondary_visual_elements": [
+              "前景带叶秋枝",
+              "木托盘",
+              "浅景深背景"
+            ],
+            "interaction_or_relation": "not_applicable",
+            "action_progression": "前景枝叶轻微晃动",
+            "scene_content": "秋天庭院茶席桌面局部",
+            "script_story_content": "展示茶席秋日果实细节",
+            "viewpoint": "略高俯视，特写",
+            "camera_and_composition": [
+              "特写，略高俯视机位",
+              "前景枝叶遮挡下缘并包围果篮，果篮居中于中景清晰区，背景虚化",
+              "三层空间：前景遮挡-中景主体-背景虚化"
+            ],
+            "camera_motion": "机位基本静止",
+            "focus_and_depth": "浅景深，果篮清晰，前景枝叶与背景均柔化",
+            "editing_and_transition": "硬切入，硬切出",
+            "pace_and_duration": "1.0 秒特写",
+            "must_be_visible": [
+              "前景遮挡框架",
+              "柿子与石榴篮",
+              "浅景深三层空间"
+            ],
+            "target_bindings": [],
+            "evidence_refs": [
+              "VS001:shot3"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "vm_001 前景遮挡+中景主体+浅景深机制按强继承保留；源素材荔枝替换为柿子/石榴。",
+            "subject_motion_transfer_check": "无主体动作，仅前景枝叶晃动；transfer_mode=target_action_override。",
+            "dynamic_detail_check": "动态仅前景枝叶轻微晃动，无动作链。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "柿子与石榴篮",
+              "木托盘",
+              "秋天庭院背景"
+            ],
+            "dynamic_event": "前景枝叶轻微晃动",
+            "motion_path": "not_applicable",
+            "pose_or_state_change": "not_applicable",
+            "camera_change": "无，机位静止",
+            "composition_change": "无，前景遮挡框架保持",
+            "transition_relation": "承接茶席语境，硬切入硬切出",
+            "time_order": "4.0-4.9s 果实细节展示",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "前景枝叶遮挡框架",
+              "中景清晰果篮",
+              "浅景深三层空间"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot3->shot4",
+              "continuity": "木色桌面与暖光延续，同属同一茶席",
+              "newly_revealed": "人物双手与取茶动作",
+              "target_rewrite": "保持同一木桌与暖光"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "桌面局部特写、木色托盘、暖色自然光",
+            "target_scene": "秋天茶席桌面局部，木托盘与秋日果实",
+            "visible_difference_anchor": [
+              "果实由荔枝改为柿子与石榴",
+              "前景枝条改为秋日枫枝"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "荔枝篮特写",
+            "target_subject": "柿子与石榴篮特写",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "target_props": [
+              "木托盘",
+              "柿子",
+              "石榴",
+              "秋叶枝条"
+            ],
+            "policy": "replace_source_food_with_autumn_target_props"
+          },
+          "special_mechanism_transfer": [
+            {
+              "mechanism_id": "sm_foreground_framing_shot3",
+              "mechanism_type": "foreground_framing",
+              "source_ref": "reference_video_analysis.video_prompt_source.special_mechanisms[foreground-framing@shot3]",
+              "source_type": "composition",
+              "source_where": "shot3 4.0-4.9s",
+              "source_evidence": "前景带绿叶的荔枝枝遮挡下缘并包围荔枝篮",
+              "source_confidence": "medium",
+              "inheritance_layer": "strong_inheritance",
+              "inherit_or_adapt": "inherit",
+              "target_execution": "前景加入带叶的秋枝（枫枝/柿枝）遮挡画面下缘并环绕果篮，主体果篮落在中景清晰区",
+              "layout_placement_rules": [
+                "前景枝叶压住画面下缘与左右一角",
+                "果篮位于画面中景中央并保持清晰",
+                "背景柔化虚化，形成前景-中景-背景三层"
+              ],
+              "prompt_sentence": "A foreground autumn branch with leaves crosses the lower edge of the frame and partially surrounds the basket of persimmons and pomegranates in the midground, which stays sharply in focus while the courtyard behind falls into soft blur.",
+              "must_be_visible": true,
+              "delivery_priority": "high",
+              "delivery_level": "h3_prompt",
+              "per_shot_restatement_required": false,
+              "loss_risk": "medium"
+            }
+          ],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "特写略高俯视",
+              "前景遮挡框架+中景主体+浅景深",
+              "果篮居中"
+            ],
+            "motion_and_action": [
+              "前景枝叶轻晃，主体静止"
+            ],
+            "editing_and_transition": [
+              "硬切，标准电影节奏"
+            ],
+            "state_relation_and_continuity": [
+              "木色桌面与暖光延续到下一镜"
+            ],
+            "scene_and_subject": [
+              "秋天果实与木质托盘"
+            ],
+            "text_logo_and_overlay": [
+              "clean plate，无叠加"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "medium",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现现代包装"
+              }
+            ],
+            "source_terms": [
+              "特写",
+              "前景(Foreground)",
+              "浅景深(Shallow DoF)",
+              "前景遮挡 + 中景主体 + 浅景深"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "scene_autumn_courtyard"
+            ],
+            "needed_state_ids": [
+              "state_scene_autumn"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS003"
+          ]
+        }
+      ],
+      "subject_motion_transfer": {
+        "reference_action_type": "none",
+        "target_action_type": "none",
+        "semantic_match": "no_reference_motion",
+        "transfer_mode": "target_action_override",
+        "inheritable_beat_structure": [],
+        "target_action_rewrite": "not_applicable",
+        "excluded_source_action_vocabulary": []
+      },
+      "asset_bindings": [],
+      "negative_constraints": [],
+      "missing_inputs": [],
+      "generation_assumptions": [
+        "assumption_scene_autumn_courtyard"
+      ],
+      "status": "ready",
+      "source_trace": [
+        "reference_video_analysis:SC001_SH003"
+      ]
+    },
+    {
+      "unit_id": "U004",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001_SH004",
+        "shot4"
+      ],
+      "time_range_sec": {
+        "start": 5.0,
+        "end": 6.9
+      },
+      "duration_sec": 2.0,
+      "reference_mapping": {
+        "content_subject_type": "mixed",
+        "story_function": "process_action",
+        "content_summary": "略高俯视中近景：女子红色薄纱衣袖的双手从画面上方进入，打开无字白瓷/青瓷茶罐，用茶则取出散茶；桌面有瓷盖碗、瓷小杯、柿子与秋菊。",
+        "primary_visual_subject": "女子的双手与瓷质茶罐",
+        "secondary_visual_elements": [
+          "瓷盖碗（置茶托）",
+          "瓷小杯",
+          "柿子",
+          "秋菊插花",
+          "木质桌面"
+        ],
+        "interaction_or_relation": "手指与瓷罐盖、茶则、散茶接触，开罐-取茶动作链",
+        "action_progression": "双手入画→掀开罐盖→以茶则取茶→茶则离罐",
+        "scene_content": "秋天古装剧庭院茶席桌面",
+        "script_story_content": "进入取茶步骤，推进煮茶流程",
+        "viewpoint": "略高俯视，俯侧中近景",
+        "camera_and_composition": [
+          "中近景，略高俯视机位",
+          "双手与茶罐位于画面中部，桌面茶席器具位于画面下部，背景柔化虚化",
+          "浅景深，手指与罐口接触点清晰"
+        ],
+        "camera_motion": "机位基本静止",
+        "focus_and_depth": "浅景深，接触点与茶则清晰，背景虚化",
+        "editing_and_transition": "硬切入，硬切出",
+        "pace_and_duration": "2.0 秒动作镜",
+        "must_be_visible": [
+          "红色薄纱衣袖的双手",
+          "无字瓷质茶罐",
+          "茶则取茶动作链",
+          "无字瓷盖碗"
+        ],
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      },
+      "mapping_self_check": {
+        "memory_point_check": "vm_002 手伸入画面+开合动作链+接触点清楚按强继承保留；源包装盒替换为无字瓷茶罐。",
+        "subject_motion_transfer_check": "参考为开盒取茶，目标为开罐取茶，动作类型一致，transfer_mode=close_motion_reference。",
+        "dynamic_detail_check": "目标侧动作起点（手入画）、过程（掀盖取茶）、终点（茶则离罐）齐全。"
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "穿红纱古装的女子",
+          "无字瓷质茶罐",
+          "瓷盖碗",
+          "秋天茶席"
+        ],
+        "dynamic_event": "女子双手入画、开罐、用茶则取茶",
+        "motion_path": "双手从画面上方进入，移至茶罐，掀盖，取茶后离开",
+        "pose_or_state_change": "茶罐由 closed 变为 opened，散茶被取出",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，接触点保持在画面中部清晰区",
+        "transition_relation": "硬切入硬切出，承接果实特写",
+        "time_order": "5.0-6.9s 取茶步骤",
+        "script_or_text_beat": "无画面文字，无台词/旁白",
+        "generation_focus": [
+          "红色薄纱衣袖双手",
+          "无字瓷茶罐开罐取茶",
+          "接触点清晰"
+        ],
+        "state_relation": {
+          "source_ref": "VS001:shot4->shot5",
+          "continuity": "同一双手与同一桌面茶席延续",
+          "newly_revealed": "注水冲泡过程",
+          "target_rewrite": "保持同一女子手臂与同一茶席延续"
+        }
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SS004",
+          "time_range_sec": {
+            "start": 5.0,
+            "end": 6.9
+          },
+          "duration_sec": 2.0,
+          "reference_function": "action_or_interaction",
+          "target_function": "女子双手开瓷茶罐取茶",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "process_action",
+            "content_summary": "略高俯视中近景：女子红色薄纱衣袖的双手从画面上方进入，打开无字白瓷/青瓷茶罐，用茶则取出散茶；桌面有瓷盖碗、瓷小杯、柿子与秋菊。",
+            "primary_visual_subject": "女子的双手与瓷质茶罐",
+            "secondary_visual_elements": [
+              "瓷盖碗（置茶托）",
+              "瓷小杯",
+              "柿子",
+              "秋菊插花",
+              "木质桌面"
+            ],
+            "interaction_or_relation": "手指与瓷罐盖、茶则、散茶接触，开罐-取茶动作链",
+            "action_progression": "双手入画→掀开罐盖→以茶则取茶→茶则离罐",
+            "scene_content": "秋天古装剧庭院茶席桌面",
+            "script_story_content": "进入取茶步骤，推进煮茶流程",
+            "viewpoint": "略高俯视，俯侧中近景",
+            "camera_and_composition": [
+              "中近景，略高俯视机位",
+              "双手与茶罐位于画面中部，桌面茶席器具位于画面下部，背景柔化虚化",
+              "浅景深，手指与罐口接触点清晰"
+            ],
+            "camera_motion": "机位基本静止",
+            "focus_and_depth": "浅景深，接触点与茶则清晰，背景虚化",
+            "editing_and_transition": "硬切入，硬切出",
+            "pace_and_duration": "2.0 秒动作镜",
+            "must_be_visible": [
+              "红色薄纱衣袖的双手",
+              "无字瓷质茶罐",
+              "茶则取茶动作链",
+              "无字瓷盖碗"
+            ],
+            "target_bindings": [
+              "asset_user_hanfu_woman"
+            ],
+            "evidence_refs": [
+              "VS001:shot4"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "vm_002 手伸入画面+开合动作链+接触点清楚按强继承保留；源包装盒替换为无字瓷茶罐。",
+            "subject_motion_transfer_check": "参考为开盒取茶，目标为开罐取茶，动作类型一致，transfer_mode=close_motion_reference。",
+            "dynamic_detail_check": "目标侧动作起点（手入画）、过程（掀盖取茶）、终点（茶则离罐）齐全。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "穿红纱古装的女子",
+              "无字瓷质茶罐",
+              "瓷盖碗",
+              "秋天茶席"
+            ],
+            "dynamic_event": "女子双手入画、开罐、用茶则取茶",
+            "motion_path": "双手从画面上方进入，移至茶罐，掀盖，取茶后离开",
+            "pose_or_state_change": "茶罐由 closed 变为 opened，散茶被取出",
+            "camera_change": "无，机位静止",
+            "composition_change": "无，接触点保持在画面中部清晰区",
+            "transition_relation": "硬切入硬切出，承接果实特写",
+            "time_order": "5.0-6.9s 取茶步骤",
+            "script_or_text_beat": "无画面文字，无台词/旁白",
+            "generation_focus": [
+              "红色薄纱衣袖双手",
+              "无字瓷茶罐开罐取茶",
+              "接触点清晰"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot4->shot5",
+              "continuity": "同一双手与同一桌面茶席延续",
+              "newly_revealed": "注水冲泡过程",
+              "target_rewrite": "保持同一女子手臂与同一茶席延续"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "桌面茶席局部、暖光、浅景深",
+            "target_scene": "秋天古装剧庭院茶席桌面",
+            "visible_difference_anchor": [
+              "器具全部为无字瓷/陶器"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "白色蕾丝长袖的女性双手",
+            "target_subject": "穿红色薄纱古装女子的双手/前臂（<picture_1>）",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "source_prop": "黑色茶叶包装盒（品牌文字与人物图案）",
+            "target_props": [
+              "无字白瓷/青瓷茶罐",
+              "茶则",
+              "瓷盖碗",
+              "瓷小杯"
+            ],
+            "policy": "replace_modern_packaging_with_antique_canister"
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "略高俯视中近景",
+              "接触点位于画面中部清晰区",
+              "浅景深背景虚化"
+            ],
+            "motion_and_action": [
+              "双手入画→掀盖→茶则取茶→离罐，接触点清楚"
+            ],
+            "editing_and_transition": [
+              "硬切，标准电影节奏"
+            ],
+            "state_relation_and_continuity": [
+              "同一女子手臂与同一茶席延续到注水镜"
+            ],
+            "scene_and_subject": [
+              "红纱古装女子的双手",
+              "无字瓷质茶罐与瓷盖碗"
+            ],
+            "text_logo_and_overlay": [
+              "瓷罐表面保持无字哑光，clean plate"
+            ],
+            "negative_constraints": [
+              {
+                "category": "unconfirmed_text_logo",
+                "severity": "high",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_unconfirmed_text",
+                "note": "不得生成参考品牌文字或人物图案"
+              },
+              {
+                "category": "modern_object",
+                "severity": "high",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现现代包装盒"
+              }
+            ],
+            "source_terms": [
+              "中近景(Medium Close-Up)",
+              "手伸入画面(Hand Reaches Into Frame)",
+              "浅景深(Shallow DoF)",
+              "时间顺序描述(Temporal Order)"
+            ]
+          },
+          "in_scene_text_logo_plan": [
+            {
+              "item_id": "isc_ref_package_text",
+              "source_segment_id": "SS004",
+              "attached_to": "reference tea box",
+              "content_status": "omitted",
+              "content_source": "none",
+              "perspective_or_motion_notes": "not_applicable",
+              "requires_reference_frame": false,
+              "generation_description": "目标瓷茶罐表面保持无字哑光，不生成任何可读文字或图案"
+            }
+          ],
+          "post_overlay_plan": [
+            {
+              "overlay_id": "ov_watermark_ref_u4",
+              "source_segment_id": "SS004",
+              "type": "watermark",
+              "time_range_sec": {
+                "start": 5.0,
+                "end": 6.9
+              },
+              "content_status": "omitted",
+              "content_text": null,
+              "asset_id": null,
+              "placement": "none",
+              "scale_relation": "none",
+              "style": "none",
+              "animation": "none",
+              "render_method": "postprocess_ffmpeg_opencv",
+              "source_ref": "reference_visible_text:湘之韵"
+            }
+          ],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "person_hanfu_woman",
+              "scene_autumn_courtyard"
+            ],
+            "needed_state_ids": [
+              "state_person_default",
+              "state_scene_autumn"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS004"
+          ]
+        }
+      ],
+      "subject_motion_transfer": {
+        "reference_action_type": "open_box_and_take_tea",
+        "target_action_type": "open_canister_and_take_tea",
+        "semantic_match": "same_action_type",
+        "transfer_mode": "close_motion_reference",
+        "inheritable_beat_structure": [
+          "hand_enters_frame",
+          "open_lid",
+          "take_with_scoop",
+          "withdraw"
+        ],
+        "target_action_rewrite": "双手入画打开无字瓷茶罐并用茶则取散茶",
+        "excluded_source_action_vocabulary": []
+      },
+      "asset_bindings": [
+        {
+          "asset_id": "asset_user_hanfu_woman",
+          "asset_ref": "picture_1",
+          "h3_role": "person_reference",
+          "used_in_segments": [
+            "SS004",
+            "SS005",
+            "SS006",
+            "SS007",
+            "SS008"
+          ],
+          "usage": "person_identity_and_costume_reference"
+        }
+      ],
+      "negative_constraints": [
+        {
+          "category": "unconfirmed_text_logo",
+          "severity": "high",
+          "scope": "timeline_unit",
+          "prompt_visibility": "audit_only",
+          "dedupe_key": "no_unconfirmed_text",
+          "note": "不得生成参考品牌文字或图案"
+        }
+      ],
+      "missing_inputs": [],
+      "generation_assumptions": [
+        "assumption_ancient_teaware"
+      ],
+      "status": "ready",
+      "source_trace": [
+        "reference_video_analysis:SC001_SH004"
+      ]
+    },
+    {
+      "unit_id": "U005",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001_SH005",
+        "shot5"
+      ],
+      "time_range_sec": {
+        "start": 7.0,
+        "end": 9.9
+      },
+      "duration_sec": 3.0,
+      "reference_mapping": {
+        "content_subject_type": "mixed",
+        "story_function": "process_action",
+        "content_summary": "俯侧中近景：女子红色衣袖的手举起古式陶/瓷注水壶，壶嘴对准瓷盖碗，热水开始注入。",
+        "primary_visual_subject": "女子的手与古式注水壶",
+        "secondary_visual_elements": [
+          "瓷盖碗（内深色茶叶）",
+          "瓷小杯",
+          "柿子",
+          "秋菊插花",
+          "木质桌面"
+        ],
+        "interaction_or_relation": "手与壶身、壶盖接触，壶嘴与盖碗口形成注水关系",
+        "action_progression": "举壶→壶嘴对准盖碗→水流开始",
+        "scene_content": "秋天古装剧庭院茶席桌面",
+        "script_story_content": "推进到注水冲泡步骤",
+        "viewpoint": "俯侧中近景",
+        "camera_and_composition": [
+          "中近景，俯侧机位",
+          "壶与盖碗位于画面中部，桌面器具位于画面下部，背景柔化",
+          "浅景深，壶嘴与盖碗口接触点清晰"
+        ],
+        "camera_motion": "机位基本静止",
+        "focus_and_depth": "浅景深，壶嘴与盖碗清晰",
+        "editing_and_transition": "同一镜头内的时间点推进，非新镜头",
+        "pace_and_duration": "1.4 秒动作起段",
+        "must_be_visible": [
+          "古式陶/瓷注水壶",
+          "瓷盖碗",
+          "红色衣袖的手",
+          "注水接触关系"
+        ],
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot5"
+        ]
+      },
+      "mapping_self_check": {
+        "memory_point_check": "vm_003 注水动作链起点按强继承保留。",
+        "subject_motion_transfer_check": "参考为执壶注水，目标动作类型一致，transfer_mode=close_motion_reference。",
+        "dynamic_detail_check": "动作起点（举壶对准）清晰，过程延续到下一 segment。"
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "穿红纱古装的女子",
+          "古式注水壶",
+          "瓷盖碗",
+          "秋天茶席"
+        ],
+        "dynamic_event": "举壶对准盖碗，注水开始",
+        "motion_path": "手举壶从右上方移动到盖碗上方",
+        "pose_or_state_change": "注水开始，茶叶被热水浸润",
+        "camera_change": "无",
+        "composition_change": "无，接触点保持画面中部",
+        "transition_relation": "同一镜头内延续到下一 beat",
+        "time_order": "7.0-8.4s 注水起段",
+        "script_or_text_beat": "无画面文字",
+        "generation_focus": [
+          "举壶对准盖碗",
+          "接触点清晰",
+          "红色衣袖手部"
+        ],
+        "state_relation": {
+          "source_ref": "VS001:shot5 internal",
+          "continuity": "同一双手与同一茶席延续",
+          "newly_revealed": "注水过程",
+          "target_rewrite": "同一滴注过程连续推进"
+        }
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SS005",
+          "time_range_sec": {
+            "start": 7.0,
+            "end": 8.4
+          },
+          "duration_sec": 1.4,
+          "reference_function": "action_or_interaction",
+          "target_function": "女子举古式注水壶开始向瓷盖碗注水",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "process_action",
+            "content_summary": "俯侧中近景：女子红色衣袖的手举起古式陶/瓷注水壶，壶嘴对准瓷盖碗，热水开始注入。",
+            "primary_visual_subject": "女子的手与古式注水壶",
+            "secondary_visual_elements": [
+              "瓷盖碗（内深色茶叶）",
+              "瓷小杯",
+              "柿子",
+              "秋菊插花",
+              "木质桌面"
+            ],
+            "interaction_or_relation": "手与壶身、壶盖接触，壶嘴与盖碗口形成注水关系",
+            "action_progression": "举壶→壶嘴对准盖碗→水流开始",
+            "scene_content": "秋天古装剧庭院茶席桌面",
+            "script_story_content": "推进到注水冲泡步骤",
+            "viewpoint": "俯侧中近景",
+            "camera_and_composition": [
+              "中近景，俯侧机位",
+              "壶与盖碗位于画面中部，桌面器具位于画面下部，背景柔化",
+              "浅景深，壶嘴与盖碗口接触点清晰"
+            ],
+            "camera_motion": "机位基本静止",
+            "focus_and_depth": "浅景深，壶嘴与盖碗清晰",
+            "editing_and_transition": "同一镜头内的时间点推进，非新镜头",
+            "pace_and_duration": "1.4 秒动作起段",
+            "must_be_visible": [
+              "古式陶/瓷注水壶",
+              "瓷盖碗",
+              "红色衣袖的手",
+              "注水接触关系"
+            ],
+            "target_bindings": [
+              "asset_user_hanfu_woman"
+            ],
+            "evidence_refs": [
+              "VS001:shot5"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "vm_003 注水动作链起点按强继承保留。",
+            "subject_motion_transfer_check": "参考为执壶注水，目标动作类型一致，transfer_mode=close_motion_reference。",
+            "dynamic_detail_check": "动作起点（举壶对准）清晰，过程延续到下一 segment。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "穿红纱古装的女子",
+              "古式注水壶",
+              "瓷盖碗",
+              "秋天茶席"
+            ],
+            "dynamic_event": "举壶对准盖碗，注水开始",
+            "motion_path": "手举壶从右上方移动到盖碗上方",
+            "pose_or_state_change": "注水开始，茶叶被热水浸润",
+            "camera_change": "无",
+            "composition_change": "无，接触点保持画面中部",
+            "transition_relation": "同一镜头内延续到下一 beat",
+            "time_order": "7.0-8.4s 注水起段",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "举壶对准盖碗",
+              "接触点清晰",
+              "红色衣袖手部"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot5 internal",
+              "continuity": "同一双手与同一茶席延续",
+              "newly_revealed": "注水过程",
+              "target_rewrite": "同一滴注过程连续推进"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "桌面茶席局部、暖光、浅景深",
+            "target_scene": "秋天古装剧庭院茶席桌面",
+            "visible_difference_anchor": [
+              "器具为古式陶/瓷壶"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "白色蕾丝长袖手执现代白瓷壶",
+            "target_subject": "红纱古装女子的手执古式注水壶",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "source_prop": "现代白瓷壶",
+            "target_props": [
+              "古式陶制/瓷质注水壶",
+              "瓷盖碗"
+            ],
+            "policy": "replace_modern_kettle_with_antique"
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "俯侧中近景",
+              "壶嘴与盖碗接触点居中清晰",
+              "浅景深"
+            ],
+            "motion_and_action": [
+              "举壶对准，注水开始"
+            ],
+            "editing_and_transition": [
+              "同一镜头内 beat，无切点"
+            ],
+            "state_relation_and_continuity": [
+              "与下一 beat 同一镜头连续"
+            ],
+            "scene_and_subject": [
+              "红纱古装女子的手",
+              "古式注水壶与瓷盖碗"
+            ],
+            "text_logo_and_overlay": [
+              "clean plate，无叠加"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "high",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现现代白瓷壶/玻璃器"
+              }
+            ],
+            "source_terms": [
+              "俯侧中近景",
+              "时间顺序描述(Temporal Order)",
+              "浅景深(Shallow DoF)"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "person_hanfu_woman"
+            ],
+            "needed_state_ids": [
+              "state_person_default"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS005"
+          ]
+        },
+        {
+          "segment_id": "SS006",
+          "time_range_sec": {
+            "start": 8.4,
+            "end": 9.9
+          },
+          "duration_sec": 1.5,
+          "reference_function": "action_or_interaction",
+          "target_function": "连续注水伴随蒸汽并收壶",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "process_action",
+            "content_summary": "俯侧中近景：水流持续注入瓷盖碗，蒸汽上升，盖碗内深色茶叶舒展；随后收壶。",
+            "primary_visual_subject": "注水水流与瓷盖碗",
+            "secondary_visual_elements": [
+              "古式注水壶",
+              "蒸汽",
+              "瓷小杯",
+              "柿子",
+              "木质桌面"
+            ],
+            "interaction_or_relation": "水流连接壶嘴与盖碗，蒸汽上升",
+            "action_progression": "连续注水→蒸汽上升→收壶",
+            "scene_content": "秋天古装剧庭院茶席桌面",
+            "script_story_content": "完成注水冲泡",
+            "viewpoint": "俯侧中近景",
+            "camera_and_composition": [
+              "中近景，俯侧机位",
+              "水流与盖碗位于画面中部，蒸汽向上延展，背景柔化",
+              "浅景深"
+            ],
+            "camera_motion": "机位基本静止",
+            "focus_and_depth": "浅景深，水流与盖碗清晰，蒸汽半透明",
+            "editing_and_transition": "同一镜头内收束，硬切到下一镜",
+            "pace_and_duration": "1.5 秒动作收段",
+            "must_be_visible": [
+              "连续水流",
+              "蒸汽上升",
+              "瓷盖碗",
+              "收壶动作"
+            ],
+            "target_bindings": [
+              "asset_user_hanfu_woman"
+            ],
+            "evidence_refs": [
+              "VS001:shot5"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "vm_003 蒸汽上升与动作终点按强继承保留。",
+            "subject_motion_transfer_check": "续用 close_motion_reference，注水动作类型一致。",
+            "dynamic_detail_check": "动作过程（连续水流）与终点（收壶）清晰。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "穿红纱古装的女子",
+              "古式注水壶",
+              "瓷盖碗",
+              "蒸汽"
+            ],
+            "dynamic_event": "连续注水，蒸汽上升，收壶",
+            "motion_path": "水流从壶嘴落入盖碗，手部随后向侧上方收回",
+            "pose_or_state_change": "盖碗由半满到注满，壶身抬起收回",
+            "camera_change": "无",
+            "composition_change": "无",
+            "transition_relation": "同一镜头收束后硬切到出汤镜",
+            "time_order": "8.4-9.9s 注水收段",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "连续水流与蒸汽",
+              "收壶终点"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot5->shot6",
+              "continuity": "同一双手与同一茶席、暖光延续",
+              "newly_revealed": "出汤分茶与茶汤颜色",
+              "target_rewrite": "保持茶汤由深到琥珀"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "桌面茶席局部、暖光、浅景深",
+            "target_scene": "秋天古装剧庭院茶席桌面",
+            "visible_difference_anchor": [
+              "器具为古式陶/瓷"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "白色蕾丝长袖手",
+            "target_subject": "红纱古装女子的手",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "target_props": [
+              "古式注水壶",
+              "瓷盖碗"
+            ],
+            "policy": "replace_modern_with_antique"
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "俯侧中近景",
+              "水流与蒸汽居中",
+              "浅景深"
+            ],
+            "motion_and_action": [
+              "连续注水，蒸汽上升，随后收壶"
+            ],
+            "editing_and_transition": [
+              "同一镜头内 beat，收束后硬切"
+            ],
+            "state_relation_and_continuity": [
+              "茶汤颜色在下一镜由深转琥珀"
+            ],
+            "scene_and_subject": [
+              "红纱古装女子的手",
+              "古式注水壶与瓷盖碗",
+              "蒸汽"
+            ],
+            "text_logo_and_overlay": [
+              "clean plate，无叠加"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "high",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现现代器具"
+              }
+            ],
+            "source_terms": [
+              "蒸汽上升",
+              "揭示后保持"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "person_hanfu_woman"
+            ],
+            "needed_state_ids": [
+              "state_person_default"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS006"
+          ]
+        }
+      ],
+      "subject_motion_transfer": {
+        "reference_action_type": "pour_water_into_gaiwan",
+        "target_action_type": "pour_water_into_porcelain_bowl",
+        "semantic_match": "same_action_type",
+        "transfer_mode": "close_motion_reference",
+        "inheritable_beat_structure": [
+          "lift_kettle",
+          "align_spout",
+          "continuous_pour",
+          "steam_rise",
+          "withdraw_kettle"
+        ],
+        "target_action_rewrite": "女子执古式注水壶向瓷盖碗连续注入热水，蒸汽上升后收壶",
+        "excluded_source_action_vocabulary": []
+      },
+      "asset_bindings": [
+        {
+          "asset_id": "asset_user_hanfu_woman",
+          "asset_ref": "picture_1",
+          "h3_role": "person_reference",
+          "used_in_segments": [
+            "SS005",
+            "SS006"
+          ],
+          "usage": "person_identity_and_costume_reference"
+        }
+      ],
+      "negative_constraints": [
+        {
+          "category": "modern_object",
+          "severity": "high",
+          "scope": "timeline_unit",
+          "prompt_visibility": "audit_only",
+          "dedupe_key": "no_modern_objects",
+          "note": "不得出现现代白瓷壶"
+        }
+      ],
+      "missing_inputs": [],
+      "generation_assumptions": [
+        "assumption_ancient_teaware"
+      ],
+      "status": "ready",
+      "source_trace": [
+        "reference_video_analysis:SC001_SH005"
+      ]
+    },
+    {
+      "unit_id": "U006",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001_SH006",
+        "shot6"
+      ],
+      "time_range_sec": {
+        "start": 10.0,
+        "end": 13.9
+      },
+      "duration_sec": 4.0,
+      "reference_mapping": {
+        "content_subject_type": "mixed",
+        "story_function": "process_action",
+        "content_summary": "近景：女子红色衣袖的手执古式瓷质分茶执壶，壶嘴对准瓷茶盏，琥珀色茶汤开始倾倒。",
+        "primary_visual_subject": "女子的手与古式分茶执壶",
+        "secondary_visual_elements": [
+          "瓷茶盏",
+          "瓷盖碗（置茶托）",
+          "柿子",
+          "木质桌面"
+        ],
+        "interaction_or_relation": "手与执壶手柄接触，壶嘴与茶盏口形成倾倒关系",
+        "action_progression": "执壶倾斜→茶汤流出→落入茶盏",
+        "scene_content": "秋天古装剧庭院茶席桌面",
+        "script_story_content": "推进到出汤分茶步骤",
+        "viewpoint": "近景，略高机位",
+        "camera_and_composition": [
+          "近景，略高机位",
+          "执壶与茶盏位于画面中部，旁边盖碗置于茶托，背景柔化",
+          "浅景深，壶嘴与茶盏清晰"
+        ],
+        "camera_motion": "机位基本静止",
+        "focus_and_depth": "浅景深，茶汤流与茶盏清晰",
+        "editing_and_transition": "同一镜头内时间点推进",
+        "pace_and_duration": "2.0 秒动作起段",
+        "must_be_visible": [
+          "古式分茶执壶",
+          "瓷茶盏",
+          "琥珀色茶汤",
+          "红色衣袖的手"
+        ],
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot6"
+        ]
+      },
+      "mapping_self_check": {
+        "memory_point_check": "vm_004 出汤分茶动作链起点按强继承保留。",
+        "subject_motion_transfer_check": "参考为玻璃公道杯出汤，目标为瓷器执壶出汤，动作类型一致，transfer_mode=close_motion_reference。",
+        "dynamic_detail_check": "动作起点（执壶倾斜）与过程（茶汤流出）清晰。"
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "穿红纱古装的女子",
+          "古式分茶执壶",
+          "瓷茶盏",
+          "秋天茶席"
+        ],
+        "dynamic_event": "执壶倾斜倾倒茶汤",
+        "motion_path": "执壶从上方倾倒，茶汤沿壶嘴落入茶盏",
+        "pose_or_state_change": "茶盏由空到半满",
+        "camera_change": "无",
+        "composition_change": "无",
+        "transition_relation": "同一镜头内延续到下一 beat",
+        "time_order": "10.0-12.0s 出汤起段",
+        "script_or_text_beat": "无画面文字",
+        "generation_focus": [
+          "执壶倾倒",
+          "茶汤颜色与流量",
+          "接触点清晰"
+        ],
+        "state_relation": {
+          "source_ref": "VS001:shot6 internal",
+          "continuity": "同一茶席延续",
+          "newly_revealed": "茶汤颜色",
+          "target_rewrite": "保持琥珀色茶汤"
+        }
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SS007",
+          "time_range_sec": {
+            "start": 10.0,
+            "end": 12.0
+          },
+          "duration_sec": 2.0,
+          "reference_function": "action_or_interaction",
+          "target_function": "女子执古式分茶执壶倾倒茶汤",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "process_action",
+            "content_summary": "近景：女子红色衣袖的手执古式瓷质分茶执壶，壶嘴对准瓷茶盏，琥珀色茶汤开始倾倒。",
+            "primary_visual_subject": "女子的手与古式分茶执壶",
+            "secondary_visual_elements": [
+              "瓷茶盏",
+              "瓷盖碗（置茶托）",
+              "柿子",
+              "木质桌面"
+            ],
+            "interaction_or_relation": "手与执壶手柄接触，壶嘴与茶盏口形成倾倒关系",
+            "action_progression": "执壶倾斜→茶汤流出→落入茶盏",
+            "scene_content": "秋天古装剧庭院茶席桌面",
+            "script_story_content": "推进到出汤分茶步骤",
+            "viewpoint": "近景，略高机位",
+            "camera_and_composition": [
+              "近景，略高机位",
+              "执壶与茶盏位于画面中部，旁边盖碗置于茶托，背景柔化",
+              "浅景深，壶嘴与茶盏清晰"
+            ],
+            "camera_motion": "机位基本静止",
+            "focus_and_depth": "浅景深，茶汤流与茶盏清晰",
+            "editing_and_transition": "同一镜头内时间点推进",
+            "pace_and_duration": "2.0 秒动作起段",
+            "must_be_visible": [
+              "古式分茶执壶",
+              "瓷茶盏",
+              "琥珀色茶汤",
+              "红色衣袖的手"
+            ],
+            "target_bindings": [
+              "asset_user_hanfu_woman"
+            ],
+            "evidence_refs": [
+              "VS001:shot6"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "vm_004 出汤分茶动作链起点按强继承保留。",
+            "subject_motion_transfer_check": "参考为玻璃公道杯出汤，目标为瓷器执壶出汤，动作类型一致，transfer_mode=close_motion_reference。",
+            "dynamic_detail_check": "动作起点（执壶倾斜）与过程（茶汤流出）清晰。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "穿红纱古装的女子",
+              "古式分茶执壶",
+              "瓷茶盏",
+              "秋天茶席"
+            ],
+            "dynamic_event": "执壶倾斜倾倒茶汤",
+            "motion_path": "执壶从上方倾倒，茶汤沿壶嘴落入茶盏",
+            "pose_or_state_change": "茶盏由空到半满",
+            "camera_change": "无",
+            "composition_change": "无",
+            "transition_relation": "同一镜头内延续到下一 beat",
+            "time_order": "10.0-12.0s 出汤起段",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "执壶倾倒",
+              "茶汤颜色与流量",
+              "接触点清晰"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot6 internal",
+              "continuity": "同一茶席延续",
+              "newly_revealed": "茶汤颜色",
+              "target_rewrite": "保持琥珀色茶汤"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "桌面茶席局部、暖光、浅景深",
+            "target_scene": "秋天古装剧庭院茶席桌面",
+            "visible_difference_anchor": [
+              "器具为古式瓷器"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "白色蕾丝长袖手",
+            "target_subject": "红纱古装女子的手",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "source_prop": "透明玻璃公道杯",
+            "target_props": [
+              "古式瓷质分茶执壶",
+              "瓷茶盏"
+            ],
+            "policy": "replace_modern_glass_with_antique_porcelain"
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "近景略高",
+              "执壶与茶盏居中清晰",
+              "浅景深"
+            ],
+            "motion_and_action": [
+              "执壶倾斜，茶汤流出落入茶盏"
+            ],
+            "editing_and_transition": [
+              "同一镜头内 beat，无切点"
+            ],
+            "state_relation_and_continuity": [
+              "与下一 beat 同一镜头连续"
+            ],
+            "scene_and_subject": [
+              "红纱古装女子的手",
+              "古式分茶执壶与瓷茶盏"
+            ],
+            "text_logo_and_overlay": [
+              "clean plate，无叠加"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "high",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现透明玻璃公道杯"
+              }
+            ],
+            "source_terms": [
+              "近景",
+              "手伸入画面(Hand Reaches Into Frame)",
+              "时间顺序描述(Temporal Order)"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "person_hanfu_woman"
+            ],
+            "needed_state_ids": [
+              "state_person_default"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS007"
+          ]
+        },
+        {
+          "segment_id": "SS008",
+          "time_range_sec": {
+            "start": 12.0,
+            "end": 13.9
+          },
+          "duration_sec": 1.9,
+          "reference_function": "action_or_interaction",
+          "target_function": "茶汤注入瓷茶盏并渐满",
+          "reference_mapping": {
+            "content_subject_type": "mixed",
+            "story_function": "process_action",
+            "content_summary": "近景：琥珀色茶汤持续注入瓷茶盏，茶盏渐满，液面轻微波动，随后停止倾倒。",
+            "primary_visual_subject": "注入茶盏的琥珀色茶汤",
+            "secondary_visual_elements": [
+              "古式分茶执壶",
+              "瓷茶盏",
+              "瓷盖碗",
+              "木质桌面"
+            ],
+            "interaction_or_relation": "茶汤连接壶嘴与茶盏，液面上升",
+            "action_progression": "茶汤持续注入→茶盏渐满→停止倾倒",
+            "scene_content": "秋天古装剧庭院茶席桌面",
+            "script_story_content": "完成出汤分茶",
+            "viewpoint": "近景，略高机位",
+            "camera_and_composition": [
+              "近景，略高机位",
+              "茶盏位于画面中部，液面可读，背景柔化",
+              "浅景深"
+            ],
+            "camera_motion": "机位基本静止",
+            "focus_and_depth": "浅景深，茶盏液面清晰",
+            "editing_and_transition": "同一镜头内收束，硬切到俯拍收尾",
+            "pace_and_duration": "1.9 秒动作收段",
+            "must_be_visible": [
+              "茶盏渐满",
+              "液面轻微波动",
+              "停止倾倒"
+            ],
+            "target_bindings": [
+              "asset_user_hanfu_woman"
+            ],
+            "evidence_refs": [
+              "VS001:shot6"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "vm_004 液体颜色与流量机制按强继承保留。",
+            "subject_motion_transfer_check": "续用 close_motion_reference。",
+            "dynamic_detail_check": "动作过程（注入渐满）与终点（停止倾倒）清晰。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "古式分茶执壶",
+              "瓷茶盏",
+              "琥珀色茶汤"
+            ],
+            "dynamic_event": "茶汤注入，茶盏渐满，停止倾倒",
+            "motion_path": "茶汤沿壶嘴持续落入茶盏",
+            "pose_or_state_change": "茶盏由半满到盛满，执壶收回",
+            "camera_change": "无",
+            "composition_change": "无",
+            "transition_relation": "收束后硬切到俯拍成品镜",
+            "time_order": "12.0-13.9s 出汤收段",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "茶盏渐满",
+              "琥珀色茶汤液面"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot6->shot7",
+              "continuity": "同一茶盏、同一桌面、同一暖色光斑延续",
+              "newly_revealed": "成品茶汤与光斑",
+              "target_rewrite": "保持同一茶盏与暖光"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "桌面茶席局部、暖光、浅景深",
+            "target_scene": "秋天古装剧庭院茶席桌面",
+            "visible_difference_anchor": [
+              "器具为古式瓷器"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "白色蕾丝长袖手",
+            "target_subject": "红纱古装女子的手",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "target_props": [
+              "古式分茶执壶",
+              "瓷茶盏"
+            ],
+            "policy": "replace_modern_with_antique"
+          },
+          "special_mechanism_transfer": [],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "近景略高",
+              "茶盏液面居中可读",
+              "浅景深"
+            ],
+            "motion_and_action": [
+              "茶汤注入渐满，停止倾倒"
+            ],
+            "editing_and_transition": [
+              "同一镜头内 beat，收束后硬切"
+            ],
+            "state_relation_and_continuity": [
+              "同一茶盏延续到俯拍收尾镜"
+            ],
+            "scene_and_subject": [
+              "古式分茶执壶与瓷茶盏",
+              "琥珀色茶汤"
+            ],
+            "text_logo_and_overlay": [
+              "clean plate，无叠加"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "medium",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现现代玻璃器"
+              }
+            ],
+            "source_terms": [
+              "水面波纹",
+              "揭示后保持"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "person_hanfu_woman"
+            ],
+            "needed_state_ids": [
+              "state_person_default"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS008"
+          ]
+        }
+      ],
+      "subject_motion_transfer": {
+        "reference_action_type": "pour_tea_from_pitcher_into_cup",
+        "target_action_type": "pour_tea_from_porcelain_pitcher_into_cup",
+        "semantic_match": "same_action_type",
+        "transfer_mode": "close_motion_reference",
+        "inheritable_beat_structure": [
+          "tilt_pitcher",
+          "tea_stream",
+          "cup_fills",
+          "stop_pour"
+        ],
+        "target_action_rewrite": "女子执古式瓷质分茶执壶向瓷茶盏倒出琥珀色茶汤",
+        "excluded_source_action_vocabulary": []
+      },
+      "asset_bindings": [
+        {
+          "asset_id": "asset_user_hanfu_woman",
+          "asset_ref": "picture_1",
+          "h3_role": "person_reference",
+          "used_in_segments": [
+            "SS007",
+            "SS008"
+          ],
+          "usage": "person_identity_and_costume_reference"
+        }
+      ],
+      "negative_constraints": [
+        {
+          "category": "modern_object",
+          "severity": "high",
+          "scope": "timeline_unit",
+          "prompt_visibility": "audit_only",
+          "dedupe_key": "no_modern_objects",
+          "note": "不得出现透明玻璃公道杯"
+        }
+      ],
+      "missing_inputs": [],
+      "generation_assumptions": [
+        "assumption_ancient_teaware"
+      ],
+      "status": "ready",
+      "source_trace": [
+        "reference_video_analysis:SC001_SH006"
+      ]
+    },
+    {
+      "unit_id": "U007",
+      "unit_type": "video_shot",
+      "source_ids": [
+        "SC001_SH007",
+        "shot7"
+      ],
+      "time_range_sec": {
+        "start": 14.0,
+        "end": 14.9
+      },
+      "duration_sec": 0.9,
+      "reference_mapping": {
+        "content_subject_type": "object",
+        "story_function": "closing_hold",
+        "content_summary": "严格俯拍：瓷茶盏盛琥珀色茶汤，处于秋日斑驳光斑中；柿子、瓷盖碗置于四周；一角可见分茶执壶边缘；静置收尾。",
+        "primary_visual_subject": "盛琥珀色茶汤的瓷茶盏",
+        "secondary_visual_elements": [
+          "柿子",
+          "瓷盖碗（置茶托）",
+          "分茶执壶边缘",
+          "秋日光斑",
+          "木质桌面"
+        ],
+        "interaction_or_relation": "not_applicable",
+        "action_progression": "静态收尾，液面与光影轻微变化",
+        "scene_content": "秋天古装剧庭院茶席桌面俯拍",
+        "script_story_content": "成品茶汤与光斑收尾",
+        "viewpoint": "鸟瞰，严格俯拍",
+        "camera_and_composition": [
+          "严格俯拍（鸟瞰）",
+          "瓷茶盏居中，柿子与盖碗分布四周，执壶边缘入画一角，形成地图式桌面构图",
+          "浅景深以桌面为主平面"
+        ],
+        "camera_motion": "机位完全静止，揭示后保持",
+        "focus_and_depth": "浅景深，茶盏与液面清晰",
+        "editing_and_transition": "收尾镜，无后续切换",
+        "pace_and_duration": "0.9 秒收尾停留",
+        "must_be_visible": [
+          "严格俯拍",
+          "琥珀色茶汤",
+          "斑驳阳光光斑",
+          "静置停留"
+        ],
+        "target_bindings": [],
+        "evidence_refs": [
+          "VS001:shot7"
+        ]
+      },
+      "mapping_self_check": {
+        "memory_point_check": "vm_005 鸟瞰俯拍与揭示后保持按强继承保留；茶杯替换为古式瓷盏。",
+        "subject_motion_transfer_check": "无主体动作，仅液面与光影；transfer_mode=target_action_override。",
+        "dynamic_detail_check": "动态仅液面与光影轻微变化，收尾保持。"
+      },
+      "structured_segment": {
+        "global_reference_usage": [
+          "瓷茶盏与琥珀色茶汤",
+          "柿子",
+          "瓷盖碗",
+          "秋天庭院桌面"
+        ],
+        "dynamic_event": "液面与光影轻微变化后保持",
+        "motion_path": "not_applicable",
+        "pose_or_state_change": "成品态保持",
+        "camera_change": "无，机位完全静止",
+        "composition_change": "无，地图式俯拍构图保持",
+        "transition_relation": "结尾无切换",
+        "time_order": "14.0-14.9s 收尾停留",
+        "script_or_text_beat": "无画面文字",
+        "generation_focus": [
+          "严格俯拍茶盏",
+          "秋日光斑",
+          "静置收尾"
+        ],
+        "state_relation": {
+          "source_ref": "VS001:shot6->shot7",
+          "continuity": "同一茶盏、同一桌面、同一暖色光斑延续",
+          "newly_revealed": "成品茶汤与光斑收尾",
+          "target_rewrite": "保持同一茶盏与暖色光斑"
+        }
+      },
+      "temporal_segments": [
+        {
+          "segment_id": "SS009",
+          "time_range_sec": {
+            "start": 14.0,
+            "end": 14.9
+          },
+          "duration_sec": 0.9,
+          "reference_function": "closing_or_prompt",
+          "target_function": "严格俯拍成品茶汤收尾",
+          "reference_mapping": {
+            "content_subject_type": "object",
+            "story_function": "closing_hold",
+            "content_summary": "严格俯拍：瓷茶盏盛琥珀色茶汤，处于秋日斑驳光斑中；柿子、瓷盖碗置于四周；一角可见分茶执壶边缘；静置收尾。",
+            "primary_visual_subject": "盛琥珀色茶汤的瓷茶盏",
+            "secondary_visual_elements": [
+              "柿子",
+              "瓷盖碗（置茶托）",
+              "分茶执壶边缘",
+              "秋日光斑",
+              "木质桌面"
+            ],
+            "interaction_or_relation": "not_applicable",
+            "action_progression": "静态收尾，液面与光影轻微变化",
+            "scene_content": "秋天古装剧庭院茶席桌面俯拍",
+            "script_story_content": "成品茶汤与光斑收尾",
+            "viewpoint": "鸟瞰，严格俯拍",
+            "camera_and_composition": [
+              "严格俯拍（鸟瞰）",
+              "瓷茶盏居中，柿子与盖碗分布四周，执壶边缘入画一角，形成地图式桌面构图",
+              "浅景深以桌面为主平面"
+            ],
+            "camera_motion": "机位完全静止，揭示后保持",
+            "focus_and_depth": "浅景深，茶盏与液面清晰",
+            "editing_and_transition": "收尾镜，无后续切换",
+            "pace_and_duration": "0.9 秒收尾停留",
+            "must_be_visible": [
+              "严格俯拍",
+              "琥珀色茶汤",
+              "斑驳阳光光斑",
+              "静置停留"
+            ],
+            "target_bindings": [],
+            "evidence_refs": [
+              "VS001:shot7"
+            ]
+          },
+          "mapping_self_check": {
+            "memory_point_check": "vm_005 鸟瞰俯拍与揭示后保持按强继承保留；茶杯替换为古式瓷盏。",
+            "subject_motion_transfer_check": "无主体动作，仅液面与光影；transfer_mode=target_action_override。",
+            "dynamic_detail_check": "动态仅液面与光影轻微变化，收尾保持。"
+          },
+          "structured_segment": {
+            "global_reference_usage": [
+              "瓷茶盏与琥珀色茶汤",
+              "柿子",
+              "瓷盖碗",
+              "秋天庭院桌面"
+            ],
+            "dynamic_event": "液面与光影轻微变化后保持",
+            "motion_path": "not_applicable",
+            "pose_or_state_change": "成品态保持",
+            "camera_change": "无，机位完全静止",
+            "composition_change": "无，地图式俯拍构图保持",
+            "transition_relation": "结尾无切换",
+            "time_order": "14.0-14.9s 收尾停留",
+            "script_or_text_beat": "无画面文字",
+            "generation_focus": [
+              "严格俯拍茶盏",
+              "秋日光斑",
+              "静置收尾"
+            ],
+            "state_relation": {
+              "source_ref": "VS001:shot6->shot7",
+              "continuity": "同一茶盏、同一桌面、同一暖色光斑延续",
+              "newly_revealed": "成品茶汤与光斑收尾",
+              "target_rewrite": "保持同一茶盏与暖色光斑"
+            }
+          },
+          "scene_transfer": {
+            "reference_scene_structure": "桌面俯拍、暖色光斑、浅景深",
+            "target_scene": "秋天古装剧庭院茶席桌面俯拍",
+            "visible_difference_anchor": [
+              "器具为古式瓷器",
+              "桌面加入秋叶与柿子"
+            ],
+            "policy": "inherit_structure_adapt_content"
+          },
+          "subject_transfer": {
+            "reference_subject": "白色小杯成品茶汤",
+            "target_subject": "古式瓷茶盏成品茶汤",
+            "policy": "reference_inheritance_adapt"
+          },
+          "prop_transfer": {
+            "source_prop": "白色小杯",
+            "target_props": [
+              "古式瓷茶盏",
+              "瓷盖碗",
+              "柿子"
+            ],
+            "policy": "replace_modern_cup_with_antique_teacup"
+          },
+          "special_mechanism_transfer": [
+            {
+              "mechanism_id": "sm_bird_eye_top_down_shot7",
+              "mechanism_type": "bird_eye_top_down",
+              "source_ref": "reference_video_analysis.video_prompt_source.special_mechanisms[bird_eye_top_down@shot7]",
+              "source_type": "composition",
+              "source_where": "shot7 14.0-14.9s",
+              "source_evidence": "严格俯拍成品茶汤，鸟瞰桌面",
+              "source_confidence": "medium",
+              "inheritance_layer": "strong_inheritance",
+              "inherit_or_adapt": "inherit",
+              "target_execution": "严格垂直俯拍茶盏与桌面，形成地图式桌面构图，茶盏居中",
+              "layout_placement_rules": [
+                "机位严格垂直向下",
+                "瓷茶盏位于画面中央",
+                "柿子与盖碗分布在四周，分茶执壶边缘出现在画面一角",
+                "秋日光斑落在桌面与茶汤上"
+              ],
+              "prompt_sentence": "The camera is locked in a strict bird's-eye top-down view of the table, with the porcelain tea cup holding amber tea at the exact center, a persimmon and the lidded porcelain bowl placed around it and the edge of the porcelain pitcher entering one corner.",
+              "must_be_visible": true,
+              "delivery_priority": "high",
+              "delivery_level": "h3_prompt",
+              "per_shot_restatement_required": false,
+              "loss_risk": "low"
+            }
+          ],
+          "segment_generation_notes": {
+            "camera_and_composition": [
+              "严格鸟瞰俯拍",
+              "茶盏居中，四周道具环绕",
+              "浅景深"
+            ],
+            "motion_and_action": [
+              "静态收尾，液面与光影轻微变化"
+            ],
+            "editing_and_transition": [
+              "收尾镜，无切换"
+            ],
+            "state_relation_and_continuity": [
+              "同一茶盏与暖光收尾"
+            ],
+            "scene_and_subject": [
+              "盛琥珀色茶汤的瓷茶盏",
+              "柿子与瓷盖碗"
+            ],
+            "text_logo_and_overlay": [
+              "clean plate，无叠加"
+            ],
+            "negative_constraints": [
+              {
+                "category": "modern_object",
+                "severity": "medium",
+                "scope": "temporal_segment",
+                "prompt_visibility": "audit_only",
+                "dedupe_key": "no_modern_objects",
+                "note": "不得出现现代器具"
+              }
+            ],
+            "source_terms": [
+              "鸟瞰(Bird's-Eye)",
+              "特写(Close-Up)",
+              "揭示后保持",
+              "浅景深(Shallow DoF)"
+            ]
+          },
+          "in_scene_text_logo_plan": [],
+          "post_overlay_plan": [
+            {
+              "overlay_id": "ov_watermark_ref_u7",
+              "source_segment_id": "SS009",
+              "type": "watermark",
+              "time_range_sec": {
+                "start": 14.0,
+                "end": 14.9
+              },
+              "content_status": "omitted",
+              "content_text": null,
+              "asset_id": null,
+              "placement": "none",
+              "scale_relation": "none",
+              "style": "none",
+              "animation": "none",
+              "render_method": "postprocess_ffmpeg_opencv",
+              "source_ref": "reference_visible_text:湘之韵"
+            }
+          ],
+          "speech_text_transfer": {
+            "speech_status": "no_confirmed_speech",
+            "target_text_item_refs": []
+          },
+          "reference_frame_usage": {
+            "usage_role": "consistency_anchor",
+            "needed_entity_ids": [
+              "scene_autumn_courtyard"
+            ],
+            "needed_state_ids": [
+              "state_scene_autumn"
+            ]
+          },
+          "negative_constraints": [],
+          "missing_inputs": [],
+          "generation_assumptions": [],
+          "status": "ready",
+          "source_trace": [
+            "reference_video_analysis:SS009"
+          ]
+        }
+      ],
+      "subject_motion_transfer": {
+        "reference_action_type": "none",
+        "target_action_type": "none",
+        "semantic_match": "no_reference_motion",
+        "transfer_mode": "target_action_override",
+        "inheritable_beat_structure": [],
+        "target_action_rewrite": "not_applicable",
+        "excluded_source_action_vocabulary": []
+      },
+      "asset_bindings": [],
+      "negative_constraints": [],
+      "missing_inputs": [],
+      "generation_assumptions": [
+        "assumption_scene_autumn_courtyard"
+      ],
+      "status": "ready",
+      "source_trace": [
+        "reference_video_analysis:SC001_SH007"
+      ]
+    }
+  ],
+  "reference_mapping_and_self_check_pass": {
+    "mapped_units": [
+      {
+        "unit_id": "U001",
+        "segment_ids": [
+          "SS001"
+        ],
+        "source_refs": [
+          "SC001_SH001",
+          "shot1"
+        ],
+        "decision_refs": [],
+        "content_subject_type": "mixed",
+        "target_content": "秋天古装剧庭院建立镜头：木构厅堂与格窗、金色枫树与落叶、石板地；前景低矮木桌茶席；目标女子穿红色古装坐于桌侧。",
+        "shooting_inheritance": {
+          "viewpoint": "平视，中景环境建立镜头",
+          "camera_and_composition": [
+            "中景，水平机位",
+            "前景低矮木桌茶席位于画面下三分之一，女子在中景偏右，木构厅堂与金色枫树在后景",
+            "偏深景深，环境信息与主体同时可读"
+          ],
+          "camera_motion": "机位基本静止，仅有轻微手持呼吸感与自然光变化"
+        },
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot1"
+        ]
+      },
+      {
+        "unit_id": "U002",
+        "segment_ids": [
+          "SS002"
+        ],
+        "source_refs": [
+          "SC001_SH002",
+          "shot2"
+        ],
+        "decision_refs": [],
+        "content_subject_type": "environment",
+        "target_content": "秋天庭院另一角度：金色枫树与落叶、木长凳与小几、白墙、左缘悬挂灯笼；强留白环境镜。",
+        "shooting_inheritance": {
+          "viewpoint": "平视偏侧，中景环境镜",
+          "camera_and_composition": [
+            "中景，平视偏侧机位",
+            "金色枫树与白墙占画面大部，木长凳与小几位于画面下部一侧，左缘悬挂灯笼",
+            "强负空间/强留白构图"
+          ],
+          "camera_motion": "机位静止"
+        },
+        "target_bindings": [],
+        "evidence_refs": [
+          "VS001:shot2"
+        ]
+      },
+      {
+        "unit_id": "U003",
+        "segment_ids": [
+          "SS003"
+        ],
+        "source_refs": [
+          "SC001_SH003",
+          "shot3"
+        ],
+        "decision_refs": [],
+        "content_subject_type": "object",
+        "target_content": "俯侧特写：木托盘上的柿子与石榴篮，前景带叶秋枝遮挡下缘并环绕果篮；浅景深背景虚化。",
+        "shooting_inheritance": {
+          "viewpoint": "略高俯视，特写",
+          "camera_and_composition": [
+            "特写，略高俯视机位",
+            "前景枝叶遮挡下缘并包围果篮，果篮居中于中景清晰区，背景虚化",
+            "三层空间：前景遮挡-中景主体-背景虚化"
+          ],
+          "camera_motion": "机位基本静止"
+        },
+        "target_bindings": [],
+        "evidence_refs": [
+          "VS001:shot3"
+        ]
+      },
+      {
+        "unit_id": "U004",
+        "segment_ids": [
+          "SS004"
+        ],
+        "source_refs": [
+          "SC001_SH004",
+          "shot4"
+        ],
+        "decision_refs": [],
+        "content_subject_type": "mixed",
+        "target_content": "略高俯视中近景：女子红色薄纱衣袖的双手从画面上方进入，打开无字白瓷/青瓷茶罐，用茶则取出散茶；桌面有瓷盖碗、瓷小杯、柿子与秋菊。",
+        "shooting_inheritance": {
+          "viewpoint": "略高俯视，俯侧中近景",
+          "camera_and_composition": [
+            "中近景，略高俯视机位",
+            "双手与茶罐位于画面中部，桌面茶席器具位于画面下部，背景柔化虚化",
+            "浅景深，手指与罐口接触点清晰"
+          ],
+          "camera_motion": "机位基本静止"
+        },
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot4"
+        ]
+      },
+      {
+        "unit_id": "U005",
+        "segment_ids": [
+          "SS005",
+          "SS006"
+        ],
+        "source_refs": [
+          "SC001_SH005",
+          "shot5"
+        ],
+        "decision_refs": [],
+        "content_subject_type": "mixed",
+        "target_content": "俯侧中近景：女子红色衣袖的手举起古式陶/瓷注水壶，壶嘴对准瓷盖碗，热水开始注入。",
+        "shooting_inheritance": {
+          "viewpoint": "俯侧中近景",
+          "camera_and_composition": [
+            "中近景，俯侧机位",
+            "壶与盖碗位于画面中部，桌面器具位于画面下部，背景柔化",
+            "浅景深，壶嘴与盖碗口接触点清晰"
+          ],
+          "camera_motion": "机位基本静止"
+        },
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot5"
+        ]
+      },
+      {
+        "unit_id": "U006",
+        "segment_ids": [
+          "SS007",
+          "SS008"
+        ],
+        "source_refs": [
+          "SC001_SH006",
+          "shot6"
+        ],
+        "decision_refs": [],
+        "content_subject_type": "mixed",
+        "target_content": "近景：女子红色衣袖的手执古式瓷质分茶执壶，壶嘴对准瓷茶盏，琥珀色茶汤开始倾倒。",
+        "shooting_inheritance": {
+          "viewpoint": "近景，略高机位",
+          "camera_and_composition": [
+            "近景，略高机位",
+            "执壶与茶盏位于画面中部，旁边盖碗置于茶托，背景柔化",
+            "浅景深，壶嘴与茶盏清晰"
+          ],
+          "camera_motion": "机位基本静止"
+        },
+        "target_bindings": [
+          "asset_user_hanfu_woman"
+        ],
+        "evidence_refs": [
+          "VS001:shot6"
+        ]
+      },
+      {
+        "unit_id": "U007",
+        "segment_ids": [
+          "SS009"
+        ],
+        "source_refs": [
+          "SC001_SH007",
+          "shot7"
+        ],
+        "decision_refs": [],
+        "content_subject_type": "object",
+        "target_content": "严格俯拍：瓷茶盏盛琥珀色茶汤，处于秋日斑驳光斑中；柿子、瓷盖碗置于四周；一角可见分茶执壶边缘；静置收尾。",
+        "shooting_inheritance": {
+          "viewpoint": "鸟瞰，严格俯拍",
+          "camera_and_composition": [
+            "严格俯拍（鸟瞰）",
+            "瓷茶盏居中，柿子与盖碗分布四周，执壶边缘入画一角，形成地图式桌面构图",
+            "浅景深以桌面为主平面"
+          ],
+          "camera_motion": "机位完全静止，揭示后保持"
+        },
+        "target_bindings": [],
+        "evidence_refs": [
+          "VS001:shot7"
+        ]
+      }
+    ],
+    "mapping_self_check": {
+      "memory_point_check": "vm_001 前景遮挡框架、vm_005 鸟瞰俯拍、vm_006 稳定机位+景别层级全部按强继承落到对应 segment；vm_002/003/004 动作机制按目标动作改写后保留。",
+      "subject_motion_transfer_check": "U004/U005/U006 目标动作类型与参考一致（取茶/注水/出汤），transfer_mode=close_motion_reference；U001/U002/U003/U007 参考无主体动作，transfer_mode=target_action_override。",
+      "dynamic_detail_check": "目标侧动态已写清：U004 手入画-掀盖-取茶-离罐；U005 举壶-连续注水-蒸汽-收壶；U006 执壶-茶汤注入-茶盏渐满-停止；U001/U002/U003/U007 仅环境/枝叶/光影动态。",
+      "replacement_binding_check": {
+        "required": true,
+        "explicit_replacements": [
+          "茶叶茶具与摆设道具全部换成瓷碗茶壶等真实古装剧器具",
+          "不允许出现现代包装和器具"
+        ],
+        "affected_source_ids": [
+          "VS001:shot4",
+          "VS001:shot5",
+          "VS001:shot6",
+          "VS001:shot1",
+          "VS001:shot7"
+        ],
+        "target_coverage": [
+          {
+            "source_id": "VS001:shot4",
+            "target_segments": [
+              "SS004"
+            ],
+            "target_entities": [
+              "无字瓷茶罐",
+              "茶则",
+              "瓷盖碗",
+              "瓷小杯"
+            ]
+          },
+          {
+            "source_id": "VS001:shot5",
+            "target_segments": [
+              "SS005",
+              "SS006"
+            ],
+            "target_entities": [
+              "古式陶/瓷注水壶",
+              "瓷盖碗"
+            ]
+          },
+          {
+            "source_id": "VS001:shot6",
+            "target_segments": [
+              "SS007",
+              "SS008"
+            ],
+            "target_entities": [
+              "瓷质分茶执壶",
+              "瓷茶盏"
+            ]
+          },
+          {
+            "source_id": "VS001:shot1",
+            "target_segments": [
+              "SS001"
+            ],
+            "target_entities": [
+              "瓷茶盘",
+              "陶制茶壶",
+              "柿子和石榴篮"
+            ]
+          },
+          {
+            "source_id": "VS001:shot7",
+            "target_segments": [
+              "SS009"
+            ],
+            "target_entities": [
+              "瓷茶盏",
+              "瓷盖碗",
+              "柿子"
+            ]
+          }
+        ],
+        "leakage_check": "源侧现代包装、玻璃公道杯、白瓷壶、品牌文字、水印、荔枝与橙子均已排除",
+        "exceptions": []
+      },
+      "conflict_resolutions": [
+        {
+          "conflict": "参考视频人物只出现手部，用户素材为半身肖像且看不到操作",
+          "resolution": "以用户素材锚定人物身份与服装，动作按参考镜头结构与用户文字生成",
+          "changed_fields": [
+            "U004.subject_transfer",
+            "U005.subject_transfer",
+            "U006.subject_transfer"
+          ]
+        }
+      ]
+    }
+  },
+  "global_appearance_dedup_pass": {
+    "global_appearance": [
+      {
+        "entity_id": "person_hanfu_woman",
+        "entity_name": "穿红纱古装的女子",
+        "entity_type": "person_appearance",
+        "appearance_details": [
+          "年轻女子",
+          "黑色长直发，部分盘起并垂下长发",
+          "金色花朵发簪与多条垂坠流苏步摇",
+          "长款流苏耳饰",
+          "红色外层半透明薄纱衣带白/银刺绣",
+          "深红色立领内层",
+          "红唇精致妆容",
+          "优雅气质"
+        ],
+        "appearance_states": [
+          {
+            "state_id": "state_person_default",
+            "state_name": "日常红纱古装造型",
+            "state_role": "single_state",
+            "active_segments": [
+              "SS001",
+              "SS004",
+              "SS005",
+              "SS006",
+              "SS007",
+              "SS008"
+            ],
+            "visible_state": "红纱古装、金饰发簪、黑长直发"
+          }
+        ],
+        "state_transition_refs": [],
+        "source_unit_ids": [
+          "U001",
+          "U004",
+          "U005",
+          "U006"
+        ],
+        "source_segment_ids": [
+          "SS001",
+          "SS004",
+          "SS005",
+          "SS006",
+          "SS007",
+          "SS008"
+        ],
+        "referenced_by": [
+          "SS001",
+          "SS004",
+          "SS005",
+          "SS006",
+          "SS007",
+          "SS008"
+        ],
+        "merge_status": "single_entity"
+      },
+      {
+        "entity_id": "scene_autumn_courtyard",
+        "entity_name": "秋天古装剧庭院茶席",
+        "entity_type": "scene_appearance",
+        "appearance_details": [
+          "木构厅堂与格窗",
+          "白墙",
+          "石板地面与落叶",
+          "金色枫树",
+          "悬挂灯笼",
+          "低矮木质茶桌",
+          "秋日暖阳与斑驳光斑",
+          "浅景深背景"
+        ],
+        "appearance_states": [
+          {
+            "state_id": "state_scene_autumn",
+            "state_name": "秋日暖阳庭院",
+            "state_role": "single_state",
+            "active_segments": [
+              "SS001",
+              "SS002",
+              "SS003",
+              "SS004",
+              "SS005",
+              "SS006",
+              "SS007",
+              "SS008",
+              "SS009"
+            ],
+            "visible_state": "金色枫叶与暖阳"
+          }
+        ],
+        "state_transition_refs": [],
+        "source_unit_ids": [
+          "U001",
+          "U002",
+          "U003",
+          "U007"
+        ],
+        "source_segment_ids": [
+          "SS001",
+          "SS002",
+          "SS003",
+          "SS009"
+        ],
+        "referenced_by": [
+          "SS001-SS009"
+        ],
+        "merge_status": "single_entity"
+      },
+      {
+        "entity_id": "teaware_porcelain_context",
+        "entity_name": "古式瓷质茶具与秋日果实",
+        "entity_type": "prop_context_appearance",
+        "appearance_details": [
+          "无字白瓷/青瓷茶罐",
+          "古式陶制注水壶",
+          "瓷盖碗与茶托",
+          "瓷茶盏",
+          "瓷质分茶执壶",
+          "柿子与石榴",
+          "秋菊插花",
+          "木质桌面与木托盘"
+        ],
+        "appearance_states": [],
+        "state_transition_refs": [],
+        "source_unit_ids": [
+          "U001",
+          "U003",
+          "U004",
+          "U005",
+          "U006",
+          "U007"
+        ],
+        "source_segment_ids": [
+          "SS001",
+          "SS003",
+          "SS004",
+          "SS005",
+          "SS006",
+          "SS007",
+          "SS008",
+          "SS009"
+        ],
+        "referenced_by": [
+          "SS001-SS009"
+        ],
+        "merge_status": "context_entity_no_standalone_frame"
+      },
+      {
+        "entity_id": "style_liveaction_autumn",
+        "entity_name": "实拍真实感秋日暖调",
+        "entity_type": "style_atmosphere",
+        "appearance_details": [
+          "自然暖光",
+          "逆光/侧逆光轮廓",
+          "斑驳阳光光斑",
+          "中等对比",
+          "真实感实拍质感",
+          "浅景深"
+        ],
+        "appearance_states": [],
+        "state_transition_refs": [],
+        "source_unit_ids": [
+          "U001-U007"
+        ],
+        "source_segment_ids": [
+          "SS001-SS009"
+        ],
+        "referenced_by": [
+          "SS001-SS009"
+        ],
+        "merge_status": "single_entity"
+      }
+    ],
+    "appearance_source_policy": [
+      {
+        "entity_id": "person_hanfu_woman",
+        "source": "target_asset_analysis_for_user_specified_part"
+      },
+      {
+        "entity_id": "scene_autumn_courtyard",
+        "source": "user_explicit_instruction"
+      },
+      {
+        "entity_id": "teaware_porcelain_context",
+        "source": "user_explicit_instruction"
+      },
+      {
+        "entity_id": "style_liveaction_autumn",
+        "source": "reference_video_light_adaptation"
+      }
+    ],
+    "deduped_static_details": [
+      {
+        "entity_id": "person_hanfu_woman",
+        "detail": "红纱古装、金色发饰、黑长直发在多个 segment 重复出现",
+        "source_segments": [
+          "SS001",
+          "SS004",
+          "SS005",
+          "SS006",
+          "SS007",
+          "SS008"
+        ]
+      },
+      {
+        "entity_id": "scene_autumn_courtyard",
+        "detail": "木构厅堂、白墙、金色枫树、暖阳在多个 segment 重复出现",
+        "source_segments": [
+          "SS001",
+          "SS002",
+          "SS003",
+          "SS009"
+        ]
+      }
+    ],
+    "structured_segments": [
+      {
+        "segment_id": "SS001",
+        "global_reference_usage": [
+          "秋天古装剧庭院",
+          "瓷质茶席器具",
+          "穿红纱古装的女子"
+        ],
+        "dynamic_event": "花木轻摇、自然光缓慢变化",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，构图稳定",
+        "transition_relation": "开场，硬切入下一镜",
+        "generation_focus": [
+          "秋天古装剧庭院置景",
+          "前景瓷质茶席",
+          "红纱古装女子入镜"
+        ]
+      },
+      {
+        "segment_id": "SS002",
+        "global_reference_usage": [
+          "秋天古装剧庭院",
+          "金色枫树",
+          "木长凳与小几",
+          "悬挂灯笼"
+        ],
+        "dynamic_event": "枝叶随风轻微摆动，落叶缓落",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，强留白构图保持稳定",
+        "transition_relation": "承接上一镜的同一庭院空间，硬切入硬切出",
+        "generation_focus": [
+          "秋天庭院留白环境",
+          "金色枫树与落叶"
+        ]
+      },
+      {
+        "segment_id": "SS003",
+        "global_reference_usage": [
+          "柿子与石榴篮",
+          "木托盘",
+          "秋天庭院背景"
+        ],
+        "dynamic_event": "前景枝叶轻微晃动",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，前景遮挡框架保持",
+        "transition_relation": "承接茶席语境，硬切入硬切出",
+        "generation_focus": [
+          "前景枝叶遮挡框架",
+          "中景清晰果篮",
+          "浅景深三层空间"
+        ]
+      },
+      {
+        "segment_id": "SS004",
+        "global_reference_usage": [
+          "穿红纱古装的女子",
+          "无字瓷质茶罐",
+          "瓷盖碗",
+          "秋天茶席"
+        ],
+        "dynamic_event": "女子双手入画、开罐、用茶则取茶",
+        "camera_change": "无，机位静止",
+        "composition_change": "无，接触点保持在画面中部清晰区",
+        "transition_relation": "硬切入硬切出，承接果实特写",
+        "generation_focus": [
+          "红色薄纱衣袖双手",
+          "无字瓷茶罐开罐取茶",
+          "接触点清晰"
+        ]
+      },
+      {
+        "segment_id": "SS005",
+        "global_reference_usage": [
+          "穿红纱古装的女子",
+          "古式注水壶",
+          "瓷盖碗",
+          "秋天茶席"
+        ],
+        "dynamic_event": "举壶对准盖碗，注水开始",
+        "camera_change": "无",
+        "composition_change": "无，接触点保持画面中部",
+        "transition_relation": "同一镜头内延续到下一 beat",
+        "generation_focus": [
+          "举壶对准盖碗",
+          "接触点清晰",
+          "红色衣袖手部"
+        ]
+      },
+      {
+        "segment_id": "SS006",
+        "global_reference_usage": [
+          "穿红纱古装的女子",
+          "古式注水壶",
+          "瓷盖碗",
+          "蒸汽"
+        ],
+        "dynamic_event": "连续注水，蒸汽上升，收壶",
+        "camera_change": "无",
+        "composition_change": "无",
+        "transition_relation": "同一镜头收束后硬切到出汤镜",
+        "generation_focus": [
+          "连续水流与蒸汽",
+          "收壶终点"
+        ]
+      },
+      {
+        "segment_id": "SS007",
+        "global_reference_usage": [
+          "穿红纱古装的女子",
+          "古式分茶执壶",
+          "瓷茶盏",
+          "秋天茶席"
+        ],
+        "dynamic_event": "执壶倾斜倾倒茶汤",
+        "camera_change": "无",
+        "composition_change": "无",
+        "transition_relation": "同一镜头内延续到下一 beat",
+        "generation_focus": [
+          "执壶倾倒",
+          "茶汤颜色与流量",
+          "接触点清晰"
+        ]
+      },
+      {
+        "segment_id": "SS008",
+        "global_reference_usage": [
+          "古式分茶执壶",
+          "瓷茶盏",
+          "琥珀色茶汤"
+        ],
+        "dynamic_event": "茶汤注入，茶盏渐满，停止倾倒",
+        "camera_change": "无",
+        "composition_change": "无",
+        "transition_relation": "收束后硬切到俯拍成品镜",
+        "generation_focus": [
+          "茶盏渐满",
+          "琥珀色茶汤液面"
+        ]
+      },
+      {
+        "segment_id": "SS009",
+        "global_reference_usage": [
+          "瓷茶盏与琥珀色茶汤",
+          "柿子",
+          "瓷盖碗",
+          "秋天庭院桌面"
+        ],
+        "dynamic_event": "液面与光影轻微变化后保持",
+        "camera_change": "无，机位完全静止",
+        "composition_change": "无，地图式俯拍构图保持",
+        "transition_relation": "结尾无切换",
+        "generation_focus": [
+          "严格俯拍茶盏",
+          "秋日光斑",
+          "静置收尾"
+        ]
+      }
+    ],
+    "global_reference_usage": [
+      {
+        "segment_id": "SS001",
+        "entity_names": [
+          "秋天古装剧庭院",
+          "瓷质茶席器具",
+          "穿红纱古装的女子"
+        ]
+      },
+      {
+        "segment_id": "SS002",
+        "entity_names": [
+          "秋天古装剧庭院",
+          "金色枫树",
+          "木长凳与小几",
+          "悬挂灯笼"
+        ]
+      },
+      {
+        "segment_id": "SS003",
+        "entity_names": [
+          "柿子与石榴篮",
+          "木托盘",
+          "秋天庭院背景"
+        ]
+      },
+      {
+        "segment_id": "SS004",
+        "entity_names": [
+          "穿红纱古装的女子",
+          "无字瓷质茶罐",
+          "瓷盖碗",
+          "秋天茶席"
+        ]
+      },
+      {
+        "segment_id": "SS005",
+        "entity_names": [
+          "穿红纱古装的女子",
+          "古式注水壶",
+          "瓷盖碗",
+          "秋天茶席"
+        ]
+      },
+      {
+        "segment_id": "SS006",
+        "entity_names": [
+          "穿红纱古装的女子",
+          "古式注水壶",
+          "瓷盖碗",
+          "蒸汽"
+        ]
+      },
+      {
+        "segment_id": "SS007",
+        "entity_names": [
+          "穿红纱古装的女子",
+          "古式分茶执壶",
+          "瓷茶盏",
+          "秋天茶席"
+        ]
+      },
+      {
+        "segment_id": "SS008",
+        "entity_names": [
+          "古式分茶执壶",
+          "瓷茶盏",
+          "琥珀色茶汤"
+        ]
+      },
+      {
+        "segment_id": "SS009",
+        "entity_names": [
+          "瓷茶盏与琥珀色茶汤",
+          "柿子",
+          "瓷盖碗",
+          "秋天庭院桌面"
+        ]
+      }
+    ],
+    "generation_focus": [
+      "7 镜顺序与时长结构",
+      "稳定机位+硬切",
+      "shot3 前景遮挡框架",
+      "shot7 严格俯拍揭示后保持",
+      "红纱古装女子身份锚定",
+      "古式瓷/陶茶具替换现代器具",
+      "秋日暖阳与光斑",
+      "画面无任何可读文字/品牌/水印"
+    ]
+  },
+  "reference_frame_summary": {
+    "plan_required": true,
+    "person_entity_count": 1,
+    "subject_entity_count": 0,
+    "scene_entity_count": 1,
+    "state_frame_count": 0,
+    "planned_frame_count": 2,
+    "selected_h3_image_count": 3,
+    "merged_frame_count": 0,
+    "h3_image_budget": 8,
+    "plan_path": "07_reference_frame_plan/reference_frame_plan.json",
+    "ready_frame_ids": [
+      "frame_person_001",
+      "frame_scene_001"
+    ],
+    "summary_status": "ready",
+    "triggered_rules": [
+      "person_reference_entity_present",
+      "scene_reference_entity_present"
+    ],
+    "notes": [
+      "reference video only shows hands; person identity comes from user asset; scene generated from user text"
+    ]
+  },
+  "unsupported_audio": {
+    "status": "unsupported_skipped",
+    "items": [
+      "music",
+      "bgm",
+      "sfx",
+      "singing_or_suspected_singing",
+      "audio_mood_curve",
+      "beat_alignment"
+    ]
+  },
+  "missing_inputs": [
+    {
+      "missing_input_id": "missing_scene_asset",
+      "slot": "scene",
+      "status": "missing_generate_fallback",
+      "resolution_policy": "generate_with_confirmed_assumption",
+      "blocks_h3_prompt_request": false
+    },
+    {
+      "missing_input_id": "missing_teaware_asset",
+      "slot": "prop",
+      "status": "ready_with_text_instruction",
+      "resolution_policy": "use_text_instruction",
+      "blocks_h3_prompt_request": false
+    },
+    {
+      "missing_input_id": "missing_target_readable_text",
+      "slot": "in_scene_text_logo",
+      "status": "neutralize_allowed",
+      "resolution_policy": "omit_or_neutralize",
+      "blocks_h3_prompt_request": false
+    }
+  ],
+  "generation_assumptions": [
+    {
+      "assumption_id": "assumption_scene_autumn_courtyard",
+      "slot": "scene",
+      "description": "目标场景生成为秋天古装剧庭院",
+      "status": "user_confirmed"
+    },
+    {
+      "assumption_id": "assumption_ancient_teaware",
+      "slot": "prop",
+      "description": "茶具全部为古式瓷/陶器",
+      "status": "user_confirmed"
+    },
+    {
+      "assumption_id": "assumption_liveaction_style",
+      "slot": "reference_style",
+      "description": "风格继承参考视频实拍真实感",
+      "status": "proposed"
+    }
+  ],
+  "validation_flags": [
+    "vlm_answer_truncated_after_q7",
+    "no_confirmed_target_readable_text",
+    "scene_content_from_user_text_assumption",
+    "mixed_target_actor_composition_boundary"
+  ]
+}
